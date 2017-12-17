@@ -15,7 +15,7 @@ disqusShortname = ""
 googleAnalytics = ""
 
 # Default language to use (if you setup multilingual support)
-defaultContentLanguage = "en"
+defaultContentLanguage = "de"
 defaultContentLanguageInSubdir = false
 
 [outputs]
@@ -32,7 +32,7 @@ defaultContentLanguageInSubdir = false
 [params]
   # Color theme.
   #   Choose from `default`, `ocean`, `forest`, `coffee`, or `dark`.
-  color_theme = "default"
+  color_theme = "ocean"
 
   # Font style.
   #   Choose from `default`, `classic`, or `playfair`.
@@ -48,12 +48,12 @@ defaultContentLanguageInSubdir = false
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-  email = "test@example.org"
-  address = "Building 1 Room 1, Stanford University, California, 90210, USA"
-  office_hours = "Monday 10:00 to 13:00 or email for appointment"
-  phone = "888 888 88 88"
-  skype = "echo123"
-  telegram = ""
+  email = "nmarkgraf@hotmail.com"
+  address = "Essen, Deutschland"
+  #office_hours = "Monday 10:00 to 13:00 or email for appointment"
+  phone = "+49 176 20077335"
+  skype = "norman.markgraf"
+  telegram = "@norman_markgraf"
 
   # Enable Keybase in Contact widget by entering your keybase.io username.
   keybase = ""
@@ -89,9 +89,9 @@ defaultContentLanguageInSubdir = false
 
   # Date and time format (refer to Go's date format: http://fuckinggodateformat.com )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
-  date_format = "Jan 2, 2006"
+  date_format = "Mon, 2. Jan. 2006"
   #   Examples: "3:04 pm" or "15:04"
-  time_format = "3:04 PM"
+  time_format = "15:04"
 
   # Show estimated reading time for posts?
   reading_time = true
@@ -104,7 +104,7 @@ defaultContentLanguageInSubdir = false
 
   # Enable global LaTeX math rendering?
   #   If false, you can enable it locally on a per page basis.
-  math = false
+  math = true
 
   # Highlight.js options
   #   highlight
@@ -134,7 +134,7 @@ defaultContentLanguageInSubdir = false
   #   For more info on the highlighting options, see:
   #   https://sourcethemes.com/academic/post/writing-markdown-latex/#highlighting-options
   highlight = true
-  highlight_languages = []
+  highlight_languages = ["r", "latex", "python", "java"]
   # highlight_style = "github"
 
   # Enable native social sharing buttons?
@@ -205,22 +205,32 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:test@example.org"
+    link = "mailto:nmarkgraf@hotmail.com"
 
   [[params.social]]
     icon = "twitter"
     icon_pack = "fa"
-    link = "//twitter.com/GeorgeCushen"
+    link = "//twitter.com/NormanMarkgraf"
+
+  [[params.social]]
+    icon = "linkedin"
+    icon_pack = "fa"
+    link = "//www.linkedin.com/in/normanmarkgraf/"
+    
+  [[params.social]]
+    icon = "xing"
+    icon_pack = "fa"
+    link = "//www.xing.com/profile/Norman_Markgraf"
 
   [[params.social]]
     icon = "google-scholar"
     icon_pack = "ai"
-    link = "https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ"
+    link = "//scholar.google.de/citations?user=zR76YpQAAAAJ&hl=de"
 
   [[params.social]]
     icon = "github"
     icon_pack = "fa"
-    link = "//github.com/gcushen"
+    link = "//github.com/nmarkgraf"
 
 
 # Navigation Links
@@ -242,22 +252,22 @@ defaultContentLanguageInSubdir = false
   weight = 2
 
 [[menu.main]]
-  name = "Posts"
+  name = "Blog"
   url = "#posts"
   weight = 3
 
 [[menu.main]]
-  name = "Projects"
+  name = "Projekte"
   url = "#projects"
   weight = 4
 
 [[menu.main]]
-  name = "Teaching"
+  name = "Lehre"
   url = "#teaching"
   weight = 5
 
 [[menu.main]]
-  name = "Contact"
+  name = "Impressum"
   url = "#contact"
   weight = 6
 
@@ -270,6 +280,6 @@ defaultContentLanguageInSubdir = false
 # Languages
 #   Create a [languages.X] block for each language you want, where X is the language ID.
 
-# Configure the English version of the website.
-[Languages.en]
-  languageCode = "en-us"
+# Configure the german version of the website.
+[Languages.de]
+  languageCode = "de-de"
