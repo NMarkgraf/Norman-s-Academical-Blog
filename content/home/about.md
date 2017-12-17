@@ -10,9 +10,9 @@ weight = 5
 # List your academic interests.
 [interests]
   interests = [
-    "Mathematik"
+    "Mathematik",
     "Statistik",
-    "Datenanalyse"
+    "Datenanalyse",
     "Finanzmathematik",
     "Wirtschaftsmathematik",
     "Ingenieurmathematik",
