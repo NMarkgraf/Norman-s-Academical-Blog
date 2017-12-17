@@ -2,13 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Normans Akademischer Blog</title>
-    <link>/pab/post/</link>
+    <link>/nab/post/</link>
     <description>Recent content in Posts on Normans Akademischer Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016/17 Norman Markgraf</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
-    <atom:link href="/pab/post/" rel="self" type="application/rss+xml" />
+    <atom:link href="/nab/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>First Entry</title>
+      <link>/nab/post/first-entry/</link>
+      <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/first-entry/</guid>
+      <description>&lt;p&gt;Ein erster Kommentar!&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>

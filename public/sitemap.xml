@@ -5,7 +5,16 @@
     
     <url>
     
-      <loc>/pab/publication/</loc>
+      <loc>/nab/post/first-entry/</loc>
+      <lastmod>2017-12-17T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/publication/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -14,7 +23,7 @@
     
     <url>
     
-      <loc>/pab/talk/</loc>
+      <loc>/nab/talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -23,7 +32,7 @@
     
     <url>
     
-      <loc>/pab/post/</loc>
+      <loc>/nab/post/</loc>
       <lastmod>2017-01-01T00:00:00+01:00</lastmod>
     </url>
     
@@ -32,7 +41,7 @@
     
     <url>
     
-      <loc>/pab/categories/</loc>
+      <loc>/nab/categories/</loc>
       <priority>0</priority>
     </url>
     
@@ -41,7 +50,17 @@
     
     <url>
     
-      <loc>/pab/</loc>
+      <loc>/nab/categories/kommentar/</loc>
+      <lastmod>2017-12-17T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/</loc>
       <lastmod>2016-04-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -51,7 +70,7 @@
     
     <url>
     
-      <loc>/pab/publication_types/</loc>
+      <loc>/nab/publication_types/</loc>
       <priority>0</priority>
     </url>
     
@@ -60,7 +79,7 @@
     
     <url>
     
-      <loc>/pab/tags/</loc>
+      <loc>/nab/tags/</loc>
       <priority>0</priority>
     </url>
     

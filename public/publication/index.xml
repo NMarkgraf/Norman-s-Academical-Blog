@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Normans Akademischer Blog</title>
-    <link>/pab/publication/</link>
+    <link>/nab/publication/</link>
     <description>Recent content in Publications on Normans Akademischer Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016/17 Norman Markgraf</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/pab/publication/" rel="self" type="application/rss+xml" />
+    <atom:link href="/nab/publication/" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
