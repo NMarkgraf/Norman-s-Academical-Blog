@@ -1,6 +1,6 @@
 baseurl = "http://sefiroth.net/nab/"  # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
 title = "Normans Akademischer Blog"
-copyright = "&copy; 2016/17 Norman Markgraf"
+copyright = "&copy; 2016-17 Norman Markgraf"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
@@ -248,10 +248,10 @@ defaultContentLanguageInSubdir = false
   url = "#about"
   weight = 1
 
-[[menu.main]]
-  name = "Publications"
-  url = "#publications_selected"
-  weight = 2
+#[[menu.main]]
+#  name = "Publications"
+#  url = "#publications_selected"
+#  weight = 2
 
 [[menu.main]]
   name = "Blog"
@@ -285,3 +285,6 @@ defaultContentLanguageInSubdir = false
 # Configure the german version of the website.
 [Languages.de]
   languageCode = "de-de"
+  
+#[languages.en]
+#  languageCode = "en-us"
