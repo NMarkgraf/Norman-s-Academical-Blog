@@ -1,7 +1,7 @@
-baseurl = "http://sefiroth.net/pab"  # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
-title = "Normans Akademischer Blog"
-copyright = "&copy; 2016/17 Norman Markgraf"
-theme = "hugo-academic"
+baseurl = "/"  # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
+title = "Academic"
+copyright = "&copy; 2017 Your Name"
+theme = "academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
@@ -31,7 +31,7 @@ defaultContentLanguageInSubdir = false
 
 [params]
   # Color theme.
-  #   Choose from `default`, `ocean`, `forest`, `coffee`, or `dark`.
+  #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
   color_theme = "default"
 
   # Font style.
@@ -39,12 +39,12 @@ defaultContentLanguageInSubdir = false
   font = "default"
 
   # Your details.
-  name = "Norman Markgraf"
-  role = "Diplom-Mathematiker"
+  name = "Lena Smith"
+  role = "Professor of Artificial Intelligence"
 
   # Organizations/Affiliations.
   #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-  #organizations = [ { name = "Stanford University", url = "" } ]
+  organizations = [ { name = "Stanford University", url = "" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
   avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
