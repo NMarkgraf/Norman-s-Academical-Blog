@@ -14,6 +14,24 @@
     
     <url>
     
+      <loc>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</loc>
+      <lastmod>2017-07-13T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/post/der-zentrale-grenzwertsatz/</loc>
+      <lastmod>2017-04-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/nab/publication/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -41,7 +59,27 @@
     
     <url>
     
+      <loc>/nab/tags/allgemein/</loc>
+      <lastmod>2017-07-13T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/nab/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/categories/fundst%C3%BCcke/</loc>
+      <lastmod>2017-07-13T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -52,6 +90,16 @@
     
       <loc>/nab/categories/kommentar/</loc>
       <lastmod>2017-12-17T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/tags/lehre/</loc>
+      <lastmod>2017-07-13T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -79,7 +127,38 @@
     
     <url>
     
+      <loc>/nab/tags/statistik/</loc>
+      <lastmod>2017-04-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/categories/statistik/</loc>
+      <lastmod>2017-04-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/nab/tags/</loc>
+      <lastmod>2017-07-13T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/tags/wahrscheinlichkeitstheorie/</loc>
+      <lastmod>2017-04-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

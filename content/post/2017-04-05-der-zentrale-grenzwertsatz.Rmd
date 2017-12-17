@@ -1,0 +1,44 @@
+---
+title: Der Zentrale Grenzwertsatz
+author: Norman Markgraf
+date: '2017-04-05'
+slug: der-zentrale-grenzwertsatz
+categories:
+  - Statistik
+tags:
+  - Statistik
+  - Wahrscheinlichkeitstheorie
+nocite: |
+    @Schira2005, @website:WikipediaZGS, @website:WolframMathWorldCLT
+csl: zeitschrift-fur-angewandte-mathematik-und-physik.csl
+bibliography: statistik.bib
+---
+
+## Der **Zentrale Grenzwertsatz** der Statistik bei identischer Verteilung.
+
+
+
+### Zentraler Grenzwertsatz
+
+Seien $X_1, X_2, ..., X_n$ unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert $E(X_i) = \mu$ und bekanter Varianz $Var(X_i)=\sigma^2$. 
+
+
+Für die Summe $S_n = \sum_{i=1}^n X_i$ ist dann der Erwartungswert $E(S_n)= n \cdot \mu$ und die Varianz $Var(S_n)= n \cdot \sigma^2$.
+
+Dann gilt für die *standardisierte* Zufallsvariable
+
+$$
+Z_n = \frac{\sum_{i=1}^n X_i - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{\bar{X_n}-\mu}{\sigma / \sqrt{n}} = \frac{\bar{X_n}-\mu}{\sigma} \cdot \sqrt{n},
+$$
+
+dass sie für wachsendes $n$ immer besser durch die *Standardnormalverteilung* $N(0,1)$ approximiert werden kann. 
+
+Mit anderen Worten:
+
+$$
+P(Z_n \leq x) \longrightarrow \Phi(x), \quad \text{ für } n \rightarrow \infty
+$$
+
+
+
+**Weiterführende Literatur und Quellen dieses Eintrags :**

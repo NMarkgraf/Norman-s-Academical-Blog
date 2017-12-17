@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Normans Akademischer Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <copyright>&amp;copy; 2016/17 Norman Markgraf</copyright>
+    <copyright>&amp;copy; 2016-17 Norman Markgraf</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
     <atom:link href="/nab/post/" rel="self" type="application/rss+xml" />
     
@@ -17,6 +17,71 @@
       
       <guid>/nab/post/first-entry/</guid>
       <description>&lt;p&gt;Ein erster Kommentar!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>10 Dinge die kein Talent benötigen!</title>
+      <link>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
+      <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
+      <description>
+
+&lt;p&gt;Gerade im Internet gefunden:&lt;/p&gt;
+
+&lt;h3 id=&#34;10-dinge-die-kein-talent-benötigen&#34;&gt;10 Dinge die kein Talent benötigen!&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Pünktlichkeit&lt;/li&gt;
+&lt;li&gt;Arbeitsmoral&lt;/li&gt;
+&lt;li&gt;Anstrengung&lt;/li&gt;
+&lt;li&gt;Körpersprache&lt;/li&gt;
+&lt;li&gt;Energie&lt;/li&gt;
+&lt;li&gt;Haltung&lt;/li&gt;
+&lt;li&gt;Leidenschaft&lt;/li&gt;
+&lt;li&gt;Lernwillig sein&lt;/li&gt;
+&lt;li&gt;Etwas mehr als das Minimum tun&lt;/li&gt;
+&lt;li&gt;Vorbereitet sein&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Der Zentrale Grenzwertsatz</title>
+      <link>/nab/post/der-zentrale-grenzwertsatz/</link>
+      <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/der-zentrale-grenzwertsatz/</guid>
+      <description>&lt;section id=&#34;der-zentrale-grenzwertsatz-der-statistik-bei-identischer-verteilung.&#34; class=&#34;level2&#34;&gt;
+&lt;h2&gt;Der &lt;strong&gt;Zentrale Grenzwertsatz&lt;/strong&gt; der Statistik bei identischer Verteilung.&lt;/h2&gt;
+&lt;section id=&#34;zentraler-grenzwertsatz&#34; class=&#34;level3&#34;&gt;
+&lt;h3&gt;Zentraler Grenzwertsatz&lt;/h3&gt;
+&lt;p&gt;Seien &lt;span class=&#34;math inline&#34;&gt;\(X_1, X_2, ..., X_n\)&lt;/span&gt; unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert &lt;span class=&#34;math inline&#34;&gt;\(E(X_i) = \mu\)&lt;/span&gt; und bekanter Varianz &lt;span class=&#34;math inline&#34;&gt;\(Var(X_i)=\sigma^2\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Für die Summe &lt;span class=&#34;math inline&#34;&gt;\(S_n = \sum_{i=1}^n X_i\)&lt;/span&gt; ist dann der Erwartungswert &lt;span class=&#34;math inline&#34;&gt;\(E(S_n)= n \cdot \mu\)&lt;/span&gt; und die Varianz &lt;span class=&#34;math inline&#34;&gt;\(Var(S_n)= n \cdot \sigma^2\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Dann gilt für die &lt;em&gt;standardisierte&lt;/em&gt; Zufallsvariable&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+Z_n = \frac{\sum_{i=1}^n X_i - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{\bar{X_n}-\mu}{\sigma / \sqrt{n}} = \frac{\bar{X_n}-\mu}{\sigma} \cdot \sqrt{n},
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;dass sie für wachsendes &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; immer besser durch die &lt;em&gt;Standardnormalverteilung&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(N(0,1)\)&lt;/span&gt; approximiert werden kann.&lt;/p&gt;
+&lt;p&gt;Mit anderen Worten:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+P(Z_n \leq x) \longrightarrow \Phi(x), \quad \text{ für } n \rightarrow \infty
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Weiterführende Literatur und Quellen dieses Eintrags :&lt;/strong&gt;&lt;/p&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-Schira2005&#34;&gt;
+&lt;p&gt;1. Schira, J.: Statistische Methoden der VWL und BWL. PEARSON Studion, München (2005)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-website:WikipediaZGS&#34;&gt;
+&lt;p&gt;2. Wikipedia: Zentraler Grenzwertsatz, &lt;a href=&#34;https://de.wikipedia.org/w/index.php?title=Zentraler_Grenzwertsatz&amp;amp;oldid=162715036&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/w/index.php?title=Zentraler_Grenzwertsatz&amp;amp;oldid=162715036&lt;/a&gt;, (2017)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-website:WolframMathWorldCLT&#34;&gt;
+&lt;p&gt;3. Weisstein, E.W.: Central limit theorem, &lt;a href=&#34;http://mathworld.wolfram.com/CentralLimitTheorem.html&#34; class=&#34;uri&#34;&gt;http://mathworld.wolfram.com/CentralLimitTheorem.html&lt;/a&gt;, (2017)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;/section&gt;
 </description>
     </item>
     

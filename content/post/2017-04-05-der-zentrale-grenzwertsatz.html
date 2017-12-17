@@ -1,0 +1,47 @@
+---
+title: Der Zentrale Grenzwertsatz
+author: Norman Markgraf
+date: '2017-04-05'
+slug: der-zentrale-grenzwertsatz
+categories:
+  - Statistik
+tags:
+  - Statistik
+  - Wahrscheinlichkeitstheorie
+nocite: |
+    @Schira2005, @website:WikipediaZGS, @website:WolframMathWorldCLT
+csl: zeitschrift-fur-angewandte-mathematik-und-physik.csl
+bibliography: statistik.bib
+---
+
+
+
+<section id="der-zentrale-grenzwertsatz-der-statistik-bei-identischer-verteilung." class="level2">
+<h2>Der <strong>Zentrale Grenzwertsatz</strong> der Statistik bei identischer Verteilung.</h2>
+<section id="zentraler-grenzwertsatz" class="level3">
+<h3>Zentraler Grenzwertsatz</h3>
+<p>Seien <span class="math inline">\(X_1, X_2, ..., X_n\)</span> unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert <span class="math inline">\(E(X_i) = \mu\)</span> und bekanter Varianz <span class="math inline">\(Var(X_i)=\sigma^2\)</span>.</p>
+<p>Für die Summe <span class="math inline">\(S_n = \sum_{i=1}^n X_i\)</span> ist dann der Erwartungswert <span class="math inline">\(E(S_n)= n \cdot \mu\)</span> und die Varianz <span class="math inline">\(Var(S_n)= n \cdot \sigma^2\)</span>.</p>
+<p>Dann gilt für die <em>standardisierte</em> Zufallsvariable</p>
+<p><span class="math display">\[
+Z_n = \frac{\sum_{i=1}^n X_i - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{\bar{X_n}-\mu}{\sigma / \sqrt{n}} = \frac{\bar{X_n}-\mu}{\sigma} \cdot \sqrt{n},
+\]</span></p>
+<p>dass sie für wachsendes <span class="math inline">\(n\)</span> immer besser durch die <em>Standardnormalverteilung</em> <span class="math inline">\(N(0,1)\)</span> approximiert werden kann.</p>
+<p>Mit anderen Worten:</p>
+<p><span class="math display">\[
+P(Z_n \leq x) \longrightarrow \Phi(x), \quad \text{ für } n \rightarrow \infty
+\]</span></p>
+<p><strong>Weiterführende Literatur und Quellen dieses Eintrags :</strong></p>
+<div id="refs" class="references">
+<div id="ref-Schira2005">
+<p>1. Schira, J.: Statistische Methoden der VWL und BWL. PEARSON Studion, München (2005)</p>
+</div>
+<div id="ref-website:WikipediaZGS">
+<p>2. Wikipedia: Zentraler Grenzwertsatz, <a href="https://de.wikipedia.org/w/index.php?title=Zentraler_Grenzwertsatz&amp;oldid=162715036" class="uri">https://de.wikipedia.org/w/index.php?title=Zentraler_Grenzwertsatz&amp;oldid=162715036</a>, (2017)</p>
+</div>
+<div id="ref-website:WolframMathWorldCLT">
+<p>3. Weisstein, E.W.: Central limit theorem, <a href="http://mathworld.wolfram.com/CentralLimitTheorem.html" class="uri">http://mathworld.wolfram.com/CentralLimitTheorem.html</a>, (2017)</p>
+</div>
+</div>
+</section>
+</section>
