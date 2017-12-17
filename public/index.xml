@@ -61,14 +61,18 @@
 &lt;p&gt;Für die Summe &lt;span class=&#34;math inline&#34;&gt;\(S_n = \sum_{i=1}^n X_i\)&lt;/span&gt; ist dann der Erwartungswert &lt;span class=&#34;math inline&#34;&gt;\(E(S_n)= n \cdot \mu\)&lt;/span&gt; und die Varianz &lt;span class=&#34;math inline&#34;&gt;\(Var(S_n)= n \cdot \sigma^2\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Dann gilt für die &lt;em&gt;standardisierte&lt;/em&gt; Zufallsvariable&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-Z_n = \frac{\sum_{i=1}^n X_i - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{\bar{X_n}-\mu}{\sigma / \sqrt{n}} = \frac{\bar{X_n}-\mu}{\sigma} \cdot \sqrt{n},
+Z_n = \frac{\left(\sum\limits_{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} 
+    = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} 
+    = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} 
+    = \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} 
+    = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n},
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;dass sie für wachsendes &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; immer besser durch die &lt;em&gt;Standardnormalverteilung&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(N(0,1)\)&lt;/span&gt; approximiert werden kann.&lt;/p&gt;
+&lt;p&gt;dass sie für wachsendes &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; immer besser durch die &lt;em&gt;Standardnormalverteilung&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(N(0, 1)\)&lt;/span&gt; approximiert werden kann.&lt;/p&gt;
 &lt;p&gt;Mit anderen Worten:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-P(Z_n \leq x) \longrightarrow \Phi(x), \quad \text{ für } n \rightarrow \infty
+P(Z_n \leq x) \longrightarrow \Phi(x), \quad \text{ für }\; n \rightarrow \infty
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Weiterführende Literatur und Quellen dieses Eintrags :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Weiterführende Literatur und Quellen dieses Eintrags:&lt;/strong&gt;&lt;/p&gt;
 &lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
 &lt;div id=&#34;ref-Schira2005&#34;&gt;
 &lt;p&gt;1. Schira, J.: Statistische Methoden der VWL und BWL. PEARSON Studion, München (2005)&lt;/p&gt;
