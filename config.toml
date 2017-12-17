@@ -53,7 +53,7 @@ defaultContentLanguageInSubdir = false
   #office_hours = "Monday 10:00 to 13:00 or email for appointment"
   phone = "+49 176 20077335"
   skype = "norman.markgraf"
-  telegram = "@norman_markgraf"
+  telegram = "norman_markgraf"
 
   # Enable Keybase in Contact widget by entering your keybase.io username.
   keybase = ""
@@ -81,11 +81,13 @@ defaultContentLanguageInSubdir = false
   #   1: Google Maps
   #   2: OpenStreetMap (Mapnik)
   #   3: OpenStreetMap (Mapbox)
-  map = 0
-  map_api_key = ""
-  latitude = "37.4275"
-  longitude = "-122.1697"
+  map = 1
+  map_api_key = "AIzaSyAHIzNMfWrSJMBwSMofumWsGuBIaXmNmYE"
+  latitude = "51.433501"
+  longitude = "7.049087"
   zoom = 15
+  
+  Markierte
 
   # Date and time format (refer to Go's date format: http://fuckinggodateformat.com )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
