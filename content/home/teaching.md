@@ -15,6 +15,40 @@ weight = 60
 
 +++
 
-This is an example of using the *custom* widget to create your own homepage section.
+Im Wintersemester 2017/18 gehaltene Veranstaltungen an der FOM:
 
-To remove this section, either delete `content/home/teaching.md` or edit the frontmatter of the file to deactivate the widget by setting `active = false`.
+Standort: **Düsseldorf**
+
+* Wissenschaftliche Methodik
+
+Standort: **Wuppertal**
+
+* Wissenschaftliche Methodik
+
+
+Im Sommersemester 2017 gehaltene Veranstaltungen an der FOM:
+
+Standort: **Essen**
+
+* Mathematik (Vorb-Ing 16/03E)    
+
+
+Standort: **Duisburg**
+
+* Internes & Extermes Rechnungswesen (Tagesstudium)
+
+    
+Standort: **Köln**
+
+* Datenerhebung & Statistik (Tagesstudium) 
+* Quantitative Methoden Mathematik/Statistik (Tagesstudium)
+* Wissenschaftliche Methodik 2 
+
+    
+Standort: **Neuss**
+
+* Informations- & Prozesstechnologien
+
+Standort: **Wuppertal**
+
+* Datenerhebung & Statistik (Tagesstudium) 
