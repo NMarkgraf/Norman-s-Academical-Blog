@@ -19,3 +19,5 @@ Ich nutze das gerade um meinen Blog immer dann zu aktualisieren, wenn ich auf de
 Damit sollte ich nie wieder vergessen alles auch auf dem Server zu aktualisieren!
 
 Wir warten ab. ;-)
+
+Okay, alle Verzeichnisse sollten den richtigen Besitzer haben ;-)
