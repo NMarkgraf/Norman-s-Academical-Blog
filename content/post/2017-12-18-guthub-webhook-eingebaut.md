@@ -1,8 +1,8 @@
 ---
-title: GutHub Webhook eingebaut!
+title: GitHub Webhook eingebaut!
 author: Norman Markgraf
 date: '2017-12-18'
-slug: guthub-webhook-eingebaut
+slug: github-webhook-eingebaut
 categories:
   - Information
 tags:
