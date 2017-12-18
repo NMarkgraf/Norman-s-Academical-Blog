@@ -11,6 +11,22 @@
     <atom:link href="/nab/post/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>GutHub Webhook eingebaut!</title>
+      <link>/nab/post/guthub-webhook-eingebaut/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/guthub-webhook-eingebaut/</guid>
+      <description>&lt;p&gt;GitHub bietet die Möglichkeit an, bei Interaktion mit dem Server automatisch einen Webhook zu aktivieren. Dahinter versteckt sich ein Aufruf einer URL mit einem sogenannten POST-Request. Wertet man diesen aus, so kann man z.B. nach jedem &lt;em&gt;push&lt;/em&gt; automatisch ein &lt;em&gt;fetch&lt;/em&gt; auf dem Webserver starten.&lt;/p&gt;
+
+&lt;p&gt;Ich nutze das gerade um meinen Blog immer dann zu aktualisieren, wenn ich auf dem GitHub eine Änderung vorgenommen habe.&lt;/p&gt;
+
+&lt;p&gt;Damit sollte ich nie wieder vergessen alles auch auf dem Server zu aktualisieren!&lt;/p&gt;
+
+&lt;p&gt;Wir warten ab. ;-)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>First Entry</title>
       <link>/nab/post/first-entry/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
