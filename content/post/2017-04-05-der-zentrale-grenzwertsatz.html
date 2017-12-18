@@ -24,11 +24,13 @@ bibliography: statistik.bib
 <p>Für die Summe <span class="math inline">\(S_n = \sum_{i=1}^n X_i\)</span> ist dann der Erwartungswert <span class="math inline">\(E(S_n)= n \cdot \mu\)</span> und die Varianz <span class="math inline">\(Var(S_n)= n \cdot \sigma^2\)</span>.</p>
 <p>Dann gilt für die <em>standardisierte</em> Zufallsvariable</p>
 <p><span class="math display">\[
-Z_n = \frac{\left(\sum\limits_{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} 
+\begin{align*}
+Z_n &amp;= \frac{\left(\sum\limits_{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}}
     = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} 
-    = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} 
-    = \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} 
+    = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} \\
+    &amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} 
     = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n},
+\end{align*}
 \]</span></p>
 <p>dass sie für wachsendes <span class="math inline">\(n\)</span> immer besser durch die <em>Standardnormalverteilung</em> <span class="math inline">\(N(0, 1)\)</span> approximiert werden kann.</p>
 <p>Mit anderen Worten:</p>

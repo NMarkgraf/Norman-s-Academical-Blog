@@ -61,11 +61,13 @@
 &lt;p&gt;Für die Summe &lt;span class=&#34;math inline&#34;&gt;\(S_n = \sum_{i=1}^n X_i\)&lt;/span&gt; ist dann der Erwartungswert &lt;span class=&#34;math inline&#34;&gt;\(E(S_n)= n \cdot \mu\)&lt;/span&gt; und die Varianz &lt;span class=&#34;math inline&#34;&gt;\(Var(S_n)= n \cdot \sigma^2\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Dann gilt für die &lt;em&gt;standardisierte&lt;/em&gt; Zufallsvariable&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-Z_n = \frac{\left(\sum\limits_{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} 
+\begin{align*}
+Z_n &amp;amp;= \frac{\left(\sum\limits_{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}}
     = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} 
-    = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} 
-    = \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} 
+    = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} \\
+    &amp;amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} 
     = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n},
+\end{align*}
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;dass sie für wachsendes &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; immer besser durch die &lt;em&gt;Standardnormalverteilung&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(N(0, 1)\)&lt;/span&gt; approximiert werden kann.&lt;/p&gt;
 &lt;p&gt;Mit anderen Worten:&lt;/p&gt;
