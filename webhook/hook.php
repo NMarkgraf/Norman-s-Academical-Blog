@@ -20,7 +20,7 @@ $json_error = json_last_error();
 
 file_put_contents('webhook.log', "Payload: " . print_r($payload, TRUE) . "\n Lasterror:". $json_error. "\n$output\nCurrent hash is $status\n#############################\n", FILE_APPEND);
 
-switch(json_error) 
+switch($json_error) 
 {
         case JSON_ERROR_NONE:
             echo ' - Keine Fehler';
