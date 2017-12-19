@@ -11,7 +11,7 @@ if (isset($_REQUEST['payload'])
     file_put_contents('webhook.log', print_r($payload, TRUE) . "\n$output\nCurrent hash is $status\n#############################\n", FILE_APPEND);
 
 } else {
-    file_put_contents('webhook.log', "\n$output\nCurrent hash is $status\n#############################\n", FILE_APPEND);
+    file_put_contents('webhook.log', print_r($_REQUEST, TRUE) . "\n$output\nCurrent hash is $status\n#############################\n", FILE_APPEND);
 }
 
 exit()
