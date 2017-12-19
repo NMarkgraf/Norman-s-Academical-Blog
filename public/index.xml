@@ -28,8 +28,9 @@
 &lt;h3&gt;Was bedeutet das denn nun konkret?&lt;/h3&gt;
 &lt;p&gt;Nun, ein Quantil ist ein Schwellenwert. Ein bestimmter Anteil der Werte ist kleiner als das Quantil, der Rest ist größer. Das 25-%-Quantil beispielsweise ist der Wert, für den gilt, dass 25 % aller Werte kleiner sind als dieser Wert. Quantile formalisieren praktische Aussagen wie „25 % aller Frauen sind kleiner als 1,62 m“ –- wobei 1,62 m hier das 25-%-Quantil ist.&lt;/p&gt;
 &lt;p&gt;Spezielle Quantile sind der &lt;em&gt;Median&lt;/em&gt;, die &lt;em&gt;Quartile&lt;/em&gt;, die &lt;em&gt;Quintile&lt;/em&gt;, die &lt;em&gt;Dezile&lt;/em&gt; und die &lt;em&gt;Perzentile&lt;/em&gt;:&lt;/p&gt;
-&lt;p&gt;Schauen wir und dazu in den Bespielen die Datenreihe &lt;code&gt;dr&lt;/code&gt; an:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dr &amp;lt;- 0:600&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Wir betrachten dazu in den Bespielen die Datenreihe &lt;code&gt;dr&lt;/code&gt; an:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Die Zahlen von 0 bis 600 
+dr &amp;lt;- 0:600&lt;/code&gt;&lt;/pre&gt;
 &lt;/section&gt;
 &lt;section id=&#34;median&#34; class=&#34;level3&#34;&gt;
 &lt;h3&gt;Median&lt;/h3&gt;

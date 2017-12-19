@@ -32,8 +32,9 @@ Quantile formalisieren praktische Aussagen wie „25 % aller Frauen sind kleiner
 
 Spezielle Quantile sind der *Median*, die *Quartile*, die *Quintile*, die *Dezile* und die *Perzentile*:
 
-Schauen wir und dazu in den Bespielen die Datenreihe `dr` an:
+Wir betrachten dazu in den Bespielen die Datenreihe `dr` an:
 ```{r}
+# Die Zahlen von 0 bis 600 
 dr <- 0:600
 ```
 
