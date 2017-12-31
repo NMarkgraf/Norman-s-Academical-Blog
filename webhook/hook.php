@@ -1,6 +1,6 @@
 <?php
 
-$output = shell_exec('cd /var/www/vhosts/sefiroth.net/httpdocs/nab/ && ./updateFromGitHub.sh && ./updateWebhook.sh > &1');
+$output = shell_exec('cd /var/www/vhosts/sefiroth.net/httpdocs/nab/ && ./updateFromGitHub.sh && ./updateWebHook.sh > &1');
 $status = shell_exec('cd /var/www/vhosts/sefiroth.net/httpdocs/nab/ && git rev-parse --short HEAD > &1');
 
 //Log the request and result
