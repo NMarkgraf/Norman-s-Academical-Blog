@@ -2,14 +2,14 @@
 
 $current_dir = getcwd();
 
-chdir('/var/www/vhosts/sefiroth.net/httpdocs/nab/')
-$output = shell_exec('updateFromGitHub.sh')
+chdir('/var/www/vhosts/sefiroth.net/httpdocs/nab/');
+$output = system('updateFromGitHub.sh');
+
+chdir('/var/www/vhosts/sefiroth.net/httpdocs/nab/');
+$output2 = system('updateWebHook.sh > &1');
 
 chdir('/var/www/vhosts/sefiroth.net/httpdocs/nab/')
-$output2 = shell_exec('updateWebHook.sh > &1');
-
-chdir('/var/www/vhosts/sefiroth.net/httpdocs/nab/')
-$status = shell_exec('git rev-parse --short HEAD > &1');
+$status = system('git rev-parse --short HEAD > &1');
 
 
 //Log the request and result
@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 $json_error = json_last_error();
 
+chdir($current_dir);
 file_put_contents('webhook.log', "Payload: " . print_r($payload, TRUE) . "\n Lasterror:". $json_error. "\n$output\n$output2\nCurrent hash is $status\n#############################\n", FILE_APPEND);
 
 switch($json_error) 
@@ -70,7 +71,7 @@ if (empty($_SERVER))
 }
 */
 
-chdir($current_dir)
+chdir($current_dir);
 
 
 ?>

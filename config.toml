@@ -1,6 +1,6 @@
 baseurl = "http://sefiroth.net/nab/"  # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
 title = "Normans Akademischer Blog"
-copyright = "&copy; 2016-17 Norman Markgraf"
+copyright = "&copy; 2016-18 Norman Markgraf"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
@@ -26,13 +26,15 @@ defaultContentLanguageInSubdir = false
 #   See: https://gohugo.io/readfiles/bfconfig/
 [blackfriday]
   hrefTargetBlank = true  # `true` opens external links in a new tab.
-  fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
+  fractions = false  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
   smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
+  taskLists = true  # `false` turns off GitHub-style automatic task/TODO list generation.
+#  extensions = []
 
 [params]
   # Color theme.
   #   Choose from `default`, `ocean`, `forest`, `coffee`, or `dark`.
-  color_theme = "ocean"
+  color_theme = "1950s"
 
   # Font style.
   #   Choose from `default`, `classic`, or `playfair`.

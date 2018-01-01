@@ -21,3 +21,7 @@ Damit sollte ich nie wieder vergessen alles auch auf dem Server zu aktualisieren
 Wir warten ab. ;-)
 
 Okay, alle Verzeichnisse sollten den richtigen Besitzer haben ;-)
+
+**NACHTRAG:** (vom 01.01.2018)
+
+Leider schaffe ich es nicht auf PHP heraus auch nur ein Skript auszuführen. Daher wird z.Z. alles via `crontab` ausgeführt. Nicht optimal, aber es läuft erstmal.

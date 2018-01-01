@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Normans Akademischer Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
-    <copyright>&amp;copy; 2016-17 Norman Markgraf</copyright>
+    <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
     <atom:link href="/nab/post/" rel="self" type="application/rss+xml" />
     
@@ -137,6 +137,10 @@ dr &amp;lt;- 0:600&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Wir warten ab. ;-)&lt;/p&gt;
 
 &lt;p&gt;Okay, alle Verzeichnisse sollten den richtigen Besitzer haben ;-)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NACHTRAG:&lt;/strong&gt; (vom 01.01.2018)&lt;/p&gt;
+
+&lt;p&gt;Leider schaffe ich es nicht auf PHP heraus auch nur ein Skript auszuführen. Daher wird z.Z. alles via &lt;code&gt;crontab&lt;/code&gt; ausgeführt. Nicht optimal, aber es läuft erstmal.&lt;/p&gt;
 </description>
     </item>
     
