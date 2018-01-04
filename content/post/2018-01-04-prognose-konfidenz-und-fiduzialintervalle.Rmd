@@ -11,6 +11,7 @@ tags:
 ---
 ```{r include=FALSE}
 library(mosaic)
+options(digits=4)
 ```
 
 ***WORK IN PROGRESS**
@@ -35,19 +36,22 @@ Da die Realisationen $u$ und $v$ der Grenzen $U$ und $V$ keine Zufallsvariablen 
 
 ```{r echo=FALSE}
 library(mosaic)
-set.seed(2009)
+set.seed(1971)
 N <- 40
 NN <- 1000
 mu_sec <- 0
 sigma_sec <- 2
 pop <- rnorm(NN, mean=mu_sec, sd=sigma_sec)
-mu <- mean(pop)
+pop <- pop - mean(pop)
+mu <- round(mean(pop), 4)
 sigma <- (NN-1)/NN * sd(pop)
+set.seed(2009)
+x <- sample(pop, N)
 u <- mean(x)-qnorm(0.975)*sigma/sqrt(N)
 v <- mean(x)+qnorm(0.975)*sigma/sqrt(N)
 ```
 
-Wir nehmen zunächst als Population $N=$ `r NN` normalverteilte Zufallszahlen mit dem Mittelwert $\mu$= `r mu` und der Standardabweichung $\sigma=$ `r sigma`.
+Wir nehmen zunächst als Population $N=`r NN`$ normalverteilte Zufallszahlen mit dem Mittelwert $\mu= `r mu`$ und der Standardabweichung $\sigma=`r sigma`$.
 
 Dazu das Histogramm der Population:
 ```{r}
@@ -57,7 +61,6 @@ histogram(pop, xlab="Population")
 Aus dieser Population ziehen wir eine Stichprobe $x$ vom Umfang $n=$`r N` und erhalten die folgenden statistischen Daten:
 
 ```{r}
-x <- sample(pop, N)
 favstats(x)
 ```
 
@@ -93,6 +96,30 @@ $$v = \bar{x}+z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = 
 Die Realisation unseres 95%-Konfidenzintervall lautet nun also:
 
 $$[`r u`; `r v`]$$
+
+**Was hat es nun mit den ominösen 95% auf sich?**
+
+Das Konfidenzintervall ist ein stochastisches Intervall, d.h. die hier angegebenen Werte für $u$ und $v$ sind abhängig von der Realisation $x_1, \dots, x_n$, also der konkreten Stichprobe.
+
+Nehmen wir nun also einmal eine neue Stichprobe und berechnen erneut die Realisation unseres 95%-Konfidenzintervalls, so erhalten wir:
+
+```{r echo=FALSE}
+x <- sample(pop, N)
+u <- mean(x)-qnorm(0.975)*sigma/sqrt(N)
+v <- mean(x)+qnorm(0.975)*sigma/sqrt(N)
+```
+
+$$[`r u`; `r v`]$$
+
+```{r}
+set.seed(2009)
+myrdist <- function(n=40) {
+    return(sample(pop, n))
+}
+CIsim(N, samples=100, rdist=myrdist)
+```
+
+
 
 
 
