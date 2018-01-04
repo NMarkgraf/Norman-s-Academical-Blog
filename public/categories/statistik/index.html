@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="generator" content="Hugo 0.32.2" />
   <meta name="author" content="Norman Markgraf">
   <meta name="description" content="Diplom-Mathematiker">
 
@@ -85,7 +85,7 @@
   <meta property="og:description" content="Diplom-Mathematiker">
   <meta property="og:locale" content="de-de">
   
-  <meta property="og:updated_time" content="2017-04-05T00:00:00&#43;00:00">
+  <meta property="og:updated_time" content="2018-01-04T00:00:00&#43;00:00">
   
 
   
@@ -226,13 +226,35 @@
   
   
   <div>
+    <h2><a href="/nab/post/prognose-konfidenz-und-fiduzialintervalle/">Prognose-, Konfidenz- und Fiduzialintervalle</a></h2>
+    <div class="article-style">
+      
+      Konfidenzintervalle
+Definition von Konfidenzintervallen1
+Für unabhängig identisch verteilte Zufallsvariablen (X_1,\dotsc, X_n) mit unbekanntem reellen Verteilungsparameter (\vartheta) kann unter bestimmten Umständen zwei Stichprobenfunktionen (U) und (V) angeben, so dass
+[P(U &lt; \vartheta &lt; V) \geq \gamma]
+gilt, mit (\gamma \in (0,1)). Dann heißt das (stochastische) Intervall ([U, V]) ein Konfidenzintervall für (\vartheta) zum Konfidenzniveau (\gamma) (auch: ein (\gamma)-Konfidenzintervall).
+Die Realisationen (u) und (v) von (U) bzw. (V) bilden das Schätzintervall ([u, v]).
+      
+    </div>
+  </div>
+  
+  <div>
     <h2><a href="/nab/post/der-zentrale-grenzwertsatz/">Der Zentrale Grenzwertsatz</a></h2>
     <div class="article-style">
       
-      Der Zentrale Grenzwertsatz der Statistik bei identischer Verteilung. Zentraler Grenzwertsatz Seien (X_1, X_2, &hellip;, X_n) unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert (E(X_i) = \mu) und bekanter Varianz (Var(X_i)=\sigma^2).
+      Der Zentrale Grenzwertsatz der Statistik bei identischer Verteilung.
+Zentraler Grenzwertsatz
+Seien (X_1, X_2, &hellip;, X_n) unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert (E(X_i) = \mu) und bekanter Varianz (Var(X_i)=\sigma^2).
 Für die Summe (S<em>n = \sum</em>{i=1}^n X_i) ist dann der Erwartungswert (E(S_n)= n \cdot \mu) und die Varianz (Var(S_n)= n \cdot \sigma^2).
 Dann gilt für die standardisierte Zufallsvariable
-[ \begin{align<em>} Z<em>n &amp;= \frac{\left(\sum\limits</em>{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} \ &amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n}, \end{align</em>} ]
+[
+\begin{align<em>}
+Z<em>n &amp;= \frac{\left(\sum\limits</em>{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}}
+= \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} <br />
+&amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n},
+\end{align</em>}
+]
       
     </div>
   </div>

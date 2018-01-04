@@ -11,6 +11,45 @@
     <atom:link href="/nab/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Prognose-, Konfidenz- und Fiduzialintervalle</title>
+      <link>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
+      <description>&lt;section id=&#34;konfidenzintervalle&#34; class=&#34;level2&#34;&gt;
+&lt;h2&gt;Konfidenzintervalle&lt;/h2&gt;
+&lt;section id=&#34;definition-von-konfidenzintervallen&#34; class=&#34;level3&#34;&gt;
+&lt;h3&gt;Definition von Konfidenzintervallen&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Für unabhängig identisch verteilte Zufallsvariablen &lt;span class=&#34;math inline&#34;&gt;\(X_1,\dotsc, X_n\)&lt;/span&gt; mit unbekanntem reellen Verteilungsparameter &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; kann unter bestimmten Umständen zwei Stichprobenfunktionen &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; angeben, so dass&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[P(U &amp;lt; \vartheta &amp;lt; V) \geq \gamma\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;gilt, mit &lt;span class=&#34;math inline&#34;&gt;\(\gamma \in (0,1)\)&lt;/span&gt;. Dann heißt das (stochastische) Intervall &lt;span class=&#34;math inline&#34;&gt;\([U, V]\)&lt;/span&gt; ein &lt;strong&gt;Konfidenzintervall&lt;/strong&gt; für &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; zum Konfidenzniveau &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; (auch: ein &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt;-Konfidenzintervall&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;Die Realisationen &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; von &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; bzw. &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; bilden das &lt;strong&gt;Schätzintervall&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\([u, v]\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Da die Realisationen &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; der Grenzen &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; keine Zufallsvariablen sind und &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; ein fixer Wert ist, kann man &lt;strong&gt;nicht&lt;/strong&gt; sagen, dass das Schätzintervall &lt;span class=&#34;math inline&#34;&gt;\([u, v]\)&lt;/span&gt; mit einer Wahrscheinlichkeit von &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; den unbekannten Parameter &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; enthält. Es bedeutet vielmehr, dass im Mittel ein Anteil von &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; aller so berechneten Schätzintervalle den unbekannten Parameter überdecken. Dem nicht widersprechend, kann –- wie bereits von Ronald Fisher festgestellt – in manchen Modellen die Qualität des Schätzintervalls von den Daten abhängen und sogar zu Antworten führen, die mit Blick auf die Daten unsinnig sind. Probleme mit solcher Post-Data-Inkohärenz führen zur Theorie der bedingten Inferenz. Ein weiteres Problem sind die Stichprobenfunktionen U und V an sich. Um diese zu finden werden oft Vereinfachungen getroffen, dadurch können systematische Fehler entstehen, oft es gibt mehrere Konfidenzintervalle (bei der Binomialverteilung z.B. nach Clopper-Pearson, Agresti-Coull oder Wald), welche oft unterschiedliche Werte liefern.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id=&#34;ein-beispiel&#34; class=&#34;level3&#34;&gt;
+&lt;h3&gt;Ein Beispiel&lt;/h3&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id=&#34;prognoseintervalle&#34; class=&#34;level2&#34;&gt;
+&lt;h2&gt;Prognoseintervalle&lt;/h2&gt;
+&lt;/section&gt;
+&lt;section id=&#34;fuduzialintervalle&#34; class=&#34;level2&#34;&gt;
+&lt;h2&gt;Fuduzialintervalle&lt;/h2&gt;
+&lt;p&gt;Quellen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Logik in der Statistik; Andrea Wiencierz, 7.10.2007 Link: &lt;a href=&#34;https://static.aminer.org/pdf/PDF/000/230/772/induktive_inferenz_und_mehrwertige_logik.pdf&#34; class=&#34;uri&#34;&gt;https://static.aminer.org/pdf/PDF/000/230/772/induktive_inferenz_und_mehrwertige_logik.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;vgl: &lt;a href=&#34;https://de.wikipedia.org/wiki/Konfidenzintervall&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Konfidenzintervall&lt;/a&gt;&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Ein paar interessante Links</title>
       <link>/nab/post/ein-paar-interessante-links/</link>
       <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>

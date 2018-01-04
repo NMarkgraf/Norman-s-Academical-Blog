@@ -1,0 +1,106 @@
+---
+title: Prognose-, Konfidenz- und Fiduzialintervalle
+author: Norman Markgraf
+date: '2018-01-04'
+slug: prognose-konfidenz-und-fiduzialintervalle
+categories:
+  - Statistik
+tags:
+  - Statistik
+  - Lehre
+---
+```{r include=FALSE}
+library(mosaic)
+```
+
+***WORK IN PROGRESS**
+Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
+
+## Konfidenzintervalle
+
+### Definition von Konfidenzintervallen^[vgl: https://de.wikipedia.org/wiki/Konfidenzintervall]
+
+Für unabhängig identisch verteilte Zufallsvariablen $X_1,\dotsc, X_n$ mit unbekanntem reellen Verteilungsparameter $\vartheta$ kann unter bestimmten Umständen zwei Stichprobenfunktionen $U$ und $V$ angeben, so dass
+
+$$P(U < \vartheta < V) \geq \gamma$$
+
+gilt, mit $\gamma \in (0,1)$.
+Dann heißt das (stochastische) Intervall $[U, V]$ ein **Konfidenzintervall** für $\vartheta$ zum Konfidenzniveau $\gamma$ (auch: ein **$\gamma$-Konfidenzintervall**). 
+
+Die Realisationen $u$ und $v$ von $U$ bzw. $V$ bilden das **Schätzintervall** $[u, v]$.
+
+Da die Realisationen $u$ und $v$ der Grenzen $U$ und $V$ keine Zufallsvariablen sind und $\vartheta$ ein fixer Wert ist, kann man **nicht** sagen, dass das Schätzintervall $[u, v]$ mit einer Wahrscheinlichkeit von $\gamma$ den unbekannten Parameter $\vartheta$ enthält. Es bedeutet vielmehr, dass im Mittel ein Anteil von $\gamma$ aller so berechneten Schätzintervalle den unbekannten Parameter überdecken. Dem nicht widersprechend, kann –- wie bereits von Ronald Fisher festgestellt -- in manchen Modellen die Qualität des Schätzintervalls von den Daten abhängen und sogar zu Antworten führen, die mit Blick auf die Daten unsinnig sind. Probleme mit solcher Post-Data-Inkohärenz führen zur Theorie der bedingten Inferenz. Ein weiteres Problem sind die Stichprobenfunktionen U und V an sich. Um diese zu finden werden oft Vereinfachungen getroffen, dadurch können systematische Fehler entstehen, oft es gibt mehrere Konfidenzintervalle (bei der Binomialverteilung z.B. nach Clopper-Pearson, Agresti-Coull oder Wald), welche oft unterschiedliche Werte liefern.
+
+### Ein Beispiel
+
+```{r echo=FALSE}
+library(mosaic)
+set.seed(2009)
+N <- 40
+NN <- 1000
+mu_sec <- 0
+sigma_sec <- 2
+pop <- rnorm(NN, mean=mu_sec, sd=sigma_sec)
+mu <- mean(pop)
+sigma <- (NN-1)/NN * sd(pop)
+u <- mean(x)-qnorm(0.975)*sigma/sqrt(N)
+v <- mean(x)+qnorm(0.975)*sigma/sqrt(N)
+```
+
+Wir nehmen zunächst als Population $N=$ `r NN` normalverteilte Zufallszahlen mit dem Mittelwert $\mu$= `r mu` und der Standardabweichung $\sigma=$ `r sigma`.
+
+Dazu das Histogramm der Population:
+```{r}
+histogram(pop, xlab="Population")
+```
+
+Aus dieser Population ziehen wir eine Stichprobe $x$ vom Umfang $n=$`r N` und erhalten die folgenden statistischen Daten:
+
+```{r}
+x <- sample(pop, N)
+favstats(x)
+```
+
+Wir wollen nun den wahren Mittelwert $\vartheta=\mu$ mit Hilfe der Stichprobe $x$ schätzen. So ist es ja in der Realität auch, denn normalerweise haben wir die Daten über die Population nicht. 
+
+Die Schätzfunktion für den Mittelwert lautet nun
+$$\bar{X} = \frac1n \sum_{i=1}^n X_i$$,
+und damit die konkrete Punktschätzung
+$$\hat{\mu}=\bar{x}= \sum_{i=1}^n x_i$$
+liefert den Wert $\hat{\mu}=$ `r mean(x)`.
+
+In unserem Beispiel unterscheiden sich die beiden Werte um $\mu - \hat{\mu}=$ `r mean(pop) - mean(x)`.
+
+Ein 95%-Konfidenzintervall nimmt nun den geschätzen Wert $\hat{\mu}$ als Grundlage und gibt liefert ein Intervall mit der Eigentschaft, ausgehend von den konkreten Stichproben in 95% der Fälle den tatsächlichen Wert $\mu$ zu umfassen. Es ist also 
+$$\gamma = 0.95 = 1 - \alpha = 1 - 0.05, \quad \alpha = 0.05$$
+
+
+Dazu werden die beiden Stichprobenfunktionen 
+
+$$U=U(X_1, \dots, X_n)=\bar{X}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}}$$ 
+
+und 
+
+$$V=V(X_1, \dots, X_n)=\bar{X}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}}$$
+
+mit der *bekannten* Standardabweichung $\sigma$ der *Population* und der Stichprobengröße $n$ nun mit der konkreten Realisation $x_1, \dots, x_n$ der Stichprobe gefüttert und wir erhalten damit
+
+$$u = \bar{x}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = `r mean(x)`-z_{\left(0.975\right)}\cdot\frac{`r sigma`}{\sqrt{`r N`}}=`r u`$$
+und
+
+$$v = \bar{x}+z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = `r mean(x)`+z_{\left(0.975\right)}\cdot\frac{`r sigma`}{\sqrt{`r N`}}=`r v`.$$
+
+Die Realisation unseres 95%-Konfidenzintervall lautet nun also:
+
+$$[`r u`; `r v`]$$
+
+
+
+## Prognoseintervalle
+
+## Fuduzialintervalle
+
+
+Quellen:
+
+- Logik in der Statistik; Andrea Wiencierz, 7.10.2007 Link: https://static.aminer.org/pdf/PDF/000/230/772/induktive_inferenz_und_mehrwertige_logik.pdf

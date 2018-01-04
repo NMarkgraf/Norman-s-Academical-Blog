@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.31.1" />
+  <meta name="generator" content="Hugo 0.32.2" />
   <meta name="author" content="Norman Markgraf">
   <meta name="description" content="Diplom-Mathematiker">
 
@@ -229,10 +229,14 @@
     <h2><a href="/nab/post/quartile-quantile-perzentile-etc/">Quartile, Quantile, Perzentile etc.</a></h2>
     <div class="article-style">
       
-      “Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.
-Quantile Definitorische Antwort Für eine gegebene reelle Zufallsvariable (X) heißt eine reelle Zahl (x_p) ein p-Quantil (von (X)), falls gilt:
-[P(X \leq x_p) \leq p \quad \text{ und }\quad P(x_p \leq X) \geq 1-p.]
- Was bedeutet das denn nun konkret?
+      <p>“Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.
+Quantile
+Definitorische Antwort
+Für eine gegebene reelle Zufallsvariable (X) heißt eine reelle Zahl (x_p) ein p-Quantil (von (X)), falls gilt:
+[P(X \leq x_p) \leq p \quad \text{ und }\quad P(x_p \leq X) \geq 1-p.]</p>
+
+<p>Was bedeutet das denn nun konkret?</p>
+
       
     </div>
   </div>
@@ -241,10 +245,18 @@ Quantile Definitorische Antwort Für eine gegebene reelle Zufallsvariable (X) he
     <h2><a href="/nab/post/der-zentrale-grenzwertsatz/">Der Zentrale Grenzwertsatz</a></h2>
     <div class="article-style">
       
-      Der Zentrale Grenzwertsatz der Statistik bei identischer Verteilung. Zentraler Grenzwertsatz Seien (X_1, X_2, &hellip;, X_n) unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert (E(X_i) = \mu) und bekanter Varianz (Var(X_i)=\sigma^2).
+      Der Zentrale Grenzwertsatz der Statistik bei identischer Verteilung.
+Zentraler Grenzwertsatz
+Seien (X_1, X_2, &hellip;, X_n) unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert (E(X_i) = \mu) und bekanter Varianz (Var(X_i)=\sigma^2).
 Für die Summe (S<em>n = \sum</em>{i=1}^n X_i) ist dann der Erwartungswert (E(S_n)= n \cdot \mu) und die Varianz (Var(S_n)= n \cdot \sigma^2).
 Dann gilt für die standardisierte Zufallsvariable
-[ \begin{align<em>} Z<em>n &amp;= \frac{\left(\sum\limits</em>{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} \ &amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n}, \end{align</em>} ]
+[
+\begin{align<em>}
+Z<em>n &amp;= \frac{\left(\sum\limits</em>{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}}
+= \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} <br />
+&amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n},
+\end{align</em>}
+]
       
     </div>
   </div>
