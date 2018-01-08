@@ -15,7 +15,6 @@ tags:
 library(mosaic)
 download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
 tips <- read.csv2("tips.csv")
-
 ```
 
 Der *tipping* Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (*tip*) und Rechnungsbetrag (*total_bill*) steht dabei im Vordergrund einer lineare Regressionsanalyse. 
@@ -23,16 +22,9 @@ So auch hier. Wir wollen die einzelnen Angaben von **R** dabei in den Fokus rüc
 
 Zunächt laden wir dazu die **tipping** Daten mittels
 
-<<<<<<< HEAD
-```{r load-tips-view, eval=FALSE}
+
+```{r load-tips-view, eval=FALSE, include=FALSE }
 library(mosaic)
-=======
-```{r load-tips, include=FALSE }
-download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
-tips <- read.csv2("tips.csv")
-```
-```{r load-tips-view, eval=FALSE}
->>>>>>> 6364bcd2548ce9cf30ee0015a1f75e055ab54f8a
 download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
 tips <- read.csv2("tips.csv")
 ```

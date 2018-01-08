@@ -15,9 +15,6 @@ tags:
 
 <p>Der <em>tipping</em> Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (<em>tip</em>) und Rechnungsbetrag (<em>total_bill</em>) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von <strong>R</strong> dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von <strong>R</strong> eigentlich genau sehen, woher es kommt und wie man es interprätieren kann.</p>
 <p>Zunächt laden wir dazu die <strong>tipping</strong> Daten mittels</p>
-<pre class="r"><code>library(mosaic)
-download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.csv&quot;)
-tips &lt;- read.csv2(&quot;tips.csv&quot;)</code></pre>
 <p>in den Arbeitsspeicher.</p>
 <p>Eine lineares Modell wird schnell mit</p>
 <pre class="r"><code>linMod &lt;- lm(tip ~ total_bill, data = tips)</code></pre>
