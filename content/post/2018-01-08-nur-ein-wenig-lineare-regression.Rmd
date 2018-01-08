@@ -11,9 +11,9 @@ tags:
   - Statistik
 ---
 
-```{r setup, eval=TRUE, include=FALSE, warning=FALSE, error=FALSE}
-library(mosaic)
-download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
+```{r setup, include=FALSE, warning=FALSE, error=FALSE}
+library(mosaic, warn.conflicts = FALSE, quietly = TRUE, verbose = FALSE)
+#download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
 tips <- read.csv2("tips.csv")
 ```
 
@@ -23,7 +23,7 @@ So auch hier. Wir wollen die einzelnen Angaben von **R** dabei in den Fokus rüc
 Zunächt laden wir dazu die **tipping** Daten mittels
 
 
-```{r load-tips-view, eval=FALSE, include=FALSE }
+```{r load-tips-view, eval=FALSE, include=FALSE}
 library(mosaic)
 download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
 tips <- read.csv2("tips.csv")
