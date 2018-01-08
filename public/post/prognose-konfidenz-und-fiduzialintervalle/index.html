@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.32.2" />
+  <meta name="generator" content="Hugo 0.32.3" />
   <meta name="author" content="Norman Markgraf">
   <meta name="description" content="Diplom-Mathematiker">
 
@@ -237,7 +237,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 
+    3 
   </span>
   
 
@@ -309,7 +309,8 @@
 
 
       <div class="article-style" itemprop="articleBody">
-        <section id="konfidenzintervalle" class="level2">
+        <p>*<strong>WORK IN PROGRESS</strong> Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!</p>
+<section id="konfidenzintervalle" class="level2">
 <h2>Konfidenzintervalle</h2>
 <section id="definition-von-konfidenzintervallen" class="level3">
 <h3>Definition von Konfidenzintervallen<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></h3>
@@ -321,6 +322,36 @@
 </section>
 <section id="ein-beispiel" class="level3">
 <h3>Ein Beispiel</h3>
+<p>Wir nehmen zunächst als Population <span class="math inline">\(N=1000\)</span> normalverteilte Zufallszahlen mit dem Mittelwert <span class="math inline">\(\mu= 0\)</span> und der Standardabweichung <span class="math inline">\(\sigma=2.0088\)</span>.</p>
+<p>Dazu das Histogramm der Population:</p>
+<pre class="r"><code>histogram(pop, xlab=&quot;Population&quot;)</code></pre>
+<p><img src="/nab/post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Aus dieser Population ziehen wir eine Stichprobe <span class="math inline">\(x\)</span> vom Umfang $n=$40 und erhalten die folgenden statistischen Daten:</p>
+<pre class="r"><code>favstats(x)</code></pre>
+<pre><code>##     min     Q1  median     Q3   max    mean    sd  n missing
+##  -4.997 -1.052 -0.3928 0.8211 3.295 -0.3423 1.878 40       0</code></pre>
+<p>Wir wollen nun den wahren Mittelwert <span class="math inline">\(\vartheta=\mu\)</span> mit Hilfe der Stichprobe <span class="math inline">\(x\)</span> schätzen. So ist es ja in der Realität auch, denn normalerweise haben wir die Daten über die Population nicht.</p>
+<p>Die Schätzfunktion für den Mittelwert lautet nun <span class="math display">\[\bar{X} = \frac1n \sum_{i=1}^n X_i\]</span>, und damit die konkrete Punktschätzung <span class="math display">\[\hat{\mu}=\bar{x}= \sum_{i=1}^n x_i\]</span> liefert den Wert <span class="math inline">\(\hat{\mu}=\)</span> -0.3423.</p>
+<p>In unserem Beispiel unterscheiden sich die beiden Werte um <span class="math inline">\(\mu - \hat{\mu}=\)</span> 0.3423.</p>
+<p>Ein 95%-Konfidenzintervall nimmt nun den geschätzen Wert <span class="math inline">\(\hat{\mu}\)</span> als Grundlage und gibt liefert ein Intervall mit der Eigentschaft, ausgehend von den konkreten Stichproben in 95% der Fälle den tatsächlichen Wert <span class="math inline">\(\mu\)</span> zu umfassen. Es ist also <span class="math display">\[\gamma = 0.95 = 1 - \alpha = 1 - 0.05, \quad \alpha = 0.05\]</span></p>
+<p>Dazu werden die beiden Stichprobenfunktionen</p>
+<p><span class="math display">\[U=U(X_1, \dots, X_n)=\bar{X}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}}\]</span></p>
+<p>und</p>
+<p><span class="math display">\[V=V(X_1, \dots, X_n)=\bar{X}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}}\]</span></p>
+<p>mit der <em>bekannten</em> Standardabweichung <span class="math inline">\(\sigma\)</span> der <em>Population</em> und der Stichprobengröße <span class="math inline">\(n\)</span> nun mit der konkreten Realisation <span class="math inline">\(x_1, \dots, x_n\)</span> der Stichprobe gefüttert und wir erhalten damit</p>
+<p><span class="math display">\[u = \bar{x}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = -0.3423-z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=-0.9648\]</span> und</p>
+<p><span class="math display">\[v = \bar{x}+z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = -0.3423+z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=0.2803.\]</span></p>
+<p>Die Realisation unseres 95%-Konfidenzintervall lautet nun also:</p>
+<p><span class="math display">\[[-0.9648; 0.2803]\]</span></p>
+<p><strong>Was hat es nun mit den ominösen 95% auf sich?</strong></p>
+<p>Das Konfidenzintervall ist ein stochastisches Intervall, d.h. die hier angegebenen Werte für <span class="math inline">\(u\)</span> und <span class="math inline">\(v\)</span> sind abhängig von der Realisation <span class="math inline">\(x_1, \dots, x_n\)</span>, also der konkreten Stichprobe.</p>
+<p>Nehmen wir nun also einmal eine neue Stichprobe und berechnen erneut die Realisation unseres 95%-Konfidenzintervalls, so erhalten wir:</p>
+<p><span class="math display">\[[-0.8459; 0.3992]\]</span></p>
+<pre><code>## Interval coverage:</code></pre>
+<pre><code>##     cover
+## n     Low  Yes High
+##   40 0.03 0.95 0.02</code></pre>
+<p><img src="/nab/post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </section>
 </section>
 <section id="prognoseintervalle" class="level2">
@@ -366,6 +397,10 @@
   <div class="hr-light"></div>
   <h3></h3>
   <ul>
+    
+    <li><a href="/nab/post/konfidenzintervalle/">Konfidenzintervalle</a></li>
+    
+    <li><a href="/nab/post/zentrales-schwankungsintervall/">Zentrales Schwankungsintervall</a></li>
     
     <li><a href="/nab/post/quartile-quantile-perzentile-etc/">Quartile, Quantile, Perzentile etc.</a></li>
     

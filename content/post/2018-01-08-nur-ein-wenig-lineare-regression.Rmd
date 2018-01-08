@@ -1,0 +1,184 @@
+---
+title: Nur ein wenig lineare Regression
+author: Norman Markgraf
+date: '2018-01-08'
+slug: nur-ein-wenig-lineare-regression
+categories:
+  - Statistik
+tags:
+  - Lehre
+  - R
+  - Statistik
+---
+
+```{r setup, eval=TRUE, include=FALSE, warning=FALSE, error=FALSE}
+library(mosaic)
+download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
+tips <- read.csv2("tips.csv")
+```
+
+Der *tipping* Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (*tip*) und Rechnungsbetrag (*total_bill*) steht dabei im Vordergrund einer lineare Regressionsanalyse. 
+So auch hier. Wir wollen die einzelnen Angaben von **R** dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von **R** eigentlich genau sehen, woher es kommt und wie man es interprätieren kann.
+
+Zunächt laden wir dazu die **tipping** Daten mittels
+
+```{r load-tips-view, eval=FALSE}
+library(mosaic)
+download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
+tips <- read.csv2("tips.csv")
+```
+
+in den Arbeitsspeicher.
+
+Eine lineares Modell wird schnell mit
+```{r}
+linMod <- lm(tip ~ total_bill, data = tips)
+```
+
+erstellt. Betrachten wir nun die Zusammenfassung:
+
+```{r}
+summary(linMod)
+```
+
+
+Die zentrale Frage bei einer linearen Regression ist, finden wir einen linearen Zusammenhang in unserer Stichprobe, den wir auf die Population (als die Grundgesamtheit) übertragen können. 
+
+Die Spalte **Estimate** im Abschnitt **Coefficients** liefert uns in unser Stichprobe einen möglichen linearen Zusammenhang gemäß
+
+$$\hat{y}_{\text{tip}} = \hat{\beta}_{\text{0}} + \hat{\beta}_{\text{total_bill}} \cdot x_{\text{total_bill}},$$
+
+mit den *Regressionskoeffizienten* $\hat{\beta}_0=`r coef(linMod)["(Intercept)"]`$ und $\hat{\beta}_{\text{total_bill}}=`r coef(linMod)["total_bill"]`$.
+
+Graphisch ergibt sich damit das Modell wie folgt:
+
+```{r}
+plotModel(linMod)
+```
+
+Was hat es nun mit dem y-Achenabschnitt $\hat{\beta}_0$ aufsich?
+
+Ist es etwa eine Art *Grundtrinkgeld*, mit dem der Kellern rechnen kann, auch wenn der Kunde gar nichts bestellt?
+
+Nun ja, es so etwas in der Art, aber eben ein rein fiktiver Wert, der durch die Konstruktion der Parameter entsteht. 
+Eine (affin-)lineare Gerade geht nun einmal irgendwann durch die y-Achse (wenn sie nicht parallel dazu ist) und es kann passieren, dass eine sinnvolle Interpretation nicht so ohne weiteres möglich ist.
+
+Wir können aber dieses *Grundtrinkgeld* herraus nehmen und den y-Achenabschnitt auf Null setzen. Dazu ziehen wir $\hat{\beta}_0$ einfach von alle Trinkgeldern ab. Wir erhalten quasi nur noch den *Trinkgeldzuwach*.
+
+```{r}
+beta_0 <- coef(linMod)["(Intercept)"]  # Grundtrinkgeld
+tips$delta_tip <- tips$tip - beta_0    # wird abgezogen
+```
+
+Vergleichen wir das alte lineare Modell mit dem neuen Modell (*linModDelta*):
+```{r}
+linModDelta <- lm(delta_tip ~ total_bill, data = tips)
+summary(linModDelta)
+```
+
+In diesem Modell ist der Wert für den y-Achenabschnitt numerisch gleich 0. -- Ja, da mag zwar $`r coef(linModDelta)["(Intercept)"] `$ stehen, jedoch sind so kleine Werte der jedem Rechner inne wohnenden Ungenauigkeit in der Gleitkomma-Arithmetik geschuldet und wind faktisch gleich 0.
+
+Der Wert für die Steigung lautet weiterhin $`r coef(linModDelta)["total_bill"]`$.
+Das war auch zu erwarten, denn wir haben unsere Regressionsgerade eigentlich nur um $\hat{\beta}_0$ nach unten verschoben. (Der Fachmann spricht von einer Translation (Parallelverschiebung)^[vgl: https://de.wikipedia.org/wiki/Parallelverschiebung] um $-\hat{\beta}_0$.
+
+```{r}
+plotModel(linModDelta)
+```
+ 
+Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit Aussnahme der *[Intercept]* Zeile parktisch nichts geändert hat. Das ist kein Wunder, sondern Absicht!
+
+
+Die Regressionsgerade stellt für unsere Stichprobe die Gerade mit dem geringsten Fehler an den Datenpunkten dar. Mathematisch heißt das folgendes:
+
+An den $n=`r length(tips$total_bill)`$ Datenpunkten unserer Stichprobe $(x_i, y_i)=(tips\$total\_bill[i], tips\$tip[i])$ [für (i=1,\dots,n)$] sind die *Residuen*, also die *Fehlerterme*,
+$$
+ \hat{e}_i =\hat{y}_i - y_i = \left[\hat{\beta}_{\text{0}} + \hat{\beta}_{\text{total_bill}} \cdot x_i\right] - y_i
+$$
+
+durch die verwendete *Methode der kleinsten Quadrate*^[vgl: https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate] *quadratisch minimal*. Kurz:
+
+$$
+    \sum_{i=1}^n (\hat{e}_i)^2 \text{ ist minimal!}
+$$
+
+Wir können uns nun diese Fehlerterme auch graphisch Ansehen um die Varianz der Residuen zu sehen. Dazu siehen wir von allen Datenpunkt $y_i$ den geschätzen Wert $\hat{y}_i$ ab und erstellen ein neues lineares Modell
+
+```{r}
+beta_total_bill <- coef(linModDelta)["total_bill"]
+tips$error_tip <- (tips$tip - beta_0 - beta_total_bill * tips$total_bill)
+linModError <- lm(error_tip ~ total_bill, data = tips)
+summary(linModError)
+```
+
+```{r}
+plotModel(linModError)
+```
+
+Wir können die Graphik im wesendlichen auch einfacher über den Befehl
+```{r}
+xyplot(residuals(linMod) ~ fitted(linMod))
+```
+
+erhalten. 
+
+Betrachten wir kurz nur die Rediduen:
+
+```{r}
+favstats(~residuals(linMod))
+```
+
+
+Wir sehe, dass wir in der Zusammenfassung immer genau diese Werte unter dem Abschnitt *Residuals* gefunden haben. Minimum,  das 1. Quantil, der Median, das 3. Quantil und das Maximum stimmen überein. 
+
+Der erwartungstreue und unverzerrte Schätzer für den Standardfehler der Residuen, lautet
+
+$$
+\begin{align*}
+    SE_{\text{Residuen}} &= \sqrt{\frac{1}{n-2} \cdot \sum_{i=1}^n (\hat{e_i})^2} = \sqrt{\frac{n-1}{n-2} \cdot \frac{1}{n-1} \cdot \sum_{i=1}^n (\hat{e_i})^2} \\
+                         &= \sqrt{\frac{n-1}{n-2}} \cdot \sqrt{\frac{1}{n-1} \cdot \sum_{i=1}^n (\hat{e_i})^2} \\
+                         &= \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}}
+  \end{align*}
+$$
+
+
+Also finden wir den Wert *Residual standard error* aus der Zeile
+
+```
+Residual standard error: 1.022 on 242 degrees of freedom
+```
+
+in dem wir den in den *favstats* gefundenen Wert für die Standardabweichung entsprechen korrigieren:
+
+```{r echo=FALSE}
+tmp <- favstats(~residuals(linMod))
+obs_n <- tmp$n
+obs_sd <- tmp$sd
+```
+
+$$
+SE_{\text{Residuen}} = \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}} = \sqrt{\frac{`r obs_n-1`}{`r obs_n-2`}} \cdot `r obs_sd` = `r sqrt(243/242) * obs_sd`
+$$
+
+Der Median der Residuen ist nicht gleich Null, wie der Mittelwert. (Welcher auch hier als numerisch Null interpretiert werden muss!)
+Es könnte also eine linkssteile, rechtsschiefe Verteilung der Resiuden vorliegen. 
+Betrachten wir dazu das Histogramm:
+
+```{r}
+histogram( ~residuals(linMod), nint=19)
+```
+
+
+Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.
+
+Ein Shapiro-Wilk-Test^[vgl: https://de.wikipedia.org/wiki/Shapiro-Wilk-Test] hat als Nullhypothese $H_0$ die Annahme, dass die Daten normalverteilt sind!
+
+```{r}
+shapiro.test( residuals(linMod) )
+```
+
+Davon ist nach dem Ergebnis eben sowenig auszugehen, wie nach einem Blick auf das QQ-Normal-Diagram:
+
+```{r}
+qqnorm( residuals(linMod) )
+```
+
