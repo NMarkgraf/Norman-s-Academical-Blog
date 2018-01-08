@@ -111,7 +111,7 @@ v <- mean(x)+qnorm(0.975)*sigma/sqrt(N)
 
 $$[`r u`; `r v`]$$
 
-```{r}
+```{r echo=FALSE}
 set.seed(2009)
 myrdist <- function(n=40) {
     return(sample(pop, n))
