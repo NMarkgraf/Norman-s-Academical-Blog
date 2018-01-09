@@ -285,13 +285,20 @@ Der Wert
 erklärt sich nun daraus^[vgl: https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß], dass das Bestimmheitsmaß um so größer wird, je größer die Zahl der unabhöngigen Variablen wird. Und zwar *unabhöngig* davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. 
 Daher nutzt man besser das **korrigierte Bestimmtheitsmaß** (engl: *adjusted R-squared*) $\bar{R}^2$:
 $$
-    \bar{R}^2 = 1- (1-R^2) \cdot \frac{n-1}{n-p-1} = R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
+    \begin{align*}
+        \bar{R}^2 &= 1- (1-R^2) \cdot \frac{n-1}{n-p-1}\\ 
+                  &= R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
+    \end{align*}
 $$
 
 Wobei $p$ die Anzahl der unabhängigen Variablen im Modell darstellt. In unsereem Beispiel gilt daher:
 
 $$
-    \bar{R}^2 = 1 - (1-R^2)  \cdot \frac{n-1}{n-p-1} =  1 - (1- `r 1 - obs_sd^2 / var(tips$tip)`)  \cdot \frac{`r obs_n`-1}{`r obs_n`- 1- 1} = `r 1-(obs_sd^2 / var(tips$tip))*(obs_n-1)/(obs_n-1-1)`
+    \begin{align*}
+        \bar{R}^2 &= 1 - (1-R^2)  \cdot \frac{n-1}{n-p-1} \\
+                  &= 1 - (1- `r 1 - obs_sd^2 / var(tips$tip)`)  \cdot \frac{`r obs_n`-1}{`r obs_n`- 1- 1} \\
+                  &= `r 1-(obs_sd^2 / var(tips$tip))*(obs_n-1)/(obs_n-1-1)`
+    \end{align*}
 $$
 
 **Vorsicht:** Das *korrigierte Bestimmtheitsmaß* ist nicht mehr an das Intervall $[0; 1]$ gebunden! Es kann negative Werte annehmen, ist in der Regel kleiner als das (unkorrigierte) Bestimmtheitsmaß und erreicht die obere Grenze ($\bar{R}^2=1$) genau dann, wenn $R^2 = 1$ ist.
@@ -313,7 +320,9 @@ $$
 
 Die Teststatistik dieses Tests lautet
 $$
-F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)\end{aligned}}}.
+\begin{aligned}
+    F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)
+\end{aligned}.
 $$
 
 Die Teststatistik $\displaystyle (n-p-1)$ und $p$ Freiheitsgraden. 

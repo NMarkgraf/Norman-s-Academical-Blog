@@ -504,11 +504,18 @@ xyplot(
 <p>Der Wert</p>
 <pre><code>## ..., Adjusted R-squared:  0.4544</code></pre>
 <p>erklärt sich nun daraus<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, dass das Bestimmheitsmaß um so größer wird, je größer die Zahl der unabhöngigen Variablen wird. Und zwar <em>unabhöngig</em> davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. Daher nutzt man besser das <strong>korrigierte Bestimmtheitsmaß</strong> (engl: <em>adjusted R-squared</em>) <span class="math inline">\(\bar{R}^2\)</span>: <span class="math display">\[
-    \bar{R}^2 = 1- (1-R^2) \cdot \frac{n-1}{n-p-1} = R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
+    \begin{align*}
+        \bar{R}^2 &amp;= 1- (1-R^2) \cdot \frac{n-1}{n-p-1}\\ 
+                  &amp;= R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
+    \end{align*}
 \]</span></p>
 <p>Wobei <span class="math inline">\(p\)</span> die Anzahl der unabhängigen Variablen im Modell darstellt. In unsereem Beispiel gilt daher:</p>
 <p><span class="math display">\[
-    \bar{R}^2 = 1 - (1-R^2)  \cdot \frac{n-1}{n-p-1} =  1 - (1- 0.4566166)  \cdot \frac{244-1}{244- 1- 1} = 0.4543712
+    \begin{align*}
+        \bar{R}^2 &amp;= 1 - (1-R^2)  \cdot \frac{n-1}{n-p-1} \\
+                  &amp;= 1 - (1- 0.4566166)  \cdot \frac{244-1}{244- 1- 1} \\
+                  &amp;= 0.4543712
+    \end{align*}
 \]</span></p>
 <p><strong>Vorsicht:</strong> Das <em>korrigierte Bestimmtheitsmaß</em> ist nicht mehr an das Intervall <span class="math inline">\([0; 1]\)</span> gebunden! Es kann negative Werte annehmen, ist in der Regel kleiner als das (unkorrigierte) Bestimmtheitsmaß und erreicht die obere Grenze (<span class="math inline">\(\bar{R}^2=1\)</span>) genau dann, wenn <span class="math inline">\(R^2 = 1\)</span> ist.</p>
 <p>Bei der <strong>Gesamtsignifikanz des Modells</strong> (auch <strong>Overall-F-Test</strong> genannt) wird geprüft, ob mindestens eine Variable einen Erklärungsgehalt für das Modell liefert.</p>
@@ -519,7 +526,9 @@ xyplot(
     H_{1}:\beta _{j}\;\neq \;0\;\mathrm {f{\ddot {u}}r\;mindestens\;ein} \;j\in \{1,\ldots ,k\}\Rightarrow R^{2}\neq 0
 \]</span></p>
 <p>Die Teststatistik dieses Tests lautet <span class="math display">\[
-F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)\end{aligned}}}.
+\begin{aligned}
+    F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)
+\end{aligned}.
 \]</span></p>
 <p>Die Teststatistik <span class="math inline">\(\displaystyle (n-p-1)\)</span> und <span class="math inline">\(p\)</span> Freiheitsgraden. Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau <span class="math inline">\(\alpha\)</span>, so verwirft man die Nullhypothese <span class="math inline">\(H_{0}\)</span>. Das <span class="math inline">\(R^{2}\)</span> ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von <span class="math inline">\(y\)</span> bei. Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt. Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.</p>
 <p>In unserem Beispiel ist</p>
@@ -573,9 +582,9 @@ F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2
     
     <li><a href="/nab/post/prognose-konfidenz-und-fiduzialintervalle/">Prognose-, Konfidenz- und Fiduzialintervalle</a></li>
     
-    <li><a href="/nab/post/konfidenzintervalle/">Konfidenzintervalle</a></li>
-    
     <li><a href="/nab/post/zentrales-schwankungsintervall/">Zentrales Schwankungsintervall</a></li>
+    
+    <li><a href="/nab/post/konfidenzintervalle/">Konfidenzintervalle</a></li>
     
     <li><a href="/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/">10 Dinge die kein Talent benötigen!</a></li>
     

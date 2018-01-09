@@ -211,11 +211,18 @@ xyplot(
 &lt;p&gt;Der Wert&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## ..., Adjusted R-squared:  0.4544&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;erklärt sich nun daraus&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;, dass das Bestimmheitsmaß um so größer wird, je größer die Zahl der unabhöngigen Variablen wird. Und zwar &lt;em&gt;unabhöngig&lt;/em&gt; davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. Daher nutzt man besser das &lt;strong&gt;korrigierte Bestimmtheitsmaß&lt;/strong&gt; (engl: &lt;em&gt;adjusted R-squared&lt;/em&gt;) &lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^2\)&lt;/span&gt;: &lt;span class=&#34;math display&#34;&gt;\[
-    \bar{R}^2 = 1- (1-R^2) \cdot \frac{n-1}{n-p-1} = R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
+    \begin{align*}
+        \bar{R}^2 &amp;amp;= 1- (1-R^2) \cdot \frac{n-1}{n-p-1}\\ 
+                  &amp;amp;= R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
+    \end{align*}
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Wobei &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; die Anzahl der unabhängigen Variablen im Modell darstellt. In unsereem Beispiel gilt daher:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    \bar{R}^2 = 1 - (1-R^2)  \cdot \frac{n-1}{n-p-1} =  1 - (1- 0.4566166)  \cdot \frac{244-1}{244- 1- 1} = 0.4543712
+    \begin{align*}
+        \bar{R}^2 &amp;amp;= 1 - (1-R^2)  \cdot \frac{n-1}{n-p-1} \\
+                  &amp;amp;= 1 - (1- 0.4566166)  \cdot \frac{244-1}{244- 1- 1} \\
+                  &amp;amp;= 0.4543712
+    \end{align*}
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Vorsicht:&lt;/strong&gt; Das &lt;em&gt;korrigierte Bestimmtheitsmaß&lt;/em&gt; ist nicht mehr an das Intervall &lt;span class=&#34;math inline&#34;&gt;\([0; 1]\)&lt;/span&gt; gebunden! Es kann negative Werte annehmen, ist in der Regel kleiner als das (unkorrigierte) Bestimmtheitsmaß und erreicht die obere Grenze (&lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^2=1\)&lt;/span&gt;) genau dann, wenn &lt;span class=&#34;math inline&#34;&gt;\(R^2 = 1\)&lt;/span&gt; ist.&lt;/p&gt;
 &lt;p&gt;Bei der &lt;strong&gt;Gesamtsignifikanz des Modells&lt;/strong&gt; (auch &lt;strong&gt;Overall-F-Test&lt;/strong&gt; genannt) wird geprüft, ob mindestens eine Variable einen Erklärungsgehalt für das Modell liefert.&lt;/p&gt;
@@ -226,7 +233,9 @@ xyplot(
     H_{1}:\beta _{j}\;\neq \;0\;\mathrm {f{\ddot {u}}r\;mindestens\;ein} \;j\in \{1,\ldots ,k\}\Rightarrow R^{2}\neq 0
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Die Teststatistik dieses Tests lautet &lt;span class=&#34;math display&#34;&gt;\[
-F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)\end{aligned}}}.
+\begin{aligned}
+    F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)
+\end{aligned}.
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Die Teststatistik &lt;span class=&#34;math inline&#34;&gt;\(\displaystyle (n-p-1)\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; Freiheitsgraden. Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;, so verwirft man die Nullhypothese &lt;span class=&#34;math inline&#34;&gt;\(H_{0}\)&lt;/span&gt;. Das &lt;span class=&#34;math inline&#34;&gt;\(R^{2}\)&lt;/span&gt; ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; bei. Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt. Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.&lt;/p&gt;
 &lt;p&gt;In unserem Beispiel ist&lt;/p&gt;
