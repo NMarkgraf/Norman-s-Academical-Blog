@@ -225,11 +225,12 @@ xyplot(
     H_{1}:\beta _{j}\;\neq \;0\;\mathrm {f{\ddot {u}}r\;mindestens\;ein} \;j\in \{1,\ldots ,k\}\Rightarrow R^{2}\neq 0
 \]</span></p>
 <p>Die Teststatistik dieses Tests lautet <span class="math display">\[
-F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}}{\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)\end{aligned}}}.
+F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)\end{aligned}}}.
 \]</span></p>
 <p>Die Teststatistik <span class="math inline">\(\displaystyle (n-p-1)\)</span> und <span class="math inline">\(p\)</span> Freiheitsgraden. Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau <span class="math inline">\(\alpha\)</span>, so verwirft man die Nullhypothese <span class="math inline">\(H_{0}\)</span>. Das <span class="math inline">\(R^{2}\)</span> ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von <span class="math inline">\(y\)</span> bei. Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt. Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.</p>
-<p>In unserem Beispiel is <span class="math display">\[
-    {\frac {R^{2}}{1-R^{2}}}{\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
+<p>In unserem Beispiel ist</p>
+<p><span class="math display">\[
+    {\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
 \]</span></p>
 <p>der Wert in der Zeile</p>
 <pre><code>F-statistic: 203.4 on 1 and 242 DF</code></pre>

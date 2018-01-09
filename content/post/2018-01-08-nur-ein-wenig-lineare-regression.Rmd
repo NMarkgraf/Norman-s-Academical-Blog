@@ -313,7 +313,7 @@ $$
 
 Die Teststatistik dieses Tests lautet
 $$
-F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}}{\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)\end{aligned}}}.
+F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)\end{aligned}}}.
 $$
 
 Die Teststatistik $\displaystyle (n-p-1)$ und $p$ Freiheitsgraden. 
@@ -324,9 +324,10 @@ Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hoh
 r.sq <- summary(linMod)$r.squared
 ```
 
-In unserem Beispiel is
+In unserem Beispiel ist
+
 $$
-    {\frac {R^{2}}{1-R^{2}}}{\frac {n-p-1}{p}} = \frac{`r r.sq`}{1-`r r.sq`} \cdot \frac{`r obs_n`-1-1}{1} = `r r.sq/(1-r.sq)*(obs_n-1-1)/1`
+    {\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{`r r.sq`}{1-`r r.sq`} \cdot \frac{`r obs_n`-1-1}{1} = `r r.sq/(1-r.sq)*(obs_n-1-1)/1`
 $$
 
 der Wert in der Zeile
