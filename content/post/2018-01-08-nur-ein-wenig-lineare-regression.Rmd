@@ -11,15 +11,15 @@ tags:
   - Statistik
 ---
 
+Der *tipping* Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (*tip*) und Rechnungsbetrag (*total_bill*) steht dabei im Vordergrund einer lineare Regressionsanalyse. 
+So auch hier. Wir wollen die einzelnen Angaben von **R** dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von **R** eigentlich genau sehen, woher es kommt und wie man es interprätieren kann.
+
 ```{r setup, include=FALSE}
 #, warning=FALSE, error=FALSE}
 library(mosaic, warn.conflicts = FALSE, quietly = TRUE, verbose = FALSE)
 #download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
 tips <- read.csv2("tips.csv")
 ```
-
-Der *tipping* Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (*tip*) und Rechnungsbetrag (*total_bill*) steht dabei im Vordergrund einer lineare Regressionsanalyse. 
-So auch hier. Wir wollen die einzelnen Angaben von **R** dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von **R** eigentlich genau sehen, woher es kommt und wie man es interprätieren kann.
 
 Zunächt laden wir dazu die **tipping** Daten mittels
 

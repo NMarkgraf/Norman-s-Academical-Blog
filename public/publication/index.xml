@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Normans Akademischer Blog</title>
-    <link>/nab/publication/</link>
+    <link>http://sefiroth.net/nab/publication/</link>
     <description>Recent content in Publications on Normans Akademischer Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
