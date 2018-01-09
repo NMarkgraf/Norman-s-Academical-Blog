@@ -237,7 +237,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    6 
+    10 
   </span>
   
 
@@ -433,7 +433,7 @@ SE_{\text{Residuen}} = \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}} = \sqrt{
 <pre class="r"><code>histogram( ~residuals(linMod), nint = 19)</code></pre>
 <p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.</p>
-<p>Ein Shapiro-Wilk-Test<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> hat als Nullhypothese <span class="math inline">\(H_0\)</span> die Annahme, dass die Daten normalverteilt sind!</p>
+<p>Ein Shapiro-Wilk-Test<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> hat als Nullhypothese die Annahme, dass die Daten normalverteilt sind!</p>
 <pre class="r"><code>shapiro.test( residuals(linMod) )</code></pre>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
@@ -443,12 +443,101 @@ SE_{\text{Residuen}} = \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}} = \sqrt{
 <p>Davon ist nach dem Ergebnis eben sowenig auszugehen, wie nach einem Blick auf das QQ-Normal-Diagram:</p>
 <pre class="r"><code>qqnorm( residuals(linMod) )</code></pre>
 <p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Ein K.O.-Kriterium für gute Prognosen.</p>
+<p>Wie gut aber beschreibt unsere Regressionsgerade die Daten?</p>
+<p>Als Maß dafür können wir das Bestimmtheitsmaß nehmen.</p>
+<p>Ein kurzer Blick auf die Situation, der Mittelwert der Trinkgelder ist <span class="math display">\[
+    \bar{y} =  \frac{1}{n} \sum_{i=1}^n y_i = 2.9982787.
+\]</span></p>
+<p>Wir erhalten so folgendes Diagramm:</p>
+<pre class="r"><code>library(lattice)
+mypanel &lt;- function(x, y) {
+    panel.xyplot(x, y)
+    panel.abline(h = mean(y), lwd=2, lty=2, col=&quot;darkgreen&quot;)
+    panel.lmline(x, y, col=&quot;red&quot;, lwd=1, lty=2)
+}
+xyplot(
+    tip ~ total_bill, data=tips, 
+    panel = mypanel,
+    main  = &quot;Streudiagramm der Trinkgelder&quot;,
+    sub   = &quot;Grün der Mittelwert, rot die Regressionsgerade&quot;,
+    ylab  = &quot;Trinkgeld&quot;,
+    xlab  = &quot;Rechnungsbetrag&quot;
+     )</code></pre>
+<p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>Die Varianz <span class="math inline">\(s^2_{y_i}=1.9144546\)</span> beschreibt die mittlere quadratische Abweichung der Datenpunkte <span class="math inline">\(y_i\)</span> vom Mittelwert <span class="math inline">\(\bar{y}\)</span>. Diese Varianz läßt sich nun Zerlegen in einen Anteil der durch die Regressionsgerade <em>erklärt</em> wird und in einen Anteil, der durch die Regressionsgerade nicht erklärt wird. <span class="math display">\[
+    s^2_{y_i} = s^2_{\hat{y}_i} + s^2_{\hat{e}_i}
+\]</span> Dividiert man beider Seiten durch die Varianz <span class="math inline">\(s^_{y_i}\)</span>, so normiert man den Ausdruck und kann den Faktor <span class="math inline">\(1/{n-1}\)</span> (bzw. <span class="math inline">\(1/n\)</span>) herauskürzen. Es bleibt dann:</p>
+<p><span class="math display">\[
+    1 = \frac{\sum_{i=1}^n (\bar{y}- \hat{y_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2} + \frac{\sum_{i=1}^n (\hat{e_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2}
+\]</span></p>
+<p>Multipliziert man nun beide Seiten mit <span class="math inline">\(\sum_{i=1}^n (y_i)^2\)</span>, so erhält man: <span class="math display">\[
+    \sum_{i=1}^n (\bar{y}- y_i)^2 = \sum_{i=1}^n (\bar{y}- \hat{y_i})^2+ \sum_{i=1}^n (\hat{e_i})^2 
+\]</span></p>
+<p>Zur vereinfachung nennt man nun die einzelnen Summen in dem ausdruck wie folgt:</p>
+<ul>
+<li>Der erste Ausdruck heißt <strong>Gesamtvarianz* oder </strong>total sum of squares** oder kurz <strong><span class="math inline">\(SS_T\)</span></strong>, (oder <strong>TSS</strong>) er ist die Summe der quadrierten Differenzen <span class="math display">\[
+  SS_T = \sum_{i=1}^n (\bar{y}-y_i)^2
+\]</span></li>
+</ul>
+<p>– Der zweite Ausdruck heißt <strong>Modellvarianz</strong> oder <strong>model sum of squares</strong> oder kurz <strong><span class="math inline">\(SS_M\)</span></strong> (oder <strong>RSS</strong>), er ist die Summe der quadrierten Differenzen aus dem Mittelwert <span class="math inline">\(\bar{y}\)</span> und der Punkte auf der Regressionsgeraden <span class="math inline">\(\hat{y}_i\)</span>: <span class="math display">\[
+    SS_M = \sum_{i=1}^n (\bar{y}-\hat{y}_i)^2
+\]</span></p>
+<ul>
+<li>Der dritte Ausdruck heißt <strong>Gesamt-Verhersage-Fehler</strong>, <strong>Fehlersteuung der Regression</strong> oder <strong>error sum of squares</strong> oder kurz <span class="math inline">\(SS_E\)</span> (oder <strong>ESS</strong>), er ist die Summe der quadratischen Differenz aus den Datenpunkten <span class="math inline">\(y_i\)</span> und den Punkten der Regressionsgeraden <span class="math inline">\(\hat{y}_i\)</span>: <span class="math display">\[
+  SS_E = \sum_{i=1}^n (\hat{y}_i-y_i)^2 = \sum_{i=1}^n (\hat{e}_i)^2
+\]</span></li>
+</ul>
+<p>Wir können daher auch kurz <span class="math display">\[
+    SS_T = SS_M + SS_E
+\]</span> schreiben und sparen uns die ganzen Summenzeichen.</p>
+<p>Die Güte einer Regression wollen wir nun durch den Anteil der durch das Model erklärten Varianz (also der <span class="math inline">\(SS_M\)</span>) ausdrücken und stellen daher nach <span class="math inline">\(SS_M\)</span> um: <span class="math display">\[
+    SS_M = SS_T - SS_E
+\]</span> Teilen wir beide Seiten durch <span class="math inline">\(SS_T\)</span> also der maximalen (weil totalen) Quadratsumme, so erhalten wir: <span class="math display">\[
+    \frac{SS_M}{SS_T} = \frac{SS_T}{SS_T} - \frac{SS_E}{SS_T} = 1 - \frac{SS_E}{SS_T}
+\]</span></p>
+<p>Den Ausdruck <span class="math inline">\(\frac{SS_M}{SS_T}\)</span> nennen wir <strong>Bestimmtheitsmaß</strong> (<span class="math inline">\(R^2\)</span>). Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in bezug auf die gesamt Varianz angibt.</p>
+<p>In unserer Zusammenfassung des linearen Models findet sich dieser Wert auch. Und zwar unter dem Begriff:</p>
+<pre><code>Multiple R-squared:  0.4566</code></pre>
+<p>Es gilt ja:</p>
+<p><span class="math display">\[
+    R^2 = 1 - \frac{SS_E}{SS_T} = 1 - \frac{s^2_{\hat{e}_i}}{s^2_{y_i}} = 1 - \frac{1.0402829}{1.9144546} = 0.4566166
+\]</span></p>
+<p>Der Wert</p>
+<pre><code>Adjusted R-squared:  0.4544</code></pre>
+<p>erklärt sich nun daraus<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, dass das Bestimmheitsmaß um so größer wird, je größer die Zahl der unabhöngigen Variablen wird. Und zwar <em>unabhöngig</em> davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. Daher nutzt man besser das <strong>korrigierte Bestimmtheitsmaß</strong> (engl: <em>adjusted R-squared</em>) <span class="math inline">\(\bar{R}^2\)</span>: <span class="math display">\[
+    \bar{R}^2 = 1- (1-R^2) \cdot \frac{n-1}{n-p-1} = R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
+\]</span></p>
+<p>Wobei <span class="math inline">\(p\)</span> die Anzahl der unabhängigen Variablen im Modell darstellt. In unsereem Beispiel gilt daher:</p>
+<p><span class="math display">\[
+    \bar{R}^2 = 1 - (1-R^2)  \cdot \frac{n-1}{n-p-1} =  1 - (1- 0.4566166)  \cdot \frac{244-1}{244- 1- 1} = 0.4543712
+\]</span></p>
+<p><strong>Vorsicht:</strong> Das <em>korrigierte Bestimmtheitsmaß</em> ist nicht mehr an das Intervall <span class="math inline">\([0; 1]\)</span> gebunden! Es kann negative Werte annehmen, ist in der Regel kleiner als das (unkorrigierte) Bestimmtheitsmaß und erreicht die obere Grenze (<span class="math inline">\(\bar{R}^2=1\)</span>) genau dann, wenn <span class="math inline">\(R^2 = 1\)</span> ist.</p>
+<p>Bei der <strong>Gesamtsignifikanz des Modells</strong> (auch <strong>Overall-F-Test</strong> genannt) wird geprüft, ob mindestens eine Variable einen Erklärungsgehalt für das Modell liefert.</p>
+<p>Falls diese Hypothese verworfen wird ist somit das Modell nutzlos. Dieser Test lässt sich so interpretieren als würde man die gesamte Güte des Modells, also das <span class="math inline">\(R^2\)</span> des Modells, testen. Aus diesem Grund wird der F-Test der Gesamtsignifikanz des Modells auch als Anpassungsgüte-Test bezeichnet. Die Nullhypothese des F-Test der Gesamtsignifikanz des Modells sagt aus, dass alle erklärenden Variablen keinen Einfluss auf die abhängige Variable haben. Sowohl die abhängige Variable als auch die unabhängigen Variablen können binär (kategoriell) oder metrisch sein. Der <em>Wald-Test</em> kann dann die Hypothesen testen (ohne Einbezug des Achsenabschnittes): <span class="math display">\[
+    H_{0}\colon \beta _{1}=\beta _{2}=\ldots =\beta _{k}\;=\;0\Rightarrow R^{2}=0
+\]</span> gegen<br />
+<span class="math display">\[
+    H_{1}:\beta _{j}\;\neq \;0\;\mathrm {f{\ddot {u}}r\;mindestens\;ein} \;j\in \{1,\ldots ,k\}\Rightarrow R^{2}\neq 0
+\]</span></p>
+<p>Die Teststatistik dieses Tests lautet <span class="math display">\[
+F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}}{\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)\end{aligned}}}.
+\]</span></p>
+<p>Die Teststatistik <span class="math inline">\(\displaystyle (n-p-1)\)</span> und <span class="math inline">\(p\)</span> Freiheitsgraden. Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau <span class="math inline">\(\alpha\)</span>, so verwirft man die Nullhypothese <span class="math inline">\(H_{0}\)</span>. Das <span class="math inline">\(R^{2}\)</span> ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von <span class="math inline">\(y\)</span> bei. Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt. Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.</p>
+<p>In unserem Beispiel is <span class="math display">\[
+    {\frac {R^{2}}{1-R^{2}}}{\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
+\]</span></p>
+<p>der Wert in der Zeile</p>
+<pre><code>F-statistic: 203.4 on 1 and 242 DF</code></pre>
+<p>mit Parametern <span class="math inline">\(p=1\)</span> und <span class="math inline">\(n-p-1=242\)</span> Freiheitsgraden.</p>
+<p>Der p-Wert von (numerisch) 0, liefert also ein hinreichendes Indiz dafür, dass der Rechnungsbetrag einen echten Beitrag liefert.</p>
 <section class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><p>vgl: <a href="https://de.wikipedia.org/wiki/Parallelverschiebung" class="uri">https://de.wikipedia.org/wiki/Parallelverschiebung</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p>vgl: <a href="https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate" class="uri">https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate</a><a href="#fnref2" class="footnote-back">↩</a></p></li>
 <li id="fn3"><p>vgl: <a href="https://de.wikipedia.org/wiki/Shapiro-Wilk-Test" class="uri">https://de.wikipedia.org/wiki/Shapiro-Wilk-Test</a><a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>vgl: <a href="https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß" class="uri">https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß</a><a href="#fnref4" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
 

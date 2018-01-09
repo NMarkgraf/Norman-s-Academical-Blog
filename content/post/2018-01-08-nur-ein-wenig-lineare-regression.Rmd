@@ -1,6 +1,6 @@
 ---
-title: Nur ein wenig lineare Regression
-author: Norman Markgraf
+title: 'Nur ein wenig lineare Regression'
+author: 'Norman Markgraf'
 date: '2018-01-08'
 slug: 'nur-ein-wenig-lineare-regression'
 categories:  
@@ -172,7 +172,7 @@ histogram( ~residuals(linMod), nint = 19)
 
 Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.
 
-Ein Shapiro-Wilk-Test^[vgl: https://de.wikipedia.org/wiki/Shapiro-Wilk-Test] hat als Nullhypothese $H_0$ die Annahme, dass die Daten normalverteilt sind!
+Ein Shapiro-Wilk-Test^[vgl: https://de.wikipedia.org/wiki/Shapiro-Wilk-Test] hat als Nullhypothese die Annahme, dass die Daten normalverteilt sind!
 
 ```{r}
 shapiro.test( residuals(linMod) )
@@ -183,4 +183,157 @@ Davon ist nach dem Ergebnis eben sowenig auszugehen, wie nach einem Blick auf da
 ```{r}
 qqnorm( residuals(linMod) )
 ```
+
+Ein K.O.-Kriterium für gute Prognosen.
+
+Wie gut aber beschreibt unsere Regressionsgerade die Daten?
+
+Als Maß dafür können wir das Bestimmtheitsmaß nehmen. 
+
+Ein kurzer Blick auf die Situation, der Mittelwert der Trinkgelder ist 
+$$
+    \bar{y} =  \frac{1}{n} \sum_{i=1}^n y_i = `r mean(tips$tip)`.
+$$
+
+Wir erhalten so folgendes Diagramm:
+
+```{r}
+library(lattice)
+mypanel <- function(x, y) {
+    panel.xyplot(x, y)
+    panel.abline(h = mean(y), lwd=2, lty=2, col="darkgreen")
+    panel.lmline(x, y, col="red", lwd=1, lty=2)
+}
+xyplot(
+    tip ~ total_bill, data=tips, 
+    panel = mypanel,
+    main  = "Streudiagramm der Trinkgelder",
+    sub   = "Grün der Mittelwert, rot die Regressionsgerade",
+    ylab  = "Trinkgeld",
+    xlab  = "Rechnungsbetrag"
+     )
+```
+
+
+Die Varianz $s^2_{y_i}=`r var(tips$tip)`$ beschreibt die mittlere quadratische Abweichung der Datenpunkte $y_i$ vom Mittelwert $\bar{y}$.
+Diese Varianz läßt sich nun Zerlegen in einen Anteil der durch die Regressionsgerade *erklärt* wird und in einen Anteil, der durch die Regressionsgerade nicht erklärt wird.
+$$
+    s^2_{y_i} = s^2_{\hat{y}_i} + s^2_{\hat{e}_i}
+$$
+Dividiert man beider Seiten durch die Varianz $s^_{y_i}$, so normiert man den Ausdruck und kann den Faktor $1/{n-1}$ (bzw. $1/n$) herauskürzen. Es bleibt dann:
+
+$$
+    1 = \frac{\sum_{i=1}^n (\bar{y}- \hat{y_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2} + \frac{\sum_{i=1}^n (\hat{e_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2}
+$$
+
+Multipliziert man nun beide Seiten mit $\sum_{i=1}^n (y_i)^2$, so erhält man:
+$$
+    \sum_{i=1}^n (\bar{y}- y_i)^2 = \sum_{i=1}^n (\bar{y}- \hat{y_i})^2+ \sum_{i=1}^n (\hat{e_i})^2 
+$$
+
+Zur vereinfachung nennt man nun die einzelnen Summen in dem ausdruck wie folgt:
+
+- Der erste Ausdruck heißt **Gesamtvarianz* oder **total sum of squares** oder kurz **$SS_T$**, (oder **TSS**) er ist die Summe der quadrierten Differenzen 
+$$
+    SS_T = \sum_{i=1}^n (\bar{y}-y_i)^2
+$$
+
+-- Der zweite Ausdruck heißt **Modellvarianz** oder **model sum of squares** oder kurz **$SS_M$** (oder **RSS**), er ist die Summe der quadrierten Differenzen aus dem Mittelwert $\bar{y}$ und der Punkte auf der Regressionsgeraden $\hat{y}_i$:
+$$
+    SS_M = \sum_{i=1}^n (\bar{y}-\hat{y}_i)^2
+$$
+
+- Der dritte Ausdruck heißt **Gesamt-Verhersage-Fehler**, **Fehlersteuung der Regression** oder **error sum of squares** oder kurz $SS_E$ (oder **ESS**), er ist die Summe der quadratischen Differenz aus den Datenpunkten $y_i$ und den Punkten der Regressionsgeraden $\hat{y}_i$:
+$$
+    SS_E = \sum_{i=1}^n (\hat{y}_i-y_i)^2 = \sum_{i=1}^n (\hat{e}_i)^2
+$$
+
+Wir können daher auch kurz 
+$$
+    SS_T = SS_M + SS_E
+$$
+schreiben und sparen uns die ganzen Summenzeichen.
+
+Die Güte einer Regression wollen wir nun durch den Anteil der durch das Model erklärten Varianz (also der $SS_M$) ausdrücken und stellen daher nach $SS_M$ um:
+$$
+    SS_M = SS_T - SS_E
+$$
+Teilen wir beide Seiten durch $SS_T$ also der maximalen (weil totalen) Quadratsumme, so erhalten wir:
+$$
+    \frac{SS_M}{SS_T} = \frac{SS_T}{SS_T} - \frac{SS_E}{SS_T} = 1 - \frac{SS_E}{SS_T}
+$$
+
+Den Ausdruck $\frac{SS_M}{SS_T}$ nennen wir **Bestimmtheitsmaß** ($R^2$). Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in bezug auf die gesamt Varianz angibt.
+
+In unserer Zusammenfassung des linearen Models findet sich dieser Wert auch. Und zwar unter dem Begriff:
+
+```
+Multiple R-squared:  0.4566
+```
+
+Es gilt ja:
+
+$$
+    R^2 = 1 - \frac{SS_E}{SS_T} = 1 - \frac{s^2_{\hat{e}_i}}{s^2_{y_i}} = 1 - \frac{`r obs_sd^2`}{`r var(tips$tip)`} = `r 1 - obs_sd^2 / var(tips$tip)`
+$$
+
+Der Wert
+```
+Adjusted R-squared:  0.4544
+```
+
+erklärt sich nun daraus^[vgl: https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß], dass das Bestimmheitsmaß um so größer wird, je größer die Zahl der unabhöngigen Variablen wird. Und zwar *unabhöngig* davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. 
+Daher nutzt man besser das **korrigierte Bestimmtheitsmaß** (engl: *adjusted R-squared*) $\bar{R}^2$:
+$$
+    \bar{R}^2 = 1- (1-R^2) \cdot \frac{n-1}{n-p-1} = R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
+$$
+
+Wobei $p$ die Anzahl der unabhängigen Variablen im Modell darstellt. In unsereem Beispiel gilt daher:
+
+$$
+    \bar{R}^2 = 1 - (1-R^2)  \cdot \frac{n-1}{n-p-1} =  1 - (1- `r 1 - obs_sd^2 / var(tips$tip)`)  \cdot \frac{`r obs_n`-1}{`r obs_n`- 1- 1} = `r 1-(obs_sd^2 / var(tips$tip))*(obs_n-1)/(obs_n-1-1)`
+$$
+
+**Vorsicht:** Das *korrigierte Bestimmtheitsmaß* ist nicht mehr an das Intervall $[0; 1]$ gebunden! Es kann negative Werte annehmen, ist in der Regel kleiner als das (unkorrigierte) Bestimmtheitsmaß und erreicht die obere Grenze ($\bar{R}^2=1$) genau dann, wenn $R^2 = 1$ ist.
+
+Bei der **Gesamtsignifikanz des Modells** (auch **Overall-F-Test** genannt) wird geprüft, ob mindestens eine Variable einen Erklärungsgehalt für das Modell liefert. 
+
+Falls diese Hypothese verworfen wird ist somit das Modell nutzlos. Dieser Test lässt sich so interpretieren als würde man die gesamte Güte des Modells, also das $R^2$ des Modells, testen. 
+Aus diesem Grund wird der F-Test der Gesamtsignifikanz des Modells auch als Anpassungsgüte-Test bezeichnet. 
+Die Nullhypothese des F-Test der Gesamtsignifikanz des Modells sagt aus, dass alle erklärenden Variablen keinen Einfluss auf die abhängige Variable haben. 
+Sowohl die abhängige Variable als auch die unabhängigen Variablen können binär (kategoriell) oder metrisch sein. 
+Der *Wald-Test* kann dann die Hypothesen testen (ohne Einbezug des Achsenabschnittes):
+$$
+    H_{0}\colon \beta _{1}=\beta _{2}=\ldots =\beta _{k}\;=\;0\Rightarrow R^{2}=0
+$$
+gegen  
+$$
+    H_{1}:\beta _{j}\;\neq \;0\;\mathrm {f{\ddot {u}}r\;mindestens\;ein} \;j\in \{1,\ldots ,k\}\Rightarrow R^{2}\neq 0
+$$
+
+Die Teststatistik dieses Tests lautet
+$$
+F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}}{\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)\end{aligned}}}.
+$$
+
+Die Teststatistik $\displaystyle (n-p-1)$ und $p$ Freiheitsgraden. 
+Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau $\alpha$, so verwirft man die Nullhypothese $H_{0}$. Das $R^{2}$ ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von $y$ bei. 
+Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt. Wenn der *Wald-Test* für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.
+
+```{r echo=FALSE}
+r.sq <- summary(linMod)$r.squared
+```
+
+In unserem Beispiel is
+$$
+    {\frac {R^{2}}{1-R^{2}}}{\frac {n-p-1}{p}} = \frac{`r r.sq`}{1-`r r.sq`} \cdot \frac{`r obs_n`-1-1}{1} = `r r.sq/(1-r.sq)*(obs_n-1-1)/1`
+$$
+
+der Wert in der Zeile
+```
+F-statistic: 203.4 on 1 and 242 DF
+```
+mit Parametern $p=1$ und $n-p-1=242$ Freiheitsgraden. 
+
+Der p-Wert von (numerisch) 0, liefert also ein hinreichendes Indiz dafür, dass der Rechnungsbetrag einen echten Beitrag liefert.
 
