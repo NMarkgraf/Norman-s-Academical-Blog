@@ -5,7 +5,43 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/post/ein-paar-interessante-links/</loc>
+      <loc>/nab/post/nur-ein-wenig-lineare-regression/</loc>
+      <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</loc>
+      <lastmod>2018-01-04T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/post/konfidenzintervalle/</loc>
+      <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/post/zentrales-schwankungsintervall/</loc>
+      <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/post/ein-paar-interessante-links/</loc>
       <lastmod>2017-12-31T00:00:00+00:00</lastmod>
     </url>
     
@@ -14,7 +50,16 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/post/github-webhook-eingebaut/</loc>
+      <loc>/nab/post/quartile-quantile-perzentile-etc/</loc>
+      <lastmod>2017-12-19T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/post/github-webhook-eingebaut/</loc>
       <lastmod>2017-12-18T00:00:00+00:00</lastmod>
     </url>
     
@@ -23,7 +68,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/post/first-entry/</loc>
+      <loc>/nab/post/first-entry/</loc>
       <lastmod>2017-12-17T00:00:00+00:00</lastmod>
     </url>
     
@@ -32,7 +77,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</loc>
+      <loc>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</loc>
       <lastmod>2017-07-13T00:00:00+00:00</lastmod>
     </url>
     
@@ -41,7 +86,16 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/project/etwas-r-am-abend/</loc>
+      <loc>/nab/post/der-zentrale-grenzwertsatz/</loc>
+      <lastmod>2017-04-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/project/etwas-r-am-abend/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -50,7 +104,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/publication/</loc>
+      <loc>/nab/publication/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -59,7 +113,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/talk/</loc>
+      <loc>/nab/talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -68,7 +122,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/post/</loc>
+      <loc>/nab/post/</loc>
       <lastmod>2017-01-01T00:00:00+01:00</lastmod>
     </url>
     
@@ -77,55 +131,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/post/2017-04-05-der-zentrale-grenzwertsatz/</loc>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://sefiroth.net/nab/post/2017-12-19-quartile-quantile-perzentile-etc/</loc>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://sefiroth.net/nab/post/2018-01-01-konfidenzintervalle/</loc>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://sefiroth.net/nab/post/2018-01-01-zentrales-schwankungsintervall/</loc>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://sefiroth.net/nab/post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle/</loc>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://sefiroth.net/nab/post/2018-01-08-nur-ein-wenig-lineare-regression/</loc>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://sefiroth.net/nab/tags/allgemein/</loc>
+      <loc>/nab/tags/allgemein/</loc>
       <lastmod>2017-07-13T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -135,7 +141,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/categories/allgemeines/</loc>
+      <loc>/nab/categories/allgemeines/</loc>
       <lastmod>2017-12-31T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -145,7 +151,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/tags/beamer/</loc>
+      <loc>/nab/tags/beamer/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -155,7 +161,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/categories/</loc>
+      <loc>/nab/categories/</loc>
       <lastmod>2017-12-31T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -165,7 +171,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/categories/fundst%C3%BCcke/</loc>
+      <loc>/nab/categories/fundst%C3%BCcke/</loc>
       <lastmod>2017-07-13T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -175,7 +181,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/categories/information/</loc>
+      <loc>/nab/categories/information/</loc>
       <lastmod>2017-12-18T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -185,7 +191,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/categories/kommentar/</loc>
+      <loc>/nab/categories/kommentar/</loc>
       <lastmod>2017-12-17T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -195,7 +201,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/tags/latex/</loc>
+      <loc>/nab/tags/latex/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -205,8 +211,8 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/tags/lehre/</loc>
-      <lastmod>2017-07-13T00:00:00+00:00</lastmod>
+      <loc>/nab/tags/lehre/</loc>
+      <lastmod>2018-01-08T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -215,7 +221,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/</loc>
+      <loc>/nab/</loc>
       <lastmod>2016-04-20T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -225,7 +231,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/tags/pandoc/</loc>
+      <loc>/nab/tags/pandoc/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -235,7 +241,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/project/</loc>
+      <loc>/nab/project/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -245,7 +251,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/publication_types/</loc>
+      <loc>/nab/publication_types/</loc>
       <priority>0</priority>
     </url>
     
@@ -254,7 +260,17 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/tags/r/</loc>
+      <loc>/nab/tags/r/</loc>
+      <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/tags/r/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -264,7 +280,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/tags/r-vortrag/</loc>
+      <loc>/nab/tags/r-vortrag/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -274,7 +290,7 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/tags/rstudio/</loc>
+      <loc>/nab/tags/rstudio/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -284,7 +300,27 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/tags/</loc>
+      <loc>/nab/tags/statistik/</loc>
+      <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/categories/statistik/</loc>
+      <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/tags/</loc>
       <lastmod>2017-07-13T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -294,8 +330,18 @@
     
     <url>
     
-      <loc>http://sefiroth.net/nab/tags/technisches/</loc>
+      <loc>/nab/tags/technisches/</loc>
       <lastmod>2017-12-18T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/nab/tags/wahrscheinlichkeitstheorie/</loc>
+      <lastmod>2018-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

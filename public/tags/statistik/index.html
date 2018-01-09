@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.32.2" />
+  <meta name="generator" content="Hugo 0.32.3" />
   <meta name="author" content="Norman Markgraf">
   <meta name="description" content="Diplom-Mathematiker">
 
@@ -85,7 +85,7 @@
   <meta property="og:description" content="Diplom-Mathematiker">
   <meta property="og:locale" content="de-de">
   
-  <meta property="og:updated_time" content="2018-01-04T00:00:00&#43;00:00">
+  <meta property="og:updated_time" content="2018-01-08T00:00:00&#43;00:00">
   
 
   
@@ -226,15 +226,39 @@
   
   
   <div>
+    <h2><a href="/nab/post/nur-ein-wenig-lineare-regression/">Nur ein wenig lineare Regression</a></h2>
+    <div class="article-style">
+      
+      Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interprätieren kann.
+Zunächt laden wir dazu die tipping Daten mittels
+in den Arbeitsspeicher.
+Eine lineares Modell wird schnell mit
+      
+    </div>
+  </div>
+  
+  <div>
     <h2><a href="/nab/post/prognose-konfidenz-und-fiduzialintervalle/">Prognose-, Konfidenz- und Fiduzialintervalle</a></h2>
     <div class="article-style">
       
-      Konfidenzintervalle
-Definition von Konfidenzintervallen1
-Für unabhängig identisch verteilte Zufallsvariablen (X_1,\dotsc, X_n) mit unbekanntem reellen Verteilungsparameter (\vartheta) kann unter bestimmten Umständen zwei Stichprobenfunktionen (U) und (V) angeben, so dass
+      *WORK IN PROGRESS Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
+Konfidenzintervalle Definition von Konfidenzintervallen1 Für unabhängig identisch verteilte Zufallsvariablen (X_1,\dotsc, X_n) mit unbekanntem reellen Verteilungsparameter (\vartheta) kann unter bestimmten Umständen zwei Stichprobenfunktionen (U) und (V) angeben, so dass
 [P(U &lt; \vartheta &lt; V) \geq \gamma]
 gilt, mit (\gamma \in (0,1)). Dann heißt das (stochastische) Intervall ([U, V]) ein Konfidenzintervall für (\vartheta) zum Konfidenzniveau (\gamma) (auch: ein (\gamma)-Konfidenzintervall).
-Die Realisationen (u) und (v) von (U) bzw. (V) bilden das Schätzintervall ([u, v]).
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/nab/post/konfidenzintervalle/">Konfidenzintervalle</a></h2>
+    <div class="article-style">
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/nab/post/zentrales-schwankungsintervall/">Zentrales Schwankungsintervall</a></h2>
+    <div class="article-style">
       
     </div>
   </div>
@@ -243,14 +267,10 @@ Die Realisationen (u) und (v) von (U) bzw. (V) bilden das Schätzintervall ([u, 
     <h2><a href="/nab/post/quartile-quantile-perzentile-etc/">Quartile, Quantile, Perzentile etc.</a></h2>
     <div class="article-style">
       
-      <p>“Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.
-Quantile
-Definitorische Antwort
-Für eine gegebene reelle Zufallsvariable (X) heißt eine reelle Zahl (x_p) ein p-Quantil (von (X)), falls gilt:
-[P(X \leq x_p) \leq p \quad \text{ und }\quad P(x_p \leq X) \geq 1-p.]</p>
-
-<p>Was bedeutet das denn nun konkret?</p>
-
+      “Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.
+Quantile Definitorische Antwort Für eine gegebene reelle Zufallsvariable (X) heißt eine reelle Zahl (x_p) ein p-Quantil (von (X)), falls gilt:
+[P(X \leq x_p) \leq p \quad \text{ und }\quad P(x_p \leq X) \geq 1-p.]
+ Was bedeutet das denn nun konkret?
       
     </div>
   </div>
@@ -259,18 +279,10 @@ Für eine gegebene reelle Zufallsvariable (X) heißt eine reelle Zahl (x_p) ein 
     <h2><a href="/nab/post/der-zentrale-grenzwertsatz/">Der Zentrale Grenzwertsatz</a></h2>
     <div class="article-style">
       
-      Der Zentrale Grenzwertsatz der Statistik bei identischer Verteilung.
-Zentraler Grenzwertsatz
-Seien (X_1, X_2, &hellip;, X_n) unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert (E(X_i) = \mu) und bekanter Varianz (Var(X_i)=\sigma^2).
+      Der Zentrale Grenzwertsatz der Statistik bei identischer Verteilung. Zentraler Grenzwertsatz Seien (X_1, X_2, &hellip;, X_n) unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert (E(X_i) = \mu) und bekanter Varianz (Var(X_i)=\sigma^2).
 Für die Summe (S<em>n = \sum</em>{i=1}^n X_i) ist dann der Erwartungswert (E(S_n)= n \cdot \mu) und die Varianz (Var(S_n)= n \cdot \sigma^2).
 Dann gilt für die standardisierte Zufallsvariable
-[
-\begin{align<em>}
-Z<em>n &amp;= \frac{\left(\sum\limits</em>{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}}
-= \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} <br />
-&amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n},
-\end{align</em>}
-]
+[ \begin{align<em>} Z<em>n &amp;= \frac{\left(\sum\limits</em>{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} \ &amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n}, \end{align</em>} ]
       
     </div>
   </div>

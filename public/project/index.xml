@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Normans Akademischer Blog</title>
-    <link>http://sefiroth.net/nab/project/</link>
+    <link>/nab/project/</link>
     <description>Recent content in Projects on Normans Akademischer Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Etwas R am Abend</title>
-      <link>http://sefiroth.net/nab/project/etwas-r-am-abend/</link>
+      <link>/nab/project/etwas-r-am-abend/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://sefiroth.net/nab/project/etwas-r-am-abend/</guid>
+      <guid>/nab/project/etwas-r-am-abend/</guid>
       <description></description>
     </item>
     

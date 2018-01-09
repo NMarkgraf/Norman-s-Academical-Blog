@@ -1,21 +1,22 @@
 ---
-title: Prognose-, Konfidenz- und Fiduzialintervalle
-author: Norman Markgraf
+title: 'Prognose-, Konfidenz- und Fiduzialintervalle'
+author: 'Norman Markgraf'
 date: '2018-01-04'
-slug: prognose-konfidenz-und-fiduzialintervalle
+slug: 'prognose-konfidenz-und-fiduzialintervalle'
 categories:
   - Statistik
 tags:
   - Statistik
   - Lehre
 ---
+
+***WORK IN PROGRESS**
+Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
+
 ```{r include=FALSE}
 library(mosaic)
 options(digits=4)
 ```
-
-***WORK IN PROGRESS**
-Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
 
 ## Konfidenzintervalle
 

@@ -2,12 +2,13 @@
 title: "Zentrales Schwankungsintervall"
 author: "Norman Markgraf"
 date: '2018-01-01'
-slug: zentrales-schwankungsintervall
+slug: "zentrales-schwankungsintervall"
 tags:
-- Lehre
-- Statistik
-- Wahrscheinlichkeitstheorie
-categories: Statistik
+    - Lehre
+    - Statistik
+    - Wahrscheinlichkeitstheorie
+categories: 
+    - Statistik
 ---
 
 Das **zentrale Schwankungsintervall** sagt etwas über die Präzision der Lageschätzung eines Parameters (zum Beispiel eines Mittelwertes) aus. Das Schwankungsintervall schließt einen Bereich um den wahren Wert des Parameters in der Grundgesamtheit ein, der – vereinfacht gesprochen – mit einer zuvor festgelegten Sicherheitswahrscheinlichkeit den aus der Stichprobe geschätzten Parameter enthält.^[vgl: https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall]
