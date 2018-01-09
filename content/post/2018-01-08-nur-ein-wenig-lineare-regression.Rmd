@@ -2,16 +2,17 @@
 title: Nur ein wenig lineare Regression
 author: Norman Markgraf
 date: '2018-01-08'
-slug: nur-ein-wenig-lineare-regression
-categories:
-  - Statistik
+slug: 'nur-ein-wenig-lineare-regression'
+categories:  
+    - Statistik
 tags:
   - Lehre
   - R
   - Statistik
 ---
 
-```{r setup, include=FALSE, warning=FALSE, error=FALSE}
+```{r setup, include=FALSE}
+#, warning=FALSE, error=FALSE}
 library(mosaic, warn.conflicts = FALSE, quietly = TRUE, verbose = FALSE)
 #download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
 tips <- read.csv2("tips.csv")
