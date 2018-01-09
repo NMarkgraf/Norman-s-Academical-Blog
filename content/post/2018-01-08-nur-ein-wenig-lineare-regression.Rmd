@@ -166,7 +166,7 @@ Es könnte also eine linkssteile, rechtsschiefe Verteilung der Resiuden vorliege
 Betrachten wir dazu das Histogramm:
 
 ```{r}
-histogram( ~residuals(linMod), nint=19)
+histogram( ~residuals(linMod), nint = 19)
 ```
 
 

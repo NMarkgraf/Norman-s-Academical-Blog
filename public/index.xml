@@ -137,7 +137,7 @@ summary(linModError)&lt;/code&gt;&lt;/pre&gt;
 SE_{\text{Residuen}} = \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}} = \sqrt{\frac{243}{242}} \cdot 1.0199426 = 1.0220477
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Der Median der Residuen ist nicht gleich Null, wie der Mittelwert. (Welcher auch hier als numerisch Null interpretiert werden muss!) Es könnte also eine linkssteile, rechtsschiefe Verteilung der Resiuden vorliegen. Betrachten wir dazu das Histogramm:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;histogram( ~residuals(linMod), nint=19)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;histogram( ~residuals(linMod), nint = 19)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.&lt;/p&gt;
 &lt;p&gt;Ein Shapiro-Wilk-Test&lt;a href=&#34;#fn3&#34; class=&#34;footnote-ref&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; hat als Nullhypothese &lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; die Annahme, dass die Daten normalverteilt sind!&lt;/p&gt;

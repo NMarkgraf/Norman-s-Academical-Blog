@@ -430,7 +430,7 @@ summary(linModError)</code></pre>
 SE_{\text{Residuen}} = \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}} = \sqrt{\frac{243}{242}} \cdot 1.0199426 = 1.0220477
 \]</span></p>
 <p>Der Median der Residuen ist nicht gleich Null, wie der Mittelwert. (Welcher auch hier als numerisch Null interpretiert werden muss!) Es könnte also eine linkssteile, rechtsschiefe Verteilung der Resiuden vorliegen. Betrachten wir dazu das Histogramm:</p>
-<pre class="r"><code>histogram( ~residuals(linMod), nint=19)</code></pre>
+<pre class="r"><code>histogram( ~residuals(linMod), nint = 19)</code></pre>
 <p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.</p>
 <p>Ein Shapiro-Wilk-Test<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> hat als Nullhypothese <span class="math inline">\(H_0\)</span> die Annahme, dass die Daten normalverteilt sind!</p>
@@ -485,9 +485,9 @@ SE_{\text{Residuen}} = \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}} = \sqrt{
     
     <li><a href="/nab/post/prognose-konfidenz-und-fiduzialintervalle/">Prognose-, Konfidenz- und Fiduzialintervalle</a></li>
     
-    <li><a href="/nab/post/zentrales-schwankungsintervall/">Zentrales Schwankungsintervall</a></li>
-    
     <li><a href="/nab/post/konfidenzintervalle/">Konfidenzintervalle</a></li>
+    
+    <li><a href="/nab/post/zentrales-schwankungsintervall/">Zentrales Schwankungsintervall</a></li>
     
     <li><a href="/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/">10 Dinge die kein Talent benötigen!</a></li>
     
