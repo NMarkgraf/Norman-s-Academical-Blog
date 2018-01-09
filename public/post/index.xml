@@ -174,7 +174,7 @@ xyplot(
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}=1.9144546\)&lt;/span&gt; beschreibt die mittlere quadratische Abweichung der Datenpunkte &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; vom Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt;. Diese Varianz läßt sich nun Zerlegen in einen Anteil der durch die Regressionsgerade &lt;em&gt;erklärt&lt;/em&gt; wird und in einen Anteil, der durch die Regressionsgerade nicht erklärt wird. &lt;span class=&#34;math display&#34;&gt;\[
     s^2_{y_i} = s^2_{\hat{y}_i} + s^2_{\hat{e}_i}
-\]&lt;/span&gt; Dividiert man beider Seiten durch die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^_{y_i}\)&lt;/span&gt;, so normiert man den Ausdruck und kann den Faktor &lt;span class=&#34;math inline&#34;&gt;\(1/{n-1}\)&lt;/span&gt; (bzw. &lt;span class=&#34;math inline&#34;&gt;\(1/n\)&lt;/span&gt;) herauskürzen. Es bleibt dann:&lt;/p&gt;
+\]&lt;/span&gt; Dividiert man beider Seiten durch die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}\)&lt;/span&gt;, so normiert man den Ausdruck und kann den Faktor &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{n-1}\)&lt;/span&gt; (bzw. &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{n}\)&lt;/span&gt;) herauskürzen. Es bleibt dann:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     1 = \frac{\sum_{i=1}^n (\bar{y}- \hat{y_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2} + \frac{\sum_{i=1}^n (\hat{e_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2}
 \]&lt;/span&gt;&lt;/p&gt;
@@ -183,17 +183,15 @@ xyplot(
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Zur vereinfachung nennt man nun die einzelnen Summen in dem ausdruck wie folgt:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Der erste Ausdruck heißt &lt;strong&gt;Gesamtvarianz* oder &lt;/strong&gt;total sum of squares** oder kurz &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(SS_T\)&lt;/span&gt;&lt;/strong&gt;, (oder &lt;strong&gt;TSS&lt;/strong&gt;) er ist die Summe der quadrierten Differenzen &lt;span class=&#34;math display&#34;&gt;\[
+&lt;li&gt;&lt;p&gt;Der erste Ausdruck heißt &lt;strong&gt;Gesamtvarianz* oder &lt;/strong&gt;total sum of squares** oder kurz &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(SS_T\)&lt;/span&gt;&lt;/strong&gt;, (oder &lt;strong&gt;TSS&lt;/strong&gt;) er ist die Summe der quadrierten Differenzen &lt;span class=&#34;math display&#34;&gt;\[
   SS_T = \sum_{i=1}^n (\bar{y}-y_i)^2
-\]&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;– Der zweite Ausdruck heißt &lt;strong&gt;Modellvarianz&lt;/strong&gt; oder &lt;strong&gt;model sum of squares&lt;/strong&gt; oder kurz &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(SS_M\)&lt;/span&gt;&lt;/strong&gt; (oder &lt;strong&gt;RSS&lt;/strong&gt;), er ist die Summe der quadrierten Differenzen aus dem Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt; und der Punkte auf der Regressionsgeraden &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}_i\)&lt;/span&gt;: &lt;span class=&#34;math display&#34;&gt;\[
-    SS_M = \sum_{i=1}^n (\bar{y}-\hat{y}_i)^2
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Der dritte Ausdruck heißt &lt;strong&gt;Gesamt-Verhersage-Fehler&lt;/strong&gt;, &lt;strong&gt;Fehlersteuung der Regression&lt;/strong&gt; oder &lt;strong&gt;error sum of squares&lt;/strong&gt; oder kurz &lt;span class=&#34;math inline&#34;&gt;\(SS_E\)&lt;/span&gt; (oder &lt;strong&gt;ESS&lt;/strong&gt;), er ist die Summe der quadratischen Differenz aus den Datenpunkten &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; und den Punkten der Regressionsgeraden &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}_i\)&lt;/span&gt;: &lt;span class=&#34;math display&#34;&gt;\[
+\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Der zweite Ausdruck heißt &lt;strong&gt;Modellvarianz&lt;/strong&gt; oder &lt;strong&gt;model sum of squares&lt;/strong&gt; oder kurz &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(SS_M\)&lt;/span&gt;&lt;/strong&gt; (oder &lt;strong&gt;RSS&lt;/strong&gt;), er ist die Summe der quadrierten Differenzen aus dem Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt; und der Punkte auf der Regressionsgeraden &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}_i\)&lt;/span&gt;: &lt;span class=&#34;math display&#34;&gt;\[
+  SS_M = \sum_{i=1}^n (\bar{y}-\hat{y}_i)^2
+\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Der dritte Ausdruck heißt &lt;strong&gt;Gesamt-Verhersage-Fehler&lt;/strong&gt;, &lt;strong&gt;Fehlersteuung der Regression&lt;/strong&gt; oder &lt;strong&gt;error sum of squares&lt;/strong&gt; oder kurz &lt;span class=&#34;math inline&#34;&gt;\(SS_E\)&lt;/span&gt; (oder &lt;strong&gt;ESS&lt;/strong&gt;), er ist die Summe der quadratischen Differenz aus den Datenpunkten &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; und den Punkten der Regressionsgeraden &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}_i\)&lt;/span&gt;: &lt;span class=&#34;math display&#34;&gt;\[
   SS_E = \sum_{i=1}^n (\hat{y}_i-y_i)^2 = \sum_{i=1}^n (\hat{e}_i)^2
-\]&lt;/span&gt;&lt;/li&gt;
+\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Wir können daher auch kurz &lt;span class=&#34;math display&#34;&gt;\[
     SS_T = SS_M + SS_E
@@ -205,13 +203,13 @@ xyplot(
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Den Ausdruck &lt;span class=&#34;math inline&#34;&gt;\(\frac{SS_M}{SS_T}\)&lt;/span&gt; nennen wir &lt;strong&gt;Bestimmtheitsmaß&lt;/strong&gt; (&lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt;). Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in bezug auf die gesamt Varianz angibt.&lt;/p&gt;
 &lt;p&gt;In unserer Zusammenfassung des linearen Models findet sich dieser Wert auch. Und zwar unter dem Begriff:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Multiple R-squared:  0.4566&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Multiple R-squared:  0.4566, &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Es gilt ja:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     R^2 = 1 - \frac{SS_E}{SS_T} = 1 - \frac{s^2_{\hat{e}_i}}{s^2_{y_i}} = 1 - \frac{1.0402829}{1.9144546} = 0.4566166
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Der Wert&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Adjusted R-squared:  0.4544&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## ..., Adjusted R-squared:  0.4544&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;erklärt sich nun daraus&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;, dass das Bestimmheitsmaß um so größer wird, je größer die Zahl der unabhöngigen Variablen wird. Und zwar &lt;em&gt;unabhöngig&lt;/em&gt; davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. Daher nutzt man besser das &lt;strong&gt;korrigierte Bestimmtheitsmaß&lt;/strong&gt; (engl: &lt;em&gt;adjusted R-squared&lt;/em&gt;) &lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^2\)&lt;/span&gt;: &lt;span class=&#34;math display&#34;&gt;\[
     \bar{R}^2 = 1- (1-R^2) \cdot \frac{n-1}{n-p-1} = R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
 \]&lt;/span&gt;&lt;/p&gt;
@@ -236,7 +234,7 @@ F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2
     {\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;der Wert in der Zeile&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;F-statistic: 203.4 on 1 and 242 DF&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## F-statistic: 203.4 on 1 and 242 DF,  p-value: &amp;lt; 2.2e-16&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;mit Parametern &lt;span class=&#34;math inline&#34;&gt;\(p=1\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(n-p-1=242\)&lt;/span&gt; Freiheitsgraden.&lt;/p&gt;
 &lt;p&gt;Der p-Wert von (numerisch) 0, liefert also ein hinreichendes Indiz dafür, dass der Rechnungsbetrag einen echten Beitrag liefert.&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34;&gt;

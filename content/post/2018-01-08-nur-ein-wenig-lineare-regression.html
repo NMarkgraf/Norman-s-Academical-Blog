@@ -171,7 +171,7 @@ xyplot(
 <p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Die Varianz <span class="math inline">\(s^2_{y_i}=1.9144546\)</span> beschreibt die mittlere quadratische Abweichung der Datenpunkte <span class="math inline">\(y_i\)</span> vom Mittelwert <span class="math inline">\(\bar{y}\)</span>. Diese Varianz läßt sich nun Zerlegen in einen Anteil der durch die Regressionsgerade <em>erklärt</em> wird und in einen Anteil, der durch die Regressionsgerade nicht erklärt wird. <span class="math display">\[
     s^2_{y_i} = s^2_{\hat{y}_i} + s^2_{\hat{e}_i}
-\]</span> Dividiert man beider Seiten durch die Varianz <span class="math inline">\(s^_{y_i}\)</span>, so normiert man den Ausdruck und kann den Faktor <span class="math inline">\(1/{n-1}\)</span> (bzw. <span class="math inline">\(1/n\)</span>) herauskürzen. Es bleibt dann:</p>
+\]</span> Dividiert man beider Seiten durch die Varianz <span class="math inline">\(s^2_{y_i}\)</span>, so normiert man den Ausdruck und kann den Faktor <span class="math inline">\(\frac{1}{n-1}\)</span> (bzw. <span class="math inline">\(\frac{1}{n}\)</span>) herauskürzen. Es bleibt dann:</p>
 <p><span class="math display">\[
     1 = \frac{\sum_{i=1}^n (\bar{y}- \hat{y_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2} + \frac{\sum_{i=1}^n (\hat{e_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2}
 \]</span></p>
@@ -180,17 +180,15 @@ xyplot(
 \]</span></p>
 <p>Zur vereinfachung nennt man nun die einzelnen Summen in dem ausdruck wie folgt:</p>
 <ul>
-<li>Der erste Ausdruck heißt <strong>Gesamtvarianz* oder </strong>total sum of squares** oder kurz <strong><span class="math inline">\(SS_T\)</span></strong>, (oder <strong>TSS</strong>) er ist die Summe der quadrierten Differenzen <span class="math display">\[
+<li><p>Der erste Ausdruck heißt <strong>Gesamtvarianz* oder </strong>total sum of squares** oder kurz <strong><span class="math inline">\(SS_T\)</span></strong>, (oder <strong>TSS</strong>) er ist die Summe der quadrierten Differenzen <span class="math display">\[
   SS_T = \sum_{i=1}^n (\bar{y}-y_i)^2
-\]</span></li>
-</ul>
-<p>– Der zweite Ausdruck heißt <strong>Modellvarianz</strong> oder <strong>model sum of squares</strong> oder kurz <strong><span class="math inline">\(SS_M\)</span></strong> (oder <strong>RSS</strong>), er ist die Summe der quadrierten Differenzen aus dem Mittelwert <span class="math inline">\(\bar{y}\)</span> und der Punkte auf der Regressionsgeraden <span class="math inline">\(\hat{y}_i\)</span>: <span class="math display">\[
-    SS_M = \sum_{i=1}^n (\bar{y}-\hat{y}_i)^2
-\]</span></p>
-<ul>
-<li>Der dritte Ausdruck heißt <strong>Gesamt-Verhersage-Fehler</strong>, <strong>Fehlersteuung der Regression</strong> oder <strong>error sum of squares</strong> oder kurz <span class="math inline">\(SS_E\)</span> (oder <strong>ESS</strong>), er ist die Summe der quadratischen Differenz aus den Datenpunkten <span class="math inline">\(y_i\)</span> und den Punkten der Regressionsgeraden <span class="math inline">\(\hat{y}_i\)</span>: <span class="math display">\[
+\]</span></p></li>
+<li><p>Der zweite Ausdruck heißt <strong>Modellvarianz</strong> oder <strong>model sum of squares</strong> oder kurz <strong><span class="math inline">\(SS_M\)</span></strong> (oder <strong>RSS</strong>), er ist die Summe der quadrierten Differenzen aus dem Mittelwert <span class="math inline">\(\bar{y}\)</span> und der Punkte auf der Regressionsgeraden <span class="math inline">\(\hat{y}_i\)</span>: <span class="math display">\[
+  SS_M = \sum_{i=1}^n (\bar{y}-\hat{y}_i)^2
+\]</span></p></li>
+<li><p>Der dritte Ausdruck heißt <strong>Gesamt-Verhersage-Fehler</strong>, <strong>Fehlersteuung der Regression</strong> oder <strong>error sum of squares</strong> oder kurz <span class="math inline">\(SS_E\)</span> (oder <strong>ESS</strong>), er ist die Summe der quadratischen Differenz aus den Datenpunkten <span class="math inline">\(y_i\)</span> und den Punkten der Regressionsgeraden <span class="math inline">\(\hat{y}_i\)</span>: <span class="math display">\[
   SS_E = \sum_{i=1}^n (\hat{y}_i-y_i)^2 = \sum_{i=1}^n (\hat{e}_i)^2
-\]</span></li>
+\]</span></p></li>
 </ul>
 <p>Wir können daher auch kurz <span class="math display">\[
     SS_T = SS_M + SS_E
@@ -202,13 +200,13 @@ xyplot(
 \]</span></p>
 <p>Den Ausdruck <span class="math inline">\(\frac{SS_M}{SS_T}\)</span> nennen wir <strong>Bestimmtheitsmaß</strong> (<span class="math inline">\(R^2\)</span>). Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in bezug auf die gesamt Varianz angibt.</p>
 <p>In unserer Zusammenfassung des linearen Models findet sich dieser Wert auch. Und zwar unter dem Begriff:</p>
-<pre><code>Multiple R-squared:  0.4566</code></pre>
+<pre><code>## Multiple R-squared:  0.4566, </code></pre>
 <p>Es gilt ja:</p>
 <p><span class="math display">\[
     R^2 = 1 - \frac{SS_E}{SS_T} = 1 - \frac{s^2_{\hat{e}_i}}{s^2_{y_i}} = 1 - \frac{1.0402829}{1.9144546} = 0.4566166
 \]</span></p>
 <p>Der Wert</p>
-<pre><code>Adjusted R-squared:  0.4544</code></pre>
+<pre><code>## ..., Adjusted R-squared:  0.4544</code></pre>
 <p>erklärt sich nun daraus<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, dass das Bestimmheitsmaß um so größer wird, je größer die Zahl der unabhöngigen Variablen wird. Und zwar <em>unabhöngig</em> davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. Daher nutzt man besser das <strong>korrigierte Bestimmtheitsmaß</strong> (engl: <em>adjusted R-squared</em>) <span class="math inline">\(\bar{R}^2\)</span>: <span class="math display">\[
     \bar{R}^2 = 1- (1-R^2) \cdot \frac{n-1}{n-p-1} = R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
 \]</span></p>
@@ -233,7 +231,7 @@ F(p,n−p){\displaystyle {\begin{aligned}F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2
     {\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
 \]</span></p>
 <p>der Wert in der Zeile</p>
-<pre><code>F-statistic: 203.4 on 1 and 242 DF</code></pre>
+<pre><code>## F-statistic: 203.4 on 1 and 242 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>mit Parametern <span class="math inline">\(p=1\)</span> und <span class="math inline">\(n-p-1=242\)</span> Freiheitsgraden.</p>
 <p>Der p-Wert von (numerisch) 0, liefert also ein hinreichendes Indiz dafür, dass der Rechnungsbetrag einen echten Beitrag liefert.</p>
 <section class="footnotes">
