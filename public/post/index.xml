@@ -207,8 +207,10 @@ xyplot(tip ~ total_bill, data = tips, panel = mypanel, main = &amp;quot;Streudia
     ylab = &amp;quot;Trinkgeld&amp;quot;, xlab = &amp;quot;Rechnungsbetrag&amp;quot;, key = list(space = &amp;quot;bottom&amp;quot;, 
         padding.text = 8, columns = 2, just = c(&amp;quot;center&amp;quot;, &amp;quot;bottom&amp;quot;), 
         lines = list(col = c(&amp;quot;darkgreen&amp;quot;, &amp;quot;red&amp;quot;), lty = c(2, 
-            2), lwd = 1.2), text = list(c(&amp;quot;Mittelwert Trinkgelder&amp;quot;, 
-            &amp;quot; Regressionsgerade&amp;quot;))))&lt;/code&gt;&lt;/pre&gt;
+            2), lwd = 1.2), text = list(c(expression(bar(y)), 
+            expression(hat(beta)[0] + hat(beta)[total_bill] * 
+                x[total_bill]))), text = list(c(&amp;quot;Mittelwert Trinkgeld&amp;quot;, 
+            &amp;quot;Regressionsgerade&amp;quot;))))&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}=1.9144546\)&lt;/span&gt; beschreibt die mittlere quadratische Abweichung der Datenpunkte &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; vom Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt;. Diese Varianz läßt sich nun Zerlegen in einen Anteil der durch die Regressionsgerade &lt;em&gt;erklärt&lt;/em&gt; wird und in einen Anteil, der durch die Regressionsgerade nicht erklärt wird.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
@@ -291,7 +293,7 @@ xyplot(tip ~ total_bill, data = tips, panel = mypanel, main = &amp;quot;Streudia
 &lt;p&gt;Die Teststatistik &lt;span class=&#34;math inline&#34;&gt;\(\displaystyle (n-p-1)\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; Freiheitsgraden. Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;, so verwirft man die Nullhypothese &lt;span class=&#34;math inline&#34;&gt;\(H_{0}\)&lt;/span&gt;. Das &lt;span class=&#34;math inline&#34;&gt;\(R^{2}\)&lt;/span&gt; ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; bei. Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt. Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.&lt;/p&gt;
 &lt;p&gt;In unserem Beispiel ist&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    {\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
+    F={\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;der Wert in der Zeile&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## F-statistic: 203.4 on 1 and 242 DF,  p-value: &amp;lt; 2.2e-16&lt;/code&gt;&lt;/pre&gt;

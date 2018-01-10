@@ -35,7 +35,7 @@ tips <- read.csv2("tips.csv")
 
 Zunächt laden wir dazu die **tipping** Daten mittels
 
-```{r load-tips-view, eval=FALSE}
+```{r load-tips-view, eval=FALSE, message=FALSE}
 library(mosaic)
 download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
 tips <- read.csv2("tips.csv")
@@ -283,8 +283,10 @@ xyplot(
             columns=2,
             just=c("center", "bottom"),
             lines=list(col=c("darkgreen","red"), lty=c(2,2), lwd=1.2),
-            text=list(c("Mittelwert Trinkgelder"," Regressionsgerade")))
-     )
+            text=list(c(expression(bar(y)), expression(hat(beta)[0]+hat(beta)[total_bill] * x[total_bill]))),
+            text=list(c("Mittelwert Trinkgeld","Regressionsgerade"))
+    )
+)
 ```
 
 Die Varianz $s^2_{y_i}=`r var(tips$tip)`$ beschreibt die mittlere quadratische Abweichung der Datenpunkte $y_i$ vom Mittelwert $\bar{y}$.
@@ -418,7 +420,7 @@ r.sq <- summary(linMod)$r.squared
 In unserem Beispiel ist
 
 $$
-    {\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{`r r.sq`}{1-`r r.sq`} \cdot \frac{`r obs_n`-1-1}{1} = `r r.sq/(1-r.sq)*(obs_n-1-1)/1`
+    F={\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{`r r.sq`}{1-`r r.sq`} \cdot \frac{`r obs_n`-1-1}{1} = `r r.sq/(1-r.sq)*(obs_n-1-1)/1`
 $$
 
 der Wert in der Zeile

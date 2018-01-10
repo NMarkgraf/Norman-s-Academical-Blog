@@ -204,8 +204,10 @@ xyplot(tip ~ total_bill, data = tips, panel = mypanel, main = &quot;Streudiagram
     ylab = &quot;Trinkgeld&quot;, xlab = &quot;Rechnungsbetrag&quot;, key = list(space = &quot;bottom&quot;, 
         padding.text = 8, columns = 2, just = c(&quot;center&quot;, &quot;bottom&quot;), 
         lines = list(col = c(&quot;darkgreen&quot;, &quot;red&quot;), lty = c(2, 
-            2), lwd = 1.2), text = list(c(&quot;Mittelwert Trinkgelder&quot;, 
-            &quot; Regressionsgerade&quot;))))</code></pre>
+            2), lwd = 1.2), text = list(c(expression(bar(y)), 
+            expression(hat(beta)[0] + hat(beta)[total_bill] * 
+                x[total_bill]))), text = list(c(&quot;Mittelwert Trinkgeld&quot;, 
+            &quot;Regressionsgerade&quot;))))</code></pre>
 <p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Die Varianz <span class="math inline">\(s^2_{y_i}=1.9144546\)</span> beschreibt die mittlere quadratische Abweichung der Datenpunkte <span class="math inline">\(y_i\)</span> vom Mittelwert <span class="math inline">\(\bar{y}\)</span>. Diese Varianz läßt sich nun Zerlegen in einen Anteil der durch die Regressionsgerade <em>erklärt</em> wird und in einen Anteil, der durch die Regressionsgerade nicht erklärt wird.</p>
 <p><span class="math display">\[
@@ -288,7 +290,7 @@ xyplot(tip ~ total_bill, data = tips, panel = mypanel, main = &quot;Streudiagram
 <p>Die Teststatistik <span class="math inline">\(\displaystyle (n-p-1)\)</span> und <span class="math inline">\(p\)</span> Freiheitsgraden. Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau <span class="math inline">\(\alpha\)</span>, so verwirft man die Nullhypothese <span class="math inline">\(H_{0}\)</span>. Das <span class="math inline">\(R^{2}\)</span> ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von <span class="math inline">\(y\)</span> bei. Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt. Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.</p>
 <p>In unserem Beispiel ist</p>
 <p><span class="math display">\[
-    {\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
+    F={\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
 \]</span></p>
 <p>der Wert in der Zeile</p>
 <pre><code>## F-statistic: 203.4 on 1 and 242 DF,  p-value: &lt; 2.2e-16</code></pre>
