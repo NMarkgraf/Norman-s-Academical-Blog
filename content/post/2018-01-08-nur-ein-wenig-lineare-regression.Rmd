@@ -6,25 +6,36 @@ slug: 'nur-ein-wenig-lineare-regression'
 categories:  
     - Statistik
 tags:
-  - Lehre
-  - R
-  - Statistik
+    - Lehre
+    - R
+    - Statistik
 ---
 
 Der *tipping* Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (*tip*) und Rechnungsbetrag (*total_bill*) steht dabei im Vordergrund einer lineare Regressionsanalyse. 
 So auch hier. Wir wollen die einzelnen Angaben von **R** dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von **R** eigentlich genau sehen, woher es kommt und wie man es interprätieren kann.
 
-```{r setup, include=FALSE}
-#, warning=FALSE, error=FALSE}
+```{r setup, include=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+#
+knitr::opts_chunk$set(
+    echo = TRUE,
+    tidy = TRUE,
+    tidy.opts=list(
+        coment = TRUE,
+        blank = TRUE,
+        arrow = TRUE,
+        indent = 4,
+        width.cutoff=60),
+        brace.newline = FALSE
+    )
+#
 library(mosaic, warn.conflicts = FALSE, quietly = TRUE, verbose = FALSE)
-#download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
+download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
 tips <- read.csv2("tips.csv")
 ```
 
 Zunächt laden wir dazu die **tipping** Daten mittels
 
-
-```{r load-tips-view, eval=FALSE, include=FALSE}
+```{r load-tips-view, eval=FALSE}
 library(mosaic)
 download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
 tips <- read.csv2("tips.csv")
@@ -33,6 +44,7 @@ tips <- read.csv2("tips.csv")
 in den Arbeitsspeicher.
 
 Eine lineares Modell wird schnell mit
+
 ```{r}
 linMod <- lm(tip ~ total_bill, data = tips)
 ```
@@ -55,7 +67,25 @@ mit den *Regressionskoeffizienten* $\hat{\beta}_0=`r coef(linMod)["(Intercept)"]
 Graphisch ergibt sich damit das Modell wie folgt:
 
 ```{r}
-plotModel(linMod)
+# Statt plotModel(linMod) besser:
+library(lattice)
+mypanel <- function(x, y) {
+    # Scatterplot:
+    panel.xyplot(x, y, col="darkgreen") 
+    # Regressionsgerade:
+    panel.abline(linMod, col="red", lwd=1.2, lty=2)
+}
+xyplot(
+    tip ~ total_bill, data=tips, 
+    panel = mypanel,
+    main  = "Streudiagramm der Trinkgelder",
+    ylab  = "Trinkgeld",
+    xlab  = "Rechnungsbetrag",
+    key = list(
+            space="bottom", padding.text=8,
+            lines=list(col=c("red"), lty=c(2), lwd=1.2),
+            text=list(c("Regressionsgerade")))
+     )
 ```
 
 Was hat es nun mit dem y-Achenabschnitt $\hat{\beta}_0$ aufsich?
@@ -73,6 +103,7 @@ tips$delta_tip <- tips$tip - beta_0    # wird abgezogen
 ```
 
 Vergleichen wir das alte lineare Modell mit dem neuen Modell (*linModDelta*):
+
 ```{r}
 linModDelta <- lm(delta_tip ~ total_bill, data = tips)
 summary(linModDelta)
@@ -84,7 +115,25 @@ Der Wert für die Steigung lautet weiterhin $`r coef(linModDelta)["total_bill"]`
 Das war auch zu erwarten, denn wir haben unsere Regressionsgerade eigentlich nur um $\hat{\beta}_0$ nach unten verschoben. (Der Fachmann spricht von einer Translation (Parallelverschiebung)^[vgl: https://de.wikipedia.org/wiki/Parallelverschiebung] um $-\hat{\beta}_0$.
 
 ```{r}
-plotModel(linModDelta)
+# Statt plotModel(linModDelta) besser:
+library(lattice)
+mypanel <- function(x, y) {
+    # Scatterplot:
+    panel.xyplot(x, y, col="darkgreen") 
+    # Regressionsgerade:
+    panel.abline(linModDelta, col="red", lwd=1.2, lty=2)
+}
+xyplot(
+    delta_tip ~ total_bill, data=tips, 
+    panel = mypanel,
+    main  = "Streudiagramm der Delta Trinkgelder",
+    ylab  = "Delta Trinkgeld",
+    xlab  = "Rechnungsbetrag",
+    key = list(
+            space="bottom", padding.text=8,
+            lines=list(col=c("red"), lty=c(2), lwd=1.2),
+            text=list(c("Regressionsgerade")))
+     )
 ```
  
 Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit Aussnahme der *[Intercept]* Zeile parktisch nichts geändert hat. Das ist kein Wunder, sondern Absicht!
@@ -93,6 +142,7 @@ Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit A
 Die Regressionsgerade stellt für unsere Stichprobe die Gerade mit dem geringsten Fehler an den Datenpunkten dar. Mathematisch heißt das folgendes:
 
 An den $n=`r length(tips$total_bill)`$ Datenpunkten unserer Stichprobe $(x_i, y_i)=(tips\$total\_bill[i], tips\$tip[i])$ [für (i=1,\dots,n)$] sind die *Residuen*, also die *Fehlerterme*,
+
 $$
  \hat{e}_i =\hat{y}_i - y_i = \left[\hat{\beta}_{\text{0}} + \hat{\beta}_{\text{total_bill}} \cdot x_i\right] - y_i
 $$
@@ -113,10 +163,29 @@ summary(linModError)
 ```
 
 ```{r}
-plotModel(linModError)
+# Statt plotModel(linModError) besser:
+library(lattice)
+mypanel <- function(x, y) {
+    # Scatterplot:
+    panel.xyplot(x, y, col="darkgreen") 
+    # Regressionsgerade:
+    panel.abline(linModError, col="red", lwd=1.2, lty=2)
+}
+xyplot(
+    error_tip ~ total_bill, data=tips, 
+    panel = mypanel,
+    main  = "Streudiagramm der Residuen",
+    ylab  = "Residuen",
+    xlab  = "Rechnungsbetrag",
+    key = list(
+            space="bottom", rows=3, padding.text=8,
+            lines=list(col=c("red"), lty=c(2), lwd=1.2),
+            text=list(c("Regressionsgerade / x-Achse")))
+     )
 ```
 
 Wir können die Graphik im wesendlichen auch einfacher über den Befehl
+
 ```{r}
 xyplot(residuals(linMod) ~ fitted(linMod))
 ```
@@ -129,7 +198,6 @@ Betrachten wir kurz nur die Rediduen:
 favstats(~residuals(linMod))
 ```
 
-
 Wir sehe, dass wir in der Zusammenfassung immer genau diese Werte unter dem Abschnitt *Residuals* gefunden haben. Minimum,  das 1. Quantil, der Median, das 3. Quantil und das Maximum stimmen überein. 
 
 Der erwartungstreue und unverzerrte Schätzer für den Standardfehler der Residuen, lautet
@@ -139,14 +207,13 @@ $$
     SE_{\text{Residuen}} &= \sqrt{\frac{1}{n-2} \cdot \sum_{i=1}^n (\hat{e_i})^2} = \sqrt{\frac{n-1}{n-2} \cdot \frac{1}{n-1} \cdot \sum_{i=1}^n (\hat{e_i})^2} \\
                          &= \sqrt{\frac{n-1}{n-2}} \cdot \sqrt{\frac{1}{n-1} \cdot \sum_{i=1}^n (\hat{e_i})^2} \\
                          &= \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}}
-  \end{align*}
+\end{align*}
 $$
-
 
 Also finden wir den Wert *Residual standard error* aus der Zeile
 
 ```
-Residual standard error: 1.022 on 242 degrees of freedom
+## Residual standard error: 1.022 on 242 degrees of freedom
 ```
 
 in dem wir den in den *favstats* gefundenen Wert für die Standardabweichung entsprechen korrigieren:
@@ -158,7 +225,7 @@ obs_sd <- tmp$sd
 ```
 
 $$
-SE_{\text{Residuen}} = \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}} = \sqrt{\frac{`r obs_n-1`}{`r obs_n-2`}} \cdot `r obs_sd` = `r sqrt(243/242) * obs_sd`
+    SE_{\text{Residuen}} = \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}} = \sqrt{\frac{`r obs_n-1`}{`r obs_n-2`}} \cdot `r obs_sd` = `r sqrt(243/242) * obs_sd`
 $$
 
 Der Median der Residuen ist nicht gleich Null, wie der Mittelwert. (Welcher auch hier als numerisch Null interpretiert werden muss!)
@@ -168,7 +235,6 @@ Betrachten wir dazu das Histogramm:
 ```{r}
 histogram( ~residuals(linMod), nint = 19)
 ```
-
 
 Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.
 
@@ -181,7 +247,7 @@ shapiro.test( residuals(linMod) )
 Davon ist nach dem Ergebnis eben sowenig auszugehen, wie nach einem Blick auf das QQ-Normal-Diagram:
 
 ```{r}
-qqnorm( residuals(linMod) )
+qqnorm( residuals(linMod), col="darkgreen" )
 ```
 
 Ein K.O.-Kriterium für gute Prognosen.
@@ -190,7 +256,8 @@ Wie gut aber beschreibt unsere Regressionsgerade die Daten?
 
 Als Maß dafür können wir das Bestimmtheitsmaß nehmen. 
 
-Ein kurzer Blick auf die Situation, der Mittelwert der Trinkgelder ist 
+Ein kurzer Blick auf die Situation, der Mittelwert der Trinkgelder ist
+
 $$
     \bar{y} =  \frac{1}{n} \sum_{i=1}^n y_i = `r mean(tips$tip)`.
 $$
@@ -201,22 +268,28 @@ Wir erhalten so folgendes Diagramm:
 library(lattice)
 mypanel <- function(x, y) {
     panel.xyplot(x, y)
-    panel.abline(h = mean(y), lwd=2, lty=2, col="darkgreen")
-    panel.lmline(x, y, col="red", lwd=1, lty=2)
+    panel.abline(h = mean(y), lwd=1.2, lty=2, col="darkgreen")
+    panel.lmline(x, y, col="red", lwd=1.2, lty=2)
 }
 xyplot(
     tip ~ total_bill, data=tips, 
     panel = mypanel,
     main  = "Streudiagramm der Trinkgelder",
-    sub   = "Grün der Mittelwert, rot die Regressionsgerade",
     ylab  = "Trinkgeld",
-    xlab  = "Rechnungsbetrag"
+    xlab  = "Rechnungsbetrag",
+    key = list(
+            space="bottom",
+            padding.text=8,
+            columns=2,
+            just=c("center", "bottom"),
+            lines=list(col=c("darkgreen","red"), lty=c(2,2), lwd=1.2),
+            text=list(c("Mittelwert Trinkgelder"," Regressionsgerade")))
      )
 ```
 
-
 Die Varianz $s^2_{y_i}=`r var(tips$tip)`$ beschreibt die mittlere quadratische Abweichung der Datenpunkte $y_i$ vom Mittelwert $\bar{y}$.
 Diese Varianz läßt sich nun Zerlegen in einen Anteil der durch die Regressionsgerade *erklärt* wird und in einen Anteil, der durch die Regressionsgerade nicht erklärt wird.
+
 $$
     s^2_{y_i} = s^2_{\hat{y}_i} + s^2_{\hat{e}_i}
 $$
@@ -227,6 +300,7 @@ $$
 $$
 
 Multipliziert man nun beide Seiten mit $\sum_{i=1}^n (y_i)^2$, so erhält man:
+
 $$
     \sum_{i=1}^n (\bar{y}- y_i)^2 = \sum_{i=1}^n (\bar{y}- \hat{y_i})^2+ \sum_{i=1}^n (\hat{e_i})^2 
 $$
@@ -234,27 +308,32 @@ $$
 Zur vereinfachung nennt man nun die einzelnen Summen in dem ausdruck wie folgt:
 
 - Der erste Ausdruck heißt **Gesamtvarianz* oder **total sum of squares** oder kurz **$SS_T$**, (oder **TSS**) er ist die Summe der quadrierten Differenzen 
+
 $$
     SS_T = \sum_{i=1}^n (\bar{y}-y_i)^2
 $$
 
 - Der zweite Ausdruck heißt **Modellvarianz** oder **model sum of squares** oder kurz **$SS_M$** (oder **RSS**), er ist die Summe der quadrierten Differenzen aus dem Mittelwert $\bar{y}$ und der Punkte auf der Regressionsgeraden $\hat{y}_i$:
+
 $$
     SS_M = \sum_{i=1}^n (\bar{y}-\hat{y}_i)^2
 $$
 
 - Der dritte Ausdruck heißt **Gesamt-Verhersage-Fehler**, **Fehlersteuung der Regression** oder **error sum of squares** oder kurz $SS_E$ (oder **ESS**), er ist die Summe der quadratischen Differenz aus den Datenpunkten $y_i$ und den Punkten der Regressionsgeraden $\hat{y}_i$:
+
 $$
     SS_E = \sum_{i=1}^n (\hat{y}_i-y_i)^2 = \sum_{i=1}^n (\hat{e}_i)^2
 $$
 
 Wir können daher auch kurz 
+
 $$
     SS_T = SS_M + SS_E
 $$
 schreiben und sparen uns die ganzen Summenzeichen.
 
 Die Güte einer Regression wollen wir nun durch den Anteil der durch das Model erklärten Varianz (also der $SS_M$) ausdrücken und stellen daher nach $SS_M$ um:
+
 $$
     SS_M = SS_T - SS_E
 $$
@@ -310,15 +389,18 @@ Aus diesem Grund wird der F-Test der Gesamtsignifikanz des Modells auch als Anpa
 Die Nullhypothese des F-Test der Gesamtsignifikanz des Modells sagt aus, dass alle erklärenden Variablen keinen Einfluss auf die abhängige Variable haben. 
 Sowohl die abhängige Variable als auch die unabhängigen Variablen können binär (kategoriell) oder metrisch sein. 
 Der *Wald-Test* kann dann die Hypothesen testen (ohne Einbezug des Achsenabschnittes):
+
 $$
     H_{0}\colon \beta _{1}=\beta _{2}=\ldots =\beta _{k}\;=\;0\Rightarrow R^{2}=0
 $$
 gegen  
+
 $$
     H_{1}:\beta _{j}\;\neq \;0\;\mathrm {f{\ddot {u}}r\;mindestens\;ein} \;j\in \{1,\ldots ,k\}\Rightarrow R^{2}\neq 0
 $$
 
 Die Teststatistik dieses Tests lautet
+
 $$
 \begin{aligned}
     F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)
@@ -340,9 +422,11 @@ $$
 $$
 
 der Wert in der Zeile
+
 ```
 ## F-statistic: 203.4 on 1 and 242 DF,  p-value: < 2.2e-16
 ```
+
 mit Parametern $p=1$ und $n-p-1=242$ Freiheitsgraden. 
 
 Der p-Wert von (numerisch) 0, liefert also ein hinreichendes Indiz dafür, dass der Rechnungsbetrag einen echten Beitrag liefert.
