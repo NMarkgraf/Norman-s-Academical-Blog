@@ -24,7 +24,7 @@ tips &amp;lt;- read.csv2(&amp;quot;tips.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;in den Arbeitsspeicher.&lt;/p&gt;
 &lt;p&gt;Eine lineares Modell wird schnell mit&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;linMod &amp;lt;- lm(tip ~ total_bill, data = tips)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;erstellt. Betrachten wir nun die Zusammenfassung:&lt;/p&gt;
+&lt;p&gt;erstellt. Betrachten wir die Zusammenfassung:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(linMod)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ## Call:
@@ -50,24 +50,31 @@ tips &amp;lt;- read.csv2(&amp;quot;tips.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;mit den &lt;em&gt;Regressionskoeffizienten&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0=0.9202696\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_{\text{total_bill}}=0.1050245\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Graphisch ergibt sich damit das Modell wie folgt:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Statt plotModel(linMod) besser:
-library(lattice)
 mypanel &amp;lt;- function(x, y) {
     # Scatterplot:
-    panel.xyplot(x, y, col = &amp;quot;darkgreen&amp;quot;)
+    panel.xyplot(x, y, col = &amp;quot;darkgreen&amp;quot;) 
     # Regressionsgerade:
     panel.abline(linMod, col = &amp;quot;red&amp;quot;, lwd = 1.2, lty = 2)
 }
-xyplot(tip ~ total_bill, data = tips, panel = mypanel, main = &amp;quot;Streudiagramm der Trinkgelder&amp;quot;, 
-    ylab = &amp;quot;Trinkgeld&amp;quot;, xlab = &amp;quot;Rechnungsbetrag&amp;quot;, key = list(space = &amp;quot;bottom&amp;quot;, 
-        padding.text = 8, lines = list(col = c(&amp;quot;red&amp;quot;), lty = c(2), 
-            lwd = 1.2), text = list(c(&amp;quot;Regressionsgerade&amp;quot;))))&lt;/code&gt;&lt;/pre&gt;
+xyplot(
+    tip ~ total_bill, data = tips, 
+    panel = mypanel,
+    main  = &amp;quot;Streudiagramm der Trinkgelder&amp;quot;,
+    ylab  = &amp;quot;Trinkgeld&amp;quot;,
+    xlab  = &amp;quot;Rechnungsbetrag&amp;quot;,
+    key = list(
+            space = &amp;quot;bottom&amp;quot;, padding.text = 8,
+            lines = list(col = c(&amp;quot;red&amp;quot;), lty = c(2), lwd = 1.2),
+            text = list(c(&amp;quot;Regressionsgerade&amp;quot;))
+          )
+     )&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Was hat es nun mit dem y-Achsenabschnitt &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0\)&lt;/span&gt; auf sich?&lt;/p&gt;
+&lt;p&gt;Was hat es mit dem y-Achsenabschnitt &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0\)&lt;/span&gt; auf sich?&lt;/p&gt;
 &lt;p&gt;Ist es etwa eine Art &lt;em&gt;Grundtrinkgeld&lt;/em&gt;, mit dem der Kellern rechnen kann, auch wenn der Kunde gar nichts bestellt?&lt;/p&gt;
 &lt;p&gt;Nun ja, es so etwas in der Art, aber eben ein rein fiktiver Wert, der durch die Konstruktion der Parameter entsteht. Eine (affin-)lineare Gerade geht nun einmal irgendwann durch die y-Achse (wenn sie nicht parallel dazu ist) und es kann passieren, dass eine sinnvolle Interpretation nicht so ohne weiteres möglich ist.&lt;/p&gt;
 &lt;p&gt;Wir können aber dieses &lt;em&gt;Grundtrinkgeld&lt;/em&gt; heraus nehmen und den y-Achsenabschnitt auf Null setzen. Dazu ziehen wir &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0\)&lt;/span&gt; einfach von alle Trinkgeldern ab. Wir erhalten quasi nur noch den &lt;em&gt;Trinkgeldzuwach&lt;/em&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beta_0 &amp;lt;- coef(linMod)[&amp;quot;(Intercept)&amp;quot;]  # Grundtrinkgeld
-tips$delta_tip &amp;lt;- tips$tip - beta_0  # wird abgezogen&lt;/code&gt;&lt;/pre&gt;
+tips$delta_tip &amp;lt;- tips$tip - beta_0    # wird abgezogen&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Vergleichen wir das alte lineare Modell mit dem neuen Modell (&lt;em&gt;linModDelta&lt;/em&gt;):&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;linModDelta &amp;lt;- lm(delta_tip ~ total_bill, data = tips)
 summary(linModDelta)&lt;/code&gt;&lt;/pre&gt;
@@ -92,18 +99,23 @@ summary(linModDelta)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In diesem Modell ist der Wert für den y-Achsenabschnitt numerisch gleich 0. – Ja, da mag zwar &lt;span class=&#34;math inline&#34;&gt;\(-4.5487837\times 10^{-15}\)&lt;/span&gt; stehen, jedoch sind so kleine Werte der jedem Rechner inne wohnenden Ungenauigkeit in der Gleitkomma-Arithmetik geschuldet und ist faktisch gleich 0.&lt;/p&gt;
 &lt;p&gt;Der Wert für die Steigung lautet weiterhin &lt;span class=&#34;math inline&#34;&gt;\(0.1050245\)&lt;/span&gt;. Das war auch zu erwarten, denn wir haben unsere Regressionsgerade eigentlich nur um &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0\)&lt;/span&gt; nach unten verschoben. (Der Fachmann spricht von einer Translation (Parallelverschiebung)&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; um &lt;span class=&#34;math inline&#34;&gt;\(-\hat{\beta}_0\)&lt;/span&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Statt plotModel(linModDelta) besser:
-library(lattice)
 mypanel &amp;lt;- function(x, y) {
     # Scatterplot:
-    panel.xyplot(x, y, col = &amp;quot;darkgreen&amp;quot;)
+    panel.xyplot(x, y, col = &amp;quot;darkgreen&amp;quot;) 
     # Regressionsgerade:
     panel.abline(linModDelta, col = &amp;quot;red&amp;quot;, lwd = 1.2, lty = 2)
 }
-xyplot(delta_tip ~ total_bill, data = tips, panel = mypanel, 
-    main = &amp;quot;Streudiagramm der Delta Trinkgelder&amp;quot;, ylab = &amp;quot;Delta Trinkgeld&amp;quot;, 
-    xlab = &amp;quot;Rechnungsbetrag&amp;quot;, key = list(space = &amp;quot;bottom&amp;quot;, padding.text = 8, 
-        lines = list(col = c(&amp;quot;red&amp;quot;), lty = c(2), lwd = 1.2), 
-        text = list(c(&amp;quot;Regressionsgerade&amp;quot;))))&lt;/code&gt;&lt;/pre&gt;
+xyplot(
+    delta_tip ~ total_bill, data=tips, 
+    panel = mypanel,
+    main  = &amp;quot;Streudiagramm der Delta Trinkgelder&amp;quot;,
+    ylab  = &amp;quot;Delta Trinkgeld&amp;quot;,
+    xlab  = &amp;quot;Rechnungsbetrag&amp;quot;,
+    key = list(
+            space=&amp;quot;bottom&amp;quot;, padding.text=8,
+            lines=list(col=c(&amp;quot;red&amp;quot;), lty=c(2), lwd=1.2),
+            text=list(c(&amp;quot;Regressionsgerade&amp;quot;)))
+     )&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit Ausnahme der &lt;em&gt;[Intercept]&lt;/em&gt; Zeile praktisch nichts geändert hat. Das ist kein Wunder, sondern Absicht!&lt;/p&gt;
 &lt;p&gt;Die Regressionsgerade stellt für unsere Stichprobe die Gerade mit dem geringsten Fehler an den Datenpunkten dar. Mathematisch heißt das folgendes:&lt;/p&gt;
@@ -115,7 +127,7 @@ xyplot(delta_tip ~ total_bill, data = tips, panel = mypanel,
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     \sum_{i=1}^n (\hat{e}_i)^2 \text{ ist minimal!}
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Wir können uns nun diese Fehlerterme auch graphisch Ansehen um die Varianz der Residuen zu sehen. Dazu ziehen wir von allen Datenpunkt &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; den geschätzten Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}_i\)&lt;/span&gt; ab und erstellen ein neues lineares Modell&lt;/p&gt;
+&lt;p&gt;Wir können diese Fehlerterme graphisch ansehen um die Varianz der Residuen zu sehen. Dazu ziehen wir von allen Datenpunkten &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; den geschätzten Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}_i\)&lt;/span&gt; ab und erstellen ein neues lineares Modell:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beta_total_bill &amp;lt;- coef(linModDelta)[&amp;quot;total_bill&amp;quot;]
 tips$error_tip &amp;lt;- (tips$tip - beta_0 - beta_total_bill * tips$total_bill)
 linModError &amp;lt;- lm(error_tip ~ total_bill, data = tips)
@@ -136,19 +148,26 @@ summary(linModError)&lt;/code&gt;&lt;/pre&gt;
 ## Residual standard error: 1.022 on 242 degrees of freedom
 ## Multiple R-squared:  6.665e-31,  Adjusted R-squared:  -0.004132 
 ## F-statistic: 1.613e-28 on 1 and 242 DF,  p-value: 1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Also Diagramm sieht es dann so aus:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Statt plotModel(linModError) besser:
-library(lattice)
 mypanel &amp;lt;- function(x, y) {
     # Scatterplot:
-    panel.xyplot(x, y, col = &amp;quot;darkgreen&amp;quot;)
+    panel.xyplot(x, y, col = &amp;quot;darkgreen&amp;quot;) 
     # Regressionsgerade:
     panel.abline(linModError, col = &amp;quot;red&amp;quot;, lwd = 1.2, lty = 2)
 }
-xyplot(error_tip ~ total_bill, data = tips, panel = mypanel, 
-    main = &amp;quot;Streudiagramm der Residuen&amp;quot;, ylab = &amp;quot;Residuen&amp;quot;, xlab = &amp;quot;Rechnungsbetrag&amp;quot;, 
-    key = list(space = &amp;quot;bottom&amp;quot;, rows = 3, padding.text = 8, 
-        lines = list(col = c(&amp;quot;red&amp;quot;), lty = c(2), lwd = 1.2), 
-        text = list(c(&amp;quot;Regressionsgerade / x-Achse&amp;quot;))))&lt;/code&gt;&lt;/pre&gt;
+xyplot(
+    error_tip ~ total_bill, data = tips, 
+    panel = mypanel,
+    main  = &amp;quot;Streudiagramm der Residuen&amp;quot;,
+    ylab  = &amp;quot;Residuen&amp;quot;,
+    xlab  = &amp;quot;Rechnungsbetrag&amp;quot;,
+    key = list(
+            space = &amp;quot;bottom&amp;quot;, rows = 3, padding.text = 8,
+            lines = list(col=c(&amp;quot;red&amp;quot;), lty = c(2), lwd = 1.2),
+            text = list(c(&amp;quot;Regressionsgerade / x-Achse&amp;quot;))
+          )
+)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Wir können die Graphik im wesentlichen auch einfacher über den Befehl&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;xyplot(residuals(linMod) ~ fitted(linMod))&lt;/code&gt;&lt;/pre&gt;
@@ -194,38 +213,45 @@ xyplot(error_tip ~ total_bill, data = tips, panel = mypanel,
 &lt;p&gt;Als Maß dafür können wir das Bestimmtheitsmaß nehmen.&lt;/p&gt;
 &lt;p&gt;Ein kurzer Blick auf die Situation, der Mittelwert der Trinkgelder ist&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    \bar{y} =  \frac{1}{n} \sum_{i=1}^n y_i = 2.9982787.
+    \bar{y} =  \frac{1}{n} \cdot \sum_{i=1}^n y_i = 2.9982787.
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Wir erhalten so folgendes Diagramm:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(lattice)
-mypanel &amp;lt;- function(x, y) {
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mypanel &amp;lt;- function(x, y) {
     panel.xyplot(x, y)
     panel.abline(h = mean(y), lwd = 1.2, lty = 2, col = &amp;quot;darkgreen&amp;quot;)
     panel.lmline(x, y, col = &amp;quot;red&amp;quot;, lwd = 1.2, lty = 2)
 }
-xyplot(tip ~ total_bill, data = tips, panel = mypanel, main = &amp;quot;Streudiagramm der Trinkgelder&amp;quot;, 
-    ylab = &amp;quot;Trinkgeld&amp;quot;, xlab = &amp;quot;Rechnungsbetrag&amp;quot;, key = list(space = &amp;quot;bottom&amp;quot;, 
-        padding.text = 8, columns = 2, just = c(&amp;quot;center&amp;quot;, &amp;quot;bottom&amp;quot;), 
-        lines = list(col = c(&amp;quot;darkgreen&amp;quot;, &amp;quot;red&amp;quot;), lty = c(2, 
-            2), lwd = 1.2), text = list(c(expression(bar(y)), 
-            expression(hat(beta)[0] + hat(beta)[total_bill] * 
-                x[total_bill]))), text = list(c(&amp;quot;Mittelwert Trinkgeld&amp;quot;, 
-            &amp;quot;Regressionsgerade&amp;quot;))))&lt;/code&gt;&lt;/pre&gt;
+xyplot(
+    tip ~ total_bill, data = tips, 
+    panel = mypanel,
+    main  = &amp;quot;Streudiagramm der Trinkgelder&amp;quot;,
+    ylab  = &amp;quot;Trinkgeld&amp;quot;,
+    xlab  = &amp;quot;Rechnungsbetrag&amp;quot;,
+    key = list(
+            space = &amp;quot;bottom&amp;quot;,
+            padding.text = 8,
+            columns = 2,
+            just = c(&amp;quot;center&amp;quot;, &amp;quot;bottom&amp;quot;),
+            lines = list(col = c(&amp;quot;darkgreen&amp;quot;, &amp;quot;red&amp;quot;), lty = c(2, 2), lwd = 1.2),
+            text = list(c(expression(bar(y)), expression(hat(beta)[0]+hat(beta)[total_bill] * x[total_bill]))),
+            text = list(c(&amp;quot;Mittelwert Trinkgeld&amp;quot;, &amp;quot;Regressionsgerade&amp;quot;))
+    )
+)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}=1.9144546\)&lt;/span&gt; beschreibt die mittlere quadratische Abweichung der Datenpunkte &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; vom Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt;. Diese Varianz lässt sich nun Zerlegen in einen Anteil der durch die Regressionsgerade &lt;em&gt;erklärt&lt;/em&gt; wird und in einen Anteil, der durch die Regressionsgerade nicht erklärt wird.&lt;/p&gt;
+&lt;p&gt;Die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}=1.9144546\)&lt;/span&gt; beschreibt die mittlere quadratische Abweichung der Datenpunkte &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; vom Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt;. Diese Varianz lässt sich Zerlegen in einen Anteil, der durch die Regressionsgerade &lt;em&gt;erklärt&lt;/em&gt; wird und in einen Anteil, der durch die Regressionsgerade &lt;em&gt;nicht erklärt&lt;/em&gt; wird.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     s^2_{y_i} = s^2_{\hat{y}_i} + s^2_{\hat{e}_i}
 \]&lt;/span&gt; Dividiert man beider Seiten durch die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}\)&lt;/span&gt;, so normiert man den Ausdruck und kann den Faktor &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{n-1}\)&lt;/span&gt; (bzw. &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{n}\)&lt;/span&gt;) herauskürzen. Es bleibt dann:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     1 = \frac{\sum_{i=1}^n (\bar{y}- \hat{y_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2} + \frac{\sum_{i=1}^n (\hat{e_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2}
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Multipliziert man nun beide Seiten mit &lt;span class=&#34;math inline&#34;&gt;\(\sum_{i=1}^n (y_i)^2\)&lt;/span&gt;, so erhält man:&lt;/p&gt;
+&lt;p&gt;Multipliziert man beide Seiten mit &lt;span class=&#34;math inline&#34;&gt;\(\sum_{i=1}^n (y_i)^2\)&lt;/span&gt;, so erhält man:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     \sum_{i=1}^n (\bar{y}- y_i)^2 = \sum_{i=1}^n (\bar{y}- \hat{y_i})^2+ \sum_{i=1}^n (\hat{e_i})^2 
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Zur Vereinfachung nennt man nun die einzelnen Summen in dem ausdruck wie folgt:&lt;/p&gt;
+&lt;p&gt;Zur Vereinfachung nennt man die einzelnen Summen in dem Ausdruck wie folgt:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Der erste Ausdruck heißt &lt;strong&gt;Gesamtvarianz* oder &lt;/strong&gt;total sum of squares** oder kurz &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(SS_T\)&lt;/span&gt;&lt;/strong&gt;, (oder &lt;strong&gt;TSS&lt;/strong&gt;) er ist die Summe der quadrierten Differenzen&lt;/li&gt;
+&lt;li&gt;Der erste Ausdruck heißt &lt;strong&gt;Gesamtvarianz&lt;/strong&gt; oder &lt;strong&gt;total sum of squares&lt;/strong&gt; oder kurz &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(SS_T\)&lt;/span&gt;&lt;/strong&gt;, (oder &lt;strong&gt;TSS&lt;/strong&gt;) er ist die Summe der quadrierten Differenzen&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     SS_T = \sum_{i=1}^n (\bar{y}-y_i)^2
@@ -246,13 +272,13 @@ xyplot(tip ~ total_bill, data = tips, panel = mypanel, main = &amp;quot;Streudia
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     SS_T = SS_M + SS_E
 \]&lt;/span&gt; schreiben und sparen uns die ganzen Summenzeichen.&lt;/p&gt;
-&lt;p&gt;Die Güte einer Regression wollen wir nun durch den Anteil der durch das Model erklärten Varianz (also der &lt;span class=&#34;math inline&#34;&gt;\(SS_M\)&lt;/span&gt;) ausdrücken und stellen daher nach &lt;span class=&#34;math inline&#34;&gt;\(SS_M\)&lt;/span&gt; um:&lt;/p&gt;
+&lt;p&gt;Die Güte einer Regression wollen wir durch den Anteil der durch das Model erklärten Varianz (also der &lt;span class=&#34;math inline&#34;&gt;\(SS_M\)&lt;/span&gt;) ausdrücken und stellen daher nach &lt;span class=&#34;math inline&#34;&gt;\(SS_M\)&lt;/span&gt; um:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     SS_M = SS_T - SS_E
 \]&lt;/span&gt; Teilen wir beide Seiten durch &lt;span class=&#34;math inline&#34;&gt;\(SS_T\)&lt;/span&gt; also der maximalen (weil totalen) Quadratsumme, so erhalten wir: &lt;span class=&#34;math display&#34;&gt;\[
     \frac{SS_M}{SS_T} = \frac{SS_T}{SS_T} - \frac{SS_E}{SS_T} = 1 - \frac{SS_E}{SS_T}
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Den Ausdruck &lt;span class=&#34;math inline&#34;&gt;\(\frac{SS_M}{SS_T}\)&lt;/span&gt; nennen wir &lt;strong&gt;Bestimmtheitsmaß&lt;/strong&gt; (&lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt;). Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in Bezug auf die gesamt Varianz angibt.&lt;/p&gt;
+&lt;p&gt;Den Ausdruck &lt;span class=&#34;math inline&#34;&gt;\(\frac{SS_M}{SS_T}\)&lt;/span&gt; nennen wir &lt;strong&gt;Bestimmtheitsmaß&lt;/strong&gt; und schreiben dafür &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt;. Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in Bezug auf die Gesamtvarianz angibt. Kraft Definition ist &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt; im eindimensionalen Fall tatsächlich das Quadrat des (Pearson-)Korrelationskoeffizienten &lt;span class=&#34;math inline&#34;&gt;\(r\)&lt;/span&gt;. (M.a.W.: &lt;span class=&#34;math inline&#34;&gt;\(R^2= r^2\)&lt;/span&gt;.)&lt;/p&gt;
 &lt;p&gt;In unserer Zusammenfassung des linearen Models findet sich dieser Wert auch. Und zwar unter dem Begriff:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## Multiple R-squared:  0.4566, &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Es gilt ja:&lt;/p&gt;
@@ -261,7 +287,8 @@ xyplot(tip ~ total_bill, data = tips, panel = mypanel, main = &amp;quot;Streudia
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Der Wert&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## ..., Adjusted R-squared:  0.4544&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;erklärt sich nun daraus&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;, dass das Bestimmheitsmaß um so größer wird, je größer die Zahl der unabhängigen Variablen wird. Und zwar &lt;em&gt;unabhöngig&lt;/em&gt; davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. Daher nutzt man besser das &lt;strong&gt;korrigierte Bestimmtheitsmaß&lt;/strong&gt; (engl.: &lt;em&gt;adjusted R-squared&lt;/em&gt;) &lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^2\)&lt;/span&gt;: &lt;span class=&#34;math display&#34;&gt;\[
+&lt;p&gt;erklärt sich daraus&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;, dass das Bestimmheitsmaß um so größer wird je größer die Zahl der unabhängigen Variablen wird. Und zwar &lt;em&gt;unabhöngig&lt;/em&gt; davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. Daher nutzt man besser das &lt;strong&gt;korrigierte Bestimmtheitsmaß&lt;/strong&gt; (engl.: &lt;em&gt;adjusted R-squared&lt;/em&gt;) &lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^2\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     \begin{align*}
         \bar{R}^2 &amp;amp;= 1- (1-R^2) \cdot \frac{n-1}{n-p-1}\\ 
                   &amp;amp;= R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}

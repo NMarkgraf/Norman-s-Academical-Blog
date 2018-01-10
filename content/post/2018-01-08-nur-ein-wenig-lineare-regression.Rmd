@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
     echo = TRUE,
     tidy = TRUE,
     tidy.opts=list(
-        coment = TRUE,
+        comment = FALSE,
         blank = TRUE,
         arrow = TRUE,
         indent = 4,
@@ -49,7 +49,8 @@ Eine lineares Modell wird schnell mit
 linMod <- lm(tip ~ total_bill, data = tips)
 ```
 
-erstellt. Betrachten wir nun die Zusammenfassung:
+erstellt. 
+Betrachten wir die Zusammenfassung:
 
 ```{r}
 summary(linMod)
@@ -66,29 +67,29 @@ mit den *Regressionskoeffizienten* $\hat{\beta}_0=`r coef(linMod)["(Intercept)"]
 
 Graphisch ergibt sich damit das Modell wie folgt:
 
-```{r}
+```{r tidy=FALSE}
 # Statt plotModel(linMod) besser:
-library(lattice)
 mypanel <- function(x, y) {
     # Scatterplot:
-    panel.xyplot(x, y, col="darkgreen") 
+    panel.xyplot(x, y, col = "darkgreen") 
     # Regressionsgerade:
-    panel.abline(linMod, col="red", lwd=1.2, lty=2)
+    panel.abline(linMod, col = "red", lwd = 1.2, lty = 2)
 }
 xyplot(
-    tip ~ total_bill, data=tips, 
+    tip ~ total_bill, data = tips, 
     panel = mypanel,
     main  = "Streudiagramm der Trinkgelder",
     ylab  = "Trinkgeld",
     xlab  = "Rechnungsbetrag",
     key = list(
-            space="bottom", padding.text=8,
-            lines=list(col=c("red"), lty=c(2), lwd=1.2),
-            text=list(c("Regressionsgerade")))
+            space = "bottom", padding.text = 8,
+            lines = list(col = c("red"), lty = c(2), lwd = 1.2),
+            text = list(c("Regressionsgerade"))
+          )
      )
 ```
 
-Was hat es nun mit dem y-Achsenabschnitt $\hat{\beta}_0$ auf sich?
+Was hat es mit dem y-Achsenabschnitt $\hat{\beta}_0$ auf sich?
 
 Ist es etwa eine Art *Grundtrinkgeld*, mit dem der Kellern rechnen kann, auch wenn der Kunde gar nichts bestellt?
 
@@ -97,7 +98,7 @@ Eine (affin-)lineare Gerade geht nun einmal irgendwann durch die y-Achse (wenn s
 
 Wir können aber dieses *Grundtrinkgeld* heraus nehmen und den y-Achsenabschnitt auf Null setzen. Dazu ziehen wir $\hat{\beta}_0$ einfach von alle Trinkgeldern ab. Wir erhalten quasi nur noch den *Trinkgeldzuwach*.
 
-```{r}
+```{r tidy=FALSE}
 beta_0 <- coef(linMod)["(Intercept)"]  # Grundtrinkgeld
 tips$delta_tip <- tips$tip - beta_0    # wird abgezogen
 ```
@@ -114,14 +115,13 @@ In diesem Modell ist der Wert für den y-Achsenabschnitt numerisch gleich 0. -- 
 Der Wert für die Steigung lautet weiterhin $`r coef(linModDelta)["total_bill"]`$.
 Das war auch zu erwarten, denn wir haben unsere Regressionsgerade eigentlich nur um $\hat{\beta}_0$ nach unten verschoben. (Der Fachmann spricht von einer Translation (Parallelverschiebung)^[vgl.: https://de.wikipedia.org/wiki/Parallelverschiebung] um $-\hat{\beta}_0$.
 
-```{r}
+```{r tidy=FALSE}
 # Statt plotModel(linModDelta) besser:
-library(lattice)
 mypanel <- function(x, y) {
     # Scatterplot:
-    panel.xyplot(x, y, col="darkgreen") 
+    panel.xyplot(x, y, col = "darkgreen") 
     # Regressionsgerade:
-    panel.abline(linModDelta, col="red", lwd=1.2, lty=2)
+    panel.abline(linModDelta, col = "red", lwd = 1.2, lty = 2)
 }
 xyplot(
     delta_tip ~ total_bill, data=tips, 
@@ -153,35 +153,38 @@ $$
     \sum_{i=1}^n (\hat{e}_i)^2 \text{ ist minimal!}
 $$
 
-Wir können uns nun diese Fehlerterme auch graphisch Ansehen um die Varianz der Residuen zu sehen. Dazu ziehen wir von allen Datenpunkt $y_i$ den geschätzten Wert $\hat{y}_i$ ab und erstellen ein neues lineares Modell
+Wir können diese Fehlerterme graphisch ansehen um die Varianz der Residuen zu sehen. 
+Dazu ziehen wir von allen Datenpunkten $y_i$ den geschätzten Wert $\hat{y}_i$ ab und erstellen ein neues lineares Modell:
 
-```{r}
+```{r tidy=FALSE}
 beta_total_bill <- coef(linModDelta)["total_bill"]
 tips$error_tip <- (tips$tip - beta_0 - beta_total_bill * tips$total_bill)
 linModError <- lm(error_tip ~ total_bill, data = tips)
 summary(linModError)
 ```
 
-```{r}
+Also Diagramm sieht es dann so aus:
+
+```{r tidy=FALSE}
 # Statt plotModel(linModError) besser:
-library(lattice)
 mypanel <- function(x, y) {
     # Scatterplot:
-    panel.xyplot(x, y, col="darkgreen") 
+    panel.xyplot(x, y, col = "darkgreen") 
     # Regressionsgerade:
-    panel.abline(linModError, col="red", lwd=1.2, lty=2)
+    panel.abline(linModError, col = "red", lwd = 1.2, lty = 2)
 }
 xyplot(
-    error_tip ~ total_bill, data=tips, 
+    error_tip ~ total_bill, data = tips, 
     panel = mypanel,
     main  = "Streudiagramm der Residuen",
     ylab  = "Residuen",
     xlab  = "Rechnungsbetrag",
     key = list(
-            space="bottom", rows=3, padding.text=8,
-            lines=list(col=c("red"), lty=c(2), lwd=1.2),
-            text=list(c("Regressionsgerade / x-Achse")))
-     )
+            space = "bottom", rows = 3, padding.text = 8,
+            lines = list(col=c("red"), lty = c(2), lwd = 1.2),
+            text = list(c("Regressionsgerade / x-Achse"))
+          )
+)
 ```
 
 Wir können die Graphik im wesentlichen auch einfacher über den Befehl
@@ -195,7 +198,7 @@ erhalten.
 Betrachten wir kurz nur die Residuen:
 
 ```{r}
-favstats(~residuals(linMod))
+favstats( ~ residuals(linMod))
 ```
 
 Wir sehe, dass wir in der Zusammenfassung immer genau diese Werte unter dem Abschnitt *Residuals* gefunden haben. Minimum,  das 1. Quantil, der Median, das 3. Quantil und das Maximum stimmen überein. 
@@ -219,7 +222,7 @@ Also finden wir den Wert *Residual standard error* aus der Zeile
 in dem wir den in den *favstats* gefundenen Wert für die Standardabweichung entsprechen korrigieren:
 
 ```{r echo=FALSE}
-tmp <- favstats(~residuals(linMod))
+tmp <- favstats( ~ residuals(linMod) )
 obs_n <- tmp$n
 obs_sd <- tmp$sd
 ```
@@ -233,7 +236,7 @@ Es könnte also eine linkssteile, rechtsschiefe Verteilung der Residuen vorliege
 Betrachten wir dazu das Histogramm:
 
 ```{r}
-histogram( ~residuals(linMod), nint = 19)
+histogram( ~ residuals(linMod), nint = 19)
 ```
 
 Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.
@@ -247,7 +250,7 @@ shapiro.test( residuals(linMod) )
 Davon ist nach dem Ergebnis eben sowenig auszugehen, wie nach einem Blick auf das QQ-Normal-Diagramm:
 
 ```{r}
-qqnorm( residuals(linMod), col="darkgreen" )
+qqnorm( residuals(linMod), col = "darkgreen" )
 ```
 
 Ein K.O.-Kriterium für gute Prognosen.
@@ -259,38 +262,37 @@ Als Maß dafür können wir das Bestimmtheitsmaß nehmen.
 Ein kurzer Blick auf die Situation, der Mittelwert der Trinkgelder ist
 
 $$
-    \bar{y} =  \frac{1}{n} \sum_{i=1}^n y_i = `r mean(tips$tip)`.
+    \bar{y} =  \frac{1}{n} \cdot \sum_{i=1}^n y_i = `r mean(tips$tip)`.
 $$
 
 Wir erhalten so folgendes Diagramm:
 
-```{r}
-library(lattice)
+```{r tidy=FALSE}
 mypanel <- function(x, y) {
     panel.xyplot(x, y)
-    panel.abline(h = mean(y), lwd=1.2, lty=2, col="darkgreen")
-    panel.lmline(x, y, col="red", lwd=1.2, lty=2)
+    panel.abline(h = mean(y), lwd = 1.2, lty = 2, col = "darkgreen")
+    panel.lmline(x, y, col = "red", lwd = 1.2, lty = 2)
 }
 xyplot(
-    tip ~ total_bill, data=tips, 
+    tip ~ total_bill, data = tips, 
     panel = mypanel,
     main  = "Streudiagramm der Trinkgelder",
     ylab  = "Trinkgeld",
     xlab  = "Rechnungsbetrag",
     key = list(
-            space="bottom",
-            padding.text=8,
-            columns=2,
-            just=c("center", "bottom"),
-            lines=list(col=c("darkgreen","red"), lty=c(2,2), lwd=1.2),
-            text=list(c(expression(bar(y)), expression(hat(beta)[0]+hat(beta)[total_bill] * x[total_bill]))),
-            text=list(c("Mittelwert Trinkgeld","Regressionsgerade"))
+            space = "bottom",
+            padding.text = 8,
+            columns = 2,
+            just = c("center", "bottom"),
+            lines = list(col = c("darkgreen", "red"), lty = c(2, 2), lwd = 1.2),
+            text = list(c(expression(bar(y)), expression(hat(beta)[0]+hat(beta)[total_bill] * x[total_bill]))),
+            text = list(c("Mittelwert Trinkgeld", "Regressionsgerade"))
     )
 )
 ```
 
 Die Varianz $s^2_{y_i}=`r var(tips$tip)`$ beschreibt die mittlere quadratische Abweichung der Datenpunkte $y_i$ vom Mittelwert $\bar{y}$.
-Diese Varianz lässt sich nun Zerlegen in einen Anteil der durch die Regressionsgerade *erklärt* wird und in einen Anteil, der durch die Regressionsgerade nicht erklärt wird.
+Diese Varianz lässt sich Zerlegen in einen Anteil, der durch die Regressionsgerade *erklärt* wird und in einen Anteil, der durch die Regressionsgerade *nicht erklärt* wird.
 
 $$
     s^2_{y_i} = s^2_{\hat{y}_i} + s^2_{\hat{e}_i}
@@ -301,15 +303,15 @@ $$
     1 = \frac{\sum_{i=1}^n (\bar{y}- \hat{y_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2} + \frac{\sum_{i=1}^n (\hat{e_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2}
 $$
 
-Multipliziert man nun beide Seiten mit $\sum_{i=1}^n (y_i)^2$, so erhält man:
+Multipliziert man beide Seiten mit $\sum_{i=1}^n (y_i)^2$, so erhält man:
 
 $$
     \sum_{i=1}^n (\bar{y}- y_i)^2 = \sum_{i=1}^n (\bar{y}- \hat{y_i})^2+ \sum_{i=1}^n (\hat{e_i})^2 
 $$
 
-Zur Vereinfachung nennt man nun die einzelnen Summen in dem ausdruck wie folgt:
+Zur Vereinfachung nennt man die einzelnen Summen in dem Ausdruck wie folgt:
 
-- Der erste Ausdruck heißt **Gesamtvarianz* oder **total sum of squares** oder kurz **$SS_T$**, (oder **TSS**) er ist die Summe der quadrierten Differenzen 
+- Der erste Ausdruck heißt **Gesamtvarianz** oder **total sum of squares** oder kurz **$SS_T$**, (oder **TSS**) er ist die Summe der quadrierten Differenzen 
 
 $$
     SS_T = \sum_{i=1}^n (\bar{y}-y_i)^2
@@ -334,7 +336,7 @@ $$
 $$
 schreiben und sparen uns die ganzen Summenzeichen.
 
-Die Güte einer Regression wollen wir nun durch den Anteil der durch das Model erklärten Varianz (also der $SS_M$) ausdrücken und stellen daher nach $SS_M$ um:
+Die Güte einer Regression wollen wir durch den Anteil der durch das Model erklärten Varianz (also der $SS_M$) ausdrücken und stellen daher nach $SS_M$ um:
 
 $$
     SS_M = SS_T - SS_E
@@ -344,7 +346,7 @@ $$
     \frac{SS_M}{SS_T} = \frac{SS_T}{SS_T} - \frac{SS_E}{SS_T} = 1 - \frac{SS_E}{SS_T}
 $$
 
-Den Ausdruck $\frac{SS_M}{SS_T}$ nennen wir **Bestimmtheitsmaß** ($R^2$). Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in Bezug auf die gesamt Varianz angibt.
+Den Ausdruck $\frac{SS_M}{SS_T}$ nennen wir **Bestimmtheitsmaß** und schreiben dafür $R^2$. Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in Bezug auf die Gesamtvarianz angibt. Kraft Definition ist $R^2$ im eindimensionalen Fall tatsächlich das Quadrat des (Pearson-)Korrelationskoeffizienten $r$. (M.a.W.: $R^2= r^2$.)
 
 In unserer Zusammenfassung des linearen Models findet sich dieser Wert auch. Und zwar unter dem Begriff:
 
@@ -363,8 +365,10 @@ Der Wert
 ## ..., Adjusted R-squared:  0.4544
 ```
 
-erklärt sich nun daraus^[vgl.: https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß], dass das Bestimmheitsmaß um so größer wird, je größer die Zahl der unabhängigen Variablen wird. Und zwar *unabhöngig* davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. 
+erklärt sich daraus^[vgl.: https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß], dass das Bestimmheitsmaß um so größer wird je größer die Zahl der unabhängigen Variablen wird. 
+Und zwar *unabhöngig* davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. 
 Daher nutzt man besser das **korrigierte Bestimmtheitsmaß** (engl.: *adjusted R-squared*) $\bar{R}^2$:
+
 $$
     \begin{align*}
         \bar{R}^2 &= 1- (1-R^2) \cdot \frac{n-1}{n-p-1}\\ 
@@ -372,7 +376,8 @@ $$
     \end{align*}
 $$
 
-Wobei $p$ die Anzahl der unabhängigen Variablen im Modell darstellt. In unserem Beispiel gilt daher:
+Wobei $p$ die Anzahl der unabhängigen Variablen im Modell darstellt. 
+In unserem Beispiel gilt daher:
 
 $$
     \begin{align*}
@@ -382,11 +387,13 @@ $$
     \end{align*}
 $$
 
-**Vorsicht:** Das *korrigierte Bestimmtheitsmaß* ist nicht mehr an das Intervall $[0; 1]$ gebunden! Es kann negative Werte annehmen, ist in der Regel kleiner als das (unkorrigierte) Bestimmtheitsmaß und erreicht die obere Grenze ($\bar{R}^2=1$) genau dann, wenn $R^2 = 1$ ist.
+**Vorsicht:** Das *korrigierte Bestimmtheitsmaß* ist nicht mehr an das Intervall $[0; 1]$ gebunden! 
+Es kann negative Werte annehmen, ist in der Regel kleiner als das (unkorrigierte) Bestimmtheitsmaß und erreicht die obere Grenze ($\bar{R}^2=1$) genau dann, wenn $R^2 = 1$ ist.
 
 Bei der **Gesamtsignifikanz des Modells** (auch **Overall-F-Test** genannt) wird geprüft, ob mindestens eine Variable einen Erklärungsgehalt für das Modell liefert. 
 
-Falls diese Hypothese verworfen wird ist somit das Modell nutzlos. Dieser Test lässt sich so interpretieren als würde man die gesamte Güte des Modells, also das $R^2$ des Modells, testen. 
+Falls diese Hypothese verworfen wird ist somit das Modell nutzlos. 
+Dieser Test lässt sich so interpretieren als würde man die gesamte Güte des Modells, also das $R^2$ des Modells, testen. 
 Aus diesem Grund wird der F-Test der Gesamtsignifikanz des Modells auch als Anpassungsgüte-Test bezeichnet. 
 Die Nullhypothese des F-Test der Gesamtsignifikanz des Modells sagt aus, dass alle erklärenden Variablen keinen Einfluss auf die abhängige Variable haben. 
 Sowohl die abhängige Variable als auch die unabhängigen Variablen können binär (kategoriell) oder metrisch sein. 
@@ -410,8 +417,10 @@ $$
 $$
 
 mit $p$ und $\displaystyle (n-p-1)$ Freiheitsgraden. 
-Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau $\alpha$, so verwirft man die Nullhypothese $H_{0}$. Das $R^{2}$ ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von $y$ bei. 
-Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt. Wenn der *Wald-Test* für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.
+Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau $\alpha$, so verwirft man die Nullhypothese $H_{0}$. 
+Das $R^{2}$ ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von $y$ bei. 
+Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt. 
+Wenn der *Wald-Test* für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.
 
 ```{r echo=FALSE}
 r.sq <- summary(linMod)$r.squared
