@@ -12,7 +12,7 @@ tags:
 ---
 
 Der *tipping* Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (*tip*) und Rechnungsbetrag (*total_bill*) steht dabei im Vordergrund einer lineare Regressionsanalyse. 
-So auch hier. Wir wollen die einzelnen Angaben von **R** dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von **R** eigentlich genau sehen, woher es kommt und wie man es interprätieren kann.
+So auch hier. Wir wollen die einzelnen Angaben von **R** dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von **R** eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
 
 ```{r setup, include=FALSE, warning=FALSE, error=FALSE, message=FALSE}
 #
@@ -33,7 +33,7 @@ download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
 tips <- read.csv2("tips.csv")
 ```
 
-Zunächt laden wir dazu die **tipping** Daten mittels
+Zunächst laden wir dazu die **tipping** Daten mittels
 
 ```{r load-tips-view, eval=FALSE, message=FALSE}
 library(mosaic)
@@ -88,14 +88,14 @@ xyplot(
      )
 ```
 
-Was hat es nun mit dem y-Achenabschnitt $\hat{\beta}_0$ aufsich?
+Was hat es nun mit dem y-Achsenabschnitt $\hat{\beta}_0$ auf sich?
 
 Ist es etwa eine Art *Grundtrinkgeld*, mit dem der Kellern rechnen kann, auch wenn der Kunde gar nichts bestellt?
 
 Nun ja, es so etwas in der Art, aber eben ein rein fiktiver Wert, der durch die Konstruktion der Parameter entsteht. 
 Eine (affin-)lineare Gerade geht nun einmal irgendwann durch die y-Achse (wenn sie nicht parallel dazu ist) und es kann passieren, dass eine sinnvolle Interpretation nicht so ohne weiteres möglich ist.
 
-Wir können aber dieses *Grundtrinkgeld* herraus nehmen und den y-Achenabschnitt auf Null setzen. Dazu ziehen wir $\hat{\beta}_0$ einfach von alle Trinkgeldern ab. Wir erhalten quasi nur noch den *Trinkgeldzuwach*.
+Wir können aber dieses *Grundtrinkgeld* heraus nehmen und den y-Achsenabschnitt auf Null setzen. Dazu ziehen wir $\hat{\beta}_0$ einfach von alle Trinkgeldern ab. Wir erhalten quasi nur noch den *Trinkgeldzuwach*.
 
 ```{r}
 beta_0 <- coef(linMod)["(Intercept)"]  # Grundtrinkgeld
@@ -109,10 +109,10 @@ linModDelta <- lm(delta_tip ~ total_bill, data = tips)
 summary(linModDelta)
 ```
 
-In diesem Modell ist der Wert für den y-Achenabschnitt numerisch gleich 0. -- Ja, da mag zwar $`r coef(linModDelta)["(Intercept)"] `$ stehen, jedoch sind so kleine Werte der jedem Rechner inne wohnenden Ungenauigkeit in der Gleitkomma-Arithmetik geschuldet und wind faktisch gleich 0.
+In diesem Modell ist der Wert für den y-Achsenabschnitt numerisch gleich 0. -- Ja, da mag zwar $`r coef(linModDelta)["(Intercept)"] `$ stehen, jedoch sind so kleine Werte der jedem Rechner inne wohnenden Ungenauigkeit in der Gleitkomma-Arithmetik geschuldet und ist faktisch gleich 0.
 
 Der Wert für die Steigung lautet weiterhin $`r coef(linModDelta)["total_bill"]`$.
-Das war auch zu erwarten, denn wir haben unsere Regressionsgerade eigentlich nur um $\hat{\beta}_0$ nach unten verschoben. (Der Fachmann spricht von einer Translation (Parallelverschiebung)^[vgl: https://de.wikipedia.org/wiki/Parallelverschiebung] um $-\hat{\beta}_0$.
+Das war auch zu erwarten, denn wir haben unsere Regressionsgerade eigentlich nur um $\hat{\beta}_0$ nach unten verschoben. (Der Fachmann spricht von einer Translation (Parallelverschiebung)^[vgl.: https://de.wikipedia.org/wiki/Parallelverschiebung] um $-\hat{\beta}_0$.
 
 ```{r}
 # Statt plotModel(linModDelta) besser:
@@ -136,7 +136,7 @@ xyplot(
      )
 ```
  
-Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit Aussnahme der *[Intercept]* Zeile parktisch nichts geändert hat. Das ist kein Wunder, sondern Absicht!
+Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit Ausnahme der *[Intercept]* Zeile praktisch nichts geändert hat. Das ist kein Wunder, sondern Absicht!
 
 
 Die Regressionsgerade stellt für unsere Stichprobe die Gerade mit dem geringsten Fehler an den Datenpunkten dar. Mathematisch heißt das folgendes:
@@ -147,13 +147,13 @@ $$
  \hat{e}_i =\hat{y}_i - y_i = \left[\hat{\beta}_{\text{0}} + \hat{\beta}_{\text{total_bill}} \cdot x_i\right] - y_i
 $$
 
-durch die verwendete *Methode der kleinsten Quadrate*^[vgl: https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate] *quadratisch minimal*. Kurz:
+durch die verwendete *Methode der kleinsten Quadrate*^[vgl.: https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate] *quadratisch minimal*. Kurz:
 
 $$
     \sum_{i=1}^n (\hat{e}_i)^2 \text{ ist minimal!}
 $$
 
-Wir können uns nun diese Fehlerterme auch graphisch Ansehen um die Varianz der Residuen zu sehen. Dazu siehen wir von allen Datenpunkt $y_i$ den geschätzen Wert $\hat{y}_i$ ab und erstellen ein neues lineares Modell
+Wir können uns nun diese Fehlerterme auch graphisch Ansehen um die Varianz der Residuen zu sehen. Dazu ziehen wir von allen Datenpunkt $y_i$ den geschätzten Wert $\hat{y}_i$ ab und erstellen ein neues lineares Modell
 
 ```{r}
 beta_total_bill <- coef(linModDelta)["total_bill"]
@@ -184,7 +184,7 @@ xyplot(
      )
 ```
 
-Wir können die Graphik im wesendlichen auch einfacher über den Befehl
+Wir können die Graphik im wesentlichen auch einfacher über den Befehl
 
 ```{r}
 xyplot(residuals(linMod) ~ fitted(linMod))
@@ -192,7 +192,7 @@ xyplot(residuals(linMod) ~ fitted(linMod))
 
 erhalten. 
 
-Betrachten wir kurz nur die Rediduen:
+Betrachten wir kurz nur die Residuen:
 
 ```{r}
 favstats(~residuals(linMod))
@@ -229,7 +229,7 @@ $$
 $$
 
 Der Median der Residuen ist nicht gleich Null, wie der Mittelwert. (Welcher auch hier als numerisch Null interpretiert werden muss!)
-Es könnte also eine linkssteile, rechtsschiefe Verteilung der Resiuden vorliegen. 
+Es könnte also eine linkssteile, rechtsschiefe Verteilung der Residuen vorliegen. 
 Betrachten wir dazu das Histogramm:
 
 ```{r}
@@ -238,13 +238,13 @@ histogram( ~residuals(linMod), nint = 19)
 
 Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.
 
-Ein Shapiro-Wilk-Test^[vgl: https://de.wikipedia.org/wiki/Shapiro-Wilk-Test] hat als Nullhypothese die Annahme, dass die Daten normalverteilt sind!
+Ein Shapiro-Wilk-Test^[vgl.: https://de.wikipedia.org/wiki/Shapiro-Wilk-Test] hat als Nullhypothese die Annahme, dass die Daten normalverteilt sind!
 
 ```{r}
 shapiro.test( residuals(linMod) )
 ```
 
-Davon ist nach dem Ergebnis eben sowenig auszugehen, wie nach einem Blick auf das QQ-Normal-Diagram:
+Davon ist nach dem Ergebnis eben sowenig auszugehen, wie nach einem Blick auf das QQ-Normal-Diagramm:
 
 ```{r}
 qqnorm( residuals(linMod), col="darkgreen" )
@@ -290,7 +290,7 @@ xyplot(
 ```
 
 Die Varianz $s^2_{y_i}=`r var(tips$tip)`$ beschreibt die mittlere quadratische Abweichung der Datenpunkte $y_i$ vom Mittelwert $\bar{y}$.
-Diese Varianz läßt sich nun Zerlegen in einen Anteil der durch die Regressionsgerade *erklärt* wird und in einen Anteil, der durch die Regressionsgerade nicht erklärt wird.
+Diese Varianz lässt sich nun Zerlegen in einen Anteil der durch die Regressionsgerade *erklärt* wird und in einen Anteil, der durch die Regressionsgerade nicht erklärt wird.
 
 $$
     s^2_{y_i} = s^2_{\hat{y}_i} + s^2_{\hat{e}_i}
@@ -307,7 +307,7 @@ $$
     \sum_{i=1}^n (\bar{y}- y_i)^2 = \sum_{i=1}^n (\bar{y}- \hat{y_i})^2+ \sum_{i=1}^n (\hat{e_i})^2 
 $$
 
-Zur vereinfachung nennt man nun die einzelnen Summen in dem ausdruck wie folgt:
+Zur Vereinfachung nennt man nun die einzelnen Summen in dem ausdruck wie folgt:
 
 - Der erste Ausdruck heißt **Gesamtvarianz* oder **total sum of squares** oder kurz **$SS_T$**, (oder **TSS**) er ist die Summe der quadrierten Differenzen 
 
@@ -344,7 +344,7 @@ $$
     \frac{SS_M}{SS_T} = \frac{SS_T}{SS_T} - \frac{SS_E}{SS_T} = 1 - \frac{SS_E}{SS_T}
 $$
 
-Den Ausdruck $\frac{SS_M}{SS_T}$ nennen wir **Bestimmtheitsmaß** ($R^2$). Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in bezug auf die gesamt Varianz angibt.
+Den Ausdruck $\frac{SS_M}{SS_T}$ nennen wir **Bestimmtheitsmaß** ($R^2$). Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in Bezug auf die gesamt Varianz angibt.
 
 In unserer Zusammenfassung des linearen Models findet sich dieser Wert auch. Und zwar unter dem Begriff:
 
@@ -363,8 +363,8 @@ Der Wert
 ## ..., Adjusted R-squared:  0.4544
 ```
 
-erklärt sich nun daraus^[vgl: https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß], dass das Bestimmheitsmaß um so größer wird, je größer die Zahl der unabhöngigen Variablen wird. Und zwar *unabhöngig* davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. 
-Daher nutzt man besser das **korrigierte Bestimmtheitsmaß** (engl: *adjusted R-squared*) $\bar{R}^2$:
+erklärt sich nun daraus^[vgl.: https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß], dass das Bestimmheitsmaß um so größer wird, je größer die Zahl der unabhängigen Variablen wird. Und zwar *unabhöngig* davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. 
+Daher nutzt man besser das **korrigierte Bestimmtheitsmaß** (engl.: *adjusted R-squared*) $\bar{R}^2$:
 $$
     \begin{align*}
         \bar{R}^2 &= 1- (1-R^2) \cdot \frac{n-1}{n-p-1}\\ 
@@ -372,7 +372,7 @@ $$
     \end{align*}
 $$
 
-Wobei $p$ die Anzahl der unabhängigen Variablen im Modell darstellt. In unsereem Beispiel gilt daher:
+Wobei $p$ die Anzahl der unabhängigen Variablen im Modell darstellt. In unserem Beispiel gilt daher:
 
 $$
     \begin{align*}
@@ -409,7 +409,7 @@ $$
 \end{aligned}.
 $$
 
-Die Teststatistik $\displaystyle (n-p-1)$ und $p$ Freiheitsgraden. 
+mit $p$ und $\displaystyle (n-p-1)$ Freiheitsgraden. 
 Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau $\alpha$, so verwirft man die Nullhypothese $H_{0}$. Das $R^{2}$ ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von $y$ bei. 
 Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt. Wenn der *Wald-Test* für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.
 
