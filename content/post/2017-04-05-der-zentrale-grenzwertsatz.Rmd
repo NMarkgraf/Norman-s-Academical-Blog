@@ -11,7 +11,7 @@ tags:
 nocite: |
     @Schira2005, @website:WikipediaZGS, @website:WolframMathWorldCLT
 csl: zeitschrift-fur-angewandte-mathematik-und-physik.csl
-bibliography: statistik.bib
+bibliography: Literatur-EFA.bib
 ---
 
 ## Der **Zentrale Grenzwertsatz** der Statistik bei identischer Verteilung.
