@@ -11,7 +11,7 @@ slug: der-zentrale-grenzwertsatz
 nocite: |
   @Schira2005, @website:WikipediaZGS, @website:WolframMathWorldCLT
 csl: zeitschrift-fur-angewandte-mathematik-und-physik.csl
-bibliography: Literatur-EFA.bib
+bibliography: statistik.bib
 ---
 
 ## Der **Zentrale Grenzwertsatz** der Statistik bei identischer Verteilung.
