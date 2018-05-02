@@ -30,11 +30,13 @@ Neben den gängigen Style-Guides für den R Quellcode (Z.B.: [Google's R Style G
 
 ## Stil-Regeln für gutes Rmarkdown, ein erster Vorschlag
 
-1. Keine unnützen Zeichen am Ende von Textzeilen / No whitespaces at the end of a line
+1. Keine unnützen Zeichen am Ende von Textzeilen. / *No whitespaces at the end of a line*
+    
     Eine Textzeile sollte mit einem 'echtem' Zeichen enden und nicht mit einem 'unsichtbarem' Zeichen.
     Das heisst: Leerzeichen, Tabs, harte Leerzeichen etc. gehören nicht ans Ende einer Zeile.
     
-2. Zwei Leerzeilen vor einer Kopfzeile
+2. Zwei Leerzeilen vor einer Kopfzeile. / *Two blank lines before a header*
+    
     Um die Inhalte auch klar voneinander trennen zu können sollte man vor der Kopfzeile zwei Leerzeilen eingefügt werden.
     Statt
     
@@ -57,7 +59,8 @@ Neben den gängigen Style-Guides für den R Quellcode (Z.B.: [Google's R Style G
     Das hier ist einfacher Text
     ```
 
-3. Vor und nach Aufzählungen sollte immer eine Leerzeile stehen.
+3. Vor und nach Aufzählungen sollte immer eine Leerzeile stehen. / *...*
+   
    Statt
    
    ```
@@ -78,7 +81,7 @@ Neben den gängigen Style-Guides für den R Quellcode (Z.B.: [Google's R Style G
    Und hier geht der Text weiter.
    ```
    
-4. Vor und nach Codeblöcken sollte immer eine Leerzeile stehen.
+4. Vor und nach Codeblöcken sollte immer eine Leerzeile stehen. / *...*
 
    Statt
    
@@ -102,7 +105,7 @@ Neben den gängigen Style-Guides für den R Quellcode (Z.B.: [Google's R Style G
    und danach.
    ```
    
-5. Keine Fremdsprachen im RMarkdown
+5. Keine anderen Sprachen als Rmarkdown für Inhalte oder Design nutzen. / *Use no other languages to create content or design, other than (R)Markdown.*
 
    Keine anderen Sprachen, insbesondere LaTeX, um besondere Effekte zu erziehlen. Dafür sollten DIV oder SPAN Abschnitte benutzt werden.
 

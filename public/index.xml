@@ -27,11 +27,11 @@ Neben den gängigen Style-Guides für den R Quellcode (Z.B.: &lt;a href=&#34;htt
 &lt;div id=&#34;stil-regeln-fur-gutes-rmarkdown-ein-erster-vorschlag&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Stil-Regeln für gutes Rmarkdown, ein erster Vorschlag&lt;/h2&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;p&gt;Keine unnützen Zeichen am Ende von Textzeilen / No whitespaces at the end of a line
-Eine Textzeile sollte mit einem ‘echtem’ Zeichen enden und nicht mit einem ‘unsichtbarem’ Zeichen.
+&lt;li&gt;&lt;p&gt;Keine unnützen Zeichen am Ende von Textzeilen. / &lt;em&gt;No whitespaces at the end of a line&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Eine Textzeile sollte mit einem ‘echtem’ Zeichen enden und nicht mit einem ‘unsichtbarem’ Zeichen.
 Das heisst: Leerzeichen, Tabs, harte Leerzeichen etc. gehören nicht ans Ende einer Zeile.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Zwei Leerzeilen vor einer Kopfzeile
-Um die Inhalte auch klar voneinander trennen zu können sollte man vor der Kopfzeile zwei Leerzeilen eingefügt werden.
+&lt;li&gt;&lt;p&gt;Zwei Leerzeilen vor einer Kopfzeile. / &lt;em&gt;Two blank lines before a header&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Um die Inhalte auch klar voneinander trennen zu können sollte man vor der Kopfzeile zwei Leerzeilen eingefügt werden.
 Statt&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# Das ist eine Kopfzeile auf der 1. Ebene
 ## Das is eine Kopfzeile auf der 2. Ebene
@@ -45,8 +45,8 @@ Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;
 ## Das is eine Kopfzeile auf der 2. Ebene
 
 Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Vor und nach Aufzählungen sollte immer eine Leerzeile stehen.
-Statt&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Vor und nach Aufzählungen sollte immer eine Leerzeile stehen. / &lt;em&gt;…&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Statt&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Das ist eine Liste:
 - Ein Punkt
 - Ein anderer Punkt
@@ -58,7 +58,7 @@ Und hier geht der Text weiter.&lt;/code&gt;&lt;/pre&gt;
 - Ein anderer Punkt
 
 Und hier geht der Text weiter.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Vor und nach Codeblöcken sollte immer eine Leerzeile stehen.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Vor und nach Codeblöcken sollte immer eine Leerzeile stehen. / &lt;em&gt;…&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Statt&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Etwas Text vorher
 `` `{r}
@@ -73,7 +73,7 @@ und danach.&lt;/code&gt;&lt;/pre&gt;
 `` `
 
 und danach.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Keine Fremdsprachen im RMarkdown&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Keine anderen Sprachen als Rmarkdown für Inhalte oder Design nutzen. / &lt;em&gt;Use no other languages to create content or design, other than (R)Markdown.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Keine anderen Sprachen, insbesondere LaTeX, um besondere Effekte zu erziehlen. Dafür sollten DIV oder SPAN Abschnitte benutzt werden.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
