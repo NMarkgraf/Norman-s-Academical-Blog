@@ -11,6 +11,78 @@
     <atom:link href="/nab/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Auch Rmarkdown Dateien sollten sich Regeln halten</title>
+      <link>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</guid>
+      <description>&lt;p&gt;Jede Programmiersprache hat Regeln. Die einen sind der Syntax der Sprache selber, die anderen werden von den Programmieren festgelegt um ein einheitliches Schriftbild zu erhalten, um leicher Änderungen zu pflegen oder einfach nur um unnötiges zu vermeiden.&lt;/p&gt;
+&lt;p&gt;Eine Programmiersprache wie Python zum Beispiel hat mit &lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34;&gt;PEP8&lt;/a&gt; einen eigenen Standard wie ein Python Programm geschrieben seien sollte.
+Dazu gibt es auch gleich das passenden Prüfprogramm (pep8, neuerdings &lt;a href=&#34;https://github.com/PyCQA/pycodestyle&#34;&gt;pycodestyle&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Schreibt man ein Rmarkdown Text mag man vielleicht nicht daran denken, dass so eine Idee auch hier sehr sinnvoll sein kann.
+Neben den gängigen Style-Guides für den R Quellcode (Z.B.: &lt;a href=&#34;https://google.github.io/styleguide/Rguide.xml&#34;&gt;Google’s R Style Guide&lt;/a&gt;, &lt;a href=&#34;http://adv-r.had.co.nz/Style.html&#34;&gt;Hadley Wickham’s Advanced R - Style guide&lt;/a&gt;, &lt;a href=&#34;http://jef.works/R-style-guide/&#34;&gt;jef.works R Style Guide&lt;/a&gt;, &lt;a href=&#34;https://csgillespie.wordpress.com/2010/11/23/r-style-guide/&#34;&gt;R Style Guide&lt;/a&gt; oder &lt;a href=&#34;https://github.com/rdatsci/PackagesInfo/wiki/R-Style-Guide&#34;&gt;R-Style-Guide&lt;/a&gt;) gibt es aber kaum Regeln für die Gestaltung von Rmarkdown.&lt;/p&gt;
+&lt;div id=&#34;stil-regeln-fur-gutes-rmarkdown-ein-erster-vorschlag&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stil-Regeln für gutes Rmarkdown, ein erster Vorschlag&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Keine unnützen Zeichen am Ende von Textzeilen / No whitespaces at the end of a line
+Eine Textzeile sollte mit einem ‘echtem’ Zeichen enden und nicht mit einem ‘unsichtbarem’ Zeichen.
+Das heisst: Leerzeichen, Tabs, harte Leerzeichen etc. gehören nicht ans Ende einer Zeile.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Zwei Leerzeilen vor einer Kopfzeile
+Um die Inhalte auch klar voneinander trennen zu können sollte man vor der Kopfzeile zwei Leerzeilen eingefügt werden.
+Statt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Das ist eine Kopfzeile auf der 1. Ebene
+## Das is eine Kopfzeile auf der 2. Ebene
+Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+
+# Das ist eine Kopfzeile auf der 1. Ebene
+
+
+## Das is eine Kopfzeile auf der 2. Ebene
+
+Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Vor und nach Aufzählungen sollte immer eine Leerzeile stehen.
+Statt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Das ist eine Liste:
+- Ein Punkt
+- Ein anderer Punkt
+Und hier geht der Text weiter.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;sollte es so geglieder sein:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Das ist eine Liste:
+
+- Ein Punkt
+- Ein anderer Punkt
+
+Und hier geht der Text weiter.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Vor und nach Codeblöcken sollte immer eine Leerzeile stehen.&lt;/p&gt;
+&lt;p&gt;Statt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Etwas Text vorher
+`` `{r}
+1+1
+`` `
+und danach.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;sollte es so geglieder sein:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Etwas Text vorher
+
+`` `{r}
+1+1
+`` `
+
+und danach.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Keine Fremdsprachen im RMarkdown&lt;/p&gt;
+&lt;p&gt;Keine anderen Sprachen, insbesondere LaTeX, um besondere Effekte zu erziehlen. Dafür sollten DIV oder SPAN Abschnitte benutzt werden.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;rmdstylechecker-ein-erster-style-checker-fur-rmarkdown&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;RmdStyleChecker, ein erster Style Checker für Rmarkdown&lt;/h2&gt;
+&lt;p&gt;Die ersten drei Punkte der Liste habe ich zu Testzwecken in einem kleinen Projekt mit Hilfe von Python implementiert.
+Den Python-Quelltext findet man unter &lt;a href=&#34;https://github.com/NMarkgraf/RmdStyleChecker&#34;&gt;RmdStyleChecker&lt;/a&gt;. Er läuft unter Python 3.5+.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Nur ein wenig lineare Regression</title>
       <link>/nab/post/nur-ein-wenig-lineare-regression/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
