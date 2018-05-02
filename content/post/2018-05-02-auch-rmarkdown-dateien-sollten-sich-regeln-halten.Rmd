@@ -9,18 +9,24 @@ categories:
 tags:
   - R
   - Allgemein
+  - RMarkdown
+  - Python
 header:
   caption: ''
   image: ''
 ---
 
-Jede Programmiersprache hat Regeln. Die einen sind der Syntax der Sprache selber, die anderen werden von den Programmieren festgelegt um ein einheitliches Schriftbild zu erhalten, um leicher Änderungen zu pflegen oder einfach nur um unnötiges zu vermeiden.
+Jede Programmiersprache hat Regeln.
+Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form, in der man den Quelltext schreibt.
+Diese sogenannte *Stilregeln* (engl. *style guides*) sind von Programmieren aufgestellte Regeln um ein einheitliches "Schriftbild" des Quelltextes zu erhalten.
+Das Ziel der *Stilregeln* ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
 
 Eine Programmiersprache wie Python zum Beispiel hat mit [PEP8](https://www.python.org/dev/peps/pep-0008/) einen eigenen Standard wie ein Python Programm geschrieben seien sollte. 
 Dazu gibt es auch gleich das passenden Prüfprogramm (pep8, neuerdings [pycodestyle](https://github.com/PyCQA/pycodestyle)).
 
 Schreibt man ein Rmarkdown Text mag man vielleicht nicht daran denken, dass so eine Idee auch hier sehr sinnvoll sein kann. 
 Neben den gängigen Style-Guides für den R Quellcode (Z.B.: [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml), [Hadley Wickham's Advanced R - Style guide](http://adv-r.had.co.nz/Style.html), [jef.works R Style Guide](http://jef.works/R-style-guide/), [R Style Guide](https://csgillespie.wordpress.com/2010/11/23/r-style-guide/) oder [R-Style-Guide](https://github.com/rdatsci/PackagesInfo/wiki/R-Style-Guide)) gibt es aber kaum Regeln für die Gestaltung von Rmarkdown.
+
 
 ## Stil-Regeln für gutes Rmarkdown, ein erster Vorschlag
 
@@ -61,7 +67,7 @@ Neben den gängigen Style-Guides für den R Quellcode (Z.B.: [Google's R Style G
    Und hier geht der Text weiter.
    ```
    
-   sollte es so geglieder sein:
+   sollte es so gegliedert sein:
    
    ```
    Das ist eine Liste:
@@ -84,7 +90,7 @@ Neben den gängigen Style-Guides für den R Quellcode (Z.B.: [Google's R Style G
    und danach.
    ```
    
-   sollte es so geglieder sein:
+   sollte es so gegliedert sein:
    
    ```
    Etwas Text vorher
@@ -99,8 +105,7 @@ Neben den gängigen Style-Guides für den R Quellcode (Z.B.: [Google's R Style G
 5. Keine Fremdsprachen im RMarkdown
 
    Keine anderen Sprachen, insbesondere LaTeX, um besondere Effekte zu erziehlen. Dafür sollten DIV oder SPAN Abschnitte benutzt werden.
-   
-   
+
 
 ## RmdStyleChecker, ein erster Style Checker für Rmarkdown
 

@@ -16,7 +16,10 @@
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</guid>
-      <description>&lt;p&gt;Jede Programmiersprache hat Regeln. Die einen sind der Syntax der Sprache selber, die anderen werden von den Programmieren festgelegt um ein einheitliches Schriftbild zu erhalten, um leicher Änderungen zu pflegen oder einfach nur um unnötiges zu vermeiden.&lt;/p&gt;
+      <description>&lt;p&gt;Jede Programmiersprache hat Regeln.
+Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form, in der man den Quelltext schreibt.
+Diese sogenannte &lt;em&gt;Stilregeln&lt;/em&gt; (engl. &lt;em&gt;style guides&lt;/em&gt;) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten.
+Das Ziel der &lt;em&gt;Stilregeln&lt;/em&gt; ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.&lt;/p&gt;
 &lt;p&gt;Eine Programmiersprache wie Python zum Beispiel hat mit &lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34;&gt;PEP8&lt;/a&gt; einen eigenen Standard wie ein Python Programm geschrieben seien sollte.
 Dazu gibt es auch gleich das passenden Prüfprogramm (pep8, neuerdings &lt;a href=&#34;https://github.com/PyCQA/pycodestyle&#34;&gt;pycodestyle&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Schreibt man ein Rmarkdown Text mag man vielleicht nicht daran denken, dass so eine Idee auch hier sehr sinnvoll sein kann.
@@ -48,7 +51,7 @@ Statt&lt;/p&gt;
 - Ein Punkt
 - Ein anderer Punkt
 Und hier geht der Text weiter.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;sollte es so geglieder sein:&lt;/p&gt;
+&lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Das ist eine Liste:
 
 - Ein Punkt
@@ -62,7 +65,7 @@ Und hier geht der Text weiter.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 1+1
 `` `
 und danach.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;sollte es so geglieder sein:&lt;/p&gt;
+&lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Etwas Text vorher
 
 `` `{r}
