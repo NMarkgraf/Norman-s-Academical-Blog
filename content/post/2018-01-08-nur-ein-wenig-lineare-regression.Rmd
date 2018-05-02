@@ -141,7 +141,7 @@ Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit A
 
 Die Regressionsgerade stellt für unsere Stichprobe die Gerade mit dem geringsten Fehler an den Datenpunkten dar. Mathematisch heißt das folgendes:
 
-An den $n=`r length(tips$total_bill)`$ Datenpunkten unserer Stichprobe $(x_i, y_i)=(tips\$total\_bill[i], tips\$tip[i])$ [für (i=1,\dots,n)$] sind die *Residuen*, also die *Fehlerterme*,
+An den $n=`r length(tips$total_bill)`$ Datenpunkten unserer Stichprobe $(x_i, y_i)=(tips\$total\_bill[i], tips\$tip[i])$ [für $(i=1, \dots, n)$] sind die *Residuen*, also die *Fehlerterme*,
 
 $$
  \hat{e}_i =\hat{y}_i - y_i = \left[\hat{\beta}_{\text{0}} + \hat{\beta}_{\text{total_bill}} \cdot x_i\right] - y_i

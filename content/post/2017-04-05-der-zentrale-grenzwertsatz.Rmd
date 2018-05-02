@@ -2,14 +2,14 @@
 title: Der Zentrale Grenzwertsatz
 author: Norman Markgraf
 date: '2017-04-05'
-slug: der-zentrale-grenzwertsatz
 categories:
   - Statistik
 tags:
   - Statistik
   - Wahrscheinlichkeitstheorie
+slug: der-zentrale-grenzwertsatz
 nocite: |
-    @Schira2005, @website:WikipediaZGS, @website:WolframMathWorldCLT
+  @Schira2005, @website:WikipediaZGS, @website:WolframMathWorldCLT
 csl: zeitschrift-fur-angewandte-mathematik-und-physik.csl
 bibliography: statistik.bib
 ---

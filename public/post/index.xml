@@ -16,7 +16,8 @@
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/nur-ein-wenig-lineare-regression/</guid>
-      <description>&lt;p&gt;Der &lt;em&gt;tipping&lt;/em&gt; Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (&lt;em&gt;tip&lt;/em&gt;) und Rechnungsbetrag (&lt;em&gt;total_bill&lt;/em&gt;) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von &lt;strong&gt;R&lt;/strong&gt; dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von &lt;strong&gt;R&lt;/strong&gt; eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.&lt;/p&gt;
+      <description>&lt;p&gt;Der &lt;em&gt;tipping&lt;/em&gt; Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (&lt;em&gt;tip&lt;/em&gt;) und Rechnungsbetrag (&lt;em&gt;total_bill&lt;/em&gt;) steht dabei im Vordergrund einer lineare Regressionsanalyse.
+So auch hier. Wir wollen die einzelnen Angaben von &lt;strong&gt;R&lt;/strong&gt; dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von &lt;strong&gt;R&lt;/strong&gt; eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.&lt;/p&gt;
 &lt;p&gt;Zunächst laden wir dazu die &lt;strong&gt;tipping&lt;/strong&gt; Daten mittels&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(mosaic)
 download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.csv&amp;quot;)
@@ -24,7 +25,8 @@ tips &amp;lt;- read.csv2(&amp;quot;tips.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;in den Arbeitsspeicher.&lt;/p&gt;
 &lt;p&gt;Eine lineares Modell wird schnell mit&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;linMod &amp;lt;- lm(tip ~ total_bill, data = tips)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;erstellt. Betrachten wir die Zusammenfassung:&lt;/p&gt;
+&lt;p&gt;erstellt.
+Betrachten wir die Zusammenfassung:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(linMod)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ## Call:
@@ -71,7 +73,8 @@ xyplot(
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Was hat es mit dem y-Achsenabschnitt &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0\)&lt;/span&gt; auf sich?&lt;/p&gt;
 &lt;p&gt;Ist es etwa eine Art &lt;em&gt;Grundtrinkgeld&lt;/em&gt;, mit dem der Kellern rechnen kann, auch wenn der Kunde gar nichts bestellt?&lt;/p&gt;
-&lt;p&gt;Nun ja, es so etwas in der Art, aber eben ein rein fiktiver Wert, der durch die Konstruktion der Parameter entsteht. Eine (affin-)lineare Gerade geht nun einmal irgendwann durch die y-Achse (wenn sie nicht parallel dazu ist) und es kann passieren, dass eine sinnvolle Interpretation nicht so ohne weiteres möglich ist.&lt;/p&gt;
+&lt;p&gt;Nun ja, es so etwas in der Art, aber eben ein rein fiktiver Wert, der durch die Konstruktion der Parameter entsteht.
+Eine (affin-)lineare Gerade geht nun einmal irgendwann durch die y-Achse (wenn sie nicht parallel dazu ist) und es kann passieren, dass eine sinnvolle Interpretation nicht so ohne weiteres möglich ist.&lt;/p&gt;
 &lt;p&gt;Wir können aber dieses &lt;em&gt;Grundtrinkgeld&lt;/em&gt; heraus nehmen und den y-Achsenabschnitt auf Null setzen. Dazu ziehen wir &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0\)&lt;/span&gt; einfach von alle Trinkgeldern ab. Wir erhalten quasi nur noch den &lt;em&gt;Trinkgeldzuwach&lt;/em&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beta_0 &amp;lt;- coef(linMod)[&amp;quot;(Intercept)&amp;quot;]  # Grundtrinkgeld
 tips$delta_tip &amp;lt;- tips$tip - beta_0    # wird abgezogen&lt;/code&gt;&lt;/pre&gt;
@@ -97,7 +100,8 @@ summary(linModDelta)&lt;/code&gt;&lt;/pre&gt;
 ## Multiple R-squared:  0.4566, Adjusted R-squared:  0.4544 
 ## F-statistic: 203.4 on 1 and 242 DF,  p-value: &amp;lt; 2.2e-16&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In diesem Modell ist der Wert für den y-Achsenabschnitt numerisch gleich 0. – Ja, da mag zwar &lt;span class=&#34;math inline&#34;&gt;\(-4.5487837\times 10^{-15}\)&lt;/span&gt; stehen, jedoch sind so kleine Werte der jedem Rechner inne wohnenden Ungenauigkeit in der Gleitkomma-Arithmetik geschuldet und ist faktisch gleich 0.&lt;/p&gt;
-&lt;p&gt;Der Wert für die Steigung lautet weiterhin &lt;span class=&#34;math inline&#34;&gt;\(0.1050245\)&lt;/span&gt;. Das war auch zu erwarten, denn wir haben unsere Regressionsgerade eigentlich nur um &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0\)&lt;/span&gt; nach unten verschoben. (Der Fachmann spricht von einer Translation (Parallelverschiebung)&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; um &lt;span class=&#34;math inline&#34;&gt;\(-\hat{\beta}_0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Der Wert für die Steigung lautet weiterhin &lt;span class=&#34;math inline&#34;&gt;\(0.1050245\)&lt;/span&gt;.
+Das war auch zu erwarten, denn wir haben unsere Regressionsgerade eigentlich nur um &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0\)&lt;/span&gt; nach unten verschoben. (Der Fachmann spricht von einer Translation (Parallelverschiebung)&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; um &lt;span class=&#34;math inline&#34;&gt;\(-\hat{\beta}_0\)&lt;/span&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Statt plotModel(linModDelta) besser:
 mypanel &amp;lt;- function(x, y) {
     # Scatterplot:
@@ -119,7 +123,7 @@ xyplot(
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit Ausnahme der &lt;em&gt;[Intercept]&lt;/em&gt; Zeile praktisch nichts geändert hat. Das ist kein Wunder, sondern Absicht!&lt;/p&gt;
 &lt;p&gt;Die Regressionsgerade stellt für unsere Stichprobe die Gerade mit dem geringsten Fehler an den Datenpunkten dar. Mathematisch heißt das folgendes:&lt;/p&gt;
-&lt;p&gt;An den &lt;span class=&#34;math inline&#34;&gt;\(n=244\)&lt;/span&gt; Datenpunkten unserer Stichprobe &lt;span class=&#34;math inline&#34;&gt;\((x_i, y_i)=(tips\$total\_bill[i], tips\$tip[i])\)&lt;/span&gt; [für (i=1,,n)$] sind die &lt;em&gt;Residuen&lt;/em&gt;, also die &lt;em&gt;Fehlerterme&lt;/em&gt;,&lt;/p&gt;
+&lt;p&gt;An den &lt;span class=&#34;math inline&#34;&gt;\(n=244\)&lt;/span&gt; Datenpunkten unserer Stichprobe &lt;span class=&#34;math inline&#34;&gt;\((x_i, y_i)=(tips\$total\_bill[i], tips\$tip[i])\)&lt;/span&gt; [für &lt;span class=&#34;math inline&#34;&gt;\((i=1, \dots, n)\)&lt;/span&gt;] sind die &lt;em&gt;Residuen&lt;/em&gt;, also die &lt;em&gt;Fehlerterme&lt;/em&gt;,&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
  \hat{e}_i =\hat{y}_i - y_i = \left[\hat{\beta}_{\text{0}} + \hat{\beta}_{\text{total_bill}} \cdot x_i\right] - y_i
 \]&lt;/span&gt;&lt;/p&gt;
@@ -127,7 +131,8 @@ xyplot(
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     \sum_{i=1}^n (\hat{e}_i)^2 \text{ ist minimal!}
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Wir können diese Fehlerterme graphisch ansehen um die Varianz der Residuen zu sehen. Dazu ziehen wir von allen Datenpunkten &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; den geschätzten Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}_i\)&lt;/span&gt; ab und erstellen ein neues lineares Modell:&lt;/p&gt;
+&lt;p&gt;Wir können diese Fehlerterme graphisch ansehen um die Varianz der Residuen zu sehen.
+Dazu ziehen wir von allen Datenpunkten &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; den geschätzten Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}_i\)&lt;/span&gt; ab und erstellen ein neues lineares Modell:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beta_total_bill &amp;lt;- coef(linModDelta)[&amp;quot;total_bill&amp;quot;]
 tips$error_tip &amp;lt;- (tips$tip - beta_0 - beta_total_bill * tips$total_bill)
 linModError &amp;lt;- lm(error_tip ~ total_bill, data = tips)
@@ -194,7 +199,9 @@ xyplot(
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     SE_{\text{Residuen}} = \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}} = \sqrt{\frac{243}{242}} \cdot 1.0199426 = 1.0220477
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Der Median der Residuen ist nicht gleich Null, wie der Mittelwert. (Welcher auch hier als numerisch Null interpretiert werden muss!) Es könnte also eine linkssteile, rechtsschiefe Verteilung der Residuen vorliegen. Betrachten wir dazu das Histogramm:&lt;/p&gt;
+&lt;p&gt;Der Median der Residuen ist nicht gleich Null, wie der Mittelwert. (Welcher auch hier als numerisch Null interpretiert werden muss!)
+Es könnte also eine linkssteile, rechtsschiefe Verteilung der Residuen vorliegen.
+Betrachten wir dazu das Histogramm:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;histogram(~residuals(linMod), nint = 19)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.&lt;/p&gt;
@@ -238,10 +245,12 @@ xyplot(
     )
 )&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}=1.9144546\)&lt;/span&gt; beschreibt die mittlere quadratische Abweichung der Datenpunkte &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; vom Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt;. Diese Varianz lässt sich Zerlegen in einen Anteil, der durch die Regressionsgerade &lt;em&gt;erklärt&lt;/em&gt; wird und in einen Anteil, der durch die Regressionsgerade &lt;em&gt;nicht erklärt&lt;/em&gt; wird.&lt;/p&gt;
+&lt;p&gt;Die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}=1.9144546\)&lt;/span&gt; beschreibt die mittlere quadratische Abweichung der Datenpunkte &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; vom Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt;.
+Diese Varianz lässt sich Zerlegen in einen Anteil, der durch die Regressionsgerade &lt;em&gt;erklärt&lt;/em&gt; wird und in einen Anteil, der durch die Regressionsgerade &lt;em&gt;nicht erklärt&lt;/em&gt; wird.&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     s^2_{y_i} = s^2_{\hat{y}_i} + s^2_{\hat{e}_i}
-\]&lt;/span&gt; Dividiert man beider Seiten durch die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}\)&lt;/span&gt;, so normiert man den Ausdruck und kann den Faktor &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{n-1}\)&lt;/span&gt; (bzw. &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{n}\)&lt;/span&gt;) herauskürzen. Es bleibt dann:&lt;/p&gt;
+\]&lt;/span&gt;
+Dividiert man beider Seiten durch die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}\)&lt;/span&gt;, so normiert man den Ausdruck und kann den Faktor &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{n-1}\)&lt;/span&gt; (bzw. &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{n}\)&lt;/span&gt;) herauskürzen. Es bleibt dann:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     1 = \frac{\sum_{i=1}^n (\bar{y}- \hat{y_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2} + \frac{\sum_{i=1}^n (\hat{e_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2}
 \]&lt;/span&gt;&lt;/p&gt;
@@ -271,11 +280,14 @@ xyplot(
 &lt;p&gt;Wir können daher auch kurz&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     SS_T = SS_M + SS_E
-\]&lt;/span&gt; schreiben und sparen uns die ganzen Summenzeichen.&lt;/p&gt;
+\]&lt;/span&gt;
+schreiben und sparen uns die ganzen Summenzeichen.&lt;/p&gt;
 &lt;p&gt;Die Güte einer Regression wollen wir durch den Anteil der durch das Model erklärten Varianz (also der &lt;span class=&#34;math inline&#34;&gt;\(SS_M\)&lt;/span&gt;) ausdrücken und stellen daher nach &lt;span class=&#34;math inline&#34;&gt;\(SS_M\)&lt;/span&gt; um:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     SS_M = SS_T - SS_E
-\]&lt;/span&gt; Teilen wir beide Seiten durch &lt;span class=&#34;math inline&#34;&gt;\(SS_T\)&lt;/span&gt; also der maximalen (weil totalen) Quadratsumme, so erhalten wir: &lt;span class=&#34;math display&#34;&gt;\[
+\]&lt;/span&gt;
+Teilen wir beide Seiten durch &lt;span class=&#34;math inline&#34;&gt;\(SS_T\)&lt;/span&gt; also der maximalen (weil totalen) Quadratsumme, so erhalten wir:
+&lt;span class=&#34;math display&#34;&gt;\[
     \frac{SS_M}{SS_T} = \frac{SS_T}{SS_T} - \frac{SS_E}{SS_T} = 1 - \frac{SS_E}{SS_T}
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Den Ausdruck &lt;span class=&#34;math inline&#34;&gt;\(\frac{SS_M}{SS_T}\)&lt;/span&gt; nennen wir &lt;strong&gt;Bestimmtheitsmaß&lt;/strong&gt; und schreiben dafür &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt;. Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in Bezug auf die Gesamtvarianz angibt. Kraft Definition ist &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt; im eindimensionalen Fall tatsächlich das Quadrat des (Pearson-)Korrelationskoeffizienten &lt;span class=&#34;math inline&#34;&gt;\(r\)&lt;/span&gt;. (M.a.W.: &lt;span class=&#34;math inline&#34;&gt;\(R^2= r^2\)&lt;/span&gt;.)&lt;/p&gt;
@@ -287,14 +299,17 @@ xyplot(
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Der Wert&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## ..., Adjusted R-squared:  0.4544&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;erklärt sich daraus&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;, dass das Bestimmheitsmaß um so größer wird je größer die Zahl der unabhängigen Variablen wird. Und zwar &lt;em&gt;unabhöngig&lt;/em&gt; davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern. Daher nutzt man besser das &lt;strong&gt;korrigierte Bestimmtheitsmaß&lt;/strong&gt; (engl.: &lt;em&gt;adjusted R-squared&lt;/em&gt;) &lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^2\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;erklärt sich daraus&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;, dass das Bestimmheitsmaß um so größer wird je größer die Zahl der unabhängigen Variablen wird.
+Und zwar &lt;em&gt;unabhöngig&lt;/em&gt; davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern.
+Daher nutzt man besser das &lt;strong&gt;korrigierte Bestimmtheitsmaß&lt;/strong&gt; (engl.: &lt;em&gt;adjusted R-squared&lt;/em&gt;) &lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^2\)&lt;/span&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     \begin{align*}
         \bar{R}^2 &amp;amp;= 1- (1-R^2) \cdot \frac{n-1}{n-p-1}\\ 
                   &amp;amp;= R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
     \end{align*}
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Wobei &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; die Anzahl der unabhängigen Variablen im Modell darstellt. In unserem Beispiel gilt daher:&lt;/p&gt;
+&lt;p&gt;Wobei &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; die Anzahl der unabhängigen Variablen im Modell darstellt.
+In unserem Beispiel gilt daher:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     \begin{align*}
         \bar{R}^2 &amp;amp;= 1 - (1-R^2)  \cdot \frac{n-1}{n-p-1} \\
@@ -302,12 +317,19 @@ xyplot(
                   &amp;amp;= 0.4543712
     \end{align*}
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Vorsicht:&lt;/strong&gt; Das &lt;em&gt;korrigierte Bestimmtheitsmaß&lt;/em&gt; ist nicht mehr an das Intervall &lt;span class=&#34;math inline&#34;&gt;\([0; 1]\)&lt;/span&gt; gebunden! Es kann negative Werte annehmen, ist in der Regel kleiner als das (unkorrigierte) Bestimmtheitsmaß und erreicht die obere Grenze (&lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^2=1\)&lt;/span&gt;) genau dann, wenn &lt;span class=&#34;math inline&#34;&gt;\(R^2 = 1\)&lt;/span&gt; ist.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Vorsicht:&lt;/strong&gt; Das &lt;em&gt;korrigierte Bestimmtheitsmaß&lt;/em&gt; ist nicht mehr an das Intervall &lt;span class=&#34;math inline&#34;&gt;\([0; 1]\)&lt;/span&gt; gebunden!
+Es kann negative Werte annehmen, ist in der Regel kleiner als das (unkorrigierte) Bestimmtheitsmaß und erreicht die obere Grenze (&lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^2=1\)&lt;/span&gt;) genau dann, wenn &lt;span class=&#34;math inline&#34;&gt;\(R^2 = 1\)&lt;/span&gt; ist.&lt;/p&gt;
 &lt;p&gt;Bei der &lt;strong&gt;Gesamtsignifikanz des Modells&lt;/strong&gt; (auch &lt;strong&gt;Overall-F-Test&lt;/strong&gt; genannt) wird geprüft, ob mindestens eine Variable einen Erklärungsgehalt für das Modell liefert.&lt;/p&gt;
-&lt;p&gt;Falls diese Hypothese verworfen wird ist somit das Modell nutzlos. Dieser Test lässt sich so interpretieren als würde man die gesamte Güte des Modells, also das &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt; des Modells, testen. Aus diesem Grund wird der F-Test der Gesamtsignifikanz des Modells auch als Anpassungsgüte-Test bezeichnet. Die Nullhypothese des F-Test der Gesamtsignifikanz des Modells sagt aus, dass alle erklärenden Variablen keinen Einfluss auf die abhängige Variable haben. Sowohl die abhängige Variable als auch die unabhängigen Variablen können binär (kategoriell) oder metrisch sein. Der &lt;em&gt;Wald-Test&lt;/em&gt; kann dann die Hypothesen testen (ohne Einbezug des Achsenabschnittes):&lt;/p&gt;
+&lt;p&gt;Falls diese Hypothese verworfen wird ist somit das Modell nutzlos.
+Dieser Test lässt sich so interpretieren als würde man die gesamte Güte des Modells, also das &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt; des Modells, testen.
+Aus diesem Grund wird der F-Test der Gesamtsignifikanz des Modells auch als Anpassungsgüte-Test bezeichnet.
+Die Nullhypothese des F-Test der Gesamtsignifikanz des Modells sagt aus, dass alle erklärenden Variablen keinen Einfluss auf die abhängige Variable haben.
+Sowohl die abhängige Variable als auch die unabhängigen Variablen können binär (kategoriell) oder metrisch sein.
+Der &lt;em&gt;Wald-Test&lt;/em&gt; kann dann die Hypothesen testen (ohne Einbezug des Achsenabschnittes):&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     H_{0}\colon \beta _{1}=\beta _{2}=\ldots =\beta _{k}\;=\;0\Rightarrow R^{2}=0
-\]&lt;/span&gt; gegen&lt;/p&gt;
+\]&lt;/span&gt;
+gegen&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     H_{1}:\beta _{j}\;\neq \;0\;\mathrm {f{\ddot {u}}r\;mindestens\;ein} \;j\in \{1,\ldots ,k\}\Rightarrow R^{2}\neq 0
 \]&lt;/span&gt;&lt;/p&gt;
@@ -317,7 +339,11 @@ xyplot(
     F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)
 \end{aligned}.
 \]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;mit &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(\displaystyle (n-p-1)\)&lt;/span&gt; Freiheitsgraden. Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;, so verwirft man die Nullhypothese &lt;span class=&#34;math inline&#34;&gt;\(H_{0}\)&lt;/span&gt;. Das &lt;span class=&#34;math inline&#34;&gt;\(R^{2}\)&lt;/span&gt; ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; bei. Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt. Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.&lt;/p&gt;
+&lt;p&gt;mit &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(\displaystyle (n-p-1)\)&lt;/span&gt; Freiheitsgraden.
+Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;, so verwirft man die Nullhypothese &lt;span class=&#34;math inline&#34;&gt;\(H_{0}\)&lt;/span&gt;.
+Das &lt;span class=&#34;math inline&#34;&gt;\(R^{2}\)&lt;/span&gt; ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; bei.
+Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt.
+Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.&lt;/p&gt;
 &lt;p&gt;In unserem Beispiel ist&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
     F={\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
@@ -326,7 +352,7 @@ xyplot(
 &lt;pre&gt;&lt;code&gt;## F-statistic: 203.4 on 1 and 242 DF,  p-value: &amp;lt; 2.2e-16&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;mit Parametern &lt;span class=&#34;math inline&#34;&gt;\(p=1\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(n-p-1=242\)&lt;/span&gt; Freiheitsgraden.&lt;/p&gt;
 &lt;p&gt;Der p-Wert von (numerisch) 0, liefert also ein hinreichendes Indiz dafür, dass der Rechnungsbetrag einen echten Beitrag liefert.&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;vgl.: &lt;a href=&#34;https://de.wikipedia.org/wiki/Parallelverschiebung&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Parallelverschiebung&lt;/a&gt;&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
@@ -334,7 +360,7 @@ xyplot(
 &lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;vgl.: &lt;a href=&#34;https://de.wikipedia.org/wiki/Shapiro-Wilk-Test&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Shapiro-Wilk-Test&lt;/a&gt;&lt;a href=&#34;#fnref3&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id=&#34;fn4&#34;&gt;&lt;p&gt;vgl.: &lt;a href=&#34;https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß&lt;/a&gt;&lt;a href=&#34;#fnref4&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -610,9 +636,9 @@ dr &amp;lt;- 0:600&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/der-zentrale-grenzwertsatz/</guid>
-      <description>&lt;section id=&#34;der-zentrale-grenzwertsatz-der-statistik-bei-identischer-verteilung.&#34; class=&#34;level2&#34;&gt;
+      <description>&lt;div id=&#34;der-zentrale-grenzwertsatz-der-statistik-bei-identischer-verteilung.&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Der &lt;strong&gt;Zentrale Grenzwertsatz&lt;/strong&gt; der Statistik bei identischer Verteilung.&lt;/h2&gt;
-&lt;section id=&#34;zentraler-grenzwertsatz&#34; class=&#34;level3&#34;&gt;
+&lt;div id=&#34;zentraler-grenzwertsatz&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Zentraler Grenzwertsatz&lt;/h3&gt;
 &lt;p&gt;Seien &lt;span class=&#34;math inline&#34;&gt;\(X_1, X_2, ..., X_n\)&lt;/span&gt; unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert &lt;span class=&#34;math inline&#34;&gt;\(E(X_i) = \mu\)&lt;/span&gt; und bekanter Varianz &lt;span class=&#34;math inline&#34;&gt;\(Var(X_i)=\sigma^2\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Für die Summe &lt;span class=&#34;math inline&#34;&gt;\(S_n = \sum_{i=1}^n X_i\)&lt;/span&gt; ist dann der Erwartungswert &lt;span class=&#34;math inline&#34;&gt;\(E(S_n)= n \cdot \mu\)&lt;/span&gt; und die Varianz &lt;span class=&#34;math inline&#34;&gt;\(Var(S_n)= n \cdot \sigma^2\)&lt;/span&gt;.&lt;/p&gt;
@@ -643,8 +669,8 @@ P(Z_n \leq x) \longrightarrow \Phi(x), \quad \text{ für }\; n \rightarrow \inft
 &lt;p&gt;3. Weisstein, E.W.: Central limit theorem, &lt;a href=&#34;http://mathworld.wolfram.com/CentralLimitTheorem.html&#34; class=&#34;uri&#34;&gt;http://mathworld.wolfram.com/CentralLimitTheorem.html&lt;/a&gt;, (2017)&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/section&gt;
-&lt;/section&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
