@@ -1,0 +1,177 @@
+---
+title: Ein wenig schneller zu simulierten Nullverteilung
+author: Norman Markgraf
+date: '2018-05-02'
+slug: ein-wenig-schneller-zu-simulierten-nullverteilung
+categories:
+  - Statistik
+tags:
+  - R
+  - Lehre
+  - Statistik
+header:
+  caption: ''
+  image: ''
+---
+```{r setup, include=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+#
+knitr::opts_chunk$set(
+    echo = TRUE,
+    tidy = TRUE,
+    tidy.opts=list(
+        comment = FALSE,
+        blank = TRUE,
+        arrow = TRUE,
+        indent = 4,
+        width.cutoff=60),
+        brace.newline = FALSE
+    )
+#
+library(mosaic, warn.conflicts = FALSE, quietly = TRUE, verbose = FALSE)
+library(mosaicCore, quietly = TRUE)
+download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
+tips <- read.csv2("tips.csv")
+```
+
+Ein Nullhypothesentest ist schnell geschrieben. 
+Will man den approximativen Weg gehen, so hilft **R** einem mit entsprechenden Tests mit einfachen Befehlen.
+Nimmt man **MOSAIC** dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
+
+### Zwei Beispiele für approximative Hypothesentests mit MOSAIC
+
+Laden wir unsere Testdaten, die **tipping** Daten wie folgt:
+```{r, eval=FALSE}
+library(mosaic)
+download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
+tips <- read.csv2("tips.csv")
+# Zur Reproduzierbakeit
+set.seed(2009)
+```
+
+Dann erstellen wir zwei Forschungsfragen:
+
+1. Ist der mittlere Frauenanteil unter der Bezahler*innen zu den Zeitpunkten Lunch und Dinner gleich?
+2. Ist der mittlere Rechnungsbetrag zu den Zeitpunkten Lunch und Dinner gleich?
+
+Im ersten Fall ist die Hypothese schnell geschrieben:
+
+$$
+H_0 : \pi_{\text{Lunch}} = \pi_{\text{Dinner}} \quad\text{vs.}\quad H_1 : \pi_{\text{Lunch}} \neq \pi_{\text{Dinner}}
+$$
+Der appoximative Test mit R und MOSAIC lautet nun:
+
+```{r}
+prop.test(sex ~ time, success="Female", data=tips)
+```
+
+Ähnlich sieht es für den zweiten Fall aus. Die Hypothese lautet hier:
+
+$$
+H_0 : \mu_{Lunch} = \mu_{Dinner} \quad\text{vs.}\quad H_1 : \mu_{Lunch} \neq \mu_{Dinner}
+$$
+
+Der dazugehörige Test lautet dann:
+
+```{r}
+t.test(total_bill ~ time, data=tips)
+```
+
+
+## Simulation der Nullverteilung mit MOSAIC
+
+Ein anderer Weg ist es die Stichprobe selber zu nutzen um daraus eine Verteilung der Nullhypothese (die Nullverteilung) ableiten zu können. 
+Im ersten Fall schaut man sich die Anteilsunterschiede an, wenn man die (potentielle) Abhänigkeit von der Tageszeit (Lunch und Dinner) künstlich "abschaltet":
+
+```{r}
+# Zur Reproduzierbakeit
+set.seed(2009)
+
+NullVtlgAntwert <- do(10000) * diffprop(sex ~ shuffle(time), success="Female", data=tips)
+gf_histogram( ~ diffprop, nint=25, data= NullVtlgAntwert)
+```
+
+Schaut man sich nun die Lage der Anteilsdifferenz der Stichprobe $\hat\pi=`diffprop(sex ~ time, success="Female", data=tips)`$ in Bezug auf diese Nullverteilung geometrisch an, so kann man schon einen ersten Eindruck erlangen, ob die Nullhypothese abzulehnen ist oder nicht:
+
+```{r}
+diffpropdach = diffprop(sex ~ time, success = "Female", data = tips)
+gf_histogram( ~ diffprop, nint = 25, data = NullVtlgAntwert) +
+    geom_vline(xintercept = diffpropdach, color="blue")
+```
+
+Offenbar ist $\hat\pi$ kein sehr häufiges Ereignis.
+
+Der "p-Wert" ist auch leicht ermittelt:
+
+```{r}
+pvalue_aw <- prop( ~ abs(diffprop) >= abs(diffpropdach), data = NullVtlgAntwert)
+pvalue_aw
+```
+
+Ähnlich sie die Situation im zweien Fall aus. Mittels weniger Befehler erzeugen wir die Verteilung.
+
+```{r}
+# Zur Reproduzierbakeit
+set.seed(2009)
+
+NullVtlgMittelwert <- do(10000) * diffmean(total_bill ~ shuffle(time), data=tips)
+gf_histogram( ~ diffmean, nint = 25, data = NullVtlgMittelwert)
+```
+
+Und können im Anschluss die Mittelwertsdifferent der Stichprobe geometrisch einordnen:
+
+```{r}
+diffmeandach = diffmean(total_bill ~ time, data = tips)
+gf_histogram( ~ diffmean, nint = 25, data = NullVtlgMittelwert) +
+    geom_vline(xintercept = diffmeandach, color="blue")
+```
+
+Auch den "p-Wert" können wir nun leicht bestimmen:
+
+```{r}
+pvalue_mw <- prop( ~ abs(diffmean) >= abs(diffmeandach), data = NullVtlgMittelwert)
+pvalue_mw
+```
+
+## Das Problem -- Zeit
+
+Das Problem bei der Simulation ist die Zeit, die **R** braucht um die Nullverteilungen zu generieren. 
+Das liegt im wesendlichen an Mosaic.
+Mit den Routinen aus [FastSimNullDistR](https://github.com/NMarkgraf/FastSimNullDistR) lassen sich die Nullverteilungen deutlich schneller berechnen.
+Ein Vergleich:
+
+```{r}
+library(mosaic)
+library(mosaicCore)
+source("https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistRMean.R")
+source("https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistRProp.R")
+source("https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistR_work.R")
+
+set.seed(2009)
+system.time(
+    NullDistMosaic_aw <- do(10000) * diffprop(sex ~ shuffle(time), success="Female", data=tips)
+)
+
+set.seed(2009)
+system.time(
+    NullDistFSNDR_aw <- fastSimNullDistRProp(sex ~ time, success="Female", data=tips)
+)
+
+set.seed(2009)
+system.time(
+    NullDistMosaic_mw <- do(10000) * diffmean(total_bill ~ shuffle(time), data=tips)
+)
+
+set.seed(2009)
+system.time(
+    NullDistFSNDR_mw <- fastSimNullDistRMean(total_bill ~ time, data=tips)
+)
+
+```
+
+Das mit mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also "(quasi-)drop-in-replacements" der Mosaic Rouninen sind, kann man an den beiden QQ-Plots erkennen:
+
+```{r}
+qqplot(NullDistFSNDR_aw$diffprop, NullDistMosaic_aw$diffprop)
+qqplot(NullDistFSNDR_mw$diffmean, NullDistMosaic_mw$diffmean)
+```
+
