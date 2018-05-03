@@ -86,6 +86,140 @@ Den Python-Quelltext findet man unter &lt;a href=&#34;https://github.com/NMarkgr
     </item>
     
     <item>
+      <title>Ein wenig schneller zu simulierten Nullverteilung</title>
+      <link>/nab/post/ein-wenig-schneller-zu-simulierten-nullverteilung/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/ein-wenig-schneller-zu-simulierten-nullverteilung/</guid>
+      <description>&lt;p&gt;Ein Nullhypothesentest ist schnell geschrieben.
+Will man den approximativen Weg gehen, so hilft &lt;strong&gt;R&lt;/strong&gt; einem mit entsprechenden Tests mit einfachen Befehlen.
+Nimmt man &lt;strong&gt;MOSAIC&lt;/strong&gt; dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.&lt;/p&gt;
+&lt;div id=&#34;zwei-beispiele-fur-approximative-hypothesentests-mit-mosaic&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Zwei Beispiele für approximative Hypothesentests mit MOSAIC&lt;/h3&gt;
+&lt;p&gt;Laden wir unsere Testdaten, die &lt;strong&gt;tipping&lt;/strong&gt; Daten wie folgt:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(mosaic)
+download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.csv&amp;quot;)
+tips &amp;lt;- read.csv2(&amp;quot;tips.csv&amp;quot;)
+set.seed(2009)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Dann erstellen wir zwei Forschungsfragen:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Ist der mittlere Frauenanteil unter der Bezahler*innen zu den Zeitpunkten Lunch und Dinner gleich?&lt;/li&gt;
+&lt;li&gt;Ist der mittlere Rechnungsbetrag zu den Zeitpunkten Lunch und Dinner gleich?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Im ersten Fall ist die Hypothese schnell geschrieben:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+H_0 : \pi_{\text{Lunch}} = \pi_{\text{Dinner}} \quad\text{vs.}\quad H_1 : \pi_{\text{Lunch}} \neq \pi_{\text{Dinner}}
+\]&lt;/span&gt;
+Der appoximative Test mit R und MOSAIC lautet nun:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;prop.test(sex ~ time, success = &amp;quot;Female&amp;quot;, data = tips)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  2-sample test for equality of proportions with continuity
+##  correction
+## 
+## data:  tally(sex ~ time)
+## X-squared = 9.3438, df = 1, p-value = 0.002237
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.36602563 -0.07247705
+## sample estimates:
+##    prop 1    prop 2 
+## 0.2954545 0.5147059&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ähnlich sieht es für den zweiten Fall aus. Die Hypothese lautet hier:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+H_0 : \mu_{Lunch} = \mu_{Dinner} \quad\text{vs.}\quad H_1 : \mu_{Lunch} \neq \mu_{Dinner}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Der dazugehörige Test lautet dann:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;t.test(total_bill ~ time, data = tips)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  Welch Two Sample t-test
+## 
+## data:  total_bill by time
+## t = 3.123, df = 143.29, p-value = 0.002167
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  1.331877 5.925088
+## sample estimates:
+## mean in group Dinner  mean in group Lunch 
+##             20.79716             17.16868&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simulation-der-nullverteilung-mit-mosaic&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simulation der Nullverteilung mit MOSAIC&lt;/h2&gt;
+&lt;p&gt;Ein anderer Weg ist es die Stichprobe selber zu nutzen um daraus eine Verteilung der Nullhypothese (die Nullverteilung) ableiten zu können.
+Im ersten Fall schaut man sich die Anteilsunterschiede an, wenn man die (potentielle) Abhänigkeit von der Tageszeit (Lunch und Dinner) künstlich “abschaltet”:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
+NullVtlgAntwert &amp;lt;- do(10000) * diffprop(sex ~ shuffle(time), 
+    success = &amp;quot;Female&amp;quot;, data = tips)
+gf_histogram(~diffprop, nint = 25, data = NullVtlgAntwert)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Schaut man sich nun die Lage der Anteilsdifferenz der Stichprobe &lt;span class=&#34;math inline&#34;&gt;\(\hat\pi=`diffprop(sex ~ time, success=&amp;quot;Female&amp;quot;, data=tips)`\)&lt;/span&gt; in Bezug auf diese Nullverteilung geometrisch an, so kann man schon einen ersten Eindruck erlangen, ob die Nullhypothese abzulehnen ist oder nicht:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;diffpropdach &amp;lt;- diffprop(sex ~ time, success = &amp;quot;Female&amp;quot;, data = tips)
+gf_histogram(~diffprop, nint = 25, data = NullVtlgAntwert) + 
+    geom_vline(xintercept = diffpropdach, color = &amp;quot;blue&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Offenbar ist &lt;span class=&#34;math inline&#34;&gt;\(\hat\pi\)&lt;/span&gt; kein sehr häufiges Ereignis.&lt;/p&gt;
+&lt;p&gt;Der “p-Wert” ist auch leicht ermittelt:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pvalue_aw &amp;lt;- prop(~abs(diffprop) &amp;gt;= abs(diffpropdach), data = NullVtlgAntwert)
+pvalue_aw&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   TRUE 
+## 0.0027&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ähnlich sie die Situation im zweien Fall aus. Mittels weniger Befehler erzeugen wir die Verteilung.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
+NullVtlgMittelwert &amp;lt;- do(10000) * diffmean(total_bill ~ shuffle(time), 
+    data = tips)
+gf_histogram(~diffmean, nint = 25, data = NullVtlgMittelwert)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Und können im Anschluss die Mittelwertsdifferent der Stichprobe geometrisch einordnen:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;diffmeandach &amp;lt;- diffmean(total_bill ~ time, data = tips)
+gf_histogram(~diffmean, nint = 25, data = NullVtlgMittelwert) + 
+    geom_vline(xintercept = diffmeandach, color = &amp;quot;blue&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Auch den “p-Wert” können wir nun leicht bestimmen:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pvalue_mw &amp;lt;- prop(~abs(diffmean) &amp;gt;= abs(diffmeandach), data = NullVtlgMittelwert)
+pvalue_mw&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   TRUE 
+## 0.0039&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;das-problem-zeit&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Das Problem – Zeit&lt;/h2&gt;
+&lt;p&gt;Das Problem bei der Simulation ist die Zeit, die &lt;strong&gt;R&lt;/strong&gt; braucht um die Nullverteilungen zu generieren.
+Das liegt im wesendlichen an Mosaic.
+Mit den Routinen aus &lt;a href=&#34;https://github.com/NMarkgraf/FastSimNullDistR&#34;&gt;FastSimNullDistR&lt;/a&gt; lassen sich die Nullverteilungen deutlich schneller berechnen.
+Ein Vergleich:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(mosaic)
+library(mosaicCore)
+source(&amp;quot;https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistRMean.R&amp;quot;)
+source(&amp;quot;https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistRProp.R&amp;quot;)
+source(&amp;quot;https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistR_work.R&amp;quot;)
+set.seed(2009)
+system.time(NullDistMosaic_aw &amp;lt;- do(10000) * diffprop(sex ~ shuffle(time), 
+    success = &amp;quot;Female&amp;quot;, data = tips))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
+##      12.594       0.044      12.665&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
+system.time(NullDistFSNDR_aw &amp;lt;- fastSimNullDistRProp(sex ~ time, 
+    success = &amp;quot;Female&amp;quot;, data = tips))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
+##       1.145       0.010       1.157&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
+system.time(NullDistMosaic_mw &amp;lt;- do(10000) * diffmean(total_bill ~ 
+    shuffle(time), data = tips))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
+##      13.538       0.045      13.616&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
+system.time(NullDistFSNDR_mw &amp;lt;- fastSimNullDistRMean(total_bill ~ 
+    time, data = tips))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
+##       1.110       0.014       1.128&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Das mit mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also “(quasi-)drop-in-replacements” der Mosaic Rouninen sind, kann man an den beiden QQ-Plots erkennen:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qqplot(NullDistFSNDR_aw$diffprop, NullDistMosaic_aw$diffprop)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qqplot(NullDistFSNDR_mw$diffmean, NullDistMosaic_mw$diffmean)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Nur ein wenig lineare Regression</title>
       <link>/nab/post/nur-ein-wenig-lineare-regression/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>

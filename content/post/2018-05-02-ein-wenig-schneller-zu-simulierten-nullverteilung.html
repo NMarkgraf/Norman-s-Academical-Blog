@@ -1,0 +1,143 @@
+---
+title: Ein wenig schneller zu simulierten Nullverteilung
+author: Norman Markgraf
+date: '2018-05-02'
+slug: ein-wenig-schneller-zu-simulierten-nullverteilung
+categories:
+  - Statistik
+tags:
+  - R
+  - Lehre
+  - Statistik
+header:
+  caption: ''
+  image: ''
+---
+
+
+
+<p>Ein Nullhypothesentest ist schnell geschrieben.
+Will man den approximativen Weg gehen, so hilft <strong>R</strong> einem mit entsprechenden Tests mit einfachen Befehlen.
+Nimmt man <strong>MOSAIC</strong> dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.</p>
+<div id="zwei-beispiele-fur-approximative-hypothesentests-mit-mosaic" class="section level3">
+<h3>Zwei Beispiele für approximative Hypothesentests mit MOSAIC</h3>
+<p>Laden wir unsere Testdaten, die <strong>tipping</strong> Daten wie folgt:</p>
+<pre class="r"><code>library(mosaic)
+download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.csv&quot;)
+tips &lt;- read.csv2(&quot;tips.csv&quot;)
+set.seed(2009)</code></pre>
+<p>Dann erstellen wir zwei Forschungsfragen:</p>
+<ol style="list-style-type: decimal">
+<li>Ist der mittlere Frauenanteil unter der Bezahler*innen zu den Zeitpunkten Lunch und Dinner gleich?</li>
+<li>Ist der mittlere Rechnungsbetrag zu den Zeitpunkten Lunch und Dinner gleich?</li>
+</ol>
+<p>Im ersten Fall ist die Hypothese schnell geschrieben:</p>
+<p><span class="math display">\[
+H_0 : \pi_{\text{Lunch}} = \pi_{\text{Dinner}} \quad\text{vs.}\quad H_1 : \pi_{\text{Lunch}} \neq \pi_{\text{Dinner}}
+\]</span>
+Der appoximative Test mit R und MOSAIC lautet nun:</p>
+<pre class="r"><code>prop.test(sex ~ time, success = &quot;Female&quot;, data = tips)</code></pre>
+<pre><code>## 
+##  2-sample test for equality of proportions with continuity
+##  correction
+## 
+## data:  tally(sex ~ time)
+## X-squared = 9.3438, df = 1, p-value = 0.002237
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.36602563 -0.07247705
+## sample estimates:
+##    prop 1    prop 2 
+## 0.2954545 0.5147059</code></pre>
+<p>Ähnlich sieht es für den zweiten Fall aus. Die Hypothese lautet hier:</p>
+<p><span class="math display">\[
+H_0 : \mu_{Lunch} = \mu_{Dinner} \quad\text{vs.}\quad H_1 : \mu_{Lunch} \neq \mu_{Dinner}
+\]</span></p>
+<p>Der dazugehörige Test lautet dann:</p>
+<pre class="r"><code>t.test(total_bill ~ time, data = tips)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  total_bill by time
+## t = 3.123, df = 143.29, p-value = 0.002167
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  1.331877 5.925088
+## sample estimates:
+## mean in group Dinner  mean in group Lunch 
+##             20.79716             17.16868</code></pre>
+</div>
+<div id="simulation-der-nullverteilung-mit-mosaic" class="section level2">
+<h2>Simulation der Nullverteilung mit MOSAIC</h2>
+<p>Ein anderer Weg ist es die Stichprobe selber zu nutzen um daraus eine Verteilung der Nullhypothese (die Nullverteilung) ableiten zu können.
+Im ersten Fall schaut man sich die Anteilsunterschiede an, wenn man die (potentielle) Abhänigkeit von der Tageszeit (Lunch und Dinner) künstlich “abschaltet”:</p>
+<pre class="r"><code>set.seed(2009)
+NullVtlgAntwert &lt;- do(10000) * diffprop(sex ~ shuffle(time), 
+    success = &quot;Female&quot;, data = tips)
+gf_histogram(~diffprop, nint = 25, data = NullVtlgAntwert)</code></pre>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Schaut man sich nun die Lage der Anteilsdifferenz der Stichprobe <span class="math inline">\(\hat\pi=`diffprop(sex ~ time, success=&quot;Female&quot;, data=tips)`\)</span> in Bezug auf diese Nullverteilung geometrisch an, so kann man schon einen ersten Eindruck erlangen, ob die Nullhypothese abzulehnen ist oder nicht:</p>
+<pre class="r"><code>diffpropdach &lt;- diffprop(sex ~ time, success = &quot;Female&quot;, data = tips)
+gf_histogram(~diffprop, nint = 25, data = NullVtlgAntwert) + 
+    geom_vline(xintercept = diffpropdach, color = &quot;blue&quot;)</code></pre>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Offenbar ist <span class="math inline">\(\hat\pi\)</span> kein sehr häufiges Ereignis.</p>
+<p>Der “p-Wert” ist auch leicht ermittelt:</p>
+<pre class="r"><code>pvalue_aw &lt;- prop(~abs(diffprop) &gt;= abs(diffpropdach), data = NullVtlgAntwert)
+pvalue_aw</code></pre>
+<pre><code>##   TRUE 
+## 0.0027</code></pre>
+<p>Ähnlich sie die Situation im zweien Fall aus. Mittels weniger Befehler erzeugen wir die Verteilung.</p>
+<pre class="r"><code>set.seed(2009)
+NullVtlgMittelwert &lt;- do(10000) * diffmean(total_bill ~ shuffle(time), 
+    data = tips)
+gf_histogram(~diffmean, nint = 25, data = NullVtlgMittelwert)</code></pre>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Und können im Anschluss die Mittelwertsdifferent der Stichprobe geometrisch einordnen:</p>
+<pre class="r"><code>diffmeandach &lt;- diffmean(total_bill ~ time, data = tips)
+gf_histogram(~diffmean, nint = 25, data = NullVtlgMittelwert) + 
+    geom_vline(xintercept = diffmeandach, color = &quot;blue&quot;)</code></pre>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Auch den “p-Wert” können wir nun leicht bestimmen:</p>
+<pre class="r"><code>pvalue_mw &lt;- prop(~abs(diffmean) &gt;= abs(diffmeandach), data = NullVtlgMittelwert)
+pvalue_mw</code></pre>
+<pre><code>##   TRUE 
+## 0.0039</code></pre>
+</div>
+<div id="das-problem-zeit" class="section level2">
+<h2>Das Problem – Zeit</h2>
+<p>Das Problem bei der Simulation ist die Zeit, die <strong>R</strong> braucht um die Nullverteilungen zu generieren.
+Das liegt im wesendlichen an Mosaic.
+Mit den Routinen aus <a href="https://github.com/NMarkgraf/FastSimNullDistR">FastSimNullDistR</a> lassen sich die Nullverteilungen deutlich schneller berechnen.
+Ein Vergleich:</p>
+<pre class="r"><code>library(mosaic)
+library(mosaicCore)
+source(&quot;https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistRMean.R&quot;)
+source(&quot;https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistRProp.R&quot;)
+source(&quot;https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistR_work.R&quot;)
+set.seed(2009)
+system.time(NullDistMosaic_aw &lt;- do(10000) * diffprop(sex ~ shuffle(time), 
+    success = &quot;Female&quot;, data = tips))</code></pre>
+<pre><code>##        User      System verstrichen 
+##      12.594       0.044      12.665</code></pre>
+<pre class="r"><code>set.seed(2009)
+system.time(NullDistFSNDR_aw &lt;- fastSimNullDistRProp(sex ~ time, 
+    success = &quot;Female&quot;, data = tips))</code></pre>
+<pre><code>##        User      System verstrichen 
+##       1.145       0.010       1.157</code></pre>
+<pre class="r"><code>set.seed(2009)
+system.time(NullDistMosaic_mw &lt;- do(10000) * diffmean(total_bill ~ 
+    shuffle(time), data = tips))</code></pre>
+<pre><code>##        User      System verstrichen 
+##      13.538       0.045      13.616</code></pre>
+<pre class="r"><code>set.seed(2009)
+system.time(NullDistFSNDR_mw &lt;- fastSimNullDistRMean(total_bill ~ 
+    time, data = tips))</code></pre>
+<pre><code>##        User      System verstrichen 
+##       1.110       0.014       1.128</code></pre>
+<p>Das mit mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also “(quasi-)drop-in-replacements” der Mosaic Rouninen sind, kann man an den beiden QQ-Plots erkennen:</p>
+<pre class="r"><code>qqplot(NullDistFSNDR_aw$diffprop, NullDistMosaic_aw$diffprop)</code></pre>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code>qqplot(NullDistFSNDR_mw$diffmean, NullDistMosaic_mw$diffmean)</code></pre>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+</div>

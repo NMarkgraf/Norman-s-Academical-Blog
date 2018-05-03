@@ -17,7 +17,6 @@ bibliography: statistik.bib
 ## Der **Zentrale Grenzwertsatz** der Statistik bei identischer Verteilung.
 
 
-
 ### Zentraler Grenzwertsatz
 
 Seien $X_1, X_2, ..., X_n$ unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert $E(X_i) = \mu$ und bekanter Varianz $Var(X_i)=\sigma^2$. 
@@ -44,7 +43,6 @@ Mit anderen Worten:
 $$
 P(Z_n \leq x) \longrightarrow \Phi(x), \quad \text{ für }\; n \rightarrow \infty
 $$
-
 
 
 **Weiterführende Literatur und Quellen dieses Eintrags:**
