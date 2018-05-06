@@ -1,8 +1,8 @@
 ---
-title: Ein wenig schneller zu simulierten Nullverteilung
+title: Ein wenig schneller zur simulierten Nullverteilung
 author: Norman Markgraf
 date: '2018-05-02'
-slug: ein-wenig-schneller-zu-simulierten-nullverteilung
+slug: ein-wenig-schneller-zur-simulierten-nullverteilung
 categories:
   - Statistik
 tags:
@@ -75,12 +75,12 @@ Im ersten Fall schaut man sich die Anteilsunterschiede an, wenn man die (potenti
 NullVtlgAntwert &lt;- do(10000) * diffprop(sex ~ shuffle(time), 
     success = &quot;Female&quot;, data = tips)
 gf_histogram(~diffprop, nint = 25, data = NullVtlgAntwert)</code></pre>
-<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Schaut man sich nun die Lage der Anteilsdifferenz der Stichprobe <span class="math inline">\(\hat\pi=`diffprop(sex ~ time, success=&quot;Female&quot;, data=tips)`\)</span> in Bezug auf diese Nullverteilung geometrisch an, so kann man schon einen ersten Eindruck erlangen, ob die Nullhypothese abzulehnen ist oder nicht:</p>
 <pre class="r"><code>diffpropdach &lt;- diffprop(sex ~ time, success = &quot;Female&quot;, data = tips)
 gf_histogram(~diffprop, nint = 25, data = NullVtlgAntwert) + 
     geom_vline(xintercept = diffpropdach, color = &quot;blue&quot;)</code></pre>
-<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Offenbar ist <span class="math inline">\(\hat\pi\)</span> kein sehr häufiges Ereignis.</p>
 <p>Der “p-Wert” ist auch leicht ermittelt:</p>
 <pre class="r"><code>pvalue_aw &lt;- prop(~abs(diffprop) &gt;= abs(diffpropdach), data = NullVtlgAntwert)
@@ -92,12 +92,12 @@ pvalue_aw</code></pre>
 NullVtlgMittelwert &lt;- do(10000) * diffmean(total_bill ~ shuffle(time), 
     data = tips)
 gf_histogram(~diffmean, nint = 25, data = NullVtlgMittelwert)</code></pre>
-<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Und können im Anschluss die Mittelwertsdifferent der Stichprobe geometrisch einordnen:</p>
 <pre class="r"><code>diffmeandach &lt;- diffmean(total_bill ~ time, data = tips)
 gf_histogram(~diffmean, nint = 25, data = NullVtlgMittelwert) + 
     geom_vline(xintercept = diffmeandach, color = &quot;blue&quot;)</code></pre>
-<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Auch den “p-Wert” können wir nun leicht bestimmen:</p>
 <pre class="r"><code>pvalue_mw &lt;- prop(~abs(diffmean) &gt;= abs(diffmeandach), data = NullVtlgMittelwert)
 pvalue_mw</code></pre>
@@ -119,25 +119,25 @@ set.seed(2009)
 system.time(NullDistMosaic_aw &lt;- do(10000) * diffprop(sex ~ shuffle(time), 
     success = &quot;Female&quot;, data = tips))</code></pre>
 <pre><code>##        User      System verstrichen 
-##      12.594       0.044      12.665</code></pre>
+##      14.291       0.199      14.599</code></pre>
 <pre class="r"><code>set.seed(2009)
 system.time(NullDistFSNDR_aw &lt;- fastSimNullDistRProp(sex ~ time, 
     success = &quot;Female&quot;, data = tips))</code></pre>
 <pre><code>##        User      System verstrichen 
-##       1.145       0.010       1.157</code></pre>
+##       1.209       0.016       1.230</code></pre>
 <pre class="r"><code>set.seed(2009)
 system.time(NullDistMosaic_mw &lt;- do(10000) * diffmean(total_bill ~ 
     shuffle(time), data = tips))</code></pre>
 <pre><code>##        User      System verstrichen 
-##      13.538       0.045      13.616</code></pre>
+##      14.832       0.157      15.059</code></pre>
 <pre class="r"><code>set.seed(2009)
 system.time(NullDistFSNDR_mw &lt;- fastSimNullDistRMean(total_bill ~ 
     time, data = tips))</code></pre>
 <pre><code>##        User      System verstrichen 
-##       1.110       0.014       1.128</code></pre>
+##       1.174       0.013       1.190</code></pre>
 <p>Das mit mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also “(quasi-)drop-in-replacements” der Mosaic Rouninen sind, kann man an den beiden QQ-Plots erkennen:</p>
 <pre class="r"><code>qqplot(NullDistFSNDR_aw$diffprop, NullDistMosaic_aw$diffprop)</code></pre>
-<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <pre class="r"><code>qqplot(NullDistFSNDR_mw$diffmean, NullDistMosaic_mw$diffmean)</code></pre>
-<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zu-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+<p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
 </div>
