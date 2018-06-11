@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="de-de">
 <head>
@@ -13,7 +11,7 @@
   <meta name="description" content="Diplom-Mathematiker">
 
   
-  <link rel="alternate" hreflang="de-de" href="/nab/categories/statistik/">
+  <link rel="alternate" hreflang="de-de" href="/nab/post/sbi-simulation-based-inference/">
 
   
   
@@ -72,7 +70,7 @@
   <link rel="icon" type="image/png" href="/nab/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/nab/img/icon-192.png">
 
-  <link rel="canonical" href="/nab/categories/statistik/">
+  <link rel="canonical" href="/nab/post/sbi-simulation-based-inference/">
 
   <meta property="twitter:card" content="summary_large_image">
   
@@ -80,17 +78,19 @@
   <meta property="twitter:creator" content="@NormanMarkgraf">
   
   <meta property="og:site_name" content="Normans Akademischer Blog">
-  <meta property="og:url" content="/nab/categories/statistik/">
-  <meta property="og:title" content="Statistik | Normans Akademischer Blog">
-  <meta property="og:description" content="Diplom-Mathematiker">
+  <meta property="og:url" content="/nab/post/sbi-simulation-based-inference/">
+  <meta property="og:title" content="SBI - Simulation Based Inference | Normans Akademischer Blog">
+  <meta property="og:description" content="">
   <meta property="og:locale" content="de-de">
   
-  <meta property="og:updated_time" content="2018-06-11T00:00:00&#43;00:00">
+  <meta property="article:published_time" content="2018-06-11T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-06-11T00:00:00&#43;00:00">
   
 
   
 
-  <title>Statistik | Normans Akademischer Blog</title>
+  <title>SBI - Simulation Based Inference | Normans Akademischer Blog</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#toc" data-offset="71" >
@@ -214,92 +214,178 @@
 </nav>
 
 
-
-
-
-<div class="universal-wrapper">
-
-  <h1>Statistik</h1>
+<article class="article" itemscope itemtype="http://schema.org/Article">
 
   
 
+
+  <div class="article-container">
+    <div class="article-inner">
+      <h1 itemprop="name">SBI - Simulation Based Inference</h1>
+
+      
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2018-06-11 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Mon, 11. Jun. 2018
+    </time>
+  </span>
+
   
-  
-  <div>
-    <h2><a href="/nab/post/sbi-simulation-based-inference/">SBI - Simulation Based Inference</a></h2>
-    <div class="article-style">
-      
-      Nein, wenn meine Tochter SBI hört, denkt sie an Sally Bollywood Investigation. – Und ich oft auch. Gemeint ist hier aber nicht der Trickfilm für Kinder, sondern Simulation Based Inference.
-Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der FOM den Unterricht für Statistik auf eine neue Grundlage zu stellen.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/">Ein wenig schneller zur simulierten Nullverteilung</a></h2>
-    <div class="article-style">
-      
-      Ein Nullhypothesentest ist schnell geschrieben. Will man den approximativen Weg gehen, so hilft R einem mit entsprechenden Tests mit einfachen Befehlen. Nimmt man MOSAIC dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
-Zwei Beispiele für approximative Hypothesentests mit MOSAIC Laden wir unsere Testdaten, die tipping Daten wie folgt:
-library(mosaic) download.file(&quot;<a href="https://goo.gl/whKjnl&quot;" target="_blank">https://goo.gl/whKjnl&quot;</a>, destfile = &quot;tips.csv&quot;) tips &lt;- read.csv2(&quot;tips.csv&quot;) set.seed(2009) Dann erstellen wir zwei Forschungsfragen:
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/nab/post/nur-ein-wenig-lineare-regression/">Nur ein wenig lineare Regression</a></h2>
-    <div class="article-style">
-      
-      Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
-Zunächst laden wir dazu die tipping Daten mittels
-library(mosaic) download.file(&quot;<a href="https://goo.gl/whKjnl&quot;" target="_blank">https://goo.gl/whKjnl&quot;</a>, destfile = &quot;tips.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/nab/post/prognose-konfidenz-und-fiduzialintervalle/">Prognose-, Konfidenz- und Fiduzialintervalle</a></h2>
-    <div class="article-style">
-      
-      *WORK IN PROGRESS Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
-Konfidenzintervalle Definition von Konfidenzintervallen1 Für unabhängig identisch verteilte Zufallsvariablen (X_1,\dotsc, X_n) mit unbekanntem reellen Verteilungsparameter (\vartheta) kann unter bestimmten Umständen zwei Stichprobenfunktionen (U) und (V) angeben, so dass
-[P(U &lt; \vartheta &lt; V) \geq \gamma]
-gilt, mit (\gamma \in (0,1)). Dann heißt das (stochastische) Intervall ([U, V]) ein Konfidenzintervall für (\vartheta) zum Konfidenzniveau (\gamma) (auch: ein (\gamma)-Konfidenzintervall).
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/nab/post/konfidenzintervalle/">Konfidenzintervalle</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/nab/post/zentrales-schwankungsintervall/">Zentrales Schwankungsintervall</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/nab/post/der-zentrale-grenzwertsatz/">Der Zentrale Grenzwertsatz</a></h2>
-    <div class="article-style">
-      
-      Der Zentrale Grenzwertsatz der Statistik bei identischer Verteilung. Zentraler Grenzwertsatz Seien (X_1, X_2, &hellip;, X_n) unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert (E(X_i) = \mu) und bekanter Varianz (Var(X_i)=\sigma^2).
-Für die Summe (S<em>n = \sum</em>{i=1}^n X_i) ist dann der Erwartungswert (E(S_n)= n \cdot \mu) und die Varianz (Var(S_n)= n \cdot \sigma^2).
-Dann gilt für die standardisierte Zufallsvariable
-[ \begin{align<em>} Z<em>n &amp;= \frac{\left(\sum\limits</em>{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} \ &amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n}, \end{align</em>} ]
-      
-    </div>
-  </div>
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 
+  </span>
   
 
   
+  
+  <span class="middot-divider"></span>
+  <a href="/nab/post/sbi-simulation-based-inference/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/nab/categories/statistik">Statistik</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=SBI%20-%20Simulation%20Based%20Inference&amp;url=%2fnab%2fpost%2fsbi-simulation-based-inference%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fnab%2fpost%2fsbi-simulation-based-inference%2f"
+         target="_blank" rel="noopener">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fnab%2fpost%2fsbi-simulation-based-inference%2f&amp;title=SBI%20-%20Simulation%20Based%20Inference"
+         target="_blank" rel="noopener">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fnab%2fpost%2fsbi-simulation-based-inference%2f&amp;title=SBI%20-%20Simulation%20Based%20Inference"
+         target="_blank" rel="noopener">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=SBI%20-%20Simulation%20Based%20Inference&amp;body=%2fnab%2fpost%2fsbi-simulation-based-inference%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+      <div class="article-style" itemprop="articleBody">
+        <p>Nein, wenn meine Tochter SBI hört, denkt sie an Sally Bollywood Investigation. – Und ich oft auch. Gemeint ist hier aber nicht der Trickfilm für Kinder, sondern <em>S</em>imulation <em>B</em>ased <em>I</em>nference.</p>
+<p>Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der <a href="http://www.fom.de">FOM</a> den Unterricht für Statistik auf eine neue Grundlage zu stellen.</p>
+<p>Unser Mastermind, Karsten Lübke, hat dazu einen sehr schönen und lesenswerten Blog-Eintrag geschrieben: <a href="https://www.causeweb.org/sbi/?p=1559" class="uri">https://www.causeweb.org/sbi/?p=1559</a></p>
+
+      </div>
+
+      
+
+
+<div class="article-tags">
+  
+  <a class="btn btn-primary btn-outline" href="/nab/tags/lehre">Lehre</a>
+  
+  <a class="btn btn-primary btn-outline" href="/nab/tags/allgemein">Allgemein</a>
+  
+  <a class="btn btn-primary btn-outline" href="/nab/tags/statistik">Statistik</a>
+  
+</div>
+
+
+
+    </div>
+  </div>
+
+</article>
+
+
+
+<div class="article-container article-widget">
+  <div class="hr-light"></div>
+  <h3></h3>
+  <ul>
+    
+    <li><a href="/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/">Ein wenig schneller zur simulierten Nullverteilung</a></li>
+    
+    <li><a href="/nab/post/nur-ein-wenig-lineare-regression/">Nur ein wenig lineare Regression</a></li>
+    
+    <li><a href="/nab/post/prognose-konfidenz-und-fiduzialintervalle/">Prognose-, Konfidenz- und Fiduzialintervalle</a></li>
+    
+    <li><a href="/nab/post/konfidenzintervalle/">Konfidenzintervalle</a></li>
+    
+    <li><a href="/nab/post/zentrales-schwankungsintervall/">Zentrales Schwankungsintervall</a></li>
+    
+  </ul>
+</div>
+
+
+
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "normans-akademischer-blog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
 
 
 </div>
+
 <footer class="site-footer">
   <div class="container">
     <p class="powered-by">
@@ -403,6 +489,4 @@ Dann gilt für die standardisierte Zufallsvariable
 
   </body>
 </html>
-
-
 

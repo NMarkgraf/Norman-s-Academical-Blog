@@ -412,27 +412,31 @@ set.seed(2009)
 system.time(NullDistMosaic_aw &lt;- do(10000) * diffprop(sex ~ shuffle(time), 
     success = &quot;Female&quot;, data = tips))</code></pre>
 <pre><code>##        User      System verstrichen 
-##      14.291       0.199      14.599</code></pre>
+##      14.822       0.308      15.426</code></pre>
 <pre class="r"><code>set.seed(2009)
 system.time(NullDistFSNDR_aw &lt;- fastSimNullDistRProp(sex ~ time, 
     success = &quot;Female&quot;, data = tips))</code></pre>
 <pre><code>##        User      System verstrichen 
-##       1.209       0.016       1.230</code></pre>
+##       1.415       0.034       1.476</code></pre>
 <pre class="r"><code>set.seed(2009)
 system.time(NullDistMosaic_mw &lt;- do(10000) * diffmean(total_bill ~ 
     shuffle(time), data = tips))</code></pre>
 <pre><code>##        User      System verstrichen 
-##      14.832       0.157      15.059</code></pre>
+##      15.943       0.377      16.683</code></pre>
 <pre class="r"><code>set.seed(2009)
 system.time(NullDistFSNDR_mw &lt;- fastSimNullDistRMean(total_bill ~ 
     time, data = tips))</code></pre>
 <pre><code>##        User      System verstrichen 
-##       1.174       0.013       1.190</code></pre>
-<p>Das mit mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also “(quasi-)drop-in-replacements” der Mosaic Rouninen sind, kann man an den beiden QQ-Plots erkennen:</p>
+##       1.300       0.040       1.373</code></pre>
+<p>Das mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also ein “(quasi-)drop-in-replacements” der Mosaic Rouninen darstellen, kann man an den folgenden QQ-Plots erkennen:</p>
 <pre class="r"><code>qqplot(NullDistFSNDR_aw$diffprop, NullDistMosaic_aw$diffprop)</code></pre>
 <p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <pre class="r"><code>qqplot(NullDistFSNDR_mw$diffmean, NullDistMosaic_mw$diffmean)</code></pre>
 <p><img src="/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
+</div>
+<div id="woher-kommt-die-geschwindigkeit" class="section level2">
+<h2>Woher kommt die Geschwindigkeit?</h2>
+<p>Schaut man sich den Quellcode von Mosaic an, wird einem schnell klar, dass es zwar didaktisch sinnvoll ist die unabhängige Variable mit <code>shuffle()</code> zu bearbeiten, nicht aber programmiertechnisch. Und wenn, dann nicht in dem man die ganze Datenzeile für die Berechnung kopiert. Statt also <span class="math inline">\(10\,000\)</span> mal die ganzen Daten im Speicher zu kopieren wäre es doch sinnvoll einen Index auf die unveränderten daten indirekt über einen Index zuzugreifen. Und genau da liegt der Zugang der Routinen. Nur dieser Zugriffsindex wird <em>geshuffelt</em> und das spart Speicherplatz und Rechenzeit.</p>
 </div>
 
       </div>
