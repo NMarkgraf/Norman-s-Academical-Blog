@@ -14,9 +14,9 @@ header:
   image: ''
 ---
 
-Nein, wenn meine Tochter SBI hört, denkt sie an Sally Bollywood Investigation. -- Und ich oft auch. Gemeint ist hier aber nicht der Trickfilm für Kinder, sondern *S*imulation *B*ased *I*nference.
+Wenn meine Tochter *SBI* hört, denkt sie an *Sally Bollywood Investigation*. -- Und ich oft auch. -- Mit *SBI* ist hier aber nicht der Trickfilm für Kinder, sondern ***S**imulation **B**ased **I**nference*, gemeint.
 
-Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der [FOM](http://www.fom.de) den Unterricht für Statistik auf eine neue Grundlage zu stellen.
+Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der [FOM](http://www.fom.de) den Unterricht für Statistik auf eine neue Grundlage zu stellen. Und ich habe dabei mitgewirkt.
 
 Unser Mastermind, Karsten Lübke, hat dazu einen sehr schönen und lesenswerten Blog-Eintrag geschrieben: https://www.causeweb.org/sbi/?p=1559
 
