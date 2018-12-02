@@ -14,6 +14,57 @@ subtitle = ""
 weight = 60
 
 +++
+Im Wintersemester 2018/19 gehaltene Veranstaltungen an der FOM:
+
+Standort: **Düsseldorf**
+
+* Wissenschaftliche Methoden
+* Mathematische Grundlagen der Wirtschaftsinformatik
+* Operations Research
+
+Standort: **Münster**
+
+* Mathematische Grundlagen der Wirtschaftsinformatik
+
+Standort: **Dortmund**
+
+* Einführung Mathematik
+
+Standort: **Gürtersloh**
+
+* Einführung Mathematik
+
+
+Standort: **Essen**
+
+* Quantitative Mathoden und Evaluationsforschung
+
+
+Im Sommersemester 2018 gehaltene Veranstaltungen an der FOM:
+
+Standort: **Düsseldorf**
+
+* Algorithmen & Datenstrukturen
+* Datenerhebung & Statistik
+* Wissenschaftliche Methoden
+
+Standort: **Dortmund**
+
+* Quantitative Methoden - Mathematik & Statistik
+
+Standort: **Münster**
+
+* Quantitative Methoden der Wirtschaftsinformtik
+
+Standort: **Wuppertal**
+
+* Datenerhebung & Statistik
+
+Standort: **Essen**
+
+*  Mathematik (Vorb-Ing 17/03E) 
+
+
 
 Im Wintersemester 2017/18 gehaltene Veranstaltungen an der FOM:
 
@@ -32,19 +83,16 @@ Standort: **Essen**
 
 * Mathematik (Vorb-Ing 16/03E)    
 
-
 Standort: **Duisburg**
 
 * Internes & Extermes Rechnungswesen (Tagesstudium)
 
-    
 Standort: **Köln**
 
 * Datenerhebung & Statistik (Tagesstudium) 
 * Quantitative Methoden Mathematik/Statistik (Tagesstudium)
-* Wissenschaftliche Methodik 2 
+* Wissenschaftliche Methoden 2 
 
-    
 Standort: **Neuss**
 
 * Informations- & Prozesstechnologien
