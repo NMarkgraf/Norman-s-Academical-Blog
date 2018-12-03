@@ -23,7 +23,7 @@ Wie aber das ins Skript einbauen? - Kann man R markdown überhaupt mir Python zu
 
 ## Die Netzpython als Bindeglied zwischen R und Python
 
-Eine Netzpython (engl. [reticulated python](https://en.wikipedia.org/wiki/Reticulated_python)) stand Pate für den Namen des R Paketes `reticulate`, welches R und Python miteinander verbindet.
+Eine Netzpython (engl. [reticulated python](https://en.wikipedia.org/wiki/Reticulated_python)) stand Pate für den Namen des R Paketes [`reticulate`](https://rstudio.github.io/reticulate/index.html), welches R und Python miteinander verbindet.
 
 Nach der Installation mittels
 

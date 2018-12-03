@@ -21,7 +21,7 @@
 &lt;p&gt;Wie aber das ins Skript einbauen? - Kann man R markdown überhaupt mir Python zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython.&lt;/p&gt;
 &lt;div id=&#34;die-netzpython-als-bindeglied-zwischen-r-und-python&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Die Netzpython als Bindeglied zwischen R und Python&lt;/h2&gt;
-&lt;p&gt;Eine Netzpython (engl. &lt;a href=&#34;https://en.wikipedia.org/wiki/Reticulated_python&#34;&gt;reticulated python&lt;/a&gt;) stand Pate für den Namen des R Paketes &lt;code&gt;reticulate&lt;/code&gt;, welches R und Python miteinander verbindet.&lt;/p&gt;
+&lt;p&gt;Eine Netzpython (engl. &lt;a href=&#34;https://en.wikipedia.org/wiki/Reticulated_python&#34;&gt;reticulated python&lt;/a&gt;) stand Pate für den Namen des R Paketes &lt;a href=&#34;https://rstudio.github.io/reticulate/index.html&#34;&gt;&lt;code&gt;reticulate&lt;/code&gt;&lt;/a&gt;, welches R und Python miteinander verbindet.&lt;/p&gt;
 &lt;p&gt;Nach der Installation mittels&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;reticulate&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;bedarf es aber durch aus noch einiger Anpassungen, bis alles zur Zufriedenheit funktioniert.&lt;/p&gt;
