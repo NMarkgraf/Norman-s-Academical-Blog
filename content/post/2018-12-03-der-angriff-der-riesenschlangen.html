@@ -1,0 +1,51 @@
+---
+title: Der Angriff der Riesenschlangen.
+author: Norman Markgraf
+date: '2018-12-03'
+slug: der-angriff-der-riesenschlangen
+categories:
+  - Allgemeines
+tags:
+  - Python
+  - R
+  - RMarkdown
+  - Technisches
+header:
+  caption: ''
+  image: ''
+---
+
+
+
+<p>Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.</p>
+<p>Zu beginn des letzten Semesters hatte ich die Idee in den ‘Mathematischen Grundlagen der Wirtschaftsinformatik’ ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der <em>Menge</em> u.a. in Python als <em>set</em>.</p>
+<p>Wie aber das ins Skript einbauen? - Kann man R markdown überhaupt mir Python zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython.</p>
+<div id="die-netzpython-als-bindeglied-zwischen-r-und-python" class="section level2">
+<h2>Die Netzpython als Bindeglied zwischen R und Python</h2>
+<p>Eine Netzpython (engl. <a href="https://en.wikipedia.org/wiki/Reticulated_python">reticulated python</a>) stand Pate für den Namen des R Paketes <code>reticulate</code>, welches R und Python miteinander verbindet.</p>
+<p>Nach der Installation mittels</p>
+<pre class="r"><code>install.packages(&quot;reticulate&quot;)</code></pre>
+<p>bedarf es aber durch aus noch einiger Anpassungen, bis alles zur Zufriedenheit funktioniert.</p>
+<p>Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls <code>Sys.which(&quot;python&quot;)</code>, welches bei mir leider zu einer vollkommen alten, aber noch benutzen, Python Version führte. Möchte man eine ganz bestimmte Python Version haben, so hilft einem der Befehl <code>use_python()</code>:</p>
+<pre class="r"><code>library(reticulate)
+use_python(&quot;/usr/local/bin/python&quot;)</code></pre>
+<p>Es werden auch virtuelle Umgebungen unterstützt:</p>
+<pre class="r"><code>library(reticulate)
+use_virtualenv(&quot;myenv&quot;)</code></pre>
+<p>Und auch eine ganz andere Schlangenart kann benutzt werden, <a href="https://www.anaconda.com/what-is-anaconda/">Anacondas</a>:</p>
+<pre class="r"><code>library(reticulate)
+use_condaenv(&quot;mycondaenv&quot;)</code></pre>
+</div>
+<div id="der-einbau-in-ein-r-markdown-dokument" class="section level2">
+<h2>Der Einbau in ein R markdown Dokument</h2>
+<p>Einen Python Quellcode in ein R markdown einzubauen ist dann wieder sehr einfach. Man ändert einfach ein <em>r</em> in <em>python</em> im Codeblock und schon steht einem der knitr-Chunk als <em>Python</em> Quelle zur Verfügung.</p>
+<pre><code>` ``{python eval=FLASE}
+# Etwas Python geföllig?
+def fkt(x):
+    return x^2
+    
+print(fkt(2))
+` ``</code></pre>
+<p>Das war es aber noch lange nicht. <em>R</em> und <em>Python</em> können nämlich nicht nur nebeneinander, sondern auch miteinander!</p>
+<p>Dazu dann aber mein nächsten Blog-Eintrag.</p>
+</div>

@@ -11,6 +11,47 @@
     <atom:link href="/nab/post/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Der Angriff der Riesenschlangen.</title>
+      <link>/nab/post/der-angriff-der-riesenschlangen/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/der-angriff-der-riesenschlangen/</guid>
+      <description>&lt;p&gt;Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.&lt;/p&gt;
+&lt;p&gt;Zu beginn des letzten Semesters hatte ich die Idee in den ‘Mathematischen Grundlagen der Wirtschaftsinformatik’ ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der &lt;em&gt;Menge&lt;/em&gt; u.a. in Python als &lt;em&gt;set&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Wie aber das ins Skript einbauen? - Kann man R markdown überhaupt mir Python zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython.&lt;/p&gt;
+&lt;div id=&#34;die-netzpython-als-bindeglied-zwischen-r-und-python&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Die Netzpython als Bindeglied zwischen R und Python&lt;/h2&gt;
+&lt;p&gt;Eine Netzpython (engl. &lt;a href=&#34;https://en.wikipedia.org/wiki/Reticulated_python&#34;&gt;reticulated python&lt;/a&gt;) stand Pate für den Namen des R Paketes &lt;code&gt;reticulate&lt;/code&gt;, welches R und Python miteinander verbindet.&lt;/p&gt;
+&lt;p&gt;Nach der Installation mittels&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;reticulate&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;bedarf es aber durch aus noch einiger Anpassungen, bis alles zur Zufriedenheit funktioniert.&lt;/p&gt;
+&lt;p&gt;Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls &lt;code&gt;Sys.which(&amp;quot;python&amp;quot;)&lt;/code&gt;, welches bei mir leider zu einer vollkommen alten, aber noch benutzen, Python Version führte. Möchte man eine ganz bestimmte Python Version haben, so hilft einem der Befehl &lt;code&gt;use_python()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
+use_python(&amp;quot;/usr/local/bin/python&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Es werden auch virtuelle Umgebungen unterstützt:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
+use_virtualenv(&amp;quot;myenv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Und auch eine ganz andere Schlangenart kann benutzt werden, &lt;a href=&#34;https://www.anaconda.com/what-is-anaconda/&#34;&gt;Anacondas&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
+use_condaenv(&amp;quot;mycondaenv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;der-einbau-in-ein-r-markdown-dokument&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Der Einbau in ein R markdown Dokument&lt;/h2&gt;
+&lt;p&gt;Einen Python Quellcode in ein R markdown einzubauen ist dann wieder sehr einfach. Man ändert einfach ein &lt;em&gt;r&lt;/em&gt; in &lt;em&gt;python&lt;/em&gt; im Codeblock und schon steht einem der knitr-Chunk als &lt;em&gt;Python&lt;/em&gt; Quelle zur Verfügung.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;` ``{python eval=FLASE}
+# Etwas Python geföllig?
+def fkt(x):
+    return x^2
+    
+print(fkt(2))
+` ``&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Das war es aber noch lange nicht. &lt;em&gt;R&lt;/em&gt; und &lt;em&gt;Python&lt;/em&gt; können nämlich nicht nur nebeneinander, sondern auch miteinander!&lt;/p&gt;
+&lt;p&gt;Dazu dann aber mein nächsten Blog-Eintrag.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>SBI - Simulation Based Inference</title>
       <link>/nab/post/sbi-simulation-based-inference/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
