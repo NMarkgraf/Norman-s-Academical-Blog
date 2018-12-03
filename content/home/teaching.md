@@ -18,7 +18,7 @@ Im Wintersemester 2018/19 gehaltene Veranstaltungen an der FOM:
 
 Standort: **Düsseldorf**
 
-* Wissenschaftliche Methoden
+* Wissenschaftliche Methodik
 * Mathematische Grundlagen der Wirtschaftsinformatik
 * Operations Research
 
@@ -37,7 +37,7 @@ Standort: **Gürtersloh**
 
 Standort: **Essen**
 
-* Quantitative Mathoden und Evaluationsforschung
+* Quantitative Methoden und Evaluationsforschung
 
 
 Im Sommersemester 2018 gehaltene Veranstaltungen an der FOM:
@@ -46,15 +46,15 @@ Standort: **Düsseldorf**
 
 * Algorithmen & Datenstrukturen
 * Datenerhebung & Statistik
-* Wissenschaftliche Methoden
+* Wissenschaftliche Methodik
 
 Standort: **Dortmund**
 
-* Quantitative Methoden - Mathematik & Statistik
+* Quantitative Methodik - Mathematik & Statistik
 
 Standort: **Münster**
 
-* Quantitative Methoden der Wirtschaftsinformtik
+* Quantitative Methodik der Wirtschaftsinformtik
 
 Standort: **Wuppertal**
 
@@ -90,8 +90,8 @@ Standort: **Duisburg**
 Standort: **Köln**
 
 * Datenerhebung & Statistik (Tagesstudium) 
-* Quantitative Methoden Mathematik/Statistik (Tagesstudium)
-* Wissenschaftliche Methoden 2 
+* Quantitative Methodik Mathematik/Statistik (Tagesstudium)
+* Wissenschaftliche Methodik 2 
 
 Standort: **Neuss**
 
