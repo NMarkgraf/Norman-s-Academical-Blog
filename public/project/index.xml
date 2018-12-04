@@ -8,7 +8,9 @@
     <language>de-de</language>
     <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
     <lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/nab/project/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/nab/project/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Etwas R am Abend</title>

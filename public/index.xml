@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
     <atom:link href="/nab/" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,7 +16,10 @@
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/der-angriff-der-riesenschlangen/</guid>
-      <description>&lt;p&gt;Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.&lt;/p&gt;
 &lt;p&gt;Zu beginn des letzten Semesters hatte ich die Idee in den ‘Mathematischen Grundlagen der Wirtschaftsinformatik’ ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der &lt;em&gt;Menge&lt;/em&gt; u.a. in Python als &lt;em&gt;set&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Wie aber das ins Skript einbauen? - Kann man R markdown überhaupt mir Python zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython.&lt;/p&gt;
 &lt;div id=&#34;die-netzpython-als-bindeglied-zwischen-r-und-python&#34; class=&#34;section level2&#34;&gt;
@@ -52,12 +55,45 @@ print(fkt(2))
     </item>
     
     <item>
+      <title>Example Page</title>
+      <link>/nab/tutorial/example/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/tutorial/example/</guid>
+      <description>
+
+&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/nab/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>SBI - Simulation Based Inference</title>
       <link>/nab/post/sbi-simulation-based-inference/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/sbi-simulation-based-inference/</guid>
-      <description>&lt;p&gt;Wenn meine Tochter &lt;em&gt;SBI&lt;/em&gt; hört, denkt sie an &lt;em&gt;Sally Bollywood Investigation&lt;/em&gt;. – Und ich oft auch. – Mit &lt;em&gt;SBI&lt;/em&gt; ist hier aber nicht der Trickfilm für Kinder, sondern &lt;em&gt;&lt;strong&gt;S&lt;/strong&gt;imulation &lt;strong&gt;B&lt;/strong&gt;ased &lt;strong&gt;I&lt;/strong&gt;nference&lt;/em&gt;, gemeint.&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;Wenn meine Tochter &lt;em&gt;SBI&lt;/em&gt; hört, denkt sie an &lt;em&gt;Sally Bollywood Investigation&lt;/em&gt;. – Und ich oft auch. – Mit &lt;em&gt;SBI&lt;/em&gt; ist hier aber nicht der Trickfilm für Kinder, sondern &lt;em&gt;&lt;strong&gt;S&lt;/strong&gt;imulation &lt;strong&gt;B&lt;/strong&gt;ased &lt;strong&gt;I&lt;/strong&gt;nference&lt;/em&gt;, gemeint.&lt;/p&gt;
 &lt;p&gt;Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der &lt;a href=&#34;http://www.fom.de&#34;&gt;FOM&lt;/a&gt; den Unterricht für Statistik auf eine neue Grundlage zu stellen. Und ich habe dabei mitgewirkt.&lt;/p&gt;
 &lt;p&gt;Unser Mastermind, Karsten Lübke, hat dazu einen sehr schönen und lesenswerten Blog-Eintrag geschrieben: &lt;a href=&#34;https://www.causeweb.org/sbi/?p=1559&#34; class=&#34;uri&#34;&gt;https://www.causeweb.org/sbi/?p=1559&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -69,7 +105,10 @@ print(fkt(2))
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</guid>
-      <description>&lt;p&gt;Jede Programmiersprache hat Regeln.
+      <description>
+
+
+&lt;p&gt;Jede Programmiersprache hat Regeln.
 Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form, in der man den Quelltext schreibt.
 Diese sogenannte &lt;em&gt;Stilregeln&lt;/em&gt; (engl. &lt;em&gt;style guides&lt;/em&gt;) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten.
 Das Ziel der &lt;em&gt;Stilregeln&lt;/em&gt; ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.&lt;/p&gt;
@@ -144,7 +183,10 @@ Den Python-Quelltext findet man unter &lt;a href=&#34;https://github.com/NMarkgr
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
-      <description>&lt;p&gt;Ein Nullhypothesentest ist schnell geschrieben.
+      <description>
+
+
+&lt;p&gt;Ein Nullhypothesentest ist schnell geschrieben.
 Will man den approximativen Weg gehen, so hilft &lt;strong&gt;R&lt;/strong&gt; einem mit entsprechenden Tests mit einfachen Befehlen.
 Nimmt man &lt;strong&gt;MOSAIC&lt;/strong&gt; dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.&lt;/p&gt;
 &lt;div id=&#34;zwei-beispiele-fur-approximative-hypothesentests-mit-mosaic&#34; class=&#34;section level3&#34;&gt;
@@ -282,7 +324,10 @@ system.time(NullDistFSNDR_mw &amp;lt;- fastSimNullDistRMean(total_bill ~
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/nur-ein-wenig-lineare-regression/</guid>
-      <description>&lt;p&gt;Der &lt;em&gt;tipping&lt;/em&gt; Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (&lt;em&gt;tip&lt;/em&gt;) und Rechnungsbetrag (&lt;em&gt;total_bill&lt;/em&gt;) steht dabei im Vordergrund einer lineare Regressionsanalyse.
+      <description>
+
+
+&lt;p&gt;Der &lt;em&gt;tipping&lt;/em&gt; Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (&lt;em&gt;tip&lt;/em&gt;) und Rechnungsbetrag (&lt;em&gt;total_bill&lt;/em&gt;) steht dabei im Vordergrund einer lineare Regressionsanalyse.
 So auch hier. Wir wollen die einzelnen Angaben von &lt;strong&gt;R&lt;/strong&gt; dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von &lt;strong&gt;R&lt;/strong&gt; eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.&lt;/p&gt;
 &lt;p&gt;Zunächst laden wir dazu die &lt;strong&gt;tipping&lt;/strong&gt; Daten mittels&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(mosaic)
@@ -636,7 +681,10 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
-      <description>&lt;p&gt;*&lt;strong&gt;WORK IN PROGRESS&lt;/strong&gt; Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;*&lt;strong&gt;WORK IN PROGRESS&lt;/strong&gt; Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!&lt;/p&gt;
 &lt;section id=&#34;konfidenzintervalle&#34; class=&#34;level2&#34;&gt;
 &lt;h2&gt;Konfidenzintervalle&lt;/h2&gt;
 &lt;section id=&#34;definition-von-konfidenzintervallen&#34; class=&#34;level3&#34;&gt;
@@ -706,7 +754,11 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/konfidenzintervalle/</guid>
-      <description></description>
+      <description>
+
+
+
+</description>
     </item>
     
     <item>
@@ -715,7 +767,10 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/zentrales-schwankungsintervall/</guid>
-      <description>&lt;p&gt;Das &lt;strong&gt;zentrale Schwankungsintervall&lt;/strong&gt; sagt etwas über die Präzision der Lageschätzung eines Parameters (zum Beispiel eines Mittelwertes) aus. Das Schwankungsintervall schließt einen Bereich um den wahren Wert des Parameters in der Grundgesamtheit ein, der – vereinfacht gesprochen – mit einer zuvor festgelegten Sicherheitswahrscheinlichkeit den aus der Stichprobe geschätzten Parameter enthält.&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;Das &lt;strong&gt;zentrale Schwankungsintervall&lt;/strong&gt; sagt etwas über die Präzision der Lageschätzung eines Parameters (zum Beispiel eines Mittelwertes) aus. Das Schwankungsintervall schließt einen Bereich um den wahren Wert des Parameters in der Grundgesamtheit ein, der – vereinfacht gesprochen – mit einer zuvor festgelegten Sicherheitswahrscheinlichkeit den aus der Stichprobe geschätzten Parameter enthält.&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -764,7 +819,10 @@ So ist diese Sammlung hier entstanden:&lt;/p&gt;
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/quartile-quantile-perzentile-etc/</guid>
-      <description>&lt;p&gt;“Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;“Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.&lt;/p&gt;
 &lt;section id=&#34;quantile&#34; class=&#34;level2&#34;&gt;
 &lt;h2&gt;Quantile&lt;/h2&gt;
 &lt;section id=&#34;definitorische-antwort&#34; class=&#34;level3&#34;&gt;
@@ -894,59 +952,6 @@ dr &amp;lt;- 0:600&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;Vorbereitet sein&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Der Zentrale Grenzwertsatz</title>
-      <link>/nab/post/der-zentrale-grenzwertsatz/</link>
-      <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/nab/post/der-zentrale-grenzwertsatz/</guid>
-      <description>&lt;div id=&#34;der-zentrale-grenzwertsatz-der-statistik-bei-identischer-verteilung.&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Der &lt;strong&gt;Zentrale Grenzwertsatz&lt;/strong&gt; der Statistik bei identischer Verteilung.&lt;/h2&gt;
-&lt;div id=&#34;zentraler-grenzwertsatz&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Zentraler Grenzwertsatz&lt;/h3&gt;
-&lt;p&gt;Seien &lt;span class=&#34;math inline&#34;&gt;\(X_1, X_2, ..., X_n\)&lt;/span&gt; unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert &lt;span class=&#34;math inline&#34;&gt;\(E(X_i) = \mu\)&lt;/span&gt; und bekanter Varianz &lt;span class=&#34;math inline&#34;&gt;\(Var(X_i)=\sigma^2\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Für die Summe &lt;span class=&#34;math inline&#34;&gt;\(S_n = \sum_{i=1}^n X_i\)&lt;/span&gt; ist dann der Erwartungswert &lt;span class=&#34;math inline&#34;&gt;\(E(S_n)= n \cdot \mu\)&lt;/span&gt; und die Varianz &lt;span class=&#34;math inline&#34;&gt;\(Var(S_n)= n \cdot \sigma^2\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Dann gilt für die &lt;em&gt;standardisierte&lt;/em&gt; Zufallsvariable&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\begin{align*}
-Z_n &amp;amp;= \frac{\left(\sum\limits_{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}}
-    = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} 
-    = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} \\
-    &amp;amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} 
-    = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n},
-\end{align*}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;dass sie für wachsendes &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; immer besser durch die &lt;em&gt;Standardnormalverteilung&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(N(0, 1)\)&lt;/span&gt; approximiert werden kann.&lt;/p&gt;
-&lt;p&gt;Mit anderen Worten:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-P(Z_n \leq x) \longrightarrow \Phi(x), \quad \text{ für }\; n \rightarrow \infty
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Weiterführende Literatur und Quellen dieses Eintrags:&lt;/strong&gt;&lt;/p&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
-&lt;div id=&#34;ref-Schira2005&#34;&gt;
-&lt;p&gt;1. Schira, J.: Statistische Methoden der VWL und BWL. PEARSON Studion, München (2005)&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-website:WikipediaZGS&#34;&gt;
-&lt;p&gt;2. Wikipedia: Zentraler Grenzwertsatz, &lt;a href=&#34;https://de.wikipedia.org/w/index.php?title=Zentraler_Grenzwertsatz&amp;amp;oldid=162715036&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/w/index.php?title=Zentraler_Grenzwertsatz&amp;amp;oldid=162715036&lt;/a&gt;, (2017)&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-website:WolframMathWorldCLT&#34;&gt;
-&lt;p&gt;3. Weisstein, E.W.: Central limit theorem, &lt;a href=&#34;http://mathworld.wolfram.com/CentralLimitTheorem.html&#34; class=&#34;uri&#34;&gt;http://mathworld.wolfram.com/CentralLimitTheorem.html&lt;/a&gt;, (2017)&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Etwas R am Abend</title>
-      <link>/nab/project/etwas-r-am-abend/</link>
-      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/nab/project/etwas-r-am-abend/</guid>
-      <description></description>
     </item>
     
   </channel>

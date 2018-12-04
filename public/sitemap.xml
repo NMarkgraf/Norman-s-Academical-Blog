@@ -2,7 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
-    
     <url>
     
       <loc>/nab/post/der-angriff-der-riesenschlangen/</loc>
@@ -11,6 +10,29 @@
     
   
     
+    <url>
+    
+      <loc>/nab/tutorial/example/</loc>
+      <lastmod>2018-09-09T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/tutorial/</loc>
+      <lastmod>2018-09-09T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/privacy/</loc>
+      <lastmod>2018-06-28T00:00:00+02:00</lastmod>
+    </url>
+    
+  
     
     <url>
     
@@ -20,7 +42,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</loc>
@@ -28,7 +49,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -38,7 +58,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/post/nur-ein-wenig-lineare-regression/</loc>
@@ -46,7 +65,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -56,7 +74,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/post/konfidenzintervalle/</loc>
@@ -64,7 +81,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -74,7 +90,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/post/ein-paar-interessante-links/</loc>
@@ -82,7 +97,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -92,7 +106,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/post/github-webhook-eingebaut/</loc>
@@ -100,7 +113,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -110,7 +122,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</loc>
@@ -118,7 +129,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -128,7 +138,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/project/etwas-r-am-abend/</loc>
@@ -137,24 +146,13 @@
     
   
     
-    
     <url>
     
-      <loc>/nab/publication/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <loc>/nab/talk/example/</loc>
+      <lastmod>2017-01-01T00:00:00+01:00</lastmod>
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>/nab/talk/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
     
     <url>
     
@@ -164,6 +162,55 @@
     
   
     
+    <url>
+    
+      <loc>/nab/talk/</loc>
+      <lastmod>2017-01-01T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/publication/</loc>
+      <lastmod>2017-01-01T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/post/getting-started/</loc>
+      <lastmod>2018-01-13T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/publication/learn2control/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/publication_types/2/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/tags/academic/</loc>
+      <lastmod>2018-01-13T00:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
     
     <url>
     
@@ -174,7 +221,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/categories/allgemeines/</loc>
@@ -183,17 +229,6 @@
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>/nab/tags/beamer/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
     
     <url>
     
@@ -204,6 +239,14 @@
     
   
     
+    <url>
+    
+      <loc>/nab/tags/data-science/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
     
     <url>
     
@@ -214,7 +257,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/categories/information/</loc>
@@ -223,7 +265,6 @@
     </url>
     
   
-    
     
     <url>
     
@@ -234,17 +275,6 @@
     
   
     
-    
-    <url>
-    
-      <loc>/nab/tags/latex/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
     <url>
     
       <loc>/nab/tags/lehre/</loc>
@@ -254,26 +284,14 @@
     
   
     
-    
     <url>
     
       <loc>/nab/</loc>
-      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+      <lastmod>2017-10-15T00:00:00+02:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>/nab/tags/pandoc/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
     
     <url>
     
@@ -284,15 +302,23 @@
     
   
     
-    
     <url>
     
-      <loc>/nab/publication_types/</loc>
+      <loc>/nab/tags/projektorientiertes-lernen/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
       <priority>0</priority>
     </url>
     
   
     
+    <url>
+    
+      <loc>/nab/publication_types/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
     
     <url>
     
@@ -303,7 +329,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/tags/r/</loc>
@@ -312,27 +337,6 @@
     </url>
     
   
-    
-    
-    <url>
-    
-      <loc>/nab/tags/r/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/nab/tags/r-vortrag/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
     
     <url>
     
@@ -343,7 +347,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/tags/rstudio/</loc>
@@ -353,6 +356,29 @@
     
   
     
+    <url>
+    
+      <loc>/nab/tags/regelungstechnik/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/slides/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/slides/example-slides/</loc>
+    </url>
+    
+  
     
     <url>
     
@@ -363,7 +389,6 @@
     
   
     
-    
     <url>
     
       <loc>/nab/categories/statistik/</loc>
@@ -373,16 +398,14 @@
     
   
     
-    
     <url>
     
       <loc>/nab/tags/</loc>
-      <lastmod>2018-06-11T00:00:00+00:00</lastmod>
+      <lastmod>2018-01-13T00:00:00+01:00</lastmod>
       <priority>0</priority>
     </url>
     
   
-    
     
     <url>
     
@@ -393,6 +416,14 @@
     
   
     
+    <url>
+    
+      <loc>/nab/tags/vortrag/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
     
     <url>
     

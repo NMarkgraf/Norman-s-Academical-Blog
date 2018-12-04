@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Normans Akademischer Blog</title>
+    <link>/nab/categories/</link>
+    <description>Recent content in Categories on Normans Akademischer Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
+    <lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/nab/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Allgemeines</title>
+      <link>/nab/categories/allgemeines/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/categories/allgemeines/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fundstücke</title>
+      <link>/nab/categories/fundst%C3%BCcke/</link>
+      <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/categories/fundst%C3%BCcke/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Information</title>
+      <link>/nab/categories/information/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/categories/information/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kommentar</title>
+      <link>/nab/categories/kommentar/</link>
+      <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/categories/kommentar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistik</title>
+      <link>/nab/categories/statistik/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/categories/statistik/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

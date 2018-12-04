@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Normans Akademischer Blog</title>
+    <link>/nab/tags/r/</link>
+    <description>Recent content in R on Normans Akademischer Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
+    <lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/nab/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Der Angriff der Riesenschlangen.</title>
+      <link>/nab/post/der-angriff-der-riesenschlangen/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/der-angriff-der-riesenschlangen/</guid>
+      <description>Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.
+Zu beginn des letzten Semesters hatte ich die Idee in den ‘Mathematischen Grundlagen der Wirtschaftsinformatik’ ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der Menge u.a. in Python als set.</description>
+    </item>
+    
+    <item>
+      <title>Auch Rmarkdown Dateien sollten sich Regeln halten</title>
+      <link>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</guid>
+      <description>Jede Programmiersprache hat Regeln. Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form, in der man den Quelltext schreibt. Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten. Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
+Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Standard wie ein Python Programm geschrieben seien sollte.</description>
+    </item>
+    
+    <item>
+      <title>Ein wenig schneller zur simulierten Nullverteilung</title>
+      <link>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
+      <description>Ein Nullhypothesentest ist schnell geschrieben. Will man den approximativen Weg gehen, so hilft R einem mit entsprechenden Tests mit einfachen Befehlen. Nimmt man MOSAIC dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
+Zwei Beispiele für approximative Hypothesentests mit MOSAIC Laden wir unsere Testdaten, die tipping Daten wie folgt:
+library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.csv&amp;quot;) tips &amp;lt;- read.csv2(&amp;quot;tips.csv&amp;quot;) set.seed(2009) Dann erstellen wir zwei Forschungsfragen:</description>
+    </item>
+    
+    <item>
+      <title>Nur ein wenig lineare Regression</title>
+      <link>/nab/post/nur-ein-wenig-lineare-regression/</link>
+      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/nur-ein-wenig-lineare-regression/</guid>
+      <description>Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
+Zunächst laden wir dazu die tipping Daten mittels
+library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.</description>
+    </item>
+    
+    <item>
+      <title>Quartile, Quantile, Perzentile etc.</title>
+      <link>/nab/post/quartile-quantile-perzentile-etc/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/quartile-quantile-perzentile-etc/</guid>
+      <description>“Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.
+Quantile Definitorische Antwort Für eine gegebene reelle Zufallsvariable \(X\) heißt eine reelle Zahl \(x_p\) ein p-Quantil (von \(X\)), falls gilt:
+\[P(X \leq x_p) \leq p \quad \text{ und }\quad P(x_p \leq X) \geq 1-p.\]
+ Was bedeutet das denn nun konkret?</description>
+    </item>
+    
+    <item>
+      <title>Etwas R am Abend</title>
+      <link>/nab/project/etwas-r-am-abend/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/project/etwas-r-am-abend/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

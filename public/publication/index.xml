@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on Normans Akademischer Blog</title>
+    <title>Veröffentlichungen on Normans Akademischer Blog</title>
     <link>/nab/publication/</link>
-    <description>Recent content in Publications on Normans Akademischer Blog</description>
+    <description>Recent content in Veröffentlichungen on Normans Akademischer Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/nab/publication/" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="/nab/publication/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LEARN2CONTROL – Projektorientiertes Lernen für ein besseres Gesamtverständnis in der regelungstechnischen Ausbildung </title>
+      <link>/nab/publication/learn2control/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/publication/learn2control/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

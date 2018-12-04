@@ -8,7 +8,9 @@
     <language>de-de</language>
     <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
-    <atom:link href="/nab/post/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/nab/post/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Der Angriff der Riesenschlangen.</title>
@@ -16,39 +18,8 @@
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/der-angriff-der-riesenschlangen/</guid>
-      <description>&lt;p&gt;Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.&lt;/p&gt;
-&lt;p&gt;Zu beginn des letzten Semesters hatte ich die Idee in den ‘Mathematischen Grundlagen der Wirtschaftsinformatik’ ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der &lt;em&gt;Menge&lt;/em&gt; u.a. in Python als &lt;em&gt;set&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Wie aber das ins Skript einbauen? - Kann man R markdown überhaupt mir Python zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython.&lt;/p&gt;
-&lt;div id=&#34;die-netzpython-als-bindeglied-zwischen-r-und-python&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Die Netzpython als Bindeglied zwischen R und Python&lt;/h2&gt;
-&lt;p&gt;Eine Netzpython (engl. &lt;a href=&#34;https://en.wikipedia.org/wiki/Reticulated_python&#34;&gt;reticulated python&lt;/a&gt;) stand Pate für den Namen des R Paketes &lt;a href=&#34;https://rstudio.github.io/reticulate/index.html&#34;&gt;&lt;code&gt;reticulate&lt;/code&gt;&lt;/a&gt;, welches R und Python miteinander verbindet.&lt;/p&gt;
-&lt;p&gt;Nach der Installation mittels&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;reticulate&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;bedarf es aber durch aus noch einiger Anpassungen, bis alles zur Zufriedenheit funktioniert.&lt;/p&gt;
-&lt;p&gt;Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls &lt;code&gt;Sys.which(&amp;quot;python&amp;quot;)&lt;/code&gt;, welches bei mir leider zu einer vollkommen alten, aber noch benutzen, Python Version führte. Möchte man eine ganz bestimmte Python Version haben, so hilft einem der Befehl &lt;code&gt;use_python()&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
-use_python(&amp;quot;/usr/local/bin/python&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Es werden auch virtuelle Umgebungen unterstützt:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
-use_virtualenv(&amp;quot;myenv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Und auch eine ganz andere Schlangenart kann benutzt werden, &lt;a href=&#34;https://www.anaconda.com/what-is-anaconda/&#34;&gt;Anacondas&lt;/a&gt;:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
-use_condaenv(&amp;quot;mycondaenv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;der-einbau-in-ein-r-markdown-dokument&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Der Einbau in ein R markdown Dokument&lt;/h2&gt;
-&lt;p&gt;Einen Python Quellcode in ein R markdown einzubauen ist dann wieder sehr einfach. Man ändert einfach ein &lt;em&gt;r&lt;/em&gt; in &lt;em&gt;python&lt;/em&gt; im Codeblock und schon steht einem der knitr-Chunk als &lt;em&gt;Python&lt;/em&gt; Quelle zur Verfügung.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;` ``{python eval=FLASE}
-# Etwas Python geföllig?
-def fkt(x):
-    return x^2
-    
-print(fkt(2))
-` ``&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Das war es aber noch lange nicht. &lt;em&gt;R&lt;/em&gt; und &lt;em&gt;Python&lt;/em&gt; können nämlich nicht nur nebeneinander, sondern auch miteinander!&lt;/p&gt;
-&lt;p&gt;Dazu dann aber mein nächsten Blog-Eintrag.&lt;/p&gt;
-&lt;/div&gt;
-</description>
+      <description>Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.
+Zu beginn des letzten Semesters hatte ich die Idee in den ‘Mathematischen Grundlagen der Wirtschaftsinformatik’ ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der Menge u.a. in Python als set.</description>
     </item>
     
     <item>
@@ -57,10 +28,8 @@ print(fkt(2))
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/sbi-simulation-based-inference/</guid>
-      <description>&lt;p&gt;Wenn meine Tochter &lt;em&gt;SBI&lt;/em&gt; hört, denkt sie an &lt;em&gt;Sally Bollywood Investigation&lt;/em&gt;. – Und ich oft auch. – Mit &lt;em&gt;SBI&lt;/em&gt; ist hier aber nicht der Trickfilm für Kinder, sondern &lt;em&gt;&lt;strong&gt;S&lt;/strong&gt;imulation &lt;strong&gt;B&lt;/strong&gt;ased &lt;strong&gt;I&lt;/strong&gt;nference&lt;/em&gt;, gemeint.&lt;/p&gt;
-&lt;p&gt;Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der &lt;a href=&#34;http://www.fom.de&#34;&gt;FOM&lt;/a&gt; den Unterricht für Statistik auf eine neue Grundlage zu stellen. Und ich habe dabei mitgewirkt.&lt;/p&gt;
-&lt;p&gt;Unser Mastermind, Karsten Lübke, hat dazu einen sehr schönen und lesenswerten Blog-Eintrag geschrieben: &lt;a href=&#34;https://www.causeweb.org/sbi/?p=1559&#34; class=&#34;uri&#34;&gt;https://www.causeweb.org/sbi/?p=1559&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Wenn meine Tochter SBI hört, denkt sie an Sally Bollywood Investigation. – Und ich oft auch. – Mit SBI ist hier aber nicht der Trickfilm für Kinder, sondern Simulation Based Inference, gemeint.
+Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der FOM den Unterricht für Statistik auf eine neue Grundlage zu stellen.</description>
     </item>
     
     <item>
@@ -69,73 +38,8 @@ print(fkt(2))
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</guid>
-      <description>&lt;p&gt;Jede Programmiersprache hat Regeln.
-Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form, in der man den Quelltext schreibt.
-Diese sogenannte &lt;em&gt;Stilregeln&lt;/em&gt; (engl. &lt;em&gt;style guides&lt;/em&gt;) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten.
-Das Ziel der &lt;em&gt;Stilregeln&lt;/em&gt; ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.&lt;/p&gt;
-&lt;p&gt;Eine Programmiersprache wie Python zum Beispiel hat mit &lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34;&gt;PEP8&lt;/a&gt; einen eigenen Standard wie ein Python Programm geschrieben seien sollte.
-Dazu gibt es auch gleich das passenden Prüfprogramm (pep8, neuerdings &lt;a href=&#34;https://github.com/PyCQA/pycodestyle&#34;&gt;pycodestyle&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Schreibt man ein Rmarkdown Text mag man vielleicht nicht daran denken, dass so eine Idee auch hier sehr sinnvoll sein kann.
-Neben den gängigen Style-Guides für den R Quellcode (z. B.: &lt;a href=&#34;https://google.github.io/styleguide/Rguide.xml&#34;&gt;Google’s R Style Guide&lt;/a&gt;, &lt;a href=&#34;http://adv-r.had.co.nz/Style.html&#34;&gt;Hadley Wickham’s Advanced R - Style guide&lt;/a&gt;, &lt;a href=&#34;http://jef.works/R-style-guide/&#34;&gt;jef.works R Style Guide&lt;/a&gt;, &lt;a href=&#34;https://csgillespie.wordpress.com/2010/11/23/r-style-guide/&#34;&gt;R Style Guide&lt;/a&gt; oder &lt;a href=&#34;https://github.com/rdatsci/PackagesInfo/wiki/R-Style-Guide&#34;&gt;R-Style-Guide&lt;/a&gt;) gibt es aber kaum Regeln (z. B.: &lt;a href=&#34;https://holtzy.github.io/Pimp-my-rmd/&#34;&gt;Pimp my Rmd&lt;/a&gt;) für die Gestaltung von Rmarkdown.&lt;/p&gt;
-&lt;div id=&#34;stil-regeln-fur-gutes-rmarkdown-ein-erster-vorschlag&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Stil-Regeln für gutes Rmarkdown, ein erster Vorschlag&lt;/h2&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;p&gt;Keine unnützen Zeichen am Ende von Textzeilen. / &lt;em&gt;No whitespaces at the end of a line&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Eine Textzeile sollte mit einem ‘echtem’ Zeichen enden und nicht mit einem ‘unsichtbarem’ Zeichen.
-Das heisst: Leerzeichen, Tabs, harte Leerzeichen etc. gehören nicht ans Ende einer Zeile.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Zwei Leerzeilen vor einer Kopfzeile. / &lt;em&gt;Two blank lines before a header&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Um die Inhalte auch klar voneinander trennen zu können sollte man vor der Kopfzeile zwei Leerzeilen eingefügt werden.
-Statt&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# Das ist eine Kopfzeile auf der 1. Ebene
-## Das is eine Kopfzeile auf der 2. Ebene
-Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;
-
-# Das ist eine Kopfzeile auf der 1. Ebene
-
-
-## Das is eine Kopfzeile auf der 2. Ebene
-
-Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Vor und nach Aufzählungen sollte immer eine Leerzeile stehen. / &lt;em&gt;…&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Statt&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Das ist eine Liste:
-- Ein Punkt
-- Ein anderer Punkt
-Und hier geht der Text weiter.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Das ist eine Liste:
-
-- Ein Punkt
-- Ein anderer Punkt
-
-Und hier geht der Text weiter.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Vor und nach Codeblöcken sollte immer eine Leerzeile stehen. / &lt;em&gt;…&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Statt&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Etwas Text vorher
-`` `{r}
-1+1
-`` `
-und danach.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Etwas Text vorher
-
-`` `{r}
-1+1
-`` `
-
-und danach.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Keine anderen Sprachen als Rmarkdown für Inhalte oder Design nutzen. / &lt;em&gt;Use no other languages to create content or design, other than (R)Markdown.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Keine anderen Sprachen, insbesondere LaTeX, um besondere Effekte zu erziehlen. Dafür sollten DIV oder SPAN Abschnitte benutzt werden.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div id=&#34;rmdstylechecker-ein-erster-style-checker-fur-rmarkdown&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;RmdStyleChecker, ein erster Style Checker für Rmarkdown&lt;/h2&gt;
-&lt;p&gt;Die ersten drei Punkte der Liste habe ich zu Testzwecken in einem kleinen Projekt mit Hilfe von Python implementiert.
-Den Python-Quelltext findet man unter &lt;a href=&#34;https://github.com/NMarkgraf/RmdStyleChecker&#34;&gt;RmdStyleChecker&lt;/a&gt;. Er läuft unter Python 3.5+.&lt;/p&gt;
-&lt;/div&gt;
-</description>
+      <description>Jede Programmiersprache hat Regeln. Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form, in der man den Quelltext schreibt. Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten. Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
+Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Standard wie ein Python Programm geschrieben seien sollte.</description>
     </item>
     
     <item>
@@ -144,136 +48,9 @@ Den Python-Quelltext findet man unter &lt;a href=&#34;https://github.com/NMarkgr
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
-      <description>&lt;p&gt;Ein Nullhypothesentest ist schnell geschrieben.
-Will man den approximativen Weg gehen, so hilft &lt;strong&gt;R&lt;/strong&gt; einem mit entsprechenden Tests mit einfachen Befehlen.
-Nimmt man &lt;strong&gt;MOSAIC&lt;/strong&gt; dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.&lt;/p&gt;
-&lt;div id=&#34;zwei-beispiele-fur-approximative-hypothesentests-mit-mosaic&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Zwei Beispiele für approximative Hypothesentests mit MOSAIC&lt;/h3&gt;
-&lt;p&gt;Laden wir unsere Testdaten, die &lt;strong&gt;tipping&lt;/strong&gt; Daten wie folgt:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(mosaic)
-download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.csv&amp;quot;)
-tips &amp;lt;- read.csv2(&amp;quot;tips.csv&amp;quot;)
-set.seed(2009)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Dann erstellen wir zwei Forschungsfragen:&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;Ist der mittlere Frauenanteil unter der Bezahler*innen zu den Zeitpunkten Lunch und Dinner gleich?&lt;/li&gt;
-&lt;li&gt;Ist der mittlere Rechnungsbetrag zu den Zeitpunkten Lunch und Dinner gleich?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Im ersten Fall ist die Hypothese schnell geschrieben:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-H_0 : \pi_{\text{Lunch}} = \pi_{\text{Dinner}} \quad\text{vs.}\quad H_1 : \pi_{\text{Lunch}} \neq \pi_{\text{Dinner}}
-\]&lt;/span&gt;
-Der appoximative Test mit R und MOSAIC lautet nun:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;prop.test(sex ~ time, success = &amp;quot;Female&amp;quot;, data = tips)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-##  2-sample test for equality of proportions with continuity
-##  correction
-## 
-## data:  tally(sex ~ time)
-## X-squared = 9.3438, df = 1, p-value = 0.002237
-## alternative hypothesis: two.sided
-## 95 percent confidence interval:
-##  -0.36602563 -0.07247705
-## sample estimates:
-##    prop 1    prop 2 
-## 0.2954545 0.5147059&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Ähnlich sieht es für den zweiten Fall aus. Die Hypothese lautet hier:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-H_0 : \mu_{Lunch} = \mu_{Dinner} \quad\text{vs.}\quad H_1 : \mu_{Lunch} \neq \mu_{Dinner}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Der dazugehörige Test lautet dann:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;t.test(total_bill ~ time, data = tips)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-##  Welch Two Sample t-test
-## 
-## data:  total_bill by time
-## t = 3.123, df = 143.29, p-value = 0.002167
-## alternative hypothesis: true difference in means is not equal to 0
-## 95 percent confidence interval:
-##  1.331877 5.925088
-## sample estimates:
-## mean in group Dinner  mean in group Lunch 
-##             20.79716             17.16868&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;simulation-der-nullverteilung-mit-mosaic&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Simulation der Nullverteilung mit MOSAIC&lt;/h2&gt;
-&lt;p&gt;Ein anderer Weg ist es die Stichprobe selber zu nutzen um daraus eine Verteilung der Nullhypothese (die Nullverteilung) ableiten zu können.
-Im ersten Fall schaut man sich die Anteilsunterschiede an, wenn man die (potentielle) Abhänigkeit von der Tageszeit (Lunch und Dinner) künstlich “abschaltet”:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
-NullVtlgAntwert &amp;lt;- do(10000) * diffprop(sex ~ shuffle(time), 
-    success = &amp;quot;Female&amp;quot;, data = tips)
-gf_histogram(~diffprop, nint = 25, data = NullVtlgAntwert)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Schaut man sich nun die Lage der Anteilsdifferenz der Stichprobe &lt;span class=&#34;math inline&#34;&gt;\(\hat\pi=`diffprop(sex ~ time, success=&amp;quot;Female&amp;quot;, data=tips)`\)&lt;/span&gt; in Bezug auf diese Nullverteilung geometrisch an, so kann man schon einen ersten Eindruck erlangen, ob die Nullhypothese abzulehnen ist oder nicht:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;diffpropdach &amp;lt;- diffprop(sex ~ time, success = &amp;quot;Female&amp;quot;, data = tips)
-gf_histogram(~diffprop, nint = 25, data = NullVtlgAntwert) + 
-    geom_vline(xintercept = diffpropdach, color = &amp;quot;blue&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Offenbar ist &lt;span class=&#34;math inline&#34;&gt;\(\hat\pi\)&lt;/span&gt; kein sehr häufiges Ereignis.&lt;/p&gt;
-&lt;p&gt;Der “p-Wert” ist auch leicht ermittelt:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pvalue_aw &amp;lt;- prop(~abs(diffprop) &amp;gt;= abs(diffpropdach), data = NullVtlgAntwert)
-pvalue_aw&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   TRUE 
-## 0.0027&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Ähnlich sie die Situation im zweien Fall aus. Mittels weniger Befehler erzeugen wir die Verteilung.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
-NullVtlgMittelwert &amp;lt;- do(10000) * diffmean(total_bill ~ shuffle(time), 
-    data = tips)
-gf_histogram(~diffmean, nint = 25, data = NullVtlgMittelwert)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Und können im Anschluss die Mittelwertsdifferent der Stichprobe geometrisch einordnen:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;diffmeandach &amp;lt;- diffmean(total_bill ~ time, data = tips)
-gf_histogram(~diffmean, nint = 25, data = NullVtlgMittelwert) + 
-    geom_vline(xintercept = diffmeandach, color = &amp;quot;blue&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Auch den “p-Wert” können wir nun leicht bestimmen:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pvalue_mw &amp;lt;- prop(~abs(diffmean) &amp;gt;= abs(diffmeandach), data = NullVtlgMittelwert)
-pvalue_mw&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   TRUE 
-## 0.0039&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;das-problem-zeit&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Das Problem – Zeit&lt;/h2&gt;
-&lt;p&gt;Das Problem bei der Simulation ist die Zeit, die &lt;strong&gt;R&lt;/strong&gt; braucht um die Nullverteilungen zu generieren.
-Das liegt im wesendlichen an Mosaic.
-Mit den Routinen aus &lt;a href=&#34;https://github.com/NMarkgraf/FastSimNullDistR&#34;&gt;FastSimNullDistR&lt;/a&gt; lassen sich die Nullverteilungen deutlich schneller berechnen.
-Ein Vergleich:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(mosaic)
-library(mosaicCore)
-source(&amp;quot;https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistRMean.R&amp;quot;)
-source(&amp;quot;https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistRProp.R&amp;quot;)
-source(&amp;quot;https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistR_work.R&amp;quot;)
-set.seed(2009)
-system.time(NullDistMosaic_aw &amp;lt;- do(10000) * diffprop(sex ~ shuffle(time), 
-    success = &amp;quot;Female&amp;quot;, data = tips))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
-##      14.822       0.308      15.426&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
-system.time(NullDistFSNDR_aw &amp;lt;- fastSimNullDistRProp(sex ~ time, 
-    success = &amp;quot;Female&amp;quot;, data = tips))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
-##       1.415       0.034       1.476&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
-system.time(NullDistMosaic_mw &amp;lt;- do(10000) * diffmean(total_bill ~ 
-    shuffle(time), data = tips))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
-##      15.943       0.377      16.683&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
-system.time(NullDistFSNDR_mw &amp;lt;- fastSimNullDistRMean(total_bill ~ 
-    time, data = tips))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
-##       1.300       0.040       1.373&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Das mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also ein “(quasi-)drop-in-replacements” der Mosaic Rouninen darstellen, kann man an den folgenden QQ-Plots erkennen:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qqplot(NullDistFSNDR_aw$diffprop, NullDistMosaic_aw$diffprop)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qqplot(NullDistFSNDR_mw$diffmean, NullDistMosaic_mw$diffmean)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;woher-kommt-die-geschwindigkeit&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Woher kommt die Geschwindigkeit?&lt;/h2&gt;
-&lt;p&gt;Schaut man sich den Quellcode von Mosaic an, wird einem schnell klar, dass es zwar didaktisch sinnvoll ist die unabhängige Variable mit &lt;code&gt;shuffle()&lt;/code&gt; zu bearbeiten, nicht aber programmiertechnisch. Und wenn, dann nicht in dem man die ganze Datenzeile für die Berechnung kopiert. Statt also &lt;span class=&#34;math inline&#34;&gt;\(10\,000\)&lt;/span&gt; mal die ganzen Daten im Speicher zu kopieren wäre es doch sinnvoll einen Index auf die unveränderten daten indirekt über einen Index zuzugreifen. Und genau da liegt der Zugang der Routinen. Nur dieser Zugriffsindex wird &lt;em&gt;geshuffelt&lt;/em&gt; und das spart Speicherplatz und Rechenzeit.&lt;/p&gt;
-&lt;/div&gt;
-</description>
+      <description>Ein Nullhypothesentest ist schnell geschrieben. Will man den approximativen Weg gehen, so hilft R einem mit entsprechenden Tests mit einfachen Befehlen. Nimmt man MOSAIC dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
+Zwei Beispiele für approximative Hypothesentests mit MOSAIC Laden wir unsere Testdaten, die tipping Daten wie folgt:
+library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.csv&amp;quot;) tips &amp;lt;- read.csv2(&amp;quot;tips.csv&amp;quot;) set.seed(2009) Dann erstellen wir zwei Forschungsfragen:</description>
     </item>
     
     <item>
@@ -282,352 +59,9 @@ system.time(NullDistFSNDR_mw &amp;lt;- fastSimNullDistRMean(total_bill ~
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/nur-ein-wenig-lineare-regression/</guid>
-      <description>&lt;p&gt;Der &lt;em&gt;tipping&lt;/em&gt; Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (&lt;em&gt;tip&lt;/em&gt;) und Rechnungsbetrag (&lt;em&gt;total_bill&lt;/em&gt;) steht dabei im Vordergrund einer lineare Regressionsanalyse.
-So auch hier. Wir wollen die einzelnen Angaben von &lt;strong&gt;R&lt;/strong&gt; dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von &lt;strong&gt;R&lt;/strong&gt; eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.&lt;/p&gt;
-&lt;p&gt;Zunächst laden wir dazu die &lt;strong&gt;tipping&lt;/strong&gt; Daten mittels&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(mosaic)
-download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.csv&amp;quot;)
-tips &amp;lt;- read.csv2(&amp;quot;tips.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;in den Arbeitsspeicher.&lt;/p&gt;
-&lt;p&gt;Eine lineares Modell wird schnell mit&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;linMod &amp;lt;- lm(tip ~ total_bill, data = tips)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;erstellt.
-Betrachten wir die Zusammenfassung:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(linMod)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-## Call:
-## lm(formula = tip ~ total_bill, data = tips)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -3.1982 -0.5652 -0.0974  0.4863  3.7434 
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(&amp;gt;|t|)    
-## (Intercept) 0.920270   0.159735   5.761 2.53e-08 ***
-## total_bill  0.105025   0.007365  14.260  &amp;lt; 2e-16 ***
-## ---
-## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
-## 
-## Residual standard error: 1.022 on 242 degrees of freedom
-## Multiple R-squared:  0.4566, Adjusted R-squared:  0.4544 
-## F-statistic: 203.4 on 1 and 242 DF,  p-value: &amp;lt; 2.2e-16&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Die zentrale Frage bei einer linearen Regression ist, finden wir einen linearen Zusammenhang in unserer Stichprobe, den wir auf die Population (als die Grundgesamtheit) übertragen können.&lt;/p&gt;
-&lt;p&gt;Die Spalte &lt;strong&gt;Estimate&lt;/strong&gt; im Abschnitt &lt;strong&gt;Coefficients&lt;/strong&gt; liefert uns in unser Stichprobe einen möglichen linearen Zusammenhang gemäß&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\hat{y}_{\text{tip}} = \hat{\beta}_{\text{0}} + \hat{\beta}_{\text{total_bill}} \cdot x_{\text{total_bill}},\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;mit den &lt;em&gt;Regressionskoeffizienten&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0=0.9202696\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_{\text{total_bill}}=0.1050245\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Graphisch ergibt sich damit das Modell wie folgt:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Statt plotModel(linMod) besser:
-mypanel &amp;lt;- function(x, y) {
-    # Scatterplot:
-    panel.xyplot(x, y, col = &amp;quot;darkgreen&amp;quot;) 
-    # Regressionsgerade:
-    panel.abline(linMod, col = &amp;quot;red&amp;quot;, lwd = 1.2, lty = 2)
-}
-xyplot(
-    tip ~ total_bill, data = tips, 
-    panel = mypanel,
-    main  = &amp;quot;Streudiagramm der Trinkgelder&amp;quot;,
-    ylab  = &amp;quot;Trinkgeld&amp;quot;,
-    xlab  = &amp;quot;Rechnungsbetrag&amp;quot;,
-    key = list(
-            space = &amp;quot;bottom&amp;quot;, padding.text = 8,
-            lines = list(col = c(&amp;quot;red&amp;quot;), lty = c(2), lwd = 1.2),
-            text = list(c(&amp;quot;Regressionsgerade&amp;quot;))
-          )
-     )&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Was hat es mit dem y-Achsenabschnitt &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0\)&lt;/span&gt; auf sich?&lt;/p&gt;
-&lt;p&gt;Ist es etwa eine Art &lt;em&gt;Grundtrinkgeld&lt;/em&gt;, mit dem der Kellern rechnen kann, auch wenn der Kunde gar nichts bestellt?&lt;/p&gt;
-&lt;p&gt;Nun ja, es so etwas in der Art, aber eben ein rein fiktiver Wert, der durch die Konstruktion der Parameter entsteht.
-Eine (affin-)lineare Gerade geht nun einmal irgendwann durch die y-Achse (wenn sie nicht parallel dazu ist) und es kann passieren, dass eine sinnvolle Interpretation nicht so ohne weiteres möglich ist.&lt;/p&gt;
-&lt;p&gt;Wir können aber dieses &lt;em&gt;Grundtrinkgeld&lt;/em&gt; heraus nehmen und den y-Achsenabschnitt auf Null setzen. Dazu ziehen wir &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0\)&lt;/span&gt; einfach von alle Trinkgeldern ab. Wir erhalten quasi nur noch den &lt;em&gt;Trinkgeldzuwach&lt;/em&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beta_0 &amp;lt;- coef(linMod)[&amp;quot;(Intercept)&amp;quot;]  # Grundtrinkgeld
-tips$delta_tip &amp;lt;- tips$tip - beta_0    # wird abgezogen&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Vergleichen wir das alte lineare Modell mit dem neuen Modell (&lt;em&gt;linModDelta&lt;/em&gt;):&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;linModDelta &amp;lt;- lm(delta_tip ~ total_bill, data = tips)
-summary(linModDelta)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-## Call:
-## lm(formula = delta_tip ~ total_bill, data = tips)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -3.1982 -0.5652 -0.0974  0.4863  3.7434 
-## 
-## Coefficients:
-##               Estimate Std. Error t value Pr(&amp;gt;|t|)    
-## (Intercept) -4.549e-15  1.597e-01    0.00        1    
-## total_bill   1.050e-01  7.365e-03   14.26   &amp;lt;2e-16 ***
-## ---
-## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
-## 
-## Residual standard error: 1.022 on 242 degrees of freedom
-## Multiple R-squared:  0.4566, Adjusted R-squared:  0.4544 
-## F-statistic: 203.4 on 1 and 242 DF,  p-value: &amp;lt; 2.2e-16&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In diesem Modell ist der Wert für den y-Achsenabschnitt numerisch gleich 0. – Ja, da mag zwar &lt;span class=&#34;math inline&#34;&gt;\(-4.5487837\times 10^{-15}\)&lt;/span&gt; stehen, jedoch sind so kleine Werte der jedem Rechner inne wohnenden Ungenauigkeit in der Gleitkomma-Arithmetik geschuldet und ist faktisch gleich 0.&lt;/p&gt;
-&lt;p&gt;Der Wert für die Steigung lautet weiterhin &lt;span class=&#34;math inline&#34;&gt;\(0.1050245\)&lt;/span&gt;.
-Das war auch zu erwarten, denn wir haben unsere Regressionsgerade eigentlich nur um &lt;span class=&#34;math inline&#34;&gt;\(\hat{\beta}_0\)&lt;/span&gt; nach unten verschoben. (Der Fachmann spricht von einer Translation (Parallelverschiebung)&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; um &lt;span class=&#34;math inline&#34;&gt;\(-\hat{\beta}_0\)&lt;/span&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Statt plotModel(linModDelta) besser:
-mypanel &amp;lt;- function(x, y) {
-    # Scatterplot:
-    panel.xyplot(x, y, col = &amp;quot;darkgreen&amp;quot;) 
-    # Regressionsgerade:
-    panel.abline(linModDelta, col = &amp;quot;red&amp;quot;, lwd = 1.2, lty = 2)
-}
-xyplot(
-    delta_tip ~ total_bill, data=tips, 
-    panel = mypanel,
-    main  = &amp;quot;Streudiagramm der Delta Trinkgelder&amp;quot;,
-    ylab  = &amp;quot;Delta Trinkgeld&amp;quot;,
-    xlab  = &amp;quot;Rechnungsbetrag&amp;quot;,
-    key = list(
-            space=&amp;quot;bottom&amp;quot;, padding.text=8,
-            lines=list(col=c(&amp;quot;red&amp;quot;), lty=c(2), lwd=1.2),
-            text=list(c(&amp;quot;Regressionsgerade&amp;quot;)))
-     )&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit Ausnahme der &lt;em&gt;[Intercept]&lt;/em&gt; Zeile praktisch nichts geändert hat. Das ist kein Wunder, sondern Absicht!&lt;/p&gt;
-&lt;p&gt;Die Regressionsgerade stellt für unsere Stichprobe die Gerade mit dem geringsten Fehler an den Datenpunkten dar. Mathematisch heißt das folgendes:&lt;/p&gt;
-&lt;p&gt;An den &lt;span class=&#34;math inline&#34;&gt;\(n=244\)&lt;/span&gt; Datenpunkten unserer Stichprobe &lt;span class=&#34;math inline&#34;&gt;\((x_i, y_i)=(tips\$total\_bill[i], tips\$tip[i])\)&lt;/span&gt; [für &lt;span class=&#34;math inline&#34;&gt;\((i=1, \dots, n)\)&lt;/span&gt;] sind die &lt;em&gt;Residuen&lt;/em&gt;, also die &lt;em&gt;Fehlerterme&lt;/em&gt;,&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
- \hat{e}_i =\hat{y}_i - y_i = \left[\hat{\beta}_{\text{0}} + \hat{\beta}_{\text{total_bill}} \cdot x_i\right] - y_i
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;durch die verwendete &lt;em&gt;Methode der kleinsten Quadrate&lt;/em&gt;&lt;a href=&#34;#fn2&#34; class=&#34;footnote-ref&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;em&gt;quadratisch minimal&lt;/em&gt;. Kurz:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    \sum_{i=1}^n (\hat{e}_i)^2 \text{ ist minimal!}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Wir können diese Fehlerterme graphisch ansehen um die Varianz der Residuen zu sehen.
-Dazu ziehen wir von allen Datenpunkten &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; den geschätzten Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}_i\)&lt;/span&gt; ab und erstellen ein neues lineares Modell:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;beta_total_bill &amp;lt;- coef(linModDelta)[&amp;quot;total_bill&amp;quot;]
-tips$error_tip &amp;lt;- (tips$tip - beta_0 - beta_total_bill * tips$total_bill)
-linModError &amp;lt;- lm(error_tip ~ total_bill, data = tips)
-summary(linModError)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-## Call:
-## lm(formula = error_tip ~ total_bill, data = tips)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -3.1982 -0.5652 -0.0974  0.4863  3.7434 
-## 
-## Coefficients:
-##               Estimate Std. Error t value Pr(&amp;gt;|t|)
-## (Intercept)  1.900e-15  1.597e-01       0        1
-## total_bill  -8.740e-17  7.365e-03       0        1
-## 
-## Residual standard error: 1.022 on 242 degrees of freedom
-## Multiple R-squared:  6.665e-31,  Adjusted R-squared:  -0.004132 
-## F-statistic: 1.613e-28 on 1 and 242 DF,  p-value: 1&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Also Diagramm sieht es dann so aus:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Statt plotModel(linModError) besser:
-mypanel &amp;lt;- function(x, y) {
-    # Scatterplot:
-    panel.xyplot(x, y, col = &amp;quot;darkgreen&amp;quot;) 
-    # Regressionsgerade:
-    panel.abline(linModError, col = &amp;quot;red&amp;quot;, lwd = 1.2, lty = 2)
-}
-xyplot(
-    error_tip ~ total_bill, data = tips, 
-    panel = mypanel,
-    main  = &amp;quot;Streudiagramm der Residuen&amp;quot;,
-    ylab  = &amp;quot;Residuen&amp;quot;,
-    xlab  = &amp;quot;Rechnungsbetrag&amp;quot;,
-    key = list(
-            space = &amp;quot;bottom&amp;quot;, rows = 3, padding.text = 8,
-            lines = list(col=c(&amp;quot;red&amp;quot;), lty = c(2), lwd = 1.2),
-            text = list(c(&amp;quot;Regressionsgerade / x-Achse&amp;quot;))
-          )
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Wir können die Graphik im wesentlichen auch einfacher über den Befehl&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;xyplot(residuals(linMod) ~ fitted(linMod))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;erhalten.&lt;/p&gt;
-&lt;p&gt;Betrachten wir kurz nur die Residuen:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;favstats(~residuals(linMod))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##        min         Q1      median        Q3      max          mean
-##  -3.198225 -0.5651615 -0.09744499 0.4863111 3.743435 -2.022281e-17
-##        sd   n missing
-##  1.019943 244       0&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Wir sehe, dass wir in der Zusammenfassung immer genau diese Werte unter dem Abschnitt &lt;em&gt;Residuals&lt;/em&gt; gefunden haben. Minimum, das 1. Quantil, der Median, das 3. Quantil und das Maximum stimmen überein.&lt;/p&gt;
-&lt;p&gt;Der erwartungstreue und unverzerrte Schätzer für den Standardfehler der Residuen, lautet&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\begin{align*}
-    SE_{\text{Residuen}} &amp;amp;= \sqrt{\frac{1}{n-2} \cdot \sum_{i=1}^n (\hat{e_i})^2} = \sqrt{\frac{n-1}{n-2} \cdot \frac{1}{n-1} \cdot \sum_{i=1}^n (\hat{e_i})^2} \\
-                         &amp;amp;= \sqrt{\frac{n-1}{n-2}} \cdot \sqrt{\frac{1}{n-1} \cdot \sum_{i=1}^n (\hat{e_i})^2} \\
-                         &amp;amp;= \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}}
-\end{align*}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Also finden wir den Wert &lt;em&gt;Residual standard error&lt;/em&gt; aus der Zeile&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## Residual standard error: 1.022 on 242 degrees of freedom&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;in dem wir den in den &lt;em&gt;favstats&lt;/em&gt; gefundenen Wert für die Standardabweichung entsprechen korrigieren:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    SE_{\text{Residuen}} = \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}} = \sqrt{\frac{243}{242}} \cdot 1.0199426 = 1.0220477
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Der Median der Residuen ist nicht gleich Null, wie der Mittelwert. (Welcher auch hier als numerisch Null interpretiert werden muss!)
-Es könnte also eine linkssteile, rechtsschiefe Verteilung der Residuen vorliegen.
-Betrachten wir dazu das Histogramm:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;histogram(~residuals(linMod), nint = 19)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.&lt;/p&gt;
-&lt;p&gt;Ein Shapiro-Wilk-Test&lt;a href=&#34;#fn3&#34; class=&#34;footnote-ref&#34; id=&#34;fnref3&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; hat als Nullhypothese die Annahme, dass die Daten normalverteilt sind!&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;shapiro.test(residuals(linMod))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-##  Shapiro-Wilk normality test
-## 
-## data:  residuals(linMod)
-## W = 0.96728, p-value = 2.171e-05&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Davon ist nach dem Ergebnis eben sowenig auszugehen, wie nach einem Blick auf das QQ-Normal-Diagramm:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qqnorm(residuals(linMod), col = &amp;quot;darkgreen&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Ein K.O.-Kriterium für gute Prognosen.&lt;/p&gt;
-&lt;p&gt;Wie gut aber beschreibt unsere Regressionsgerade die Daten?&lt;/p&gt;
-&lt;p&gt;Als Maß dafür können wir das Bestimmtheitsmaß nehmen.&lt;/p&gt;
-&lt;p&gt;Ein kurzer Blick auf die Situation, der Mittelwert der Trinkgelder ist&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    \bar{y} =  \frac{1}{n} \cdot \sum_{i=1}^n y_i = 2.9982787.
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Wir erhalten so folgendes Diagramm:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mypanel &amp;lt;- function(x, y) {
-    panel.xyplot(x, y)
-    panel.abline(h = mean(y), lwd = 1.2, lty = 2, col = &amp;quot;darkgreen&amp;quot;)
-    panel.lmline(x, y, col = &amp;quot;red&amp;quot;, lwd = 1.2, lty = 2)
-}
-xyplot(
-    tip ~ total_bill, data = tips, 
-    panel = mypanel,
-    main  = &amp;quot;Streudiagramm der Trinkgelder&amp;quot;,
-    ylab  = &amp;quot;Trinkgeld&amp;quot;,
-    xlab  = &amp;quot;Rechnungsbetrag&amp;quot;,
-    key = list(
-            space = &amp;quot;bottom&amp;quot;,
-            padding.text = 8,
-            columns = 2,
-            just = c(&amp;quot;center&amp;quot;, &amp;quot;bottom&amp;quot;),
-            lines = list(col = c(&amp;quot;darkgreen&amp;quot;, &amp;quot;red&amp;quot;), lty = c(2, 2), lwd = 1.2),
-            text = list(c(expression(bar(y)), expression(hat(beta)[0]+hat(beta)[total_bill] * x[total_bill]))),
-            text = list(c(&amp;quot;Mittelwert Trinkgeld&amp;quot;, &amp;quot;Regressionsgerade&amp;quot;))
-    )
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}=1.9144546\)&lt;/span&gt; beschreibt die mittlere quadratische Abweichung der Datenpunkte &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; vom Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt;.
-Diese Varianz lässt sich Zerlegen in einen Anteil, der durch die Regressionsgerade &lt;em&gt;erklärt&lt;/em&gt; wird und in einen Anteil, der durch die Regressionsgerade &lt;em&gt;nicht erklärt&lt;/em&gt; wird.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    s^2_{y_i} = s^2_{\hat{y}_i} + s^2_{\hat{e}_i}
-\]&lt;/span&gt;
-Dividiert man beider Seiten durch die Varianz &lt;span class=&#34;math inline&#34;&gt;\(s^2_{y_i}\)&lt;/span&gt;, so normiert man den Ausdruck und kann den Faktor &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{n-1}\)&lt;/span&gt; (bzw. &lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{n}\)&lt;/span&gt;) herauskürzen. Es bleibt dann:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    1 = \frac{\sum_{i=1}^n (\bar{y}- \hat{y_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2} + \frac{\sum_{i=1}^n (\hat{e_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Multipliziert man beide Seiten mit &lt;span class=&#34;math inline&#34;&gt;\(\sum_{i=1}^n (y_i)^2\)&lt;/span&gt;, so erhält man:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    \sum_{i=1}^n (\bar{y}- y_i)^2 = \sum_{i=1}^n (\bar{y}- \hat{y_i})^2+ \sum_{i=1}^n (\hat{e_i})^2 
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Zur Vereinfachung nennt man die einzelnen Summen in dem Ausdruck wie folgt:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Der erste Ausdruck heißt &lt;strong&gt;Gesamtvarianz&lt;/strong&gt; oder &lt;strong&gt;total sum of squares&lt;/strong&gt; oder kurz &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(SS_T\)&lt;/span&gt;&lt;/strong&gt;, (oder &lt;strong&gt;TSS&lt;/strong&gt;) er ist die Summe der quadrierten Differenzen&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    SS_T = \sum_{i=1}^n (\bar{y}-y_i)^2
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Der zweite Ausdruck heißt &lt;strong&gt;Modellvarianz&lt;/strong&gt; oder &lt;strong&gt;model sum of squares&lt;/strong&gt; oder kurz &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(SS_M\)&lt;/span&gt;&lt;/strong&gt; (oder &lt;strong&gt;RSS&lt;/strong&gt;), er ist die Summe der quadrierten Differenzen aus dem Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt; und der Punkte auf der Regressionsgeraden &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}_i\)&lt;/span&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    SS_M = \sum_{i=1}^n (\bar{y}-\hat{y}_i)^2
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Der dritte Ausdruck heißt &lt;strong&gt;Gesamt-Verhersage-Fehler&lt;/strong&gt;, &lt;strong&gt;Fehlersteuung der Regression&lt;/strong&gt; oder &lt;strong&gt;error sum of squares&lt;/strong&gt; oder kurz &lt;span class=&#34;math inline&#34;&gt;\(SS_E\)&lt;/span&gt; (oder &lt;strong&gt;ESS&lt;/strong&gt;), er ist die Summe der quadratischen Differenz aus den Datenpunkten &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; und den Punkten der Regressionsgeraden &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}_i\)&lt;/span&gt;:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    SS_E = \sum_{i=1}^n (\hat{y}_i-y_i)^2 = \sum_{i=1}^n (\hat{e}_i)^2
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Wir können daher auch kurz&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    SS_T = SS_M + SS_E
-\]&lt;/span&gt;
-schreiben und sparen uns die ganzen Summenzeichen.&lt;/p&gt;
-&lt;p&gt;Die Güte einer Regression wollen wir durch den Anteil der durch das Model erklärten Varianz (also der &lt;span class=&#34;math inline&#34;&gt;\(SS_M\)&lt;/span&gt;) ausdrücken und stellen daher nach &lt;span class=&#34;math inline&#34;&gt;\(SS_M\)&lt;/span&gt; um:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    SS_M = SS_T - SS_E
-\]&lt;/span&gt;
-Teilen wir beide Seiten durch &lt;span class=&#34;math inline&#34;&gt;\(SS_T\)&lt;/span&gt; also der maximalen (weil totalen) Quadratsumme, so erhalten wir:
-&lt;span class=&#34;math display&#34;&gt;\[
-    \frac{SS_M}{SS_T} = \frac{SS_T}{SS_T} - \frac{SS_E}{SS_T} = 1 - \frac{SS_E}{SS_T}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Den Ausdruck &lt;span class=&#34;math inline&#34;&gt;\(\frac{SS_M}{SS_T}\)&lt;/span&gt; nennen wir &lt;strong&gt;Bestimmtheitsmaß&lt;/strong&gt; und schreiben dafür &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt;. Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in Bezug auf die Gesamtvarianz angibt. Kraft Definition ist &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt; im eindimensionalen Fall tatsächlich das Quadrat des (Pearson-)Korrelationskoeffizienten &lt;span class=&#34;math inline&#34;&gt;\(r\)&lt;/span&gt;. (M.a.W.: &lt;span class=&#34;math inline&#34;&gt;\(R^2= r^2\)&lt;/span&gt;.)&lt;/p&gt;
-&lt;p&gt;In unserer Zusammenfassung des linearen Models findet sich dieser Wert auch. Und zwar unter dem Begriff:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## Multiple R-squared:  0.4566, &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Es gilt ja:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    R^2 = 1 - \frac{SS_E}{SS_T} = 1 - \frac{s^2_{\hat{e}_i}}{s^2_{y_i}} = 1 - \frac{1.0402829}{1.9144546} = 0.4566166
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Der Wert&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## ..., Adjusted R-squared:  0.4544&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;erklärt sich daraus&lt;a href=&#34;#fn4&#34; class=&#34;footnote-ref&#34; id=&#34;fnref4&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;, dass das Bestimmheitsmaß um so größer wird je größer die Zahl der unabhängigen Variablen wird.
-Und zwar &lt;em&gt;unabhöngig&lt;/em&gt; davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern.
-Daher nutzt man besser das &lt;strong&gt;korrigierte Bestimmtheitsmaß&lt;/strong&gt; (engl.: &lt;em&gt;adjusted R-squared&lt;/em&gt;) &lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^2\)&lt;/span&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    \begin{align*}
-        \bar{R}^2 &amp;amp;= 1- (1-R^2) \cdot \frac{n-1}{n-p-1}\\ 
-                  &amp;amp;= R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
-    \end{align*}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Wobei &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; die Anzahl der unabhängigen Variablen im Modell darstellt.
-In unserem Beispiel gilt daher:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    \begin{align*}
-        \bar{R}^2 &amp;amp;= 1 - (1-R^2)  \cdot \frac{n-1}{n-p-1} \\
-                  &amp;amp;= 1 - (1- 0.4566166)  \cdot \frac{244-1}{244- 1- 1} \\
-                  &amp;amp;= 0.4543712
-    \end{align*}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Vorsicht:&lt;/strong&gt; Das &lt;em&gt;korrigierte Bestimmtheitsmaß&lt;/em&gt; ist nicht mehr an das Intervall &lt;span class=&#34;math inline&#34;&gt;\([0; 1]\)&lt;/span&gt; gebunden!
-Es kann negative Werte annehmen, ist in der Regel kleiner als das (unkorrigierte) Bestimmtheitsmaß und erreicht die obere Grenze (&lt;span class=&#34;math inline&#34;&gt;\(\bar{R}^2=1\)&lt;/span&gt;) genau dann, wenn &lt;span class=&#34;math inline&#34;&gt;\(R^2 = 1\)&lt;/span&gt; ist.&lt;/p&gt;
-&lt;p&gt;Bei der &lt;strong&gt;Gesamtsignifikanz des Modells&lt;/strong&gt; (auch &lt;strong&gt;Overall-F-Test&lt;/strong&gt; genannt) wird geprüft, ob mindestens eine Variable einen Erklärungsgehalt für das Modell liefert.&lt;/p&gt;
-&lt;p&gt;Falls diese Hypothese verworfen wird ist somit das Modell nutzlos.
-Dieser Test lässt sich so interpretieren als würde man die gesamte Güte des Modells, also das &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt; des Modells, testen.
-Aus diesem Grund wird der F-Test der Gesamtsignifikanz des Modells auch als Anpassungsgüte-Test bezeichnet.
-Die Nullhypothese des F-Test der Gesamtsignifikanz des Modells sagt aus, dass alle erklärenden Variablen keinen Einfluss auf die abhängige Variable haben.
-Sowohl die abhängige Variable als auch die unabhängigen Variablen können binär (kategoriell) oder metrisch sein.
-Der &lt;em&gt;Wald-Test&lt;/em&gt; kann dann die Hypothesen testen (ohne Einbezug des Achsenabschnittes):&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    H_{0}\colon \beta _{1}=\beta _{2}=\ldots =\beta _{k}\;=\;0\Rightarrow R^{2}=0
-\]&lt;/span&gt;
-gegen&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    H_{1}:\beta _{j}\;\neq \;0\;\mathrm {f{\ddot {u}}r\;mindestens\;ein} \;j\in \{1,\ldots ,k\}\Rightarrow R^{2}\neq 0
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Die Teststatistik dieses Tests lautet&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\begin{aligned}
-    F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)
-\end{aligned}.
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;mit &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(\displaystyle (n-p-1)\)&lt;/span&gt; Freiheitsgraden.
-Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;, so verwirft man die Nullhypothese &lt;span class=&#34;math inline&#34;&gt;\(H_{0}\)&lt;/span&gt;.
-Das &lt;span class=&#34;math inline&#34;&gt;\(R^{2}\)&lt;/span&gt; ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; bei.
-Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt.
-Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.&lt;/p&gt;
-&lt;p&gt;In unserem Beispiel ist&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-    F={\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;der Wert in der Zeile&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## F-statistic: 203.4 on 1 and 242 DF,  p-value: &amp;lt; 2.2e-16&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;mit Parametern &lt;span class=&#34;math inline&#34;&gt;\(p=1\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(n-p-1=242\)&lt;/span&gt; Freiheitsgraden.&lt;/p&gt;
-&lt;p&gt;Der p-Wert von (numerisch) 0, liefert also ein hinreichendes Indiz dafür, dass der Rechnungsbetrag einen echten Beitrag liefert.&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;vgl.: &lt;a href=&#34;https://de.wikipedia.org/wiki/Parallelverschiebung&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Parallelverschiebung&lt;/a&gt;&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;vgl.: &lt;a href=&#34;https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate&lt;/a&gt;&lt;a href=&#34;#fnref2&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn3&#34;&gt;&lt;p&gt;vgl.: &lt;a href=&#34;https://de.wikipedia.org/wiki/Shapiro-Wilk-Test&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Shapiro-Wilk-Test&lt;/a&gt;&lt;a href=&#34;#fnref3&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn4&#34;&gt;&lt;p&gt;vgl.: &lt;a href=&#34;https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß&lt;/a&gt;&lt;a href=&#34;#fnref4&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <description>Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
+Zunächst laden wir dazu die tipping Daten mittels
+library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.</description>
     </item>
     
     <item>
@@ -636,68 +70,10 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
-      <description>&lt;p&gt;*&lt;strong&gt;WORK IN PROGRESS&lt;/strong&gt; Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!&lt;/p&gt;
-&lt;section id=&#34;konfidenzintervalle&#34; class=&#34;level2&#34;&gt;
-&lt;h2&gt;Konfidenzintervalle&lt;/h2&gt;
-&lt;section id=&#34;definition-von-konfidenzintervallen&#34; class=&#34;level3&#34;&gt;
-&lt;h3&gt;Definition von Konfidenzintervallen&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Für unabhängig identisch verteilte Zufallsvariablen &lt;span class=&#34;math inline&#34;&gt;\(X_1,\dotsc, X_n\)&lt;/span&gt; mit unbekanntem reellen Verteilungsparameter &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; kann unter bestimmten Umständen zwei Stichprobenfunktionen &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; angeben, so dass&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[P(U &amp;lt; \vartheta &amp;lt; V) \geq \gamma\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;gilt, mit &lt;span class=&#34;math inline&#34;&gt;\(\gamma \in (0,1)\)&lt;/span&gt;. Dann heißt das (stochastische) Intervall &lt;span class=&#34;math inline&#34;&gt;\([U, V]\)&lt;/span&gt; ein &lt;strong&gt;Konfidenzintervall&lt;/strong&gt; für &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; zum Konfidenzniveau &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; (auch: ein &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt;-Konfidenzintervall&lt;/strong&gt;).&lt;/p&gt;
-&lt;p&gt;Die Realisationen &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; von &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; bzw. &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; bilden das &lt;strong&gt;Schätzintervall&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\([u, v]\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Da die Realisationen &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; der Grenzen &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; keine Zufallsvariablen sind und &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; ein fixer Wert ist, kann man &lt;strong&gt;nicht&lt;/strong&gt; sagen, dass das Schätzintervall &lt;span class=&#34;math inline&#34;&gt;\([u, v]\)&lt;/span&gt; mit einer Wahrscheinlichkeit von &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; den unbekannten Parameter &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; enthält. Es bedeutet vielmehr, dass im Mittel ein Anteil von &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; aller so berechneten Schätzintervalle den unbekannten Parameter überdecken. Dem nicht widersprechend, kann –- wie bereits von Ronald Fisher festgestellt – in manchen Modellen die Qualität des Schätzintervalls von den Daten abhängen und sogar zu Antworten führen, die mit Blick auf die Daten unsinnig sind. Probleme mit solcher Post-Data-Inkohärenz führen zur Theorie der bedingten Inferenz. Ein weiteres Problem sind die Stichprobenfunktionen U und V an sich. Um diese zu finden werden oft Vereinfachungen getroffen, dadurch können systematische Fehler entstehen, oft es gibt mehrere Konfidenzintervalle (bei der Binomialverteilung z.B. nach Clopper-Pearson, Agresti-Coull oder Wald), welche oft unterschiedliche Werte liefern.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section id=&#34;ein-beispiel&#34; class=&#34;level3&#34;&gt;
-&lt;h3&gt;Ein Beispiel&lt;/h3&gt;
-&lt;p&gt;Wir nehmen zunächst als Population &lt;span class=&#34;math inline&#34;&gt;\(N=1000\)&lt;/span&gt; normalverteilte Zufallszahlen mit dem Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\mu= 0\)&lt;/span&gt; und der Standardabweichung &lt;span class=&#34;math inline&#34;&gt;\(\sigma=2.0088\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Dazu das Histogramm der Population:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;histogram(pop, xlab=&amp;quot;Population&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Aus dieser Population ziehen wir eine Stichprobe &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; vom Umfang $n=$40 und erhalten die folgenden statistischen Daten:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;favstats(x)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##     min     Q1  median     Q3   max    mean    sd  n missing
-##  -4.997 -1.052 -0.3928 0.8211 3.295 -0.3423 1.878 40       0&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Wir wollen nun den wahren Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\vartheta=\mu\)&lt;/span&gt; mit Hilfe der Stichprobe &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; schätzen. So ist es ja in der Realität auch, denn normalerweise haben wir die Daten über die Population nicht.&lt;/p&gt;
-&lt;p&gt;Die Schätzfunktion für den Mittelwert lautet nun &lt;span class=&#34;math display&#34;&gt;\[\bar{X} = \frac1n \sum_{i=1}^n X_i\]&lt;/span&gt;, und damit die konkrete Punktschätzung &lt;span class=&#34;math display&#34;&gt;\[\hat{\mu}=\bar{x}= \sum_{i=1}^n x_i\]&lt;/span&gt; liefert den Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}=\)&lt;/span&gt; -0.3423.&lt;/p&gt;
-&lt;p&gt;In unserem Beispiel unterscheiden sich die beiden Werte um &lt;span class=&#34;math inline&#34;&gt;\(\mu - \hat{\mu}=\)&lt;/span&gt; 0.3423.&lt;/p&gt;
-&lt;p&gt;Ein 95%-Konfidenzintervall nimmt nun den geschätzen Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}\)&lt;/span&gt; als Grundlage und gibt liefert ein Intervall mit der Eigentschaft, ausgehend von den konkreten Stichproben in 95% der Fälle den tatsächlichen Wert &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt; zu umfassen. Es ist also &lt;span class=&#34;math display&#34;&gt;\[\gamma = 0.95 = 1 - \alpha = 1 - 0.05, \quad \alpha = 0.05\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Dazu werden die beiden Stichprobenfunktionen&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[U=U(X_1, \dots, X_n)=\bar{X}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;und&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[V=V(X_1, \dots, X_n)=\bar{X}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;mit der &lt;em&gt;bekannten&lt;/em&gt; Standardabweichung &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; der &lt;em&gt;Population&lt;/em&gt; und der Stichprobengröße &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; nun mit der konkreten Realisation &lt;span class=&#34;math inline&#34;&gt;\(x_1, \dots, x_n\)&lt;/span&gt; der Stichprobe gefüttert und wir erhalten damit&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[u = \bar{x}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = -0.3423-z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=-0.9648\]&lt;/span&gt; und&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[v = \bar{x}+z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = -0.3423+z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=0.2803.\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Die Realisation unseres 95%-Konfidenzintervall lautet nun also:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[[-0.9648; 0.2803]\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Was hat es nun mit den ominösen 95% auf sich?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Das Konfidenzintervall ist ein stochastisches Intervall, d.h. die hier angegebenen Werte für &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; sind abhängig von der Realisation &lt;span class=&#34;math inline&#34;&gt;\(x_1, \dots, x_n\)&lt;/span&gt;, also der konkreten Stichprobe.&lt;/p&gt;
-&lt;p&gt;Nehmen wir nun also einmal eine neue Stichprobe und berechnen erneut die Realisation unseres 95%-Konfidenzintervalls, so erhalten wir:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[[-0.8459; 0.3992]\]&lt;/span&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## Interval coverage:&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##     cover
-## n     Low  Yes High
-##   40 0.03 0.95 0.02&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/section&gt;
-&lt;/section&gt;
-&lt;section id=&#34;prognoseintervalle&#34; class=&#34;level2&#34;&gt;
-&lt;h2&gt;Prognoseintervalle&lt;/h2&gt;
-&lt;/section&gt;
-&lt;section id=&#34;fuduzialintervalle&#34; class=&#34;level2&#34;&gt;
-&lt;h2&gt;Fuduzialintervalle&lt;/h2&gt;
-&lt;p&gt;Quellen:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Logik in der Statistik; Andrea Wiencierz, 7.10.2007 Link: &lt;a href=&#34;https://static.aminer.org/pdf/PDF/000/230/772/induktive_inferenz_und_mehrwertige_logik.pdf&#34; class=&#34;uri&#34;&gt;https://static.aminer.org/pdf/PDF/000/230/772/induktive_inferenz_und_mehrwertige_logik.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/section&gt;
-&lt;section class=&#34;footnotes&#34;&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;vgl: &lt;a href=&#34;https://de.wikipedia.org/wiki/Konfidenzintervall&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Konfidenzintervall&lt;/a&gt;&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-</description>
+      <description>*WORK IN PROGRESS Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
+Konfidenzintervalle Definition von Konfidenzintervallen1 Für unabhängig identisch verteilte Zufallsvariablen \(X_1,\dotsc, X_n\) mit unbekanntem reellen Verteilungsparameter \(\vartheta\) kann unter bestimmten Umständen zwei Stichprobenfunktionen \(U\) und \(V\) angeben, so dass
+\[P(U &amp;lt; \vartheta &amp;lt; V) \geq \gamma\]
+gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, V]\) ein Konfidenzintervall für \(\vartheta\) zum Konfidenzniveau \(\gamma\) (auch: ein \(\gamma\)-Konfidenzintervall).</description>
     </item>
     
     <item>
@@ -715,14 +91,9 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/zentrales-schwankungsintervall/</guid>
-      <description>&lt;p&gt;Das &lt;strong&gt;zentrale Schwankungsintervall&lt;/strong&gt; sagt etwas über die Präzision der Lageschätzung eines Parameters (zum Beispiel eines Mittelwertes) aus. Das Schwankungsintervall schließt einen Bereich um den wahren Wert des Parameters in der Grundgesamtheit ein, der – vereinfacht gesprochen – mit einer zuvor festgelegten Sicherheitswahrscheinlichkeit den aus der Stichprobe geschätzten Parameter enthält.&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34;&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;vgl: &lt;a href=&#34;https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall&lt;/a&gt;&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-</description>
+      <description> Das zentrale Schwankungsintervall sagt etwas über die Präzision der Lageschätzung eines Parameters (zum Beispiel eines Mittelwertes) aus. Das Schwankungsintervall schließt einen Bereich um den wahren Wert des Parameters in der Grundgesamtheit ein, der – vereinfacht gesprochen – mit einer zuvor festgelegten Sicherheitswahrscheinlichkeit den aus der Stichprobe geschätzten Parameter enthält.1
+ vgl: https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall↩
+   </description>
     </item>
     
     <item>
@@ -731,31 +102,10 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
       <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/ein-paar-interessante-links/</guid>
-      <description>&lt;p&gt;Im Laufe der Zeit sammeln sich bei mir mehr und mehr Links zu anderen Seiten an, die ich irgendwie speichern will aber nicht ernsthaft sortieren möchte.
-So ist diese Sammlung hier entstanden:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www2.hs-fulda.de/~grams/hoppla/wordpress/&#34; target=&#34;_blank&#34;&gt;Blog von Prof. Dr. Timm Grams&lt;/a&gt; &amp;ndash; &amp;ldquo;Ein Weblogbuch über sonderbare Nachrichten und alltäglichen Statistikplunder&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www2.hs-fulda.de/~grams/dnkfln.htm&#34; target=&#34;_blank&#34;&gt;Denkfallen und Paradoxa&lt;/a&gt; &amp;ndash; Prof. Dr. Timm Grams gibt einen Überblick&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www2.hs-fulda.de/~grams/mathehilft/schaetzen/Vierfeldertafel.pdf&#34; target=&#34;_blank&#34;&gt;Signifikanztest mit der Vierfeldertafel&lt;/a&gt; &amp;ndash; Prof. Dr. Timm Grams&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www2.hs-fulda.de/~grams/Heuristik/Lektionen/Querbeet.pdf&#34; target=&#34;_blank&#34;&gt;Querbeet &amp;ndash; Eine Problemsammlung&lt;/a&gt; &amp;ndash; Prof. Dr. Timm Grams&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://data-se.netlify.com&#34; target=&#34;_blank&#34;&gt;Blog von Prof. Dr. Sebastian Sauer&lt;/a&gt; &amp;ndash; Quelle der Erleuchtung und Intuition&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.six-sigma-material.com&#34; target=&#34;_blank&#34;&gt;Six Sigma Material&lt;/a&gt; &amp;ndash; Six Sigma Seite&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.foundstat.statistik.uni-muenchen.de/studium_lehre/index.html&#34; target=&#34;_blank&#34;&gt;AG Method(olgo)ische Grundlagen der Statistik und Ihre Anwendung&lt;/a&gt; &amp;ndash; LMU München &amp;hellip; WOW!&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.beltz.de/fileadmin/beltz/leseproben/978-3-7799-3658-9.pdf&#34; target=&#34;_blank&#34;&gt;Leseprobe &amp;ldquo;Induktive Statistik und soziologische Theorie&amp;rdquo;&lt;/a&gt; &amp;ndash; Markus Ziegler - Eine Analyse des theoretischen Potenzials der Bayes-Statistik&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://support.minitab.com/de-de/minitab/18/help-and-how-to/modeling-statistics/reliability/how-to/probit-analysis/perform-the-analysis/estimate-percentiles-and-probabilities/&#34; target=&#34;_blank&#34;&gt;Fiduzial&lt;/a&gt; &amp;ndash;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.stefanbartz.de/dateien/Vorsicht-bei-der-sigma-Regel.pdf&#34; target=&#34;_blank&#34;&gt;Vorsicht bei der σ-Regel&lt;/a&gt; &amp;ndash; Stefan Bartz&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Im Laufe der Zeit sammeln sich bei mir mehr und mehr Links zu anderen Seiten an, die ich irgendwie speichern will aber nicht ernsthaft sortieren möchte. So ist diese Sammlung hier entstanden:
+ Blog von Prof. Dr. Timm Grams &amp;ndash; &amp;ldquo;Ein Weblogbuch über sonderbare Nachrichten und alltäglichen Statistikplunder&amp;rdquo;
+ Denkfallen und Paradoxa &amp;ndash; Prof. Dr. Timm Grams gibt einen Überblick
+ Signifikanztest mit der Vierfeldertafel &amp;ndash; Prof. Dr. Timm Grams</description>
     </item>
     
     <item>
@@ -764,77 +114,10 @@ So ist diese Sammlung hier entstanden:&lt;/p&gt;
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/quartile-quantile-perzentile-etc/</guid>
-      <description>&lt;p&gt;“Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.&lt;/p&gt;
-&lt;section id=&#34;quantile&#34; class=&#34;level2&#34;&gt;
-&lt;h2&gt;Quantile&lt;/h2&gt;
-&lt;section id=&#34;definitorische-antwort&#34; class=&#34;level3&#34;&gt;
-&lt;h3&gt;Definitorische Antwort&lt;/h3&gt;
-&lt;p&gt;Für eine gegebene reelle Zufallsvariable &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; heißt eine reelle Zahl &lt;span class=&#34;math inline&#34;&gt;\(x_p\)&lt;/span&gt; ein &lt;strong&gt;p-Quantil&lt;/strong&gt; (von &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;), falls gilt:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[P(X \leq x_p) \leq p \quad \text{ und }\quad P(x_p \leq X) \geq 1-p.\]&lt;/span&gt;&lt;/p&gt;
-&lt;/section&gt;
-&lt;section id=&#34;was-bedeutet-das-denn-nun-konkret&#34; class=&#34;level3&#34;&gt;
-&lt;h3&gt;Was bedeutet das denn nun konkret?&lt;/h3&gt;
-&lt;p&gt;Nun, ein Quantil ist ein Schwellenwert. Ein bestimmter Anteil der Werte ist kleiner als das Quantil, der Rest ist größer. Das 25-%-Quantil beispielsweise ist der Wert, für den gilt, dass 25 % aller Werte kleiner sind als dieser Wert. Quantile formalisieren praktische Aussagen wie „25 % aller Frauen sind kleiner als 1,62 m“ –- wobei 1,62 m hier das 25-%-Quantil ist.&lt;/p&gt;
-&lt;p&gt;Spezielle Quantile sind der &lt;em&gt;Median&lt;/em&gt;, die &lt;em&gt;Quartile&lt;/em&gt;, die &lt;em&gt;Quintile&lt;/em&gt;, die &lt;em&gt;Dezile&lt;/em&gt; und die &lt;em&gt;Perzentile&lt;/em&gt;:&lt;/p&gt;
-&lt;p&gt;Wir betrachten dazu in den Bespielen die Datenreihe &lt;code&gt;dr&lt;/code&gt; an:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Die Zahlen von 0 bis 600 
-dr &amp;lt;- 0:600&lt;/code&gt;&lt;/pre&gt;
-&lt;/section&gt;
-&lt;section id=&#34;median&#34; class=&#34;level3&#34;&gt;
-&lt;h3&gt;Median&lt;/h3&gt;
-&lt;p&gt;Der &lt;strong&gt;Median&lt;/strong&gt; (von lat. &lt;em&gt;Medium&lt;/em&gt; für „Mitte, Mittelpunkt“ abgeleiteter Begriff mit der Bedeutung “in der Mitte gelegen”) die das 50-%-Quantil. Der Wert, welcher die Datenreihe (bestenfalls) in zwei (etwa) gleich große Abschnitte trennt. Sehr oft schreibt man &lt;span class=&#34;math inline&#34;&gt;\(x_{med}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(x_{50\%}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(x_{Med}\)&lt;/span&gt; oder &lt;span class=&#34;math inline&#34;&gt;\(Q_2\)&lt;/span&gt; für den Median&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;median(dr)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 300&lt;/code&gt;&lt;/pre&gt;
-&lt;/section&gt;
-&lt;section id=&#34;terzile&#34; class=&#34;level3&#34;&gt;
-&lt;h3&gt;Terzile&lt;/h3&gt;
-&lt;p&gt;Als &lt;strong&gt;Terile&lt;/strong&gt; (von lat. &lt;em&gt;tertius&lt;/em&gt; “der Dritte”) werden die beiden Quantile mit &lt;span class=&#34;math inline&#34;&gt;\(p=1/3\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(p=2/3\)&lt;/span&gt; bezeichnet. Sie teilen die Datenreihe in drei Abschnitte.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;quantile(dr, probs = seq(0, 1, 1/3))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##        0% 33.33333% 66.66667%      100% 
-##         0       200       400       600&lt;/code&gt;&lt;/pre&gt;
-&lt;/section&gt;
-&lt;section id=&#34;quartile&#34; class=&#34;level3&#34;&gt;
-&lt;h3&gt;Quartile&lt;/h3&gt;
-&lt;p&gt;Die &lt;strong&gt;Quartile&lt;/strong&gt; (von lat. &lt;em&gt;quartus&lt;/em&gt; „der Vierte“) werden die Quantile mit &lt;span class=&#34;math inline&#34;&gt;\(p=25\%\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(p=50\%\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(p=75\%\)&lt;/span&gt; bezeichnet. Sie teilen die Datenreihe in vier Abschnitte. Dabei schreibt man oft: &lt;span class=&#34;math inline&#34;&gt;\(Q_1 = x_{0{,}25}\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(x_{Med} = Q_2 = x_{0{,}50}\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(Q_3 = x_{0{,}75}\)&lt;/span&gt; für die drei Quantile.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;quantile(dr) # oder auch: quantile(dr, probs=seq(0, 1, 1/4))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   0%  25%  50%  75% 100% 
-##    0  150  300  450  600&lt;/code&gt;&lt;/pre&gt;
-&lt;/section&gt;
-&lt;section id=&#34;quintile&#34; class=&#34;level3&#34;&gt;
-&lt;h3&gt;Quintile&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Quintile&lt;/strong&gt; (von lat. &lt;em&gt;quintus&lt;/em&gt; “der Fünfte”) werden die Quantile mit &lt;span class=&#34;math inline&#34;&gt;\(p=20\%\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(p=40\%\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(p=60\%\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(p=80\%\)&lt;/span&gt; bezeichnet. Sie teilen die Datenreihe in fünf Abschnitte.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;quantile(dr, probs = seq(0, 1, 1/5))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   0%  20%  40%  60%  80% 100% 
-##    0  120  240  360  480  600&lt;/code&gt;&lt;/pre&gt;
-&lt;/section&gt;
-&lt;section id=&#34;dezile&#34; class=&#34;level3&#34;&gt;
-&lt;h3&gt;Dezile&lt;/h3&gt;
-&lt;p&gt;Die Quantile für vielfache von &lt;span class=&#34;math inline&#34;&gt;\(0{,}1\)&lt;/span&gt; also für &lt;span class=&#34;math inline&#34;&gt;\(p=0{,}1;0{,}2;\dots ;0{,}9\)&lt;/span&gt; werden &lt;strong&gt;Dezile&lt;/strong&gt; (von mittellateinisch &lt;em&gt;decimalis&lt;/em&gt;, zu lat. &lt;em&gt;decem&lt;/em&gt; „zehn“) genannt. Dabei heißt das &lt;span class=&#34;math inline&#34;&gt;\(0{,}1\)&lt;/span&gt;-Quantil das erste Dezil, das &lt;span class=&#34;math inline&#34;&gt;\(0{,}2\)&lt;/span&gt;-Quantil das zweite Dezil usw. Unterhalb des ersten Dezils liegen 10 % der Stichprobe, oberhalb entsprechend 90 % der Stichprobe. Ebenso liegen 40 % der Stichprobe unterhalb des vierten Dezils und 60 % oberhalb.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;quantile(dr, probs = seq(0, 1, 1/10))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   0%  10%  20%  30%  40%  50%  60%  70%  80%  90% 100% 
-##    0   60  120  180  240  300  360  420  480  540  600&lt;/code&gt;&lt;/pre&gt;
-&lt;/section&gt;
-&lt;section id=&#34;perzentile&#34; class=&#34;level3&#34;&gt;
-&lt;h3&gt;Perzentile&lt;/h3&gt;
-&lt;p&gt;Als &lt;strong&gt;Perzentile&lt;/strong&gt; (von lat.-ital. &lt;em&gt;per centum&lt;/em&gt; “von Hundert, Hundertstel”) werden die Quantile von &lt;span class=&#34;math inline&#34;&gt;\(\displaystyle 0{,}01\)&lt;/span&gt; bis $ 0{,}99$ in Schritten von &lt;span class=&#34;math inline&#34;&gt;\(0{,}01\)&lt;/span&gt; bezeichnet.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;quantile(dr, probs = seq(0, 1, 1/100))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   0%   1%   2%   3%   4%   5%   6%   7%   8%   9%  10%  11%  12%  13%  14% 
-##    0    6   12   18   24   30   36   42   48   54   60   66   72   78   84 
-##  15%  16%  17%  18%  19%  20%  21%  22%  23%  24%  25%  26%  27%  28%  29% 
-##   90   96  102  108  114  120  126  132  138  144  150  156  162  168  174 
-##  30%  31%  32%  33%  34%  35%  36%  37%  38%  39%  40%  41%  42%  43%  44% 
-##  180  186  192  198  204  210  216  222  228  234  240  246  252  258  264 
-##  45%  46%  47%  48%  49%  50%  51%  52%  53%  54%  55%  56%  57%  58%  59% 
-##  270  276  282  288  294  300  306  312  318  324  330  336  342  348  354 
-##  60%  61%  62%  63%  64%  65%  66%  67%  68%  69%  70%  71%  72%  73%  74% 
-##  360  366  372  378  384  390  396  402  408  414  420  426  432  438  444 
-##  75%  76%  77%  78%  79%  80%  81%  82%  83%  84%  85%  86%  87%  88%  89% 
-##  450  456  462  468  474  480  486  492  498  504  510  516  522  528  534 
-##  90%  91%  92%  93%  94%  95%  96%  97%  98%  99% 100% 
-##  540  546  552  558  564  570  576  582  588  594  600&lt;/code&gt;&lt;/pre&gt;
-&lt;/section&gt;
-&lt;/section&gt;
-</description>
+      <description>“Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.
+Quantile Definitorische Antwort Für eine gegebene reelle Zufallsvariable \(X\) heißt eine reelle Zahl \(x_p\) ein p-Quantil (von \(X\)), falls gilt:
+\[P(X \leq x_p) \leq p \quad \text{ und }\quad P(x_p \leq X) \geq 1-p.\]
+ Was bedeutet das denn nun konkret?</description>
     </item>
     
     <item>
@@ -843,20 +126,9 @@ dr &amp;lt;- 0:600&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/github-webhook-eingebaut/</guid>
-      <description>&lt;p&gt;GitHub bietet die Möglichkeit an, bei Interaktion mit dem Server automatisch einen Webhook zu aktivieren. Dahinter versteckt sich ein Aufruf einer URL mit einem sogenannten POST-Request. Wertet man diesen aus, so kann man z.B. nach jedem &lt;em&gt;push&lt;/em&gt; automatisch ein &lt;em&gt;fetch&lt;/em&gt; auf dem Webserver starten.&lt;/p&gt;
-
-&lt;p&gt;Ich nutze das gerade um meinen Blog immer dann zu aktualisieren, wenn ich auf dem GitHub eine Änderung vorgenommen habe.&lt;/p&gt;
-
-&lt;p&gt;Damit sollte ich nie wieder vergessen alles auch auf dem Server zu aktualisieren!&lt;/p&gt;
-
-&lt;p&gt;Wir warten ab. ;-)&lt;/p&gt;
-
-&lt;p&gt;Okay, alle Verzeichnisse sollten den richtigen Besitzer haben ;-)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NACHTRAG:&lt;/strong&gt; (vom 01.01.2018)&lt;/p&gt;
-
-&lt;p&gt;Leider schaffe ich es nicht auf PHP heraus auch nur ein Skript auszuführen. Daher wird z.Z. alles via &lt;code&gt;crontab&lt;/code&gt; ausgeführt. Nicht optimal, aber es läuft erstmal.&lt;/p&gt;
-</description>
+      <description>GitHub bietet die Möglichkeit an, bei Interaktion mit dem Server automatisch einen Webhook zu aktivieren. Dahinter versteckt sich ein Aufruf einer URL mit einem sogenannten POST-Request. Wertet man diesen aus, so kann man z.B. nach jedem push automatisch ein fetch auf dem Webserver starten.
+Ich nutze das gerade um meinen Blog immer dann zu aktualisieren, wenn ich auf dem GitHub eine Änderung vorgenommen habe.
+Damit sollte ich nie wieder vergessen alles auch auf dem Server zu aktualisieren!</description>
     </item>
     
     <item>
@@ -865,8 +137,7 @@ dr &amp;lt;- 0:600&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/first-entry/</guid>
-      <description>&lt;p&gt;Ein erster Kommentar!&lt;/p&gt;
-</description>
+      <description>Ein erster Kommentar!</description>
     </item>
     
     <item>
@@ -875,25 +146,8 @@ dr &amp;lt;- 0:600&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
-      <description>
-
-&lt;p&gt;Gerade im Internet gefunden:&lt;/p&gt;
-
-&lt;h3 id=&#34;10-dinge-die-kein-talent-benötigen&#34;&gt;10 Dinge die kein Talent benötigen!&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Pünktlichkeit&lt;/li&gt;
-&lt;li&gt;Arbeitsmoral&lt;/li&gt;
-&lt;li&gt;Anstrengung&lt;/li&gt;
-&lt;li&gt;Körpersprache&lt;/li&gt;
-&lt;li&gt;Energie&lt;/li&gt;
-&lt;li&gt;Haltung&lt;/li&gt;
-&lt;li&gt;Leidenschaft&lt;/li&gt;
-&lt;li&gt;Lernwillig sein&lt;/li&gt;
-&lt;li&gt;Etwas mehr als das Minimum tun&lt;/li&gt;
-&lt;li&gt;Vorbereitet sein&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <description> Gerade im Internet gefunden:
+10 Dinge die kein Talent benötigen!  Pünktlichkeit Arbeitsmoral Anstrengung Körpersprache Energie Haltung Leidenschaft Lernwillig sein Etwas mehr als das Minimum tun Vorbereitet sein  </description>
     </item>
     
     <item>
@@ -902,42 +156,21 @@ dr &amp;lt;- 0:600&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/der-zentrale-grenzwertsatz/</guid>
-      <description>&lt;div id=&#34;der-zentrale-grenzwertsatz-der-statistik-bei-identischer-verteilung.&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Der &lt;strong&gt;Zentrale Grenzwertsatz&lt;/strong&gt; der Statistik bei identischer Verteilung.&lt;/h2&gt;
-&lt;div id=&#34;zentraler-grenzwertsatz&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Zentraler Grenzwertsatz&lt;/h3&gt;
-&lt;p&gt;Seien &lt;span class=&#34;math inline&#34;&gt;\(X_1, X_2, ..., X_n\)&lt;/span&gt; unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert &lt;span class=&#34;math inline&#34;&gt;\(E(X_i) = \mu\)&lt;/span&gt; und bekanter Varianz &lt;span class=&#34;math inline&#34;&gt;\(Var(X_i)=\sigma^2\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Für die Summe &lt;span class=&#34;math inline&#34;&gt;\(S_n = \sum_{i=1}^n X_i\)&lt;/span&gt; ist dann der Erwartungswert &lt;span class=&#34;math inline&#34;&gt;\(E(S_n)= n \cdot \mu\)&lt;/span&gt; und die Varianz &lt;span class=&#34;math inline&#34;&gt;\(Var(S_n)= n \cdot \sigma^2\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Dann gilt für die &lt;em&gt;standardisierte&lt;/em&gt; Zufallsvariable&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-\begin{align*}
-Z_n &amp;amp;= \frac{\left(\sum\limits_{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}}
-    = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} 
-    = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} \\
-    &amp;amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} 
-    = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n},
-\end{align*}
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;dass sie für wachsendes &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; immer besser durch die &lt;em&gt;Standardnormalverteilung&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(N(0, 1)\)&lt;/span&gt; approximiert werden kann.&lt;/p&gt;
-&lt;p&gt;Mit anderen Worten:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-P(Z_n \leq x) \longrightarrow \Phi(x), \quad \text{ für }\; n \rightarrow \infty
-\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Weiterführende Literatur und Quellen dieses Eintrags:&lt;/strong&gt;&lt;/p&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
-&lt;div id=&#34;ref-Schira2005&#34;&gt;
-&lt;p&gt;1. Schira, J.: Statistische Methoden der VWL und BWL. PEARSON Studion, München (2005)&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-website:WikipediaZGS&#34;&gt;
-&lt;p&gt;2. Wikipedia: Zentraler Grenzwertsatz, &lt;a href=&#34;https://de.wikipedia.org/w/index.php?title=Zentraler_Grenzwertsatz&amp;amp;oldid=162715036&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/w/index.php?title=Zentraler_Grenzwertsatz&amp;amp;oldid=162715036&lt;/a&gt;, (2017)&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-website:WolframMathWorldCLT&#34;&gt;
-&lt;p&gt;3. Weisstein, E.W.: Central limit theorem, &lt;a href=&#34;http://mathworld.wolfram.com/CentralLimitTheorem.html&#34; class=&#34;uri&#34;&gt;http://mathworld.wolfram.com/CentralLimitTheorem.html&lt;/a&gt;, (2017)&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>Der Zentrale Grenzwertsatz der Statistik bei identischer Verteilung. Zentraler Grenzwertsatz Seien \(X_1, X_2, ..., X_n\) unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert \(E(X_i) = \mu\) und bekanter Varianz \(Var(X_i)=\sigma^2\).
+Für die Summe \(S_n = \sum_{i=1}^n X_i\) ist dann der Erwartungswert \(E(S_n)= n \cdot \mu\) und die Varianz \(Var(S_n)= n \cdot \sigma^2\).
+Dann gilt für die standardisierte Zufallsvariable
+\[ \begin{align*} Z_n &amp;amp;= \frac{\left(\sum\limits_{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} \\ &amp;amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n}, \end{align*} \]</description>
+    </item>
+    
+    <item>
+      <title>Academic: the website designer for Hugo</title>
+      <link>/nab/post/getting-started/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/post/getting-started/</guid>
+      <description>Academic makes it easy to create a beautiful website for free using Markdown. Customize anything on your site with widgets, themes, and language packs.
+Follow our easy step by step guide to learn how to build your own free website with Academic. Check out the personal demo or the business demo of what you&amp;rsquo;ll get in less than 10 minutes.
+ View the documentation Ask a question Request a feature or report a bug Updating?</description>
     </item>
     
   </channel>

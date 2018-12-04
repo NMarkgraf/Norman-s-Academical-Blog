@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Allgemein on Normans Akademischer Blog</title>
+    <link>/nab/tags/allgemein/</link>
+    <description>Recent content in Allgemein on Normans Akademischer Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
+    <lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/nab/tags/allgemein/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SBI - Simulation Based Inference</title>
+      <link>/nab/post/sbi-simulation-based-inference/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/sbi-simulation-based-inference/</guid>
+      <description>Wenn meine Tochter SBI hört, denkt sie an Sally Bollywood Investigation. – Und ich oft auch. – Mit SBI ist hier aber nicht der Trickfilm für Kinder, sondern Simulation Based Inference, gemeint.
+Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der FOM den Unterricht für Statistik auf eine neue Grundlage zu stellen.</description>
+    </item>
+    
+    <item>
+      <title>Auch Rmarkdown Dateien sollten sich Regeln halten</title>
+      <link>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</guid>
+      <description>Jede Programmiersprache hat Regeln. Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form, in der man den Quelltext schreibt. Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten. Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
+Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Standard wie ein Python Programm geschrieben seien sollte.</description>
+    </item>
+    
+    <item>
+      <title>10 Dinge die kein Talent benötigen!</title>
+      <link>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
+      <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
+      <description> Gerade im Internet gefunden:
+10 Dinge die kein Talent benötigen!  Pünktlichkeit Arbeitsmoral Anstrengung Körpersprache Energie Haltung Leidenschaft Lernwillig sein Etwas mehr als das Minimum tun Vorbereitet sein  </description>
+    </item>
+    
+  </channel>
+</rss>

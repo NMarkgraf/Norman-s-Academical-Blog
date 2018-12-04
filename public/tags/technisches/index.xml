@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technisches on Normans Akademischer Blog</title>
+    <link>/nab/tags/technisches/</link>
+    <description>Recent content in Technisches on Normans Akademischer Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
+    <lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/nab/tags/technisches/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Der Angriff der Riesenschlangen.</title>
+      <link>/nab/post/der-angriff-der-riesenschlangen/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/der-angriff-der-riesenschlangen/</guid>
+      <description>Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.
+Zu beginn des letzten Semesters hatte ich die Idee in den ‘Mathematischen Grundlagen der Wirtschaftsinformatik’ ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der Menge u.a. in Python als set.</description>
+    </item>
+    
+    <item>
+      <title>GitHub Webhook eingebaut!</title>
+      <link>/nab/post/github-webhook-eingebaut/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/github-webhook-eingebaut/</guid>
+      <description>GitHub bietet die Möglichkeit an, bei Interaktion mit dem Server automatisch einen Webhook zu aktivieren. Dahinter versteckt sich ein Aufruf einer URL mit einem sogenannten POST-Request. Wertet man diesen aus, so kann man z.B. nach jedem push automatisch ein fetch auf dem Webserver starten.
+Ich nutze das gerade um meinen Blog immer dann zu aktualisieren, wenn ich auf dem GitHub eine Änderung vorgenommen habe.
+Damit sollte ich nie wieder vergessen alles auch auf dem Server zu aktualisieren!</description>
+    </item>
+    
+  </channel>
+</rss>

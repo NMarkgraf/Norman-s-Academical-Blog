@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Normans Akademischer Blog</title>
+    <link>/nab/tags/</link>
+    <description>Recent content in Tags on Normans Akademischer Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="/nab/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Academic</title>
+      <link>/nab/tags/academic/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/tags/academic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Allgemein</title>
+      <link>/nab/tags/allgemein/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/allgemein/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science</title>
+      <link>/nab/tags/data-science/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lehre</title>
+      <link>/nab/tags/lehre/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/lehre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projektorientiertes Lernen</title>
+      <link>/nab/tags/projektorientiertes-lernen/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/tags/projektorientiertes-lernen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/nab/tags/python/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/nab/tags/r/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RMarkdown</title>
+      <link>/nab/tags/rmarkdown/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/rmarkdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RStudio</title>
+      <link>/nab/tags/rstudio/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/rstudio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regelungstechnik</title>
+      <link>/nab/tags/regelungstechnik/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/tags/regelungstechnik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistik</title>
+      <link>/nab/tags/statistik/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/statistik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technisches</title>
+      <link>/nab/tags/technisches/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/technisches/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vortrag</title>
+      <link>/nab/tags/vortrag/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/vortrag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wahrscheinlichkeitstheorie</title>
+      <link>/nab/tags/wahrscheinlichkeitstheorie/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/wahrscheinlichkeitstheorie/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

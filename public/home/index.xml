@@ -7,8 +7,147 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/nab/home/" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="/nab/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/nab/home/hero_carousel/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/home/hero_carousel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Academic</title>
+      <link>/nab/home/hero/</link>
+      <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/home/hero/</guid>
+      <description>The highly flexible website framework for Hugo with an extensible plugin mechanism. Create a beautifully simple site in under 10 minutes 🚀 Latest release   Star</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/nab/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/home/about/</guid>
+      <description>Biographie Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer. Als Lehrbeauftragter der Hochschule Bochum, Hochschule Rhein-Waal (am Campus Kleve) und der FOM Hochschule für Oekonomie und Management an den Standorten Aachen, Bonn, Dortmund, Köln, Duisburg, Düsseldorf, Neuss, Münster und Wuppertal hat er verschiedene Veranstaltungen abgehalten.</description>
+    </item>
+    
+    <item>
+      <title>Skills</title>
+      <link>/nab/home/skills/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/home/skills/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experience</title>
+      <link>/nab/home/experience/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/home/experience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Selected Publications</title>
+      <link>/nab/home/publications_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/home/publications_selected/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Veröffentlichungen</title>
+      <link>/nab/home/publications/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/home/publications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Selected Talks</title>
+      <link>/nab/home/talks_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/home/talks_selected/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>/nab/home/talks/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/home/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neuste Beiträge</title>
+      <link>/nab/home/posts/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/home/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projekte</title>
+      <link>/nab/home/projects/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/home/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Veranstaltungen</title>
+      <link>/nab/home/teaching/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/home/teaching/</guid>
+      <description>Im Wintersemester 2018/19 gehaltene Veranstaltungen an der FOM:
+Standort: Düsseldorf
+ Wissenschaftliche Methodik Mathematische Grundlagen der Wirtschaftsinformatik Operations Research  Standort: Münster
+ Mathematische Grundlagen der Wirtschaftsinformatik  Standort: Dortmund
+ Einführung Mathematik  Standort: Gürtersloh
+ Einführung Mathematik  Standort: Essen
+ Quantitative Methoden und Evaluationsforschung  Im Sommersemester 2018 gehaltene Veranstaltungen an der FOM:
+Standort: Düsseldorf
+ Algorithmen &amp;amp; Datenstrukturen Datenerhebung &amp;amp; Statistik Wissenschaftliche Methodik  Standort: Dortmund</description>
+    </item>
+    
+    <item>
+      <title>Tags</title>
+      <link>/nab/home/tags/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/home/tags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Impressum</title>
+      <link>/nab/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/home/contact/</guid>
+      <description>Impressum Angabe gemäß §5 TMG: Norman Markgraf
+Guts-Muths-Weg 19
+45136 Essen
+Haftungsausschluss - Disclaimer Haftung für Inhalte Alle Inhalte unseres Internetauftritts wurden mit größter Sorgfalt und nach bestem Gewissen erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</description>
+    </item>
     
   </channel>
 </rss>

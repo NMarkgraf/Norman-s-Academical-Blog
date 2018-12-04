@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Allgemeines on Normans Akademischer Blog</title>
+    <link>/nab/categories/allgemeines/</link>
+    <description>Recent content in Allgemeines on Normans Akademischer Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
+    <lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/nab/categories/allgemeines/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Der Angriff der Riesenschlangen.</title>
+      <link>/nab/post/der-angriff-der-riesenschlangen/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/der-angriff-der-riesenschlangen/</guid>
+      <description>Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.
+Zu beginn des letzten Semesters hatte ich die Idee in den ‘Mathematischen Grundlagen der Wirtschaftsinformatik’ ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der Menge u.a. in Python als set.</description>
+    </item>
+    
+    <item>
+      <title>Auch Rmarkdown Dateien sollten sich Regeln halten</title>
+      <link>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</guid>
+      <description>Jede Programmiersprache hat Regeln. Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form, in der man den Quelltext schreibt. Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten. Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
+Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Standard wie ein Python Programm geschrieben seien sollte.</description>
+    </item>
+    
+    <item>
+      <title>Ein paar interessante Links</title>
+      <link>/nab/post/ein-paar-interessante-links/</link>
+      <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/ein-paar-interessante-links/</guid>
+      <description>Im Laufe der Zeit sammeln sich bei mir mehr und mehr Links zu anderen Seiten an, die ich irgendwie speichern will aber nicht ernsthaft sortieren möchte. So ist diese Sammlung hier entstanden:
+ Blog von Prof. Dr. Timm Grams &amp;ndash; &amp;ldquo;Ein Weblogbuch über sonderbare Nachrichten und alltäglichen Statistikplunder&amp;rdquo;
+ Denkfallen und Paradoxa &amp;ndash; Prof. Dr. Timm Grams gibt einen Überblick
+ Signifikanztest mit der Vierfeldertafel &amp;ndash; Prof. Dr. Timm Grams</description>
+    </item>
+    
+  </channel>
+</rss>
