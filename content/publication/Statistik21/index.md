@@ -1,10 +1,10 @@
 +++
-title = "LEARN2CONTROL – Projektorientiertes Lernen für ein besseres Gesamtverständnis in der regelungstechnischen Ausbildung"
-date = 2004-09-25T00:00:00
-draft = false
+title = "Statistik21"
+date = 2009-09-25T00:00:00
+draft = true
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["Andreas Liefeld", "Marten Völker", " Manuel Remelhe", "Kai Dadhe", "Sebastian Engell", "Carsten Fritsch","Norman Markgaf"]
+authors = ["Karsten Lübke", "Matthias Gehrke", "Norman Markgaf"]
 
 # Publication type.
 # Legend:
@@ -15,18 +15,18 @@ authors = ["Andreas Liefeld", "Marten Völker", " Manuel Remelhe", "Kai Dadhe", 
 # 4 = Report
 # 5 = Book
 # 6 = Book section
-publication_types = ["2"]
+publication_types = ["4"]
 
 # Publication name and optional abbreviated version.
-publication = "In *at - Automatisierungstechnik / Methoden und Anwendungen der Steuerungs-, Regelungs- und Informationstechnik*."
-publication_short = "In *at*"
+publication = "In *Band 2 der KCD-Schriftenreihe 'Transferdidaktik in Lehre & Prüfung – Konzept und Anwendungen im Hochschulbereich'*."
+publication_short = "In *KCD*"
 
 # Abstract and optional shortened version.
-abstract = "LEARN2CONTROL ist eine computergestützte Lernumgebung, die es ermöglicht, vorhandenes Grundlagenwissen im Bereich der Regelungstechnik durch selbstständiges Lernen in einem projektorientierten Umfeld zu vertiefen. Der Lernschwerpunkt liegt dabei besonders auf der Vermittlung der inneren Abhängigkeiten und Wechselwirkungen der unterschiedlichen Verfahren und Methoden der Regelungstechnik."
-abstract_short = "LEARN2CONTROL ist eine computergestützte Lernumgebung, die es ermöglicht, vorhandenes Grundlagenwissen im Bereich der Regelungstechnik durch selbstständiges Lernen in einem projektorientierten Umfeld zu vertiefen. Der Lernschwerpunkt liegt dabei besonders auf der Vermittlung der inneren Abhängigkeiten und Wechselwirkungen der unterschiedlichen Verfahren und Methoden der Regelungstechnik.."
+abstract = "Statistik21 ist ein Projekt der FOM mit dem Ziel, die Passgenauigkeit der Statistik-Lehre an der FOM in Bezug auf die notwendigen Methodenkennnisse von Studierenden didaktisch und konzeptionell kontinuierlich weiter zu verbessern."
+abstract_short = ""
 
 # Is this a selected publication? (true/false)
-selected = false
+selected = true
 
 # Projects (optional).
 #   Associate this publication with one or more of your projects.
@@ -38,7 +38,7 @@ projects = []
 
 # Tags (optional).
 #   Set `tags = []` for no tags, or use the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["Projektorientiertes Lernen", "Regelungstechnik"]
+tags = ["Statistik", "Lehre", "FOM"]
 
 # Links (optional).
 url_pdf = ""
@@ -56,7 +56,7 @@ url_source = ""
 #url_custom = [{name = "Custom Link", url = "http://example.org"}]
 
 # Digital Object Identifier (DOI)
-doi = "https://doi.org/10.1524/auto.52.2.96.25912"
+doi = ""
 
 # Does this page contain LaTeX math? (true/false)
 math = false

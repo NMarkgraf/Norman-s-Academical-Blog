@@ -188,7 +188,7 @@
     
     <url>
     
-      <loc>/nab/publication/learn2control/</loc>
+      <loc>/nab/publication/statistik21/</loc>
       <lastmod>2009-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -196,7 +196,24 @@
     
     <url>
     
+      <loc>/nab/publication/learn2control/</loc>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/nab/publication_types/2/</loc>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/publication_types/4/</loc>
       <lastmod>2009-09-25T00:00:00+02:00</lastmod>
       <priority>0</priority>
     </url>
@@ -243,6 +260,15 @@
     
       <loc>/nab/tags/data-science/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/tags/fom/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -305,7 +331,7 @@
     <url>
     
       <loc>/nab/tags/projektorientiertes-lernen/</loc>
-      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -314,7 +340,7 @@
     <url>
     
       <loc>/nab/publication_types/</loc>
-      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -359,7 +385,7 @@
     <url>
     
       <loc>/nab/tags/regelungstechnik/</loc>
-      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
-    <lastBuildDate>Fri, 25 Sep 2009 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 25 Sep 2004 00:00:00 +0200</lastBuildDate>
     
 	<atom:link href="/nab/publication_types/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,18 @@
     <item>
       <title>2</title>
       <link>/nab/publication_types/2/</link>
-      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
       
       <guid>/nab/publication_types/2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>4</title>
+      <link>/nab/publication_types/4/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      
+      <guid>/nab/publication_types/4/</guid>
       <description></description>
     </item>
     
