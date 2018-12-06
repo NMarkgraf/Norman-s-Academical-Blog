@@ -8,22 +8,22 @@ categories:
 tags:
   - Python
   - R
-  - RMarkdown
+  - "R markdown"
   - Technisches
 header:
   caption: ''
   image: ''
 ---
 
-Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.
+Klingt ja bedrohlich, aber es ist wirklich Möglich [R](https://www.r-project.org) und [Python](https://www.python.org) sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim Erstellen von Skripten mit [R markdown](https://rmarkdown.rstudio.com).
 
-Zu beginn des letzten Semesters hatte ich die Idee in den 'Mathematischen Grundlagen der Wirtschaftsinformatik' ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der *Menge* u.a. in Python als *set*.
+Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung "*Mathematischen Grundlagen der Wirtschaftsinformatik*" ein paar der Begriffe der Mengenlehre denen daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüberzustellen. So gibt es die Idee der *Menge* u.a. in *Python* als *set*.
 
-Wie aber das ins Skript einbauen? - Kann man R markdown überhaupt mir Python zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython. 
+Wie aber kann man solche Python-Fragmente in ein R markdown Sktipr einbauen? - Kann man *R markdown* überhaupt mit *Python* zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython...
 
 ## Die Netzpython als Bindeglied zwischen R und Python
 
-Eine Netzpython (engl. [reticulated python](https://en.wikipedia.org/wiki/Reticulated_python)) stand Pate für den Namen des R Paketes [`reticulate`](https://rstudio.github.io/reticulate/index.html), welches R und Python miteinander verbindet.
+Eine Netzpython (engl. [reticulated python](https://en.wikipedia.org/wiki/Reticulated_python)) stand Pate für den Namen des *R* Paketes [`reticulate`](https://rstudio.github.io/reticulate/index.html), welches *R* und *Python* miteinander verbindet. So ist es möglich *Python*-Befehle direkt in ein *R markdown* Skript ausführen zulassen, diese Fragmente adequat durchzustellen -- ganz wie *R Skripte* -- und sogar Daten zwoschen *R* und *Python* hin und her (aus) zu tauschen.
 
 Nach der Installation mittels
 
@@ -33,14 +33,14 @@ install.packages("reticulate")
 
 bedarf es aber durch aus noch einiger Anpassungen, bis alles zur Zufriedenheit funktioniert.
 
-Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls `Sys.which("python")`, welches bei mir leider zu einer vollkommen alten, aber noch benutzen, Python Version führte. Möchte man eine ganz bestimmte Python Version haben, so hilft einem der Befehl `use_python()`:
+Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls  `Sys.which("python")`, welcher bei mir leider zu einer vollkommen alten, aber noch benutzen, *Python* Version führte. Möchte man eine ganz bestimmte *Python* Version haben, so hilft einem der Befehl `use_python()`:
 
 ```{r eval=FALSE}
 library(reticulate)
-use_python("/usr/local/bin/python")
+use_python("/usr/local/bin/python")  # Pfad zum Python-Befehl der benutz werden soll.
 ```
 
-Es werden auch virtuelle Umgebungen unterstützt:
+Es werden auch [virtuelle Umgebungen](https://realpython.com/python-virtual-environments-a-primer/) unterstützt:
 
 ```{r eval=FALSE}
 library(reticulate)
@@ -53,22 +53,40 @@ library(reticulate)
 use_condaenv("mycondaenv")
 ```
 
+
 ## Der Einbau in ein R markdown Dokument
 
-Einen Python Quellcode in ein R markdown einzubauen ist dann wieder sehr einfach. Man ändert einfach ein *r* in *python* im Codeblock und schon steht einem der knitr-Chunk als *Python* Quelle zur Verfügung.
+Einen *Python* Quellcode in ein *R markdown* einzubauen ist dann wieder sehr einfach. Man ändert einfach ein *r* in *python* im Codeblock und schon steht einem der *knitr-Chunk* als *Python* Quelle zur Verfügung.
 
-```
-` ``{python eval=FLASE}
-# Etwas Python geföllig?
-def fkt(x):
-    return x^2
+Sp liefert der *knitr-Chunk* 
+<pre><code>```{python}
+# Etwas Python gefällig?
+def quadrat(x):
+    return x**2
     
-print(fkt(2))
-` ``
+print(quadrat(2))
+```
+</code></pre>
+
+```{r, include=FALSE}
+library(reticulate)
+```
+
+in einem *R markdown*, dann die Ausgabe:
+
+```{python}
+# Etwas Python geföllig?
+def quadrat(x):
+    return x**2
+    
+print(quadrat(2))
 ```
 
 Das war es aber noch lange nicht. *R* und *Python* können nämlich nicht nur nebeneinander, sondern auch miteinander!
 
-Dazu dann aber mein nächsten Blog-Eintrag.
+
+
+
+Dazu dann aber mehr in einem späteren Blog-Eintrag.
 
 

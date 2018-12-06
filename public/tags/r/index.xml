@@ -18,17 +18,17 @@
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/der-angriff-der-riesenschlangen/</guid>
-      <description>Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.
-Zu beginn des letzten Semesters hatte ich die Idee in den ‘Mathematischen Grundlagen der Wirtschaftsinformatik’ ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der Menge u.a. in Python als set.</description>
+      <description>Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim Erstellen von Skripten mit R markdown.
+Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathematischen Grundlagen der Wirtschaftsinformatik” ein paar der Begriffe der Mengenlehre denen daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüberzustellen. So gibt es die Idee der Menge u.a. in Python als set.</description>
     </item>
     
     <item>
-      <title>Auch Rmarkdown Dateien sollten sich Regeln halten</title>
+      <title>Auch R markdown Dateien sollten sich Regeln halten</title>
       <link>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</guid>
-      <description>Jede Programmiersprache hat Regeln. Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form, in der man den Quelltext schreibt. Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten. Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
+      <description>Jede Programmiersprache hat Regeln. Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt. Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten. Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
 Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Standard wie ein Python Programm geschrieben seien sollte.</description>
     </item>
     
@@ -73,6 +73,17 @@ Quantile Definitorische Antwort Für eine gegebene reelle Zufallsvariable \(X\) 
       
       <guid>/nab/project/etwas-r-am-abend/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>RmdStyleChecker</title>
+      <link>/nab/project/rmdstylechecker/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/project/rmdstylechecker/</guid>
+      <description>Jede Sprache hat Regeln, auch Programmiersprachen und R markdown ist eine Programmiersprache. Wieso also nicht ein Tool schreiben, welches SStilregeln (engl. style guides) für R markdown kontrolliert um auch im kolaborativen Einsatz ein einheitliches &amp;ldquo;Schriftbild&amp;rdquo; des Quelltextes zu erhalten.
+&amp;hellip;
+Einen ersten Schritt habe ich mit dem Blog-Eintrag gemacht und dazu gleich noch ein Tool in Python geschrieben um Verstöße dagegen schneller zu finden.</description>
     </item>
     
   </channel>

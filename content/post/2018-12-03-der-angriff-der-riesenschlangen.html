@@ -8,7 +8,7 @@ categories:
 tags:
   - Python
   - R
-  - RMarkdown
+  - "R markdown"
   - Technisches
 header:
   caption: ''
@@ -17,19 +17,19 @@ header:
 
 
 
-<p>Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.</p>
-<p>Zu beginn des letzten Semesters hatte ich die Idee in den ‘Mathematischen Grundlagen der Wirtschaftsinformatik’ ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der <em>Menge</em> u.a. in Python als <em>set</em>.</p>
-<p>Wie aber das ins Skript einbauen? - Kann man R markdown überhaupt mir Python zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython.</p>
+<p>Klingt ja bedrohlich, aber es ist wirklich Möglich <a href="https://www.r-project.org">R</a> und <a href="https://www.python.org">Python</a> sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim Erstellen von Skripten mit <a href="https://rmarkdown.rstudio.com">R markdown</a>.</p>
+<p>Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “<em>Mathematischen Grundlagen der Wirtschaftsinformatik</em>” ein paar der Begriffe der Mengenlehre denen daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüberzustellen. So gibt es die Idee der <em>Menge</em> u.a. in <em>Python</em> als <em>set</em>.</p>
+<p>Wie aber kann man solche Python-Fragmente in ein R markdown Sktipr einbauen? - Kann man <em>R markdown</em> überhaupt mit <em>Python</em> zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython…</p>
 <div id="die-netzpython-als-bindeglied-zwischen-r-und-python" class="section level2">
 <h2>Die Netzpython als Bindeglied zwischen R und Python</h2>
-<p>Eine Netzpython (engl. <a href="https://en.wikipedia.org/wiki/Reticulated_python">reticulated python</a>) stand Pate für den Namen des R Paketes <a href="https://rstudio.github.io/reticulate/index.html"><code>reticulate</code></a>, welches R und Python miteinander verbindet.</p>
+<p>Eine Netzpython (engl. <a href="https://en.wikipedia.org/wiki/Reticulated_python">reticulated python</a>) stand Pate für den Namen des <em>R</em> Paketes <a href="https://rstudio.github.io/reticulate/index.html"><code>reticulate</code></a>, welches <em>R</em> und <em>Python</em> miteinander verbindet. So ist es möglich <em>Python</em>-Befehle direkt in ein <em>R markdown</em> Skript ausführen zulassen, diese Fragmente adequat durchzustellen – ganz wie <em>R Skripte</em> – und sogar Daten zwoschen <em>R</em> und <em>Python</em> hin und her (aus) zu tauschen.</p>
 <p>Nach der Installation mittels</p>
 <pre class="r"><code>install.packages(&quot;reticulate&quot;)</code></pre>
 <p>bedarf es aber durch aus noch einiger Anpassungen, bis alles zur Zufriedenheit funktioniert.</p>
-<p>Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls <code>Sys.which(&quot;python&quot;)</code>, welches bei mir leider zu einer vollkommen alten, aber noch benutzen, Python Version führte. Möchte man eine ganz bestimmte Python Version haben, so hilft einem der Befehl <code>use_python()</code>:</p>
+<p>Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls <code>Sys.which(&quot;python&quot;)</code>, welcher bei mir leider zu einer vollkommen alten, aber noch benutzen, <em>Python</em> Version führte. Möchte man eine ganz bestimmte <em>Python</em> Version haben, so hilft einem der Befehl <code>use_python()</code>:</p>
 <pre class="r"><code>library(reticulate)
-use_python(&quot;/usr/local/bin/python&quot;)</code></pre>
-<p>Es werden auch virtuelle Umgebungen unterstützt:</p>
+use_python(&quot;/usr/local/bin/python&quot;)  # Pfad zum Python-Befehl der benutz werden soll.</code></pre>
+<p>Es werden auch <a href="https://realpython.com/python-virtual-environments-a-primer/">virtuelle Umgebungen</a> unterstützt:</p>
 <pre class="r"><code>library(reticulate)
 use_virtualenv(&quot;myenv&quot;)</code></pre>
 <p>Und auch eine ganz andere Schlangenart kann benutzt werden, <a href="https://www.anaconda.com/what-is-anaconda/">Anacondas</a>:</p>
@@ -38,14 +38,23 @@ use_condaenv(&quot;mycondaenv&quot;)</code></pre>
 </div>
 <div id="der-einbau-in-ein-r-markdown-dokument" class="section level2">
 <h2>Der Einbau in ein R markdown Dokument</h2>
-<p>Einen Python Quellcode in ein R markdown einzubauen ist dann wieder sehr einfach. Man ändert einfach ein <em>r</em> in <em>python</em> im Codeblock und schon steht einem der knitr-Chunk als <em>Python</em> Quelle zur Verfügung.</p>
-<pre><code>` ``{python eval=FLASE}
-# Etwas Python geföllig?
-def fkt(x):
-    return x^2
+<p>Einen <em>Python</em> Quellcode in ein <em>R markdown</em> einzubauen ist dann wieder sehr einfach. Man ändert einfach ein <em>r</em> in <em>python</em> im Codeblock und schon steht einem der <em>knitr-Chunk</em> als <em>Python</em> Quelle zur Verfügung.</p>
+Sp liefert der <em>knitr-Chunk</em>
+<pre><code>```{python}
+# Etwas Python gefällig?
+def quadrat(x):
+    return x**2
     
-print(fkt(2))
-` ``</code></pre>
+print(quadrat(2))
+```
+</code></pre>
+<p>in einem <em>R markdown</em>, dann die Ausgabe:</p>
+<pre class="python"><code># Etwas Python geföllig?
+def quadrat(x):
+    return x**2
+    
+print(quadrat(2))</code></pre>
+<pre><code>## 4</code></pre>
 <p>Das war es aber noch lange nicht. <em>R</em> und <em>Python</em> können nämlich nicht nur nebeneinander, sondern auch miteinander!</p>
-<p>Dazu dann aber mein nächsten Blog-Eintrag.</p>
+<p>Dazu dann aber mehr in einem späteren Blog-Eintrag.</p>
 </div>

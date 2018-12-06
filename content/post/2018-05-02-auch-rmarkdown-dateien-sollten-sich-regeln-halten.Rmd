@@ -1,5 +1,5 @@
 ---
-title: Auch Rmarkdown Dateien sollten sich Regeln halten
+title: Auch R markdown Dateien sollten sich Regeln halten
 author: Norman Markgraf
 date: '2018-05-02'
 slug: auch-rmarkdown-dateien-sollten-sich-regeln-halten
@@ -9,7 +9,7 @@ categories:
 tags:
   - R
   - Allgemein
-  - RMarkdown
+  - "R markdown"
   - Python
 header:
   caption: ''
@@ -17,15 +17,15 @@ header:
 ---
 
 Jede Programmiersprache hat Regeln.
-Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form, in der man den Quelltext schreibt.
+Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt.
 Diese sogenannte *Stilregeln* (engl. *style guides*) sind von Programmieren aufgestellte Regeln um ein einheitliches "Schriftbild" des Quelltextes zu erhalten.
 Das Ziel der *Stilregeln* ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
 
-Eine Programmiersprache wie Python zum Beispiel hat mit [PEP8](https://www.python.org/dev/peps/pep-0008/) einen eigenen Standard wie ein Python Programm geschrieben seien sollte. 
-Dazu gibt es auch gleich das passenden Prüfprogramm (pep8, neuerdings [pycodestyle](https://github.com/PyCQA/pycodestyle)).
+Eine Programmiersprache wie *Python* zum Beispiel hat mit [PEP8](https://www.python.org/dev/peps/pep-0008/) einen eigenen Standard wie ein *Python* Programm geschrieben seien sollte.
+Dazu gibt es auch gleich das passenden Prüfprogramm (früher `pep8`, neuerdings [`pycodestyle`](https://github.com/PyCQA/pycodestyle)).
 
-Schreibt man ein Rmarkdown Text mag man vielleicht nicht daran denken, dass so eine Idee auch hier sehr sinnvoll sein kann. 
-Neben den gängigen Style-Guides für den R Quellcode (z. B.: [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml), [Hadley Wickham's Advanced R - Style guide](http://adv-r.had.co.nz/Style.html), [jef.works R Style Guide](http://jef.works/R-style-guide/), [R Style Guide](https://csgillespie.wordpress.com/2010/11/23/r-style-guide/) oder [R-Style-Guide](https://github.com/rdatsci/PackagesInfo/wiki/R-Style-Guide)) gibt es aber kaum Regeln (z. B.: [Pimp my Rmd](https://holtzy.github.io/Pimp-my-rmd/)) für die Gestaltung von Rmarkdown.
+Schreibt man ein *R markdown* Text mag man vielleicht nicht daran denken, dass so eine Idee auch hier sehr sinnvoll ist.
+Neben den gängigen Style-Guides für den *R* Quellcode (z. B.: [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml), [Hadley Wickham's Advanced R - Style guide](http://adv-r.had.co.nz/Style.html), [jef.works R Style Guide](http://jef.works/R-style-guide/), [R Style Guide](https://csgillespie.wordpress.com/2010/11/23/r-style-guide/) oder [R-Style-Guide](https://github.com/rdatsci/PackagesInfo/wiki/R-Style-Guide)) gibt es aber kaum Regeln (z. B.: [Pimp my Rmd](https://holtzy.github.io/Pimp-my-rmd/)) für die Gestaltung von *R markdown*.
 
 
 ## Stil-Regeln für gutes Rmarkdown, ein erster Vorschlag
@@ -59,7 +59,7 @@ Neben den gängigen Style-Guides für den R Quellcode (z. B.: [Google's R Style 
     Das hier ist einfacher Text
     ```
 
-3. Vor und nach Aufzählungen sollte immer eine Leerzeile stehen. / *...*
+3. Vor und nach Aufzählungen sollte immer eine Leerzeile stehen. / *One blank line before and after an itemization or enumeration*
    
    Statt
    
@@ -68,6 +68,9 @@ Neben den gängigen Style-Guides für den R Quellcode (z. B.: [Google's R Style 
    - Ein Punkt
    - Ein anderer Punkt
    Und hier geht der Text weiter.
+   1. Der erste Punkt.
+   2. Der zweite Punkt.
+   Und wieder mal ein Text.
    ```
    
    sollte es so gegliedert sein:
@@ -79,39 +82,40 @@ Neben den gängigen Style-Guides für den R Quellcode (z. B.: [Google's R Style 
    - Ein anderer Punkt
 
    Und hier geht der Text weiter.
+   
+   1. Der erste Punkt.
+   2. Der zweite Punkt.
+   
+   Und wieder mal ein Text.
    ```
    
-4. Vor und nach Codeblöcken sollte immer eine Leerzeile stehen. / *...*
+4. Vor und nach Codeblöcken sollte immer eine Leerzeile stehen. / *One blank line before and after a codeblock*
 
    Statt
    
-   ```
+   <pre>
    Etwas Text vorher
-   `` `{r}
-   1+1
-   `` `
-   und danach.
-   ```
+   ```{r}<code>1+1
+   ```</code>und danach.
+   </pre>
    
-   sollte es so gegliedert sein:
    
-   ```
+   sollte man es besser wie folgt gliedern:
+   
+   <pre>
    Etwas Text vorher
    
-   `` `{r}
-   1+1
-   `` `
+   ```{r}<code>1+1
+   ```</code> und danach.
+   </pre>
    
-   und danach.
-   ```
-   
-5. Keine anderen Sprachen als Rmarkdown für Inhalte oder Design nutzen. / *Use no other languages to create content or design, other than (R)Markdown.*
+5. Keine anderen Sprachen als *R markdown* für Inhalte oder Design nutzen. / *Use no other languages to create content or design, other than (R) markdown.*
 
-   Keine anderen Sprachen, insbesondere LaTeX, um besondere Effekte zu erziehlen. Dafür sollten DIV oder SPAN Abschnitte benutzt werden.
+   Keine anderen Sprachen, insbesondere LaTeX, um besondere Effekte zu erziehlen. Dafür sollten (native) DIV oder SPAN Abschnitte benutzt werden und entsprechend durch spätere (Filter-)Programme umgesetzt werden. So ist es immer möglich Design-Ideen für alle möglichen Zielsprachen zu erhalten.
 
 
 ## RmdStyleChecker, ein erster Style Checker für Rmarkdown
 
-Die ersten drei Punkte der Liste habe ich zu Testzwecken in einem kleinen Projekt mit Hilfe von Python implementiert.
-Den Python-Quelltext findet man unter [RmdStyleChecker](https://github.com/NMarkgraf/RmdStyleChecker). Er läuft unter Python 3.5+.
+Die ersten drei Punkte der Liste habe ich zu Testzwecken in einem kleinen Projekt mit Hilfe von *Python* implementiert.
+Den *Python*-Quelltext findet man unter [RmdStyleChecker](https://github.com/NMarkgraf/RmdStyleChecker). Er läuft unter *Python* 3.5+.
 
