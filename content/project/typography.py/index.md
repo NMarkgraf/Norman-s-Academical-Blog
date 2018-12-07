@@ -1,20 +1,20 @@
 +++
 # Project title.
-title = "RmdStyleChecker"
+title = "Pandoc filter: typography.py"
 active = true
 
 # Date this page was created.
 date = "2017-02-10T00:00:00"
 
 # Project summary to display on homepage.
-summary = "Python Script zum Überprüfen von Style Guidelines von R markdown Dokumenten"
+summary = "Ein Pandoc Filter (in Python 3.5+ auf Basis von panflute) um typographische Änderungen an aus  R markdown Dokumenten erzeugten HTML- bzw. LaTeX-Dokumentenvorzunehmen."
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
-tags = ["R", "R markdown", "Python"]
+tags = ["R", "R markdown", "Python", "Pandoc", "panflute", "LaTeX"]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://github.com/NMarkgraf/RmdStyleChecker"
+external_link = "https://github.com/NMarkgraf/style.py"
 
 # Slides (optional).
 #   Associate this project with Markdown slides.
@@ -44,9 +44,3 @@ url_code = ""
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = "Smart"
 +++
-
-Jede Sprache hat Regeln, auch Programmiersprachen und R markdown ist eine Programmiersprache. Wieso also nicht ein Tool schreiben, welches *SStilregeln* (engl. *style guides*) für R markdown kontrolliert um auch im kolaborativen Einsatz ein einheitliches "Schriftbild" des Quelltextes zu erhalten. 
-
-...
-
-Einen ersten Schritt habe ich mit dem [Blog-Eintrag](auch-rmarkdown-dateien-sollten-sich-regeln-halten) gemacht und dazu gleich noch ein Tool in *Python* geschrieben um Verstöße dagegen schneller zu finden.

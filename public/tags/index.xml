@@ -49,11 +49,29 @@
     </item>
     
     <item>
+      <title>LaTeX</title>
+      <link>/nab/tags/latex/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Lehre</title>
       <link>/nab/tags/lehre/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/tags/lehre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandoc</title>
+      <link>/nab/tags/pandoc/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/pandoc/</guid>
       <description></description>
     </item>
     
@@ -144,6 +162,15 @@
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/tags/wahrscheinlichkeitstheorie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>panflute</title>
+      <link>/nab/tags/panflute/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/panflute/</guid>
       <description></description>
     </item>
     

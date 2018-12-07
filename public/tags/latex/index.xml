@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LaTeX on Normans Akademischer Blog</title>
+    <link>/nab/tags/latex/</link>
+    <description>Recent content in LaTeX on Normans Akademischer Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
+    <lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/nab/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pandoc filter: typography.py</title>
+      <link>/nab/project/typography.py/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/project/typography.py/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
