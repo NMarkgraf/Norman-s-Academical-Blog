@@ -1,8 +1,8 @@
 ---
-title: Auch R markdown Dateien sollten sich Regeln halten
+title: Auch R markdown Dateien sollten sich an Regeln halten
 author: Norman Markgraf
 date: '2018-05-02'
-slug: auch-rmarkdown-dateien-sollten-sich-regeln-halten
+slug: auch-r-markdown-dateien-sollten-sich-an-regeln-halten
 categories:
   - Allgemeines
   - Information
