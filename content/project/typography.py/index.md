@@ -7,14 +7,14 @@ active = true
 date = "2017-02-10T00:00:00"
 
 # Project summary to display on homepage.
-summary = "Ein Pandoc Filter (in Python 3.5+ auf Basis von panflute) um typographische Änderungen an aus  R markdown Dokumenten erzeugten HTML- bzw. LaTeX-Dokumentenvorzunehmen."
+summary = "Ein Pandoc Filter (in Python 3.5+ auf Basis von panflute) um typographische Änderungen an aus  R markdown Dokumenten erzeugten HTML- bzw. LaTeX-Dokumenten vorzunehmen."
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
 tags = ["R", "R markdown", "Python", "Pandoc", "panflute", "LaTeX"]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://github.com/NMarkgraf/style.py"
+external_link = "https://github.com/NMarkgraf/typography.py"
 
 # Slides (optional).
 #   Associate this project with Markdown slides.
