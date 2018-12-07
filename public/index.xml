@@ -19,19 +19,19 @@
       <description>
 
 
-&lt;p&gt;Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim erstellen von Skripten mit R markdown.&lt;/p&gt;
-&lt;p&gt;Zu beginn des letzten Semesters hatte ich die Idee in den ‘Mathematischen Grundlagen der Wirtschaftsinformatik’ ein paar der Begriffe aus der Mengenlehre den daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüber zustellen. So gibt es die Idee der &lt;em&gt;Menge&lt;/em&gt; u.a. in Python als &lt;em&gt;set&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Wie aber das ins Skript einbauen? - Kann man R markdown überhaupt mir Python zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython.&lt;/p&gt;
+&lt;p&gt;Klingt ja bedrohlich, aber es ist wirklich Möglich &lt;a href=&#34;https://www.r-project.org&#34;&gt;R&lt;/a&gt; und &lt;a href=&#34;https://www.python.org&#34;&gt;Python&lt;/a&gt; sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim Erstellen von Skripten mit &lt;a href=&#34;https://rmarkdown.rstudio.com&#34;&gt;R markdown&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “&lt;em&gt;Mathematischen Grundlagen der Wirtschaftsinformatik&lt;/em&gt;” ein paar der Begriffe der Mengenlehre denen daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüberzustellen. So gibt es die Idee der &lt;em&gt;Menge&lt;/em&gt; u.a. in &lt;em&gt;Python&lt;/em&gt; als &lt;em&gt;set&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Wie aber kann man solche Python-Fragmente in ein R markdown Sktipr einbauen? - Kann man &lt;em&gt;R markdown&lt;/em&gt; überhaupt mit &lt;em&gt;Python&lt;/em&gt; zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython…&lt;/p&gt;
 &lt;div id=&#34;die-netzpython-als-bindeglied-zwischen-r-und-python&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Die Netzpython als Bindeglied zwischen R und Python&lt;/h2&gt;
-&lt;p&gt;Eine Netzpython (engl. &lt;a href=&#34;https://en.wikipedia.org/wiki/Reticulated_python&#34;&gt;reticulated python&lt;/a&gt;) stand Pate für den Namen des R Paketes &lt;a href=&#34;https://rstudio.github.io/reticulate/index.html&#34;&gt;&lt;code&gt;reticulate&lt;/code&gt;&lt;/a&gt;, welches R und Python miteinander verbindet.&lt;/p&gt;
+&lt;p&gt;Eine Netzpython (engl. &lt;a href=&#34;https://en.wikipedia.org/wiki/Reticulated_python&#34;&gt;reticulated python&lt;/a&gt;) stand Pate für den Namen des &lt;em&gt;R&lt;/em&gt; Paketes &lt;a href=&#34;https://rstudio.github.io/reticulate/index.html&#34;&gt;&lt;code&gt;reticulate&lt;/code&gt;&lt;/a&gt;, welches &lt;em&gt;R&lt;/em&gt; und &lt;em&gt;Python&lt;/em&gt; miteinander verbindet. So ist es möglich &lt;em&gt;Python&lt;/em&gt;-Befehle direkt in ein &lt;em&gt;R markdown&lt;/em&gt; Skript ausführen zulassen, diese Fragmente adequat durchzustellen – ganz wie &lt;em&gt;R Skripte&lt;/em&gt; – und sogar Daten zwoschen &lt;em&gt;R&lt;/em&gt; und &lt;em&gt;Python&lt;/em&gt; hin und her (aus) zu tauschen.&lt;/p&gt;
 &lt;p&gt;Nach der Installation mittels&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;reticulate&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;bedarf es aber durch aus noch einiger Anpassungen, bis alles zur Zufriedenheit funktioniert.&lt;/p&gt;
-&lt;p&gt;Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls &lt;code&gt;Sys.which(&amp;quot;python&amp;quot;)&lt;/code&gt;, welches bei mir leider zu einer vollkommen alten, aber noch benutzen, Python Version führte. Möchte man eine ganz bestimmte Python Version haben, so hilft einem der Befehl &lt;code&gt;use_python()&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls &lt;code&gt;Sys.which(&amp;quot;python&amp;quot;)&lt;/code&gt;, welcher bei mir leider zu einer vollkommen alten, aber noch benutzen, &lt;em&gt;Python&lt;/em&gt; Version führte. Möchte man eine ganz bestimmte &lt;em&gt;Python&lt;/em&gt; Version haben, so hilft einem der Befehl &lt;code&gt;use_python()&lt;/code&gt;:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
-use_python(&amp;quot;/usr/local/bin/python&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Es werden auch virtuelle Umgebungen unterstützt:&lt;/p&gt;
+use_python(&amp;quot;/usr/local/bin/python&amp;quot;)  # Pfad zum Python-Befehl der benutz werden soll.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Es werden auch &lt;a href=&#34;https://realpython.com/python-virtual-environments-a-primer/&#34;&gt;virtuelle Umgebungen&lt;/a&gt; unterstützt:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
 use_virtualenv(&amp;quot;myenv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Und auch eine ganz andere Schlangenart kann benutzt werden, &lt;a href=&#34;https://www.anaconda.com/what-is-anaconda/&#34;&gt;Anacondas&lt;/a&gt;:&lt;/p&gt;
@@ -40,16 +40,25 @@ use_condaenv(&amp;quot;mycondaenv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;der-einbau-in-ein-r-markdown-dokument&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Der Einbau in ein R markdown Dokument&lt;/h2&gt;
-&lt;p&gt;Einen Python Quellcode in ein R markdown einzubauen ist dann wieder sehr einfach. Man ändert einfach ein &lt;em&gt;r&lt;/em&gt; in &lt;em&gt;python&lt;/em&gt; im Codeblock und schon steht einem der knitr-Chunk als &lt;em&gt;Python&lt;/em&gt; Quelle zur Verfügung.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;` ``{python eval=FLASE}
-# Etwas Python geföllig?
-def fkt(x):
-    return x^2
+&lt;p&gt;Einen &lt;em&gt;Python&lt;/em&gt; Quellcode in ein &lt;em&gt;R markdown&lt;/em&gt; einzubauen ist dann wieder sehr einfach. Man ändert einfach ein &lt;em&gt;r&lt;/em&gt; in &lt;em&gt;python&lt;/em&gt; im Codeblock und schon steht einem der &lt;em&gt;knitr-Chunk&lt;/em&gt; als &lt;em&gt;Python&lt;/em&gt; Quelle zur Verfügung.&lt;/p&gt;
+Sp liefert der &lt;em&gt;knitr-Chunk&lt;/em&gt;
+&lt;pre&gt;&lt;code&gt;```{python}
+# Etwas Python gefällig?
+def quadrat(x):
+    return x**2
     
-print(fkt(2))
-` ``&lt;/code&gt;&lt;/pre&gt;
+print(quadrat(2))
+```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;in einem &lt;em&gt;R markdown&lt;/em&gt;, dann die Ausgabe:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# Etwas Python geföllig?
+def quadrat(x):
+    return x**2
+    
+print(quadrat(2))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 4&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Das war es aber noch lange nicht. &lt;em&gt;R&lt;/em&gt; und &lt;em&gt;Python&lt;/em&gt; können nämlich nicht nur nebeneinander, sondern auch miteinander!&lt;/p&gt;
-&lt;p&gt;Dazu dann aber mein nächsten Blog-Eintrag.&lt;/p&gt;
+&lt;p&gt;Dazu dann aber mehr in einem späteren Blog-Eintrag.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -260,7 +269,7 @@ abrufbaren Datenschutzhinweisen bereit.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Auch Rmarkdown Dateien sollten sich Regeln halten</title>
+      <title>Auch R markdown Dateien sollten sich Regeln halten</title>
       <link>/nab/post/auch-rmarkdown-dateien-sollten-sich-regeln-halten/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
@@ -269,20 +278,20 @@ abrufbaren Datenschutzhinweisen bereit.&lt;/p&gt;
 
 
 &lt;p&gt;Jede Programmiersprache hat Regeln.
-Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form, in der man den Quelltext schreibt.
+Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt.
 Diese sogenannte &lt;em&gt;Stilregeln&lt;/em&gt; (engl. &lt;em&gt;style guides&lt;/em&gt;) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten.
 Das Ziel der &lt;em&gt;Stilregeln&lt;/em&gt; ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.&lt;/p&gt;
-&lt;p&gt;Eine Programmiersprache wie Python zum Beispiel hat mit &lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34;&gt;PEP8&lt;/a&gt; einen eigenen Standard wie ein Python Programm geschrieben seien sollte.
-Dazu gibt es auch gleich das passenden Prüfprogramm (pep8, neuerdings &lt;a href=&#34;https://github.com/PyCQA/pycodestyle&#34;&gt;pycodestyle&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Schreibt man ein Rmarkdown Text mag man vielleicht nicht daran denken, dass so eine Idee auch hier sehr sinnvoll sein kann.
-Neben den gängigen Style-Guides für den R Quellcode (z. B.: &lt;a href=&#34;https://google.github.io/styleguide/Rguide.xml&#34;&gt;Google’s R Style Guide&lt;/a&gt;, &lt;a href=&#34;http://adv-r.had.co.nz/Style.html&#34;&gt;Hadley Wickham’s Advanced R - Style guide&lt;/a&gt;, &lt;a href=&#34;http://jef.works/R-style-guide/&#34;&gt;jef.works R Style Guide&lt;/a&gt;, &lt;a href=&#34;https://csgillespie.wordpress.com/2010/11/23/r-style-guide/&#34;&gt;R Style Guide&lt;/a&gt; oder &lt;a href=&#34;https://github.com/rdatsci/PackagesInfo/wiki/R-Style-Guide&#34;&gt;R-Style-Guide&lt;/a&gt;) gibt es aber kaum Regeln (z. B.: &lt;a href=&#34;https://holtzy.github.io/Pimp-my-rmd/&#34;&gt;Pimp my Rmd&lt;/a&gt;) für die Gestaltung von Rmarkdown.&lt;/p&gt;
-&lt;div id=&#34;stil-regeln-fur-gutes-rmarkdown-ein-erster-vorschlag&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Stil-Regeln für gutes Rmarkdown, ein erster Vorschlag&lt;/h2&gt;
+&lt;p&gt;Eine Programmiersprache wie &lt;em&gt;Python&lt;/em&gt; zum Beispiel hat mit &lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34;&gt;PEP8&lt;/a&gt; einen eigenen Standard wie ein &lt;em&gt;Python&lt;/em&gt; Programm geschrieben seien sollte.
+Dazu gibt es auch gleich das passenden Prüfprogramm (früher &lt;code&gt;pep8&lt;/code&gt;, neuerdings &lt;a href=&#34;https://github.com/PyCQA/pycodestyle&#34;&gt;&lt;code&gt;pycodestyle&lt;/code&gt;&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Schreibt man ein &lt;em&gt;R markdown&lt;/em&gt; Text mag man vielleicht nicht daran denken, dass so eine Idee auch hier sehr sinnvoll ist.
+Neben den gängigen Style-Guides für den &lt;em&gt;R&lt;/em&gt; Quellcode (z. B.: &lt;a href=&#34;https://google.github.io/styleguide/Rguide.xml&#34;&gt;Google’s R Style Guide&lt;/a&gt;, &lt;a href=&#34;http://adv-r.had.co.nz/Style.html&#34;&gt;Hadley Wickham’s Advanced R - Style guide&lt;/a&gt;, &lt;a href=&#34;http://jef.works/R-style-guide/&#34;&gt;jef.works R Style Guide&lt;/a&gt;, &lt;a href=&#34;https://csgillespie.wordpress.com/2010/11/23/r-style-guide/&#34;&gt;R Style Guide&lt;/a&gt; oder &lt;a href=&#34;https://github.com/rdatsci/PackagesInfo/wiki/R-Style-Guide&#34;&gt;R-Style-Guide&lt;/a&gt;) gibt es aber kaum Regeln (z. B.: &lt;a href=&#34;https://holtzy.github.io/Pimp-my-rmd/&#34;&gt;Pimp my Rmd&lt;/a&gt;) für die Gestaltung von &lt;em&gt;R markdown&lt;/em&gt;.&lt;/p&gt;
+&lt;div id=&#34;stil-regeln-fur-gutes-r-markdown-ein-erster-vorschlag&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stil-Regeln für gutes &lt;em&gt;R markdown&lt;/em&gt;, ein erster Vorschlag&lt;/h2&gt;
 &lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;&lt;p&gt;Keine unnützen Zeichen am Ende von Textzeilen. / &lt;em&gt;No whitespaces at the end of a line&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Eine Textzeile sollte mit einem ‘echtem’ Zeichen enden und nicht mit einem ‘unsichtbarem’ Zeichen.
 Das heisst: Leerzeichen, Tabs, harte Leerzeichen etc. gehören nicht ans Ende einer Zeile.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Zwei Leerzeilen vor einer Kopfzeile. / &lt;em&gt;Two blank lines before a header&lt;/em&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Zwei Leerzeilen vor einer jeden Kopfzeile. / &lt;em&gt;Two blank lines before every header&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Um die Inhalte auch klar voneinander trennen zu können sollte man vor der Kopfzeile zwei Leerzeilen eingefügt werden.
 Statt&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# Das ist eine Kopfzeile auf der 1. Ebene
@@ -297,42 +306,49 @@ Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;
 ## Das is eine Kopfzeile auf der 2. Ebene
 
 Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Vor und nach Aufzählungen sollte immer eine Leerzeile stehen. / &lt;em&gt;…&lt;/em&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Vor und nach Aufzählungen sollte immer eine Leerzeile stehen. / &lt;em&gt;One blank line before and after itemizations or enumerations&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Statt&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Das ist eine Liste:
 - Ein Punkt
 - Ein anderer Punkt
-Und hier geht der Text weiter.&lt;/code&gt;&lt;/pre&gt;
+Und hier geht der Text weiter.
+1. Der erste Punkt.
+2. Der zweite Punkt.
+Und wieder mal ein Text.&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Das ist eine Liste:
 
 - Ein Punkt
 - Ein anderer Punkt
 
-Und hier geht der Text weiter.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Vor und nach Codeblöcken sollte immer eine Leerzeile stehen. / &lt;em&gt;…&lt;/em&gt;&lt;/p&gt;
+Und hier geht der Text weiter.
+
+1. Der erste Punkt.
+2. Der zweite Punkt.
+
+Und wieder mal ein Text.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Vor und nach Codeblöcken sollte immer eine Leerzeile stehen. / &lt;em&gt;One blank line before and after a codeblock&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Statt&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Etwas Text vorher
-`` `{r}
-1+1
-`` `
-und danach.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Etwas Text vorher
+&lt;pre&gt;
+Etwas Text vorher
+```{r}&lt;code&gt;1+1
+```&lt;/code&gt;und danach.
+&lt;/pre&gt;
+&lt;p&gt;sollte man es besser wie folgt gliedern:&lt;/p&gt;
+&lt;pre&gt;
+Etwas Text vorher
 
-`` `{r}
-1+1
-`` `
-
-und danach.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Keine anderen Sprachen als Rmarkdown für Inhalte oder Design nutzen. / &lt;em&gt;Use no other languages to create content or design, other than (R)Markdown.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Keine anderen Sprachen, insbesondere LaTeX, um besondere Effekte zu erziehlen. Dafür sollten DIV oder SPAN Abschnitte benutzt werden.&lt;/p&gt;&lt;/li&gt;
+```{r}&lt;code&gt;1+1
+```&lt;/code&gt; und danach.
+&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Keine anderen Sprachen als &lt;em&gt;R markdown&lt;/em&gt; für Inhalte oder Design nutzen. / &lt;em&gt;Use no other languages to create content or design, other than (R) markdown.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Keine anderen Sprachen, insbesondere LaTeX, um besondere Effekte zu erzielen. Dafür sollten (native) DIV oder SPAN Abschnitte benutzt werden und entsprechend durch spätere (Filter-)Programme umgesetzt werden. So ist es immer möglich Design-Ideen für alle möglichen Zielsprachen zu erhalten.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-&lt;div id=&#34;rmdstylechecker-ein-erster-style-checker-fur-rmarkdown&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;RmdStyleChecker, ein erster Style Checker für Rmarkdown&lt;/h2&gt;
-&lt;p&gt;Die ersten drei Punkte der Liste habe ich zu Testzwecken in einem kleinen Projekt mit Hilfe von Python implementiert.
-Den Python-Quelltext findet man unter &lt;a href=&#34;https://github.com/NMarkgraf/RmdStyleChecker&#34;&gt;RmdStyleChecker&lt;/a&gt;. Er läuft unter Python 3.5+.&lt;/p&gt;
+&lt;div id=&#34;rmdstylechecker-ein-erster-style-checker-fur-r-markdown&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;RmdStyleChecker, ein erster Style Checker für &lt;em&gt;R markdown&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Die ersten drei Punkte der Liste habe ich zu Testzwecken in einem kleinen Projekt mit Hilfe von &lt;em&gt;Python&lt;/em&gt; implementiert.
+Den &lt;em&gt;Python&lt;/em&gt;-Quelltext findet man unter &lt;a href=&#34;https://github.com/NMarkgraf/RmdStyleChecker&#34;&gt;RmdStyleChecker&lt;/a&gt;. Er läuft unter &lt;em&gt;Python&lt;/em&gt; 3.5+.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -844,18 +860,20 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
       <description>
 
 
-&lt;p&gt;*&lt;strong&gt;WORK IN PROGRESS&lt;/strong&gt; Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!&lt;/p&gt;
-&lt;section id=&#34;konfidenzintervalle&#34; class=&#34;level2&#34;&gt;
+&lt;p&gt;*&lt;strong&gt;WORK IN PROGRESS&lt;/strong&gt;
+Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!&lt;/p&gt;
+&lt;div id=&#34;konfidenzintervalle&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Konfidenzintervalle&lt;/h2&gt;
-&lt;section id=&#34;definition-von-konfidenzintervallen&#34; class=&#34;level3&#34;&gt;
+&lt;div id=&#34;definition-von-konfidenzintervallen&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Definition von Konfidenzintervallen&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Für unabhängig identisch verteilte Zufallsvariablen &lt;span class=&#34;math inline&#34;&gt;\(X_1,\dotsc, X_n\)&lt;/span&gt; mit unbekanntem reellen Verteilungsparameter &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; kann unter bestimmten Umständen zwei Stichprobenfunktionen &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; angeben, so dass&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[P(U &amp;lt; \vartheta &amp;lt; V) \geq \gamma\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;gilt, mit &lt;span class=&#34;math inline&#34;&gt;\(\gamma \in (0,1)\)&lt;/span&gt;. Dann heißt das (stochastische) Intervall &lt;span class=&#34;math inline&#34;&gt;\([U, V]\)&lt;/span&gt; ein &lt;strong&gt;Konfidenzintervall&lt;/strong&gt; für &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; zum Konfidenzniveau &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; (auch: ein &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt;-Konfidenzintervall&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;gilt, mit &lt;span class=&#34;math inline&#34;&gt;\(\gamma \in (0,1)\)&lt;/span&gt;.
+Dann heißt das (stochastische) Intervall &lt;span class=&#34;math inline&#34;&gt;\([U, V]\)&lt;/span&gt; ein &lt;strong&gt;Konfidenzintervall&lt;/strong&gt; für &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; zum Konfidenzniveau &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; (auch: ein &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt;-Konfidenzintervall&lt;/strong&gt;).&lt;/p&gt;
 &lt;p&gt;Die Realisationen &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; von &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; bzw. &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; bilden das &lt;strong&gt;Schätzintervall&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\([u, v]\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Da die Realisationen &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; der Grenzen &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; keine Zufallsvariablen sind und &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; ein fixer Wert ist, kann man &lt;strong&gt;nicht&lt;/strong&gt; sagen, dass das Schätzintervall &lt;span class=&#34;math inline&#34;&gt;\([u, v]\)&lt;/span&gt; mit einer Wahrscheinlichkeit von &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; den unbekannten Parameter &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; enthält. Es bedeutet vielmehr, dass im Mittel ein Anteil von &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; aller so berechneten Schätzintervalle den unbekannten Parameter überdecken. Dem nicht widersprechend, kann –- wie bereits von Ronald Fisher festgestellt – in manchen Modellen die Qualität des Schätzintervalls von den Daten abhängen und sogar zu Antworten führen, die mit Blick auf die Daten unsinnig sind. Probleme mit solcher Post-Data-Inkohärenz führen zur Theorie der bedingten Inferenz. Ein weiteres Problem sind die Stichprobenfunktionen U und V an sich. Um diese zu finden werden oft Vereinfachungen getroffen, dadurch können systematische Fehler entstehen, oft es gibt mehrere Konfidenzintervalle (bei der Binomialverteilung z.B. nach Clopper-Pearson, Agresti-Coull oder Wald), welche oft unterschiedliche Werte liefern.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section id=&#34;ein-beispiel&#34; class=&#34;level3&#34;&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ein-beispiel&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ein Beispiel&lt;/h3&gt;
 &lt;p&gt;Wir nehmen zunächst als Population &lt;span class=&#34;math inline&#34;&gt;\(N=1000\)&lt;/span&gt; normalverteilte Zufallszahlen mit dem Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\mu= 0\)&lt;/span&gt; und der Standardabweichung &lt;span class=&#34;math inline&#34;&gt;\(\sigma=2.0088\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Dazu das Histogramm der Population:&lt;/p&gt;
@@ -866,15 +884,21 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
 &lt;pre&gt;&lt;code&gt;##     min     Q1  median     Q3   max    mean    sd  n missing
 ##  -4.997 -1.052 -0.3928 0.8211 3.295 -0.3423 1.878 40       0&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Wir wollen nun den wahren Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\vartheta=\mu\)&lt;/span&gt; mit Hilfe der Stichprobe &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; schätzen. So ist es ja in der Realität auch, denn normalerweise haben wir die Daten über die Population nicht.&lt;/p&gt;
-&lt;p&gt;Die Schätzfunktion für den Mittelwert lautet nun &lt;span class=&#34;math display&#34;&gt;\[\bar{X} = \frac1n \sum_{i=1}^n X_i\]&lt;/span&gt;, und damit die konkrete Punktschätzung &lt;span class=&#34;math display&#34;&gt;\[\hat{\mu}=\bar{x}= \sum_{i=1}^n x_i\]&lt;/span&gt; liefert den Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}=\)&lt;/span&gt; -0.3423.&lt;/p&gt;
+&lt;p&gt;Die Schätzfunktion für den Mittelwert lautet nun
+&lt;span class=&#34;math display&#34;&gt;\[\bar{X} = \frac1n \sum_{i=1}^n X_i\]&lt;/span&gt;,
+und damit die konkrete Punktschätzung
+&lt;span class=&#34;math display&#34;&gt;\[\hat{\mu}=\bar{x}= \sum_{i=1}^n x_i\]&lt;/span&gt;
+liefert den Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}=\)&lt;/span&gt; -0.3423.&lt;/p&gt;
 &lt;p&gt;In unserem Beispiel unterscheiden sich die beiden Werte um &lt;span class=&#34;math inline&#34;&gt;\(\mu - \hat{\mu}=\)&lt;/span&gt; 0.3423.&lt;/p&gt;
-&lt;p&gt;Ein 95%-Konfidenzintervall nimmt nun den geschätzen Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}\)&lt;/span&gt; als Grundlage und gibt liefert ein Intervall mit der Eigentschaft, ausgehend von den konkreten Stichproben in 95% der Fälle den tatsächlichen Wert &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt; zu umfassen. Es ist also &lt;span class=&#34;math display&#34;&gt;\[\gamma = 0.95 = 1 - \alpha = 1 - 0.05, \quad \alpha = 0.05\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Ein 95%-Konfidenzintervall nimmt nun den geschätzen Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}\)&lt;/span&gt; als Grundlage und gibt liefert ein Intervall mit der Eigentschaft, ausgehend von den konkreten Stichproben in 95% der Fälle den tatsächlichen Wert &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt; zu umfassen. Es ist also
+&lt;span class=&#34;math display&#34;&gt;\[\gamma = 0.95 = 1 - \alpha = 1 - 0.05, \quad \alpha = 0.05\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Dazu werden die beiden Stichprobenfunktionen&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[U=U(X_1, \dots, X_n)=\bar{X}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}}\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;und&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[V=V(X_1, \dots, X_n)=\bar{X}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}}\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;mit der &lt;em&gt;bekannten&lt;/em&gt; Standardabweichung &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; der &lt;em&gt;Population&lt;/em&gt; und der Stichprobengröße &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; nun mit der konkreten Realisation &lt;span class=&#34;math inline&#34;&gt;\(x_1, \dots, x_n\)&lt;/span&gt; der Stichprobe gefüttert und wir erhalten damit&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[u = \bar{x}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = -0.3423-z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=-0.9648\]&lt;/span&gt; und&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[u = \bar{x}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = -0.3423-z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=-0.9648\]&lt;/span&gt;
+und&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[v = \bar{x}+z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = -0.3423+z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=0.2803.\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Die Realisation unseres 95%-Konfidenzintervall lautet nun also:&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[[-0.9648; 0.2803]\]&lt;/span&gt;&lt;/p&gt;
@@ -887,24 +911,24 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
 ## n     Low  Yes High
 ##   40 0.03 0.95 0.02&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/section&gt;
-&lt;/section&gt;
-&lt;section id=&#34;prognoseintervalle&#34; class=&#34;level2&#34;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;prognoseintervalle&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Prognoseintervalle&lt;/h2&gt;
-&lt;/section&gt;
-&lt;section id=&#34;fuduzialintervalle&#34; class=&#34;level2&#34;&gt;
+&lt;/div&gt;
+&lt;div id=&#34;fuduzialintervalle&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Fuduzialintervalle&lt;/h2&gt;
 &lt;p&gt;Quellen:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Logik in der Statistik; Andrea Wiencierz, 7.10.2007 Link: &lt;a href=&#34;https://static.aminer.org/pdf/PDF/000/230/772/induktive_inferenz_und_mehrwertige_logik.pdf&#34; class=&#34;uri&#34;&gt;https://static.aminer.org/pdf/PDF/000/230/772/induktive_inferenz_und_mehrwertige_logik.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/section&gt;
-&lt;section class=&#34;footnotes&#34;&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;vgl: &lt;a href=&#34;https://de.wikipedia.org/wiki/Konfidenzintervall&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Konfidenzintervall&lt;/a&gt;&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
+&lt;/div&gt;
 </description>
     </item>
     

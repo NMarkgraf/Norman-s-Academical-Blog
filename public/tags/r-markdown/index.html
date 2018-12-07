@@ -20,7 +20,7 @@
   <meta name="description" content="Diplom-Mathematiker">
 
   
-  <link rel="alternate" hreflang="de-de" href="/nab/tags/r/">
+  <link rel="alternate" hreflang="de-de" href="/nab/tags/r-markdown/">
 
   
 
@@ -100,15 +100,15 @@
   
 
   
-  <link rel="alternate" href="/nab/tags/r/index.xml" type="application/rss+xml" title="Normans Akademischer Blog">
-  <link rel="feed" href="/nab/tags/r/index.xml" type="application/rss+xml" title="Normans Akademischer Blog">
+  <link rel="alternate" href="/nab/tags/r-markdown/index.xml" type="application/rss+xml" title="Normans Akademischer Blog">
+  <link rel="feed" href="/nab/tags/r-markdown/index.xml" type="application/rss+xml" title="Normans Akademischer Blog">
   
 
   <link rel="manifest" href="/nab/site.webmanifest">
   <link rel="icon" type="image/png" href="/nab/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/nab/img/icon-192.png">
 
-  <link rel="canonical" href="/nab/tags/r/">
+  <link rel="canonical" href="/nab/tags/r-markdown/">
 
   
   
@@ -120,8 +120,8 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Normans Akademischer Blog">
-  <meta property="og:url" content="/nab/tags/r/">
-  <meta property="og:title" content="R | Normans Akademischer Blog">
+  <meta property="og:url" content="/nab/tags/r-markdown/">
+  <meta property="og:title" content="R markdown | Normans Akademischer Blog">
   <meta property="og:description" content="Diplom-Mathematiker"><meta property="og:image" content="/nab/img/portrait.jpg">
   <meta property="og:locale" content="de-de">
   
@@ -132,7 +132,7 @@
 
   
 
-  <title>R | Normans Akademischer Blog</title>
+  <title>R markdown | Normans Akademischer Blog</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -348,7 +348,7 @@
     
   
 <div class="universal-wrapper pt-3">
-  <h1 itemprop="name">R</h1>
+  <h1 itemprop="name">R markdown</h1>
 
   
 
@@ -378,49 +378,6 @@ Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathemati
       
       Jede Programmiersprache hat Regeln.Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt.Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten.Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
 Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Standard wie ein Python Programm geschrieben seien sollte.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/">Ein wenig schneller zur simulierten Nullverteilung</a></h2>
-    <div class="article-style">
-      
-      Ein Nullhypothesentest ist schnell geschrieben.Will man den approximativen Weg gehen, so hilft R einem mit entsprechenden Tests mit einfachen Befehlen.Nimmt man MOSAIC dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
-Zwei Beispiele für approximative Hypothesentests mit MOSAICLaden wir unsere Testdaten, die tipping Daten wie folgt:
-library(mosaic)download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.csv&quot;)tips &lt;- read.csv2(&quot;tips.csv&quot;)set.seed(2009)Dann erstellen wir zwei Forschungsfragen:
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/nab/post/nur-ein-wenig-lineare-regression/">Nur ein wenig lineare Regression</a></h2>
-    <div class="article-style">
-      
-      Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse.So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
-Zunächst laden wir dazu die tipping Daten mittels
-library(mosaic)download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/nab/post/quartile-quantile-perzentile-etc/">Quartile, Quantile, Perzentile etc.</a></h2>
-    <div class="article-style">
-      
-      “Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.
-QuantileDefinitorische AntwortFür eine gegebene reelle Zufallsvariable \(X\) heißt eine reelle Zahl \(x_p\) ein p-Quantil (von \(X\)), falls gilt:
-\[P(X \leq x_p) \leq p \quad \text{ und }\quad P(x_p \leq X) \geq 1-p.\]
-Was bedeutet das denn nun konkret?
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/nab/project/etwas-r-am-abend/">Etwas R am Abend</a></h2>
-    <div class="article-style">
-      
-      Vortrag zur Einführung in R für Studierende
       
     </div>
   </div>

@@ -50,10 +50,10 @@ library(mosaic)download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfil
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
-      <description>*WORK IN PROGRESS Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
+      <description>*WORK IN PROGRESSDieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
 KonfidenzintervalleDefinition von Konfidenzintervallen1Für unabhängig identisch verteilte Zufallsvariablen \(X_1,\dotsc, X_n\) mit unbekanntem reellen Verteilungsparameter \(\vartheta\) kann unter bestimmten Umständen zwei Stichprobenfunktionen \(U\) und \(V\) angeben, so dass
 \[P(U &amp;lt; \vartheta &amp;lt; V) \geq \gamma\]
-gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, V]\) ein Konfidenzintervall für \(\vartheta\) zum Konfidenzniveau \(\gamma\) (auch: ein \(\gamma\)-Konfidenzintervall).</description>
+gilt, mit \(\gamma \in (0,1)\).Dann heißt das (stochastische) Intervall \([U, V]\) ein Konfidenzintervall für \(\vartheta\) zum Konfidenzniveau \(\gamma\) (auch: ein \(\gamma\)-Konfidenzintervall).</description>
     </item>
     
     <item>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Normans Akademischer Blog</title>
-    <link>/nab/tags/python/</link>
-    <description>Recent content in Python on Normans Akademischer Blog</description>
+    <title>R markdown on Normans Akademischer Blog</title>
+    <link>/nab/tags/r-markdown/</link>
+    <description>Recent content in R markdown on Normans Akademischer Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
     <lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/nab/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/nab/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

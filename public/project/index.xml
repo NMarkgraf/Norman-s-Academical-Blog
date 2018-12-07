@@ -21,5 +21,16 @@
       <description></description>
     </item>
     
+    <item>
+      <title>RmdStyleChecker</title>
+      <link>/nab/project/rmdstylechecker/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/project/rmdstylechecker/</guid>
+      <description>Jede Sprache hat Regeln, auch Programmiersprachen und R markdown ist eine Programmiersprache. Wieso also nicht ein Tool schreiben, welches SStilregeln (engl. style guides) für R markdown kontrolliert um auch im kolaborativen Einsatz ein einheitliches &amp;ldquo;Schriftbild&amp;rdquo; des Quelltextes zu erhalten.
+&amp;hellip;
+Einen ersten Schritt habe ich mit dem Blog-Eintrag gemacht und dazu gleich noch ein Tool in Python geschrieben um Verstöße dagegen schneller zu finden.</description>
+    </item>
+    
   </channel>
 </rss>
