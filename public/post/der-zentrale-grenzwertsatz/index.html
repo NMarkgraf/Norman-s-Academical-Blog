@@ -384,7 +384,7 @@ Dann gilt für die standardisierte Zufallsvariable
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    6 Min. Lektüre
+    2 Min. Lektüre
   </span>
   
 
@@ -514,188 +514,15 @@ P(Z_n \leq x) \longrightarrow \Phi(x), \quad \text{ für }\; n \rightarrow \inft
 <pre class="r"><code>y</code></pre>
 <pre><code>## [1] 59.961 56.552 51.094 75.288 47.985</code></pre>
 <p>Standardisieren wir die Werte:</p>
-<pre class="r"><code>library(mosaic)</code></pre>
-<pre><code>## Lade nötiges Paket: dplyr</code></pre>
-<pre><code>## 
-## Attache Paket: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre><code>## Lade nötiges Paket: lattice</code></pre>
-<pre><code>## Lade nötiges Paket: ggformula</code></pre>
-<pre><code>## Lade nötiges Paket: ggplot2</code></pre>
-<pre><code>## Lade nötiges Paket: ggstance</code></pre>
-<pre><code>## 
-## Attache Paket: &#39;ggstance&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:ggplot2&#39;:
-## 
-##     geom_errorbarh, GeomErrorbarh</code></pre>
-<pre><code>## 
-## New to ggformula?  Try the tutorials: 
-##  learnr::run_tutorial(&quot;introduction&quot;, package = &quot;ggformula&quot;)
-##  learnr::run_tutorial(&quot;refining&quot;, package = &quot;ggformula&quot;)</code></pre>
-<pre><code>## Lade nötiges Paket: mosaicData</code></pre>
-<pre><code>## Lade nötiges Paket: Matrix</code></pre>
-<pre><code>## 
-## The &#39;mosaic&#39; package masks several functions from core packages in order to add 
-## additional features.  The original behavior of these functions should not be affected by this.
-## 
-## Note: If you use the Matrix package, be sure to load it BEFORE loading mosaic.</code></pre>
-<pre><code>## 
-## Attache Paket: &#39;mosaic&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:Matrix&#39;:
-## 
-##     mean</code></pre>
-<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
-## 
-##     stat</code></pre>
-<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
-## 
-##     count, do, tally</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     binom.test, cor, cor.test, cov, fivenum, IQR, median,
-##     prop.test, quantile, sd, t.test, var</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     max, mean, min, prod, range, sample, sum</code></pre>
-<pre class="r"><code>zscore(u)</code></pre>
+<pre class="r"><code>library(mosaic)
+zscore(u)</code></pre>
 <pre><code>## [1] -0.6695256  1.0830283  0.7710507 -1.3280357  0.1434823</code></pre>
 <pre class="r"><code>zscore(x)</code></pre>
 <pre><code>## [1] -0.3543069  1.3440714  0.7067796 -0.5940379 -1.1025063</code></pre>
 <pre class="r"><code>zscore(y)</code></pre>
 <pre><code>## [1]  0.1677971 -0.1526624 -0.6657361  1.6085958 -0.9579944</code></pre>
-<pre class="r"><code>favstats(zscore(u))</code></pre>
-<pre><code>##        min         Q1    median        Q3      max         mean sd n
-##  -1.328036 -0.6695256 0.1434823 0.7710507 1.083028 2.775558e-17  1 5
-##  missing
-##        0</code></pre>
-<pre class="r"><code>favstats(zscore(x))</code></pre>
-<pre><code>##        min         Q1     median        Q3      max         mean sd n
-##  -1.102506 -0.5940379 -0.3543069 0.7067796 1.344071 7.769393e-17  1 5
-##  missing
-##        0</code></pre>
-<pre class="r"><code>favstats(zscore(y))</code></pre>
-<pre><code>##         min         Q1     median        Q3      max          mean sd n
-##  -0.9579944 -0.6657361 -0.1526624 0.1677971 1.608596 -2.831177e-16  1 5
-##  missing
-##        0</code></pre>
-<p>Diesen Vorgang wieder holen wir nun für $n=5, 10, 15, 20, 25, …, $ und tragen die Mittelwerde und die Standardabweichungen in ein Diagramm ein:</p>
-<pre class="r"><code>U &lt;- data_frame(
-)
-for(n in seq(from=5, to=n_max, by=10)) {
-    set.seed(2009)
-    tmp &lt;- round(runif(n, 0, 100), 3)
-    tmp.n &lt;- n
-    tmp.mean &lt;- mean(tmp)
-    tmp.sd &lt;- sd(tmp)
-    U &lt;- rbind(U, cbind(n=tmp.n, mean=tmp.mean, sd=tmp.sd))
-}
-U</code></pre>
-<pre><code>##       n     mean       sd
-## 1     5 38.81100 28.50526
-## 2    15 43.29460 28.93335
-## 3    25 44.92760 26.52021
-## 4    35 44.26297 28.08685
-## 5    45 46.20467 27.67316
-## 6    55 48.36838 28.50150
-## 7    65 50.62571 28.43248
-## 8    75 51.63051 28.29595
-## 9    85 52.17692 28.58321
-## 10   95 51.20951 28.50880
-## 11  105 50.67498 28.35739
-## 12  115 50.41213 28.06859
-## 13  125 49.69834 27.81787
-## 14  135 49.25880 27.88685
-## 15  145 48.88167 27.60302
-## 16  155 48.13980 27.88163
-## 17  165 48.01993 27.76900
-## 18  175 48.29719 28.07123
-## 19  185 48.25588 28.19963
-## 20  195 48.43536 28.39659
-## 21  205 48.62577 28.40016
-## 22  215 48.72437 28.16995
-## 23  225 48.32149 28.18788
-## 24  235 47.74746 28.47878
-## 25  245 47.23698 28.49438
-## 26  255 47.71321 28.66940
-## 27  265 47.79337 28.49553
-## 28  275 47.60155 28.56328
-## 29  285 47.58034 28.69187
-## 30  295 47.13213 28.81034
-## 31  305 47.11064 28.97819
-## 32  315 46.97176 28.93469
-## 33  325 46.66818 29.01129
-## 34  335 46.74834 29.13064
-## 35  345 46.73161 29.19405
-## 36  355 46.41339 29.24806
-## 37  365 46.20692 29.26040
-## 38  375 45.99634 29.22040
-## 39  385 45.75959 29.27061
-## 40  395 45.81654 29.41522
-## 41  405 45.79977 29.47076
-## 42  415 45.81953 29.62939
-## 43  425 45.68006 29.63016
-## 44  435 45.67065 29.47649
-## 45  445 45.79304 29.38516
-## 46  455 45.47448 29.27916
-## 47  465 45.44871 29.33401
-## 48  475 45.52068 29.25420
-## 49  485 45.29846 29.30865
-## 50  495 45.38345 29.25379
-## 51  505 45.38555 29.15933
-## 52  515 45.47665 29.05136
-## 53  525 45.71223 28.98682
-## 54  535 46.01045 28.95762
-## 55  545 45.80762 28.79443
-## 56  555 46.25164 28.82693
-## 57  565 46.38288 28.92466
-## 58  575 46.66391 28.94532
-## 59  585 46.83254 29.03391
-## 60  595 46.86379 28.98725
-## 61  605 46.88047 29.11489
-## 62  615 47.07812 29.16348
-## 63  625 47.23955 29.12291
-## 64  635 47.35587 28.98744
-## 65  645 47.44560 28.89329
-## 66  655 47.56384 28.97977
-## 67  665 47.62902 29.00998
-## 68  675 47.46100 29.02377
-## 69  685 47.37422 28.91464
-## 70  695 47.52394 28.87666
-## 71  705 47.32560 28.81671
-## 72  715 47.34969 28.85111
-## 73  725 47.33706 28.83601
-## 74  735 47.36747 28.74060
-## 75  745 47.74701 28.82425
-## 76  755 47.60457 28.78559
-## 77  765 47.43976 28.78616
-## 78  775 47.36552 28.69252
-## 79  785 47.26660 28.68865
-## 80  795 47.20192 28.64172
-## 81  805 47.33723 28.62390
-## 82  815 47.48435 28.60462
-## 83  825 47.50438 28.63258
-## 84  835 47.37745 28.59324
-## 85  845 47.34936 28.61297
-## 86  855 47.33084 28.61512
-## 87  865 47.35354 28.66024
-## 88  875 47.49264 28.66002
-## 89  885 47.42492 28.64040
-## 90  895 47.57561 28.66805
-## 91  905 47.58366 28.65138
-## 92  915 47.64920 28.74424
-## 93  925 47.74452 28.78331
-## 94  935 47.79749 28.73385
-## 95  945 47.90261 28.69594
-## 96  955 48.01069 28.70447
-## 97  965 47.99238 28.71019
-## 98  975 48.03531 28.67989
-## 99  985 48.01878 28.62677
-## 100 995 47.89692 28.66600</code></pre>
+<p>Die Behauptung des Zentralengrenzwertsatzes ist nun, dass mit steigender Anzahl an Werten <span class="math inline">\(n\)</span> die standardisierten Werte in der empirischen Verteilungsfunktion sich immer mehr der Verteilungsfunktion der Standardnormalverteilung annähern:</p>
+<p><img src="/nab/post/2017-04-05-der-zentrale-grenzwertsatz_files/figure-html/unnamed-chunk-4-1.png" width="672" /><img src="/nab/post/2017-04-05-der-zentrale-grenzwertsatz_files/figure-html/unnamed-chunk-4-2.png" width="672" /><img src="/nab/post/2017-04-05-der-zentrale-grenzwertsatz_files/figure-html/unnamed-chunk-4-3.png" width="672" /><img src="/nab/post/2017-04-05-der-zentrale-grenzwertsatz_files/figure-html/unnamed-chunk-4-4.png" width="672" /></p>
 <p><strong>Weiterführende Literatur und Quellen dieses Eintrags:</strong></p>
 <div id="refs" class="references">
 <div id="ref-Schira2005">

@@ -13,6 +13,10 @@ nocite: |
 csl: zeitschrift-fur-angewandte-mathematik-und-physik.csl
 bibliography: statistik.bib
 ---
+```{r, include=FALSE}
+library(mosaic)
+library(gridExtra)
+```
 
 ## Der **Zentrale Grenzwertsatz** der Statistik bei identischer Verteilung.
 
@@ -74,29 +78,107 @@ zscore(u)
 zscore(x)
 zscore(y)
 ```
-```{r}
-favstats(zscore(u))
-favstats(zscore(x))
-favstats(zscore(y))
+
+Die Behauptung des Zentralengrenzwertsatzes ist nun, dass mit steigender Anzahl an Werten $n$ die standardisierten Werte in der empirischen Verteilungsfunktion sich immer mehr der Verteilungsfunktion der Standardnormalverteilung annähern:
+
+```{r eval=T, echo=F}
+library(ggplot2)
+library(gtable)
+library(grid)
+library(gridExtra)
+
+set.seed(2009)
+
+n_max <- 100
+step <- 5
+start <- 5
+
+nn <- c(5, 25, 100, 500)
+
+
+set.seed(2009)
+
+i = 1
+u <- zscore(round(runif(nn[i], 0, 100), 3))
+x <- zscore(round(rchisq(nn[i], 10, ncp= 5), 3))
+y <- zscore(round(rnorm(nn[i], 50, 15), 3))
+
+p <- gf_function(fun = pnorm, xlim=c(-3,3), col="red") 
+
+p1 <- p  %>% 
+        gf_function(fun = ecdf(u), xlim=c(-3,3), col="blue") + ggtitle("U")
+
+p2 <- p  %>% 
+        gf_function(fun = ecdf(x), xlim=c(-3,3), col="green") + ggtitle("X")
+
+p3 <- p  %>% 
+        gf_function(fun = ecdf(y), xlim=c(-3,3), col="yellow") + ggtitle("Y")
+
+grid.arrange(p1, p2, p3, ncol=3, top=textGrob(paste0("Vergleich der (empirischen) Verteilungsfunktionen n=", nn[i])))
+
+
+i = 2
+
+set.seed(2009)
+u <- zscore(round(runif(nn[i], 0, 100), 3))
+x <- zscore(round(rchisq(nn[i], 10, ncp= 5), 3))
+y <- zscore(round(rnorm(nn[i], 50, 15), 3))
+
+p <- gf_function(fun = pnorm, xlim=c(-3,3), col="red") 
+
+p1 <- p  %>% 
+        gf_function(fun = ecdf(u), xlim=c(-3,3), col="blue") + ggtitle("U")
+
+p2 <- p  %>% 
+        gf_function(fun = ecdf(x), xlim=c(-3,3), col="green") + ggtitle("X")
+
+p3 <- p  %>% 
+        gf_function(fun = ecdf(y), xlim=c(-3,3), col="yellow") + ggtitle("Y")
+
+grid.arrange(p1, p2, p3, ncol=3, top=textGrob(paste0("Vergleich der (empirischen) Verteilungsfunktionen n=", nn[i])))
+
+i = 3
+
+set.seed(2009)
+u <- zscore(round(runif(nn[i], 0, 100), 3))
+x <- zscore(round(rchisq(nn[i], 10, ncp= 5), 3))
+y <- zscore(round(rnorm(nn[i], 50, 15), 3))
+
+p <- gf_function(fun = pnorm, xlim=c(-3,3), col="red") 
+
+p1 <- p  %>% 
+        gf_function(fun = ecdf(u), xlim=c(-3,3), col="blue") + ggtitle("U")
+
+p2 <- p  %>% 
+        gf_function(fun = ecdf(x), xlim=c(-3,3), col="green") + ggtitle("X")
+
+p3 <- p  %>% 
+        gf_function(fun = ecdf(y), xlim=c(-3,3), col="yellow") + ggtitle("Y")
+
+grid.arrange(p1, p2, p3, ncol=3, top=textGrob(paste0("Vergleich der (empirischen) Verteilungsfunktionen n=", nn[i])))
+
+i = 4
+
+set.seed(2009)
+u <- zscore(round(runif(nn[i], 0, 100), 3))
+x <- zscore(round(rchisq(nn[i], 10, ncp= 5), 3))
+y <- zscore(round(rnorm(nn[i], 50, 15), 3))
+
+p <- gf_function(fun = pnorm, xlim=c(-3,3), col="red") 
+
+p1 <- p  %>% 
+        gf_function(fun = ecdf(u), xlim=c(-3,3), col="blue") + ggtitle("U")
+
+p2 <- p  %>% 
+        gf_function(fun = ecdf(x), xlim=c(-3,3), col="green") + ggtitle("X")
+
+p3 <- p  %>% 
+        gf_function(fun = ecdf(y), xlim=c(-3,3), col="yellow") + ggtitle("Y")
+
+grid.arrange(p1, p2, p3, ncol=3, top=textGrob(paste0("Vergleich der (empirischen) Verteilungsfunktionen n=", nn[i])))
+
 ```
-
-Diesen Vorgang wieder holen wir nun für $n=5, 10, 15, 20, 25, ..., `r print(n_max)`$ und tragen die Mittelwerde und die Standardabweichungen in ein Diagramm ein:
-
-
-```{r}
-U <- data_frame(
-)
-for(n in seq(from=5, to=n_max, by=10)) {
-    set.seed(2009)
-    tmp <- round(runif(n, 0, 100), 3)
-    tmp.n <- n
-    tmp.mean <- mean(tmp)
-    tmp.sd <- sd(tmp)
-    U <- rbind(U, cbind(n=tmp.n, mean=tmp.mean, sd=tmp.sd))
-}
-U
-```
-
+    
 
 
 **Weiterführende Literatur und Quellen dieses Eintrags:**
