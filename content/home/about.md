@@ -22,7 +22,7 @@ weight = 5
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-    course ="Wissenschaftlicher Mitarbeiter am Lehrstul für Prozessinformatik der Fakultät für Elektro- und Informationstechnik"
+    course ="Wissenschaftlicher Mitarbeiter am Lehrstuhl für Prozessinformatik der Fakultät für Elektro- und Informationstechnik"
   institution = "Ruhr-Universität Bochum"
   year = 2005
     
@@ -35,4 +35,4 @@ weight = 5
 
 # Biographie
 
-Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer. Als Lehrbeauftragter der Hochschule Bochum, Hochschule Rhein-Waal (am Campus Kleve) und der FOM Hochschule für Oekonomie und Management an den Standorten Aachen, Bonn, Dortmund, Köln, Duisburg, Düsseldorf, Neuss, Münster und Wuppertal hat er verschiedene Veranstaltungen abgehalten.
+Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer. Als Lehrbeauftragter hat er an der Hochschule Bochum, Hochschule Rhein-Waal (am Campus Kleve) und der FOM Hochschule für Oekonomie und Management an den Standorten Aachen, Bonn, Dortmund, Duisburg, Düsseldorf, Gütersloh (Bertelsmann), Köln, Münster, Neuss und Wuppertal verschiedene Lehrveranstaltungen abgehalten.

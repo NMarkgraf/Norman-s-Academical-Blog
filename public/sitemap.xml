@@ -52,6 +52,22 @@
     
     <url>
     
+      <loc>/nab/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</loc>
+      <lastmod>2018-05-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</loc>
+      <lastmod>2018-05-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</loc>
       <lastmod>2018-05-02T00:00:00+00:00</lastmod>
     </url>
@@ -141,6 +157,22 @@
     <url>
     
       <loc>/nab/project/etwas-r-am-abend/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/project/style.py/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/project/typography.py/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -311,6 +343,15 @@
     
     <url>
     
+      <loc>/nab/tags/latex/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/nab/tags/lehre/</loc>
       <lastmod>2018-06-11T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -322,6 +363,15 @@
     
       <loc>/nab/</loc>
       <lastmod>2017-10-15T00:00:00+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/tags/pandoc/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -463,6 +513,15 @@
     
       <loc>/nab/tags/wahrscheinlichkeitstheorie/</loc>
       <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/tags/panflute/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

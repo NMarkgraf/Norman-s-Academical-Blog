@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pandoc on Normans Akademischer Blog</title>
+    <title>Pandoc on Normans Akademischer Blog</title>
     <link>/nab/tags/pandoc/</link>
-    <description>Recent content in pandoc on Normans Akademischer Blog</description>
+    <description>Recent content in Pandoc on Normans Akademischer Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; 2016-18 Norman Markgraf</copyright>
@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>Etwas R am Abend</title>
-      <link>/nab/project/etwas-r-am-abend/etwas-r-am-abend/</link>
+      <title>Pandoc filter: typography.py</title>
+      <link>/nab/project/typography.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/project/etwas-r-am-abend/etwas-r-am-abend/</guid>
+      <guid>/nab/project/typography.py/</guid>
       <description></description>
     </item>
     

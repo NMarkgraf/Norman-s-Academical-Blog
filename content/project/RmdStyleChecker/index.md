@@ -7,7 +7,7 @@ active = true
 date = "2017-02-10T00:00:00"
 
 # Project summary to display on homepage.
-summary = "Python Script zum Überbrüfen von Style Guidelines von R markdown Dokumenten"
+summary = "Python Script zum Überprüfen von Style Guidelines von R markdown Dokumenten"
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["machine-learning", "deep-learning"]`
