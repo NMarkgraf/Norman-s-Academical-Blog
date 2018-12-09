@@ -19,7 +19,7 @@ bibliography: statistik.bib
 
 ### Zentraler Grenzwertsatz
 
-Seien $X_1, X_2, ..., X_n$ unabhänige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert $E(X_i) = \mu$ und bekanter Varianz $Var(X_i)=\sigma^2$. 
+Seien $X_1, X_2, ..., X_n$ unabhängige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert $E(X_i) = \mu$ und bekannter Varianz $Var(X_i)=\sigma^2$. 
 
 
 Für die Summe $S_n = \sum_{i=1}^n X_i$ ist dann der Erwartungswert $E(S_n)= n \cdot \mu$ und die Varianz $Var(S_n)= n \cdot \sigma^2$.
@@ -43,6 +43,60 @@ Mit anderen Worten:
 $$
 P(Z_n \leq x) \longrightarrow \Phi(x), \quad \text{ für }\; n \rightarrow \infty
 $$
+
+## Ein Beispiel:
+
+Nehmen wir drei Verteilungen mit Zufallsvariable $U$, $X$, $Y$ und jeweils $n$ Realisationen $u_1,\dots, u_n$, $x_1,\dots, x_n$, $y_1,\dots, y_n$.
+
+Wählen wir zunächst $n=5$:
+
+```{r, init_5, echo=FALSE}
+set.seed(2009)
+
+n_max <- 1000
+n <- 5
+u <- round(runif(n, 0, 100), 3)
+x <- round(rchisq(n, 10, ncp= 5), 3)
+y <- round(rnorm(n, 50, 15), 3)
+```
+
+```{r}
+u
+x
+y
+```
+
+Standardisieren wir die Werte:
+
+```{r}
+library(mosaic)
+zscore(u)
+zscore(x)
+zscore(y)
+```
+```{r}
+favstats(zscore(u))
+favstats(zscore(x))
+favstats(zscore(y))
+```
+
+Diesen Vorgang wieder holen wir nun für $n=5, 10, 15, 20, 25, ..., `r print(n_max)`$ und tragen die Mittelwerde und die Standardabweichungen in ein Diagramm ein:
+
+
+```{r}
+U <- data_frame(
+)
+for(n in seq(from=5, to=n_max, by=10)) {
+    set.seed(2009)
+    tmp <- round(runif(n, 0, 100), 3)
+    tmp.n <- n
+    tmp.mean <- mean(tmp)
+    tmp.sd <- sd(tmp)
+    U <- rbind(U, cbind(n=tmp.n, mean=tmp.mean, sd=tmp.sd))
+}
+U
+```
+
 
 
 **Weiterführende Literatur und Quellen dieses Eintrags:**
