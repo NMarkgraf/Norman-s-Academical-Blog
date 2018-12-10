@@ -376,7 +376,7 @@ Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathemati
     <h2><a href="/nab/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/">Auch R markdown Dateien sollten sich an Regeln halten</a></h2>
     <div class="article-style">
       
-      Jede Programmiersprache hat Regeln. Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt. Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten. Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
+      Jede Programmiersprache hat Regeln.Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt.Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten.Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
 Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Standard wie ein Python Programm geschrieben seien sollte.
       
     </div>
@@ -386,9 +386,9 @@ Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Stand
     <h2><a href="/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/">Ein wenig schneller zur simulierten Nullverteilung</a></h2>
     <div class="article-style">
       
-      Ein Nullhypothesentest ist schnell geschrieben. Will man den approximativen Weg gehen, so hilft R einem mit entsprechenden Tests mit einfachen Befehlen. Nimmt man MOSAIC dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
-Zwei Beispiele für approximative Hypothesentests mit MOSAIC Laden wir unsere Testdaten, die tipping Daten wie folgt:
-library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.csv&quot;) tips &lt;- read.csv2(&quot;tips.csv&quot;) set.seed(2009) Dann erstellen wir zwei Forschungsfragen:
+      Ein Nullhypothesentest ist schnell geschrieben.Will man den approximativen Weg gehen, so hilft R einem mit entsprechenden Tests mit einfachen Befehlen.Nimmt man MOSAIC dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
+Zwei Beispiele für approximative Hypothesentests mit MOSAICLaden wir unsere Testdaten, die tipping Daten wie folgt:
+library(mosaic)download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.csv&quot;)tips &lt;- read.csv2(&quot;tips.csv&quot;)set.seed(2009)Dann erstellen wir zwei Forschungsfragen:
       
     </div>
   </div>
@@ -397,9 +397,9 @@ library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quo
     <h2><a href="/nab/post/nur-ein-wenig-lineare-regression/">Nur ein wenig lineare Regression</a></h2>
     <div class="article-style">
       
-      Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
+      Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse.So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
 Zunächst laden wir dazu die tipping Daten mittels
-library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.
+library(mosaic)download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.
       
     </div>
   </div>
@@ -409,9 +409,9 @@ library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quo
     <div class="article-style">
       
       “Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.
-Quantile Definitorische Antwort Für eine gegebene reelle Zufallsvariable \(X\) heißt eine reelle Zahl \(x_p\) ein p-Quantil (von \(X\)), falls gilt:
+QuantileDefinitorische AntwortFür eine gegebene reelle Zufallsvariable \(X\) heißt eine reelle Zahl \(x_p\) ein p-Quantil (von \(X\)), falls gilt:
 \[P(X \leq x_p) \leq p \quad \text{ und }\quad P(x_p \leq X) \geq 1-p.\]
- Was bedeutet das denn nun konkret?
+Was bedeutet das denn nun konkret?
       
     </div>
   </div>

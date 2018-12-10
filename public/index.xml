@@ -381,7 +381,7 @@ set.seed(2009)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
 H_0 : \pi_{\text{Lunch}} = \pi_{\text{Dinner}} \quad\text{vs.}\quad H_1 : \pi_{\text{Lunch}} \neq \pi_{\text{Dinner}}
 \]&lt;/span&gt;
-Der appoximative Test mit R und MOSAIC lautet nun:&lt;/p&gt;
+Der approximative Test mit R und MOSAIC lautet nun:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;prop.test(sex ~ time, success = &amp;quot;Female&amp;quot;, data = tips)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ##  2-sample test for equality of proportions with continuity
@@ -416,13 +416,13 @@ H_0 : \mu_{Lunch} = \mu_{Dinner} \quad\text{vs.}\quad H_1 : \mu_{Lunch} \neq \mu
 &lt;div id=&#34;simulation-der-nullverteilung-mit-mosaic&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Simulation der Nullverteilung mit MOSAIC&lt;/h2&gt;
 &lt;p&gt;Ein anderer Weg ist es die Stichprobe selber zu nutzen um daraus eine Verteilung der Nullhypothese (die Nullverteilung) ableiten zu können.
-Im ersten Fall schaut man sich die Anteilsunterschiede an, wenn man die (potentielle) Abhänigkeit von der Tageszeit (Lunch und Dinner) künstlich “abschaltet”:&lt;/p&gt;
+Im ersten Fall schaut man sich die Anteilsunterschiede an, wenn man die (potentielle) Abhängigkeit von der Tageszeit (Lunch und Dinner) künstlich “abschaltet”:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
 NullVtlgAntwert &amp;lt;- do(10000) * diffprop(sex ~ shuffle(time), 
     success = &amp;quot;Female&amp;quot;, data = tips)
 gf_histogram(~diffprop, nint = 25, data = NullVtlgAntwert)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Schaut man sich nun die Lage der Anteilsdifferenz der Stichprobe &lt;span class=&#34;math inline&#34;&gt;\(\hat\pi=`diffprop(sex ~ time, success=&amp;quot;Female&amp;quot;, data=tips)`\)&lt;/span&gt; in Bezug auf diese Nullverteilung geometrisch an, so kann man schon einen ersten Eindruck erlangen, ob die Nullhypothese abzulehnen ist oder nicht:&lt;/p&gt;
+&lt;p&gt;Schaut man sich nun die Lage der Anteilsdifferenz der Stichprobe &lt;span class=&#34;math inline&#34;&gt;\(\hat\pi=0.2192513\)&lt;/span&gt; in Bezug auf diese Nullverteilung geometrisch an, so kann man schon einen ersten Eindruck erlangen, ob die Nullhypothese abzulehnen ist oder nicht:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;diffpropdach &amp;lt;- diffprop(sex ~ time, success = &amp;quot;Female&amp;quot;, data = tips)
 gf_histogram(~diffprop, nint = 25, data = NullVtlgAntwert) + 
     geom_vline(xintercept = diffpropdach, color = &amp;quot;blue&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
@@ -431,15 +431,15 @@ gf_histogram(~diffprop, nint = 25, data = NullVtlgAntwert) +
 &lt;p&gt;Der “p-Wert” ist auch leicht ermittelt:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pvalue_aw &amp;lt;- prop(~abs(diffprop) &amp;gt;= abs(diffpropdach), data = NullVtlgAntwert)
 pvalue_aw&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   TRUE 
-## 0.0027&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Ähnlich sie die Situation im zweien Fall aus. Mittels weniger Befehler erzeugen wir die Verteilung.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## prop_TRUE 
+##    0.0027&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ähnlich sieht die Situation im zweien Fall aus. Mit Hilfe weniger Befehle erzeugen wir die Verteilung.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
 NullVtlgMittelwert &amp;lt;- do(10000) * diffmean(total_bill ~ shuffle(time), 
     data = tips)
 gf_histogram(~diffmean, nint = 25, data = NullVtlgMittelwert)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Und können im Anschluss die Mittelwertsdifferent der Stichprobe geometrisch einordnen:&lt;/p&gt;
+&lt;p&gt;Und können im Anschluss die Mittelwertsdifferenz der Stichprobe geometrisch einordnen:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;diffmeandach &amp;lt;- diffmean(total_bill ~ time, data = tips)
 gf_histogram(~diffmean, nint = 25, data = NullVtlgMittelwert) + 
     geom_vline(xintercept = diffmeandach, color = &amp;quot;blue&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
@@ -447,13 +447,13 @@ gf_histogram(~diffmean, nint = 25, data = NullVtlgMittelwert) +
 &lt;p&gt;Auch den “p-Wert” können wir nun leicht bestimmen:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pvalue_mw &amp;lt;- prop(~abs(diffmean) &amp;gt;= abs(diffmeandach), data = NullVtlgMittelwert)
 pvalue_mw&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   TRUE 
-## 0.0039&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## prop_TRUE 
+##    0.0039&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;das-problem-zeit&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Das Problem – Zeit&lt;/h2&gt;
 &lt;p&gt;Das Problem bei der Simulation ist die Zeit, die &lt;strong&gt;R&lt;/strong&gt; braucht um die Nullverteilungen zu generieren.
-Das liegt im wesendlichen an Mosaic.
+Das liegt im wesentlichen an Mosaic.
 Mit den Routinen aus &lt;a href=&#34;https://github.com/NMarkgraf/FastSimNullDistR&#34;&gt;FastSimNullDistR&lt;/a&gt; lassen sich die Nullverteilungen deutlich schneller berechnen.
 Ein Vergleich:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(mosaic)
@@ -465,23 +465,23 @@ set.seed(2009)
 system.time(NullDistMosaic_aw &amp;lt;- do(10000) * diffprop(sex ~ shuffle(time), 
     success = &amp;quot;Female&amp;quot;, data = tips))&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
-##      14.822       0.308      15.426&lt;/code&gt;&lt;/pre&gt;
+##       10.81        0.00       10.83&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
 system.time(NullDistFSNDR_aw &amp;lt;- fastSimNullDistRProp(sex ~ time, 
     success = &amp;quot;Female&amp;quot;, data = tips))&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
-##       1.415       0.034       1.476&lt;/code&gt;&lt;/pre&gt;
+##        0.32        0.00        0.33&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
 system.time(NullDistMosaic_mw &amp;lt;- do(10000) * diffmean(total_bill ~ 
     shuffle(time), data = tips))&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
-##      15.943       0.377      16.683&lt;/code&gt;&lt;/pre&gt;
+##       10.76        0.00       10.76&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(2009)
 system.time(NullDistFSNDR_mw &amp;lt;- fastSimNullDistRMean(total_bill ~ 
     time, data = tips))&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##        User      System verstrichen 
-##       1.300       0.040       1.373&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Das mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also ein “(quasi-)drop-in-replacements” der Mosaic Rouninen darstellen, kann man an den folgenden QQ-Plots erkennen:&lt;/p&gt;
+##        0.33        0.00        0.33&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Das mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also ein “(quasi-)drop-in-replacements” der Mosaic Routinen darstellen, kann man an den folgenden QQ-Plots erkennen:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qqplot(NullDistFSNDR_aw$diffprop, NullDistMosaic_aw$diffprop)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;/nab/nab/post/2018-05-02-ein-wenig-schneller-zur-simulierten-nullverteilung_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;qqplot(NullDistFSNDR_mw$diffmean, NullDistMosaic_mw$diffmean)&lt;/code&gt;&lt;/pre&gt;
@@ -489,7 +489,7 @@ system.time(NullDistFSNDR_mw &amp;lt;- fastSimNullDistRMean(total_bill ~
 &lt;/div&gt;
 &lt;div id=&#34;woher-kommt-die-geschwindigkeit&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Woher kommt die Geschwindigkeit?&lt;/h2&gt;
-&lt;p&gt;Schaut man sich den Quellcode von Mosaic an, wird einem schnell klar, dass es zwar didaktisch sinnvoll ist die unabhängige Variable mit &lt;code&gt;shuffle()&lt;/code&gt; zu bearbeiten, nicht aber programmiertechnisch. Und wenn, dann nicht in dem man die ganze Datenzeile für die Berechnung kopiert. Statt also &lt;span class=&#34;math inline&#34;&gt;\(10\,000\)&lt;/span&gt; mal die ganzen Daten im Speicher zu kopieren wäre es doch sinnvoll einen Index auf die unveränderten daten indirekt über einen Index zuzugreifen. Und genau da liegt der Zugang der Routinen. Nur dieser Zugriffsindex wird &lt;em&gt;geshuffelt&lt;/em&gt; und das spart Speicherplatz und Rechenzeit.&lt;/p&gt;
+&lt;p&gt;Schaut man sich den Quellcode von Mosaic an, wird einem schnell klar, dass es zwar didaktisch sinnvoll ist die unabhängige Variable mit &lt;code&gt;shuffle()&lt;/code&gt; zu bearbeiten, nicht aber programmiertechnisch. Und wenn, dann nicht in dem man die ganze Datenzeile für die Berechnung kopiert. Statt also &lt;span class=&#34;math inline&#34;&gt;\(10\,000\)&lt;/span&gt; mal die ganzen Daten im Speicher zu kopieren wäre es doch sinnvoll einen Index auf die unveränderten Daten indirekt über einen Index zuzugreifen. Und genau da liegt der Zugang der Routinen. Nur dieser Zugriffsindex wird &lt;em&gt;geshuffelt&lt;/em&gt; und das spart Speicherplatz und Rechenzeit.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

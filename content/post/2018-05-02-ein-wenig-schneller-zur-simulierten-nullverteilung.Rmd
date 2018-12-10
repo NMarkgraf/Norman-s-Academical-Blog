@@ -58,7 +58,7 @@ Im ersten Fall ist die Hypothese schnell geschrieben:
 $$
 H_0 : \pi_{\text{Lunch}} = \pi_{\text{Dinner}} \quad\text{vs.}\quad H_1 : \pi_{\text{Lunch}} \neq \pi_{\text{Dinner}}
 $$
-Der appoximative Test mit R und MOSAIC lautet nun:
+Der approximative Test mit R und MOSAIC lautet nun:
 
 ```{r}
 prop.test(sex ~ time, success="Female", data=tips)
@@ -80,7 +80,7 @@ t.test(total_bill ~ time, data=tips)
 ## Simulation der Nullverteilung mit MOSAIC
 
 Ein anderer Weg ist es die Stichprobe selber zu nutzen um daraus eine Verteilung der Nullhypothese (die Nullverteilung) ableiten zu können. 
-Im ersten Fall schaut man sich die Anteilsunterschiede an, wenn man die (potentielle) Abhänigkeit von der Tageszeit (Lunch und Dinner) künstlich "abschaltet":
+Im ersten Fall schaut man sich die Anteilsunterschiede an, wenn man die (potentielle) Abhängigkeit von der Tageszeit (Lunch und Dinner) künstlich "abschaltet":
 
 ```{r}
 # Zur Reproduzierbakeit
@@ -90,7 +90,7 @@ NullVtlgAntwert <- do(10000) * diffprop(sex ~ shuffle(time), success="Female", d
 gf_histogram( ~ diffprop, nint=25, data= NullVtlgAntwert)
 ```
 
-Schaut man sich nun die Lage der Anteilsdifferenz der Stichprobe $\hat\pi=`diffprop(sex ~ time, success="Female", data=tips)`$ in Bezug auf diese Nullverteilung geometrisch an, so kann man schon einen ersten Eindruck erlangen, ob die Nullhypothese abzulehnen ist oder nicht:
+Schaut man sich nun die Lage der Anteilsdifferenz der Stichprobe $\hat\pi=`r diffprop(sex ~ time, success="Female", data=tips)`$ in Bezug auf diese Nullverteilung geometrisch an, so kann man schon einen ersten Eindruck erlangen, ob die Nullhypothese abzulehnen ist oder nicht:
 
 ```{r}
 diffpropdach = diffprop(sex ~ time, success = "Female", data = tips)
@@ -100,14 +100,16 @@ gf_histogram( ~ diffprop, nint = 25, data = NullVtlgAntwert) +
 
 Offenbar ist $\hat\pi$ kein sehr häufiges Ereignis.
 
-Der "p-Wert" ist auch leicht ermittelt:
+Der *p-Wert* ist ebenfalls leicht zu ermitteln:
 
 ```{r}
 pvalue_aw <- prop( ~ abs(diffprop) >= abs(diffpropdach), data = NullVtlgAntwert)
 pvalue_aw
 ```
 
-Ähnlich sie die Situation im zweien Fall aus. Mittels weniger Befehler erzeugen wir die Verteilung.
+Mit einem Anteilswert (p-Wert) von `r pvalue_aw` zweigen wir wie selten das Ereignis unter der $H_0$ ist.
+
+Ähnlich sieht die Situation im zweien Fall aus. Mit Hilfe weniger Befehle erzeugen wir die Nullverteilung:
 
 ```{r}
 # Zur Reproduzierbakeit
@@ -117,7 +119,7 @@ NullVtlgMittelwert <- do(10000) * diffmean(total_bill ~ shuffle(time), data=tips
 gf_histogram( ~ diffmean, nint = 25, data = NullVtlgMittelwert)
 ```
 
-Und können im Anschluss die Mittelwertsdifferent der Stichprobe geometrisch einordnen:
+Und können im Anschluss die Mittelwertsdifferenz der Stichprobe geometrisch einordnen:
 
 ```{r}
 diffmeandach = diffmean(total_bill ~ time, data = tips)
@@ -125,7 +127,7 @@ gf_histogram( ~ diffmean, nint = 25, data = NullVtlgMittelwert) +
     geom_vline(xintercept = diffmeandach, color="blue")
 ```
 
-Auch den "p-Wert" können wir nun leicht bestimmen:
+Auch den *p-Wert* können wir wieder leicht bestimmen:
 
 ```{r}
 pvalue_mw <- prop( ~ abs(diffmean) >= abs(diffmeandach), data = NullVtlgMittelwert)
@@ -135,7 +137,7 @@ pvalue_mw
 ## Das Problem -- Zeit
 
 Das Problem bei der Simulation ist die Zeit, die **R** braucht um die Nullverteilungen zu generieren. 
-Das liegt im wesendlichen an Mosaic.
+Das liegt im wesentlichen an Mosaic.
 Mit den Routinen aus [FastSimNullDistR](https://github.com/NMarkgraf/FastSimNullDistR) lassen sich die Nullverteilungen deutlich schneller berechnen.
 Ein Vergleich:
 
@@ -168,7 +170,7 @@ system.time(
 
 ```
 
-Das mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also ein "(quasi-)drop-in-replacements" der Mosaic Rouninen darstellen, kann man an den folgenden QQ-Plots erkennen:
+Das mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also ein "(quasi-)drop-in-replacements" der Mosaic Routinen darstellen, kann man an den folgenden QQ-Plots erkennen:
 
 ```{r}
 qqplot(NullDistFSNDR_aw$diffprop, NullDistMosaic_aw$diffprop)
@@ -177,5 +179,5 @@ qqplot(NullDistFSNDR_mw$diffmean, NullDistMosaic_mw$diffmean)
 
 ## Woher kommt die Geschwindigkeit?
 
-Schaut man sich den Quellcode von Mosaic an, wird einem schnell klar, dass es zwar didaktisch sinnvoll ist die unabhängige Variable mit `shuffle()` zu bearbeiten, nicht aber programmiertechnisch. Und wenn, dann nicht in dem man die ganze Datenzeile für die Berechnung kopiert. Statt also $10\,000$ mal die ganzen Daten im Speicher zu kopieren wäre es doch sinnvoll einen Index auf die unveränderten daten indirekt über einen Index zuzugreifen. Und genau da liegt der Zugang der Routinen. Nur dieser Zugriffsindex wird *geshuffelt* und das spart Speicherplatz und Rechenzeit.
+Schaut man sich den Quellcode von Mosaic an, wird einem schnell klar, dass es zwar didaktisch sinnvoll ist die unabhängige Variable mit `shuffle()` zu bearbeiten, nicht aber programmiertechnisch. Und wenn, dann nicht in dem man die ganze Datenzeile für die Berechnung kopiert. Statt also $10\,000$ mal die ganzen Daten im Speicher zu kopieren wäre es doch sinnvoller mit Hilfe eines Index auf die unveränderten Daten zuzugreifen. Und genau das machen die zwei Routinen. Es wird also nur dieser Zugriffsindex wird *geshuffelt* und das spart Speicherplatz und deutlich auch Rechenzeit.
 
