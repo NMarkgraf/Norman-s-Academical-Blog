@@ -27,6 +27,8 @@ knitr::opts_chunk$set(
         brace.newline = FALSE
     )
 #
+#install.packages("profvis")
+library(profvis)
 library(mosaic, warn.conflicts = FALSE, quietly = TRUE, verbose = FALSE)
 library(mosaicCore, quietly = TRUE)
 download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
@@ -141,33 +143,41 @@ Das liegt im wesentlichen an Mosaic.
 Mit den Routinen aus [FastSimNullDistR](https://github.com/NMarkgraf/FastSimNullDistR) lassen sich die Nullverteilungen deutlich schneller berechnen.
 Ein Vergleich:
 
-```{r}
+```{r echo=FALSE}
+library(profvis)  # ggf.: install.packages("profvis")
 library(mosaic)
 library(mosaicCore)
 source("https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistRMean.R")
 source("https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistRProp.R")
 source("https://raw.githubusercontent.com/NMarkgraf/FastSimNullDistR/master/R/fastSimNullDistR_work.R")
+```
 
+```{r echo=FALSE}
 set.seed(2009)
-system.time(
+profvis({
     NullDistMosaic_aw <- do(10000) * diffprop(sex ~ shuffle(time), success="Female", data=tips)
-)
+})
+```
 
+```{r echo=FALSE}
 set.seed(2009)
-system.time(
+profvis({
     NullDistFSNDR_aw <- fastSimNullDistRProp(sex ~ time, success="Female", data=tips)
-)
+})
+```
 
+```{r echo=FALSE}
 set.seed(2009)
-system.time(
+profvis({
     NullDistMosaic_mw <- do(10000) * diffmean(total_bill ~ shuffle(time), data=tips)
-)
+})
+```
 
+```{r echo=FALSE}
 set.seed(2009)
-system.time(
+profvis({
     NullDistFSNDR_mw <- fastSimNullDistRMean(total_bill ~ time, data=tips)
-)
-
+})
 ```
 
 Das mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also ein "(quasi-)drop-in-replacements" der Mosaic Routinen darstellen, kann man an den folgenden QQ-Plots erkennen:

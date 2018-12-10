@@ -40,7 +40,7 @@ Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Stand
       <guid>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
       <description>Ein Nullhypothesentest ist schnell geschrieben.Will man den approximativen Weg gehen, so hilft R einem mit entsprechenden Tests mit einfachen Befehlen.Nimmt man MOSAIC dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
 Zwei Beispiele für approximative Hypothesentests mit MOSAICLaden wir unsere Testdaten, die tipping Daten wie folgt:
-library(mosaic)download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.csv&amp;quot;)tips &amp;lt;- read.csv2(&amp;quot;tips.csv&amp;quot;)set.seed(2009)Dann erstellen wir zwei Forschungsfragen:</description>
+library(mosaic)download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.</description>
     </item>
     
     <item>
@@ -72,6 +72,15 @@ QuantileDefinitorische AntwortFür eine gegebene reelle Zufallsvariable \(X\) 
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>/nab/project/etwas-r-am-abend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FastSimNullDistR</title>
+      <link>/nab/project/fastsimnulldistr/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/project/fastsimnulldistr/</guid>
       <description></description>
     </item>
     
