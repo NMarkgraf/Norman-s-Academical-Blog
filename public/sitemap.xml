@@ -4,6 +4,22 @@
     
     <url>
     
+      <loc>/nab/post/raspbian-auf-dem-raspberry-pi-installieren/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/post/weitere-software-auf-den-raspberry-pi-installieren/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/nab/post/der-angriff-der-riesenschlangen/</loc>
       <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     </url>
@@ -273,7 +289,7 @@
     <url>
     
       <loc>/nab/categories/allgemeines/</loc>
-      <lastmod>2018-12-03T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -282,7 +298,7 @@
     <url>
     
       <loc>/nab/categories/</loc>
-      <lastmod>2018-12-03T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -309,7 +325,7 @@
     <url>
     
       <loc>/nab/categories/fundst%C3%BCcke/</loc>
-      <lastmod>2017-07-13T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -346,6 +362,15 @@
     
       <loc>/nab/tags/lehre/</loc>
       <lastmod>2018-06-11T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/tags/mathematica/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -399,7 +424,7 @@
     <url>
     
       <loc>/nab/tags/python/</loc>
-      <lastmod>2018-12-03T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -427,6 +452,24 @@
     
       <loc>/nab/tags/rstudio/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/tags/raspberry-pi/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/tags/raspbian/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -514,6 +557,15 @@
     
       <loc>/nab/tags/wahrscheinlichkeitstheorie/</loc>
       <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/nab/tags/matplotlib/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
