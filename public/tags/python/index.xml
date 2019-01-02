@@ -19,7 +19,7 @@
       
       <guid>/nab/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
       <description> Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:
-Mathematica sudo apt-get update sudo apt-get install wolfram-engine  Python3 auf den aktuellen Stand bringen pip3 install --upgrade pip  Python3 und das Paket &amp;ldquo;matplotlib&amp;rdquo;  </description>
+Mathematica sudo apt-get update sudo apt-get install wolfram-engine  Python3 auf den aktuellen Stand bringen pip3 install --upgrade pip  Python3 und das Paket &amp;ldquo;matplotlib&amp;rdquo; sudo apt-get install python3-matplotlib  </description>
     </item>
     
     <item>

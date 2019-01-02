@@ -112,7 +112,8 @@ sudo apt-get install wolfram-engine
 
 &lt;h2 id=&#34;python3-und-das-paket-matplotlib&#34;&gt;Python3 und das Paket &amp;ldquo;matplotlib&amp;rdquo;&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python3-matplotlib
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

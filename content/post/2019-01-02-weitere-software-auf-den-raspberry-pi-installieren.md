@@ -34,4 +34,5 @@ pip3 install --upgrade pip
 ## Python3 und das Paket "matplotlib"
 
 ```
+sudo apt-get install python3-matplotlib
 ```
