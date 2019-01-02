@@ -67,6 +67,15 @@
     </item>
     
     <item>
+      <title>Mathematica</title>
+      <link>/nab/tags/mathematica/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/mathematica/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Pandoc</title>
       <link>/nab/tags/pandoc/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
@@ -87,7 +96,7 @@
     <item>
       <title>Python</title>
       <link>/nab/tags/python/</link>
-      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/nab/tags/python/</guid>
       <description></description>
@@ -117,6 +126,24 @@
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>/nab/tags/rstudio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>/nab/tags/raspberry-pi/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspbian</title>
+      <link>/nab/tags/raspbian/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/raspbian/</guid>
       <description></description>
     </item>
     
@@ -171,6 +198,15 @@
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/tags/wahrscheinlichkeitstheorie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matplotlib</title>
+      <link>/nab/tags/matplotlib/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/tags/matplotlib/</guid>
       <description></description>
     </item>
     

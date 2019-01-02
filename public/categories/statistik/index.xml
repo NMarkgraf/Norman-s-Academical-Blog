@@ -28,9 +28,9 @@ Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Ol
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
-      <description>Ein Nullhypothesentest ist schnell geschrieben.Will man den approximativen Weg gehen, so hilft R einem mit entsprechenden Tests mit einfachen Befehlen.Nimmt man MOSAIC dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
-Zwei Beispiele für approximative Hypothesentests mit MOSAICLaden wir unsere Testdaten, die tipping Daten wie folgt:
-library(mosaic)download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.</description>
+      <description>Ein Nullhypothesentest ist schnell geschrieben. Will man den approximativen Weg gehen, so hilft R einem mit entsprechenden Tests mit einfachen Befehlen. Nimmt man MOSAIC dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
+Zwei Beispiele für approximative Hypothesentests mit MOSAIC Laden wir unsere Testdaten, die tipping Daten wie folgt:
+library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.</description>
     </item>
     
     <item>
@@ -39,9 +39,9 @@ library(mosaic)download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfil
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/nur-ein-wenig-lineare-regression/</guid>
-      <description>Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse.So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
+      <description>Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
 Zunächst laden wir dazu die tipping Daten mittels
-library(mosaic)download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.</description>
+library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.</description>
     </item>
     
     <item>
@@ -50,10 +50,10 @@ library(mosaic)download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfil
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
-      <description>*WORK IN PROGRESSDieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
-KonfidenzintervalleDefinition von Konfidenzintervallen1Für unabhängig identisch verteilte Zufallsvariablen \(X_1,\dotsc, X_n\) mit unbekanntem reellen Verteilungsparameter \(\vartheta\) kann unter bestimmten Umständen zwei Stichprobenfunktionen \(U\) und \(V\) angeben, so dass
+      <description>*WORK IN PROGRESS Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
+Konfidenzintervalle Definition von Konfidenzintervallen1 Für unabhängig identisch verteilte Zufallsvariablen \(X_1,\dotsc, X_n\) mit unbekanntem reellen Verteilungsparameter \(\vartheta\) kann unter bestimmten Umständen zwei Stichprobenfunktionen \(U\) und \(V\) angeben, so dass
 \[P(U &amp;lt; \vartheta &amp;lt; V) \geq \gamma\]
-gilt, mit \(\gamma \in (0,1)\).Dann heißt das (stochastische) Intervall \([U, V]\) ein Konfidenzintervall für \(\vartheta\) zum Konfidenzniveau \(\gamma\) (auch: ein \(\gamma\)-Konfidenzintervall).</description>
+gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, V]\) ein Konfidenzintervall für \(\vartheta\) zum Konfidenzniveau \(\gamma\) (auch: ein \(\gamma\)-Konfidenzintervall).</description>
     </item>
     
     <item>
@@ -71,9 +71,9 @@ gilt, mit \(\gamma \in (0,1)\).Dann heißt das (stochastische) Intervall \([U, 
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/zentrales-schwankungsintervall/</guid>
-      <description>Das zentrale Schwankungsintervall sagt etwas über die Präzision der Lageschätzung eines Parameters (zum Beispiel eines Mittelwertes) aus. Das Schwankungsintervall schließt einen Bereich um den wahren Wert des Parameters in der Grundgesamtheit ein, der – vereinfacht gesprochen – mit einer zuvor festgelegten Sicherheitswahrscheinlichkeit den aus der Stichprobe geschätzten Parameter enthält.1
-vgl: https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall↩
-</description>
+      <description> Das zentrale Schwankungsintervall sagt etwas über die Präzision der Lageschätzung eines Parameters (zum Beispiel eines Mittelwertes) aus. Das Schwankungsintervall schließt einen Bereich um den wahren Wert des Parameters in der Grundgesamtheit ein, der – vereinfacht gesprochen – mit einer zuvor festgelegten Sicherheitswahrscheinlichkeit den aus der Stichprobe geschätzten Parameter enthält.1
+ vgl: https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall↩
+   </description>
     </item>
     
     <item>
@@ -82,10 +82,10 @@ gilt, mit \(\gamma \in (0,1)\).Dann heißt das (stochastische) Intervall \([U, 
       <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/nab/post/der-zentrale-grenzwertsatz/</guid>
-      <description>Der Zentrale Grenzwertsatz der Statistik bei identischer Verteilung.Zentraler GrenzwertsatzSeien \(X_1, X_2, ..., X_n\) unabhängige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert \(E(X_i) = \mu\) und bekannter Varianz \(Var(X_i)=\sigma^2\).
+      <description>Der Zentrale Grenzwertsatz der Statistik bei identischer Verteilung. Zentraler Grenzwertsatz Seien \(X_1, X_2, ..., X_n\) unabhängige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert \(E(X_i) = \mu\) und bekannter Varianz \(Var(X_i)=\sigma^2\).
 Für die Summe \(S_n = \sum_{i=1}^n X_i\) ist dann der Erwartungswert \(E(S_n)= n \cdot \mu\) und die Varianz \(Var(S_n)= n \cdot \sigma^2\).
 Dann gilt für die standardisierte Zufallsvariable
-\[\begin{align*}Z_n &amp;amp;= \frac{\left(\sum\limits_{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}}= \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} \\&amp;amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n},\end{align*}\]</description>
+\[ \begin{align*} Z_n &amp;amp;= \frac{\left(\sum\limits_{i=1}^n X_i\right) - n \cdot \mu}{\sqrt{n\cdot \sigma^2}} = \frac{S_n - n \cdot \mu}{\sigma \cdot \sqrt{n}} = \frac{n \cdot \bar{X}_n-n \cdot \mu}{\sigma \cdot n / \sqrt{n}} \\ &amp;amp;= \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} = \frac{\bar{X}_n - \mu}{\sigma} \cdot \sqrt{n}, \end{align*} \]</description>
     </item>
     
   </channel>
