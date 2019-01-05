@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>Wie man es nicht machen sollte in Python!</title>
+      <link>/nab/post/wie-man-es-nicht-machen-sollte-in-python/</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/wie-man-es-nicht-machen-sollte-in-python/</guid>
+      <description>Es sind oft die Dinge die man nicht sucht die einem weiterhelfen. So habe ich auch nach etwas ganz anderes gesucht und bin dabei über ein nettes kleines Werk gestoplert, dass einem sagt, wie man in Python Dinge besser nicht macht.
+Unter https://docs.quantifiedcode.com/python-anti-patterns/index.html gibt es das The Little Book of Python Anti-Patterns.
+Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte.</description>
+    </item>
+    
+    <item>
       <title>Raspbian auf dem Raspberry Pi installieren</title>
       <link>/nab/post/raspbian-auf-dem-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>

@@ -4,6 +4,14 @@
     
     <url>
     
+      <loc>/nab/post/wie-man-es-nicht-machen-sollte-in-python/</loc>
+      <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/nab/post/raspbian-auf-dem-raspberry-pi-installieren/</loc>
       <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     </url>
@@ -424,7 +432,7 @@
     <url>
     
       <loc>/nab/tags/python/</loc>
-      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -510,7 +518,7 @@
     
     <url>
     
-      <loc>/nab/tags/statistik/</loc>
+      <loc>/nab/categories/statistik/</loc>
       <lastmod>2018-06-11T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -519,7 +527,7 @@
     
     <url>
     
-      <loc>/nab/categories/statistik/</loc>
+      <loc>/nab/tags/statistik/</loc>
       <lastmod>2018-06-11T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>

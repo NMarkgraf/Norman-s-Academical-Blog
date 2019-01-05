@@ -11,6 +11,20 @@
     <atom:link href="/nab/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Wie man es nicht machen sollte in Python!</title>
+      <link>/nab/post/wie-man-es-nicht-machen-sollte-in-python/</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/nab/post/wie-man-es-nicht-machen-sollte-in-python/</guid>
+      <description>&lt;p&gt;Es sind oft die Dinge die man nicht sucht die einem weiterhelfen. So habe ich auch nach etwas ganz anderes gesucht und bin dabei über ein nettes kleines Werk gestoplert, dass einem sagt, wie man in Python Dinge besser nicht macht.&lt;/p&gt;
+
+&lt;p&gt;Unter &lt;a href=&#34;https://docs.quantifiedcode.com/python-anti-patterns/index.html&#34; target=&#34;_blank&#34;&gt;https://docs.quantifiedcode.com/python-anti-patterns/index.html&lt;/a&gt; gibt es das &lt;em&gt;The Little Book of Python Anti-Patterns&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Raspbian auf dem Raspberry Pi installieren</title>
       <link>/nab/post/raspbian-auf-dem-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
@@ -1175,28 +1189,6 @@ dr &amp;lt;- 0:600&lt;/code&gt;&lt;/pre&gt;
 ##  540  546  552  558  564  570  576  582  588  594  600&lt;/code&gt;&lt;/pre&gt;
 &lt;/section&gt;
 &lt;/section&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>GitHub Webhook eingebaut!</title>
-      <link>/nab/post/github-webhook-eingebaut/</link>
-      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/nab/post/github-webhook-eingebaut/</guid>
-      <description>&lt;p&gt;GitHub bietet die Möglichkeit an, bei Interaktion mit dem Server automatisch einen Webhook zu aktivieren. Dahinter versteckt sich ein Aufruf einer URL mit einem sogenannten POST-Request. Wertet man diesen aus, so kann man z.B. nach jedem &lt;em&gt;push&lt;/em&gt; automatisch ein &lt;em&gt;fetch&lt;/em&gt; auf dem Webserver starten.&lt;/p&gt;
-
-&lt;p&gt;Ich nutze das gerade um meinen Blog immer dann zu aktualisieren, wenn ich auf dem GitHub eine Änderung vorgenommen habe.&lt;/p&gt;
-
-&lt;p&gt;Damit sollte ich nie wieder vergessen alles auch auf dem Server zu aktualisieren!&lt;/p&gt;
-
-&lt;p&gt;Wir warten ab. ;-)&lt;/p&gt;
-
-&lt;p&gt;Okay, alle Verzeichnisse sollten den richtigen Besitzer haben ;-)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NACHTRAG:&lt;/strong&gt; (vom 01.01.2018)&lt;/p&gt;
-
-&lt;p&gt;Leider schaffe ich es nicht auf PHP heraus auch nur ein Skript auszuführen. Daher wird z.Z. alles via &lt;code&gt;crontab&lt;/code&gt; ausgeführt. Nicht optimal, aber es läuft erstmal.&lt;/p&gt;
 </description>
     </item>
     

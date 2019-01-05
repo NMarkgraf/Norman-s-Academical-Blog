@@ -15,11 +15,12 @@
   
     
   
-  <meta name="description" content="Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim Erstellen von Skripten mit R markdown.
-Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathematischen Grundlagen der Wirtschaftsinformatik” ein paar der Begriffe der Mengenlehre denen daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüberzustellen. So gibt es die Idee der Menge u.a. in Python als set.">
+  <meta name="description" content="Es sind oft die Dinge die man nicht sucht die einem weiterhelfen. So habe ich auch nach etwas ganz anderes gesucht und bin dabei über ein nettes kleines Werk gestoplert, dass einem sagt, wie man in Python Dinge besser nicht macht.
+Unter https://docs.quantifiedcode.com/python-anti-patterns/index.html gibt es das The Little Book of Python Anti-Patterns.
+Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte.">
 
   
-  <link rel="alternate" hreflang="de-de" href="/nab/post/der-angriff-der-riesenschlangen/">
+  <link rel="alternate" hreflang="de-de" href="/nab/post/wie-man-es-nicht-machen-sollte-in-python/">
 
   
 
@@ -107,7 +108,7 @@ Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathemati
   <link rel="icon" type="image/png" href="/nab/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/nab/img/icon-192.png">
 
-  <link rel="canonical" href="/nab/post/der-angriff-der-riesenschlangen/">
+  <link rel="canonical" href="/nab/post/wie-man-es-nicht-machen-sollte-in-python/">
 
   
   
@@ -119,22 +120,23 @@ Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathemati
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Normans Akademischer Blog">
-  <meta property="og:url" content="/nab/post/der-angriff-der-riesenschlangen/">
-  <meta property="og:title" content="Der Angriff der Riesenschlangen. | Normans Akademischer Blog">
-  <meta property="og:description" content="Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim Erstellen von Skripten mit R markdown.
-Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathematischen Grundlagen der Wirtschaftsinformatik” ein paar der Begriffe der Mengenlehre denen daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüberzustellen. So gibt es die Idee der Menge u.a. in Python als set."><meta property="og:image" content="/nab/img/portrait.jpg">
+  <meta property="og:url" content="/nab/post/wie-man-es-nicht-machen-sollte-in-python/">
+  <meta property="og:title" content="Wie man es nicht machen sollte in Python! | Normans Akademischer Blog">
+  <meta property="og:description" content="Es sind oft die Dinge die man nicht sucht die einem weiterhelfen. So habe ich auch nach etwas ganz anderes gesucht und bin dabei über ein nettes kleines Werk gestoplert, dass einem sagt, wie man in Python Dinge besser nicht macht.
+Unter https://docs.quantifiedcode.com/python-anti-patterns/index.html gibt es das The Little Book of Python Anti-Patterns.
+Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte."><meta property="og:image" content="/nab/img/portrait.jpg">
   <meta property="og:locale" content="de-de">
   
-  <meta property="article:published_time" content="2018-12-03T00:00:00&#43;00:00">
+  <meta property="article:published_time" content="2019-01-05T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2018-12-03T00:00:00&#43;00:00">
-  
-
+  <meta property="article:modified_time" content="2019-01-05T00:00:00&#43;00:00">
   
 
   
 
-  <title>Der Angriff der Riesenschlangen. | Normans Akademischer Blog</title>
+  
+
+  <title>Wie man es nicht machen sollte in Python! | Normans Akademischer Blog</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -350,7 +352,7 @@ Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathemati
   
   
 <div class="article-container pt-3">
-  <h1 itemprop="name">Der Angriff der Riesenschlangen.</h1>
+  <h1 itemprop="name">Wie man es nicht machen sollte in Python!</h1>
 
   
 
@@ -368,9 +370,9 @@ Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathemati
 
   <span class="article-date">
     
-    <meta content="2018-12-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-    <time datetime="2018-12-03 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-      Mon, 3. Dec. 2018
+    <meta content="2019-01-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2019-01-05 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Sat, 5. Jan. 2019
     </time>
   </span>
   <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
@@ -380,27 +382,16 @@ Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathemati
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 Min. Lektüre
+    1 Min. Lektüre
   </span>
   
 
   
   
   <span class="middot-divider"></span>
-  <a href="/nab/post/der-angriff-der-riesenschlangen/#disqus_thread"></a>
+  <a href="/nab/post/wie-man-es-nicht-machen-sollte-in-python/#disqus_thread"></a>
   
 
-  
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder"></i>
-    
-    <a href="/nab/categories/allgemeines/">Allgemeines</a>
-    
-  </span>
-  
   
 
   
@@ -409,35 +400,35 @@ Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathemati
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Der%20Angriff%20der%20Riesenschlangen.&amp;url=%2fnab%2fpost%2fder-angriff-der-riesenschlangen%2f"
+         href="https://twitter.com/intent/tweet?text=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21&amp;url=%2fnab%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=%2fnab%2fpost%2fder-angriff-der-riesenschlangen%2f"
+         href="https://www.facebook.com/sharer.php?u=%2fnab%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fnab%2fpost%2fder-angriff-der-riesenschlangen%2f&amp;title=Der%20Angriff%20der%20Riesenschlangen."
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fnab%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f&amp;title=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fnab%2fpost%2fder-angriff-der-riesenschlangen%2f&amp;title=Der%20Angriff%20der%20Riesenschlangen."
+         href="http://service.weibo.com/share/share.php?url=%2fnab%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f&amp;title=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Der%20Angriff%20der%20Riesenschlangen.&amp;body=%2fnab%2fpost%2fder-angriff-der-riesenschlangen%2f">
+         href="mailto:?subject=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21&amp;body=%2fnab%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -473,50 +464,11 @@ Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathemati
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
+      <p>Es sind oft die Dinge die man nicht sucht die einem weiterhelfen. So habe ich auch nach etwas ganz anderes gesucht und bin dabei über ein nettes kleines Werk gestoplert, dass einem sagt, wie man in Python Dinge besser nicht macht.</p>
 
+<p>Unter <a href="https://docs.quantifiedcode.com/python-anti-patterns/index.html" target="_blank">https://docs.quantifiedcode.com/python-anti-patterns/index.html</a> gibt es das <em>The Little Book of Python Anti-Patterns</em>.</p>
 
-<p>Klingt ja bedrohlich, aber es ist wirklich Möglich <a href="https://www.r-project.org">R</a> und <a href="https://www.python.org">Python</a> sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim Erstellen von Skripten mit <a href="https://rmarkdown.rstudio.com">R markdown</a>.</p>
-<p>Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “<em>Mathematischen Grundlagen der Wirtschaftsinformatik</em>” ein paar der Begriffe der Mengenlehre denen daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüberzustellen. So gibt es die Idee der <em>Menge</em> u.a. in <em>Python</em> als <em>set</em>.</p>
-<p>Wie aber kann man solche Python-Fragmente in ein R markdown Sktipr einbauen? - Kann man <em>R markdown</em> überhaupt mit <em>Python</em> zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython…</p>
-<div id="die-netzpython-als-bindeglied-zwischen-r-und-python" class="section level2">
-<h2>Die Netzpython als Bindeglied zwischen R und Python</h2>
-<p>Eine Netzpython (engl. <a href="https://en.wikipedia.org/wiki/Reticulated_python">reticulated python</a>) stand Pate für den Namen des <em>R</em> Paketes <a href="https://rstudio.github.io/reticulate/index.html"><code>reticulate</code></a>, welches <em>R</em> und <em>Python</em> miteinander verbindet. So ist es möglich <em>Python</em>-Befehle direkt in ein <em>R markdown</em> Skript ausführen zulassen, diese Fragmente adequat durchzustellen – ganz wie <em>R Skripte</em> – und sogar Daten zwoschen <em>R</em> und <em>Python</em> hin und her (aus) zu tauschen.</p>
-<p>Nach der Installation mittels</p>
-<pre class="r"><code>install.packages(&quot;reticulate&quot;)</code></pre>
-<p>bedarf es aber durch aus noch einiger Anpassungen, bis alles zur Zufriedenheit funktioniert.</p>
-<p>Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls <code>Sys.which(&quot;python&quot;)</code>, welcher bei mir leider zu einer vollkommen alten, aber noch benutzen, <em>Python</em> Version führte. Möchte man eine ganz bestimmte <em>Python</em> Version haben, so hilft einem der Befehl <code>use_python()</code>:</p>
-<pre class="r"><code>library(reticulate)
-use_python(&quot;/usr/local/bin/python&quot;)  # Pfad zum Python-Befehl der benutz werden soll.</code></pre>
-<p>Es werden auch <a href="https://realpython.com/python-virtual-environments-a-primer/">virtuelle Umgebungen</a> unterstützt:</p>
-<pre class="r"><code>library(reticulate)
-use_virtualenv(&quot;myenv&quot;)</code></pre>
-<p>Und auch eine ganz andere Schlangenart kann benutzt werden, <a href="https://www.anaconda.com/what-is-anaconda/">Anacondas</a>:</p>
-<pre class="r"><code>library(reticulate)
-use_condaenv(&quot;mycondaenv&quot;)</code></pre>
-</div>
-<div id="der-einbau-in-ein-r-markdown-dokument" class="section level2">
-<h2>Der Einbau in ein R markdown Dokument</h2>
-<p>Einen <em>Python</em> Quellcode in ein <em>R markdown</em> einzubauen ist dann wieder sehr einfach. Man ändert einfach ein <em>r</em> in <em>python</em> im Codeblock und schon steht einem der <em>knitr-Chunk</em> als <em>Python</em> Quelle zur Verfügung.</p>
-Sp liefert der <em>knitr-Chunk</em>
-<pre><code>```{python}
-# Etwas Python gefällig?
-def quadrat(x):
-    return x**2
-    
-print(quadrat(2))
-```
-</code></pre>
-<p>in einem <em>R markdown</em>, dann die Ausgabe:</p>
-<pre class="python"><code># Etwas Python geföllig?
-def quadrat(x):
-    return x**2
-    
-print(quadrat(2))</code></pre>
-<pre><code>## 4</code></pre>
-<p>Das war es aber noch lange nicht. <em>R</em> und <em>Python</em> können nämlich nicht nur nebeneinander, sondern auch miteinander!</p>
-<p>Dazu dann aber mehr in einem späteren Blog-Eintrag.</p>
-</div>
+<p>Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte.</p>
 
     </div>
 
@@ -526,12 +478,6 @@ print(quadrat(2))</code></pre>
 <div class="article-tags">
   
   <a class="badge badge-light" href="/nab/tags/python/">Python</a>
-  
-  <a class="badge badge-light" href="/nab/tags/r/">R</a>
-  
-  <a class="badge badge-light" href="/nab/tags/r-markdown/">R markdown</a>
-  
-  <a class="badge badge-light" href="/nab/tags/technisches/">Technisches</a>
   
 </div>
 
@@ -666,15 +612,15 @@ print(quadrat(2))</code></pre>
       <h3>Ähnliches</h3>
       <ul>
         
+        <li><a href="/nab/post/weitere-software-auf-den-raspberry-pi-installieren/">Weitere Software auf den Raspberry PI installieren.</a></li>
+        
+        <li><a href="/nab/post/der-angriff-der-riesenschlangen/">Der Angriff der Riesenschlangen.</a></li>
+        
         <li><a href="/nab/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/">Auch R markdown Dateien sollten sich an Regeln halten</a></li>
         
         <li><a href="/nab/project/style.py/">Pandoc filter: style.py</a></li>
         
-        <li><a href="/nab/project/rmdstylechecker/">RmdStyleChecker</a></li>
-        
         <li><a href="/nab/project/typography.py/">Pandoc filter: typography.py</a></li>
-        
-        <li><a href="/nab/project/fastsimnulldistr/">FastSimNullDistR</a></li>
         
       </ul>
     </div>
