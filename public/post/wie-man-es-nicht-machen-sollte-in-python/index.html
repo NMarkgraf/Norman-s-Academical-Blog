@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="de-de">
+<html lang="en-us">
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic 3.2.0">
-  <meta name="generator" content="Hugo 0.52" />
-  <meta name="author" content="Norman Markgraf">
+  <meta name="generator" content="Hugo 0.60.1" />
+  
 
   
   
@@ -20,7 +20,7 @@ Unter https://docs.quantifiedcode.com/python-anti-patterns/index.html gibt es da
 Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte.">
 
   
-  <link rel="alternate" hreflang="de-de" href="/nab/post/wie-man-es-nicht-machen-sollte-in-python/">
+  <link rel="alternate" hreflang="en-us" href="/post/wie-man-es-nicht-machen-sollte-in-python/">
 
   
 
@@ -40,7 +40,7 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
   
   
   
-  <meta name="theme-color" content="#EF525B">
+  <meta name="theme-color" content="#2962ff">
   
 
   
@@ -78,37 +78,23 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
   
 
-  <link rel="stylesheet" href="/nab/styles.css">
+  <link rel="stylesheet" href="/styles.css">
   
 
   
   
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-111285016-1', 'auto');
-      
-      ga('require', 'eventTracker');
-      ga('require', 'outboundLinkTracker');
-      ga('require', 'urlChangeTracker');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
-    
-  
   
 
   
-  <link rel="alternate" href="/nab/index.xml" type="application/rss+xml" title="Normans Akademischer Blog">
-  <link rel="feed" href="/nab/index.xml" type="application/rss+xml" title="Normans Akademischer Blog">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Academic">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Academic">
   
 
-  <link rel="manifest" href="/nab/site.webmanifest">
-  <link rel="icon" type="image/png" href="/nab/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/nab/img/icon-192.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/nab/post/wie-man-es-nicht-machen-sollte-in-python/">
+  <link rel="canonical" href="/post/wie-man-es-nicht-machen-sollte-in-python/">
 
   
   
@@ -119,13 +105,13 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
   
   <meta property="twitter:card" content="summary">
   
-  <meta property="og:site_name" content="Normans Akademischer Blog">
-  <meta property="og:url" content="/nab/post/wie-man-es-nicht-machen-sollte-in-python/">
-  <meta property="og:title" content="Wie man es nicht machen sollte in Python! | Normans Akademischer Blog">
+  <meta property="og:site_name" content="Academic">
+  <meta property="og:url" content="/post/wie-man-es-nicht-machen-sollte-in-python/">
+  <meta property="og:title" content="Wie man es nicht machen sollte in Python! | Academic">
   <meta property="og:description" content="Es sind oft die Dinge die man nicht sucht die einem weiterhelfen. So habe ich auch nach etwas ganz anderes gesucht und bin dabei über ein nettes kleines Werk gestoplert, dass einem sagt, wie man in Python Dinge besser nicht macht.
 Unter https://docs.quantifiedcode.com/python-anti-patterns/index.html gibt es das The Little Book of Python Anti-Patterns.
-Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte."><meta property="og:image" content="/nab/img/portrait.jpg">
-  <meta property="og:locale" content="de-de">
+Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2019-01-05T00:00:00&#43;00:00">
   
@@ -136,7 +122,7 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
 
   
 
-  <title>Wie man es nicht machen sollte in Python! | Normans Akademischer Blog</title>
+  <title>Wie man es nicht machen sollte in Python! | Academic</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -146,7 +132,7 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
 
       <div class="row no-gutters justify-content-between mb-3">
         <div class="col-6">
-          <h1></h1>
+          <h1>Search</h1>
         </div>
         <div class="col-6 col-search-close">
           <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
@@ -155,7 +141,7 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
 
       <div id="search-box">
         
-        <input name="q" id="search-query" placeholder="Suche..." autocapitalize="off"
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
         autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
         
       </div>
@@ -176,10 +162,10 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
   <div class="container">
 
     
-      <a class="navbar-brand" href="/nab/">Normans Akademischer Blog</a>
+      <a class="navbar-brand" href="/">Academic</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Zur Navigation">
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fas fa-bars"></i></span>
       </button>
       
@@ -201,7 +187,7 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/nab/#about">
+          <a class="nav-link" href="/#about">
             
             <span>Home</span>
             
@@ -220,28 +206,9 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/nab/#publications">
+          <a class="nav-link" href="/#posts">
             
-            <span>Veröffentlichungen</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/nab/#posts">
-            
-            <span>Blog</span>
+            <span>Posts</span>
             
           </a>
         </li>
@@ -258,28 +225,9 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/nab/#projects">
+          <a class="nav-link" href="/#projects">
             
-            <span>Projekte</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/nab/#teaching">
-            
-            <span>Lehre</span>
+            <span>Projects</span>
             
           </a>
         </li>
@@ -296,9 +244,28 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/nab/#contact">
+          <a class="nav-link" href="/#featured">
             
-            <span>Impressum</span>
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contact</span>
             
           </a>
         </li>
@@ -364,7 +331,7 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
   
   
   <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Norman Markgraf">
+    <meta itemprop="name" content="">
   </span>
   
 
@@ -372,24 +339,21 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
     
     <meta content="2019-01-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">
     <time datetime="2019-01-05 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-      Sat, 5. Jan. 2019
+      Jan 5, 2019
     </time>
   </span>
   <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Norman Markgraf">
+    <meta itemprop="name" content="">
   </span>
 
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 Min. Lektüre
+    1 min read
   </span>
   
 
   
-  
-  <span class="middot-divider"></span>
-  <a href="/nab/post/wie-man-es-nicht-machen-sollte-in-python/#disqus_thread"></a>
   
 
   
@@ -400,35 +364,35 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21&amp;url=%2fnab%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f"
+         href="https://twitter.com/intent/tweet?text=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21&amp;url=%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=%2fnab%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fnab%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f&amp;title=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f&amp;title=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fnab%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f&amp;title=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f&amp;title=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21&amp;body=%2fnab%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f">
+         href="mailto:?subject=Wie%20man%20es%20nicht%20machen%20sollte%20in%20Python%21&amp;body=%2fpost%2fwie-man-es-nicht-machen-sollte-in-python%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -465,9 +429,7 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
 
     <div class="article-style" itemprop="articleBody">
       <p>Es sind oft die Dinge die man nicht sucht die einem weiterhelfen. So habe ich auch nach etwas ganz anderes gesucht und bin dabei über ein nettes kleines Werk gestoplert, dass einem sagt, wie man in Python Dinge besser nicht macht.</p>
-
-<p>Unter <a href="https://docs.quantifiedcode.com/python-anti-patterns/index.html" target="_blank">https://docs.quantifiedcode.com/python-anti-patterns/index.html</a> gibt es das <em>The Little Book of Python Anti-Patterns</em>.</p>
-
+<p>Unter <a href="https://docs.quantifiedcode.com/python-anti-patterns/index.html"><a href="https://docs.quantifiedcode.com/python-anti-patterns/index.html">https://docs.quantifiedcode.com/python-anti-patterns/index.html</a></a> gibt es das <em>The Little Book of Python Anti-Patterns</em>.</p>
 <p>Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte.</p>
 
     </div>
@@ -477,7 +439,7 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/nab/tags/python/">Python</a>
+  <a class="badge badge-light" href="/tags/python/">Python</a>
   
 </div>
 
@@ -492,111 +454,11 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
 
 <div class="media author-card" itemscope itemtype="http://schema.org/Person">
   
-  <img class="portrait mr-3" src="/nab/img/portrait.jpg" itemprop="image" alt="Avatar">
-  
   <div class="media-body">
-    <h5 class="card-title" itemprop="name"><a href="/nab/">Norman Markgraf</a></h5>
-    <h6 class="card-subtitle">Diplom-Mathematiker</h6>
+    <h5 class="card-title" itemprop="name"><a href="/"></a></h5>
+    
     
     <ul class="network-icon" aria-hidden="true">
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-      <li>
-        <a itemprop="sameAs" href="mailto:nmarkgraf@hotmail.com" >
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//twitter.com/NormanMarkgraf" >
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//www.linkedin.com/in/normanmarkgraf/" >
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//www.xing.com/profile/Norman_Markgraf" >
-          <i class="fab fa-xing"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//scholar.google.de/citations?user=zR76YpQAAAAJ&amp;hl=de" >
-          <i class="ai ai-google-scholar"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//github.com/nmarkgraf" >
-          <i class="fab fa-github"></i>
-        </a>
-      </li>
       
     </ul>
   </div>
@@ -609,18 +471,18 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
     
     <div class="article-widget">
       <div class="hr-light"></div>
-      <h3>Ähnliches</h3>
+      <h3>Related</h3>
       <ul>
         
-        <li><a href="/nab/post/weitere-software-auf-den-raspberry-pi-installieren/">Weitere Software auf den Raspberry PI installieren.</a></li>
+        <li><a href="/post/weitere-software-auf-den-raspberry-pi-installieren/">Weitere Software auf den Raspberry PI installieren.</a></li>
         
-        <li><a href="/nab/post/der-angriff-der-riesenschlangen/">Der Angriff der Riesenschlangen.</a></li>
+        <li><a href="/post/der-angriff-der-riesenschlangen/">Der Angriff der Riesenschlangen.</a></li>
         
-        <li><a href="/nab/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/">Auch R markdown Dateien sollten sich an Regeln halten</a></li>
+        <li><a href="/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/">Auch R markdown Dateien sollten sich an Regeln halten</a></li>
         
-        <li><a href="/nab/project/typography.py/">Pandoc filter: typography.py</a></li>
+        <li><a href="/project/style.py/">Pandoc filter: style.py</a></li>
         
-        <li><a href="/nab/project/rmdstylechecker/">RmdStyleChecker</a></li>
+        <li><a href="/project/typography.py/">Pandoc filter: typography.py</a></li>
         
       </ul>
     </div>
@@ -629,29 +491,6 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
     
 
     
-<section id="comments">
-  <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "normans-akademischer-blog" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</section>
-
 
 
   </div>
@@ -661,12 +500,12 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
   <footer class="site-footer">
   
   <p class="powered-by">
-    <a href="/nab/privacy/">Datenschutzerklärung (Privacy Policy)</a>
+    <a href="/privacy/"></a>
   </p>
   
 
   <p class="powered-by">
-    &copy; 2016-19 Norman Markgraf &middot; 
+    
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -691,7 +530,7 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Zitieren</h5>
+        <h5 class="modal-title">Cite</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -701,7 +540,7 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
       </div>
       <div class="modal-footer">
         <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Kopie
+          <i class="fas fa-copy"></i> Copy
         </a>
         <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
           <i class="fas fa-download"></i> Download
@@ -715,9 +554,6 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
     
 
     
-    
-    
-    <script src="/nab/js/mathjax-config.js"></script>
     
 
     
@@ -735,32 +571,17 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
         
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
         
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/latex.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-        
       
 
       
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 
     
     
-      <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyAHIzNMfWrSJMBwSMofumWsGuBIaXmNmYE"></script>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
-      
-    
 
     
     
-    
-    <script id="dsq-count-scr" src="//normans-akademischer-blog.disqus.com/count.js" async></script>
     
 
     
@@ -771,17 +592,17 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
     
     
     <script>
-      const search_index_filename = "/nab/index.json";
+      const search_index_filename = "/index.json";
       const i18n = {
-        'placeholder': "Suche...",
-        'results': "Suchergebnisse",
-        'no_results': "Nichts gefunden"
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
       };
       const content_type = {
-        'post': "Blog",
-        'project': "Projekte",
-        'publication' : "Publikationen",
-        'talk' : "Vorträge"
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
         };
     </script>
     
@@ -821,7 +642,7 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
     
     
     
-    <script src="/nab/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+    <script src="/js/academic.min.5752a62e7c04993e8f13fbc193e7a138.js"></script>
 
     
 

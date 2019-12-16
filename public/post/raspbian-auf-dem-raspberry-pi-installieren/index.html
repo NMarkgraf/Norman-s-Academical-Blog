@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="de-de">
+<html lang="en-us">
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic 3.2.0">
-  <meta name="generator" content="Hugo 0.52" />
-  <meta name="author" content="Norman Markgraf">
+  <meta name="generator" content="Hugo 0.60.1" />
+  
 
   
   
@@ -19,7 +19,7 @@
 Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Das geht unter macOS sehr schön mit dem Festplattenmanager!">
 
   
-  <link rel="alternate" hreflang="de-de" href="/nab/post/raspbian-auf-dem-raspberry-pi-installieren/">
+  <link rel="alternate" hreflang="en-us" href="/post/raspbian-auf-dem-raspberry-pi-installieren/">
 
   
 
@@ -39,7 +39,7 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
   
   
   
-  <meta name="theme-color" content="#EF525B">
+  <meta name="theme-color" content="#2962ff">
   
 
   
@@ -77,37 +77,23 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
   
 
-  <link rel="stylesheet" href="/nab/styles.css">
+  <link rel="stylesheet" href="/styles.css">
   
 
   
   
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-111285016-1', 'auto');
-      
-      ga('require', 'eventTracker');
-      ga('require', 'outboundLinkTracker');
-      ga('require', 'urlChangeTracker');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
-    
-  
   
 
   
-  <link rel="alternate" href="/nab/index.xml" type="application/rss+xml" title="Normans Akademischer Blog">
-  <link rel="feed" href="/nab/index.xml" type="application/rss+xml" title="Normans Akademischer Blog">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Academic">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Academic">
   
 
-  <link rel="manifest" href="/nab/site.webmanifest">
-  <link rel="icon" type="image/png" href="/nab/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/nab/img/icon-192.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/nab/post/raspbian-auf-dem-raspberry-pi-installieren/">
+  <link rel="canonical" href="/post/raspbian-auf-dem-raspberry-pi-installieren/">
 
   
   
@@ -118,12 +104,12 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
   
   <meta property="twitter:card" content="summary">
   
-  <meta property="og:site_name" content="Normans Akademischer Blog">
-  <meta property="og:url" content="/nab/post/raspbian-auf-dem-raspberry-pi-installieren/">
-  <meta property="og:title" content="Raspbian auf dem Raspberry Pi installieren | Normans Akademischer Blog">
+  <meta property="og:site_name" content="Academic">
+  <meta property="og:url" content="/post/raspbian-auf-dem-raspberry-pi-installieren/">
+  <meta property="og:title" content="Raspbian auf dem Raspberry Pi installieren | Academic">
   <meta property="og:description" content="Wenn man zu Weihnachten einen kleinen neuen Freund bekommt, so wie ich einen Raspberry Pi Zero WH, dann möchte man ihn auch mit der aktuellen Version eines Betriebssystems austatten. Als macOS Nutzer gibt es dafür viele Möglichkeiten. Hier meine Schritte bei der Installation, damit ich mich daran später erinnere
-Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Das geht unter macOS sehr schön mit dem Festplattenmanager!"><meta property="og:image" content="/nab/img/portrait.jpg">
-  <meta property="og:locale" content="de-de">
+Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Das geht unter macOS sehr schön mit dem Festplattenmanager!"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2019-01-02T00:00:00&#43;00:00">
   
@@ -134,7 +120,7 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
 
   
 
-  <title>Raspbian auf dem Raspberry Pi installieren | Normans Akademischer Blog</title>
+  <title>Raspbian auf dem Raspberry Pi installieren | Academic</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -144,7 +130,7 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
 
       <div class="row no-gutters justify-content-between mb-3">
         <div class="col-6">
-          <h1></h1>
+          <h1>Search</h1>
         </div>
         <div class="col-6 col-search-close">
           <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
@@ -153,7 +139,7 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
 
       <div id="search-box">
         
-        <input name="q" id="search-query" placeholder="Suche..." autocapitalize="off"
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
         autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
         
       </div>
@@ -174,10 +160,10 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
   <div class="container">
 
     
-      <a class="navbar-brand" href="/nab/">Normans Akademischer Blog</a>
+      <a class="navbar-brand" href="/">Academic</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Zur Navigation">
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fas fa-bars"></i></span>
       </button>
       
@@ -199,7 +185,7 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/nab/#about">
+          <a class="nav-link" href="/#about">
             
             <span>Home</span>
             
@@ -218,28 +204,9 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/nab/#publications">
+          <a class="nav-link" href="/#posts">
             
-            <span>Veröffentlichungen</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/nab/#posts">
-            
-            <span>Blog</span>
+            <span>Posts</span>
             
           </a>
         </li>
@@ -256,28 +223,9 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/nab/#projects">
+          <a class="nav-link" href="/#projects">
             
-            <span>Projekte</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link" href="/nab/#teaching">
-            
-            <span>Lehre</span>
+            <span>Projects</span>
             
           </a>
         </li>
@@ -294,9 +242,28 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
         
 
         <li class="nav-item">
-          <a class="nav-link" href="/nab/#contact">
+          <a class="nav-link" href="/#featured">
             
-            <span>Impressum</span>
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#contact">
+            
+            <span>Contact</span>
             
           </a>
         </li>
@@ -362,7 +329,7 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
   
   
   <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Norman Markgraf">
+    <meta itemprop="name" content="">
   </span>
   
 
@@ -370,24 +337,21 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
     
     <meta content="2019-01-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">
     <time datetime="2019-01-02 00:00:00 &#43;0000 UTC" itemprop="dateModified">
-      Wed, 2. Jan. 2019
+      Jan 2, 2019
     </time>
   </span>
   <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Norman Markgraf">
+    <meta itemprop="name" content="">
   </span>
 
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 Min. Lektüre
+    2 min read
   </span>
   
 
   
-  
-  <span class="middot-divider"></span>
-  <a href="/nab/post/raspbian-auf-dem-raspberry-pi-installieren/#disqus_thread"></a>
   
 
   
@@ -397,7 +361,7 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
   <span class="article-categories">
     <i class="fas fa-folder"></i>
     
-    <a href="/nab/categories/fundst%C3%BCcke/">Fundstücke</a>
+    <a href="">Fundstücke</a>
     
   </span>
   
@@ -409,35 +373,35 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Raspbian%20auf%20dem%20Raspberry%20Pi%20installieren&amp;url=%2fnab%2fpost%2fraspbian-auf-dem-raspberry-pi-installieren%2f"
+         href="https://twitter.com/intent/tweet?text=Raspbian%20auf%20dem%20Raspberry%20Pi%20installieren&amp;url=%2fpost%2fraspbian-auf-dem-raspberry-pi-installieren%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=%2fnab%2fpost%2fraspbian-auf-dem-raspberry-pi-installieren%2f"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fraspbian-auf-dem-raspberry-pi-installieren%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fnab%2fpost%2fraspbian-auf-dem-raspberry-pi-installieren%2f&amp;title=Raspbian%20auf%20dem%20Raspberry%20Pi%20installieren"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fraspbian-auf-dem-raspberry-pi-installieren%2f&amp;title=Raspbian%20auf%20dem%20Raspberry%20Pi%20installieren"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fnab%2fpost%2fraspbian-auf-dem-raspberry-pi-installieren%2f&amp;title=Raspbian%20auf%20dem%20Raspberry%20Pi%20installieren"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fraspbian-auf-dem-raspberry-pi-installieren%2f&amp;title=Raspbian%20auf%20dem%20Raspberry%20Pi%20installieren"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Raspbian%20auf%20dem%20Raspberry%20Pi%20installieren&amp;body=%2fnab%2fpost%2fraspbian-auf-dem-raspberry-pi-installieren%2f">
+         href="mailto:?subject=Raspbian%20auf%20dem%20Raspberry%20Pi%20installieren&amp;body=%2fpost%2fraspbian-auf-dem-raspberry-pi-installieren%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -473,50 +437,29 @@ Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Da
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<p>Wenn man zu Weihnachten einen kleinen neuen Freund bekommt, so wie ich einen Raspberry Pi Zero WH, dann möchte man ihn auch mit der aktuellen Version eines Betriebssystems austatten. Als macOS Nutzer gibt es dafür viele Möglichkeiten. Hier meine Schritte bei der Installation, damit ich mich daran später erinnere</p>
-
+      <p>Wenn man zu Weihnachten einen kleinen neuen Freund bekommt, so wie ich einen Raspberry Pi Zero WH, dann möchte man ihn auch mit der aktuellen Version eines Betriebssystems austatten. Als macOS Nutzer gibt es dafür viele Möglichkeiten. Hier meine Schritte bei der Installation, damit ich mich daran später erinnere</p>
 <h2 id="vorbereiten-der-sd-karte">Vorbereiten der SD Karte</h2>
-
 <p>Die SD(HC) Karte sollte auf FAT32 formatiert werden. Das geht unter macOS sehr schön mit dem Festplattenmanager!</p>
-
 <h2 id="laden-der-aktuellen-version-von-rasbian">Laden der aktuellen Version von Rasbian</h2>
-
-<p>Die aktuellen Versionen findet man unter <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank">https://www.raspberrypi.org/downloads/raspbian/</a>. Es ginge auch alternativ NOOBS, aber da ich &ldquo;headless&rdquo; installieren möchte, wähle ich Raspbian direkt aus.</p>
-
+<p>Die aktuellen Versionen findet man unter <a href="https://www.raspberrypi.org/downloads/raspbian/">https://www.raspberrypi.org/downloads/raspbian/</a>. Es ginge auch alternativ NOOBS, aber da ich &ldquo;headless&rdquo; installieren möchte, wähle ich Raspbian direkt aus.</p>
 <p>Die ZIP-Datei wird entpackt (Archiveprogramm) und wir befinden uns mit der Konsole in dem Verzeichnis in dem das aktuelle Image liegt.</p>
-
 <p>Zur Zeit dieses Eintrages war das die Datei &ldquo;2018-11-13-raspbian-stretch-full.img&rdquo;</p>
-
 <h3 id="speichern-des-images-auf-die-sd-karte">Speichern des Images auf die SD Karte</h3>
-
 <p>Mit Hilfe von</p>
-
 <pre><code>diskutil list
 </code></pre>
-
 <p>ermittelt man die SD Karte (hier &ldquo;/dev/disk5&rdquo;) und mit Hilfe von</p>
-
 <pre><code>diskutil unmountdisk /dev/disk5
 </code></pre>
-
 <p>wird die SD Karte komplett &ldquo;unmounted&rdquo;.</p>
-
 <p>Nun kann man mit</p>
-
 <pre><code>sudo dd bs=1m if=2018-11-13-raspbian-stretch-full.img of=/dev/disk5 conv=sync
 </code></pre>
-
 <p>das Image auf die SD Karte gespeichert. Das kann etwas dauern! (Bis zu 30 Minuten!)
 Mit &ldquo;ctrl-t&rdquo; kann  man sich regelmässig über der aktuellen Stand informieren! ;-)</p>
-
 <h3 id="netzwerk-einrichten">Netzwerk einrichten</h3>
-
 <p>Nach dem man das Image auf die SD Karte gespeichert hat wirft man die SD Karte aus und steckt sie danach wieder ein. Damit hat man die SD Karte wieder &ldquo;gemounted&rdquo; und wir finden unter &ldquo;/Volues/boot&rdquo; und Boot-Verzeichnis der SD-Karte.</p>
-
 <p>In diesem Verzeichnis erzeigen wir (z.B. mit <em>vi</em>) eine Datei mit dem Namen &ldquo;wpa_supplicant.conf&rdquo; mit dem Inhalt:</p>
-
 <pre><code>country=DE
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -528,20 +471,13 @@ network={
     scan_ssid=1
 }
 </code></pre>
-
 <p>Diese Datei wird beim Booten von Rasbpian in das Verzeichnis &ldquo;/etc/wpa_supplicant/&rdquo; verschoben.</p>
-
 <h3 id="ssh-aktivieren">SSH aktivieren!</h3>
-
 <p>SSH ist in der Regel deaktiviert. Wir können es aber schnell einschalten. Dafür gehen wir wieder in das Verzeichnis &ldquo;/Volumes/boot&rdquo; und führen dort den Befehl</p>
-
 <pre><code>touch ssh
 </code></pre>
-
 <p>aus. Damit wird eine (leere) Datei &ldquo;ssh&rdquo; erzeugt. Findet Raspbain diese Datei, so aktiviert es beim Booten automatisch den SSH-Dämon.</p>
-
 <h3 id="starten-von-der-neuen-sd-karte">Starten von der neuen SD Karte</h3>
-
 <p>Jetzt kann die Karte ausgeworfen werden und in den Raspberry eingelegt werden. Danach kann von der SD Karte gestartet werden.</p>
 
     </div>
@@ -551,9 +487,9 @@ network={
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/nab/tags/raspberry-pi/">Raspberry Pi</a>
+  <a class="badge badge-light" href="">Raspberry Pi</a>
   
-  <a class="badge badge-light" href="/nab/tags/raspbian/">Raspbian</a>
+  <a class="badge badge-light" href="/tags/raspbian/">Raspbian</a>
   
 </div>
 
@@ -568,111 +504,11 @@ network={
 
 <div class="media author-card" itemscope itemtype="http://schema.org/Person">
   
-  <img class="portrait mr-3" src="/nab/img/portrait.jpg" itemprop="image" alt="Avatar">
-  
   <div class="media-body">
-    <h5 class="card-title" itemprop="name"><a href="/nab/">Norman Markgraf</a></h5>
-    <h6 class="card-subtitle">Diplom-Mathematiker</h6>
+    <h5 class="card-title" itemprop="name"><a href="/"></a></h5>
+    
     
     <ul class="network-icon" aria-hidden="true">
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-      <li>
-        <a itemprop="sameAs" href="mailto:nmarkgraf@hotmail.com" >
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//twitter.com/NormanMarkgraf" >
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//www.linkedin.com/in/normanmarkgraf/" >
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//www.xing.com/profile/Norman_Markgraf" >
-          <i class="fab fa-xing"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//scholar.google.de/citations?user=zR76YpQAAAAJ&amp;hl=de" >
-          <i class="ai ai-google-scholar"></i>
-        </a>
-      </li>
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-        
-      
-      <li>
-        <a itemprop="sameAs" href="//github.com/nmarkgraf" >
-          <i class="fab fa-github"></i>
-        </a>
-      </li>
       
     </ul>
   </div>
@@ -685,10 +521,10 @@ network={
     
     <div class="article-widget">
       <div class="hr-light"></div>
-      <h3>Ähnliches</h3>
+      <h3>Related</h3>
       <ul>
         
-        <li><a href="/nab/post/weitere-software-auf-den-raspberry-pi-installieren/">Weitere Software auf den Raspberry PI installieren.</a></li>
+        <li><a href="/post/weitere-software-auf-den-raspberry-pi-installieren/">Weitere Software auf den Raspberry PI installieren.</a></li>
         
       </ul>
     </div>
@@ -697,29 +533,6 @@ network={
     
 
     
-<section id="comments">
-  <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "normans-akademischer-blog" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</section>
-
 
 
   </div>
@@ -729,12 +542,12 @@ network={
   <footer class="site-footer">
   
   <p class="powered-by">
-    <a href="/nab/privacy/">Datenschutzerklärung (Privacy Policy)</a>
+    <a href="/privacy/"></a>
   </p>
   
 
   <p class="powered-by">
-    &copy; 2016-19 Norman Markgraf &middot; 
+    
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -759,7 +572,7 @@ network={
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Zitieren</h5>
+        <h5 class="modal-title">Cite</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -769,7 +582,7 @@ network={
       </div>
       <div class="modal-footer">
         <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Kopie
+          <i class="fas fa-copy"></i> Copy
         </a>
         <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
           <i class="fas fa-download"></i> Download
@@ -783,9 +596,6 @@ network={
     
 
     
-    
-    
-    <script src="/nab/js/mathjax-config.js"></script>
     
 
     
@@ -803,32 +613,17 @@ network={
         
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
         
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/latex.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
-        
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-        
       
 
       
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 
     
     
-      <script async defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyAHIzNMfWrSJMBwSMofumWsGuBIaXmNmYE"></script>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
-      
-    
 
     
     
-    
-    <script id="dsq-count-scr" src="//normans-akademischer-blog.disqus.com/count.js" async></script>
     
 
     
@@ -839,17 +634,17 @@ network={
     
     
     <script>
-      const search_index_filename = "/nab/index.json";
+      const search_index_filename = "/index.json";
       const i18n = {
-        'placeholder': "Suche...",
-        'results': "Suchergebnisse",
-        'no_results': "Nichts gefunden"
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
       };
       const content_type = {
-        'post': "Blog",
-        'project': "Projekte",
-        'publication' : "Publikationen",
-        'talk' : "Vorträge"
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
         };
     </script>
     
@@ -889,7 +684,7 @@ network={
     
     
     
-    <script src="/nab/js/academic.min.d037ee5294b166a79dec317c58aea9cc.js"></script>
+    <script src="/js/academic.min.5752a62e7c04993e8f13fbc193e7a138.js"></script>
 
     
 

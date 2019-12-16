@@ -1,30 +1,16 @@
 +++
 # Experience widget.
-<<<<<<< HEAD
-widget = "experience"  # Do not modify this line!
-active = false  # Activate this widget? true/false
-=======
 widget = "experience"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 40  # Order that this section will appear.
->>>>>>> 04cba7511628a7de9ef8389da24d87070256c981
 
 title = "Experience"
 subtitle = ""
 
-<<<<<<< HEAD
-# Order that this section will appear in.
-weight = 8
-
-# Date format for experience
-#   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
-date_format = "January 2006"
-=======
 # Date format for experience
 #   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
 date_format = "Jan 2006"
->>>>>>> 04cba7511628a7de9ef8389da24d87070256c981
 
 # Experiences.
 #   Add/remove as many `[[experience]]` blocks below as you like.

@@ -1,10 +1,4 @@
 +++
-<<<<<<< HEAD
-# Recent and Upcoming Talks widget.
-widget = "talks"
-active = false
-date = 2016-04-20T00:00:00
-=======
 # A Recent and Upcoming Talks section created with the Pages widget.
 # This section displays recent talks from `content/talk/`.
 
@@ -12,7 +6,6 @@ widget = "pages"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 70  # Order that this section will appear.
->>>>>>> 04cba7511628a7de9ef8389da24d87070256c981
 
 title = "Recent & Upcoming Talks"
 subtitle = ""
@@ -30,17 +23,6 @@ subtitle = ""
   # Page order. Descending (desc) or ascending (asc) date.
   order = "desc"
 
-<<<<<<< HEAD
-# List format.
-#   0 = Simple
-#   1 = Detailed
-#   2 = Stream
-list_format = 2
-
-# Exclude talks that are shown in the Selected Talks widget?
-exclude_selected = false
-+++
-=======
   # Filter posts by a taxonomy term.
   [content.filters]
     tag = ""
@@ -74,7 +56,6 @@ exclude_selected = false
   # Background image.
   # image = "background.jpg"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
->>>>>>> 04cba7511628a7de9ef8389da24d87070256c981
 
   # Text color (true=light or false=dark).
   # text_color_light = true  

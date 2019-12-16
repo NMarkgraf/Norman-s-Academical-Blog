@@ -20,16 +20,8 @@ subtitle = ""
   # Choose how many pages you would like to offset by
   offset = 0
 
-<<<<<<< HEAD
-# Filter posts by tag.
-#  By default, show all recent posts.
-#  Filtering example: `tags_include = ["hugo", "academic"]`
-tags_include = []
-tags_exclude = ["Test", "Privat"]
-=======
   # Page order. Descending (desc) or ascending (asc) date.
   order = "desc"
->>>>>>> 04cba7511628a7de9ef8389da24d87070256c981
 
   # Filter posts by a taxonomy term.
   [content.filters]
