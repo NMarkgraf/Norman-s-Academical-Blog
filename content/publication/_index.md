@@ -1,25 +1,15 @@
-+++
-title = "Veröffentlichungen"
-date = 2017-01-01T00:00:00
+---
+title: Publications
 
-# List format.
-#   0 = Simple
-#   1 = Detailed
-#   2 = APA
-#   3 = MLA
-#   4 = Stream
-list_format = 3
+# View.
+#   1 = List
+#   2 = Compact
+#   3 = Card
+#   4 = Citation
+view: 4
 
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder. 
-[image]
-  # Caption (optional)
-  caption = "Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)"
-
-  # Focal point (optional)
-  # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
-  focal_point = ""
-
-# Optional featured image (relative to `static/img/` folder).
-[header]
-+++
+# Optional header image (relative to `static/img/` folder).
+header:
+  caption: ""
+  image: ""
+---

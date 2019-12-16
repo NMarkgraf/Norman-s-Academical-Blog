@@ -36,3 +36,17 @@ weight = 5
 # Biographie
 
 Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer. Als Lehrbeauftragter hat er an der Hochschule Bochum, Hochschule Rhein-Waal (am Campus Kleve) und der FOM Hochschule für Oekonomie und Management an den Standorten Aachen, Bonn, Dortmund, Duisburg, Düsseldorf, Gütersloh (Bertelsmann), Köln, Münster, Neuss und Wuppertal verschiedene Lehrveranstaltungen abgehalten.
+=======
+# About widget.
+widget = "about"  # See https://sourcethemes.com/academic/docs/page-builder/
+headless = true  # This file represents a page section.
+active = true  # Activate this widget? true/false
+weight = 20  # Order that this section will appear in.
+
+title = "Biography"
+
+# Choose the user profile to display
+# This should be the username of a profile in your `content/authors/` folder.
+# See https://sourcethemes.com/academic/docs/get-started/#introduce-yourself
+author = "admin"
++++
