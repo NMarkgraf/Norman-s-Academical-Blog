@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publication_types on Norman&#39;s Academic Blog</title>
+    <title>Publication_types | Norman&#39;s Academic Blog</title>
     <link>/publication_types/</link>
-    <description>Recent content in Publication_types on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Fri, 25 Sep 2009 00:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="/publication_types/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/publication_types/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publication_types</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 25 Sep 2009 00:00:00 +0200</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Publication_types</title>
+      <link>/publication_types/</link>
+    </image>
     
     <item>
       <title>4</title>
       <link>/publication_types/4/</link>
       <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
-      
       <guid>/publication_types/4/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>2</title>
       <link>/publication_types/2/</link>
       <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      
       <guid>/publication_types/2/</guid>
       <description></description>
     </item>

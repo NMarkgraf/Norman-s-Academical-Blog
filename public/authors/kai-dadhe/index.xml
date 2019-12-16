@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kai Dadhe on Norman&#39;s Academic Blog</title>
+    <title>Kai Dadhe | Norman&#39;s Academic Blog</title>
     <link>/authors/kai-dadhe/</link>
-    <description>Recent content in Kai Dadhe on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Sat, 25 Sep 2004 00:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="/authors/kai-dadhe/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/authors/kai-dadhe/index.xml" rel="self" type="application/rss+xml" />
+    <description>Kai Dadhe</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Sat, 25 Sep 2004 00:00:00 +0200</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Kai Dadhe</title>
+      <link>/authors/kai-dadhe/</link>
+    </image>
     
     <item>
       <title>LEARN2CONTROL – Projektorientiertes Lernen für ein besseres Gesamtverständnis in der regelungstechnischen Ausbildung</title>
       <link>/publication/learn2control/</link>
       <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      
       <guid>/publication/learn2control/</guid>
       <description></description>
     </item>

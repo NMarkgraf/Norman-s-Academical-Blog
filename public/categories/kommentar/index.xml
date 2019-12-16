@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kommentar on Norman&#39;s Academic Blog</title>
+    <title>Kommentar | Norman&#39;s Academic Blog</title>
     <link>/categories/kommentar/</link>
-    <description>Recent content in Kommentar on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Sun, 17 Dec 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/kommentar/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/categories/kommentar/index.xml" rel="self" type="application/rss+xml" />
+    <description>Kommentar</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Sun, 17 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Kommentar</title>
+      <link>/categories/kommentar/</link>
+    </image>
     
     <item>
       <title>First Entry</title>
       <link>/post/first-entry/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
-      
       <guid>/post/first-entry/</guid>
-      <description>Ein erster Kommentar!</description>
+      <description>&lt;p&gt;Ein erster Kommentar!&lt;/p&gt;
+</description>
     </item>
     
   </channel>

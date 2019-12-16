@@ -1,24 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SBI on Norman&#39;s Academic Blog</title>
+    <title>SBI | Norman&#39;s Academic Blog</title>
     <link>/tags/sbi/</link>
-    <description>Recent content in SBI on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/sbi/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/sbi/index.xml" rel="self" type="application/rss+xml" />
+    <description>SBI</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>SBI</title>
+      <link>/tags/sbi/</link>
+    </image>
     
     <item>
       <title>FastSimNullDistR</title>
       <link>/project/fastsimnulldistr/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/project/fastsimnulldistr/</guid>
-      <description>Wenn das &lt;code&gt;do(oft)*&lt;/code&gt; in Mosaic einfach zu langsam ist, dann hilft vielleicht diese (quasi)-drop-in-replacements um mal schnell die Nullverteilungen zu simulieren.</description>
+      <description></description>
     </item>
     
   </channel>

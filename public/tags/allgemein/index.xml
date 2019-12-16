@@ -1,45 +1,135 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Allgemein on Norman&#39;s Academic Blog</title>
+    <title>Allgemein | Norman&#39;s Academic Blog</title>
     <link>/tags/allgemein/</link>
-    <description>Recent content in Allgemein on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/allgemein/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/allgemein/index.xml" rel="self" type="application/rss+xml" />
+    <description>Allgemein</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Allgemein</title>
+      <link>/tags/allgemein/</link>
+    </image>
     
     <item>
       <title>SBI - Simulation Based Inference</title>
       <link>/post/sbi-simulation-based-inference/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      
       <guid>/post/sbi-simulation-based-inference/</guid>
-      <description>Wenn meine Tochter SBI hört, denkt sie an Sally Bollywood Investigation. – Und ich oft auch. – Mit SBI ist hier aber nicht der Trickfilm für Kinder, sondern Simulation Based Inference, gemeint.
-Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der FOM den Unterricht für Statistik auf eine neue Grundlage zu stellen.</description>
+      <description>
+
+
+&lt;p&gt;Wenn meine Tochter &lt;em&gt;SBI&lt;/em&gt; hört, denkt sie an &lt;em&gt;Sally Bollywood Investigation&lt;/em&gt;. – Und ich oft auch. – Mit &lt;em&gt;SBI&lt;/em&gt; ist hier aber nicht der Trickfilm für Kinder, sondern &lt;em&gt;&lt;strong&gt;S&lt;/strong&gt;imulation &lt;strong&gt;B&lt;/strong&gt;ased &lt;strong&gt;I&lt;/strong&gt;nference&lt;/em&gt;, gemeint.&lt;/p&gt;
+&lt;p&gt;Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der &lt;a href=&#34;http://www.fom.de&#34;&gt;FOM&lt;/a&gt; den Unterricht für Statistik auf eine neue Grundlage zu stellen. Und ich habe dabei mitgewirkt.&lt;/p&gt;
+&lt;p&gt;Unser Mastermind, Karsten Lübke, hat dazu einen sehr schönen und lesenswerten Blog-Eintrag geschrieben: &lt;a href=&#34;https://www.causeweb.org/sbi/?p=1559&#34; class=&#34;uri&#34;&gt;https://www.causeweb.org/sbi/?p=1559&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Auch R markdown Dateien sollten sich an Regeln halten</title>
       <link>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      
       <guid>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
-      <description>Jede Programmiersprache hat Regeln. Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt. Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten. Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
-Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Standard wie ein Python Programm geschrieben seien sollte.</description>
+      <description>
+
+
+&lt;p&gt;Jede Programmiersprache hat Regeln.
+Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt.
+Diese sogenannte &lt;em&gt;Stilregeln&lt;/em&gt; (engl. &lt;em&gt;style guides&lt;/em&gt;) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten.
+Das Ziel der &lt;em&gt;Stilregeln&lt;/em&gt; ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.&lt;/p&gt;
+&lt;p&gt;Eine Programmiersprache wie &lt;em&gt;Python&lt;/em&gt; zum Beispiel hat mit &lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34;&gt;PEP8&lt;/a&gt; einen eigenen Standard wie ein &lt;em&gt;Python&lt;/em&gt; Programm geschrieben seien sollte.
+Dazu gibt es auch gleich das passenden Prüfprogramm (früher &lt;code&gt;pep8&lt;/code&gt;, neuerdings &lt;a href=&#34;https://github.com/PyCQA/pycodestyle&#34;&gt;&lt;code&gt;pycodestyle&lt;/code&gt;&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Schreibt man ein &lt;em&gt;R markdown&lt;/em&gt; Text mag man vielleicht nicht daran denken, dass so eine Idee auch hier sehr sinnvoll ist.
+Neben den gängigen Style-Guides für den &lt;em&gt;R&lt;/em&gt; Quellcode (z. B.: &lt;a href=&#34;https://google.github.io/styleguide/Rguide.xml&#34;&gt;Google’s R Style Guide&lt;/a&gt;, &lt;a href=&#34;http://adv-r.had.co.nz/Style.html&#34;&gt;Hadley Wickham’s Advanced R - Style guide&lt;/a&gt;, &lt;a href=&#34;http://jef.works/R-style-guide/&#34;&gt;jef.works R Style Guide&lt;/a&gt;, &lt;a href=&#34;https://csgillespie.wordpress.com/2010/11/23/r-style-guide/&#34;&gt;R Style Guide&lt;/a&gt; oder &lt;a href=&#34;https://github.com/rdatsci/PackagesInfo/wiki/R-Style-Guide&#34;&gt;R-Style-Guide&lt;/a&gt;) gibt es aber kaum Regeln (z. B.: &lt;a href=&#34;https://holtzy.github.io/Pimp-my-rmd/&#34;&gt;Pimp my Rmd&lt;/a&gt;) für die Gestaltung von &lt;em&gt;R markdown&lt;/em&gt;.&lt;/p&gt;
+&lt;div id=&#34;stil-regeln-fur-gutes-r-markdown-ein-erster-vorschlag&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stil-Regeln für gutes &lt;em&gt;R markdown&lt;/em&gt;, ein erster Vorschlag&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Keine unnützen Zeichen am Ende von Textzeilen. / &lt;em&gt;No whitespaces at the end of a line&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Eine Textzeile sollte mit einem ‘echtem’ Zeichen enden und nicht mit einem ‘unsichtbarem’ Zeichen.
+Das heisst: Leerzeichen, Tabs, harte Leerzeichen etc. gehören nicht ans Ende einer Zeile.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Zwei Leerzeilen vor einer jeden Kopfzeile. / &lt;em&gt;Two blank lines before every header&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Um die Inhalte auch klar voneinander trennen zu können sollte man vor der Kopfzeile zwei Leerzeilen eingefügt werden.
+Statt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Das ist eine Kopfzeile auf der 1. Ebene
+## Das is eine Kopfzeile auf der 2. Ebene
+Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+
+# Das ist eine Kopfzeile auf der 1. Ebene
+
+
+## Das is eine Kopfzeile auf der 2. Ebene
+
+Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Vor und nach Aufzählungen sollte immer eine Leerzeile stehen. / &lt;em&gt;One blank line before and after itemizations or enumerations&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Statt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Das ist eine Liste:
+- Ein Punkt
+- Ein anderer Punkt
+Und hier geht der Text weiter.
+1. Der erste Punkt.
+2. Der zweite Punkt.
+Und wieder mal ein Text.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Das ist eine Liste:
+
+- Ein Punkt
+- Ein anderer Punkt
+
+Und hier geht der Text weiter.
+
+1. Der erste Punkt.
+2. Der zweite Punkt.
+
+Und wieder mal ein Text.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Vor und nach Codeblöcken sollte immer eine Leerzeile stehen. / &lt;em&gt;One blank line before and after a codeblock&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Statt&lt;/p&gt;
+&lt;pre&gt;
+Etwas Text vorher
+```{r}&lt;code&gt;1+1
+```&lt;/code&gt;und danach.
+&lt;/pre&gt;
+&lt;p&gt;sollte man es besser wie folgt gliedern:&lt;/p&gt;
+&lt;pre&gt;
+Etwas Text vorher
+
+```{r}&lt;code&gt;1+1
+```&lt;/code&gt; und danach.
+&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Keine anderen Sprachen als &lt;em&gt;R markdown&lt;/em&gt; für Inhalte oder Design nutzen. / &lt;em&gt;Use no other languages to create content or design, other than (R) markdown.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Keine anderen Sprachen, insbesondere LaTeX, um besondere Effekte zu erzielen. Dafür sollten (native) DIV oder SPAN Abschnitte benutzt werden und entsprechend durch spätere (Filter-)Programme umgesetzt werden. So ist es immer möglich Design-Ideen für alle möglichen Zielsprachen zu erhalten.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;rmdstylechecker-ein-erster-style-checker-fur-r-markdown&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;RmdStyleChecker, ein erster Style Checker für &lt;em&gt;R markdown&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Die ersten drei Punkte der Liste habe ich zu Testzwecken in einem kleinen Projekt mit Hilfe von &lt;em&gt;Python&lt;/em&gt; implementiert.
+Den &lt;em&gt;Python&lt;/em&gt;-Quelltext findet man unter &lt;a href=&#34;https://github.com/NMarkgraf/RmdStyleChecker&#34;&gt;RmdStyleChecker&lt;/a&gt;. Er läuft unter &lt;em&gt;Python&lt;/em&gt; 3.5+.&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>10 Dinge die kein Talent benötigen!</title>
       <link>/post/10-dinge-die-kein-talent-benotigen/</link>
       <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
-      
       <guid>/post/10-dinge-die-kein-talent-benotigen/</guid>
-      <description>Gerade im Internet gefunden:
-10 Dinge die kein Talent benötigen!  Pünktlichkeit Arbeitsmoral Anstrengung Körpersprache Energie Haltung Leidenschaft Lernwillig sein Etwas mehr als das Minimum tun Vorbereitet sein  </description>
+      <description>&lt;p&gt;Gerade im Internet gefunden:&lt;/p&gt;
+&lt;h3 id=&#34;10-dinge-die-kein-talent-bentigen&#34;&gt;10 Dinge die kein Talent benötigen!&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Pünktlichkeit&lt;/li&gt;
+&lt;li&gt;Arbeitsmoral&lt;/li&gt;
+&lt;li&gt;Anstrengung&lt;/li&gt;
+&lt;li&gt;Körpersprache&lt;/li&gt;
+&lt;li&gt;Energie&lt;/li&gt;
+&lt;li&gt;Haltung&lt;/li&gt;
+&lt;li&gt;Leidenschaft&lt;/li&gt;
+&lt;li&gt;Lernwillig sein&lt;/li&gt;
+&lt;li&gt;Etwas mehr als das Minimum tun&lt;/li&gt;
+&lt;li&gt;Vorbereitet sein&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
     
   </channel>

@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2 on Norman&#39;s Academic Blog</title>
+    <title>2 | Norman&#39;s Academic Blog</title>
     <link>/publication_types/2/</link>
-    <description>Recent content in 2 on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Sat, 25 Sep 2004 00:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    <description>2</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Sat, 25 Sep 2004 00:00:00 +0200</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>2</title>
+      <link>/publication_types/2/</link>
+    </image>
     
     <item>
       <title>LEARN2CONTROL – Projektorientiertes Lernen für ein besseres Gesamtverständnis in der regelungstechnischen Ausbildung</title>
       <link>/publication/learn2control/</link>
       <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      
       <guid>/publication/learn2control/</guid>
       <description></description>
     </item>

@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Norman&#39;s Academic Blog</title>
+    <title>Tags | Norman&#39;s Academic Blog</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Tags</title>
+      <link>/tags/</link>
+    </image>
     
     <item>
       <title>Python</title>
       <link>/tags/python/</link>
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/tags/python/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>Mathematica</title>
       <link>/tags/mathematica/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/tags/mathematica/</guid>
       <description></description>
     </item>
@@ -34,7 +32,6 @@
       <title>matplotlib</title>
       <link>/tags/matplotlib/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/tags/matplotlib/</guid>
       <description></description>
     </item>
@@ -43,7 +40,6 @@
       <title>Raspberry Pi</title>
       <link>/tags/raspberry-pi/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/tags/raspberry-pi/</guid>
       <description></description>
     </item>
@@ -52,7 +48,6 @@
       <title>Raspbian</title>
       <link>/tags/raspbian/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/tags/raspbian/</guid>
       <description></description>
     </item>
@@ -61,7 +56,6 @@
       <title>R</title>
       <link>/tags/r/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>/tags/r/</guid>
       <description></description>
     </item>
@@ -70,7 +64,6 @@
       <title>R markdown</title>
       <link>/tags/r-markdown/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>/tags/r-markdown/</guid>
       <description></description>
     </item>
@@ -79,7 +72,6 @@
       <title>Technisches</title>
       <link>/tags/technisches/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>/tags/technisches/</guid>
       <description></description>
     </item>
@@ -88,7 +80,6 @@
       <title>Allgemein</title>
       <link>/tags/allgemein/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      
       <guid>/tags/allgemein/</guid>
       <description></description>
     </item>
@@ -97,7 +88,6 @@
       <title>Lehre</title>
       <link>/tags/lehre/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      
       <guid>/tags/lehre/</guid>
       <description></description>
     </item>
@@ -106,7 +96,6 @@
       <title>Statistik</title>
       <link>/tags/statistik/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      
       <guid>/tags/statistik/</guid>
       <description></description>
     </item>
@@ -115,7 +104,6 @@
       <title>Wahrscheinlichkeitstheorie</title>
       <link>/tags/wahrscheinlichkeitstheorie/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
       <guid>/tags/wahrscheinlichkeitstheorie/</guid>
       <description></description>
     </item>
@@ -124,7 +112,6 @@
       <title>Data Science</title>
       <link>/tags/data-science/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/tags/data-science/</guid>
       <description></description>
     </item>
@@ -133,7 +120,6 @@
       <title>LaTeX</title>
       <link>/tags/latex/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/tags/latex/</guid>
       <description></description>
     </item>
@@ -142,7 +128,6 @@
       <title>Pandoc</title>
       <link>/tags/pandoc/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/tags/pandoc/</guid>
       <description></description>
     </item>
@@ -151,7 +136,6 @@
       <title>panflute</title>
       <link>/tags/panflute/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/tags/panflute/</guid>
       <description></description>
     </item>
@@ -160,7 +144,6 @@
       <title>RStudio</title>
       <link>/tags/rstudio/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/tags/rstudio/</guid>
       <description></description>
     </item>
@@ -169,7 +152,6 @@
       <title>SBI</title>
       <link>/tags/sbi/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/tags/sbi/</guid>
       <description></description>
     </item>
@@ -178,7 +160,6 @@
       <title>Vortrag</title>
       <link>/tags/vortrag/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/tags/vortrag/</guid>
       <description></description>
     </item>
@@ -187,7 +168,6 @@
       <title>Academic</title>
       <link>/tags/academic/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
-      
       <guid>/tags/academic/</guid>
       <description></description>
     </item>
@@ -196,7 +176,6 @@
       <title>FOM</title>
       <link>/tags/fom/</link>
       <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
-      
       <guid>/tags/fom/</guid>
       <description></description>
     </item>
@@ -205,7 +184,6 @@
       <title>Projektorientiertes Lernen</title>
       <link>/tags/projektorientiertes-lernen/</link>
       <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      
       <guid>/tags/projektorientiertes-lernen/</guid>
       <description></description>
     </item>
@@ -214,7 +192,6 @@
       <title>Regelungstechnik</title>
       <link>/tags/regelungstechnik/</link>
       <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      
       <guid>/tags/regelungstechnik/</guid>
       <description></description>
     </item>

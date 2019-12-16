@@ -1,24 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vortrag on Norman&#39;s Academic Blog</title>
+    <title>Vortrag | Norman&#39;s Academic Blog</title>
     <link>/tags/vortrag/</link>
-    <description>Recent content in Vortrag on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/vortrag/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/vortrag/index.xml" rel="self" type="application/rss+xml" />
+    <description>Vortrag</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Vortrag</title>
+      <link>/tags/vortrag/</link>
+    </image>
     
     <item>
       <title>Etwas R am Abend</title>
       <link>/project/etwas-r-am-abend/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/project/etwas-r-am-abend/</guid>
-      <description>Vortrag zur Einführung in R für Studierende</description>
+      <description></description>
     </item>
     
   </channel>

@@ -1,25 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mathematica on Norman&#39;s Academic Blog</title>
+    <title>Mathematica | Norman&#39;s Academic Blog</title>
     <link>/tags/mathematica/</link>
-    <description>Recent content in Mathematica on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/mathematica/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/mathematica/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mathematica</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Mathematica</title>
+      <link>/tags/mathematica/</link>
+    </image>
     
     <item>
       <title>Weitere Software auf den Raspberry PI installieren.</title>
       <link>/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
-      <description>Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:
-Mathematica sudo apt-get update sudo apt-get install wolfram-engine  Python3 auf den aktuellen Stand bringen pip3 install --upgrade pip  Python3 und das Paket &amp;ldquo;matplotlib&amp;rdquo; sudo apt-get install python3-matplotlib  </description>
+      <description>&lt;p&gt;Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:&lt;/p&gt;
+&lt;h2 id=&#34;mathematica&#34;&gt;Mathematica&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install wolfram-engine
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;python3-auf-den-aktuellen-stand-bringen&#34;&gt;Python3 auf den aktuellen Stand bringen&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;pip3 install --upgrade pip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;python3-und-das-paket-matplotlib&#34;&gt;Python3 und das Paket &amp;ldquo;matplotlib&amp;rdquo;&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python3-matplotlib
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
   </channel>

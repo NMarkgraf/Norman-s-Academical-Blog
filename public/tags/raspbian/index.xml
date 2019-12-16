@@ -1,35 +1,84 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Raspbian on Norman&#39;s Academic Blog</title>
+    <title>Raspbian | Norman&#39;s Academic Blog</title>
     <link>/tags/raspbian/</link>
-    <description>Recent content in Raspbian on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/raspbian/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/raspbian/index.xml" rel="self" type="application/rss+xml" />
+    <description>Raspbian</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Raspbian</title>
+      <link>/tags/raspbian/</link>
+    </image>
     
     <item>
       <title>Raspbian auf dem Raspberry Pi installieren</title>
       <link>/post/raspbian-auf-dem-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/post/raspbian-auf-dem-raspberry-pi-installieren/</guid>
-      <description>Wenn man zu Weihnachten einen kleinen neuen Freund bekommt, so wie ich einen Raspberry Pi Zero WH, dann möchte man ihn auch mit der aktuellen Version eines Betriebssystems austatten. Als macOS Nutzer gibt es dafür viele Möglichkeiten. Hier meine Schritte bei der Installation, damit ich mich daran später erinnere
-Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Das geht unter macOS sehr schön mit dem Festplattenmanager!</description>
+      <description>&lt;p&gt;Wenn man zu Weihnachten einen kleinen neuen Freund bekommt, so wie ich einen Raspberry Pi Zero WH, dann möchte man ihn auch mit der aktuellen Version eines Betriebssystems austatten. Als macOS Nutzer gibt es dafür viele Möglichkeiten. Hier meine Schritte bei der Installation, damit ich mich daran später erinnere&lt;/p&gt;
+&lt;h2 id=&#34;vorbereiten-der-sd-karte&#34;&gt;Vorbereiten der SD Karte&lt;/h2&gt;
+&lt;p&gt;Die SD(HC) Karte sollte auf FAT32 formatiert werden. Das geht unter macOS sehr schön mit dem Festplattenmanager!&lt;/p&gt;
+&lt;h2 id=&#34;laden-der-aktuellen-version-von-rasbian&#34;&gt;Laden der aktuellen Version von Rasbian&lt;/h2&gt;
+&lt;p&gt;Die aktuellen Versionen findet man unter &lt;a href=&#34;https://www.raspberrypi.org/downloads/raspbian/&#34;&gt;https://www.raspberrypi.org/downloads/raspbian/&lt;/a&gt;. Es ginge auch alternativ NOOBS, aber da ich &amp;ldquo;headless&amp;rdquo; installieren möchte, wähle ich Raspbian direkt aus.&lt;/p&gt;
+&lt;p&gt;Die ZIP-Datei wird entpackt (Archiveprogramm) und wir befinden uns mit der Konsole in dem Verzeichnis in dem das aktuelle Image liegt.&lt;/p&gt;
+&lt;p&gt;Zur Zeit dieses Eintrages war das die Datei &amp;ldquo;2018-11-13-raspbian-stretch-full.img&amp;rdquo;&lt;/p&gt;
+&lt;h3 id=&#34;speichern-des-images-auf-die-sd-karte&#34;&gt;Speichern des Images auf die SD Karte&lt;/h3&gt;
+&lt;p&gt;Mit Hilfe von&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;diskutil list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ermittelt man die SD Karte (hier &amp;ldquo;/dev/disk5&amp;rdquo;) und mit Hilfe von&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;diskutil unmountdisk /dev/disk5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;wird die SD Karte komplett &amp;ldquo;unmounted&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Nun kann man mit&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo dd bs=1m if=2018-11-13-raspbian-stretch-full.img of=/dev/disk5 conv=sync
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;das Image auf die SD Karte gespeichert. Das kann etwas dauern! (Bis zu 30 Minuten!)
+Mit &amp;ldquo;ctrl-t&amp;rdquo; kann  man sich regelmässig über der aktuellen Stand informieren! ;-)&lt;/p&gt;
+&lt;h3 id=&#34;netzwerk-einrichten&#34;&gt;Netzwerk einrichten&lt;/h3&gt;
+&lt;p&gt;Nach dem man das Image auf die SD Karte gespeichert hat wirft man die SD Karte aus und steckt sie danach wieder ein. Damit hat man die SD Karte wieder &amp;ldquo;gemounted&amp;rdquo; und wir finden unter &amp;ldquo;/Volues/boot&amp;rdquo; und Boot-Verzeichnis der SD-Karte.&lt;/p&gt;
+&lt;p&gt;In diesem Verzeichnis erzeigen wir (z.B. mit &lt;em&gt;vi&lt;/em&gt;) eine Datei mit dem Namen &amp;ldquo;wpa_supplicant.conf&amp;rdquo; mit dem Inhalt:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;country=DE
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid=&amp;quot;YOUR_NETWORK_NAME&amp;quot;
+    psk=&amp;quot;YOUR_PASSWORD&amp;quot;
+    key_mgmt=WPA-PSK
+    scan_ssid=1
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Diese Datei wird beim Booten von Rasbpian in das Verzeichnis &amp;ldquo;/etc/wpa_supplicant/&amp;rdquo; verschoben.&lt;/p&gt;
+&lt;h3 id=&#34;ssh-aktivieren&#34;&gt;SSH aktivieren!&lt;/h3&gt;
+&lt;p&gt;SSH ist in der Regel deaktiviert. Wir können es aber schnell einschalten. Dafür gehen wir wieder in das Verzeichnis &amp;ldquo;/Volumes/boot&amp;rdquo; und führen dort den Befehl&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;touch ssh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;aus. Damit wird eine (leere) Datei &amp;ldquo;ssh&amp;rdquo; erzeugt. Findet Raspbain diese Datei, so aktiviert es beim Booten automatisch den SSH-Dämon.&lt;/p&gt;
+&lt;h3 id=&#34;starten-von-der-neuen-sd-karte&#34;&gt;Starten von der neuen SD Karte&lt;/h3&gt;
+&lt;p&gt;Jetzt kann die Karte ausgeworfen werden und in den Raspberry eingelegt werden. Danach kann von der SD Karte gestartet werden.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Weitere Software auf den Raspberry PI installieren.</title>
       <link>/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
-      <description>Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:
-Mathematica sudo apt-get update sudo apt-get install wolfram-engine  Python3 auf den aktuellen Stand bringen pip3 install --upgrade pip  Python3 und das Paket &amp;ldquo;matplotlib&amp;rdquo; sudo apt-get install python3-matplotlib  </description>
+      <description>&lt;p&gt;Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:&lt;/p&gt;
+&lt;h2 id=&#34;mathematica&#34;&gt;Mathematica&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install wolfram-engine
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;python3-auf-den-aktuellen-stand-bringen&#34;&gt;Python3 auf den aktuellen Stand bringen&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;pip3 install --upgrade pip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;python3-und-das-paket-matplotlib&#34;&gt;Python3 und das Paket &amp;ldquo;matplotlib&amp;rdquo;&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python3-matplotlib
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
   </channel>

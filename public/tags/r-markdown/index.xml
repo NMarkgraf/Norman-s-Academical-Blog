@@ -1,71 +1,186 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R markdown on Norman&#39;s Academic Blog</title>
+    <title>R markdown | Norman&#39;s Academic Blog</title>
     <link>/tags/r-markdown/</link>
-    <description>Recent content in R markdown on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
+    <description>R markdown</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>R markdown</title>
+      <link>/tags/r-markdown/</link>
+    </image>
     
     <item>
       <title>Der Angriff der Riesenschlangen.</title>
       <link>/post/der-angriff-der-riesenschlangen/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      
       <guid>/post/der-angriff-der-riesenschlangen/</guid>
-      <description>Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim Erstellen von Skripten mit R markdown.
-Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathematischen Grundlagen der Wirtschaftsinformatik” ein paar der Begriffe der Mengenlehre denen daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüberzustellen. So gibt es die Idee der Menge u.a. in Python als set.</description>
+      <description>
+
+
+&lt;p&gt;Klingt ja bedrohlich, aber es ist wirklich Möglich &lt;a href=&#34;https://www.r-project.org&#34;&gt;R&lt;/a&gt; und &lt;a href=&#34;https://www.python.org&#34;&gt;Python&lt;/a&gt; sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim Erstellen von Skripten mit &lt;a href=&#34;https://rmarkdown.rstudio.com&#34;&gt;R markdown&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “&lt;em&gt;Mathematischen Grundlagen der Wirtschaftsinformatik&lt;/em&gt;” ein paar der Begriffe der Mengenlehre denen daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüberzustellen. So gibt es die Idee der &lt;em&gt;Menge&lt;/em&gt; u.a. in &lt;em&gt;Python&lt;/em&gt; als &lt;em&gt;set&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Wie aber kann man solche Python-Fragmente in ein R markdown Sktipr einbauen? - Kann man &lt;em&gt;R markdown&lt;/em&gt; überhaupt mit &lt;em&gt;Python&lt;/em&gt; zusammen bringen? - Ein wenig suchen im Internet und ein paar Stunden später hatte ich es geschaft. Dank einer Netzpython…&lt;/p&gt;
+&lt;div id=&#34;die-netzpython-als-bindeglied-zwischen-r-und-python&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Die Netzpython als Bindeglied zwischen R und Python&lt;/h2&gt;
+&lt;p&gt;Eine Netzpython (engl. &lt;a href=&#34;https://en.wikipedia.org/wiki/Reticulated_python&#34;&gt;reticulated python&lt;/a&gt;) stand Pate für den Namen des &lt;em&gt;R&lt;/em&gt; Paketes &lt;a href=&#34;https://rstudio.github.io/reticulate/index.html&#34;&gt;&lt;code&gt;reticulate&lt;/code&gt;&lt;/a&gt;, welches &lt;em&gt;R&lt;/em&gt; und &lt;em&gt;Python&lt;/em&gt; miteinander verbindet. So ist es möglich &lt;em&gt;Python&lt;/em&gt;-Befehle direkt in ein &lt;em&gt;R markdown&lt;/em&gt; Skript ausführen zulassen, diese Fragmente adequat durchzustellen – ganz wie &lt;em&gt;R Skripte&lt;/em&gt; – und sogar Daten zwoschen &lt;em&gt;R&lt;/em&gt; und &lt;em&gt;Python&lt;/em&gt; hin und her (aus) zu tauschen.&lt;/p&gt;
+&lt;p&gt;Nach der Installation mittels&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;install.packages(&amp;quot;reticulate&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;bedarf es aber durch aus noch einiger Anpassungen, bis alles zur Zufriedenheit funktioniert.&lt;/p&gt;
+&lt;p&gt;Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls &lt;code&gt;Sys.which(&amp;quot;python&amp;quot;)&lt;/code&gt;, welcher bei mir leider zu einer vollkommen alten, aber noch benutzen, &lt;em&gt;Python&lt;/em&gt; Version führte. Möchte man eine ganz bestimmte &lt;em&gt;Python&lt;/em&gt; Version haben, so hilft einem der Befehl &lt;code&gt;use_python()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
+use_python(&amp;quot;/usr/local/bin/python&amp;quot;)  # Pfad zum Python-Befehl der benutz werden soll.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Es werden auch &lt;a href=&#34;https://realpython.com/python-virtual-environments-a-primer/&#34;&gt;virtuelle Umgebungen&lt;/a&gt; unterstützt:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
+use_virtualenv(&amp;quot;myenv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Und auch eine ganz andere Schlangenart kann benutzt werden, &lt;a href=&#34;https://www.anaconda.com/what-is-anaconda/&#34;&gt;Anacondas&lt;/a&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(reticulate)
+use_condaenv(&amp;quot;mycondaenv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;der-einbau-in-ein-r-markdown-dokument&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Der Einbau in ein R markdown Dokument&lt;/h2&gt;
+&lt;p&gt;Einen &lt;em&gt;Python&lt;/em&gt; Quellcode in ein &lt;em&gt;R markdown&lt;/em&gt; einzubauen ist dann wieder sehr einfach. Man ändert einfach ein &lt;em&gt;r&lt;/em&gt; in &lt;em&gt;python&lt;/em&gt; im Codeblock und schon steht einem der &lt;em&gt;knitr-Chunk&lt;/em&gt; als &lt;em&gt;Python&lt;/em&gt; Quelle zur Verfügung.&lt;/p&gt;
+Sp liefert der &lt;em&gt;knitr-Chunk&lt;/em&gt;
+&lt;pre&gt;&lt;code&gt;```{python}
+# Etwas Python gefällig?
+def quadrat(x):
+    return x**2
+    
+print(quadrat(2))
+```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;in einem &lt;em&gt;R markdown&lt;/em&gt;, dann die Ausgabe:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# Etwas Python geföllig?
+def quadrat(x):
+    return x**2
+    
+print(quadrat(2))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 4&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Das war es aber noch lange nicht. &lt;em&gt;R&lt;/em&gt; und &lt;em&gt;Python&lt;/em&gt; können nämlich nicht nur nebeneinander, sondern auch miteinander!&lt;/p&gt;
+&lt;p&gt;Dazu dann aber mehr in einem späteren Blog-Eintrag.&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Auch R markdown Dateien sollten sich an Regeln halten</title>
       <link>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      
       <guid>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
-      <description>Jede Programmiersprache hat Regeln. Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt. Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten. Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
-Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Standard wie ein Python Programm geschrieben seien sollte.</description>
+      <description>
+
+
+&lt;p&gt;Jede Programmiersprache hat Regeln.
+Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt.
+Diese sogenannte &lt;em&gt;Stilregeln&lt;/em&gt; (engl. &lt;em&gt;style guides&lt;/em&gt;) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten.
+Das Ziel der &lt;em&gt;Stilregeln&lt;/em&gt; ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.&lt;/p&gt;
+&lt;p&gt;Eine Programmiersprache wie &lt;em&gt;Python&lt;/em&gt; zum Beispiel hat mit &lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34;&gt;PEP8&lt;/a&gt; einen eigenen Standard wie ein &lt;em&gt;Python&lt;/em&gt; Programm geschrieben seien sollte.
+Dazu gibt es auch gleich das passenden Prüfprogramm (früher &lt;code&gt;pep8&lt;/code&gt;, neuerdings &lt;a href=&#34;https://github.com/PyCQA/pycodestyle&#34;&gt;&lt;code&gt;pycodestyle&lt;/code&gt;&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Schreibt man ein &lt;em&gt;R markdown&lt;/em&gt; Text mag man vielleicht nicht daran denken, dass so eine Idee auch hier sehr sinnvoll ist.
+Neben den gängigen Style-Guides für den &lt;em&gt;R&lt;/em&gt; Quellcode (z. B.: &lt;a href=&#34;https://google.github.io/styleguide/Rguide.xml&#34;&gt;Google’s R Style Guide&lt;/a&gt;, &lt;a href=&#34;http://adv-r.had.co.nz/Style.html&#34;&gt;Hadley Wickham’s Advanced R - Style guide&lt;/a&gt;, &lt;a href=&#34;http://jef.works/R-style-guide/&#34;&gt;jef.works R Style Guide&lt;/a&gt;, &lt;a href=&#34;https://csgillespie.wordpress.com/2010/11/23/r-style-guide/&#34;&gt;R Style Guide&lt;/a&gt; oder &lt;a href=&#34;https://github.com/rdatsci/PackagesInfo/wiki/R-Style-Guide&#34;&gt;R-Style-Guide&lt;/a&gt;) gibt es aber kaum Regeln (z. B.: &lt;a href=&#34;https://holtzy.github.io/Pimp-my-rmd/&#34;&gt;Pimp my Rmd&lt;/a&gt;) für die Gestaltung von &lt;em&gt;R markdown&lt;/em&gt;.&lt;/p&gt;
+&lt;div id=&#34;stil-regeln-fur-gutes-r-markdown-ein-erster-vorschlag&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stil-Regeln für gutes &lt;em&gt;R markdown&lt;/em&gt;, ein erster Vorschlag&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Keine unnützen Zeichen am Ende von Textzeilen. / &lt;em&gt;No whitespaces at the end of a line&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Eine Textzeile sollte mit einem ‘echtem’ Zeichen enden und nicht mit einem ‘unsichtbarem’ Zeichen.
+Das heisst: Leerzeichen, Tabs, harte Leerzeichen etc. gehören nicht ans Ende einer Zeile.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Zwei Leerzeilen vor einer jeden Kopfzeile. / &lt;em&gt;Two blank lines before every header&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Um die Inhalte auch klar voneinander trennen zu können sollte man vor der Kopfzeile zwei Leerzeilen eingefügt werden.
+Statt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Das ist eine Kopfzeile auf der 1. Ebene
+## Das is eine Kopfzeile auf der 2. Ebene
+Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+
+# Das ist eine Kopfzeile auf der 1. Ebene
+
+
+## Das is eine Kopfzeile auf der 2. Ebene
+
+Das hier ist einfacher Text&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Vor und nach Aufzählungen sollte immer eine Leerzeile stehen. / &lt;em&gt;One blank line before and after itemizations or enumerations&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Statt&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Das ist eine Liste:
+- Ein Punkt
+- Ein anderer Punkt
+Und hier geht der Text weiter.
+1. Der erste Punkt.
+2. Der zweite Punkt.
+Und wieder mal ein Text.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;sollte es so gegliedert sein:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Das ist eine Liste:
+
+- Ein Punkt
+- Ein anderer Punkt
+
+Und hier geht der Text weiter.
+
+1. Der erste Punkt.
+2. Der zweite Punkt.
+
+Und wieder mal ein Text.&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Vor und nach Codeblöcken sollte immer eine Leerzeile stehen. / &lt;em&gt;One blank line before and after a codeblock&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Statt&lt;/p&gt;
+&lt;pre&gt;
+Etwas Text vorher
+```{r}&lt;code&gt;1+1
+```&lt;/code&gt;und danach.
+&lt;/pre&gt;
+&lt;p&gt;sollte man es besser wie folgt gliedern:&lt;/p&gt;
+&lt;pre&gt;
+Etwas Text vorher
+
+```{r}&lt;code&gt;1+1
+```&lt;/code&gt; und danach.
+&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Keine anderen Sprachen als &lt;em&gt;R markdown&lt;/em&gt; für Inhalte oder Design nutzen. / &lt;em&gt;Use no other languages to create content or design, other than (R) markdown.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Keine anderen Sprachen, insbesondere LaTeX, um besondere Effekte zu erzielen. Dafür sollten (native) DIV oder SPAN Abschnitte benutzt werden und entsprechend durch spätere (Filter-)Programme umgesetzt werden. So ist es immer möglich Design-Ideen für alle möglichen Zielsprachen zu erhalten.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;rmdstylechecker-ein-erster-style-checker-fur-r-markdown&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;RmdStyleChecker, ein erster Style Checker für &lt;em&gt;R markdown&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Die ersten drei Punkte der Liste habe ich zu Testzwecken in einem kleinen Projekt mit Hilfe von &lt;em&gt;Python&lt;/em&gt; implementiert.
+Den &lt;em&gt;Python&lt;/em&gt;-Quelltext findet man unter &lt;a href=&#34;https://github.com/NMarkgraf/RmdStyleChecker&#34;&gt;RmdStyleChecker&lt;/a&gt;. Er läuft unter &lt;em&gt;Python&lt;/em&gt; 3.5+.&lt;/p&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>FastSimNullDistR</title>
       <link>/project/fastsimnulldistr/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/project/fastsimnulldistr/</guid>
-      <description>Wenn das &lt;code&gt;do(oft)*&lt;/code&gt; in Mosaic einfach zu langsam ist, dann hilft vielleicht diese (quasi)-drop-in-replacements um mal schnell die Nullverteilungen zu simulieren.</description>
+      <description></description>
     </item>
     
     <item>
       <title>Pandoc filter: style.py</title>
       <link>/project/style.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/project/style.py/</guid>
-      <description>Ein Pandoc Filter (in Python 3.5+ auf Basis von panflute) um Stilelemente in R markdown Dokumenten mittel geeigneter SPAN- bzw. DIV-Blöcke nach HTML bzw. LaTeX umzuwandelt.</description>
+      <description></description>
     </item>
     
     <item>
       <title>Pandoc filter: typography.py</title>
       <link>/project/typography.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/project/typography.py/</guid>
-      <description>Ein Pandoc Filter (in Python 3.5+ auf Basis von panflute) um typographische Änderungen an aus  R markdown Dokumenten erzeugten HTML- bzw. LaTeX-Dokumenten vorzunehmen.</description>
+      <description></description>
     </item>
     
     <item>
       <title>RmdStyleChecker</title>
       <link>/project/rmdstylechecker/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/project/rmdstylechecker/</guid>
-      <description>Python Script zum Überprüfen von Style Guidelines von R markdown Dokumenten</description>
+      <description>&lt;p&gt;Jede Sprache hat Regeln, auch Programmiersprachen und R markdown ist eine Programmiersprache. Wieso also nicht ein Tool schreiben, welches &lt;em&gt;SStilregeln&lt;/em&gt; (engl. &lt;em&gt;style guides&lt;/em&gt;) für R markdown kontrolliert um auch im kolaborativen Einsatz ein einheitliches &amp;ldquo;Schriftbild&amp;rdquo; des Quelltextes zu erhalten.&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Einen ersten Schritt habe ich mit dem &lt;a href=&#34;auch-rmarkdown-dateien-sollten-sich-regeln-halten&#34;&gt;Blog-Eintrag&lt;/a&gt; gemacht und dazu gleich noch ein Tool in &lt;em&gt;Python&lt;/em&gt; geschrieben um Verstöße dagegen schneller zu finden.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

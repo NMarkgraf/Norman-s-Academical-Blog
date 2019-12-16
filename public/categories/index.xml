@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Norman&#39;s Academic Blog</title>
+    <title>Categories | Norman&#39;s Academic Blog</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Categories</title>
+      <link>/categories/</link>
+    </image>
     
     <item>
       <title>Allgemeines</title>
       <link>/categories/allgemeines/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/categories/allgemeines/</guid>
       <description></description>
     </item>
@@ -25,7 +24,6 @@
       <title>Fundstücke</title>
       <link>/categories/fundstucke/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>/categories/fundstucke/</guid>
       <description></description>
     </item>
@@ -34,7 +32,6 @@
       <title>Statistik</title>
       <link>/categories/statistik/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      
       <guid>/categories/statistik/</guid>
       <description></description>
     </item>
@@ -43,7 +40,6 @@
       <title>Information</title>
       <link>/categories/information/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      
       <guid>/categories/information/</guid>
       <description></description>
     </item>
@@ -52,7 +48,6 @@
       <title>Kommentar</title>
       <link>/categories/kommentar/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
-      
       <guid>/categories/kommentar/</guid>
       <description></description>
     </item>

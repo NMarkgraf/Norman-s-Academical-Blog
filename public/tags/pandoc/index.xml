@@ -1,24 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pandoc on Norman&#39;s Academic Blog</title>
+    <title>Pandoc | Norman&#39;s Academic Blog</title>
     <link>/tags/pandoc/</link>
-    <description>Recent content in Pandoc on Norman&#39;s Academic Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/pandoc/index.xml" rel="self" type="application/rss+xml" />
-    
+      <atom:link href="/tags/pandoc/index.xml" rel="self" type="application/rss+xml" />
+    <description>Pandoc</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Pandoc</title>
+      <link>/tags/pandoc/</link>
+    </image>
     
     <item>
       <title>Pandoc filter: typography.py</title>
       <link>/project/typography.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/project/typography.py/</guid>
-      <description>Ein Pandoc Filter (in Python 3.5+ auf Basis von panflute) um typographische Änderungen an aus  R markdown Dokumenten erzeugten HTML- bzw. LaTeX-Dokumenten vorzunehmen.</description>
+      <description></description>
     </item>
     
   </channel>
