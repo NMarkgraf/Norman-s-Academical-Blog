@@ -1,0 +1,25 @@
+
+# List your academic interests.
+[interests]
+  interests = [
+    "Mathematik",
+    "Statistik",
+    "Datenanalyse",
+    "Finanzmathematik",
+    "Wirtschaftsmathematik",
+    "Ingenieurmathematik",
+    "Datenbanken",
+    "Big Data"
+  ]
+
+# List your qualifications (such as academic degrees).
+[[education.courses]]
+    course ="Wissenschaftlicher Mitarbeiter am Lehrstuhl für Prozessinformatik der Fakultät für Elektro- und Informationstechnik"
+  institution = "Ruhr-Universität Bochum"
+  year = 2005
+    
+[[education.courses]]
+  course = "Diplom-Mathematiker mit dem Schwerpunkt Informatik und dem Nebenfach Wirtschaftsinformatik"
+  institution = "Ruhr-Universität Bochum"
+  year = 1992
+
