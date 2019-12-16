@@ -21,21 +21,23 @@ organizations:
 bio: xxx
 
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Mathematik
+- Statistik
+- Datenanalyse
+- Finanzmathematik
+- Wirtschaftsmathematik
+- Ingenieurmathematik
+- Datenbanken
+- Big Data
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: Wissenschaftlicher Mitarbeiter am Lehrstuhl für Prozessinformatik der Fakultät für Elektro- und Informationstechnik
+    institution: Ruhr-Universität Bochum
+    year: 2006
+  - course: Diplom-Mathematiker mit dem Schwerpunkt Informatik und dem Nebenfach Wirtschaftsinformatik
+    institution: Ruhr-Universität Bochum
+    year: 1992
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
