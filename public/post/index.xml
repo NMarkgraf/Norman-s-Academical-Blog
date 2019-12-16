@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Normans Akademischer Blog</title>
-    <link>/nab/post/</link>
-    <description>Recent content in Posts on Normans Akademischer Blog</description>
+    <title>Posts on Norman&#39;s Academic Blog</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Norman&#39;s Academic Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de-de</language>
-    <copyright>&amp;copy; 2016-19 Norman Markgraf</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0100</lastBuildDate>
+    <language>en-us</language>
+    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
+    <lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/nab/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Wie man es nicht machen sollte in Python!</title>
-      <link>/nab/post/wie-man-es-nicht-machen-sollte-in-python/</link>
+      <link>/post/wie-man-es-nicht-machen-sollte-in-python/</link>
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/wie-man-es-nicht-machen-sollte-in-python/</guid>
+      <guid>/post/wie-man-es-nicht-machen-sollte-in-python/</guid>
       <description>Es sind oft die Dinge die man nicht sucht die einem weiterhelfen. So habe ich auch nach etwas ganz anderes gesucht und bin dabei über ein nettes kleines Werk gestoplert, dass einem sagt, wie man in Python Dinge besser nicht macht.
 Unter https://docs.quantifiedcode.com/python-anti-patterns/index.html gibt es das The Little Book of Python Anti-Patterns.
 Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte.</description>
@@ -25,60 +25,60 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
     
     <item>
       <title>Raspbian auf dem Raspberry Pi installieren</title>
-      <link>/nab/post/raspbian-auf-dem-raspberry-pi-installieren/</link>
+      <link>/post/raspbian-auf-dem-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/raspbian-auf-dem-raspberry-pi-installieren/</guid>
+      <guid>/post/raspbian-auf-dem-raspberry-pi-installieren/</guid>
       <description>Wenn man zu Weihnachten einen kleinen neuen Freund bekommt, so wie ich einen Raspberry Pi Zero WH, dann möchte man ihn auch mit der aktuellen Version eines Betriebssystems austatten. Als macOS Nutzer gibt es dafür viele Möglichkeiten. Hier meine Schritte bei der Installation, damit ich mich daran später erinnere
 Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Das geht unter macOS sehr schön mit dem Festplattenmanager!</description>
     </item>
     
     <item>
       <title>Weitere Software auf den Raspberry PI installieren.</title>
-      <link>/nab/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
+      <link>/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
-      <description> Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:
+      <guid>/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
+      <description>Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:
 Mathematica sudo apt-get update sudo apt-get install wolfram-engine  Python3 auf den aktuellen Stand bringen pip3 install --upgrade pip  Python3 und das Paket &amp;ldquo;matplotlib&amp;rdquo; sudo apt-get install python3-matplotlib  </description>
     </item>
     
     <item>
       <title>Der Angriff der Riesenschlangen.</title>
-      <link>/nab/post/der-angriff-der-riesenschlangen/</link>
+      <link>/post/der-angriff-der-riesenschlangen/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/der-angriff-der-riesenschlangen/</guid>
+      <guid>/post/der-angriff-der-riesenschlangen/</guid>
       <description>Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim Erstellen von Skripten mit R markdown.
 Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathematischen Grundlagen der Wirtschaftsinformatik” ein paar der Begriffe der Mengenlehre denen daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüberzustellen. So gibt es die Idee der Menge u.a. in Python als set.</description>
     </item>
     
     <item>
       <title>SBI - Simulation Based Inference</title>
-      <link>/nab/post/sbi-simulation-based-inference/</link>
+      <link>/post/sbi-simulation-based-inference/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/sbi-simulation-based-inference/</guid>
+      <guid>/post/sbi-simulation-based-inference/</guid>
       <description>Wenn meine Tochter SBI hört, denkt sie an Sally Bollywood Investigation. – Und ich oft auch. – Mit SBI ist hier aber nicht der Trickfilm für Kinder, sondern Simulation Based Inference, gemeint.
 Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der FOM den Unterricht für Statistik auf eine neue Grundlage zu stellen.</description>
     </item>
     
     <item>
       <title>Auch R markdown Dateien sollten sich an Regeln halten</title>
-      <link>/nab/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
+      <link>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
+      <guid>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
       <description>Jede Programmiersprache hat Regeln. Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt. Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten. Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
 Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Standard wie ein Python Programm geschrieben seien sollte.</description>
     </item>
     
     <item>
       <title>Ein wenig schneller zur simulierten Nullverteilung</title>
-      <link>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</link>
+      <link>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
+      <guid>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
       <description>Ein Nullhypothesentest ist schnell geschrieben. Will man den approximativen Weg gehen, so hilft R einem mit entsprechenden Tests mit einfachen Befehlen. Nimmt man MOSAIC dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
 Zwei Beispiele für approximative Hypothesentests mit MOSAIC Laden wir unsere Testdaten, die tipping Daten wie folgt:
 library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.</description>
@@ -86,10 +86,10 @@ library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfil
     
     <item>
       <title>Nur ein wenig lineare Regression</title>
-      <link>/nab/post/nur-ein-wenig-lineare-regression/</link>
+      <link>/post/nur-ein-wenig-lineare-regression/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/nur-ein-wenig-lineare-regression/</guid>
+      <guid>/post/nur-ein-wenig-lineare-regression/</guid>
       <description>Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
 Zunächst laden wir dazu die tipping Daten mittels
 library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.</description>
@@ -97,10 +97,10 @@ library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfil
     
     <item>
       <title>Prognose-, Konfidenz- und Fiduzialintervalle</title>
-      <link>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</link>
+      <link>/post/prognose-konfidenz-und-fiduzialintervalle/</link>
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
+      <guid>/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
       <description>*WORK IN PROGRESS Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
 Konfidenzintervalle Definition von Konfidenzintervallen1 Für unabhängig identisch verteilte Zufallsvariablen \(X_1,\dotsc, X_n\) mit unbekanntem reellen Verteilungsparameter \(\vartheta\) kann unter bestimmten Umständen zwei Stichprobenfunktionen \(U\) und \(V\) angeben, so dass
 \[P(U &amp;lt; \vartheta &amp;lt; V) \geq \gamma\]
@@ -109,19 +109,19 @@ gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, 
     
     <item>
       <title>Konfidenzintervalle</title>
-      <link>/nab/post/konfidenzintervalle/</link>
+      <link>/post/konfidenzintervalle/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/konfidenzintervalle/</guid>
+      <guid>/post/konfidenzintervalle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Zentrales Schwankungsintervall</title>
-      <link>/nab/post/zentrales-schwankungsintervall/</link>
+      <link>/post/zentrales-schwankungsintervall/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/zentrales-schwankungsintervall/</guid>
+      <guid>/post/zentrales-schwankungsintervall/</guid>
       <description> Das zentrale Schwankungsintervall sagt etwas über die Präzision der Lageschätzung eines Parameters (zum Beispiel eines Mittelwertes) aus. Das Schwankungsintervall schließt einen Bereich um den wahren Wert des Parameters in der Grundgesamtheit ein, der – vereinfacht gesprochen – mit einer zuvor festgelegten Sicherheitswahrscheinlichkeit den aus der Stichprobe geschätzten Parameter enthält.1
  vgl: https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall↩
    </description>
@@ -129,22 +129,22 @@ gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, 
     
     <item>
       <title>Ein paar interessante Links</title>
-      <link>/nab/post/ein-paar-interessante-links/</link>
+      <link>/post/ein-paar-interessante-links/</link>
       <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/ein-paar-interessante-links/</guid>
+      <guid>/post/ein-paar-interessante-links/</guid>
       <description>Im Laufe der Zeit sammeln sich bei mir mehr und mehr Links zu anderen Seiten an, die ich irgendwie speichern will aber nicht ernsthaft sortieren möchte. So ist diese Sammlung hier entstanden:
- Blog von Prof. Dr. Timm Grams &amp;ndash; &amp;ldquo;Ein Weblogbuch über sonderbare Nachrichten und alltäglichen Statistikplunder&amp;rdquo;
- Denkfallen und Paradoxa &amp;ndash; Prof. Dr. Timm Grams gibt einen Überblick
- Signifikanztest mit der Vierfeldertafel &amp;ndash; Prof. Dr. Timm Grams</description>
+  Blog von Prof. Dr. Timm Grams &amp;ndash; &amp;ldquo;Ein Weblogbuch über sonderbare Nachrichten und alltäglichen Statistikplunder&amp;rdquo;
+  Denkfallen und Paradoxa &amp;ndash; Prof. Dr. Timm Grams gibt einen Überblick
+  Signifikanztest mit der Vierfeldertafel &amp;ndash; Prof. Dr.</description>
     </item>
     
     <item>
       <title>Quartile, Quantile, Perzentile etc.</title>
-      <link>/nab/post/quartile-quantile-perzentile-etc/</link>
+      <link>/post/quartile-quantile-perzentile-etc/</link>
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/quartile-quantile-perzentile-etc/</guid>
+      <guid>/post/quartile-quantile-perzentile-etc/</guid>
       <description>“Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.
 Quantile Definitorische Antwort Für eine gegebene reelle Zufallsvariable \(X\) heißt eine reelle Zahl \(x_p\) ein p-Quantil (von \(X\)), falls gilt:
 \[P(X \leq x_p) \leq p \quad \text{ und }\quad P(x_p \leq X) \geq 1-p.\]
@@ -153,10 +153,10 @@ Quantile Definitorische Antwort Für eine gegebene reelle Zufallsvariable \(X\) 
     
     <item>
       <title>GitHub Webhook eingebaut!</title>
-      <link>/nab/post/github-webhook-eingebaut/</link>
+      <link>/post/github-webhook-eingebaut/</link>
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/github-webhook-eingebaut/</guid>
+      <guid>/post/github-webhook-eingebaut/</guid>
       <description>GitHub bietet die Möglichkeit an, bei Interaktion mit dem Server automatisch einen Webhook zu aktivieren. Dahinter versteckt sich ein Aufruf einer URL mit einem sogenannten POST-Request. Wertet man diesen aus, so kann man z.B. nach jedem push automatisch ein fetch auf dem Webserver starten.
 Ich nutze das gerade um meinen Blog immer dann zu aktualisieren, wenn ich auf dem GitHub eine Änderung vorgenommen habe.
 Damit sollte ich nie wieder vergessen alles auch auf dem Server zu aktualisieren!</description>
@@ -164,29 +164,29 @@ Damit sollte ich nie wieder vergessen alles auch auf dem Server zu aktualisieren
     
     <item>
       <title>First Entry</title>
-      <link>/nab/post/first-entry/</link>
+      <link>/post/first-entry/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/first-entry/</guid>
+      <guid>/post/first-entry/</guid>
       <description>Ein erster Kommentar!</description>
     </item>
     
     <item>
       <title>10 Dinge die kein Talent benötigen!</title>
-      <link>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
+      <link>/post/10-dinge-die-kein-talent-benotigen/</link>
       <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
-      <description> Gerade im Internet gefunden:
+      <guid>/post/10-dinge-die-kein-talent-benotigen/</guid>
+      <description>Gerade im Internet gefunden:
 10 Dinge die kein Talent benötigen!  Pünktlichkeit Arbeitsmoral Anstrengung Körpersprache Energie Haltung Leidenschaft Lernwillig sein Etwas mehr als das Minimum tun Vorbereitet sein  </description>
     </item>
     
     <item>
       <title>Der Zentrale Grenzwertsatz</title>
-      <link>/nab/post/der-zentrale-grenzwertsatz/</link>
+      <link>/post/der-zentrale-grenzwertsatz/</link>
       <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/der-zentrale-grenzwertsatz/</guid>
+      <guid>/post/der-zentrale-grenzwertsatz/</guid>
       <description>Der Zentrale Grenzwertsatz der Statistik bei identischer Verteilung. Zentraler Grenzwertsatz Seien \(X_1, X_2, ..., X_n\) unabhängige und identisch verteilte Zufallsvariablen mit bekanntem Erwartungswert \(E(X_i) = \mu\) und bekannter Varianz \(Var(X_i)=\sigma^2\).
 Für die Summe \(S_n = \sum_{i=1}^n X_i\) ist dann der Erwartungswert \(E(S_n)= n \cdot \mu\) und die Varianz \(Var(S_n)= n \cdot \sigma^2\).
 Dann gilt für die standardisierte Zufallsvariable
@@ -195,13 +195,11 @@ Dann gilt für die standardisierte Zufallsvariable
     
     <item>
       <title>Academic: the website designer for Hugo</title>
-      <link>/nab/post/getting-started/</link>
+      <link>/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
       
-      <guid>/nab/post/getting-started/</guid>
-      <description>Academic makes it easy to create a beautiful website for free using Markdown. Customize anything on your site with widgets, themes, and language packs.
-Follow our easy step by step guide to learn how to build your own free website with Academic. Check out the personal demo or the business demo of what you&amp;rsquo;ll get in less than 10 minutes.
- View the documentation Ask a question Request a feature or report a bug Updating?</description>
+      <guid>/post/getting-started/</guid>
+      <description>Create a beautifully simple website or blog in under 10 minutes.</description>
     </item>
     
   </channel>

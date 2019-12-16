@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
     <url>
     
-      <loc>/nab/post/wie-man-es-nicht-machen-sollte-in-python/</loc>
+      <loc>/</loc>
       <lastmod>2019-01-05T00:00:00+00:00</lastmod>
     </url>
     
@@ -12,7 +11,39 @@
     
     <url>
     
-      <loc>/nab/post/raspbian-auf-dem-raspberry-pi-installieren/</loc>
+      <loc>/post/</loc>
+      <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/python/</loc>
+      <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/</loc>
+      <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/wie-man-es-nicht-machen-sollte-in-python/</loc>
+      <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/allgemeines/</loc>
       <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -20,7 +51,7 @@
     
     <url>
     
-      <loc>/nab/post/weitere-software-auf-den-raspberry-pi-installieren/</loc>
+      <loc>/categories/</loc>
       <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -28,7 +59,63 @@
     
     <url>
     
-      <loc>/nab/post/der-angriff-der-riesenschlangen/</loc>
+      <loc>/categories/fundstucke/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/mathematica/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/matplotlib/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/raspberry-pi/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/raspbian/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/raspbian-auf-dem-raspberry-pi-installieren/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/weitere-software-auf-den-raspberry-pi-installieren/</loc>
+      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/der-angriff-der-riesenschlangen/</loc>
       <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     </url>
     
@@ -36,7 +123,31 @@
     
     <url>
     
-      <loc>/nab/tutorial/example/</loc>
+      <loc>/tags/r/</loc>
+      <lastmod>2018-12-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/r-markdown/</loc>
+      <lastmod>2018-12-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/technisches/</loc>
+      <lastmod>2018-12-03T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tutorial/example/</loc>
       <lastmod>2018-09-09T00:00:00+02:00</lastmod>
     </url>
     
@@ -44,7 +155,7 @@
     
     <url>
     
-      <loc>/nab/tutorial/</loc>
+      <loc>/tutorial/</loc>
       <lastmod>2018-09-09T00:00:00+02:00</lastmod>
     </url>
     
@@ -52,15 +163,15 @@
     
     <url>
     
-      <loc>/nab/privacy/</loc>
-      <lastmod>2018-06-28T00:00:00+02:00</lastmod>
+      <loc>/terms/</loc>
+      <lastmod>2018-06-28T00:00:00+01:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/post/sbi-simulation-based-inference/</loc>
+      <loc>/tags/allgemein/</loc>
       <lastmod>2018-06-11T00:00:00+00:00</lastmod>
     </url>
     
@@ -68,7 +179,39 @@
     
     <url>
     
-      <loc>/nab/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</loc>
+      <loc>/tags/lehre/</loc>
+      <lastmod>2018-06-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/sbi-simulation-based-inference/</loc>
+      <lastmod>2018-06-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/statistik/</loc>
+      <lastmod>2018-06-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/statistik/</loc>
+      <lastmod>2018-06-11T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</loc>
       <lastmod>2018-05-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -76,7 +219,7 @@
     
     <url>
     
-      <loc>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</loc>
+      <loc>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</loc>
       <lastmod>2018-05-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -84,7 +227,15 @@
     
     <url>
     
-      <loc>/nab/post/nur-ein-wenig-lineare-regression/</loc>
+      <loc>/categories/information/</loc>
+      <lastmod>2018-05-02T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/nur-ein-wenig-lineare-regression/</loc>
       <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     </url>
     
@@ -92,7 +243,7 @@
     
     <url>
     
-      <loc>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</loc>
+      <loc>/post/prognose-konfidenz-und-fiduzialintervalle/</loc>
       <lastmod>2018-01-04T00:00:00+00:00</lastmod>
     </url>
     
@@ -100,7 +251,7 @@
     
     <url>
     
-      <loc>/nab/post/konfidenzintervalle/</loc>
+      <loc>/post/konfidenzintervalle/</loc>
       <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -108,7 +259,7 @@
     
     <url>
     
-      <loc>/nab/post/zentrales-schwankungsintervall/</loc>
+      <loc>/tags/wahrscheinlichkeitstheorie/</loc>
       <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -116,7 +267,15 @@
     
     <url>
     
-      <loc>/nab/post/ein-paar-interessante-links/</loc>
+      <loc>/post/zentrales-schwankungsintervall/</loc>
+      <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/ein-paar-interessante-links/</loc>
       <lastmod>2017-12-31T00:00:00+00:00</lastmod>
     </url>
     
@@ -124,7 +283,7 @@
     
     <url>
     
-      <loc>/nab/post/quartile-quantile-perzentile-etc/</loc>
+      <loc>/post/quartile-quantile-perzentile-etc/</loc>
       <lastmod>2017-12-19T00:00:00+00:00</lastmod>
     </url>
     
@@ -132,7 +291,7 @@
     
     <url>
     
-      <loc>/nab/post/github-webhook-eingebaut/</loc>
+      <loc>/post/github-webhook-eingebaut/</loc>
       <lastmod>2017-12-18T00:00:00+00:00</lastmod>
     </url>
     
@@ -140,7 +299,7 @@
     
     <url>
     
-      <loc>/nab/post/first-entry/</loc>
+      <loc>/post/first-entry/</loc>
       <lastmod>2017-12-17T00:00:00+00:00</lastmod>
     </url>
     
@@ -148,7 +307,15 @@
     
     <url>
     
-      <loc>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</loc>
+      <loc>/categories/kommentar/</loc>
+      <lastmod>2017-12-17T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/10-dinge-die-kein-talent-benotigen/</loc>
       <lastmod>2017-07-13T00:00:00+00:00</lastmod>
     </url>
     
@@ -156,7 +323,7 @@
     
     <url>
     
-      <loc>/nab/post/der-zentrale-grenzwertsatz/</loc>
+      <loc>/post/der-zentrale-grenzwertsatz/</loc>
       <lastmod>2017-04-05T00:00:00+00:00</lastmod>
     </url>
     
@@ -164,7 +331,7 @@
     
     <url>
     
-      <loc>/nab/project/etwas-r-am-abend/</loc>
+      <loc>/tags/data-science/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -172,7 +339,7 @@
     
     <url>
     
-      <loc>/nab/project/fastsimnulldistr/</loc>
+      <loc>/project/etwas-r-am-abend/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -180,7 +347,7 @@
     
     <url>
     
-      <loc>/nab/project/style.py/</loc>
+      <loc>/project/fastsimnulldistr/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -188,7 +355,7 @@
     
     <url>
     
-      <loc>/nab/project/typography.py/</loc>
+      <loc>/tags/latex/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -196,7 +363,7 @@
     
     <url>
     
-      <loc>/nab/project/rmdstylechecker/</loc>
+      <loc>/tags/pandoc/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -204,7 +371,71 @@
     
     <url>
     
-      <loc>/nab/talk/example/</loc>
+      <loc>/project/style.py/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/project/typography.py/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/panflute/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/project/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/project/rmdstylechecker/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/rstudio/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/sbi/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/vortrag/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/talk/example/</loc>
       <lastmod>2017-01-01T00:00:00+01:00</lastmod>
     </url>
     
@@ -212,7 +443,7 @@
     
     <url>
     
-      <loc>/nab/post/</loc>
+      <loc>/talk/</loc>
       <lastmod>2017-01-01T00:00:00+01:00</lastmod>
     </url>
     
@@ -220,23 +451,7 @@
     
     <url>
     
-      <loc>/nab/talk/</loc>
-      <lastmod>2017-01-01T00:00:00+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/publication/</loc>
-      <lastmod>2017-01-01T00:00:00+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/post/getting-started/</loc>
+      <loc>/tags/academic/</loc>
       <lastmod>2018-01-13T00:00:00+01:00</lastmod>
     </url>
     
@@ -244,249 +459,174 @@
     
     <url>
     
-      <loc>/nab/publication/statistik21/</loc>
-      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/publication/learn2control/</loc>
-      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/publication_types/2/</loc>
-      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/publication_types/4/</loc>
-      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/academic/</loc>
+      <loc>/post/getting-started/</loc>
       <lastmod>2018-01-13T00:00:00+01:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/tags/allgemein/</loc>
-      <lastmod>2018-06-11T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/categories/allgemeines/</loc>
-      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/categories/</loc>
-      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/data-science/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/fom/</loc>
+      <loc>/publication_types/4/</loc>
       <lastmod>2009-09-25T00:00:00+02:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/categories/fundst%C3%BCcke/</loc>
-      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/authors/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/categories/information/</loc>
-      <lastmod>2018-05-02T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/tags/fom/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/categories/kommentar/</loc>
-      <lastmod>2017-12-17T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/authors/karsten-lubke/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/tags/latex/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/authors/matthias-gehrke/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/tags/lehre/</loc>
-      <lastmod>2018-06-11T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/authors/norman-markgaf/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/tags/mathematica/</loc>
-      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/publication_types/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/</loc>
-      <lastmod>2017-10-15T00:00:00+02:00</lastmod>
-      <priority>0</priority>
+      <loc>/publication/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/tags/pandoc/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/publication/statistik21/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/project/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/projektorientiertes-lernen/</loc>
+      <loc>/authors/manuel-remelhe/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/publication_types/</loc>
+      <loc>/publication_types/2/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/tags/python/</loc>
-      <lastmod>2019-01-05T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/r/</loc>
-      <lastmod>2018-12-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/r-markdown/</loc>
-      <lastmod>2018-12-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/rstudio/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/raspberry-pi/</loc>
-      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/raspbian/</loc>
-      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/regelungstechnik/</loc>
+      <loc>/authors/andreas-liefeld/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/carsten-fritsch/</loc>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/kai-dadhe/</loc>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication/learn2control/</loc>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/marten-volker/</loc>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/projektorientiertes-lernen/</loc>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/regelungstechnik/</loc>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/sebastian-engell/</loc>
+      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/admin/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/privacy/</loc>
       <priority>0</priority>
     </url>
     
@@ -494,96 +634,14 @@
     
     <url>
     
-      <loc>/nab/tags/sbi/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/slides/</loc>
     </url>
     
   
     
     <url>
     
-      <loc>/nab/slides/</loc>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/slides/example-slides/</loc>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/categories/statistik/</loc>
-      <lastmod>2018-06-11T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/statistik/</loc>
-      <lastmod>2018-06-11T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/</loc>
-      <lastmod>2018-01-13T00:00:00+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/technisches/</loc>
-      <lastmod>2018-12-03T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/vortrag/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/wahrscheinlichkeitstheorie/</loc>
-      <lastmod>2018-01-01T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/matplotlib/</loc>
-      <lastmod>2019-01-02T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/nab/tags/panflute/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/slides/example-slides/</loc>
     </url>
     
   

@@ -1,34 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Raspbian on Normans Akademischer Blog</title>
-    <link>/nab/tags/raspbian/</link>
-    <description>Recent content in Raspbian on Normans Akademischer Blog</description>
+    <title>Raspbian on Norman&#39;s Academic Blog</title>
+    <link>/tags/raspbian/</link>
+    <description>Recent content in Raspbian on Norman&#39;s Academic Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de-de</language>
-    <copyright>&amp;copy; 2016-19 Norman Markgraf</copyright>
+    <language>en-us</language>
+    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
     <lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/nab/tags/raspbian/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/raspbian/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Raspbian auf dem Raspberry Pi installieren</title>
-      <link>/nab/post/raspbian-auf-dem-raspberry-pi-installieren/</link>
+      <link>/post/raspbian-auf-dem-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/raspbian-auf-dem-raspberry-pi-installieren/</guid>
+      <guid>/post/raspbian-auf-dem-raspberry-pi-installieren/</guid>
       <description>Wenn man zu Weihnachten einen kleinen neuen Freund bekommt, so wie ich einen Raspberry Pi Zero WH, dann möchte man ihn auch mit der aktuellen Version eines Betriebssystems austatten. Als macOS Nutzer gibt es dafür viele Möglichkeiten. Hier meine Schritte bei der Installation, damit ich mich daran später erinnere
 Vorbereiten der SD Karte Die SD(HC) Karte sollte auf FAT32 formatiert werden. Das geht unter macOS sehr schön mit dem Festplattenmanager!</description>
     </item>
     
     <item>
       <title>Weitere Software auf den Raspberry PI installieren.</title>
-      <link>/nab/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
+      <link>/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
-      <description> Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:
+      <guid>/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
+      <description>Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:
 Mathematica sudo apt-get update sudo apt-get install wolfram-engine  Python3 auf den aktuellen Stand bringen pip3 install --upgrade pip  Python3 und das Paket &amp;ldquo;matplotlib&amp;rdquo; sudo apt-get install python3-matplotlib  </description>
     </item>
     

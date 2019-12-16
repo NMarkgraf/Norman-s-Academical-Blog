@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Matthias Gehrke on Norman&#39;s Academic Blog</title>
+    <link>/authors/matthias-gehrke/</link>
+    <description>Recent content in Matthias Gehrke on Norman&#39;s Academic Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
+    <lastBuildDate>Fri, 25 Sep 2009 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="/authors/matthias-gehrke/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Statistik21</title>
+      <link>/publication/statistik21/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      
+      <guid>/publication/statistik21/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

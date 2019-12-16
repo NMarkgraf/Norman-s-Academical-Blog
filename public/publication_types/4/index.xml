@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>4 on Normans Akademischer Blog</title>
-    <link>/nab/publication_types/4/</link>
-    <description>Recent content in 4 on Normans Akademischer Blog</description>
+    <title>4 on Norman&#39;s Academic Blog</title>
+    <link>/publication_types/4/</link>
+    <description>Recent content in 4 on Norman&#39;s Academic Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de-de</language>
-    <copyright>&amp;copy; 2016-19 Norman Markgraf</copyright>
+    <language>en-us</language>
+    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
     <lastBuildDate>Fri, 25 Sep 2009 00:00:00 +0200</lastBuildDate>
     
-	<atom:link href="/nab/publication_types/4/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/publication_types/4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Statistik21</title>
-      <link>/nab/publication/statistik21/</link>
+      <link>/publication/statistik21/</link>
       <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
       
-      <guid>/nab/publication/statistik21/</guid>
+      <guid>/publication/statistik21/</guid>
       <description></description>
     </item>
     

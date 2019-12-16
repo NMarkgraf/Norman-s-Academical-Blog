@@ -1,33 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lehre on Normans Akademischer Blog</title>
-    <link>/nab/tags/lehre/</link>
-    <description>Recent content in Lehre on Normans Akademischer Blog</description>
+    <title>Lehre on Norman&#39;s Academic Blog</title>
+    <link>/tags/lehre/</link>
+    <description>Recent content in Lehre on Norman&#39;s Academic Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de-de</language>
-    <copyright>&amp;copy; 2016-19 Norman Markgraf</copyright>
+    <language>en-us</language>
+    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
     <lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/nab/tags/lehre/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/lehre/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SBI - Simulation Based Inference</title>
-      <link>/nab/post/sbi-simulation-based-inference/</link>
+      <link>/post/sbi-simulation-based-inference/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/sbi-simulation-based-inference/</guid>
+      <guid>/post/sbi-simulation-based-inference/</guid>
       <description>Wenn meine Tochter SBI hört, denkt sie an Sally Bollywood Investigation. – Und ich oft auch. – Mit SBI ist hier aber nicht der Trickfilm für Kinder, sondern Simulation Based Inference, gemeint.
 Angestachelt von Prof. Dr. Karsten Lübke und im Schlepptau von Prof. Dr. Oliver Gansser, Prof. Dr. Matthias Gehrke und Prof. Dr. Bianca Krol haben ein paar kluge Köpfe bei der FOM den Unterricht für Statistik auf eine neue Grundlage zu stellen.</description>
     </item>
     
     <item>
       <title>Ein wenig schneller zur simulierten Nullverteilung</title>
-      <link>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</link>
+      <link>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
+      <guid>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
       <description>Ein Nullhypothesentest ist schnell geschrieben. Will man den approximativen Weg gehen, so hilft R einem mit entsprechenden Tests mit einfachen Befehlen. Nimmt man MOSAIC dazu, so bekommt man u.a. für den Test auf Anteils- oder Mittelwerte sogar einen sehr einfachen, weil einheitlichen, Syntax.
 Zwei Beispiele für approximative Hypothesentests mit MOSAIC Laden wir unsere Testdaten, die tipping Daten wie folgt:
 library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.</description>
@@ -35,10 +35,10 @@ library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfil
     
     <item>
       <title>Nur ein wenig lineare Regression</title>
-      <link>/nab/post/nur-ein-wenig-lineare-regression/</link>
+      <link>/post/nur-ein-wenig-lineare-regression/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/nur-ein-wenig-lineare-regression/</guid>
+      <guid>/post/nur-ein-wenig-lineare-regression/</guid>
       <description>Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
 Zunächst laden wir dazu die tipping Daten mittels
 library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfile = &amp;quot;tips.</description>
@@ -46,10 +46,10 @@ library(mosaic) download.file(&amp;quot;https://goo.gl/whKjnl&amp;quot;, destfil
     
     <item>
       <title>Prognose-, Konfidenz- und Fiduzialintervalle</title>
-      <link>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</link>
+      <link>/post/prognose-konfidenz-und-fiduzialintervalle/</link>
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
+      <guid>/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
       <description>*WORK IN PROGRESS Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
 Konfidenzintervalle Definition von Konfidenzintervallen1 Für unabhängig identisch verteilte Zufallsvariablen \(X_1,\dotsc, X_n\) mit unbekanntem reellen Verteilungsparameter \(\vartheta\) kann unter bestimmten Umständen zwei Stichprobenfunktionen \(U\) und \(V\) angeben, so dass
 \[P(U &amp;lt; \vartheta &amp;lt; V) \geq \gamma\]
@@ -58,19 +58,19 @@ gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, 
     
     <item>
       <title>Konfidenzintervalle</title>
-      <link>/nab/post/konfidenzintervalle/</link>
+      <link>/post/konfidenzintervalle/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/konfidenzintervalle/</guid>
+      <guid>/post/konfidenzintervalle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Zentrales Schwankungsintervall</title>
-      <link>/nab/post/zentrales-schwankungsintervall/</link>
+      <link>/post/zentrales-schwankungsintervall/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/zentrales-schwankungsintervall/</guid>
+      <guid>/post/zentrales-schwankungsintervall/</guid>
       <description> Das zentrale Schwankungsintervall sagt etwas über die Präzision der Lageschätzung eines Parameters (zum Beispiel eines Mittelwertes) aus. Das Schwankungsintervall schließt einen Bereich um den wahren Wert des Parameters in der Grundgesamtheit ein, der – vereinfacht gesprochen – mit einer zuvor festgelegten Sicherheitswahrscheinlichkeit den aus der Stichprobe geschätzten Parameter enthält.1
  vgl: https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall↩
    </description>
@@ -78,10 +78,10 @@ gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, 
     
     <item>
       <title>Quartile, Quantile, Perzentile etc.</title>
-      <link>/nab/post/quartile-quantile-perzentile-etc/</link>
+      <link>/post/quartile-quantile-perzentile-etc/</link>
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/quartile-quantile-perzentile-etc/</guid>
+      <guid>/post/quartile-quantile-perzentile-etc/</guid>
       <description>“Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?” Diese Frage kommt ab und zu in Vorlesungen zur Statistik vor. Dabei ist die Antwort recht einfach.
 Quantile Definitorische Antwort Für eine gegebene reelle Zufallsvariable \(X\) heißt eine reelle Zahl \(x_p\) ein p-Quantil (von \(X\)), falls gilt:
 \[P(X \leq x_p) \leq p \quad \text{ und }\quad P(x_p \leq X) \geq 1-p.\]
@@ -90,29 +90,29 @@ Quantile Definitorische Antwort Für eine gegebene reelle Zufallsvariable \(X\) 
     
     <item>
       <title>10 Dinge die kein Talent benötigen!</title>
-      <link>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
+      <link>/post/10-dinge-die-kein-talent-benotigen/</link>
       <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
-      <description> Gerade im Internet gefunden:
+      <guid>/post/10-dinge-die-kein-talent-benotigen/</guid>
+      <description>Gerade im Internet gefunden:
 10 Dinge die kein Talent benötigen!  Pünktlichkeit Arbeitsmoral Anstrengung Körpersprache Energie Haltung Leidenschaft Lernwillig sein Etwas mehr als das Minimum tun Vorbereitet sein  </description>
     </item>
     
     <item>
       <title>Etwas R am Abend</title>
-      <link>/nab/project/etwas-r-am-abend/</link>
+      <link>/project/etwas-r-am-abend/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/project/etwas-r-am-abend/</guid>
-      <description></description>
+      <guid>/project/etwas-r-am-abend/</guid>
+      <description>Vortrag zur Einführung in R für Studierende</description>
     </item>
     
     <item>
       <title>Statistik21</title>
-      <link>/nab/publication/statistik21/</link>
+      <link>/publication/statistik21/</link>
       <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
       
-      <guid>/nab/publication/statistik21/</guid>
+      <guid>/publication/statistik21/</guid>
       <description></description>
     </item>
     

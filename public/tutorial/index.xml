@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Overview on Normans Akademischer Blog</title>
-    <link>/nab/tutorial/</link>
-    <description>Recent content in Overview on Normans Akademischer Blog</description>
+    <title>Overview on Norman&#39;s Academic Blog</title>
+    <link>/tutorial/</link>
+    <description>Recent content in Overview on Norman&#39;s Academic Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de-de</language>
-    <copyright>&amp;copy; 2016-19 Norman Markgraf</copyright>
+    <language>en-us</language>
+    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
     <lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0200</lastBuildDate>
     
-	<atom:link href="/nab/tutorial/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tutorial/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Example Page</title>
-      <link>/nab/tutorial/example/</link>
+      <link>/tutorial/example/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0200</pubDate>
       
-      <guid>/nab/tutorial/example/</guid>
-      <description>In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:
+      <guid>/tutorial/example/</guid>
+      <description>In this tutorial, I&#39;ll share my top 10 tips for getting started with Academic:
 Tip 1 &amp;hellip;
 Tip 2 &amp;hellip;</description>
     </item>

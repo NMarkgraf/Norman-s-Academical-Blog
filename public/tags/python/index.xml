@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on Normans Akademischer Blog</title>
-    <link>/nab/tags/python/</link>
-    <description>Recent content in Python on Normans Akademischer Blog</description>
+    <title>Python on Norman&#39;s Academic Blog</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on Norman&#39;s Academic Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de-de</language>
-    <copyright>&amp;copy; 2016-19 Norman Markgraf</copyright>
+    <language>en-us</language>
+    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
     <lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/nab/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Wie man es nicht machen sollte in Python!</title>
-      <link>/nab/post/wie-man-es-nicht-machen-sollte-in-python/</link>
+      <link>/post/wie-man-es-nicht-machen-sollte-in-python/</link>
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/wie-man-es-nicht-machen-sollte-in-python/</guid>
+      <guid>/post/wie-man-es-nicht-machen-sollte-in-python/</guid>
       <description>Es sind oft die Dinge die man nicht sucht die einem weiterhelfen. So habe ich auch nach etwas ganz anderes gesucht und bin dabei über ein nettes kleines Werk gestoplert, dass einem sagt, wie man in Python Dinge besser nicht macht.
 Unter https://docs.quantifiedcode.com/python-anti-patterns/index.html gibt es das The Little Book of Python Anti-Patterns.
 Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte.</description>
@@ -25,61 +25,59 @@ Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Pri
     
     <item>
       <title>Weitere Software auf den Raspberry PI installieren.</title>
-      <link>/nab/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
+      <link>/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
-      <description> Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:
+      <guid>/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
+      <description>Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:
 Mathematica sudo apt-get update sudo apt-get install wolfram-engine  Python3 auf den aktuellen Stand bringen pip3 install --upgrade pip  Python3 und das Paket &amp;ldquo;matplotlib&amp;rdquo; sudo apt-get install python3-matplotlib  </description>
     </item>
     
     <item>
       <title>Der Angriff der Riesenschlangen.</title>
-      <link>/nab/post/der-angriff-der-riesenschlangen/</link>
+      <link>/post/der-angriff-der-riesenschlangen/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/der-angriff-der-riesenschlangen/</guid>
+      <guid>/post/der-angriff-der-riesenschlangen/</guid>
       <description>Klingt ja bedrohlich, aber es ist wirklich Möglich R und Python sinnvoll zu kombinieren. Nicht nur in den Anwendungen, sondern auch beim Erstellen von Skripten mit R markdown.
 Zu Beginn des letzten Semesters hatte ich die Idee in der Vorlesung “Mathematischen Grundlagen der Wirtschaftsinformatik” ein paar der Begriffe der Mengenlehre denen daraus abgeleiteten Begriffen der abstrakten Datentypen gegenüberzustellen. So gibt es die Idee der Menge u.a. in Python als set.</description>
     </item>
     
     <item>
       <title>Auch R markdown Dateien sollten sich an Regeln halten</title>
-      <link>/nab/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
+      <link>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nab/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
+      <guid>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
       <description>Jede Programmiersprache hat Regeln. Neben dem Regelwerk welches durch den Syntax einer Sprache festgelegt wird, gib es aber noch Regeln über die Form in der man den Quelltext schreibt. Diese sogenannte Stilregeln (engl. style guides) sind von Programmieren aufgestellte Regeln um ein einheitliches “Schriftbild” des Quelltextes zu erhalten. Das Ziel der Stilregeln ist es, den Quelltext lesbarer zu gestallten, um leichter Änderungen einzupflegen oder um unnötiges zu vermeiden.
 Eine Programmiersprache wie Python zum Beispiel hat mit PEP8 einen eigenen Standard wie ein Python Programm geschrieben seien sollte.</description>
     </item>
     
     <item>
       <title>Pandoc filter: style.py</title>
-      <link>/nab/project/style.py/</link>
+      <link>/project/style.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/project/style.py/</guid>
-      <description></description>
+      <guid>/project/style.py/</guid>
+      <description>Ein Pandoc Filter (in Python 3.5+ auf Basis von panflute) um Stilelemente in R markdown Dokumenten mittel geeigneter SPAN- bzw. DIV-Blöcke nach HTML bzw. LaTeX umzuwandelt.</description>
     </item>
     
     <item>
       <title>Pandoc filter: typography.py</title>
-      <link>/nab/project/typography.py/</link>
+      <link>/project/typography.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/project/typography.py/</guid>
-      <description></description>
+      <guid>/project/typography.py/</guid>
+      <description>Ein Pandoc Filter (in Python 3.5+ auf Basis von panflute) um typographische Änderungen an aus  R markdown Dokumenten erzeugten HTML- bzw. LaTeX-Dokumenten vorzunehmen.</description>
     </item>
     
     <item>
       <title>RmdStyleChecker</title>
-      <link>/nab/project/rmdstylechecker/</link>
+      <link>/project/rmdstylechecker/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/project/rmdstylechecker/</guid>
-      <description>Jede Sprache hat Regeln, auch Programmiersprachen und R markdown ist eine Programmiersprache. Wieso also nicht ein Tool schreiben, welches SStilregeln (engl. style guides) für R markdown kontrolliert um auch im kolaborativen Einsatz ein einheitliches &amp;ldquo;Schriftbild&amp;rdquo; des Quelltextes zu erhalten.
-&amp;hellip;
-Einen ersten Schritt habe ich mit dem Blog-Eintrag gemacht und dazu gleich noch ein Tool in Python geschrieben um Verstöße dagegen schneller zu finden.</description>
+      <guid>/project/rmdstylechecker/</guid>
+      <description>Python Script zum Überprüfen von Style Guidelines von R markdown Dokumenten</description>
     </item>
     
   </channel>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on Norman&#39;s Academic Blog</title>
+    <link>/authors/</link>
+    <description>Recent content in Authors on Norman&#39;s Academic Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
+    <lastBuildDate>Fri, 25 Sep 2009 00:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Karsten Lübke</title>
+      <link>/authors/karsten-lubke/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      
+      <guid>/authors/karsten-lubke/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matthias Gehrke</title>
+      <link>/authors/matthias-gehrke/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      
+      <guid>/authors/matthias-gehrke/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Norman Markgaf</title>
+      <link>/authors/norman-markgaf/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      
+      <guid>/authors/norman-markgaf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> Manuel Remelhe</title>
+      <link>/authors/manuel-remelhe/</link>
+      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
+      
+      <guid>/authors/manuel-remelhe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Andreas Liefeld</title>
+      <link>/authors/andreas-liefeld/</link>
+      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
+      
+      <guid>/authors/andreas-liefeld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Carsten Fritsch</title>
+      <link>/authors/carsten-fritsch/</link>
+      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
+      
+      <guid>/authors/carsten-fritsch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kai Dadhe</title>
+      <link>/authors/kai-dadhe/</link>
+      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
+      
+      <guid>/authors/kai-dadhe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Marten Völker</title>
+      <link>/authors/marten-volker/</link>
+      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
+      
+      <guid>/authors/marten-volker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sebastian Engell</title>
+      <link>/authors/sebastian-engell/</link>
+      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
+      
+      <guid>/authors/sebastian-engell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/authors/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/authors/admin/</guid>
+      <description>Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet.</description>
+    </item>
+    
+  </channel>
+</rss>

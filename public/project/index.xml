@@ -1,62 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Normans Akademischer Blog</title>
-    <link>/nab/project/</link>
-    <description>Recent content in Projects on Normans Akademischer Blog</description>
+    <title>Projects on Norman&#39;s Academic Blog</title>
+    <link>/project/</link>
+    <description>Recent content in Projects on Norman&#39;s Academic Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de-de</language>
-    <copyright>&amp;copy; 2016-19 Norman Markgraf</copyright>
+    <language>en-us</language>
+    <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
     <lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/nab/project/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Etwas R am Abend</title>
-      <link>/nab/project/etwas-r-am-abend/</link>
+      <link>/project/etwas-r-am-abend/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/project/etwas-r-am-abend/</guid>
-      <description></description>
+      <guid>/project/etwas-r-am-abend/</guid>
+      <description>Vortrag zur Einführung in R für Studierende</description>
     </item>
     
     <item>
       <title>FastSimNullDistR</title>
-      <link>/nab/project/fastsimnulldistr/</link>
+      <link>/project/fastsimnulldistr/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/project/fastsimnulldistr/</guid>
-      <description></description>
+      <guid>/project/fastsimnulldistr/</guid>
+      <description>Wenn das &lt;code&gt;do(oft)*&lt;/code&gt; in Mosaic einfach zu langsam ist, dann hilft vielleicht diese (quasi)-drop-in-replacements um mal schnell die Nullverteilungen zu simulieren.</description>
     </item>
     
     <item>
       <title>Pandoc filter: style.py</title>
-      <link>/nab/project/style.py/</link>
+      <link>/project/style.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/project/style.py/</guid>
-      <description></description>
+      <guid>/project/style.py/</guid>
+      <description>Ein Pandoc Filter (in Python 3.5+ auf Basis von panflute) um Stilelemente in R markdown Dokumenten mittel geeigneter SPAN- bzw. DIV-Blöcke nach HTML bzw. LaTeX umzuwandelt.</description>
     </item>
     
     <item>
       <title>Pandoc filter: typography.py</title>
-      <link>/nab/project/typography.py/</link>
+      <link>/project/typography.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/project/typography.py/</guid>
-      <description></description>
+      <guid>/project/typography.py/</guid>
+      <description>Ein Pandoc Filter (in Python 3.5+ auf Basis von panflute) um typographische Änderungen an aus  R markdown Dokumenten erzeugten HTML- bzw. LaTeX-Dokumenten vorzunehmen.</description>
     </item>
     
     <item>
       <title>RmdStyleChecker</title>
-      <link>/nab/project/rmdstylechecker/</link>
+      <link>/project/rmdstylechecker/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>/nab/project/rmdstylechecker/</guid>
-      <description>Jede Sprache hat Regeln, auch Programmiersprachen und R markdown ist eine Programmiersprache. Wieso also nicht ein Tool schreiben, welches SStilregeln (engl. style guides) für R markdown kontrolliert um auch im kolaborativen Einsatz ein einheitliches &amp;ldquo;Schriftbild&amp;rdquo; des Quelltextes zu erhalten.
-&amp;hellip;
-Einen ersten Schritt habe ich mit dem Blog-Eintrag gemacht und dazu gleich noch ein Tool in Python geschrieben um Verstöße dagegen schneller zu finden.</description>
+      <guid>/project/rmdstylechecker/</guid>
+      <description>Python Script zum Überprüfen von Style Guidelines von R markdown Dokumenten</description>
     </item>
     
   </channel>
