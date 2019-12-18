@@ -67,7 +67,7 @@ xyplot(
             text = list(c(&quot;Regressionsgerade&quot;))
           )
      )</code></pre>
-<p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Was hat es mit dem y-Achsenabschnitt <span class="math inline">\(\hat{\beta}_0\)</span> auf sich?</p>
 <p>Ist es etwa eine Art <em>Grundtrinkgeld</em>, mit dem der Kellern rechnen kann, auch wenn der Kunde gar nichts bestellt?</p>
 <p>Nun ja, es so etwas in der Art, aber eben ein rein fiktiver Wert, der durch die Konstruktion der Parameter entsteht.
@@ -117,7 +117,7 @@ xyplot(
             lines=list(col=c(&quot;red&quot;), lty=c(2), lwd=1.2),
             text=list(c(&quot;Regressionsgerade&quot;)))
      )</code></pre>
-<p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit Ausnahme der <em>[Intercept]</em> Zeile praktisch nichts geändert hat. Das ist kein Wunder, sondern Absicht!</p>
 <p>Die Regressionsgerade stellt für unsere Stichprobe die Gerade mit dem geringsten Fehler an den Datenpunkten dar. Mathematisch heißt das folgendes:</p>
 <p>An den <span class="math inline">\(n=244\)</span> Datenpunkten unserer Stichprobe <span class="math inline">\((x_i, y_i)=(tips\$total\_bill[i], tips\$tip[i])\)</span> [für <span class="math inline">\((i=1, \dots, n)\)</span>] sind die <em>Residuen</em>, also die <em>Fehlerterme</em>,</p>
@@ -170,17 +170,17 @@ xyplot(
             text = list(c(&quot;Regressionsgerade / x-Achse&quot;))
           )
 )</code></pre>
-<p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Wir können die Graphik im wesentlichen auch einfacher über den Befehl</p>
 <pre class="r"><code>xyplot(residuals(linMod) ~ fitted(linMod))</code></pre>
-<p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>erhalten.</p>
 <p>Betrachten wir kurz nur die Residuen:</p>
 <pre class="r"><code>favstats(~residuals(linMod))</code></pre>
-<pre><code>##        min         Q1      median        Q3      max          mean
-##  -3.198225 -0.5651615 -0.09744499 0.4863111 3.743435 -2.022281e-17
-##        sd   n missing
-##  1.019943 244       0</code></pre>
+<pre><code>##        min         Q1      median        Q3      max          mean       sd   n
+##  -3.198225 -0.5651615 -0.09744499 0.4863111 3.743435 -2.022281e-17 1.019943 244
+##  missing
+##        0</code></pre>
 <p>Wir sehe, dass wir in der Zusammenfassung immer genau diese Werte unter dem Abschnitt <em>Residuals</em> gefunden haben. Minimum, das 1. Quantil, der Median, das 3. Quantil und das Maximum stimmen überein.</p>
 <p>Der erwartungstreue und unverzerrte Schätzer für den Standardfehler der Residuen, lautet</p>
 <p><span class="math display">\[
@@ -200,7 +200,7 @@ xyplot(
 Es könnte also eine linkssteile, rechtsschiefe Verteilung der Residuen vorliegen.
 Betrachten wir dazu das Histogramm:</p>
 <pre class="r"><code>histogram(~residuals(linMod), nint = 19)</code></pre>
-<p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.</p>
 <p>Ein Shapiro-Wilk-Test<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> hat als Nullhypothese die Annahme, dass die Daten normalverteilt sind!</p>
 <pre class="r"><code>shapiro.test(residuals(linMod))</code></pre>
@@ -211,7 +211,7 @@ Betrachten wir dazu das Histogramm:</p>
 ## W = 0.96728, p-value = 2.171e-05</code></pre>
 <p>Davon ist nach dem Ergebnis eben sowenig auszugehen, wie nach einem Blick auf das QQ-Normal-Diagramm:</p>
 <pre class="r"><code>qqnorm(residuals(linMod), col = &quot;darkgreen&quot;)</code></pre>
-<p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Ein K.O.-Kriterium für gute Prognosen.</p>
 <p>Wie gut aber beschreibt unsere Regressionsgerade die Daten?</p>
 <p>Als Maß dafür können wir das Bestimmtheitsmaß nehmen.</p>
@@ -241,7 +241,7 @@ xyplot(
             text = list(c(&quot;Mittelwert Trinkgeld&quot;, &quot;Regressionsgerade&quot;))
     )
 )</code></pre>
-<p><img src="/nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Die Varianz <span class="math inline">\(s^2_{y_i}=1.9144546\)</span> beschreibt die mittlere quadratische Abweichung der Datenpunkte <span class="math inline">\(y_i\)</span> vom Mittelwert <span class="math inline">\(\bar{y}\)</span>.
 Diese Varianz lässt sich Zerlegen in einen Anteil, der durch die Regressionsgerade <em>erklärt</em> wird und in einen Anteil, der durch die Regressionsgerade <em>nicht erklärt</em> wird.</p>
 <p><span class="math display">\[

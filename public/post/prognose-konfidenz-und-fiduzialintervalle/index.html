@@ -34,7 +34,7 @@ Konfidenzintervalle Definition von Konfidenzintervallen1 Für unabhängig identi
 gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, V]\) ein Konfidenzintervall für \(\vartheta\) zum Konfidenzniveau \(\gamma\) (auch: ein \(\gamma\)-Konfidenzintervall).">
 
   
-  <link rel="alternate" hreflang="de-de" href="../../post/prognose-konfidenz-und-fiduzialintervalle/">
+  <link rel="alternate" hreflang="de-de" href="https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/">
 
   
 
@@ -137,7 +137,7 @@ gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, 
   <link rel="icon" type="image/png" href="../../img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
 
-  <link rel="canonical" href="../../post/prognose-konfidenz-und-fiduzialintervalle/">
+  <link rel="canonical" href="https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/">
 
   
   
@@ -150,13 +150,13 @@ gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, 
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Norman&#39;s Academic Blog">
-  <meta property="og:url" content="/post/prognose-konfidenz-und-fiduzialintervalle/">
+  <meta property="og:url" content="https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/">
   <meta property="og:title" content="Prognose-, Konfidenz- und Fiduzialintervalle | Norman&#39;s Academic Blog">
   <meta property="og:description" content="*WORK IN PROGRESS Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!
 Konfidenzintervalle Definition von Konfidenzintervallen1 Für unabhängig identisch verteilte Zufallsvariablen \(X_1,\dotsc, X_n\) mit unbekanntem reellen Verteilungsparameter \(\vartheta\) kann unter bestimmten Umständen zwei Stichprobenfunktionen \(U\) und \(V\) angeben, so dass
 \[P(U &lt; \vartheta &lt; V) \geq \gamma\]
-gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, V]\) ein Konfidenzintervall für \(\vartheta\) zum Konfidenzniveau \(\gamma\) (auch: ein \(\gamma\)-Konfidenzintervall)."><meta property="og:image" content="/img/icon-192.png">
-  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="de-de">
+gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, V]\) ein Konfidenzintervall für \(\vartheta\) zum Konfidenzniveau \(\gamma\) (auch: ein \(\gamma\)-Konfidenzintervall)."><meta property="og:image" content="https://sefiroth.net/nap/img/icon-192.png">
+  <meta property="twitter:image" content="https://sefiroth.net/nap/img/icon-192.png"><meta property="og:locale" content="de-de">
   
     
       <meta property="article:published_time" content="2018-01-04T00:00:00&#43;00:00">
@@ -187,7 +187,7 @@ gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, 
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/post/prognose-konfidenz-und-fiduzialintervalle/"
+    "@id": "https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/"
   },
   "headline": "Prognose-, Konfidenz- und Fiduzialintervalle",
   
@@ -204,7 +204,7 @@ gilt, mit \(\gamma \in (0,1)\). Dann heißt das (stochastische) Intervall \([U, 
     "name": "Norman's Academic Blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "/img/icon-512.png"
+      "url": "https://sefiroth.net/nap/img/icon-512.png"
     }
   },
   "description": "*WORK IN PROGRESS Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!\nKonfidenzintervalle Definition von Konfidenzintervallen1 Für unabhängig identisch verteilte Zufallsvariablen \\(X_1,\\dotsc, X_n\\) mit unbekanntem reellen Verteilungsparameter \\(\\vartheta\\) kann unter bestimmten Umständen zwei Stichprobenfunktionen \\(U\\) und \\(V\\) angeben, so dass\n\\[P(U \u0026lt; \\vartheta \u0026lt; V) \\geq \\gamma\\]\ngilt, mit \\(\\gamma \\in (0,1)\\). Dann heißt das (stochastische) Intervall \\([U, V]\\) ein Konfidenzintervall für \\(\\vartheta\\) zum Konfidenzniveau \\(\\gamma\\) (auch: ein \\(\\gamma\\)-Konfidenzintervall)."
@@ -580,18 +580,18 @@ Dann heißt das (stochastische) Intervall <span class="math inline">\([U, V]\)</
 <p>Wir nehmen zunächst als Population <span class="math inline">\(N=1000\)</span> normalverteilte Zufallszahlen mit dem Mittelwert <span class="math inline">\(\mu= 0\)</span> und der Standardabweichung <span class="math inline">\(\sigma=2.0088\)</span>.</p>
 <p>Dazu das Histogramm der Population:</p>
 <pre class="r"><code>histogram(pop, xlab=&quot;Population&quot;)</code></pre>
-<p><img src="../../nab/post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="../../post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Aus dieser Population ziehen wir eine Stichprobe <span class="math inline">\(x\)</span> vom Umfang $n=$40 und erhalten die folgenden statistischen Daten:</p>
 <pre class="r"><code>favstats(x)</code></pre>
-<pre><code>##     min     Q1  median     Q3   max    mean    sd  n missing
-##  -4.997 -1.052 -0.3928 0.8211 3.295 -0.3423 1.878 40       0</code></pre>
+<pre><code>##    min      Q1 median    Q3   max   mean    sd  n missing
+##  -3.38 -0.9781 0.2042 1.546 4.002 0.1877 1.901 40       0</code></pre>
 <p>Wir wollen nun den wahren Mittelwert <span class="math inline">\(\vartheta=\mu\)</span> mit Hilfe der Stichprobe <span class="math inline">\(x\)</span> schätzen. So ist es ja in der Realität auch, denn normalerweise haben wir die Daten über die Population nicht.</p>
 <p>Die Schätzfunktion für den Mittelwert lautet nun
 <span class="math display">\[\bar{X} = \frac1n \sum_{i=1}^n X_i\]</span>,
 und damit die konkrete Punktschätzung
 <span class="math display">\[\hat{\mu}=\bar{x}= \sum_{i=1}^n x_i\]</span>
-liefert den Wert <span class="math inline">\(\hat{\mu}=\)</span> -0.3423.</p>
-<p>In unserem Beispiel unterscheiden sich die beiden Werte um <span class="math inline">\(\mu - \hat{\mu}=\)</span> 0.3423.</p>
+liefert den Wert <span class="math inline">\(\hat{\mu}=\)</span> 0.1877.</p>
+<p>In unserem Beispiel unterscheiden sich die beiden Werte um <span class="math inline">\(\mu - \hat{\mu}=\)</span> -0.1877.</p>
 <p>Ein 95%-Konfidenzintervall nimmt nun den geschätzen Wert <span class="math inline">\(\hat{\mu}\)</span> als Grundlage und gibt liefert ein Intervall mit der Eigentschaft, ausgehend von den konkreten Stichproben in 95% der Fälle den tatsächlichen Wert <span class="math inline">\(\mu\)</span> zu umfassen. Es ist also
 <span class="math display">\[\gamma = 0.95 = 1 - \alpha = 1 - 0.05, \quad \alpha = 0.05\]</span></p>
 <p>Dazu werden die beiden Stichprobenfunktionen</p>
@@ -599,20 +599,20 @@ liefert den Wert <span class="math inline">\(\hat{\mu}=\)</span> -0.3423.</p>
 <p>und</p>
 <p><span class="math display">\[V=V(X_1, \dots, X_n)=\bar{X}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}}\]</span></p>
 <p>mit der <em>bekannten</em> Standardabweichung <span class="math inline">\(\sigma\)</span> der <em>Population</em> und der Stichprobengröße <span class="math inline">\(n\)</span> nun mit der konkreten Realisation <span class="math inline">\(x_1, \dots, x_n\)</span> der Stichprobe gefüttert und wir erhalten damit</p>
-<p><span class="math display">\[u = \bar{x}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = -0.3423-z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=-0.9648\]</span>
+<p><span class="math display">\[u = \bar{x}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = 0.1877-z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=-0.4348\]</span>
 und</p>
-<p><span class="math display">\[v = \bar{x}+z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = -0.3423+z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=0.2803.\]</span></p>
+<p><span class="math display">\[v = \bar{x}+z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = 0.1877+z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=0.8102.\]</span></p>
 <p>Die Realisation unseres 95%-Konfidenzintervall lautet nun also:</p>
-<p><span class="math display">\[[-0.9648; 0.2803]\]</span></p>
+<p><span class="math display">\[[-0.4348; 0.8102]\]</span></p>
 <p><strong>Was hat es nun mit den ominösen 95% auf sich?</strong></p>
 <p>Das Konfidenzintervall ist ein stochastisches Intervall, d.h. die hier angegebenen Werte für <span class="math inline">\(u\)</span> und <span class="math inline">\(v\)</span> sind abhängig von der Realisation <span class="math inline">\(x_1, \dots, x_n\)</span>, also der konkreten Stichprobe.</p>
 <p>Nehmen wir nun also einmal eine neue Stichprobe und berechnen erneut die Realisation unseres 95%-Konfidenzintervalls, so erhalten wir:</p>
-<p><span class="math display">\[[-0.8459; 0.3992]\]</span></p>
+<p><span class="math display">\[[-0.7033; 0.5418]\]</span></p>
 <pre><code>## Interval coverage:</code></pre>
 <pre><code>##     cover
 ## n     Low  Yes High
-##   40 0.03 0.95 0.02</code></pre>
-<p><img src="../../nab/post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+##   40 0.00 0.98 0.02</code></pre>
+<p><img src="../../post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 </div>
 <div id="prognoseintervalle" class="section level2">
@@ -661,7 +661,7 @@ und</p>
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/prognose-konfidenz-und-fiduzialintervalle/&amp;text=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/&amp;text=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -674,7 +674,7 @@ und</p>
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/prognose-konfidenz-und-fiduzialintervalle/&amp;t=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/&amp;t=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -687,7 +687,7 @@ und</p>
       
       
       <li>
-        <a href="mailto:?subject=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle&amp;body=/post/prognose-konfidenz-und-fiduzialintervalle/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle&amp;body=https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -700,7 +700,7 @@ und</p>
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/prognose-konfidenz-und-fiduzialintervalle/&amp;title=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/&amp;title=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -713,7 +713,7 @@ und</p>
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle%20/post/prognose-konfidenz-und-fiduzialintervalle/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle%20https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -726,7 +726,7 @@ und</p>
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/prognose-konfidenz-und-fiduzialintervalle/&amp;title=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/&amp;title=Prognose-,%20Konfidenz-%20und%20Fiduzialintervalle" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -765,7 +765,7 @@ und</p>
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="../../">Norman Markgraf</a></h5>
+      <h5 class="card-title"><a href="https://sefiroth.net/nap/">Norman Markgraf</a></h5>
       <h6 class="card-subtitle">Diplom-Mathematiker</h6>
       <p class="card-text">Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer.</p>
       <ul class="network-icon" aria-hidden="true">
@@ -923,7 +923,7 @@ und</p>
       
       <li><a href="../../project/etwas-r-am-abend/">Etwas R am Abend</a></li>
       
-      <li><a href="../../publication/statistik21/">Statistik21</a></li>
+      <li><a href="../../post/10-dinge-die-kein-talent-ben%C3%B6tigen/">10 Dinge die kein Talent benötigen!</a></li>
       
     </ul>
   </div>
@@ -1067,9 +1067,6 @@ und</p>
     
       <a href="../../privacy/"></a>
     
-    
-       &middot; 
-      <a href="../../terms/">Terms</a>
     
   </p>
   

@@ -33,7 +33,7 @@ Zunächst laden wir dazu die tipping Daten mittels
 library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.">
 
   
-  <link rel="alternate" hreflang="de-de" href="../../post/nur-ein-wenig-lineare-regression/">
+  <link rel="alternate" hreflang="de-de" href="https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/">
 
   
 
@@ -136,7 +136,7 @@ library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quo
   <link rel="icon" type="image/png" href="../../img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
 
-  <link rel="canonical" href="../../post/nur-ein-wenig-lineare-regression/">
+  <link rel="canonical" href="https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/">
 
   
   
@@ -149,12 +149,12 @@ library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quo
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Norman&#39;s Academic Blog">
-  <meta property="og:url" content="/post/nur-ein-wenig-lineare-regression/">
+  <meta property="og:url" content="https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/">
   <meta property="og:title" content="Nur ein wenig lineare Regression | Norman&#39;s Academic Blog">
   <meta property="og:description" content="Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
 Zunächst laden wir dazu die tipping Daten mittels
-library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips."><meta property="og:image" content="/img/icon-192.png">
-  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="de-de">
+library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips."><meta property="og:image" content="https://sefiroth.net/nap/img/icon-192.png">
+  <meta property="twitter:image" content="https://sefiroth.net/nap/img/icon-192.png"><meta property="og:locale" content="de-de">
   
     
       <meta property="article:published_time" content="2018-01-08T00:00:00&#43;00:00">
@@ -185,7 +185,7 @@ library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quo
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/post/nur-ein-wenig-lineare-regression/"
+    "@id": "https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/"
   },
   "headline": "Nur ein wenig lineare Regression",
   
@@ -202,7 +202,7 @@ library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quo
     "name": "Norman's Academic Blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "/img/icon-512.png"
+      "url": "https://sefiroth.net/nap/img/icon-512.png"
     }
   },
   "description": "Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.\nZunächst laden wir dazu die tipping Daten mittels\nlibrary(mosaic) download.file(\u0026quot;https://goo.gl/whKjnl\u0026quot;, destfile = \u0026quot;tips."
@@ -614,7 +614,7 @@ xyplot(
             text = list(c(&quot;Regressionsgerade&quot;))
           )
      )</code></pre>
-<p><img src="../../nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Was hat es mit dem y-Achsenabschnitt <span class="math inline">\(\hat{\beta}_0\)</span> auf sich?</p>
 <p>Ist es etwa eine Art <em>Grundtrinkgeld</em>, mit dem der Kellern rechnen kann, auch wenn der Kunde gar nichts bestellt?</p>
 <p>Nun ja, es so etwas in der Art, aber eben ein rein fiktiver Wert, der durch die Konstruktion der Parameter entsteht.
@@ -664,7 +664,7 @@ xyplot(
             lines=list(col=c(&quot;red&quot;), lty=c(2), lwd=1.2),
             text=list(c(&quot;Regressionsgerade&quot;)))
      )</code></pre>
-<p><img src="../../nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit Ausnahme der <em>[Intercept]</em> Zeile praktisch nichts geändert hat. Das ist kein Wunder, sondern Absicht!</p>
 <p>Die Regressionsgerade stellt für unsere Stichprobe die Gerade mit dem geringsten Fehler an den Datenpunkten dar. Mathematisch heißt das folgendes:</p>
 <p>An den <span class="math inline">\(n=244\)</span> Datenpunkten unserer Stichprobe <span class="math inline">\((x_i, y_i)=(tips\$total\_bill[i], tips\$tip[i])\)</span> [für <span class="math inline">\((i=1, \dots, n)\)</span>] sind die <em>Residuen</em>, also die <em>Fehlerterme</em>,</p>
@@ -717,17 +717,17 @@ xyplot(
             text = list(c(&quot;Regressionsgerade / x-Achse&quot;))
           )
 )</code></pre>
-<p><img src="../../nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Wir können die Graphik im wesentlichen auch einfacher über den Befehl</p>
 <pre class="r"><code>xyplot(residuals(linMod) ~ fitted(linMod))</code></pre>
-<p><img src="../../nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>erhalten.</p>
 <p>Betrachten wir kurz nur die Residuen:</p>
 <pre class="r"><code>favstats(~residuals(linMod))</code></pre>
-<pre><code>##        min         Q1      median        Q3      max          mean
-##  -3.198225 -0.5651615 -0.09744499 0.4863111 3.743435 -2.022281e-17
-##        sd   n missing
-##  1.019943 244       0</code></pre>
+<pre><code>##        min         Q1      median        Q3      max          mean       sd   n
+##  -3.198225 -0.5651615 -0.09744499 0.4863111 3.743435 -2.022281e-17 1.019943 244
+##  missing
+##        0</code></pre>
 <p>Wir sehe, dass wir in der Zusammenfassung immer genau diese Werte unter dem Abschnitt <em>Residuals</em> gefunden haben. Minimum, das 1. Quantil, der Median, das 3. Quantil und das Maximum stimmen überein.</p>
 <p>Der erwartungstreue und unverzerrte Schätzer für den Standardfehler der Residuen, lautet</p>
 <p><span class="math display">\[
@@ -747,7 +747,7 @@ xyplot(
 Es könnte also eine linkssteile, rechtsschiefe Verteilung der Residuen vorliegen.
 Betrachten wir dazu das Histogramm:</p>
 <pre class="r"><code>histogram(~residuals(linMod), nint = 19)</code></pre>
-<p><img src="../../nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.</p>
 <p>Ein Shapiro-Wilk-Test<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> hat als Nullhypothese die Annahme, dass die Daten normalverteilt sind!</p>
 <pre class="r"><code>shapiro.test(residuals(linMod))</code></pre>
@@ -758,7 +758,7 @@ Betrachten wir dazu das Histogramm:</p>
 ## W = 0.96728, p-value = 2.171e-05</code></pre>
 <p>Davon ist nach dem Ergebnis eben sowenig auszugehen, wie nach einem Blick auf das QQ-Normal-Diagramm:</p>
 <pre class="r"><code>qqnorm(residuals(linMod), col = &quot;darkgreen&quot;)</code></pre>
-<p><img src="../../nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Ein K.O.-Kriterium für gute Prognosen.</p>
 <p>Wie gut aber beschreibt unsere Regressionsgerade die Daten?</p>
 <p>Als Maß dafür können wir das Bestimmtheitsmaß nehmen.</p>
@@ -788,7 +788,7 @@ xyplot(
             text = list(c(&quot;Mittelwert Trinkgeld&quot;, &quot;Regressionsgerade&quot;))
     )
 )</code></pre>
-<p><img src="../../nab/post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Die Varianz <span class="math inline">\(s^2_{y_i}=1.9144546\)</span> beschreibt die mittlere quadratische Abweichung der Datenpunkte <span class="math inline">\(y_i\)</span> vom Mittelwert <span class="math inline">\(\bar{y}\)</span>.
 Diese Varianz lässt sich Zerlegen in einen Anteil, der durch die Regressionsgerade <em>erklärt</em> wird und in einen Anteil, der durch die Regressionsgerade <em>nicht erklärt</em> wird.</p>
 <p><span class="math display">\[
@@ -937,7 +937,7 @@ Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nu
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/nur-ein-wenig-lineare-regression/&amp;text=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/&amp;text=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -950,7 +950,7 @@ Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nu
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/nur-ein-wenig-lineare-regression/&amp;t=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/&amp;t=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -963,7 +963,7 @@ Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nu
       
       
       <li>
-        <a href="mailto:?subject=Nur%20ein%20wenig%20lineare%20Regression&amp;body=/post/nur-ein-wenig-lineare-regression/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Nur%20ein%20wenig%20lineare%20Regression&amp;body=https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -976,7 +976,7 @@ Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nu
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/nur-ein-wenig-lineare-regression/&amp;title=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/&amp;title=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -989,7 +989,7 @@ Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nu
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Nur%20ein%20wenig%20lineare%20Regression%20/post/nur-ein-wenig-lineare-regression/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Nur%20ein%20wenig%20lineare%20Regression%20https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1002,7 +1002,7 @@ Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nu
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/nur-ein-wenig-lineare-regression/&amp;title=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/&amp;title=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1041,7 +1041,7 @@ Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nu
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="../../">Norman Markgraf</a></h5>
+      <h5 class="card-title"><a href="https://sefiroth.net/nap/">Norman Markgraf</a></h5>
       <h6 class="card-subtitle">Diplom-Mathematiker</h6>
       <p class="card-text">Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer.</p>
       <ul class="network-icon" aria-hidden="true">
@@ -1343,9 +1343,6 @@ Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nu
     
       <a href="../../privacy/"></a>
     
-    
-       &middot; 
-      <a href="../../terms/">Terms</a>
     
   </p>
   

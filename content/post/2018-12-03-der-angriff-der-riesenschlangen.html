@@ -26,7 +26,7 @@ header:
 <p>Nach der Installation mittels</p>
 <pre class="r"><code>install.packages(&quot;reticulate&quot;)</code></pre>
 <p>bedarf es aber durch aus noch einiger Anpassungen, bis alles zur Zufriedenheit funktioniert.</p>
-<p>Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls <code>Sys.which(&quot;python&quot;)</code>, welcher bei mir leider zu einer vollkommen alten, aber noch benutzen, <em>Python</em> Version führte. Möchte man eine ganz bestimmte <em>Python</em> Version haben, so hilft einem der Befehl <code>use_python()</code>:</p>
+<p>Standardmässig sucht die Netzpython nach ihrem Gefährten mit der Hilfe des Befehls <code>Sys.which("python")</code>, welcher bei mir leider zu einer vollkommen alten, aber noch benutzen, <em>Python</em> Version führte. Möchte man eine ganz bestimmte <em>Python</em> Version haben, so hilft einem der Befehl <code>use_python()</code>:</p>
 <pre class="r"><code>library(reticulate)
 use_python(&quot;/usr/local/bin/python&quot;)  # Pfad zum Python-Befehl der benutz werden soll.</code></pre>
 <p>Es werden auch <a href="https://realpython.com/python-virtual-environments-a-primer/">virtuelle Umgebungen</a> unterstützt:</p>

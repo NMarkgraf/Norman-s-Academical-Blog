@@ -183,8 +183,21 @@ profvis({
 Das mit den beiden Routinen aus FastSimNullDistR die gleichen Ergebnisse zu erwarten sind, sie also ein "(quasi-)drop-in-replacements" der Mosaic Routinen darstellen, kann man an den folgenden QQ-Plots erkennen:
 
 ```{r}
-qqplot(NullDistFSNDR_aw$diffprop, NullDistMosaic_aw$diffprop)
-qqplot(NullDistFSNDR_mw$diffmean, NullDistMosaic_mw$diffmean)
+df.diffprop <- data_frame(
+  diffprop  = c(NullDistFSNDR_aw$diffprop, NullDistMosaic_aw$diffprop),
+  type  = c(rep("FSNDR", 10000),rep("mosaic", 10000))
+)
+gf_qq(~ diffprop, color = ~ type, data=df.diffprop)
+df.diffmean <- data_frame(
+  diffmean  = c(NullDistFSNDR_mw$diffmean, NullDistMosaic_mw$diffmean),
+  type  = c(rep("FSNDR", 10000),rep("mosaic", 10000))
+)
+gf_qq(~ diffmean, color = ~ type,  data=df.diffmean)
+```
+# qqplot(NullDistFSNDR_aw$diffprop, NullDistMosaic_aw$diffprop)
+gf_qq(FSNDR ~ Mosaic, data=df)
+# qqplot(NullDistFSNDR_mw$diffmean, NullDistMosaic_mw$diffmean)
+gf_qq(NullDistFSNDR_mw$diffmean ~ NullDistMosaic_mw$diffmean)
 ```
 
 ## Woher kommt die Geschwindigkeit?

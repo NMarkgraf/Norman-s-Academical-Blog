@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>panflute | Norman&#39;s Academic Blog</title>
-    <link>/tags/panflute/</link>
-      <atom:link href="/tags/panflute/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sefiroth.net/nap/tags/panflute/</link>
+      <atom:link href="https://sefiroth.net/nap/tags/panflute/index.xml" rel="self" type="application/rss+xml" />
     <description>panflute</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://sefiroth.net/nap/img/icon-192.png</url>
       <title>panflute</title>
-      <link>/tags/panflute/</link>
+      <link>https://sefiroth.net/nap/tags/panflute/</link>
     </image>
     
     <item>
       <title>Pandoc filter: typography.py</title>
-      <link>/project/typography.py/</link>
+      <link>https://sefiroth.net/nap/project/typography.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>/project/typography.py/</guid>
+      <guid>https://sefiroth.net/nap/project/typography.py/</guid>
       <description></description>
     </item>
     
