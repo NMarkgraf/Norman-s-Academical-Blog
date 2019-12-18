@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>academic | Norman&#39;s Academic Blog</title>
-    <link>/tags/academic/</link>
-      <atom:link href="/tags/academic/index.xml" rel="self" type="application/rss+xml" />
-    <description>academic</description>
+    <title>webside | Norman&#39;s Academic Blog</title>
+    <link>/tags/webside/</link>
+      <atom:link href="/tags/webside/index.xml" rel="self" type="application/rss+xml" />
+    <description>webside</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 18 Dec 2019 11:20:50 +0100</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
-      <title>academic</title>
-      <link>/tags/academic/</link>
+      <title>webside</title>
+      <link>/tags/webside/</link>
     </image>
     
     <item>
