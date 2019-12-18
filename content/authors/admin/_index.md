@@ -18,7 +18,7 @@ organizations:
   url: "http://www.fom.de"
 
 # Short bio (displayed in user profile at end of posts)
-bio: xxx
+bio: Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer.
 
 interests:
 - Mathematik

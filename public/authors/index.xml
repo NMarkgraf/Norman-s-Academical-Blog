@@ -5,12 +5,22 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 25 Sep 2009 00:00:00 +0200</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Authors</title>
       <link>/authors/</link>
     </image>
+    
+    <item>
+      <title></title>
+      <link>/authors/admin/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/admin/</guid>
+      <description>&lt;h1 id=&#34;biographie&#34;&gt;Biographie&lt;/h1&gt;
+&lt;p&gt;Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer. Als Lehrbeauftragter hat er an der Hochschule Bochum, Hochschule Rhein-Waal (am Campus Kleve) und der FOM Hochschule für Oekonomie und Management an den Standorten Aachen, Bonn, Dortmund, Duisburg, Düsseldorf, Gütersloh (Bertelsmann), Köln, Münster, Neuss und Wuppertal verschiedene Lehrveranstaltungen abgehalten.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Karsten Lübke</title>
@@ -82,16 +92,6 @@
       <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
       <guid>/authors/sebastian-engell/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/authors/admin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/authors/admin/</guid>
-      <description>&lt;h1 id=&#34;biographie&#34;&gt;Biographie&lt;/h1&gt;
-&lt;p&gt;Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer. Als Lehrbeauftragter hat er an der Hochschule Bochum, Hochschule Rhein-Waal (am Campus Kleve) und der FOM Hochschule für Oekonomie und Management an den Standorten Aachen, Bonn, Dortmund, Duisburg, Düsseldorf, Gütersloh (Bertelsmann), Köln, Münster, Neuss und Wuppertal verschiedene Lehrveranstaltungen abgehalten.&lt;/p&gt;
-</description>
     </item>
     
   </channel>

@@ -3,8 +3,8 @@
     
     <url>
     
-      <loc>/post/just-a-test/</loc>
-      <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+      <loc>/post/</loc>
+      <lastmod>2019-01-05T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -12,15 +12,7 @@
     <url>
     
       <loc>/</loc>
-      <lastmod>2019-12-16T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/post/</loc>
-      <lastmod>2019-12-16T00:00:00+00:00</lastmod>
+      <lastmod>2019-01-05T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -339,6 +331,22 @@
     
     <url>
     
+      <loc>/authors/admin/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/data-science/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
@@ -435,6 +443,22 @@
     
     <url>
     
+      <loc>/categories/typographie/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/vorlesungen-schreiben/</loc>
+      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/tags/vortrag/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
@@ -459,31 +483,7 @@
     
     <url>
     
-      <loc>/tags/academic/</loc>
-      <lastmod>2018-01-13T00:00:00+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/post/getting-started/</loc>
-      <lastmod>2018-01-13T00:00:00+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/publication_types/4/</loc>
-      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/authors/</loc>
       <lastmod>2009-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -621,13 +621,6 @@
     
       <loc>/authors/sebastian-engell/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/authors/admin/</loc>
     </url>
     
   

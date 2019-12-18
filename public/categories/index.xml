@@ -5,7 +5,7 @@
     <link>/categories/</link>
       <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Categories</title>
@@ -49,6 +49,22 @@
       <link>/categories/kommentar/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       <guid>/categories/kommentar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Typographie</title>
+      <link>/categories/typographie/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/categories/typographie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vorlesungen schreiben</title>
+      <link>/categories/vorlesungen-schreiben/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/categories/vorlesungen-schreiben/</guid>
       <description></description>
     </item>
     
