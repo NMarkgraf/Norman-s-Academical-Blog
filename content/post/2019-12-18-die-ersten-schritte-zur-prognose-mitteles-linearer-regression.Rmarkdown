@@ -1,0 +1,151 @@
+---
+title: Die ersten Schritte zur Prognose mitteles linearer Regression
+author: admin
+date: '2019-12-18'
+slug: die-ersten-schritte-zur-prognose-mitteles-linearer-regression
+categories:
+  - Statistik
+tags:
+  - R
+  - Lehre
+subtitle: ''
+summary: 'An hand der **tipping**-Daten werden die ersten Schritte zur Prognose von Daten gezeigt.'
+authors: []
+lastmod: '2019-12-18T13:02:59+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+```{r setup, include=FALSE}
+library(mosaic)
+set.seed(2009)
+```
+
+Prognosen sind ein wichtiger Bestandteil von Data Science und ist durchaus nicht nur auf moderne Ansätze, wie Neuronale Netze, deep lerning etc. begrenzt. Auch die gute, alte Regression kann ein sehr sinnvolles Mittel sein solche Prognosen zu erstellen.
+
+Um ein wenig die Ideen hinter Prognosen zu beleuchten wollen wir uns an Prognosen mit dem **tipping**-Daten heranwagen.
+
+## Einlesen der tipping-Daten
+
+Zuerst laden wir die notwenidgen Pakete:
+```{r Pakete_laden}
+library(mosaic)
+```
+
+Falls die **tipping**-Daten noch nicht im Verzeichnis liegen, laden wir sie aus dem Internet nach:
+```{r tipping_daten_ggf_herunterladen}
+if (!file.exists("tips.csv")) {
+  download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
+}
+```
+
+Nun laden wir die **tipping**-Daten in den Speicher in den Datenrahmen `tips`:
+```{r tipping_daten_in_de_speicher_laden}
+tips <- read.csv2("tips.csv")
+```
+
+Wir werfen einen ersten Blick auf die **tipping**-Daten:
+```{r erster_blick_auf_die_tipping_daten}
+inspect(tips)
+```
+
+## Vorbereiten der Test-/Trainings- und Auswertungesdaten
+
+Zunächst schränken wir die **tipping**-Daten auf die Variabeln "total_bill", "sex", "smoker", "day", "time", "size" ein und speichern das Ergebnis wieder in `tips`:
+
+```{r}
+tips %>%
+    select(c("total_bill", "sex", "smoker", "day", "time", "size")) -> tips
+```
+
+
+Ziel ist es, den Rechnungsbetrag ("total_bill") auf Grundlage der Variabeln "sex", "smoker", "day", "time" und/oder "size" vorherzusagen.
+
+Wir teilen den tipping-Datensatz auf in eine Trainingsdatensatz ("tipstrain"), einem Testdatensatz ("tipstest") und einem Prüfdatensatz ("tipspruef"). 
+Der Trainingsdatensatz sollte rund zweidrittel der Daten die wir haben umfassen. 
+Der Testdatensatz die restlich ca. eindrittel.
+
+```{r}
+trainings_anteil = 2/3
+
+# n.train ist ein Index für alle Werte, 
+# die wir im Trainingsdatensatz haben wollen:
+x.train <- sample(1:nrow(tips), floor(trainings_anteil*nrow(tips)))
+
+# Trainingsdatensatz erstellen:
+tipstrain <- slice(tips, x.train)
+
+# Prüfdatensatz erstellen, also alles was 
+# nicht in den Trainingsdatensatz gekommen ist:
+tipspruef <- slice(tips, -(x.train))
+
+# Der Testdatensatz ist der Prüfdatensatz 
+# ohne die Variable total_bill:
+tipspruef %>% 
+    select(-total_bill) -> tipstest
+```
+
+
+Mit dem Tainingsdatensatz versuchen wir nun ein Prognosemodell zu erstellen, um aus den Testdatensatz eine Prognose für "total_bill" zu erstellen.
+
+Das Prognose-Modell wird ausschließlich auf Grundlage des Trainingsdatensatzes erstellt. Am Ende wollen wir unser Modell dann aber mit Hilfe des Prüfdatensatzes bewertet. 
+
+## Die Datenlage
+
+Ein (paar) Blick(e) auf unsere Trainingsdaten:
+
+```{r}
+gf_point(total_bill ~ jitter(size), color=~time, data=tipstrain)
+```
+
+
+```{r}
+gf_point(total_bill ~ day | time, color = ~ sex, data=tipstrain)
+```
+
+
+## Aufstellen des Nullmodel aka Regression mit der Achse
+
+Wir erstellen das Nullmodell wie folgt:
+
+```{r}
+lm.null <- lm( total_bill ~ 1, data=tipstrain)
+summary(lm.null)
+```
+
+Das Nullmodell sagt in jedem Fall den Rechnungsbetrag vorher als den Mittelwert der Trainingsdaten!
+
+```{r}
+mean(~ total_bill, data=tipstrain)
+```
+
+Nun bestimmten wir mit Hilfe des Nullmodells "lm.null" eine Vorhersage für die Testdaten:
+
+```{r}
+predict.null <- predict(lm.null, newdata=tipstest)
+head(predict.null)
+```
+
+
+Wie gesagt, das Nullmodell liefert als Prognose immer den Mittelwert der Trainingsdaten zurück,
+das mathematische Nullmodell lautet also:
+
+$$\widehat{total\_bill_i} = `r lm.null$coefficients`  $$
+
+
+## Auswertung des Nullmodells 
+
+Zur Auswertung Nutzen wir den *mittleren Absolutabstand* zwischen der Vorhersage und den Prüfdaten:
+
+```{r}
+maa.null <-sum( abs( tipspruef$total_bill - predict.null))
+maa.null
+```
+
+
+
+
+

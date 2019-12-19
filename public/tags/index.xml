@@ -5,12 +5,28 @@
     <link>https://sefiroth.net/nap/tags/</link>
       <atom:link href="https://sefiroth.net/nap/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://sefiroth.net/nap/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://sefiroth.net/nap/tags/</link>
     </image>
+    
+    <item>
+      <title>Lehre</title>
+      <link>https://sefiroth.net/nap/tags/lehre/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://sefiroth.net/nap/tags/lehre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://sefiroth.net/nap/tags/r/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://sefiroth.net/nap/tags/r/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Python</title>
@@ -53,14 +69,6 @@
     </item>
     
     <item>
-      <title>R</title>
-      <link>https://sefiroth.net/nap/tags/r/</link>
-      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>R markdown</title>
       <link>https://sefiroth.net/nap/tags/r-markdown/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
@@ -81,14 +89,6 @@
       <link>https://sefiroth.net/nap/tags/allgemein/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       <guid>https://sefiroth.net/nap/tags/allgemein/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lehre</title>
-      <link>https://sefiroth.net/nap/tags/lehre/</link>
-      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/lehre/</guid>
       <description></description>
     </item>
     
