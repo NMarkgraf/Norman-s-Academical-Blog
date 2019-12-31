@@ -3,7 +3,111 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/</loc>
+      <loc>/post/</loc>
+      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/</loc>
+      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenh%C3%A4ngen/</loc>
+      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/</loc>
+      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/statistik/</loc>
+      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/statistik/</loc>
+      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/</loc>
+      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/admin/</loc>
+      <lastmod>2019-12-18T11:20:50+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/academic/</loc>
+      <lastmod>2019-12-18T11:20:50+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/</loc>
+      <lastmod>2019-12-18T11:20:50+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/hugo/</loc>
+      <lastmod>2019-12-18T11:20:50+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/umstellung-auf-die-neue-version-4.6.3-des-academic-theme/</loc>
+      <lastmod>2019-12-18T11:20:50+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/webside/</loc>
+      <lastmod>2019-12-18T11:20:50+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</loc>
       <lastmod>2019-12-18T13:02:59+01:00</lastmod>
     </url>
     
@@ -11,7 +115,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/categories/</loc>
+      <loc>/tags/lehre/</loc>
       <lastmod>2019-12-18T13:02:59+01:00</lastmod>
     </url>
     
@@ -19,7 +123,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</loc>
+      <loc>/tags/r/</loc>
       <lastmod>2019-12-18T13:02:59+01:00</lastmod>
     </url>
     
@@ -27,47 +131,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/lehre/</loc>
-      <lastmod>2019-12-18T13:02:59+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sefiroth.net/nap/</loc>
-      <lastmod>2019-12-18T13:02:59+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sefiroth.net/nap/tags/r/</loc>
-      <lastmod>2019-12-18T13:02:59+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sefiroth.net/nap/categories/statistik/</loc>
-      <lastmod>2019-12-18T13:02:59+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sefiroth.net/nap/tags/</loc>
-      <lastmod>2019-12-18T13:02:59+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sefiroth.net/nap/tags/python/</loc>
+      <loc>/tags/python/</loc>
       <lastmod>2019-01-05T00:00:00+00:00</lastmod>
     </url>
     
@@ -75,7 +139,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/wie-man-es-nicht-machen-sollte-in-python/</loc>
+      <loc>/post/wie-man-es-nicht-machen-sollte-in-python/</loc>
       <lastmod>2019-01-05T00:00:00+00:00</lastmod>
     </url>
     
@@ -83,7 +147,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/categories/allgemeines/</loc>
+      <loc>/categories/allgemeines/</loc>
       <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -91,7 +155,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/categories/fundst%C3%BCcke/</loc>
+      <loc>/categories/fundst%C3%BCcke/</loc>
       <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -99,7 +163,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/mathematica/</loc>
+      <loc>/tags/mathematica/</loc>
       <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -107,7 +171,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/matplotlib/</loc>
+      <loc>/tags/matplotlib/</loc>
       <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -115,7 +179,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/raspberry-pi/</loc>
+      <loc>/tags/raspberry-pi/</loc>
       <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -123,7 +187,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/raspbian/</loc>
+      <loc>/tags/raspbian/</loc>
       <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -131,7 +195,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/raspbian-auf-dem-raspberry-pi-installieren/</loc>
+      <loc>/post/raspbian-auf-dem-raspberry-pi-installieren/</loc>
       <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -139,7 +203,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/weitere-software-auf-den-raspberry-pi-installieren/</loc>
+      <loc>/post/weitere-software-auf-den-raspberry-pi-installieren/</loc>
       <lastmod>2019-01-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -147,7 +211,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/der-angriff-der-riesenschlangen/</loc>
+      <loc>/post/der-angriff-der-riesenschlangen/</loc>
       <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     </url>
     
@@ -155,7 +219,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/r-markdown/</loc>
+      <loc>/tags/r-markdown/</loc>
       <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     </url>
     
@@ -163,7 +227,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/technisches/</loc>
+      <loc>/tags/technisches/</loc>
       <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     </url>
     
@@ -171,7 +235,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tutorial/example/</loc>
+      <loc>/tutorial/example/</loc>
       <lastmod>2018-09-09T00:00:00+02:00</lastmod>
     </url>
     
@@ -179,7 +243,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tutorial/</loc>
+      <loc>/tutorial/</loc>
       <lastmod>2018-09-09T00:00:00+02:00</lastmod>
     </url>
     
@@ -187,7 +251,15 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/allgemein/</loc>
+      <loc>/terms/</loc>
+      <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/allgemein/</loc>
       <lastmod>2018-06-11T00:00:00+00:00</lastmod>
     </url>
     
@@ -195,7 +267,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/sbi-simulation-based-inference/</loc>
+      <loc>/post/sbi-simulation-based-inference/</loc>
       <lastmod>2018-06-11T00:00:00+00:00</lastmod>
     </url>
     
@@ -203,15 +275,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/statistik/</loc>
-      <lastmod>2018-06-11T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sefiroth.net/nap/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</loc>
+      <loc>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</loc>
       <lastmod>2018-05-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -219,7 +283,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</loc>
+      <loc>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</loc>
       <lastmod>2018-05-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -227,7 +291,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/categories/information/</loc>
+      <loc>/categories/information/</loc>
       <lastmod>2018-05-02T00:00:00+00:00</lastmod>
     </url>
     
@@ -235,7 +299,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/</loc>
+      <loc>/post/nur-ein-wenig-lineare-regression/</loc>
       <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     </url>
     
@@ -243,7 +307,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/</loc>
+      <loc>/post/prognose-konfidenz-und-fiduzialintervalle/</loc>
       <lastmod>2018-01-04T00:00:00+00:00</lastmod>
     </url>
     
@@ -251,7 +315,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/konfidenzintervalle/</loc>
+      <loc>/post/konfidenzintervalle/</loc>
       <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -259,7 +323,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/wahrscheinlichkeitstheorie/</loc>
+      <loc>/tags/wahrscheinlichkeitstheorie/</loc>
       <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -267,7 +331,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/zentrales-schwankungsintervall/</loc>
+      <loc>/post/zentrales-schwankungsintervall/</loc>
       <lastmod>2018-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -275,7 +339,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/ein-paar-interessante-links/</loc>
+      <loc>/post/ein-paar-interessante-links/</loc>
       <lastmod>2017-12-31T00:00:00+00:00</lastmod>
     </url>
     
@@ -283,7 +347,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/quartile-quantile-perzentile-etc/</loc>
+      <loc>/post/quartile-quantile-perzentile-etc/</loc>
       <lastmod>2017-12-19T00:00:00+00:00</lastmod>
     </url>
     
@@ -291,7 +355,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/github-webhook-eingebaut/</loc>
+      <loc>/post/github-webhook-eingebaut/</loc>
       <lastmod>2017-12-18T00:00:00+00:00</lastmod>
     </url>
     
@@ -299,7 +363,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/first-entry/</loc>
+      <loc>/post/first-entry/</loc>
       <lastmod>2017-12-17T00:00:00+00:00</lastmod>
     </url>
     
@@ -307,7 +371,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/categories/kommentar/</loc>
+      <loc>/categories/kommentar/</loc>
       <lastmod>2017-12-17T00:00:00+00:00</lastmod>
     </url>
     
@@ -315,7 +379,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</loc>
+      <loc>/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</loc>
       <lastmod>2017-07-13T00:00:00+00:00</lastmod>
     </url>
     
@@ -323,7 +387,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/post/der-zentrale-grenzwertsatz/</loc>
+      <loc>/post/der-zentrale-grenzwertsatz/</loc>
       <lastmod>2017-04-05T00:00:00+00:00</lastmod>
     </url>
     
@@ -331,7 +395,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/authors/admin/</loc>
+      <loc>/tags/data-science/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -339,7 +403,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/authors/</loc>
+      <loc>/project/etwas-r-am-abend/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -347,7 +411,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/data-science/</loc>
+      <loc>/project/fastsimnulldistr/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -355,7 +419,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/project/etwas-r-am-abend/</loc>
+      <loc>/tags/latex/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -363,7 +427,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/project/fastsimnulldistr/</loc>
+      <loc>/tags/pandoc/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -371,7 +435,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/latex/</loc>
+      <loc>/project/style.py/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -379,7 +443,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/pandoc/</loc>
+      <loc>/project/typography.py/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -387,7 +451,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/project/style.py/</loc>
+      <loc>/tags/panflute/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -395,7 +459,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/project/typography.py/</loc>
+      <loc>/project/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -403,7 +467,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/panflute/</loc>
+      <loc>/project/rmdstylechecker/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -411,7 +475,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/project/</loc>
+      <loc>/tags/rstudio/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -419,7 +483,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/project/rmdstylechecker/</loc>
+      <loc>/tags/sbi/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -427,7 +491,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/rstudio/</loc>
+      <loc>/categories/typographie/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -435,7 +499,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/sbi/</loc>
+      <loc>/categories/vorlesungen-schreiben/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -443,7 +507,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/categories/typographie/</loc>
+      <loc>/tags/vortrag/</loc>
       <lastmod>2017-02-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -451,23 +515,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/categories/vorlesungen-schreiben/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sefiroth.net/nap/tags/vortrag/</loc>
-      <lastmod>2017-02-10T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sefiroth.net/nap/talk/example/</loc>
+      <loc>/talk/example/</loc>
       <lastmod>2017-01-01T00:00:00+01:00</lastmod>
     </url>
     
@@ -475,7 +523,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/talk/</loc>
+      <loc>/talk/</loc>
       <lastmod>2017-01-01T00:00:00+01:00</lastmod>
     </url>
     
@@ -483,7 +531,71 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/authors/manuel-remelhe/</loc>
+      <loc>/publication_types/4/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/fom/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/karsten-l%C3%BCbke/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/matthias-gehrke/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/norman-markgaf/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication_types/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/publication/statistik21/</loc>
+      <lastmod>2009-09-25T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/authors/manuel-remelhe/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -491,7 +603,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/publication_types/2/</loc>
+      <loc>/publication_types/2/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -499,7 +611,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/authors/andreas-liefeld/</loc>
+      <loc>/authors/andreas-liefeld/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -507,7 +619,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/authors/carsten-fritsch/</loc>
+      <loc>/authors/carsten-fritsch/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -515,7 +627,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/authors/kai-dadhe/</loc>
+      <loc>/authors/kai-dadhe/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -523,7 +635,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/publication/learn2control/</loc>
+      <loc>/publication/learn2control/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -531,7 +643,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/authors/marten-v%C3%B6lker/</loc>
+      <loc>/authors/marten-v%C3%B6lker/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -539,7 +651,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/authors/norman-markgaf/</loc>
+      <loc>/tags/projektorientiertes-lernen/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -547,7 +659,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/tags/projektorientiertes-lernen/</loc>
+      <loc>/tags/regelungstechnik/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -555,7 +667,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/publication_types/</loc>
+      <loc>/authors/sebastian-engell/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
     </url>
     
@@ -563,31 +675,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/publication/</loc>
-      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sefiroth.net/nap/tags/regelungstechnik/</loc>
-      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sefiroth.net/nap/authors/sebastian-engell/</loc>
-      <lastmod>2004-09-25T00:00:00+02:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://sefiroth.net/nap/post/2019-12-18-die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</loc>
+      <loc>/post/2019-12-18-die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</loc>
       <priority>0</priority>
     </url>
     
@@ -595,7 +683,7 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/privacy/</loc>
+      <loc>/post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenha%CC%88ngen/</loc>
       <priority>0</priority>
     </url>
     
@@ -603,14 +691,22 @@
     
     <url>
     
-      <loc>https://sefiroth.net/nap/slides/</loc>
+      <loc>/privacy/</loc>
+      <priority>0</priority>
     </url>
     
   
     
     <url>
     
-      <loc>https://sefiroth.net/nap/slides/example-slides/</loc>
+      <loc>/slides/</loc>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/slides/example-slides/</loc>
     </url>
     
   

@@ -1,29 +1,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Norman&#39;s Academic Blog on Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/</link>
+    <link>/</link>
     <description>Recent content in Norman&#39;s Academic Blog on Norman&#39;s Academic Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-de</language>
     <copyright>&amp;copy; in 2017-2020 by Norman Markgraf</copyright>
-    <lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Blog Einträge</title>
-      <link>https://sefiroth.net/nap/post/</link>
-      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      <link>/post/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://sefiroth.net/nap/post/</guid>
+      <guid>/post/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Overview</title>
-      <link>https://sefiroth.net/nap/tutorial/</link>
+      <link>/tutorial/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0200</pubDate>
       
-      <guid>https://sefiroth.net/nap/tutorial/</guid>
+      <guid>/tutorial/</guid>
       <description>&lt;p&gt;This feature can be used for publishing content such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Project or software documentation&lt;/strong&gt;&lt;/li&gt;
@@ -37,38 +37,48 @@
     </item>
     
     <item>
+      <title>Terms</title>
+      <link>/terms/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      
+      <guid>/terms/</guid>
+      <description>&lt;p&gt;Add your terms here and set &lt;code&gt;draft: false&lt;/code&gt; to publish it. Otherwise, delete this file if you don&#39;t need it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Projects</title>
-      <link>https://sefiroth.net/nap/project/</link>
+      <link>/project/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://sefiroth.net/nap/project/</guid>
+      <guid>/project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recent &amp; Upcoming Talks</title>
-      <link>https://sefiroth.net/nap/talk/</link>
+      <link>/talk/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
       
-      <guid>https://sefiroth.net/nap/talk/</guid>
+      <guid>/talk/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Publications</title>
-      <link>https://sefiroth.net/nap/publication/</link>
-      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
+      <link>/publication/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
       
-      <guid>https://sefiroth.net/nap/publication/</guid>
+      <guid>/publication/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://sefiroth.net/nap/privacy/</link>
+      <link>/privacy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sefiroth.net/nap/privacy/</guid>
+      <guid>/privacy/</guid>
       <description>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 +++
 title = &#34;Datenschutzerklärung (Privacy Policy)&#34;
@@ -274,10 +284,10 @@ Add your privacy policy here and set `draft: false` to publish it. Otherwise, de
     
     <item>
       <title>Slides</title>
-      <link>https://sefiroth.net/nap/slides/</link>
+      <link>/slides/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://sefiroth.net/nap/slides/</guid>
+      <guid>/slides/</guid>
       <description></description>
     </item>
     
