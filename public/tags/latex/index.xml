@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LaTeX | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tags/latex/</link>
-      <atom:link href="https://sefiroth.net/nap/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/latex/</link>
+      <atom:link href="/tags/latex/index.xml" rel="self" type="application/rss+xml" />
     <description>LaTeX</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>LaTeX</title>
-      <link>https://sefiroth.net/nap/tags/latex/</link>
+      <link>/tags/latex/</link>
     </image>
     
     <item>
       <title>Pandoc filter: typography.py</title>
-      <link>https://sefiroth.net/nap/project/typography.py/</link>
+      <link>/project/typography.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/project/typography.py/</guid>
+      <guid>/project/typography.py/</guid>
       <description></description>
     </item>
     

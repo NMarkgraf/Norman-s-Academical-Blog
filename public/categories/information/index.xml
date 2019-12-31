@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Information | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/categories/information/</link>
-      <atom:link href="https://sefiroth.net/nap/categories/information/index.xml" rel="self" type="application/rss+xml" />
+    <link>/categories/information/</link>
+      <atom:link href="/categories/information/index.xml" rel="self" type="application/rss+xml" />
     <description>Information</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 02 May 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Information</title>
-      <link>https://sefiroth.net/nap/categories/information/</link>
+      <link>/categories/information/</link>
     </image>
     
     <item>
       <title>Auch R markdown Dateien sollten sich an Regeln halten</title>
-      <link>https://sefiroth.net/nap/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
+      <link>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
+      <guid>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
       <description>
 
 
@@ -98,9 +98,9 @@ Den &lt;em&gt;Python&lt;/em&gt;-Quelltext findet man unter &lt;a href=&#34;https
     
     <item>
       <title>GitHub Webhook eingebaut!</title>
-      <link>https://sefiroth.net/nap/post/github-webhook-eingebaut/</link>
+      <link>/post/github-webhook-eingebaut/</link>
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/github-webhook-eingebaut/</guid>
+      <guid>/post/github-webhook-eingebaut/</guid>
       <description>&lt;p&gt;GitHub bietet die Möglichkeit an, bei Interaktion mit dem Server automatisch einen Webhook zu aktivieren. Dahinter versteckt sich ein Aufruf einer URL mit einem sogenannten POST-Request. Wertet man diesen aus, so kann man z.B. nach jedem &lt;em&gt;push&lt;/em&gt; automatisch ein &lt;em&gt;fetch&lt;/em&gt; auf dem Webserver starten.&lt;/p&gt;
 &lt;p&gt;Ich nutze das gerade um meinen Blog immer dann zu aktualisieren, wenn ich auf dem GitHub eine Änderung vorgenommen habe.&lt;/p&gt;
 &lt;p&gt;Damit sollte ich nie wieder vergessen alles auch auf dem Server zu aktualisieren!&lt;/p&gt;

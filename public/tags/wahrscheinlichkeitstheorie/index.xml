@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wahrscheinlichkeitstheorie | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tags/wahrscheinlichkeitstheorie/</link>
-      <atom:link href="https://sefiroth.net/nap/tags/wahrscheinlichkeitstheorie/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/wahrscheinlichkeitstheorie/</link>
+      <atom:link href="/tags/wahrscheinlichkeitstheorie/index.xml" rel="self" type="application/rss+xml" />
     <description>Wahrscheinlichkeitstheorie</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Wahrscheinlichkeitstheorie</title>
-      <link>https://sefiroth.net/nap/tags/wahrscheinlichkeitstheorie/</link>
+      <link>/tags/wahrscheinlichkeitstheorie/</link>
     </image>
     
     <item>
       <title>Konfidenzintervalle</title>
-      <link>https://sefiroth.net/nap/post/konfidenzintervalle/</link>
+      <link>/post/konfidenzintervalle/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/konfidenzintervalle/</guid>
+      <guid>/post/konfidenzintervalle/</guid>
       <description>
 
 
@@ -26,9 +26,9 @@
     
     <item>
       <title>Zentrales Schwankungsintervall</title>
-      <link>https://sefiroth.net/nap/post/zentrales-schwankungsintervall/</link>
+      <link>/post/zentrales-schwankungsintervall/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/zentrales-schwankungsintervall/</guid>
+      <guid>/post/zentrales-schwankungsintervall/</guid>
       <description>
 
 
@@ -44,9 +44,9 @@
     
     <item>
       <title>Quartile, Quantile, Perzentile etc.</title>
-      <link>https://sefiroth.net/nap/post/quartile-quantile-perzentile-etc/</link>
+      <link>/post/quartile-quantile-perzentile-etc/</link>
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/quartile-quantile-perzentile-etc/</guid>
+      <guid>/post/quartile-quantile-perzentile-etc/</guid>
       <description>
 
 
@@ -136,9 +136,9 @@ Ebenso liegen 40 % der Stichprobe unterhalb des vierten Dezils und 60 % oberhalb
     
     <item>
       <title>Der Zentrale Grenzwertsatz</title>
-      <link>https://sefiroth.net/nap/post/der-zentrale-grenzwertsatz/</link>
+      <link>/post/der-zentrale-grenzwertsatz/</link>
       <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/der-zentrale-grenzwertsatz/</guid>
+      <guid>/post/der-zentrale-grenzwertsatz/</guid>
       <description>
 
 

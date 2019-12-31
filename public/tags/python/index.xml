@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tags/python/</link>
-      <atom:link href="https://sefiroth.net/nap/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/python/</link>
+      <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <description>Python</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Python</title>
-      <link>https://sefiroth.net/nap/tags/python/</link>
+      <link>/tags/python/</link>
     </image>
     
     <item>
       <title>Wie man es nicht machen sollte in Python!</title>
-      <link>https://sefiroth.net/nap/post/wie-man-es-nicht-machen-sollte-in-python/</link>
+      <link>/post/wie-man-es-nicht-machen-sollte-in-python/</link>
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/wie-man-es-nicht-machen-sollte-in-python/</guid>
+      <guid>/post/wie-man-es-nicht-machen-sollte-in-python/</guid>
       <description>&lt;p&gt;Es sind oft die Dinge die man nicht sucht die einem weiterhelfen. So habe ich auch nach etwas ganz anderes gesucht und bin dabei über ein nettes kleines Werk gestoplert, dass einem sagt, wie man in Python Dinge besser nicht macht.&lt;/p&gt;
 &lt;p&gt;Unter &lt;a href=&#34;https://docs.quantifiedcode.com/python-anti-patterns/index.html&#34;&gt;&lt;a href=&#34;https://docs.quantifiedcode.com/python-anti-patterns/index.html&#34;&gt;https://docs.quantifiedcode.com/python-anti-patterns/index.html&lt;/a&gt;&lt;/a&gt; gibt es das &lt;em&gt;The Little Book of Python Anti-Patterns&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Mit manchen Dingen kann ich mich spontan nicht unbedingt anfreunden. Aber im Prinzip eine sehr sinnvolle und gute Sammlung von Dingen, die man oft falsch macht und die man durch aus besser machen könnte.&lt;/p&gt;
@@ -25,9 +25,9 @@
     
     <item>
       <title>Weitere Software auf den Raspberry PI installieren.</title>
-      <link>https://sefiroth.net/nap/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
+      <link>/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
+      <guid>/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
       <description>&lt;p&gt;Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:&lt;/p&gt;
 &lt;h2 id=&#34;mathematica&#34;&gt;Mathematica&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;sudo apt-get update
@@ -44,9 +44,9 @@ sudo apt-get install wolfram-engine
     
     <item>
       <title>Der Angriff der Riesenschlangen.</title>
-      <link>https://sefiroth.net/nap/post/der-angriff-der-riesenschlangen/</link>
+      <link>/post/der-angriff-der-riesenschlangen/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/der-angriff-der-riesenschlangen/</guid>
+      <guid>/post/der-angriff-der-riesenschlangen/</guid>
       <description>
 
 
@@ -96,9 +96,9 @@ print(quadrat(2))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Auch R markdown Dateien sollten sich an Regeln halten</title>
-      <link>https://sefiroth.net/nap/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
+      <link>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
+      <guid>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
       <description>
 
 
@@ -180,25 +180,25 @@ Den &lt;em&gt;Python&lt;/em&gt;-Quelltext findet man unter &lt;a href=&#34;https
     
     <item>
       <title>Pandoc filter: style.py</title>
-      <link>https://sefiroth.net/nap/project/style.py/</link>
+      <link>/project/style.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/project/style.py/</guid>
+      <guid>/project/style.py/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pandoc filter: typography.py</title>
-      <link>https://sefiroth.net/nap/project/typography.py/</link>
+      <link>/project/typography.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/project/typography.py/</guid>
+      <guid>/project/typography.py/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RmdStyleChecker</title>
-      <link>https://sefiroth.net/nap/project/rmdstylechecker/</link>
+      <link>/project/rmdstylechecker/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/project/rmdstylechecker/</guid>
+      <guid>/project/rmdstylechecker/</guid>
       <description>&lt;p&gt;Jede Sprache hat Regeln, auch Programmiersprachen und R markdown ist eine Programmiersprache. Wieso also nicht ein Tool schreiben, welches &lt;em&gt;SStilregeln&lt;/em&gt; (engl. &lt;em&gt;style guides&lt;/em&gt;) für R markdown kontrolliert um auch im kolaborativen Einsatz ein einheitliches &amp;ldquo;Schriftbild&amp;rdquo; des Quelltextes zu erhalten.&lt;/p&gt;
 &lt;p&gt;&amp;hellip;&lt;/p&gt;
 &lt;p&gt;Einen ersten Schritt habe ich mit dem &lt;a href=&#34;auch-rmarkdown-dateien-sollten-sich-regeln-halten&#34;&gt;Blog-Eintrag&lt;/a&gt; gemacht und dazu gleich noch ein Tool in &lt;em&gt;Python&lt;/em&gt; geschrieben um Verstöße dagegen schneller zu finden.&lt;/p&gt;

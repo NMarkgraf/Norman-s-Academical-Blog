@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lehre | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tags/lehre/</link>
-      <atom:link href="https://sefiroth.net/nap/tags/lehre/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/lehre/</link>
+      <atom:link href="/tags/lehre/index.xml" rel="self" type="application/rss+xml" />
     <description>Lehre</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Lehre</title>
-      <link>https://sefiroth.net/nap/tags/lehre/</link>
+      <link>/tags/lehre/</link>
     </image>
     
     <item>
       <title>Die ersten Schritte zur Prognose mitteles linearer Regression</title>
-      <link>https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</link>
+      <link>/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</link>
       <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</guid>
+      <guid>/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</guid>
       <description>&lt;p&gt;Prognosen sind ein wichtiger Bestandteil von Data Science und ist durchaus nicht nur auf moderne Ansätze, wie Neuronale Netze, deep lerning etc. begrenzt. Auch die gute, alte Regression kann ein sehr sinnvolles Mittel sein solche Prognosen zu erstellen.&lt;/p&gt;
 &lt;p&gt;Um ein wenig die Ideen hinter Prognosen zu beleuchten wollen wir uns an Prognosen mit dem &lt;strong&gt;tipping&lt;/strong&gt;-Daten heranwagen.&lt;/p&gt;
 &lt;h2 id=&#34;einlesen-der-tippingdaten&#34;&gt;Einlesen der tipping-Daten&lt;/h2&gt;
@@ -94,7 +94,8 @@ tipspruef %&amp;gt;%
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;gf_point(total_bill ~ day | time, color = ~ sex, data=tipstrain)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../../post/2019-12-18-die-ersten-schritte-zur-prognose-mitteles-linearer-regression_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;aufstellen-des-nullmodel-aka-regression-mit-der-achse&#34;&gt;Aufstellen des Nullmodel aka Regression mit der Achse&lt;/h2&gt;
+&lt;h2 id=&#34;prognosemodel-nullmodell&#34;&gt;Prognosemodel: Nullmodell&lt;/h2&gt;
+&lt;h3 id=&#34;aufstellen-des-nullmodel-aka-regression-mit-der-achse&#34;&gt;Aufstellen des Nullmodel aka Regression mit der Achse&lt;/h3&gt;
 &lt;p&gt;Wir erstellen das Nullmodell wie folgt:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lm.null &amp;lt;- lm( total_bill ~ 1, data=tipstrain)
 summary(lm.null)
@@ -130,21 +131,24 @@ head(predict.null)
 &lt;p&gt;Wie gesagt, das Nullmodell liefert als Prognose immer den Mittelwert der Trainingsdaten zurück,
 das mathematische Nullmodell lautet also:&lt;/p&gt;
 &lt;p&gt;$$\widehat{total_bill_i} = 20.408642  $$&lt;/p&gt;
-&lt;h2 id=&#34;auswertung-des-nullmodells&#34;&gt;Auswertung des Nullmodells&lt;/h2&gt;
+&lt;h3 id=&#34;auswertung-des-nullmodells&#34;&gt;Auswertung des Nullmodells&lt;/h3&gt;
 &lt;p&gt;Zur Auswertung Nutzen wir den &lt;em&gt;mittleren Absolutabstand&lt;/em&gt; zwischen der Vorhersage und den Prüfdaten:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;maa.null &amp;lt;-sum( abs( tipspruef$total_bill - predict.null))
 maa.null
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] 544.772
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;prognosemodell-lineare-regression-gegen-size-als-metrischer-wert&#34;&gt;Prognosemodell: Lineare Regression gegen &amp;ldquo;size&amp;rdquo; als metrischer Wert&lt;/h2&gt;
+&lt;h3 id=&#34;aufstellen-des-modells&#34;&gt;Aufstellen des Modells&lt;/h3&gt;
+&lt;h3 id=&#34;auswertung-des-regressionsmodell&#34;&gt;Auswertung des Regressionsmodell&lt;/h3&gt;
 </description>
     </item>
     
     <item>
       <title>SBI - Simulation Based Inference</title>
-      <link>https://sefiroth.net/nap/post/sbi-simulation-based-inference/</link>
+      <link>/post/sbi-simulation-based-inference/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/sbi-simulation-based-inference/</guid>
+      <guid>/post/sbi-simulation-based-inference/</guid>
       <description>
 
 
@@ -156,9 +160,9 @@ maa.null
     
     <item>
       <title>Ein wenig schneller zur simulierten Nullverteilung</title>
-      <link>https://sefiroth.net/nap/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</link>
+      <link>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
+      <guid>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
       <description>
 &lt;script src=&#34;../../rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../rmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
@@ -300,9 +304,9 @@ gf_qq(NullDistFSNDR_mw&lt;span class=&#34;math inline&#34;&gt;\(diffmean ~ NullD
     
     <item>
       <title>Nur ein wenig lineare Regression</title>
-      <link>https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/</link>
+      <link>/post/nur-ein-wenig-lineare-regression/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/</guid>
+      <guid>/post/nur-ein-wenig-lineare-regression/</guid>
       <description>
 
 
@@ -656,9 +660,9 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
     
     <item>
       <title>Prognose-, Konfidenz- und Fiduzialintervalle</title>
-      <link>https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/</link>
+      <link>/post/prognose-konfidenz-und-fiduzialintervalle/</link>
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
+      <guid>/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
       <description>
 
 
@@ -736,9 +740,9 @@ und&lt;/p&gt;
     
     <item>
       <title>Konfidenzintervalle</title>
-      <link>https://sefiroth.net/nap/post/konfidenzintervalle/</link>
+      <link>/post/konfidenzintervalle/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/konfidenzintervalle/</guid>
+      <guid>/post/konfidenzintervalle/</guid>
       <description>
 
 
@@ -748,9 +752,9 @@ und&lt;/p&gt;
     
     <item>
       <title>Zentrales Schwankungsintervall</title>
-      <link>https://sefiroth.net/nap/post/zentrales-schwankungsintervall/</link>
+      <link>/post/zentrales-schwankungsintervall/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/zentrales-schwankungsintervall/</guid>
+      <guid>/post/zentrales-schwankungsintervall/</guid>
       <description>
 
 
@@ -766,9 +770,9 @@ und&lt;/p&gt;
     
     <item>
       <title>Quartile, Quantile, Perzentile etc.</title>
-      <link>https://sefiroth.net/nap/post/quartile-quantile-perzentile-etc/</link>
+      <link>/post/quartile-quantile-perzentile-etc/</link>
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/quartile-quantile-perzentile-etc/</guid>
+      <guid>/post/quartile-quantile-perzentile-etc/</guid>
       <description>
 
 
@@ -858,9 +862,9 @@ Ebenso liegen 40 % der Stichprobe unterhalb des vierten Dezils und 60 % oberhalb
     
     <item>
       <title>10 Dinge die kein Talent benötigen!</title>
-      <link>https://sefiroth.net/nap/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
+      <link>/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
       <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
+      <guid>/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
       <description>&lt;p&gt;Gerade im Internet gefunden:&lt;/p&gt;
 &lt;h3 id=&#34;10-dinge-die-kein-talent-bentigen&#34;&gt;10 Dinge die kein Talent benötigen!&lt;/h3&gt;
 &lt;ol&gt;
@@ -880,9 +884,17 @@ Ebenso liegen 40 % der Stichprobe unterhalb des vierten Dezils und 60 % oberhalb
     
     <item>
       <title>Etwas R am Abend</title>
-      <link>https://sefiroth.net/nap/project/etwas-r-am-abend/</link>
+      <link>/project/etwas-r-am-abend/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/project/etwas-r-am-abend/</guid>
+      <guid>/project/etwas-r-am-abend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistik21</title>
+      <link>/publication/statistik21/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      <guid>/publication/statistik21/</guid>
       <description></description>
     </item>
     

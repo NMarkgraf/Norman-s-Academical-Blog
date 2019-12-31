@@ -2,181 +2,213 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tags/</link>
-      <atom:link href="https://sefiroth.net/nap/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/</link>
+      <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Tags</title>
-      <link>https://sefiroth.net/nap/tags/</link>
+      <link>/tags/</link>
     </image>
     
     <item>
+      <title>Statistik</title>
+      <link>/tags/statistik/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/statistik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>academic</title>
+      <link>/tags/academic/</link>
+      <pubDate>Wed, 18 Dec 2019 11:20:50 +0100</pubDate>
+      <guid>/tags/academic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>/tags/hugo/</link>
+      <pubDate>Wed, 18 Dec 2019 11:20:50 +0100</pubDate>
+      <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webside</title>
+      <link>/tags/webside/</link>
+      <pubDate>Wed, 18 Dec 2019 11:20:50 +0100</pubDate>
+      <guid>/tags/webside/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Lehre</title>
-      <link>https://sefiroth.net/nap/tags/lehre/</link>
+      <link>/tags/lehre/</link>
       <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/lehre/</guid>
+      <guid>/tags/lehre/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>https://sefiroth.net/nap/tags/r/</link>
+      <link>/tags/r/</link>
       <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/r/</guid>
+      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://sefiroth.net/nap/tags/python/</link>
+      <link>/tags/python/</link>
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/python/</guid>
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mathematica</title>
-      <link>https://sefiroth.net/nap/tags/mathematica/</link>
+      <link>/tags/mathematica/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/mathematica/</guid>
+      <guid>/tags/mathematica/</guid>
       <description></description>
     </item>
     
     <item>
       <title>matplotlib</title>
-      <link>https://sefiroth.net/nap/tags/matplotlib/</link>
+      <link>/tags/matplotlib/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/matplotlib/</guid>
+      <guid>/tags/matplotlib/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Raspberry Pi</title>
-      <link>https://sefiroth.net/nap/tags/raspberry-pi/</link>
+      <link>/tags/raspberry-pi/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/raspberry-pi/</guid>
+      <guid>/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Raspbian</title>
-      <link>https://sefiroth.net/nap/tags/raspbian/</link>
+      <link>/tags/raspbian/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/raspbian/</guid>
+      <guid>/tags/raspbian/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R markdown</title>
-      <link>https://sefiroth.net/nap/tags/r-markdown/</link>
+      <link>/tags/r-markdown/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/r-markdown/</guid>
+      <guid>/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Technisches</title>
-      <link>https://sefiroth.net/nap/tags/technisches/</link>
+      <link>/tags/technisches/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/technisches/</guid>
+      <guid>/tags/technisches/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Allgemein</title>
-      <link>https://sefiroth.net/nap/tags/allgemein/</link>
+      <link>/tags/allgemein/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/allgemein/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Statistik</title>
-      <link>https://sefiroth.net/nap/tags/statistik/</link>
-      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/statistik/</guid>
+      <guid>/tags/allgemein/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wahrscheinlichkeitstheorie</title>
-      <link>https://sefiroth.net/nap/tags/wahrscheinlichkeitstheorie/</link>
+      <link>/tags/wahrscheinlichkeitstheorie/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/wahrscheinlichkeitstheorie/</guid>
+      <guid>/tags/wahrscheinlichkeitstheorie/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Science</title>
-      <link>https://sefiroth.net/nap/tags/data-science/</link>
+      <link>/tags/data-science/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/data-science/</guid>
+      <guid>/tags/data-science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LaTeX</title>
-      <link>https://sefiroth.net/nap/tags/latex/</link>
+      <link>/tags/latex/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/latex/</guid>
+      <guid>/tags/latex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pandoc</title>
-      <link>https://sefiroth.net/nap/tags/pandoc/</link>
+      <link>/tags/pandoc/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/pandoc/</guid>
+      <guid>/tags/pandoc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>panflute</title>
-      <link>https://sefiroth.net/nap/tags/panflute/</link>
+      <link>/tags/panflute/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/panflute/</guid>
+      <guid>/tags/panflute/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RStudio</title>
-      <link>https://sefiroth.net/nap/tags/rstudio/</link>
+      <link>/tags/rstudio/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/rstudio/</guid>
+      <guid>/tags/rstudio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SBI</title>
-      <link>https://sefiroth.net/nap/tags/sbi/</link>
+      <link>/tags/sbi/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/sbi/</guid>
+      <guid>/tags/sbi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vortrag</title>
-      <link>https://sefiroth.net/nap/tags/vortrag/</link>
+      <link>/tags/vortrag/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/tags/vortrag/</guid>
+      <guid>/tags/vortrag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FOM</title>
+      <link>/tags/fom/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      <guid>/tags/fom/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projektorientiertes Lernen</title>
-      <link>https://sefiroth.net/nap/tags/projektorientiertes-lernen/</link>
+      <link>/tags/projektorientiertes-lernen/</link>
       <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      <guid>https://sefiroth.net/nap/tags/projektorientiertes-lernen/</guid>
+      <guid>/tags/projektorientiertes-lernen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regelungstechnik</title>
-      <link>https://sefiroth.net/nap/tags/regelungstechnik/</link>
+      <link>/tags/regelungstechnik/</link>
       <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      <guid>https://sefiroth.net/nap/tags/regelungstechnik/</guid>
+      <guid>/tags/regelungstechnik/</guid>
       <description></description>
     </item>
     

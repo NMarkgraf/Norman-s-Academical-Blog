@@ -2,69 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/categories/</link>
-      <atom:link href="https://sefiroth.net/nap/categories/index.xml" rel="self" type="application/rss+xml" />
+    <link>/categories/</link>
+      <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Categories</title>
-      <link>https://sefiroth.net/nap/categories/</link>
+      <link>/categories/</link>
     </image>
     
     <item>
       <title>Statistik</title>
-      <link>https://sefiroth.net/nap/categories/statistik/</link>
-      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/categories/statistik/</guid>
+      <link>/categories/statistik/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/categories/statistik/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Allgemeines</title>
-      <link>https://sefiroth.net/nap/categories/allgemeines/</link>
+      <link>/categories/allgemeines/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/categories/allgemeines/</guid>
+      <guid>/categories/allgemeines/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fundstücke</title>
-      <link>https://sefiroth.net/nap/categories/fundst%C3%BCcke/</link>
+      <link>/categories/fundst%C3%BCcke/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/categories/fundst%C3%BCcke/</guid>
+      <guid>/categories/fundst%C3%BCcke/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Information</title>
-      <link>https://sefiroth.net/nap/categories/information/</link>
+      <link>/categories/information/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/categories/information/</guid>
+      <guid>/categories/information/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kommentar</title>
-      <link>https://sefiroth.net/nap/categories/kommentar/</link>
+      <link>/categories/kommentar/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/categories/kommentar/</guid>
+      <guid>/categories/kommentar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Typographie</title>
-      <link>https://sefiroth.net/nap/categories/typographie/</link>
+      <link>/categories/typographie/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/categories/typographie/</guid>
+      <guid>/categories/typographie/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vorlesungen schreiben</title>
-      <link>https://sefiroth.net/nap/categories/vorlesungen-schreiben/</link>
+      <link>/categories/vorlesungen-schreiben/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/categories/vorlesungen-schreiben/</guid>
+      <guid>/categories/vorlesungen-schreiben/</guid>
       <description></description>
     </item>
     

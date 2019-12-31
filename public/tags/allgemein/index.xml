@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Allgemein | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tags/allgemein/</link>
-      <atom:link href="https://sefiroth.net/nap/tags/allgemein/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/allgemein/</link>
+      <atom:link href="/tags/allgemein/index.xml" rel="self" type="application/rss+xml" />
     <description>Allgemein</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Allgemein</title>
-      <link>https://sefiroth.net/nap/tags/allgemein/</link>
+      <link>/tags/allgemein/</link>
     </image>
     
     <item>
       <title>SBI - Simulation Based Inference</title>
-      <link>https://sefiroth.net/nap/post/sbi-simulation-based-inference/</link>
+      <link>/post/sbi-simulation-based-inference/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/sbi-simulation-based-inference/</guid>
+      <guid>/post/sbi-simulation-based-inference/</guid>
       <description>
 
 
@@ -28,9 +28,9 @@
     
     <item>
       <title>Auch R markdown Dateien sollten sich an Regeln halten</title>
-      <link>https://sefiroth.net/nap/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
+      <link>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
+      <guid>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
       <description>
 
 
@@ -112,9 +112,9 @@ Den &lt;em&gt;Python&lt;/em&gt;-Quelltext findet man unter &lt;a href=&#34;https
     
     <item>
       <title>10 Dinge die kein Talent benötigen!</title>
-      <link>https://sefiroth.net/nap/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
+      <link>/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
       <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
+      <guid>/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
       <description>&lt;p&gt;Gerade im Internet gefunden:&lt;/p&gt;
 &lt;h3 id=&#34;10-dinge-die-kein-talent-bentigen&#34;&gt;10 Dinge die kein Talent benötigen!&lt;/h3&gt;
 &lt;ol&gt;

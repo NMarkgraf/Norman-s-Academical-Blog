@@ -2,21 +2,70 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Statistik | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/categories/statistik/</link>
-      <atom:link href="https://sefiroth.net/nap/categories/statistik/index.xml" rel="self" type="application/rss+xml" />
+    <link>/categories/statistik/</link>
+      <atom:link href="/categories/statistik/index.xml" rel="self" type="application/rss+xml" />
     <description>Statistik</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Statistik</title>
-      <link>https://sefiroth.net/nap/categories/statistik/</link>
+      <link>/categories/statistik/</link>
     </image>
     
     <item>
+      <title>Moderator und Mediation - Formen der Interaktion bei Analyse von Zusammenhängen</title>
+      <link>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenh%C3%A4ngen/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenh%C3%A4ngen/</guid>
+      <description>&lt;p&gt;Bei der Analyse von Zusammenhängen tauchen sowohl &lt;em&gt;Moderation&lt;/em&gt; als auch &lt;em&gt;Mediation&lt;/em&gt; auf. Es geht um Zusammenhänge zwischen drei Variablen &lt;code&gt;\(X\)&lt;/code&gt;, &lt;code&gt;\(Y\)&lt;/code&gt; und &lt;code&gt;\(M\)&lt;/code&gt;.
+Untersucht wird der Effekt einer unabhägigen Variable &lt;code&gt;\(X\)&lt;/code&gt; (&lt;em&gt;Prädiktor&lt;/em&gt;, &lt;em&gt;UV&lt;/em&gt;) auf ein abhängige Variable &lt;code&gt;\(Y\)&lt;/code&gt; (&lt;em&gt;AV&lt;/em&gt;).
+Wir untersuchen dies mit einem Regressionsmodell &lt;code&gt;\(Y ~ X\)&lt;/code&gt;.
+Dabei wird zusätzlich eine dritte Variable &lt;code&gt;\(M\)&lt;/code&gt; berücksichtigt, die man entweder der &lt;em&gt;Moderator&lt;/em&gt; oder &lt;em&gt;Mediator&lt;/em&gt; nennt.&lt;/p&gt;
+&lt;p&gt;Ist die abhängige Variable metrisch, so können wir mittels eine linearer Regression vorgehen, ist die AB dagegen dichotom, so nutzen wir eine logistische Regression.&lt;/p&gt;
+&lt;h2 id=&#34;moderation&#34;&gt;Moderation&lt;/h2&gt;
+&lt;p&gt;Bei einer &lt;em&gt;Moderation&lt;/em&gt; wirkt die dritte Variable &lt;code&gt;\(M\)&lt;/code&gt; (&lt;em&gt;Moderator&lt;/em&gt;) auf die Beziehung zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(Y\)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Der Einfluss von &lt;code&gt;\(M\)&lt;/code&gt; ändert also den Effekt von &lt;code&gt;\(X\)&lt;/code&gt; auf &lt;code&gt;\(Y\)&lt;/code&gt;. Der Zusammenhang zwischen &lt;code&gt;\(Y\)&lt;/code&gt; und &lt;code&gt;\(X\)&lt;/code&gt; ist also je nach &lt;code&gt;\(M\)&lt;/code&gt; unterschiedlich.&lt;/p&gt;
+&lt;p&gt;Statistisch gesehen liegt eine &lt;em&gt;Interaktion&lt;/em&gt; zwischen &lt;code&gt;\(M\)&lt;/code&gt; und &lt;code&gt;\(X\)&lt;/code&gt; vor.&lt;/p&gt;
+&lt;h3 id=&#34;wie-untersucht-man-einen-zusammenhang-auf-eine-moderation&#34;&gt;Wie untersucht man einen Zusammenhang auf eine Moderation?&lt;/h3&gt;
+&lt;p&gt;Dazu stellen wir ein Regressionsmodell mit den drei Faktoren &lt;code&gt;\(X\)&lt;/code&gt;, &lt;code&gt;\(M\)&lt;/code&gt; und der Interaktion zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(M\)&lt;/code&gt; auf.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lm(Y ~ X * M, data=daten)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Oder alternativ:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lm(Y ~ X + M + M:X, data=daten)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Diese drei Faktoren wirken auf &lt;code&gt;\(Y\)&lt;/code&gt;. Ist in diesem Modell die Interaktion &lt;code&gt;\(M:X\)&lt;/code&gt; &lt;em&gt;signifikant&lt;/em&gt;, so liegt eine (signifikante) &lt;em&gt;Moderation&lt;/em&gt; vor.&lt;/p&gt;
+&lt;h2 id=&#34;mediation&#34;&gt;Mediation&lt;/h2&gt;
+&lt;p&gt;Bei der &lt;em&gt;Mediation&lt;/em&gt; steht die Variable &lt;code&gt;\(M\)&lt;/code&gt; (der &lt;em&gt;Mediator&lt;/em&gt;) sowohl zu &lt;code&gt;\(X\)&lt;/code&gt; als auch zu &lt;code&gt;\(Y\)&lt;/code&gt; in Beziehung.
+Der direkte Effekt zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(Y\)&lt;/code&gt; wird durch den indirekten Effekt über &lt;code&gt;\(M\)&lt;/code&gt; erklärt, also durch
+&lt;code&gt;\(X \to  M \to Y\)&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;wie-untersucht-man-auf-eine-mediation&#34;&gt;Wie untersucht man auf eine Mediation?&lt;/h3&gt;
+&lt;p&gt;In diesem Fall stellen wir mehrere Regressionsmodelle auf. Eine (signifikante) Mediation liegt dann vor, wenn die folgenden Bedinungen erfüllt sind:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;erstesModell &amp;lt;- lm(Y ~ X, data=daten)
+zweitesModell &amp;lt;- lm(M ~ X, data=daten)
+drittesModell &amp;lt;- lm(Y ~ X + M, data=daten)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Im ersten Modell ($X \to Y$) ist der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; signifikant.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Im zweiten Modell ($X \to M$) ist der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; signifikant.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Im dritten Modell ($X,M \to Y$) ist der Regressionskoeffizient von &lt;code&gt;\(M\)&lt;/code&gt; signifikant und&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; im dritten Modell kleiner als im ersten Modell.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Die ersten Schritte zur Prognose mitteles linearer Regression</title>
-      <link>https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</link>
+      <link>/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</link>
       <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</guid>
+      <guid>/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</guid>
       <description>&lt;p&gt;Prognosen sind ein wichtiger Bestandteil von Data Science und ist durchaus nicht nur auf moderne Ansätze, wie Neuronale Netze, deep lerning etc. begrenzt. Auch die gute, alte Regression kann ein sehr sinnvolles Mittel sein solche Prognosen zu erstellen.&lt;/p&gt;
 &lt;p&gt;Um ein wenig die Ideen hinter Prognosen zu beleuchten wollen wir uns an Prognosen mit dem &lt;strong&gt;tipping&lt;/strong&gt;-Daten heranwagen.&lt;/p&gt;
 &lt;h2 id=&#34;einlesen-der-tippingdaten&#34;&gt;Einlesen der tipping-Daten&lt;/h2&gt;
@@ -94,7 +143,8 @@ tipspruef %&amp;gt;%
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;gf_point(total_bill ~ day | time, color = ~ sex, data=tipstrain)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../../post/2019-12-18-die-ersten-schritte-zur-prognose-mitteles-linearer-regression_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;h2 id=&#34;aufstellen-des-nullmodel-aka-regression-mit-der-achse&#34;&gt;Aufstellen des Nullmodel aka Regression mit der Achse&lt;/h2&gt;
+&lt;h2 id=&#34;prognosemodel-nullmodell&#34;&gt;Prognosemodel: Nullmodell&lt;/h2&gt;
+&lt;h3 id=&#34;aufstellen-des-nullmodel-aka-regression-mit-der-achse&#34;&gt;Aufstellen des Nullmodel aka Regression mit der Achse&lt;/h3&gt;
 &lt;p&gt;Wir erstellen das Nullmodell wie folgt:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lm.null &amp;lt;- lm( total_bill ~ 1, data=tipstrain)
 summary(lm.null)
@@ -130,21 +180,24 @@ head(predict.null)
 &lt;p&gt;Wie gesagt, das Nullmodell liefert als Prognose immer den Mittelwert der Trainingsdaten zurück,
 das mathematische Nullmodell lautet also:&lt;/p&gt;
 &lt;p&gt;$$\widehat{total_bill_i} = 20.408642  $$&lt;/p&gt;
-&lt;h2 id=&#34;auswertung-des-nullmodells&#34;&gt;Auswertung des Nullmodells&lt;/h2&gt;
+&lt;h3 id=&#34;auswertung-des-nullmodells&#34;&gt;Auswertung des Nullmodells&lt;/h3&gt;
 &lt;p&gt;Zur Auswertung Nutzen wir den &lt;em&gt;mittleren Absolutabstand&lt;/em&gt; zwischen der Vorhersage und den Prüfdaten:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;maa.null &amp;lt;-sum( abs( tipspruef$total_bill - predict.null))
 maa.null
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] 544.772
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;prognosemodell-lineare-regression-gegen-size-als-metrischer-wert&#34;&gt;Prognosemodell: Lineare Regression gegen &amp;ldquo;size&amp;rdquo; als metrischer Wert&lt;/h2&gt;
+&lt;h3 id=&#34;aufstellen-des-modells&#34;&gt;Aufstellen des Modells&lt;/h3&gt;
+&lt;h3 id=&#34;auswertung-des-regressionsmodell&#34;&gt;Auswertung des Regressionsmodell&lt;/h3&gt;
 </description>
     </item>
     
     <item>
       <title>SBI - Simulation Based Inference</title>
-      <link>https://sefiroth.net/nap/post/sbi-simulation-based-inference/</link>
+      <link>/post/sbi-simulation-based-inference/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/sbi-simulation-based-inference/</guid>
+      <guid>/post/sbi-simulation-based-inference/</guid>
       <description>
 
 
@@ -156,9 +209,9 @@ maa.null
     
     <item>
       <title>Ein wenig schneller zur simulierten Nullverteilung</title>
-      <link>https://sefiroth.net/nap/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</link>
+      <link>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
+      <guid>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
       <description>
 &lt;script src=&#34;../../rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../rmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
@@ -300,9 +353,9 @@ gf_qq(NullDistFSNDR_mw&lt;span class=&#34;math inline&#34;&gt;\(diffmean ~ NullD
     
     <item>
       <title>Nur ein wenig lineare Regression</title>
-      <link>https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/</link>
+      <link>/post/nur-ein-wenig-lineare-regression/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/</guid>
+      <guid>/post/nur-ein-wenig-lineare-regression/</guid>
       <description>
 
 
@@ -656,9 +709,9 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
     
     <item>
       <title>Prognose-, Konfidenz- und Fiduzialintervalle</title>
-      <link>https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/</link>
+      <link>/post/prognose-konfidenz-und-fiduzialintervalle/</link>
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
+      <guid>/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
       <description>
 
 
@@ -736,9 +789,9 @@ und&lt;/p&gt;
     
     <item>
       <title>Konfidenzintervalle</title>
-      <link>https://sefiroth.net/nap/post/konfidenzintervalle/</link>
+      <link>/post/konfidenzintervalle/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/konfidenzintervalle/</guid>
+      <guid>/post/konfidenzintervalle/</guid>
       <description>
 
 
@@ -748,9 +801,9 @@ und&lt;/p&gt;
     
     <item>
       <title>Zentrales Schwankungsintervall</title>
-      <link>https://sefiroth.net/nap/post/zentrales-schwankungsintervall/</link>
+      <link>/post/zentrales-schwankungsintervall/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/zentrales-schwankungsintervall/</guid>
+      <guid>/post/zentrales-schwankungsintervall/</guid>
       <description>
 
 
@@ -766,9 +819,9 @@ und&lt;/p&gt;
     
     <item>
       <title>Der Zentrale Grenzwertsatz</title>
-      <link>https://sefiroth.net/nap/post/der-zentrale-grenzwertsatz/</link>
+      <link>/post/der-zentrale-grenzwertsatz/</link>
       <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/der-zentrale-grenzwertsatz/</guid>
+      <guid>/post/der-zentrale-grenzwertsatz/</guid>
       <description>
 
 

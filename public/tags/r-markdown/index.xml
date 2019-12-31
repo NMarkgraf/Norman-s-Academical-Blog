@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R markdown | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tags/r-markdown/</link>
-      <atom:link href="https://sefiroth.net/nap/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/r-markdown/</link>
+      <atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     <description>R markdown</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>R markdown</title>
-      <link>https://sefiroth.net/nap/tags/r-markdown/</link>
+      <link>/tags/r-markdown/</link>
     </image>
     
     <item>
       <title>Der Angriff der Riesenschlangen.</title>
-      <link>https://sefiroth.net/nap/post/der-angriff-der-riesenschlangen/</link>
+      <link>/post/der-angriff-der-riesenschlangen/</link>
       <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/der-angriff-der-riesenschlangen/</guid>
+      <guid>/post/der-angriff-der-riesenschlangen/</guid>
       <description>
 
 
@@ -66,9 +66,9 @@ print(quadrat(2))&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Auch R markdown Dateien sollten sich an Regeln halten</title>
-      <link>https://sefiroth.net/nap/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
+      <link>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
+      <guid>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
       <description>
 
 
@@ -150,33 +150,33 @@ Den &lt;em&gt;Python&lt;/em&gt;-Quelltext findet man unter &lt;a href=&#34;https
     
     <item>
       <title>FastSimNullDistR</title>
-      <link>https://sefiroth.net/nap/project/fastsimnulldistr/</link>
+      <link>/project/fastsimnulldistr/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/project/fastsimnulldistr/</guid>
+      <guid>/project/fastsimnulldistr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pandoc filter: style.py</title>
-      <link>https://sefiroth.net/nap/project/style.py/</link>
+      <link>/project/style.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/project/style.py/</guid>
+      <guid>/project/style.py/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pandoc filter: typography.py</title>
-      <link>https://sefiroth.net/nap/project/typography.py/</link>
+      <link>/project/typography.py/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/project/typography.py/</guid>
+      <guid>/project/typography.py/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RmdStyleChecker</title>
-      <link>https://sefiroth.net/nap/project/rmdstylechecker/</link>
+      <link>/project/rmdstylechecker/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/project/rmdstylechecker/</guid>
+      <guid>/project/rmdstylechecker/</guid>
       <description>&lt;p&gt;Jede Sprache hat Regeln, auch Programmiersprachen und R markdown ist eine Programmiersprache. Wieso also nicht ein Tool schreiben, welches &lt;em&gt;SStilregeln&lt;/em&gt; (engl. &lt;em&gt;style guides&lt;/em&gt;) für R markdown kontrolliert um auch im kolaborativen Einsatz ein einheitliches &amp;ldquo;Schriftbild&amp;rdquo; des Quelltextes zu erhalten.&lt;/p&gt;
 &lt;p&gt;&amp;hellip;&lt;/p&gt;
 &lt;p&gt;Einen ersten Schritt habe ich mit dem &lt;a href=&#34;auch-rmarkdown-dateien-sollten-sich-regeln-halten&#34;&gt;Blog-Eintrag&lt;/a&gt; gemacht und dazu gleich noch ein Tool in &lt;em&gt;Python&lt;/em&gt; geschrieben um Verstöße dagegen schneller zu finden.&lt;/p&gt;

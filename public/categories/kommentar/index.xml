@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kommentar | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/categories/kommentar/</link>
-      <atom:link href="https://sefiroth.net/nap/categories/kommentar/index.xml" rel="self" type="application/rss+xml" />
+    <link>/categories/kommentar/</link>
+      <atom:link href="/categories/kommentar/index.xml" rel="self" type="application/rss+xml" />
     <description>Kommentar</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Sun, 17 Dec 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Kommentar</title>
-      <link>https://sefiroth.net/nap/categories/kommentar/</link>
+      <link>/categories/kommentar/</link>
     </image>
     
     <item>
       <title>First Entry</title>
-      <link>https://sefiroth.net/nap/post/first-entry/</link>
+      <link>/post/first-entry/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/first-entry/</guid>
+      <guid>/post/first-entry/</guid>
       <description>&lt;p&gt;Ein erster Kommentar!&lt;/p&gt;
 </description>
     </item>
