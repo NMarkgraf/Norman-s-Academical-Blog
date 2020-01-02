@@ -17,11 +17,12 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+math: true
 ---
 
 Bei der Analyse von Zusammenhängen tauchen sowohl *Moderation* als auch *Mediation* auf. Es geht um Zusammenhänge zwischen drei Variablen `\(X\)`, `\(Y\)` und `\(M\)`. 
 Untersucht wird der Effekt einer unabhägigen Variable `\(X\)` (*Prädiktor*, *UV*) auf ein abhängige Variable `\(Y\)` (*AV*). 
-Wir untersuchen dies mit einem Regressionsmodell `\(Y ~ X\)`. 
+Wir untersuchen dies mit einem Regressionsmodell `\(Y \sim X\)`. 
 Dabei wird zusätzlich eine dritte Variable `\(M\)` berücksichtigt, die man entweder der *Moderator* oder *Mediator* nennt.
 
 Ist die abhängige Variable metrisch, so können wir mittels eine linearer Regression vorgehen, ist die AB dagegen dichotom, so nutzen wir eine logistische Regression.
