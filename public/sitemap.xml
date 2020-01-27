@@ -4,7 +4,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+      <lastmod>2020-01-22T16:08:04+01:00</lastmod>
     </url>
     
   
@@ -12,23 +12,15 @@
     <url>
     
       <loc>/categories/</loc>
-      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+      <lastmod>2020-01-22T16:08:04+01:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenh%C3%A4ngen/</loc>
-      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenh%C3%A4ngen/</loc>
-      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+      <loc>/post/der-standardfehler-aus-klassischer-sicht-ein-kleiner-%C3%BCberblick/</loc>
+      <lastmod>2020-01-22T16:08:04+01:00</lastmod>
     </url>
     
   
@@ -36,7 +28,7 @@
     <url>
     
       <loc>/</loc>
-      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+      <lastmod>2020-01-22T16:08:04+01:00</lastmod>
     </url>
     
   
@@ -44,7 +36,7 @@
     <url>
     
       <loc>/tags/statistik/</loc>
-      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+      <lastmod>2020-01-22T16:08:04+01:00</lastmod>
     </url>
     
   
@@ -52,7 +44,7 @@
     <url>
     
       <loc>/categories/statistik/</loc>
-      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
+      <lastmod>2020-01-22T16:08:04+01:00</lastmod>
     </url>
     
   
@@ -60,6 +52,14 @@
     <url>
     
       <loc>/tags/</loc>
+      <lastmod>2020-01-22T16:08:04+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenh%C3%A4ngen/</loc>
       <lastmod>2019-12-31T13:33:45+01:00</lastmod>
     </url>
     
@@ -684,6 +684,14 @@
     <url>
     
       <loc>/post/2019-12-18-die-ersten-schritte-zur-prognose-mitteles-linearer-regression/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenha%CC%88ngen/</loc>
       <priority>0</priority>
     </url>
     

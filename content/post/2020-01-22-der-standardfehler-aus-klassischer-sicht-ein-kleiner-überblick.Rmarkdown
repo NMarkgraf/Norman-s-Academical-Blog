@@ -1,0 +1,116 @@
+---
+title: Der Standardfehler aus klassischer Sicht - Ein kleiner Überblick
+author: admin
+date: '2020-01-22'
+slug: der-standardfehler-aus-klassischer-sicht-ein-kleiner-überblick
+categories:
+  - Statistik
+tags:
+  - Statistik
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-01-22T16:08:04+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+draft: true
+---
+
+```{r setup, include=FALSE}
+library(mosaic)
+set.seed(2009)
+```
+
+Der **Standardfehler** ist ein *Steuungsmaß* für eine Schätzfunktion $\hat{\vartheta}$ für einen unbekannten Parameter $\vartheta$ der Grundgesamtheit. Er ist definiert als
+$$\sigma(\hat{\vartheta}) = + \sqrt{\operatorname{Var}(\hat{\vartheta})}.$$
+
+Bei einem erwartungstreuen Schätzer ist daher der Standardfehler ein Maß für die durchschnittliche Abweichung des geschätzten Parameterwertes vom wahren Parameterwert. Je kleiner der Standardfehler ist, desto genauer kann der unbekannte Parameter mit Hilfe der Schätzfunktion geschätzt werden.
+
+Für eine Stichprobe vom Umfang $n$ mit Standardabweichung $\sigma$ gilt für den Standardfehler:
+
+- des **Stichprobenmittel**: $\sigma(\overline{X}) = \frac{\sigma}{\sqrt{n}}$
+
+Unterstellt man eine Stichprobenverteilung, so kann der Standardfehler anhand der Varianz der Stichprobenverteilung berechnet werden:
+
+- **Binomialverteilung** mit Parametern $N,\, p$: $\sigma_{\bar x,\mathrm{binom}} = \frac{\sqrt{ N \cdot p \cdot (1-p)}}{\sqrt n}$
+
+- **Exponentialverteilung** mit Parameter $\lambda$ (Erwartungswert = Standardabweichung = $1/\lambda$): $\sigma_{\bar x,\mathrm{exp}} = \frac{1}{\lambda\sqrt n}$
+
+- **Poisson-Verteilung** mit Parameter $\lambda$ (Erwartungswert = Varianz = $\lambda$): $\sigma_{\bar x,\mathrm{poisson}} = \sqrt{\frac{\lambda}{n}}$
+
+
+## Beispiel: Binomialverteile Stichprobe
+
+```{r}
+printAllSE.binom <- function(n, N, prob, bootstrapN=1000, theta=mean) {
+  stipro <- rbinom(n, N, prob)
+  bootvert <- do(bootstrapN) * theta(resample(stipro))
+  se.boot <- sd(bootvert$theta)
+  se.exakt <- sqrt(N*prop*(1-prop))/sqrt(n)
+  se <- list(se.exakt, se.boot)
+  names(se) <- c("exakt", "boot")
+  return(se)
+}
+
+printAllSE.poision <- function(n, lambda, bootstrapN=1000, theta=mean) {
+  stipro <- rpois(n, lambda)
+  bootvert <- do(bootstrapN) * theta(resample(stipro))
+  se.boot <- sd(bootvert$theta)
+  se.exakt <- sqrt(lambda/n)
+  se <- list(se.exakt, se.boot)
+  names(se) <- c("exakt", "boot")
+  return(se)
+}
+
+printAllSE.normal <- function(n, mu=0, sigma=1, bootstrapN=1000, theta=mean) {
+  stipro <- rnorm(n, mu, sigma)
+  bootvert <- do(bootstrapN) * theta(resample(stipro))
+  se.boot <- sd(bootvert$theta)
+  se.exakt <- sqrt(sigma^2/n)
+  se.geschaetzt <- sqrt(var(stipro)/n)
+  se <- list(se.exakt, se.boot, se.geschaetzt)
+  names(se) <- c("exakt", "boot", "geschaetzt")
+  return(se)
+}
+
+```
+
+
+```{r}
+n <- 100
+N <- 70
+prop <- 0.9
+
+# Binomialverteilte:
+for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
+  cat("\nn=", n, "\n")
+  for(prob in c(1/2, 1/3, 1/4, 1/5, 1/6)) {
+    N <- floor(prob*n)
+    cat("N=",N, "\n")    
+    tmp <- printAllSE.binom(n , N, prob)
+    cat(prob,": ", tmp$exakt, " (exakt), ", tmp$boot, " (boot), ", abs(tmp$exakt-tmp$boot), " (abs. Fehler) \n")
+  }
+}
+# 
+# Poisionverteilte:
+for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
+  cat("\nn=", n, "\n")
+  for(lambda in c(1/2,1/3, 1/4, 1/5, 1/6)) {
+    tmp <- printAllSE.poision(n, lambda)
+    cat(lambda,": ", tmp$exakt, " (exakt), ", tmp$boot, " (boot), ", abs(tmp$exakt-tmp$boot), " (abs. Fehler) \n")
+  }
+}
+```
+
+
+```{r}
+for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
+  tmp <- printAllSE.normal(n)
+  cat("\nn=", n, ": ", tmp$exakt, " (exakt), ", tmp$boot, " (boot), ", tmp$geschaetzt, "(geschätzt), ", abs(tmp$exakt-tmp$boot), " (abs. Fehler (boot))", abs(tmp$exakt-tmp$geschaetzt),"(abs. Fehler (geschätzt)) \n")
+}
+```
+

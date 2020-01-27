@@ -1,0 +1,273 @@
+---
+title: Der Standardfehler aus klassischer Sicht - Ein kleiner Überblick
+author: admin
+date: '2020-01-22'
+slug: der-standardfehler-aus-klassischer-sicht-ein-kleiner-überblick
+categories:
+  - Statistik
+tags:
+  - Statistik
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-01-22T16:08:04+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+Der **Standardfehler** ist ein *Steuungsmaß* für eine Schätzfunktion `\(\hat{\vartheta}\)` für einen unbekannten Parameter `\(\vartheta\)` der Grundgesamtheit. Er ist definiert als
+`$$\sigma(\hat{\vartheta}) = + \sqrt{\operatorname{Var}(\hat{\vartheta})}.$$`
+
+Bei einem erwartungstreuen Schätzer ist daher der Standardfehler ein Maß für die durchschnittliche Abweichung des geschätzten Parameterwertes vom wahren Parameterwert. Je kleiner der Standardfehler ist, desto genauer kann der unbekannte Parameter mit Hilfe der Schätzfunktion geschätzt werden.
+
+Für eine Stichprobe vom Umfang `\(n\)` mit Standardabweichung `\(\sigma\)` gilt für den Standardfehler:
+
+- des **Stichprobenmittel**: `\(\sigma(\overline{X}) = \frac{\sigma}{\sqrt{n}}\)`
+
+Unterstellt man eine Stichprobenverteilung, so kann der Standardfehler anhand der Varianz der Stichprobenverteilung berechnet werden:
+
+- **Binomialverteilung** mit Parametern `\(N,\, p\)`: `\(\sigma_{\bar x,\mathrm{binom}} = \frac{\sqrt{ N \cdot p \cdot (1-p)}}{\sqrt n}\)`
+
+- **Exponentialverteilung** mit Parameter `\(\lambda\)` (Erwartungswert = Standardabweichung = `\(1/\lambda\)`): `\(\sigma_{\bar x,\mathrm{exp}} = \frac{1}{\lambda\sqrt n}\)`
+
+- **Poisson-Verteilung** mit Parameter `\(\lambda\)` (Erwartungswert = Varianz = `\(\lambda\)`): `\(\sigma_{\bar x,\mathrm{poisson}} = \sqrt{\frac{\lambda}{n}}\)`
+
+
+## Beispiel: Binomialverteile Stichprobe
+
+
+```r
+printAllSE.binom <- function(n, N, prob, bootstrapN=1000, theta=mean) {
+  stipro <- rbinom(n, N, prob)
+  bootvert <- do(bootstrapN) * theta(resample(stipro))
+  se.boot <- sd(bootvert$theta)
+  se.exakt <- sqrt(N*prop*(1-prop))/sqrt(n)
+  se <- list(se.exakt, se.boot)
+  names(se) <- c("exakt", "boot")
+  return(se)
+}
+
+printAllSE.poision <- function(n, lambda, bootstrapN=1000, theta=mean) {
+  stipro <- rpois(n, lambda)
+  bootvert <- do(bootstrapN) * theta(resample(stipro))
+  se.boot <- sd(bootvert$theta)
+  se.exakt <- sqrt(lambda/n)
+  se <- list(se.exakt, se.boot)
+  names(se) <- c("exakt", "boot")
+  return(se)
+}
+
+printAllSE.normal <- function(n, mu=0, sigma=1, bootstrapN=1000, theta=mean) {
+  stipro <- rnorm(n, mu, sigma)
+  bootvert <- do(bootstrapN) * theta(resample(stipro))
+  se.boot <- sd(bootvert$theta)
+  se.exakt <- sqrt(sigma^2/n)
+  se.geschaetzt <- sqrt(var(stipro)/n)
+  se <- list(se.exakt, se.boot, se.geschaetzt)
+  names(se) <- c("exakt", "boot", "geschaetzt")
+  return(se)
+}
+```
+
+
+
+```r
+n <- 100
+N <- 70
+prop <- 0.9
+
+# Binomialverteilte:
+for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
+  cat("\nn=", n, "\n")
+  for(prob in c(1/2, 1/3, 1/4, 1/5, 1/6)) {
+    N <- floor(prob*n)
+    cat("N=",N, "\n")    
+    tmp <- printAllSE.binom(n , N, prob)
+    cat(prob,": ", tmp$exakt, " (exakt), ", tmp$boot, " (boot), ", abs(tmp$exakt-tmp$boot), " (abs. Fehler) \n")
+  }
+}
+```
+
+```
+## 
+## n= 30 
+## N= 15 
+## 0.5 :  0.212132  (exakt),  0.2996921  (boot),  0.08756008  (abs. Fehler) 
+## N= 10 
+## 0.3333333 :  0.1732051  (exakt),  0.2309855  (boot),  0.0577804  (abs. Fehler) 
+## N= 7 
+## 0.25 :  0.1449138  (exakt),  0.230028  (boot),  0.08511424  (abs. Fehler) 
+## N= 6 
+## 0.2 :  0.1341641  (exakt),  0.1914001  (boot),  0.05723599  (abs. Fehler) 
+## N= 5 
+## 0.1666667 :  0.1224745  (exakt),  0.1436041  (boot),  0.02112966  (abs. Fehler) 
+## 
+## n= 50 
+## N= 25 
+## 0.5 :  0.212132  (exakt),  0.3525394  (boot),  0.1404073  (abs. Fehler) 
+## N= 16 
+## 0.3333333 :  0.1697056  (exakt),  0.273315  (boot),  0.1036094  (abs. Fehler) 
+## N= 12 
+## 0.25 :  0.1469694  (exakt),  0.2005751  (boot),  0.05360569  (abs. Fehler) 
+## N= 10 
+## 0.2 :  0.1341641  (exakt),  0.1867858  (boot),  0.0526217  (abs. Fehler) 
+## N= 8 
+## 0.1666667 :  0.12  (exakt),  0.1343281  (boot),  0.01432808  (abs. Fehler) 
+## 
+## n= 100 
+## N= 50 
+## 0.5 :  0.212132  (exakt),  0.349122  (boot),  0.13699  (abs. Fehler) 
+## N= 33 
+## 0.3333333 :  0.1723369  (exakt),  0.2724159  (boot),  0.100079  (abs. Fehler) 
+## N= 25 
+## 0.25 :  0.15  (exakt),  0.2371899  (boot),  0.0871899  (abs. Fehler) 
+## N= 20 
+## 0.2 :  0.1341641  (exakt),  0.1927453  (boot),  0.05858118  (abs. Fehler) 
+## N= 16 
+## 0.1666667 :  0.12  (exakt),  0.1463126  (boot),  0.02631257  (abs. Fehler) 
+## 
+## n= 200 
+## N= 100 
+## 0.5 :  0.212132  (exakt),  0.3311697  (boot),  0.1190377  (abs. Fehler) 
+## N= 66 
+## 0.3333333 :  0.1723369  (exakt),  0.2952654  (boot),  0.1229285  (abs. Fehler) 
+## N= 50 
+## 0.25 :  0.15  (exakt),  0.2033503  (boot),  0.05335033  (abs. Fehler) 
+## N= 40 
+## 0.2 :  0.1341641  (exakt),  0.1563642  (boot),  0.02220012  (abs. Fehler) 
+## N= 33 
+## 0.1666667 :  0.1218606  (exakt),  0.1407523  (boot),  0.01889169  (abs. Fehler) 
+## 
+## n= 500 
+## N= 250 
+## 0.5 :  0.212132  (exakt),  0.3497107  (boot),  0.1375787  (abs. Fehler) 
+## N= 166 
+## 0.3333333 :  0.1728583  (exakt),  0.2574557  (boot),  0.08459734  (abs. Fehler) 
+## N= 125 
+## 0.25 :  0.15  (exakt),  0.2186492  (boot),  0.06864923  (abs. Fehler) 
+## N= 100 
+## 0.2 :  0.1341641  (exakt),  0.185649  (boot),  0.05148495  (abs. Fehler) 
+## N= 83 
+## 0.1666667 :  0.1222293  (exakt),  0.146211  (boot),  0.02398172  (abs. Fehler) 
+## 
+## n= 1000 
+## N= 500 
+## 0.5 :  0.212132  (exakt),  0.345063  (boot),  0.132931  (abs. Fehler) 
+## N= 333 
+## 0.3333333 :  0.1731185  (exakt),  0.2646252  (boot),  0.09150675  (abs. Fehler) 
+## N= 250 
+## 0.25 :  0.15  (exakt),  0.2231931  (boot),  0.07319309  (abs. Fehler) 
+## N= 200 
+## 0.2 :  0.1341641  (exakt),  0.1833904  (boot),  0.04922629  (abs. Fehler) 
+## N= 166 
+## 0.1666667 :  0.1222293  (exakt),  0.1528499  (boot),  0.03062058  (abs. Fehler) 
+## 
+## n= 3000 
+## N= 1500 
+## 0.5 :  0.212132  (exakt),  0.3525232  (boot),  0.1403911  (abs. Fehler) 
+## N= 1000 
+## 0.3333333 :  0.1732051  (exakt),  0.2702559  (boot),  0.09705078  (abs. Fehler) 
+## N= 750 
+## 0.25 :  0.15  (exakt),  0.2196364  (boot),  0.0696364  (abs. Fehler) 
+## N= 600 
+## 0.2 :  0.1341641  (exakt),  0.1791849  (boot),  0.04502081  (abs. Fehler) 
+## N= 500 
+## 0.1666667 :  0.1224745  (exakt),  0.1466177  (boot),  0.02414318  (abs. Fehler)
+```
+
+```r
+# 
+# Poisionverteilte:
+for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
+  cat("\nn=", n, "\n")
+  for(lambda in c(1/2,1/3, 1/4, 1/5, 1/6)) {
+    tmp <- printAllSE.poision(n, lambda)
+    cat(lambda,": ", tmp$exakt, " (exakt), ", tmp$boot, " (boot), ", abs(tmp$exakt-tmp$boot), " (abs. Fehler) \n")
+  }
+}
+```
+
+```
+## 
+## n= 30 
+## 0.5 :  0.1290994  (exakt),  0.1243969  (boot),  0.004702575  (abs. Fehler) 
+## 0.3333333 :  0.1054093  (exakt),  0.1002588  (boot),  0.005150442  (abs. Fehler) 
+## 0.25 :  0.09128709  (exakt),  0.08302049  (boot),  0.008266599  (abs. Fehler) 
+## 0.2 :  0.08164966  (exakt),  0.07318089  (boot),  0.008468764  (abs. Fehler) 
+## 0.1666667 :  0.0745356  (exakt),  0.04481507  (boot),  0.02972053  (abs. Fehler) 
+## 
+## n= 50 
+## 0.5 :  0.1  (exakt),  0.09339713  (boot),  0.006602873  (abs. Fehler) 
+## 0.3333333 :  0.08164966  (exakt),  0.06811893  (boot),  0.01353073  (abs. Fehler) 
+## 0.25 :  0.07071068  (exakt),  0.06970471  (boot),  0.00100597  (abs. Fehler) 
+## 0.2 :  0.06324555  (exakt),  0.05739908  (boot),  0.005846471  (abs. Fehler) 
+## 0.1666667 :  0.05773503  (exakt),  0.06721628  (boot),  0.009481251  (abs. Fehler) 
+## 
+## n= 100 
+## 0.5 :  0.07071068  (exakt),  0.07809672  (boot),  0.007386041  (abs. Fehler) 
+## 0.3333333 :  0.05773503  (exakt),  0.05174337  (boot),  0.005991656  (abs. Fehler) 
+## 0.25 :  0.05  (exakt),  0.04781868  (boot),  0.002181325  (abs. Fehler) 
+## 0.2 :  0.04472136  (exakt),  0.04141606  (boot),  0.003305295  (abs. Fehler) 
+## 0.1666667 :  0.04082483  (exakt),  0.04997504  (boot),  0.009150211  (abs. Fehler) 
+## 
+## n= 200 
+## 0.5 :  0.05  (exakt),  0.04892444  (boot),  0.001075565  (abs. Fehler) 
+## 0.3333333 :  0.04082483  (exakt),  0.03717077  (boot),  0.00365406  (abs. Fehler) 
+## 0.25 :  0.03535534  (exakt),  0.03747469  (boot),  0.002119349  (abs. Fehler) 
+## 0.2 :  0.03162278  (exakt),  0.02947104  (boot),  0.002151735  (abs. Fehler) 
+## 0.1666667 :  0.02886751  (exakt),  0.0281555  (boot),  0.0007120108  (abs. Fehler) 
+## 
+## n= 500 
+## 0.5 :  0.03162278  (exakt),  0.03392637  (boot),  0.002303597  (abs. Fehler) 
+## 0.3333333 :  0.02581989  (exakt),  0.02539741  (boot),  0.0004224743  (abs. Fehler) 
+## 0.25 :  0.02236068  (exakt),  0.0223629  (boot),  2.223781e-06  (abs. Fehler) 
+## 0.2 :  0.02  (exakt),  0.01972995  (boot),  0.0002700514  (abs. Fehler) 
+## 0.1666667 :  0.01825742  (exakt),  0.0197222  (boot),  0.001464778  (abs. Fehler) 
+## 
+## n= 1000 
+## 0.5 :  0.02236068  (exakt),  0.02245352  (boot),  9.283735e-05  (abs. Fehler) 
+## 0.3333333 :  0.01825742  (exakt),  0.0185596  (boot),  0.0003021789  (abs. Fehler) 
+## 0.25 :  0.01581139  (exakt),  0.01669539  (boot),  0.0008840021  (abs. Fehler) 
+## 0.2 :  0.01414214  (exakt),  0.0150454  (boot),  0.0009032662  (abs. Fehler) 
+## 0.1666667 :  0.01290994  (exakt),  0.01366569  (boot),  0.0007557503  (abs. Fehler) 
+## 
+## n= 3000 
+## 0.5 :  0.01290994  (exakt),  0.01333761  (boot),  0.0004276694  (abs. Fehler) 
+## 0.3333333 :  0.01054093  (exakt),  0.01085993  (boot),  0.000319002  (abs. Fehler) 
+## 0.25 :  0.009128709  (exakt),  0.008925436  (boot),  0.0002032728  (abs. Fehler) 
+## 0.2 :  0.008164966  (exakt),  0.008679877  (boot),  0.0005149115  (abs. Fehler) 
+## 0.1666667 :  0.00745356  (exakt),  0.007160364  (boot),  0.0002931957  (abs. Fehler)
+```
+
+
+
+```r
+for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
+  tmp <- printAllSE.normal(n)
+  cat("\nn=", n, ": ", tmp$exakt, " (exakt), ", tmp$boot, " (boot), ", tmp$geschaetzt, "(geschätzt), ", abs(tmp$exakt-tmp$boot), " (abs. Fehler (boot))", abs(tmp$exakt-tmp$geschaetzt),"(abs. Fehler (geschätzt)) \n")
+}
+```
+
+```
+## 
+## n= 30 :  0.1825742  (exakt),  0.1835327  (boot),  0.1860335 (geschätzt),  0.0009585326  (abs. Fehler (boot)) 0.003459307 (abs. Fehler (geschätzt)) 
+## 
+## n= 50 :  0.1414214  (exakt),  0.1371073  (boot),  0.1374232 (geschätzt),  0.004314035  (abs. Fehler (boot)) 0.003998187 (abs. Fehler (geschätzt)) 
+## 
+## n= 100 :  0.1  (exakt),  0.1026103  (boot),  0.1027873 (geschätzt),  0.002610263  (abs. Fehler (boot)) 0.002787325 (abs. Fehler (geschätzt)) 
+## 
+## n= 200 :  0.07071068  (exakt),  0.06443724  (boot),  0.06457342 (geschätzt),  0.006273439  (abs. Fehler (boot)) 0.006137256 (abs. Fehler (geschätzt)) 
+## 
+## n= 500 :  0.04472136  (exakt),  0.04366336  (boot),  0.04297065 (geschätzt),  0.001057998  (abs. Fehler (boot)) 0.00175071 (abs. Fehler (geschätzt)) 
+## 
+## n= 1000 :  0.03162278  (exakt),  0.03126506  (boot),  0.03133075 (geschätzt),  0.000357721  (abs. Fehler (boot)) 0.0002920245 (abs. Fehler (geschätzt)) 
+## 
+## n= 3000 :  0.01825742  (exakt),  0.01858404  (boot),  0.01852834 (geschätzt),  0.0003266222  (abs. Fehler (boot)) 0.0002709226 (abs. Fehler (geschätzt))
+```
+

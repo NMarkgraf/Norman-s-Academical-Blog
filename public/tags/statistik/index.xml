@@ -5,7 +5,7 @@
     <link>/tags/statistik/</link>
       <atom:link href="/tags/statistik/index.xml" rel="self" type="application/rss+xml" />
     <description>Statistik</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Statistik</title>
@@ -13,51 +13,241 @@
     </image>
     
     <item>
-      <title>Moderator und Mediation - Formen der Interaktion bei Analyse von Zusammenhängen</title>
-      <link>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenh%C3%A4ngen/</link>
-      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenh%C3%A4ngen/</guid>
-      <description>
+      <title>Der Standardfehler aus klassischer Sicht - Ein kleiner Überblick</title>
+      <link>/post/der-standardfehler-aus-klassischer-sicht-ein-kleiner-%C3%BCberblick/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/der-standardfehler-aus-klassischer-sicht-ein-kleiner-%C3%BCberblick/</guid>
+      <description>&lt;p&gt;Der &lt;strong&gt;Standardfehler&lt;/strong&gt; ist ein &lt;em&gt;Steuungsmaß&lt;/em&gt; für eine Schätzfunktion &lt;code&gt;\(\hat{\vartheta}\)&lt;/code&gt; für einen unbekannten Parameter &lt;code&gt;\(\vartheta\)&lt;/code&gt; der Grundgesamtheit. Er ist definiert als
+&lt;code&gt;$$\sigma(\hat{\vartheta}) = + \sqrt{\operatorname{Var}(\hat{\vartheta})}.$$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Bei einem erwartungstreuen Schätzer ist daher der Standardfehler ein Maß für die durchschnittliche Abweichung des geschätzten Parameterwertes vom wahren Parameterwert. Je kleiner der Standardfehler ist, desto genauer kann der unbekannte Parameter mit Hilfe der Schätzfunktion geschätzt werden.&lt;/p&gt;
+&lt;p&gt;Für eine Stichprobe vom Umfang &lt;code&gt;\(n\)&lt;/code&gt; mit Standardabweichung &lt;code&gt;\(\sigma\)&lt;/code&gt; gilt für den Standardfehler:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;des &lt;strong&gt;Stichprobenmittel&lt;/strong&gt;: &lt;code&gt;\(\sigma(\overline{X}) = \frac{\sigma}{\sqrt{n}}\)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Unterstellt man eine Stichprobenverteilung, so kann der Standardfehler anhand der Varianz der Stichprobenverteilung berechnet werden:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Binomialverteilung&lt;/strong&gt; mit Parametern &lt;code&gt;\(N,\, p\)&lt;/code&gt;: &lt;code&gt;\(\sigma_{\bar x,\mathrm{binom}} = \frac{\sqrt{ N \cdot p \cdot (1-p)}}{\sqrt n}\)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Exponentialverteilung&lt;/strong&gt; mit Parameter &lt;code&gt;\(\lambda\)&lt;/code&gt; (Erwartungswert = Standardabweichung = &lt;code&gt;\(1/\lambda\)&lt;/code&gt;): &lt;code&gt;\(\sigma_{\bar x,\mathrm{exp}} = \frac{1}{\lambda\sqrt n}\)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Poisson-Verteilung&lt;/strong&gt; mit Parameter &lt;code&gt;\(\lambda\)&lt;/code&gt; (Erwartungswert = Varianz = &lt;code&gt;\(\lambda\)&lt;/code&gt;): &lt;code&gt;\(\sigma_{\bar x,\mathrm{poisson}} = \sqrt{\frac{\lambda}{n}}\)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;beispiel-binomialverteile-stichprobe&#34;&gt;Beispiel: Binomialverteile Stichprobe&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;printAllSE.binom &amp;lt;- function(n, N, prob, bootstrapN=1000, theta=mean) {
+  stipro &amp;lt;- rbinom(n, N, prob)
+  bootvert &amp;lt;- do(bootstrapN) * theta(resample(stipro))
+  se.boot &amp;lt;- sd(bootvert$theta)
+  se.exakt &amp;lt;- sqrt(N*prop*(1-prop))/sqrt(n)
+  se &amp;lt;- list(se.exakt, se.boot)
+  names(se) &amp;lt;- c(&amp;quot;exakt&amp;quot;, &amp;quot;boot&amp;quot;)
+  return(se)
+}
 
+printAllSE.poision &amp;lt;- function(n, lambda, bootstrapN=1000, theta=mean) {
+  stipro &amp;lt;- rpois(n, lambda)
+  bootvert &amp;lt;- do(bootstrapN) * theta(resample(stipro))
+  se.boot &amp;lt;- sd(bootvert$theta)
+  se.exakt &amp;lt;- sqrt(lambda/n)
+  se &amp;lt;- list(se.exakt, se.boot)
+  names(se) &amp;lt;- c(&amp;quot;exakt&amp;quot;, &amp;quot;boot&amp;quot;)
+  return(se)
+}
 
-&lt;p&gt;Bei der Analyse von Zusammenhängen tauchen sowohl &lt;em&gt;Moderation&lt;/em&gt; als auch &lt;em&gt;Mediation&lt;/em&gt; auf. Es geht um Zusammenhänge zwischen drei Variablen &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt;.
-Untersucht wird der Effekt einer unabhägigen Variable &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; (&lt;em&gt;Prädiktor&lt;/em&gt;, &lt;em&gt;UV&lt;/em&gt;) auf ein abhängige Variable &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; (&lt;em&gt;AV&lt;/em&gt;).
-Wir untersuchen dies mit einem Regressionsmodell &lt;span class=&#34;math inline&#34;&gt;\(Y \sim X\)&lt;/span&gt;.
-Dabei wird zusätzlich eine dritte Variable &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; berücksichtigt, die man entweder der &lt;em&gt;Moderator&lt;/em&gt; oder &lt;em&gt;Mediator&lt;/em&gt; nennt.&lt;/p&gt;
-&lt;p&gt;Ist die abhängige Variable metrisch, so können wir mittels eine linearer Regression vorgehen, ist die AB dagegen dichotom, so nutzen wir eine logistische Regression.&lt;/p&gt;
-&lt;div id=&#34;moderation&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Moderation&lt;/h2&gt;
-&lt;p&gt;Bei einer &lt;em&gt;Moderation&lt;/em&gt; wirkt die dritte Variable &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; (&lt;em&gt;Moderator&lt;/em&gt;) auf die Beziehung zwischen &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Der Einfluss von &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; ändert also den Effekt von &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; auf &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;. Der Zusammenhang zwischen &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; ist also je nach &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; unterschiedlich.&lt;/p&gt;
-&lt;p&gt;Statistisch gesehen liegt eine &lt;em&gt;Interaktion&lt;/em&gt; zwischen &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; vor.&lt;/p&gt;
-&lt;div id=&#34;wie-untersucht-man-einen-zusammenhang-auf-eine-moderation&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Wie untersucht man einen Zusammenhang auf eine Moderation?&lt;/h3&gt;
-&lt;p&gt;Dazu stellen wir ein Regressionsmodell mit den drei Faktoren &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; und der Interaktion zwischen &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; auf.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lm(Y ~ X * M, data=daten)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Oder alternativ:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lm(Y ~ X + M + M:X, data=daten)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Diese drei Faktoren wirken auf &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;. Ist in diesem Modell die Interaktion &lt;span class=&#34;math inline&#34;&gt;\(M:X\)&lt;/span&gt; &lt;em&gt;signifikant&lt;/em&gt;, so liegt eine (signifikante) &lt;em&gt;Moderation&lt;/em&gt; vor.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;mediation&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Mediation&lt;/h2&gt;
-&lt;p&gt;Bei der &lt;em&gt;Mediation&lt;/em&gt; steht die Variable &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; (der &lt;em&gt;Mediator&lt;/em&gt;) sowohl zu &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; als auch zu &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; in Beziehung.
-Der direkte Effekt zwischen &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; wird durch den indirekten Effekt über &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; erklärt, also durch
-&lt;span class=&#34;math inline&#34;&gt;\(X \to M \to Y\)&lt;/span&gt;.&lt;/p&gt;
-&lt;div id=&#34;wie-untersucht-man-auf-eine-mediation&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Wie untersucht man auf eine Mediation?&lt;/h3&gt;
-&lt;p&gt;In diesem Fall stellen wir mehrere Regressionsmodelle auf. Eine (signifikante) Mediation liegt dann vor, wenn die folgenden Bedinungen erfüllt sind:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;erstesModell &amp;lt;- lm(Y ~ X, data=daten)
-zweitesModell &amp;lt;- lm(M ~ X, data=daten)
-drittesModell &amp;lt;- lm(Y ~ X + M, data=daten)&lt;/code&gt;&lt;/pre&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;&lt;p&gt;Im ersten Modell (&lt;span class=&#34;math inline&#34;&gt;\(X \to Y\)&lt;/span&gt;) ist der Regressionskoeffizient von &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; signifikant.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Im zweiten Modell (&lt;span class=&#34;math inline&#34;&gt;\(X \to M\)&lt;/span&gt;) ist der Regressionskoeffizient von &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; signifikant.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Im dritten Modell (&lt;span class=&#34;math inline&#34;&gt;\(X,M \to Y\)&lt;/span&gt;) ist der Regressionskoeffizient von &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; signifikant und&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;der Regressionskoeffizient von &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; im dritten Modell kleiner als im ersten Modell.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+printAllSE.normal &amp;lt;- function(n, mu=0, sigma=1, bootstrapN=1000, theta=mean) {
+  stipro &amp;lt;- rnorm(n, mu, sigma)
+  bootvert &amp;lt;- do(bootstrapN) * theta(resample(stipro))
+  se.boot &amp;lt;- sd(bootvert$theta)
+  se.exakt &amp;lt;- sqrt(sigma^2/n)
+  se.geschaetzt &amp;lt;- sqrt(var(stipro)/n)
+  se &amp;lt;- list(se.exakt, se.boot, se.geschaetzt)
+  names(se) &amp;lt;- c(&amp;quot;exakt&amp;quot;, &amp;quot;boot&amp;quot;, &amp;quot;geschaetzt&amp;quot;)
+  return(se)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;n &amp;lt;- 100
+N &amp;lt;- 70
+prop &amp;lt;- 0.9
+
+# Binomialverteilte:
+for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
+  cat(&amp;quot;\nn=&amp;quot;, n, &amp;quot;\n&amp;quot;)
+  for(prob in c(1/2, 1/3, 1/4, 1/5, 1/6)) {
+    N &amp;lt;- floor(prob*n)
+    cat(&amp;quot;N=&amp;quot;,N, &amp;quot;\n&amp;quot;)    
+    tmp &amp;lt;- printAllSE.binom(n , N, prob)
+    cat(prob,&amp;quot;: &amp;quot;, tmp$exakt, &amp;quot; (exakt), &amp;quot;, tmp$boot, &amp;quot; (boot), &amp;quot;, abs(tmp$exakt-tmp$boot), &amp;quot; (abs. Fehler) \n&amp;quot;)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## n= 30 
+## N= 15 
+## 0.5 :  0.212132  (exakt),  0.2996921  (boot),  0.08756008  (abs. Fehler) 
+## N= 10 
+## 0.3333333 :  0.1732051  (exakt),  0.2309855  (boot),  0.0577804  (abs. Fehler) 
+## N= 7 
+## 0.25 :  0.1449138  (exakt),  0.230028  (boot),  0.08511424  (abs. Fehler) 
+## N= 6 
+## 0.2 :  0.1341641  (exakt),  0.1914001  (boot),  0.05723599  (abs. Fehler) 
+## N= 5 
+## 0.1666667 :  0.1224745  (exakt),  0.1436041  (boot),  0.02112966  (abs. Fehler) 
+## 
+## n= 50 
+## N= 25 
+## 0.5 :  0.212132  (exakt),  0.3525394  (boot),  0.1404073  (abs. Fehler) 
+## N= 16 
+## 0.3333333 :  0.1697056  (exakt),  0.273315  (boot),  0.1036094  (abs. Fehler) 
+## N= 12 
+## 0.25 :  0.1469694  (exakt),  0.2005751  (boot),  0.05360569  (abs. Fehler) 
+## N= 10 
+## 0.2 :  0.1341641  (exakt),  0.1867858  (boot),  0.0526217  (abs. Fehler) 
+## N= 8 
+## 0.1666667 :  0.12  (exakt),  0.1343281  (boot),  0.01432808  (abs. Fehler) 
+## 
+## n= 100 
+## N= 50 
+## 0.5 :  0.212132  (exakt),  0.349122  (boot),  0.13699  (abs. Fehler) 
+## N= 33 
+## 0.3333333 :  0.1723369  (exakt),  0.2724159  (boot),  0.100079  (abs. Fehler) 
+## N= 25 
+## 0.25 :  0.15  (exakt),  0.2371899  (boot),  0.0871899  (abs. Fehler) 
+## N= 20 
+## 0.2 :  0.1341641  (exakt),  0.1927453  (boot),  0.05858118  (abs. Fehler) 
+## N= 16 
+## 0.1666667 :  0.12  (exakt),  0.1463126  (boot),  0.02631257  (abs. Fehler) 
+## 
+## n= 200 
+## N= 100 
+## 0.5 :  0.212132  (exakt),  0.3311697  (boot),  0.1190377  (abs. Fehler) 
+## N= 66 
+## 0.3333333 :  0.1723369  (exakt),  0.2952654  (boot),  0.1229285  (abs. Fehler) 
+## N= 50 
+## 0.25 :  0.15  (exakt),  0.2033503  (boot),  0.05335033  (abs. Fehler) 
+## N= 40 
+## 0.2 :  0.1341641  (exakt),  0.1563642  (boot),  0.02220012  (abs. Fehler) 
+## N= 33 
+## 0.1666667 :  0.1218606  (exakt),  0.1407523  (boot),  0.01889169  (abs. Fehler) 
+## 
+## n= 500 
+## N= 250 
+## 0.5 :  0.212132  (exakt),  0.3497107  (boot),  0.1375787  (abs. Fehler) 
+## N= 166 
+## 0.3333333 :  0.1728583  (exakt),  0.2574557  (boot),  0.08459734  (abs. Fehler) 
+## N= 125 
+## 0.25 :  0.15  (exakt),  0.2186492  (boot),  0.06864923  (abs. Fehler) 
+## N= 100 
+## 0.2 :  0.1341641  (exakt),  0.185649  (boot),  0.05148495  (abs. Fehler) 
+## N= 83 
+## 0.1666667 :  0.1222293  (exakt),  0.146211  (boot),  0.02398172  (abs. Fehler) 
+## 
+## n= 1000 
+## N= 500 
+## 0.5 :  0.212132  (exakt),  0.345063  (boot),  0.132931  (abs. Fehler) 
+## N= 333 
+## 0.3333333 :  0.1731185  (exakt),  0.2646252  (boot),  0.09150675  (abs. Fehler) 
+## N= 250 
+## 0.25 :  0.15  (exakt),  0.2231931  (boot),  0.07319309  (abs. Fehler) 
+## N= 200 
+## 0.2 :  0.1341641  (exakt),  0.1833904  (boot),  0.04922629  (abs. Fehler) 
+## N= 166 
+## 0.1666667 :  0.1222293  (exakt),  0.1528499  (boot),  0.03062058  (abs. Fehler) 
+## 
+## n= 3000 
+## N= 1500 
+## 0.5 :  0.212132  (exakt),  0.3525232  (boot),  0.1403911  (abs. Fehler) 
+## N= 1000 
+## 0.3333333 :  0.1732051  (exakt),  0.2702559  (boot),  0.09705078  (abs. Fehler) 
+## N= 750 
+## 0.25 :  0.15  (exakt),  0.2196364  (boot),  0.0696364  (abs. Fehler) 
+## N= 600 
+## 0.2 :  0.1341641  (exakt),  0.1791849  (boot),  0.04502081  (abs. Fehler) 
+## N= 500 
+## 0.1666667 :  0.1224745  (exakt),  0.1466177  (boot),  0.02414318  (abs. Fehler)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# 
+# Poisionverteilte:
+for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
+  cat(&amp;quot;\nn=&amp;quot;, n, &amp;quot;\n&amp;quot;)
+  for(lambda in c(1/2,1/3, 1/4, 1/5, 1/6)) {
+    tmp &amp;lt;- printAllSE.poision(n, lambda)
+    cat(lambda,&amp;quot;: &amp;quot;, tmp$exakt, &amp;quot; (exakt), &amp;quot;, tmp$boot, &amp;quot; (boot), &amp;quot;, abs(tmp$exakt-tmp$boot), &amp;quot; (abs. Fehler) \n&amp;quot;)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## n= 30 
+## 0.5 :  0.1290994  (exakt),  0.1243969  (boot),  0.004702575  (abs. Fehler) 
+## 0.3333333 :  0.1054093  (exakt),  0.1002588  (boot),  0.005150442  (abs. Fehler) 
+## 0.25 :  0.09128709  (exakt),  0.08302049  (boot),  0.008266599  (abs. Fehler) 
+## 0.2 :  0.08164966  (exakt),  0.07318089  (boot),  0.008468764  (abs. Fehler) 
+## 0.1666667 :  0.0745356  (exakt),  0.04481507  (boot),  0.02972053  (abs. Fehler) 
+## 
+## n= 50 
+## 0.5 :  0.1  (exakt),  0.09339713  (boot),  0.006602873  (abs. Fehler) 
+## 0.3333333 :  0.08164966  (exakt),  0.06811893  (boot),  0.01353073  (abs. Fehler) 
+## 0.25 :  0.07071068  (exakt),  0.06970471  (boot),  0.00100597  (abs. Fehler) 
+## 0.2 :  0.06324555  (exakt),  0.05739908  (boot),  0.005846471  (abs. Fehler) 
+## 0.1666667 :  0.05773503  (exakt),  0.06721628  (boot),  0.009481251  (abs. Fehler) 
+## 
+## n= 100 
+## 0.5 :  0.07071068  (exakt),  0.07809672  (boot),  0.007386041  (abs. Fehler) 
+## 0.3333333 :  0.05773503  (exakt),  0.05174337  (boot),  0.005991656  (abs. Fehler) 
+## 0.25 :  0.05  (exakt),  0.04781868  (boot),  0.002181325  (abs. Fehler) 
+## 0.2 :  0.04472136  (exakt),  0.04141606  (boot),  0.003305295  (abs. Fehler) 
+## 0.1666667 :  0.04082483  (exakt),  0.04997504  (boot),  0.009150211  (abs. Fehler) 
+## 
+## n= 200 
+## 0.5 :  0.05  (exakt),  0.04892444  (boot),  0.001075565  (abs. Fehler) 
+## 0.3333333 :  0.04082483  (exakt),  0.03717077  (boot),  0.00365406  (abs. Fehler) 
+## 0.25 :  0.03535534  (exakt),  0.03747469  (boot),  0.002119349  (abs. Fehler) 
+## 0.2 :  0.03162278  (exakt),  0.02947104  (boot),  0.002151735  (abs. Fehler) 
+## 0.1666667 :  0.02886751  (exakt),  0.0281555  (boot),  0.0007120108  (abs. Fehler) 
+## 
+## n= 500 
+## 0.5 :  0.03162278  (exakt),  0.03392637  (boot),  0.002303597  (abs. Fehler) 
+## 0.3333333 :  0.02581989  (exakt),  0.02539741  (boot),  0.0004224743  (abs. Fehler) 
+## 0.25 :  0.02236068  (exakt),  0.0223629  (boot),  2.223781e-06  (abs. Fehler) 
+## 0.2 :  0.02  (exakt),  0.01972995  (boot),  0.0002700514  (abs. Fehler) 
+## 0.1666667 :  0.01825742  (exakt),  0.0197222  (boot),  0.001464778  (abs. Fehler) 
+## 
+## n= 1000 
+## 0.5 :  0.02236068  (exakt),  0.02245352  (boot),  9.283735e-05  (abs. Fehler) 
+## 0.3333333 :  0.01825742  (exakt),  0.0185596  (boot),  0.0003021789  (abs. Fehler) 
+## 0.25 :  0.01581139  (exakt),  0.01669539  (boot),  0.0008840021  (abs. Fehler) 
+## 0.2 :  0.01414214  (exakt),  0.0150454  (boot),  0.0009032662  (abs. Fehler) 
+## 0.1666667 :  0.01290994  (exakt),  0.01366569  (boot),  0.0007557503  (abs. Fehler) 
+## 
+## n= 3000 
+## 0.5 :  0.01290994  (exakt),  0.01333761  (boot),  0.0004276694  (abs. Fehler) 
+## 0.3333333 :  0.01054093  (exakt),  0.01085993  (boot),  0.000319002  (abs. Fehler) 
+## 0.25 :  0.009128709  (exakt),  0.008925436  (boot),  0.0002032728  (abs. Fehler) 
+## 0.2 :  0.008164966  (exakt),  0.008679877  (boot),  0.0005149115  (abs. Fehler) 
+## 0.1666667 :  0.00745356  (exakt),  0.007160364  (boot),  0.0002931957  (abs. Fehler)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
+  tmp &amp;lt;- printAllSE.normal(n)
+  cat(&amp;quot;\nn=&amp;quot;, n, &amp;quot;: &amp;quot;, tmp$exakt, &amp;quot; (exakt), &amp;quot;, tmp$boot, &amp;quot; (boot), &amp;quot;, tmp$geschaetzt, &amp;quot;(geschätzt), &amp;quot;, abs(tmp$exakt-tmp$boot), &amp;quot; (abs. Fehler (boot))&amp;quot;, abs(tmp$exakt-tmp$geschaetzt),&amp;quot;(abs. Fehler (geschätzt)) \n&amp;quot;)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## n= 30 :  0.1825742  (exakt),  0.1835327  (boot),  0.1860335 (geschätzt),  0.0009585326  (abs. Fehler (boot)) 0.003459307 (abs. Fehler (geschätzt)) 
+## 
+## n= 50 :  0.1414214  (exakt),  0.1371073  (boot),  0.1374232 (geschätzt),  0.004314035  (abs. Fehler (boot)) 0.003998187 (abs. Fehler (geschätzt)) 
+## 
+## n= 100 :  0.1  (exakt),  0.1026103  (boot),  0.1027873 (geschätzt),  0.002610263  (abs. Fehler (boot)) 0.002787325 (abs. Fehler (geschätzt)) 
+## 
+## n= 200 :  0.07071068  (exakt),  0.06443724  (boot),  0.06457342 (geschätzt),  0.006273439  (abs. Fehler (boot)) 0.006137256 (abs. Fehler (geschätzt)) 
+## 
+## n= 500 :  0.04472136  (exakt),  0.04366336  (boot),  0.04297065 (geschätzt),  0.001057998  (abs. Fehler (boot)) 0.00175071 (abs. Fehler (geschätzt)) 
+## 
+## n= 1000 :  0.03162278  (exakt),  0.03126506  (boot),  0.03133075 (geschätzt),  0.000357721  (abs. Fehler (boot)) 0.0002920245 (abs. Fehler (geschätzt)) 
+## 
+## n= 3000 :  0.01825742  (exakt),  0.01858404  (boot),  0.01852834 (geschätzt),  0.0003266222  (abs. Fehler (boot)) 0.0002709226 (abs. Fehler (geschätzt))
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -66,27 +256,29 @@ drittesModell &amp;lt;- lm(Y ~ X + M, data=daten)&lt;/code&gt;&lt;/pre&gt;
       <link>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenh%C3%A4ngen/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       <guid>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenh%C3%A4ngen/</guid>
-      <description>&lt;p&gt;Bei der Analyse von Zusammenhängen tauchen sowohl &lt;em&gt;Moderation&lt;/em&gt; als auch &lt;em&gt;Mediation&lt;/em&gt; auf. Es geht um Zusammenhänge zwischen drei Variablen &lt;code&gt;\(X\)&lt;/code&gt;, &lt;code&gt;\(Y\)&lt;/code&gt; und &lt;code&gt;\(M\)&lt;/code&gt;.
-Untersucht wird der Effekt einer unabhägigen Variable &lt;code&gt;\(X\)&lt;/code&gt; (&lt;em&gt;Prädiktor&lt;/em&gt;, &lt;em&gt;UV&lt;/em&gt;) auf ein abhängige Variable &lt;code&gt;\(Y\)&lt;/code&gt; (&lt;em&gt;AV&lt;/em&gt;).
-Wir untersuchen dies mit einem Regressionsmodell &lt;code&gt;\(Y \sim X\)&lt;/code&gt;.
-Dabei wird zusätzlich eine dritte Variable &lt;code&gt;\(M\)&lt;/code&gt; berücksichtigt, die man entweder der &lt;em&gt;Moderator&lt;/em&gt; oder &lt;em&gt;Mediator&lt;/em&gt; nennt.&lt;/p&gt;
+      <description>&lt;p&gt;Bei der Analyse von Zusammenhängen tauchen sowohl &lt;em&gt;Moderation&lt;/em&gt; als auch &lt;em&gt;Mediation&lt;/em&gt; auf. Es geht um Zusammenhänge zwischen drei Variablen $X$, $Y$ und $M$.
+Untersucht wird der Effekt einer unabhägigen Variable $X$ (&lt;em&gt;Prädiktor&lt;/em&gt;, &lt;em&gt;UV&lt;/em&gt;) auf ein abhängige Variable $Y$ (&lt;em&gt;AV&lt;/em&gt;).
+Wir untersuchen dies mit einem Regressionsmodell $Y \sim X$.
+Dabei wird zusätzlich eine dritte Variable $M$ berücksichtigt, die man entweder der &lt;em&gt;Moderator&lt;/em&gt; oder &lt;em&gt;Mediator&lt;/em&gt; nennt.&lt;/p&gt;
 &lt;p&gt;Ist die abhängige Variable metrisch, so können wir mittels eine linearer Regression vorgehen, ist die AB dagegen dichotom, so nutzen wir eine logistische Regression.&lt;/p&gt;
 &lt;h2 id=&#34;moderation&#34;&gt;Moderation&lt;/h2&gt;
-&lt;p&gt;Bei einer &lt;em&gt;Moderation&lt;/em&gt; wirkt die dritte Variable &lt;code&gt;\(M\)&lt;/code&gt; (&lt;em&gt;Moderator&lt;/em&gt;) auf die Beziehung zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(Y\)&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Der Einfluss von &lt;code&gt;\(M\)&lt;/code&gt; ändert also den Effekt von &lt;code&gt;\(X\)&lt;/code&gt; auf &lt;code&gt;\(Y\)&lt;/code&gt;. Der Zusammenhang zwischen &lt;code&gt;\(Y\)&lt;/code&gt; und &lt;code&gt;\(X\)&lt;/code&gt; ist also je nach &lt;code&gt;\(M\)&lt;/code&gt; unterschiedlich.&lt;/p&gt;
-&lt;p&gt;Statistisch gesehen liegt eine &lt;em&gt;Interaktion&lt;/em&gt; zwischen &lt;code&gt;\(M\)&lt;/code&gt; und &lt;code&gt;\(X\)&lt;/code&gt; vor.&lt;/p&gt;
+&lt;p&gt;Bei einer &lt;em&gt;Moderation&lt;/em&gt; wirkt die dritte Variable $M$ (&lt;em&gt;Moderator&lt;/em&gt;) auf die Beziehung zwischen $X$ und $Y$.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Moderation-1.png&#34; width=&#34;30%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Der Einfluss von $M$ ändert also den Effekt von $X$ auf $Y$. Der Zusammenhang zwischen $Y$ und $X$ ist also je nach $M$ unterschiedlich.&lt;/p&gt;
+&lt;p&gt;Statistisch gesehen liegt eine &lt;em&gt;Interaktion&lt;/em&gt; zwischen $M$ und $X$ vor.&lt;/p&gt;
 &lt;h3 id=&#34;wie-untersucht-man-einen-zusammenhang-auf-eine-moderation&#34;&gt;Wie untersucht man einen Zusammenhang auf eine Moderation?&lt;/h3&gt;
-&lt;p&gt;Dazu stellen wir ein Regressionsmodell mit den drei Faktoren &lt;code&gt;\(X\)&lt;/code&gt;, &lt;code&gt;\(M\)&lt;/code&gt; und der Interaktion zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(M\)&lt;/code&gt; auf.&lt;/p&gt;
+&lt;p&gt;Dazu stellen wir ein Regressionsmodell mit den drei Faktoren $X$, $M$ und der Interaktion zwischen $X$ und $M$ auf.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lm(Y ~ X * M, data=daten)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Oder alternativ:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lm(Y ~ X + M + M:X, data=daten)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Diese drei Faktoren wirken auf &lt;code&gt;\(Y\)&lt;/code&gt;. Ist in diesem Modell die Interaktion &lt;code&gt;\(M:X\)&lt;/code&gt; &lt;em&gt;signifikant&lt;/em&gt;, so liegt eine (signifikante) &lt;em&gt;Moderation&lt;/em&gt; vor.&lt;/p&gt;
+&lt;p&gt;Diese drei Faktoren wirken auf $Y$. Ist in diesem Modell die Interaktion $M:X$ &lt;em&gt;signifikant&lt;/em&gt;, so liegt eine (signifikante) &lt;em&gt;Moderation&lt;/em&gt; vor.&lt;/p&gt;
 &lt;h2 id=&#34;mediation&#34;&gt;Mediation&lt;/h2&gt;
-&lt;p&gt;Bei der &lt;em&gt;Mediation&lt;/em&gt; steht die Variable &lt;code&gt;\(M\)&lt;/code&gt; (der &lt;em&gt;Mediator&lt;/em&gt;) sowohl zu &lt;code&gt;\(X\)&lt;/code&gt; als auch zu &lt;code&gt;\(Y\)&lt;/code&gt; in Beziehung.
-Der direkte Effekt zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(Y\)&lt;/code&gt; wird durch den indirekten Effekt über &lt;code&gt;\(M\)&lt;/code&gt; erklärt, also durch
-&lt;code&gt;\(X \to  M \to Y\)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Bei der &lt;em&gt;Mediation&lt;/em&gt; steht die Variable $M$ (der &lt;em&gt;Mediator&lt;/em&gt;) sowohl zu $X$ als auch zu $Y$ in Beziehung.
+Der direkte Effekt zwischen $X$ und $Y$ wird durch den indirekten Effekt über $M$ erklärt, also durch
+$X \to  M \to Y$.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Mediator-1.png&#34; width=&#34;30%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;wie-untersucht-man-auf-eine-mediation&#34;&gt;Wie untersucht man auf eine Mediation?&lt;/h3&gt;
 &lt;p&gt;In diesem Fall stellen wir mehrere Regressionsmodelle auf. Eine (signifikante) Mediation liegt dann vor, wenn die folgenden Bedinungen erfüllt sind:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;erstesModell &amp;lt;- lm(Y ~ X, data=daten)
@@ -95,16 +287,16 @@ drittesModell &amp;lt;- lm(Y ~ X + M, data=daten)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Im ersten Modell ($X \to Y$) ist der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; signifikant.&lt;/p&gt;
+&lt;p&gt;Im ersten Modell ($X \to Y$) ist der Regressionskoeffizient von $X$ signifikant.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Im zweiten Modell ($X \to M$) ist der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; signifikant.&lt;/p&gt;
+&lt;p&gt;Im zweiten Modell ($X \to M$) ist der Regressionskoeffizient von $X$ signifikant.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Im dritten Modell ($X,M \to Y$) ist der Regressionskoeffizient von &lt;code&gt;\(M\)&lt;/code&gt; signifikant und&lt;/p&gt;
+&lt;p&gt;Im dritten Modell ($X,M \to Y$) ist der Regressionskoeffizient von $M$ signifikant und&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; im dritten Modell kleiner als im ersten Modell.&lt;/p&gt;
+&lt;p&gt;der Regressionskoeffizient von $X$ im dritten Modell kleiner als im ersten Modell.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 </description>
