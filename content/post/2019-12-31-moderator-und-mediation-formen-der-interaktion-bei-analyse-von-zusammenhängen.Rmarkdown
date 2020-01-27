@@ -20,6 +20,14 @@ projects: []
 math: true
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(engine.path = list(
+  dot = '/opt/local/bin/dot'
+))
+```
+
+
 Bei der Analyse von Zusammenhängen tauchen sowohl *Moderation* als auch *Mediation* auf. Es geht um Zusammenhänge zwischen drei Variablen $X$, $Y$ und $M$. 
 Untersucht wird der Effekt einer unabhägigen Variable $X$ (*Prädiktor*, *UV*) auf ein abhängige Variable $Y$ (*AV*). 
 Wir untersuchen dies mit einem Regressionsmodell $Y \sim X$. 
@@ -30,6 +38,71 @@ Ist die abhängige Variable metrisch, so können wir mittels eine linearer Regre
 ## Moderation
 
 Bei einer *Moderation* wirkt die dritte Variable $M$ (*Moderator*) auf die Beziehung zwischen $X$ und $Y$.
+
+```{r Moderation, engine="dot", echo=FALSE, cache=TRUE, out.width="30%", fig.align='center'}
+# http://bit.ly/36uEVnu
+
+digraph Moderator {
+
+rankdir = LR;
+size="3.0,2.0";
+bgcolor="#F9FAFB";
+    
+	graph [
+#	    newrank=true,
+		nodesep=0.3,
+#		overlap=true,
+		ranksep=0.5,
+		splines=false,
+  
+	];
+	node [
+  #  	    fixedsize=false,
+    		fontname=Arial,
+    		fontsize=24,
+    		height=1,
+    		shape=none,
+    		style="setlinewidth(5)",
+#   		width=2.2
+	    ];
+	edge [
+#	    arrowhead=none,
+		arrowsize=0.6,
+#		style=invis,
+#		labelfontname="Arial",
+		weight=10
+	];
+
+
+D -> E -> F [ style = invis];
+
+A -> B -> C [ style = invis];
+
+
+{ 
+    rank=same; 
+    A [ label="", height=0, width=0 ]; 
+    D [ fontcolor="#b2d3e4", label="X"];
+}
+{ 
+    rank=same; 
+    B [ fontcolor="#51bf5b", label="Moderator"]; 
+    G [ label="", height=0, width=0 ]; 
+    E [ label="", height=0, width=0 ];
+}
+{ 
+    rank=same; 
+    C [ label="", height=0, width=0 ]; 
+    F [ fontcolor="#b2d3e4", label="Y" ];
+}
+
+
+E:e -> F [ color="#a2b3c4" ];
+B -> E [ color="#217f2b", arrowsize=0.4, arrowhead=normal ];
+D:e -> E [ color="#a2b3c4", arrowhead=none ];
+
+}
+```
 
 Der Einfluss von $M$ ändert also den Effekt von $X$ auf $Y$. Der Zusammenhang zwischen $Y$ und $X$ ist also je nach $M$ unterschiedlich.
 
@@ -58,6 +131,71 @@ Diese drei Faktoren wirken auf $Y$. Ist in diesem Modell die Interaktion $M:X$ *
 Bei der *Mediation* steht die Variable $M$ (der *Mediator*) sowohl zu $X$ als auch zu $Y$ in Beziehung.
 Der direkte Effekt zwischen $X$ und $Y$ wird durch den indirekten Effekt über $M$ erklärt, also durch 
 $X \to  M \to Y$.
+
+```{r Mediator, engine="dot", echo=FALSE, cache=TRUE, out.width="30%", fig.align='center'}
+# http://bit.ly/38zENEK
+
+digraph Mediator {
+
+    rankdir = LR;
+    size="2.0,3.0";
+
+    bgcolor="#F1F2F3"
+    
+	graph [
+#	    newrank=true,
+		nodesep=0.3,
+#		overlap=true,
+		ranksep=0.5,
+		splines=false,
+	];
+	node [
+  #  	    fixedsize=false,
+    		fontname=Arial,
+    		fontsize=24,
+    		height=1,
+    		shape=none,
+    		style="setlinewidth(5)",
+#   		width=2.2
+	    ];
+	edge [
+#	    arrowhead=none,
+		arrowsize=0.6,
+#		style=invis,
+#		labelfontname="Arial",
+		weight=10
+	];
+
+
+A -> B -> C [ style = invis];
+
+D -> E -> F [ style = invis];
+
+
+{ 
+    rank=same; 
+    A [ label="", height=0, width=0 ]; 
+    D [ fontcolor="#b2d3e4", label="X"];
+}
+{ 
+    rank=same; 
+    B [ fontcolor="#51bf5b", label="Mediator"]; 
+    E [ label="", height=0, width=0 ];
+}
+{ 
+    rank=same; 
+    C [ label="", height=0, width=0 ]; 
+    F [ fontcolor="#b2d3e4", label="Y" ];
+}
+
+
+D -> B [ color="#217f2b", arrowsize=0.4, arrowhead=normal ];
+B -> F [ color="#217f2b", arrowsize=0.4, arrowhead=normal ];
+D -> F [ color="#a2b3c4" ];
+
+}
+```
+
 
 ### Wie untersucht man auf eine Mediation?
 
