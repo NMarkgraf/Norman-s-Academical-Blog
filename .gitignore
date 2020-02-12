@@ -2,5 +2,5 @@
 .Rproj.user
 .Rhistory
 .Rdata
-**_files
+#**_files
 **_cache
