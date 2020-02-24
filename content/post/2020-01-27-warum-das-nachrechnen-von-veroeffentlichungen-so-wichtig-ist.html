@@ -1,0 +1,96 @@
+---
+title: "Warum das Nachrechnen von Veröffentlichungen so wichtig ist"
+author: "admin"
+date: '2020-01-27'
+darf: yes
+categories: Statistik
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+lastmod: '2020-01-27T08:53:09+01:00'
+projects: []
+slug: warum-das-nachrechnen-von-veroeffentlichungen-so-wichtig-ist
+subtitle: ''
+summary: ''
+tags:
+- R
+- Statistik
+authors: []
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Im Internet fand ich vor kurzem einen sehr interessanten <a href="http://www.stefanbartz.de/dateien/Vorsicht-bei-der-sigma-Regel.pdf">Text</a> von <a href="http://www.stefanbartz.de">Stefan Bart</a>. Eine Aufgabe daraus fand meine besondere Aufmerksamkeit.</p>
+<blockquote>
+<p><strong>HSB gesucht (Grundgesamtheit mit <span class="math inline">\(H_0 \rightarrow\)</span> Stichprobe)</strong></p>
+<p>Es soll die Nullhypothese, dass die 500 Mädchen und 500 Jungen der Schule gleichintelligent sind, getestet werden.
+Dazu werden 200 zufällige Junge-Mädchen-Paare gebildet.
+Bei 112 - von hatte der Junge einen höheren IQ. Ist die Abweichung vom Mittelwert signifikant?</p>
+</blockquote>
+<p>Als Lösungen wurden vorgeschlagen:</p>
+<ol style="list-style-type: lower-alpha">
+<li><em>grobe Näherung</em>:
+<span class="math display">\[x \in [n \cdot p_0 \pm \sqrt{n}\,] = [200 \cdot 0{,}5 \pm \sqrt{200}\,] \approx [85{,}85786; 114{,}1421] \approx [85; 115]\]</span></li>
+<li><em>bessere Näherung</em>:
+<span class="math display">\[\begin{aligned}x \in \left[n \cdot p_0 \pm \Phi(0{,}975) \sqrt{n \cdot p_0 (1-p_0)}\,\right] &amp;\approx \left[n \cdot p_0 \pm 1{,}96 \cdot \sqrt{n \cdot p_0 \cdot(1-p_0)} \,\right] \\ &amp;\approx \left[200 \cdot 0{,}5 \pm 1.959964 \cdot \sqrt{200 \cdot 0{,}5 \cdot (1-0{,}5)}\,\right] \\ &amp;\approx \left[86{,}14096; 113{,}859\right] \\&amp;\approx \left[86; 114\right]\end{aligned}\]</span></li>
+<li><em>exakte Lösung</em>:
+<span class="math display">\[x \in [89; 111]\]</span></li>
+</ol>
+<p>Auf Grundlage dieser drei Lösungen wurde dann enschieden, ob die Abweichung signifikant ist, also 112 im oder eben nicht im berechneten Intervall liegt. <em>Ergebnis:</em> a), b) liefern nicht signifikante und c) ein signifikantes Ergebnis.</p>
+<p>Die Frage bleibt, was in der Aufgabenstellung mit “200 zufällige Junge-Mädchen-Paaren” gemeint ist.</p>
+<p>Es gilt ja bekannter maßen:
+- Eine <em>uneingeschränkte Zufallsstichprobe</em> erhält man z. B. bei einem <em>Ziehen ohne Zurücklegen</em> (<span class="math inline">\(\rightarrow\)</span> Hypergeometische Verteilung).
+- Eine <em>einfache Zufallsstichprobe</em> z. B. bei einem <em>Ziehen mit Zurücklegen</em> (<span class="math inline">\(\rightarrow\)</span> Binomialverteilung).</p>
+<p>Rechnet man mit Hilfe von <em>R</em> die axakte Lösung nach, so erhält man:</p>
+<p>Für die Binomialverteilung (die “bessere Näherung”):</p>
+<pre class="r"><code>pl &lt;- 0.025 # 2,5% als untere Grenze
+pr &lt;- 0.975 # 97,5% als obere Grenze
+
+iu &lt;- qbinom(pl, 200, prob=0.5)
+io &lt;- qbinom(pr, 200, prob=0.5)
+c(iu, io) # Ausgabe des (HSB-)Intervalls</code></pre>
+<pre><code>## [1]  86 114</code></pre>
+<p>Für die Hypergeometischeverteilung (hier “exakte Lösung” genannt)</p>
+<pre class="r"><code>m &lt;- 500 # Anzahl der Mädchen
+n &lt;- 500 # Anzahl der Jungen
+k &lt;- 200 # Umfang des Stichprobe
+pl &lt;- 0.025 # 2,5% als untere Grenze
+pr &lt;- 0.975 # 97,5% als obere Grenze
+
+iu &lt;- qhyper(pl, m, n, k) # Linke/untere Intervallgrenze
+io &lt;- qhyper(pr, m, n, k) # Rechte/obere Intervallgrenze
+c(iu, io) # Ausgabe des (HSB-)Intervalls</code></pre>
+<pre><code>## [1]  88 112</code></pre>
+<p><strong>R</strong> liefert also aus <em>exakte Lösung</em> das Intervall <span class="math inline">\([88; 112]\)</span>. Wie kommt es nun über den Unterschied?</p>
+<pre class="r"><code>m &lt;- 500 # Anzahl der Mädchen
+n &lt;- 500 # Anzahl der Jungen
+k &lt;- 200 # Umfang des Stichprobe
+
+p &lt;- dhyper(0:k, m, n, k)</code></pre>
+<p>Werte für die linke/untere Intervallgrenzen:</p>
+<pre class="r"><code># Werte für die linke/untere Intervallgrenzen:
+sum(p[0:88])</code></pre>
+<pre><code>## [1] 0.02396528</code></pre>
+<pre class="r"><code>sum(p[0:89])</code></pre>
+<pre><code>## [1] 0.03442166</code></pre>
+<p>Werte für die rechte/untere Intervallgrenzen:</p>
+<pre class="r"><code># Werte für die rechte/untere Intervallgrenzen:
+sum(p[0:110])</code></pre>
+<pre><code>## [1] 0.9335277</code></pre>
+<pre class="r"><code>sum(p[0:111])</code></pre>
+<pre><code>## [1] 0.9516417</code></pre>
+<pre class="r"><code>sum(p[0:112])</code></pre>
+<pre><code>## [1] 0.9655783</code></pre>
+<pre class="r"><code>sum(p[0:113])</code></pre>
+<pre><code>## [1] 0.9760347</code></pre>
+<p>Ist der Unterschied dann also ein Rundungsproblem?</p>
+<blockquote>
+<p>Werden 2,5% und 97,5% nicht genau getroffen, wird hier nicht wie oben, nach außen / .  , sondern in beiden Fällen nach rechts .<br />
+gerundet;
+d.h. man nimmt diejenigen Werte in das zu bestimmende Intervall auf, bei denen 2,5% bzw. 97,5% zum ersten Mal
+übertroffen werden. Somit verbleiben weniger als 2,5% der Histogrammfläche am linken bzw. rechten Rand.</p>
+</blockquote>
+<p>Ich denke nein. – Meine Vermutung ist, dass hier für die rechte Intervallgrenze 95% statt 97,5% genommen wurde.</p>

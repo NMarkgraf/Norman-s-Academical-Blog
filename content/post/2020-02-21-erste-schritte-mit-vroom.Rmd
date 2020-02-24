@@ -1,0 +1,109 @@
+---
+title: Erste Schritte mit vroom
+author: admin
+date: '2020-02-21'
+slug: erste-schritte-mit-vroom
+categories:
+  - Information
+tags:
+  - R
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-02-21T13:17:53+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+Nach `readr` kommt [`vroom`](https://www.tidyverse.org/blog/2019/05/vroom-1-0-0/). In der Zwischenzeit liegt vroom in der Version 1.2.0 vor und daher habe ich mir ein paar Stunden Zeit gekommen um ein paar erste Experimente damit zu machen. 
+
+# Erste Schritte mit vroom
+
+```{r vroom-setup}
+library(vroom)
+
+# URL für die Quelle von tips.csv:
+url <- "https://goo.gl/whKjnl"
+
+# Locale auf Deutsche Sprache, Dezimalkomma und Gruppierungspunkte setzen
+mylocale <- locale("de", decimal_mark = ",", grouping_mark = ".")
+
+# Spaltentypen ggf. vorgeben:
+mycols <- cols(
+            col_number(),  # total_bill
+            col_number(),  # tip
+            col_factor(),  # sex
+            col_factor(),  # smoker
+            col_factor(),  # day
+            col_factor(),  # time
+            col_integer()  # size
+)
+```
+
+```{r vroom-run}
+# Laden mit vroom, Spaltentypen erraten, Locale auf mylocale
+tips.vroom <- vroom(url, locale = mylocale)
+
+head(tips.vroom)
+str(tips.vroom)
+object.size(tips.vroom)
+```
+
+```{r vroom2-run}
+# Laden mit vroom, Spaltentypen mycols, Locale auf mylocale
+tips.vroom2 <- vroom(url, col_types = mycols, locale = mylocale)
+
+head(tips.vroom2)
+str(tips.vroom2)
+object.size(tips.vroom2)
+```
+
+```{r readr-setup}
+# Readr
+library(readr)
+```
+
+```{r readr-run}
+tips.readr <- readr::read_csv2(url)
+
+head(tips.readr)
+str(tips.readr)
+object.size(tips.readr)
+```
+
+```{r readr2-run}
+
+# Readr
+tips.readr2 <- readr::read_csv2(url,
+                                col_types = list(
+                                col_double(),  # total_bill
+                                col_double(),  # tip
+                                col_factor(),  # sex
+                                col_factor(),  # smoker
+                                col_factor(),  # day
+                                col_factor(),  # time
+                                col_integer()  # size
+                     )
+)
+
+head(tips.readr2)
+str(tips.readr2)
+object.size(tips.readr2)
+```
+
+```{r base-r-setup}
+# Mit Bordmitteln von R
+download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
+tips.csv2 <- read.csv2("tips.csv")
+```
+
+```{r base-r-run}
+head(tips.csv2)
+str(tips.csv2)
+object.size(tips.csv2)
+```
+

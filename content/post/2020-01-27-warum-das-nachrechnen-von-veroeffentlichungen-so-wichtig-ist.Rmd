@@ -1,0 +1,112 @@
+---
+title: "Warum das Nachrechnen von Veröffentlichungen so wichtig ist"
+author: "admin"
+date: '2020-01-27'
+darf: yes
+categories: Statistik
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+lastmod: '2020-01-27T08:53:09+01:00'
+projects: []
+slug: warum-das-nachrechnen-von-veroeffentlichungen-so-wichtig-ist
+subtitle: ''
+summary: ''
+tags:
+- R
+- Statistik
+authors: []
+---
+
+
+Im Internet fand ich vor kurzem einen sehr interessanten [Text](http://www.stefanbartz.de/dateien/Vorsicht-bei-der-sigma-Regel.pdf) von [Stefan Bart](http://www.stefanbartz.de). Eine Aufgabe daraus fand meine besondere Aufmerksamkeit.
+
+> **HSB gesucht (Grundgesamtheit mit $H_0 \rightarrow$ Stichprobe)**
+> 
+> Es soll die Nullhypothese, dass die 500 Mädchen und 500 Jungen der Schule gleichintelligent sind, getestet werden. 
+> Dazu werden 200 zufällige Junge-Mädchen-Paare gebildet. 
+> Bei 112 - von hatte der Junge einen höheren IQ. Ist die Abweichung vom Mittelwert signifikant?
+
+Als Lösungen wurden vorgeschlagen:
+
+a) *grobe Näherung*:
+$$x \in [n \cdot p_0 \pm \sqrt{n}\,] = [200 \cdot 0{,}5 \pm \sqrt{200}\,] \approx [85{,}85786; 114{,}1421] \approx [85; 115]$$
+b) *bessere Näherung*: 
+$$\begin{aligned}x \in \left[n \cdot p_0 \pm \Phi(0{,}975) \sqrt{n \cdot p_0 (1-p_0)}\,\right] &\approx \left[n \cdot p_0 \pm 1{,}96 \cdot \sqrt{n \cdot p_0 \cdot(1-p_0)} \,\right] \\ &\approx \left[200 \cdot 0{,}5 \pm 1.959964 \cdot \sqrt{200 \cdot 0{,}5 \cdot (1-0{,}5)}\,\right] \\ &\approx \left[86{,}14096; 113{,}859\right] \\&\approx \left[86; 114\right]\end{aligned}$$ 
+c) *exakte Lösung*: 
+$$x \in [89; 111]$$
+
+Auf Grundlage dieser drei Lösungen wurde dann enschieden, ob die Abweichung signifikant ist, also 112 im oder eben nicht im berechneten Intervall liegt. *Ergebnis:* a), b) liefern nicht signifikante und c) ein signifikantes Ergebnis.
+
+Die Frage bleibt, was in der Aufgabenstellung mit "200 zufällige Junge-Mädchen-Paaren" gemeint ist.
+
+Es gilt ja bekannter maßen:
+-  Eine *uneingeschränkte Zufallsstichprobe* erhält man z. B. bei einem *Ziehen ohne Zurücklegen* ($\rightarrow$ Hypergeometische Verteilung).
+-  Eine *einfache Zufallsstichprobe* z. B. bei einem *Ziehen mit Zurücklegen* ($\rightarrow$ Binomialverteilung). 
+
+Rechnet man mit Hilfe von *R* die axakte Lösung nach, so erhält man:
+
+Für die Binomialverteilung (die "bessere Näherung"):
+```{r}
+pl <- 0.025 # 2,5% als untere Grenze
+pr <- 0.975 # 97,5% als obere Grenze
+
+iu <- qbinom(pl, 200, prob=0.5)
+io <- qbinom(pr, 200, prob=0.5)
+c(iu, io) # Ausgabe des (HSB-)Intervalls
+```
+
+Für die Hypergeometischeverteilung (hier "exakte Lösung" genannt)
+
+```{r}
+m <- 500 # Anzahl der Mädchen
+n <- 500 # Anzahl der Jungen
+k <- 200 # Umfang des Stichprobe
+pl <- 0.025 # 2,5% als untere Grenze
+pr <- 0.975 # 97,5% als obere Grenze
+
+iu <- qhyper(pl, m, n, k) # Linke/untere Intervallgrenze
+io <- qhyper(pr, m, n, k) # Rechte/obere Intervallgrenze
+c(iu, io) # Ausgabe des (HSB-)Intervalls
+```
+
+**R** liefert also aus *exakte Lösung* das Intervall $[88; 112]$. Wie kommt es nun über den Unterschied?
+
+```{r}
+m <- 500 # Anzahl der Mädchen
+n <- 500 # Anzahl der Jungen
+k <- 200 # Umfang des Stichprobe
+
+p <- dhyper(0:k, m, n, k)
+```
+
+Werte für die linke/untere Intervallgrenzen:
+
+```{r}
+# Werte für die linke/untere Intervallgrenzen:
+sum(p[0:88])
+sum(p[0:89])
+```
+
+Werte für die rechte/untere Intervallgrenzen:
+
+```{r}
+# Werte für die rechte/untere Intervallgrenzen:
+sum(p[0:110])
+sum(p[0:111])
+sum(p[0:112])
+sum(p[0:113])
+```
+
+Ist der Unterschied dann also ein Rundungsproblem?
+
+> Werden 2,5% und 97,5% nicht genau getroffen, wird hier nicht wie oben, nach außen / . \ , sondern in beiden Fällen nach rechts \.\
+gerundet; 
+> d.h. man nimmt diejenigen Werte in das zu bestimmende Intervall auf, bei denen 2,5% bzw. 97,5% zum ersten Mal
+> übertroffen werden. Somit verbleiben weniger als 2,5% der Histogrammfläche am linken bzw. rechten Rand.
+
+Ich denke nein. -- Meine Vermutung ist, dass hier für die rechte Intervallgrenze 95% statt 97,5% genommen wurde.
+
+
