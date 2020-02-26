@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title> Manuel Remelhe | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/authors/manuel-remelhe/</link>
-      <atom:link href="https://sefiroth.net/nap/authors/manuel-remelhe/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/manuel-remelhe/</link>
+      <atom:link href="/authors/manuel-remelhe/index.xml" rel="self" type="application/rss+xml" />
     <description> Manuel Remelhe</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Sat, 25 Sep 2004 00:00:00 +0200</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title> Manuel Remelhe</title>
-      <link>https://sefiroth.net/nap/authors/manuel-remelhe/</link>
+      <link>/authors/manuel-remelhe/</link>
     </image>
     
     <item>
       <title>LEARN2CONTROL – Projektorientiertes Lernen für ein besseres Gesamtverständnis in der regelungstechnischen Ausbildung</title>
-      <link>https://sefiroth.net/nap/publication/learn2control/</link>
+      <link>/publication/learn2control/</link>
       <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      <guid>https://sefiroth.net/nap/publication/learn2control/</guid>
+      <guid>/publication/learn2control/</guid>
       <description></description>
     </item>
     

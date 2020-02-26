@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mathematica | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tags/mathematica/</link>
-      <atom:link href="https://sefiroth.net/nap/tags/mathematica/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/mathematica/</link>
+      <atom:link href="/tags/mathematica/index.xml" rel="self" type="application/rss+xml" />
     <description>Mathematica</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Mathematica</title>
-      <link>https://sefiroth.net/nap/tags/mathematica/</link>
+      <link>/tags/mathematica/</link>
     </image>
     
     <item>
       <title>Weitere Software auf den Raspberry PI installieren.</title>
-      <link>https://sefiroth.net/nap/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
+      <link>/post/weitere-software-auf-den-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
+      <guid>/post/weitere-software-auf-den-raspberry-pi-installieren/</guid>
       <description>&lt;p&gt;Hier eine Liste von Software für den Raspberry Pi, die man noch installieren sollte/ kann und wie man es macht:&lt;/p&gt;
 &lt;h2 id=&#34;mathematica&#34;&gt;Mathematica&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;sudo apt-get update

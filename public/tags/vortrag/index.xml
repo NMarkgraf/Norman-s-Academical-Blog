@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vortrag | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tags/vortrag/</link>
-      <atom:link href="https://sefiroth.net/nap/tags/vortrag/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/vortrag/</link>
+      <atom:link href="/tags/vortrag/index.xml" rel="self" type="application/rss+xml" />
     <description>Vortrag</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Vortrag</title>
-      <link>https://sefiroth.net/nap/tags/vortrag/</link>
+      <link>/tags/vortrag/</link>
     </image>
     
     <item>
       <title>Etwas R am Abend</title>
-      <link>https://sefiroth.net/nap/project/etwas-r-am-abend/</link>
+      <link>/project/etwas-r-am-abend/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/project/etwas-r-am-abend/</guid>
+      <guid>/project/etwas-r-am-abend/</guid>
       <description></description>
     </item>
     

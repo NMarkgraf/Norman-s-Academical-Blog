@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Weblinks | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tags/weblinks/</link>
-      <atom:link href="https://sefiroth.net/nap/tags/weblinks/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/weblinks/</link>
+      <atom:link href="/tags/weblinks/index.xml" rel="self" type="application/rss+xml" />
     <description>Weblinks</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Sun, 31 Dec 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Weblinks</title>
-      <link>https://sefiroth.net/nap/tags/weblinks/</link>
+      <link>/tags/weblinks/</link>
     </image>
     
     <item>
       <title>Ein paar interessante Links</title>
-      <link>https://sefiroth.net/nap/post/ein-paar-interessante-links/</link>
+      <link>/post/ein-paar-interessante-links/</link>
       <pubDate>Sun, 31 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/ein-paar-interessante-links/</guid>
+      <guid>/post/ein-paar-interessante-links/</guid>
       <description>&lt;p&gt;Im Laufe der Zeit sammeln sich bei mir mehr und mehr Links zu anderen Seiten an, die ich irgendwie speichern will aber nicht ernsthaft sortieren möchte.
 So ist diese Sammlung hier entstanden:&lt;/p&gt;
 &lt;ul&gt;

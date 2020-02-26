@@ -4,9 +4,17 @@ author: admin
 date: '2019-12-31'
 slug: moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhaengen
 categories:
-  - Statistik
+  - Statistisches
 tags:
   - Statistik
+  - Moderator
+  - Mediator
+  - Moderatorenanalyse
+  - Mediatoenanalyse
+  - Interaktion
+  - Zusammemhangsanalyse
+  - Regression
+  - Regressionsanalyse
 subtitle: ''
 summary: ''
 authors: []

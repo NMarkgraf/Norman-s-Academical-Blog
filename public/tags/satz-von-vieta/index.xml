@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Satz von Vieta | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tags/satz-von-vieta/</link>
-      <atom:link href="https://sefiroth.net/nap/tags/satz-von-vieta/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/satz-von-vieta/</link>
+      <atom:link href="/tags/satz-von-vieta/index.xml" rel="self" type="application/rss+xml" />
     <description>Satz von Vieta</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Satz von Vieta</title>
-      <link>https://sefiroth.net/nap/tags/satz-von-vieta/</link>
+      <link>/tags/satz-von-vieta/</link>
     </image>
     
     <item>
       <title>Der Satz von Vieta und Dr. Loh&#39;s Methode</title>
-      <link>https://sefiroth.net/nap/post/der-satz-von-vieta-und-dr-loh-s-methode/</link>
+      <link>/post/der-satz-von-vieta-und-dr-loh-s-methode/</link>
       <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://sefiroth.net/nap/post/der-satz-von-vieta-und-dr-loh-s-methode/</guid>
+      <guid>/post/der-satz-von-vieta-und-dr-loh-s-methode/</guid>
       <description>
 &lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 

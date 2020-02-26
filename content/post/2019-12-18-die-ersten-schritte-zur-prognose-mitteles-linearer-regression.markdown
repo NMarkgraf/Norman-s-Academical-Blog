@@ -4,10 +4,11 @@ author: admin
 date: '2019-12-18'
 slug: die-ersten-schritte-zur-prognose-mitteles-linearer-regression
 categories:
-  - Statistik
+  - Statistisches
 tags:
   - R
   - Lehre
+  - Statistik
 subtitle: ''
 summary: 'An hand der **tipping**-Daten werden die ersten Schritte zur Prognose von Daten gezeigt.'
 authors: []

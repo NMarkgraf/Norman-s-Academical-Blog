@@ -4,11 +4,14 @@ author: admin
 date: '2020-02-12'
 slug: eine-typische-frage-von-studierenden
 categories:
-  - Statistik
+  - Statistisches
 tags:
   - Lehre
   - R
   - Statistik
+  - Nullhypothese
+  - SBI
+  - Klassische Inferenz
 subtitle: ''
 summary: ''
 authors: []

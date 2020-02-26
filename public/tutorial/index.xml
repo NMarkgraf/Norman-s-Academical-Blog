@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Overview | Norman&#39;s Academic Blog</title>
-    <link>https://sefiroth.net/nap/tutorial/</link>
-      <atom:link href="https://sefiroth.net/nap/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tutorial/</link>
+      <atom:link href="/tutorial/index.xml" rel="self" type="application/rss+xml" />
     <description>Overview</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0200</lastBuildDate>
     <image>
-      <url>https://sefiroth.net/nap/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Overview</title>
-      <link>https://sefiroth.net/nap/tutorial/</link>
+      <link>/tutorial/</link>
     </image>
     
     <item>
       <title>Example Page</title>
-      <link>https://sefiroth.net/nap/tutorial/example/</link>
+      <link>/tutorial/example/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0200</pubDate>
-      <guid>https://sefiroth.net/nap/tutorial/example/</guid>
+      <guid>/tutorial/example/</guid>
       <description>&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
 &lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
 &lt;p&gt;&amp;hellip;&lt;/p&gt;

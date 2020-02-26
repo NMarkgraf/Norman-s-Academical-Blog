@@ -2,8 +2,8 @@
   "name": "Norman&#39;s Academic Blog",
   "short_name": "Norman&#39;s Academic Blog",
   "lang": "de-de",
-  "theme_color": "#795548",
-  "background_color": "#795548",
+  "theme_color": "#EF525B",
+  "background_color": "#EF525B",
   "icons": [{
     "src": "../img/icon-192.png",
     "sizes": "192x192",

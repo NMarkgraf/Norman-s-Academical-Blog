@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mediator | Norman&#39;s Academic Blog</title>
+    <link>/tags/mediator/</link>
+      <atom:link href="/tags/mediator/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mediator</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Mediator</title>
+      <link>/tags/mediator/</link>
+    </image>
+    
+    <item>
+      <title>Moderator und Mediation - Formen der Interaktion bei Analyse von Zusammenhängen</title>
+      <link>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhaengen/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhaengen/</guid>
+      <description>&lt;p&gt;Bei der Analyse von Zusammenhängen tauchen sowohl &lt;em&gt;Moderation&lt;/em&gt; als auch &lt;em&gt;Mediation&lt;/em&gt; auf. Es geht um Zusammenhänge zwischen drei Variablen &lt;code&gt;\(X\)&lt;/code&gt;, &lt;code&gt;\(Y\)&lt;/code&gt; und &lt;code&gt;\(M\)&lt;/code&gt;.
+Untersucht wird der Effekt einer unabhägigen Variable &lt;code&gt;\(X\)&lt;/code&gt; (&lt;em&gt;Prädiktor&lt;/em&gt;, &lt;em&gt;UV&lt;/em&gt;) auf ein abhängige Variable &lt;code&gt;\(Y\)&lt;/code&gt; (&lt;em&gt;AV&lt;/em&gt;).
+Wir untersuchen dies mit einem Regressionsmodell &lt;code&gt;\(Y \sim X\)&lt;/code&gt;.
+Dabei wird zusätzlich eine dritte Variable &lt;code&gt;\(M\)&lt;/code&gt; berücksichtigt, die man entweder der &lt;em&gt;Moderator&lt;/em&gt; oder &lt;em&gt;Mediator&lt;/em&gt; nennt.&lt;/p&gt;
+&lt;p&gt;Ist die abhängige Variable metrisch, so können wir mittels eine linearer Regression vorgehen, ist die AB dagegen dichotom, so nutzen wir eine logistische Regression.&lt;/p&gt;
+&lt;h2 id=&#34;moderation&#34;&gt;Moderation&lt;/h2&gt;
+&lt;p&gt;Bei einer &lt;em&gt;Moderation&lt;/em&gt; wirkt die dritte Variable &lt;code&gt;\(M\)&lt;/code&gt; (&lt;em&gt;Moderator&lt;/em&gt;) auf die Beziehung zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(Y\)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Moderation-1.png&#34; width=&#34;30%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Der Einfluss von &lt;code&gt;\(M\)&lt;/code&gt; ändert also den Effekt von &lt;code&gt;\(X\)&lt;/code&gt; auf &lt;code&gt;\(Y\)&lt;/code&gt;. Der Zusammenhang zwischen &lt;code&gt;\(Y\)&lt;/code&gt; und &lt;code&gt;\(X\)&lt;/code&gt; ist also je nach &lt;code&gt;\(M\)&lt;/code&gt; unterschiedlich.&lt;/p&gt;
+&lt;p&gt;Statistisch gesehen liegt eine &lt;em&gt;Interaktion&lt;/em&gt; zwischen &lt;code&gt;\(M\)&lt;/code&gt; und &lt;code&gt;\(X\)&lt;/code&gt; vor.&lt;/p&gt;
+&lt;h3 id=&#34;wie-untersucht-man-einen-zusammenhang-auf-eine-moderation&#34;&gt;Wie untersucht man einen Zusammenhang auf eine Moderation?&lt;/h3&gt;
+&lt;p&gt;Dazu stellen wir ein Regressionsmodell mit den drei Faktoren &lt;code&gt;\(X\)&lt;/code&gt;, &lt;code&gt;\(M\)&lt;/code&gt; und der Interaktion zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(M\)&lt;/code&gt; auf.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lm(Y ~ X * M, data=daten)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Oder alternativ:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lm(Y ~ X + M + M:X, data=daten)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Diese drei Faktoren wirken auf &lt;code&gt;\(Y\)&lt;/code&gt;. Ist in diesem Modell die Interaktion &lt;code&gt;\(M:X\)&lt;/code&gt; &lt;em&gt;signifikant&lt;/em&gt;, so liegt eine (signifikante) &lt;em&gt;Moderation&lt;/em&gt; vor.&lt;/p&gt;
+&lt;h2 id=&#34;mediation&#34;&gt;Mediation&lt;/h2&gt;
+&lt;p&gt;Bei der &lt;em&gt;Mediation&lt;/em&gt; steht die Variable &lt;code&gt;\(M\)&lt;/code&gt; (der &lt;em&gt;Mediator&lt;/em&gt;) sowohl zu &lt;code&gt;\(X\)&lt;/code&gt; als auch zu &lt;code&gt;\(Y\)&lt;/code&gt; in Beziehung.
+Der direkte Effekt zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(Y\)&lt;/code&gt; wird durch den indirekten Effekt über &lt;code&gt;\(M\)&lt;/code&gt; erklärt, also durch
+&lt;code&gt;\(X \to  M \to Y\)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Mediator-1.png&#34; width=&#34;30%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;wie-untersucht-man-auf-eine-mediation&#34;&gt;Wie untersucht man auf eine Mediation?&lt;/h3&gt;
+&lt;p&gt;In diesem Fall stellen wir mehrere Regressionsmodelle auf. Eine (signifikante) Mediation liegt dann vor, wenn die folgenden Bedinungen erfüllt sind:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;erstesModell &amp;lt;- lm(Y ~ X, data=daten)
+zweitesModell &amp;lt;- lm(M ~ X, data=daten)
+drittesModell &amp;lt;- lm(Y ~ X + M, data=daten)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Im ersten Modell ($X \to Y$) ist der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; signifikant.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Im zweiten Modell ($X \to M$) ist der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; signifikant.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Im dritten Modell ($X,M \to Y$) ist der Regressionskoeffizient von &lt;code&gt;\(M\)&lt;/code&gt; signifikant und&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; im dritten Modell kleiner als im ersten Modell.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

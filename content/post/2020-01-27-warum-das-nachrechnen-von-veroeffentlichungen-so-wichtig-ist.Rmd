@@ -2,8 +2,9 @@
 title: "Warum das Nachrechnen von Veröffentlichungen so wichtig ist"
 author: "admin"
 date: '2020-01-27'
-darf: yes
-categories: Statistik
+draft: yes
+categories: 
+    - Statistisches
 featured: no
 image:
   caption: ''
@@ -15,8 +16,8 @@ slug: warum-das-nachrechnen-von-veroeffentlichungen-so-wichtig-ist
 subtitle: ''
 summary: ''
 tags:
-- R
-- Statistik
+    - R
+    - Statistik
 authors: []
 ---
 
