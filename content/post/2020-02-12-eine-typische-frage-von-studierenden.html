@@ -1,0 +1,307 @@
+---
+title: Eine typische Frage von Studierenden
+author: admin
+date: '2020-02-12'
+slug: eine-typische-frage-von-studierenden
+categories:
+  - Statistisches
+tags:
+  - Lehre
+  - R
+  - Statistik
+  - Nullhypothese
+  - SBI
+  - Klassische Inferenz
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-02-12T08:55:23+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Vor kurzem fand ich mal wieder eine Anfrage einer Studierenden in meinem Email Postfach. Die Frage lautete in etwa wie folgt:</p>
+<blockquote>
+<p>Guten Tag Herr Markgraf,</p>
+<p>ich würde gerne die Hypothese untersuchen: Die reduzierte Abhängigkeit des Iphones tagsüber liegt am schönen Wetter.
+Dazu habe ich eine Variable “iphones.tagsüber.unbeachtet” mit 1x, 2x und 3x täglich als Ausprägungen und eine andere Variable “wetter.ist.gut”, die als Ausprägung “Ja” und “Nein” hat.
+Welchen Test kann ich dazu zur Überprüfung einer Abhängigkeit nehmen?</p>
+<p>Vielen Dank im Voraus.</p>
+<p>MfG Monika Mustermann</p>
+</blockquote>
+<p>Natürlich ist diese Frage im Prinzip einfach zu beantworten, sogar von Leuten, die Statistik an einer Hochschule gehört haben. – Aber da ich ja auch sonst nichts zu tun habe gebe ich gerne statistische Hilfestellung für Studierende. Sicher verdiene ich damit eigentlich Geld, also ist es nur natürlich, dass ich so etwas volllkommen unendgeldlich mache. Und wieso sollten Studierende einfach mal ein Buch in die Hand nehmen und selber nachdenken? Es gibt vermutlich keine Bücher zu diesem Thema, denn es ist gar sicher eine Geheimwissenschaft. Und wieso sollte man dann also seine Betreuungsperson zu diesem Probem fragen? – Egal.</p>
+<p>Was haben wir hier vorliegen? – Im einfachsten Fall sind es zwei kategoriale Variablen und wir wollen sehen ob diese von einenander (un-)Abhängig sind.
+Mangels tatsächlicher Daten basten wir uns einfach mal ein Beispiel:</p>
+<div id="wir-basten-uns-ein-beispiel" class="section level3">
+<h3>Wir basten uns ein Beispiel</h3>
+<pre class="r"><code>library(mosaic)
+set.seed(123)
+n = 176
+daten &lt;- data.frame(
+  iphones.tagsüber.unbeachtet = sample(rep(c(&quot;1xtäglich&quot;,&quot;2xtäglich&quot;,&quot;3xtäglich&quot;),n),n),
+  wetter.ist.gut = sample(rep(c(&quot;Ja&quot;,&quot;Nein&quot;),n),n)
+)
+head(daten)</code></pre>
+<pre><code>##   iphones.tagsüber.unbeachtet wetter.ist.gut
+## 1                   1xtäglich             Ja
+## 2                   1xtäglich           Nein
+## 3                   2xtäglich             Ja
+## 4                   3xtäglich           Nein
+## 5                   1xtäglich             Ja
+## 6                   2xtäglich             Ja</code></pre>
+</div>
+<div id="ein-blick-auf-kennzahlen-und-visualisierungsmöglichkeiten" class="section level3">
+<h3>Ein Blick auf Kennzahlen und Visualisierungsmöglichkeiten</h3>
+<p>Man kann diese Daten als Kreuztabelle zusammenfassen und diese dann mit Hilfe eines Mosaicplots darstellen:</p>
+<pre class="r"><code>tally(iphones.tagsüber.unbeachtet ~ wetter.ist.gut, data=daten)</code></pre>
+<pre><code>##                            wetter.ist.gut
+## iphones.tagsüber.unbeachtet Ja Nein
+##                   1xtäglich 29   33
+##                   2xtäglich 34   26
+##                   3xtäglich 27   27</code></pre>
+<pre class="r"><code>mosaicplot(wetter.ist.gut ~ iphones.tagsüber.unbeachtet, data=daten)</code></pre>
+<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="von-der-forschungsthese-zur-hypothese-teil-1" class="section level3">
+<h3>Von der Forschungsthese zur Hypothese (Teil 1)</h3>
+<p>Um nun zwischen abhänig und unabhängig statitisch zu unterscheiden, sollte man sich die Null- und Alternativhypothese genau überlegen und <em>operationalisieren</em>.</p>
+<p>Ein Blick auf die (orginal) Forschungsthese: “Die reduzierte Abhängigkeit des Iphones tagsüber liegt am schönen Wetter.”</p>
+<p>Okay, wir formulieren etwas um: “Es besteht ein Zusammenhang zwischen ‘schönem Wetter’ und dem ‘Iphone tagsüber unbeachtet’ lassen.”</p>
+<p>Warum diese unterschiedliche Formulierung? – Nun, in der orginal Forschungsthese wird ein kausal Zusammenhang geprüft. Da es sich vermutlich um eine Beobachtungstudie handelt können wir einen solchen Ursache-Wirkungs-Zusammenhang aber hier nicht so einfach (bis gar nicht) prüfen. Zwar kann man von außen sagen: “Wenn es einen Zusammenhang gibt, dann führt das schöne Wetter zur Nichtbeachtung.” statitisch können wir hier aber aktuell nur den Zusammenhang (und zwar ungerichtget!) testen. Liegt dieser <strong>nicht</strong> vor, so spricht erstmal auch nichts für einen kausalen Zusammenhang, aber ein Zusammenhang an sich spricht noch nicht für einen kausalen Zusammenhang!</p>
+<p>Aus der umformulierten Forschungsfrage können wir die Alternativ- und auch die Nullhypothese ableiten:</p>
+<p><strong>Alternativhypothese:</strong> Es besteht ein Zusammenhang zwischen ‘schönem Wetter’ und dem ‘Iphone tagsüber unbeachtet’ lassen.</p>
+<p><strong>Nullhypothese:</strong> Es besteht <strong>kein</strong> Zusammenhang zwischen ‘schönem Wetter’ und dem ‘Iphone tagsüber unbeachtet’ lassen.</p>
+</div>
+<div id="wie-kann-man-nun-den-zusammenhang-messen-und-wie-sieht-kein-zusammenhang-dabei-aus" class="section level2">
+<h2>Wie kann man nun den Zusammenhang <em>messen</em> und wie sieht <em>kein Zusammenhang</em> dabei aus?</h2>
+<p>Um zu sehen ob unsere Werte keinen Zusammenhang haben, also rein zufällig sind, oder es einen inneren Zusammenhang gibt müssen wir die äußeren von den inneren Häufigkeiten trennen.</p>
+<p>Konkret heißt das, wir schauen uns an wie die Häufigkeiten oder auch Verteilung der einzelnen Variabeln ausssehen:</p>
+<pre class="r"><code>tally(~ wetter.ist.gut, data=daten)</code></pre>
+<pre><code>## wetter.ist.gut
+##   Ja Nein 
+##   90   86</code></pre>
+<pre class="r"><code>tally(~ iphones.tagsüber.unbeachtet, data=daten)</code></pre>
+<pre><code>## iphones.tagsüber.unbeachtet
+## 1xtäglich 2xtäglich 3xtäglich 
+##        62        60        54</code></pre>
+<div id="freiheitsgrade" class="section level4">
+<h4>Freiheitsgrade</h4>
+<p>Die Werte innerhalb der Kreuztabelle oben werden im wesendlichen durch diese Werte bestimmt. Die außeren Werte sind also unsere Rahmenbedingungen. Dabei ist der Einfluss der sogenannten <em>Randhäufigkeiten</em> (<em>Marginale Häufigkeit</em>) nicht zu unterschätzen. Denn wenn wir diese als <em>fix</em>/<em>gegeben</em> ansehen, können wir nur mit den sechs Werten in der Mitte unserer Kreuztabelle <em>spielen</em></p>
+<p>Doch sind nicht alle sechs Werte wirklich frei. Denn um zum Beispiel die Summe 62 in der ersten Zeile zu erhalten haben wir ja die Summe von 29 und 33 gebildet.</p>
+<p>Ist nun der Rand, also 62, fest, so kann ich die beiden Summanden nicht mehr frei wählen, denn</p>
+<p><span class="math display">\[62 = 29 + 33\]</span></p>
+<p>impliziert ja, dass ich allgemeiner
+<span class="math display">\[62 = x + y\]</span>
+habe und somit durch
+<span class="math display">\[x = 62 - y \qquad\text{ bzw. }\qquad y = 62 - x\]</span>
+immer nur eine der Variabeln <span class="math inline">\(x\)</span> oder <span class="math inline">\(y\)</span> wirklich frei zu wählen ist.</p>
+<p>Da dies für jede Zeile, aber auch für jede Spalte gilt, denn z.B. ist die Summe der ersten Spalte gegeben durch</p>
+<p><span class="math display">\[90 = 29 + 34 + 27,\]</span>
+sind von den sechs Werten in der Kreuztabelle in der Tat nur 2 Werte wirklich frei zu wählen.
+Wir haben also ein Problem mit <em>2 Freiheitsgraden</em>, man schreibt das kurz mit <span class="math inline">\(df=2\)</span> (<em>df</em> steht dabei für <em>degree of freedom</em>).</p>
+</div>
+<div id="unabhängigkeit-in-der-statistik" class="section level3">
+<h3>Unabhängigkeit in der Statistik</h3>
+<p>Wir sagen in der Statistik, dass ein gemeinsames Ereignis unabhängig ist wenn sich das Ereignis als Produkt der beiden Einzelereignisse berechnen lässt.
+Seien <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> also zwei Ereignisse, dann gilt im Falle der Unabhängigkeit:</p>
+<p><span class="math display">\[P(A \cap B) = P(A) \cdot P(B)\]</span></p>
+<p>Wir können diese Definition aus der Wahrscheinlichkeitstheorie an unser Problem adaptieren, in dem wir die Wahrscheinlichkeiten durch die relativen Häufigkeiten ersetzen.</p>
+<p>Der Wert für das Ereignis "iphone.tagsüber.unbeachtet = 1xtäglich<code>und das</code>wetter.ist.gut=ja` wird im Falle der Unabhägigkeit
+durch die beiden Randhäufigkeiten bestimmt:</p>
+<p><span class="math display">\[62 \cdot 90 = 31.7045455\]</span></p>
+<p>Wir können nun also eine Kreuztabelle erstellen, wie sie seien müsste, falls wir tatsächlich <em>statitische Unabhängigkeit</em> hätten. Wir nutzen dafür eine sehr allgemein gehaltene Funktion <code>expectation.tab()</code>, der wir eine Tabelle mit den Häufigkeiten der Beobachtungen geben und die uns dann die Tabelle liefert, wie sie aussehen würde, falls tatsächlich <em>statitische Unabhängigkeit</em> heschen würde.
+Die Tabelle mit den beobchteten Werten speichern wir in <code>obs.tab</code>, die der erwarteten Werte in <code>exp.tab</code>:</p>
+<pre class="r"><code>expectation.tab &lt;- function(tab.obs) {
+  max.i &lt;- length(tab.obs[1,])
+  max.j &lt;- length(tab.obs[,1])
+  
+  # Randhäufigkeiten 
+  x &lt;- rep(0, max.i)
+  for(i in 0:max.i) x[i] = sum(tab.obs[,i])
+
+  y &lt;- rep(0, max.j)
+  for(j in 0:max.j) y[j] = sum(tab.obs[j,])
+
+    # Anzahl aller Beobachtungen
+  n = sum(tab.obs)
+
+  mtx &lt;- c()
+  
+  for(i in 0:max.i){
+    for(j in 0:max.j) {
+       mtx &lt;- c(mtx, (x[i] * y[j] / n))
+    }
+  }
+  ret &lt;- matrix(
+      mtx,#rep(0, length(tab.obs)),
+      nrow = max.j,
+      ncol = max.i
+  )
+  
+  # Spalten und Zeilennamen übernehmen
+  colnames(ret) &lt;- colnames(tab.obs)
+  rownames(ret) &lt;- rownames(tab.obs)
+  
+  return(ret)
+}
+
+obs.tab &lt;- tally(iphones.tagsüber.unbeachtet ~ wetter.ist.gut, data=daten)
+exp.tab &lt;- expectation.tab(obs.tab)</code></pre>
+<p>Schauen wir uns die beiden Tabellen kurz an. Zuerst die der beobachteten Werte:</p>
+<pre class="r"><code>obs.tab</code></pre>
+<pre><code>##                            wetter.ist.gut
+## iphones.tagsüber.unbeachtet Ja Nein
+##                   1xtäglich 29   33
+##                   2xtäglich 34   26
+##                   3xtäglich 27   27</code></pre>
+<p>Dann die der erwarteten Werte:</p>
+<pre class="r"><code>exp.tab</code></pre>
+<pre><code>##                 Ja     Nein
+## 1xtäglich 31.70455 30.29545
+## 2xtäglich 30.68182 29.31818
+## 3xtäglich 27.61364 26.38636</code></pre>
+</div>
+<div id="was-können-wir-nun-messen" class="section level3">
+<h3>Was können wir nun messen?</h3>
+<p>Unsicherheit und Zufall spielen eine große Rolle. Wir können also nicht erwarten, dass die Werte für die Kreuztabelle in der Realität genau getroffen werden. (Vorallem, weil wir hier ja mit Nachkommastellen arbeiten!) Aber wir können versuchen den Abstand zu diesen Werten zu messen. Je weiter weg die Werte in der Kreuztabelle von den theoretischen Werten liegen, um so unwarscheinlicher ist es, dass die Werte zufällig aus einer unabhängigen Population gezogen wurden. D.h. wir könnten uns für eine Abhägigkeit aussprechen.</p>
+<div id="messen-mit-dem-absolutabstand" class="section level4">
+<h4>Messen mit dem Absolutabstand?</h4>
+<p>Man könnte nun auf die Idee kommen die Abstände an jeder Stelle zu messen und den absoluten Abstand zu summieren:</p>
+<pre class="r"><code>sum(abs(obs.tab-exp.tab))</code></pre>
+<pre><code>## [1] 13.27273</code></pre>
+<p>Nur was sagt dieser Wert aus? – Ist das ein kleiner Abstand oder ein großer?</p>
+<p>Wir brauchen Referenzwerte zur Orientierung. Die Idee: <strong>Permutationstest</strong></p>
+<pre class="r"><code># Funktion zur Berechnung der absoluten Differenz zwischen
+# beobachteten und erwarteten Werte
+diffabsobsexp &lt;- function(obs, exp) {
+  return(sum(abs(obs-exp)))
+}
+
+# Absolute Abweichung der gemessenen Werte
+obs.abs &lt;- diffabsobsexp(obs.tab, exp.tab)
+
+# Erzeugen der Nullverteilung
+NullVert  &lt;- do(1000) * diffabsobsexp(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
+gf_histogram(~ diffabsobsexp, data=NullVert) %&gt;%
+  gf_vline(xintercept = ~ obs.abs, color=&quot;red&quot;)</code></pre>
+<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Wir können nun den p-Wert abschätzen mit:</p>
+<pre class="r"><code>prop( ~ diffabsobsexp &gt;= obs.abs, data=NullVert)</code></pre>
+<pre><code>## prop_TRUE 
+##     0.559</code></pre>
+<p>Doch haben wir alle Werte richtig bewertet? Wenn wir jeden einzelne Differenz noch durch den erwarteten Wert teilen erhalten wir:</p>
+<pre class="r"><code># Funktion zur Berechnung der korrigierten absoluten 
+# Differenz zwischen beobachteten und erwarteten Werten
+diffabsobsexpkor &lt;- function(obs, exp) {
+  return(sum((abs(obs-exp))/exp))
+}
+
+# Absolute Abweichung der gemessenen Werte -- korrigiert
+obs.abs &lt;- diffabsobsexpkor(obs.tab, exp.tab)
+
+# Erzeugen der Nullverteilung
+NullVert  &lt;- do(1000) * diffabsobsexpkor(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
+gf_histogram(~ diffabsobsexpkor, data=NullVert) %&gt;%
+  gf_vline(xintercept = ~ obs.abs, color=&quot;red&quot;)</code></pre>
+<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Wir können nun den p-Wert abschätzen mit:</p>
+<pre class="r"><code>prop( ~ diffabsobsexpkor &gt;= obs.abs, data=NullVert)</code></pre>
+<pre><code>## prop_TRUE 
+##     0.619</code></pre>
+<p>Ist der absolute Abstand überhaupt gut gewählt? – Wäre nicht eher der quadratische Abstand angebracht?</p>
+<pre class="r"><code># Funktion zur Berechnung der quadratischen 
+# Differenz zwischen beobachteten und erwarteten Werten
+diffquad &lt;- function(obs, exp) {
+  return(sum((obs-exp)^2))
+}
+
+# Quadratische Abweichung der gemessenen Werte
+obs.abs &lt;- diffquad(obs.tab, exp.tab)
+
+# Erzeugen der Nullverteilung
+NullVert  &lt;- do(1000) * diffquad(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
+gf_histogram(~ diffquad, data=NullVert) %&gt;%
+  gf_vline(xintercept = ~ obs.abs, color=&quot;red&quot;)</code></pre>
+<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-16-1.png" width="672" />
+Wir können nun den p-Wert abschätzen mit:</p>
+<pre class="r"><code>prop( ~ diffquad &gt;= obs.abs, data=NullVert)</code></pre>
+<pre><code>## prop_TRUE 
+##      0.52</code></pre>
+<p>Wenn man nun den quadratischen Abstand noch durch die Erwartung teilt:</p>
+<pre class="r"><code># Funktion zur Berechnung der korrigierten quadratischen 
+# Differenz zwischen beobachteten und erwarteten Werten
+diffquadkor &lt;- function(obs, exp) {
+  return(sum(((obs-exp)^2)/exp))
+}
+
+# Quadratische Abweichung der gemessenen Werte -- korrigiert
+obs.abs &lt;- diffquadkor(obs.tab, exp.tab)
+
+# Erzeugen der Nullverteilung
+NullVert  &lt;- do(1000) * diffquadkor(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
+gf_histogram(~ diffquadkor, data=NullVert) %&gt;%
+  gf_vline(xintercept = ~ obs.abs, color=&quot;red&quot;)</code></pre>
+<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-19-1.png" width="672" />
+Wir können nun den p-Wert abschätzen mit:</p>
+<pre class="r"><code>prop( ~ diffquadkor &gt;= obs.abs, data=NullVert)</code></pre>
+<pre><code>## prop_TRUE 
+##     0.571</code></pre>
+<p>An Hand der p-Werte können wir nun über die Nullhypothese entscheiden:</p>
+</div>
+</div>
+<div id="was-sagt-die-klassische-statistik" class="section level3">
+<h3>Was sagt die klassische Statistik?</h3>
+<p>In der klassischen Statistik könnte man hier den <span class="math inline">\(\chi^2\)</span>-Unabhängigkeitstest anwenden:</p>
+<pre class="r"><code>xchisq.test(iphones.tagsüber.unbeachtet ~ wetter.ist.gut, data=daten)</code></pre>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  x
+## X-squared = 1.2345, df = 2, p-value = 0.5394
+## 
+##    29       33   
+## (31.70)  (30.30) 
+## [0.231]  [0.241] 
+## &lt;-0.48&gt;  &lt; 0.49&gt; 
+##    
+##    34       26   
+## (30.68)  (29.32) 
+## [0.359]  [0.376] 
+## &lt; 0.60&gt;  &lt;-0.61&gt; 
+##    
+##    27       27   
+## (27.61)  (26.39) 
+## [0.014]  [0.014] 
+## &lt;-0.12&gt;  &lt; 0.12&gt; 
+##    
+## key:
+##  observed
+##  (expected)
+##  [contribution to X-squared]
+##  &lt;Pearson residual&gt;</code></pre>
+<p>Aber es gibt auch den (exakten) Fisher-Test:</p>
+<pre class="r"><code>fisher.test(obs.tab, alternative = &quot;greater&quot;)</code></pre>
+<pre><code>## 
+##  Fisher&#39;s Exact Test for Count Data
+## 
+## data:  obs.tab
+## p-value = 0.5609
+## alternative hypothesis: greater</code></pre>
+</div>
+<div id="fazit" class="section level3">
+<h3>Fazit</h3>
+<p>Wir können die p-Werte der einzelnen Tests nun gegenüber stellen:</p>
+<pre><code>##        abs. Abweichung   kor. abs. Abweichung      quadr. Abweichung 
+##              0.5590000              0.6190000              0.5200000 
+## kor. quadr. Abweichung        ChiQuadrat-Test            Fisher-Test 
+##              0.5710000              0.5394367              0.5609340</code></pre>
+<p>Was die Entscheidung für oder gegen die Nullhypothese angeht, hat jeder dieser Test (in der Regel) die selbe Entscheidung als Konsequenz.</p>
+</div>
+</div>

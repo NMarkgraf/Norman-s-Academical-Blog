@@ -1,0 +1,151 @@
+---
+title: Die ersten Schritte zur Prognose mitteles linearer Regression
+author: admin
+date: '2019-12-18'
+slug: die-ersten-schritte-zur-prognose-mitteles-linearer-regression
+categories:
+  - Statistisches
+tags:
+  - R
+  - Lehre
+  - Statistik
+subtitle: ''
+summary: 'An hand der **tipping**-Daten werden die ersten Schritte zur Prognose von Daten gezeigt.'
+authors: []
+lastmod: '2019-12-18T13:02:59+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Prognosen sind ein wichtiger Bestandteil von Data Science und ist durchaus nicht nur auf moderne Ansätze, wie Neuronale Netze, deep lerning etc. begrenzt. Auch die gute, alte Regression kann ein sehr sinnvolles Mittel sein solche Prognosen zu erstellen.</p>
+<p>Um ein wenig die Ideen hinter Prognosen zu beleuchten wollen wir uns an Prognosen mit dem <strong>tipping</strong>-Daten heranwagen.</p>
+<div id="einlesen-der-tipping-daten" class="section level2">
+<h2>Einlesen der tipping-Daten</h2>
+<p>Zuerst laden wir die notwenidgen Pakete:</p>
+<pre class="r"><code>library(mosaic)</code></pre>
+<p>Falls die <strong>tipping</strong>-Daten noch nicht im Verzeichnis liegen, laden wir sie aus dem Internet nach:</p>
+<pre class="r"><code>if (!file.exists(&quot;tips.csv&quot;)) {
+  download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.csv&quot;)
+}</code></pre>
+<p>Nun laden wir die <strong>tipping</strong>-Daten in den Speicher in den Datenrahmen <code>tips</code>:</p>
+<pre class="r"><code>tips &lt;- read.csv2(&quot;tips.csv&quot;)</code></pre>
+<p>Wir werfen einen ersten Blick auf die <strong>tipping</strong>-Daten:</p>
+<pre class="r"><code>inspect(tips)</code></pre>
+<pre><code>## 
+## categorical variables:  
+##     name  class levels   n missing
+## 1    sex factor      2 244       0
+## 2 smoker factor      2 244       0
+## 3    day factor      4 244       0
+## 4   time factor      2 244       0
+##                                    distribution
+## 1 Male (64.3%), Female (35.7%)                 
+## 2 No (61.9%), Yes (38.1%)                      
+## 3 Sat (35.7%), Sun (31.1%), Thur (25.4%) ...   
+## 4 Dinner (72.1%), Lunch (27.9%)                
+## 
+## quantitative variables:  
+##         name   class  min      Q1 median      Q3   max      mean        sd   n
+## 1 total_bill numeric 3.07 13.3475 17.795 24.1275 50.81 19.785943 8.9024120 244
+## 2        tip numeric 1.00  2.0000  2.900  3.5625 10.00  2.998279 1.3836382 244
+## 3       size integer 1.00  2.0000  2.000  3.0000  6.00  2.569672 0.9510998 244
+##   missing
+## 1       0
+## 2       0
+## 3       0</code></pre>
+</div>
+<div id="vorbereiten-der-test-trainings--und-auswertungesdaten" class="section level2">
+<h2>Vorbereiten der Test-/Trainings- und Auswertungesdaten</h2>
+<p>Zunächst schränken wir die <strong>tipping</strong>-Daten auf die Variabeln “total_bill”, “sex”, “smoker”, “day”, “time”, “size” ein und speichern das Ergebnis wieder in <code>tips</code>:</p>
+<pre class="r"><code>tips %&gt;%
+    select(c(&quot;total_bill&quot;, &quot;sex&quot;, &quot;smoker&quot;, &quot;day&quot;, &quot;time&quot;, &quot;size&quot;)) -&gt; tips</code></pre>
+<p>Ziel ist es, den Rechnungsbetrag (“total_bill”) auf Grundlage der Variabeln “sex”, “smoker”, “day”, “time” und/oder “size” vorherzusagen.</p>
+<p>Wir teilen den tipping-Datensatz auf in eine Trainingsdatensatz (“tipstrain”), einem Testdatensatz (“tipstest”) und einem Prüfdatensatz (“tipspruef”).
+Der Trainingsdatensatz sollte rund zweidrittel der Daten die wir haben umfassen.
+Der Testdatensatz die restlich ca. eindrittel.</p>
+<pre class="r"><code>trainings_anteil = 2/3
+
+# n.train ist ein Index für alle Werte, 
+# die wir im Trainingsdatensatz haben wollen:
+x.train &lt;- sample(1:nrow(tips), floor(trainings_anteil*nrow(tips)))
+
+# Trainingsdatensatz erstellen:
+tipstrain &lt;- slice(tips, x.train)
+
+# Prüfdatensatz erstellen, also alles was 
+# nicht in den Trainingsdatensatz gekommen ist:
+tipspruef &lt;- slice(tips, -(x.train))
+
+# Der Testdatensatz ist der Prüfdatensatz 
+# ohne die Variable total_bill:
+tipspruef %&gt;% 
+    select(-total_bill) -&gt; tipstest</code></pre>
+<p>Mit dem Tainingsdatensatz versuchen wir nun ein Prognosemodell zu erstellen, um aus den Testdatensatz eine Prognose für “total_bill” zu erstellen.</p>
+<p>Das Prognose-Modell wird ausschließlich auf Grundlage des Trainingsdatensatzes erstellt. Am Ende wollen wir unser Modell dann aber mit Hilfe des Prüfdatensatzes bewertet.</p>
+</div>
+<div id="die-datenlage" class="section level2">
+<h2>Die Datenlage</h2>
+<p>Ein (paar) Blick(e) auf unsere Trainingsdaten:</p>
+<pre class="r"><code>gf_point(total_bill ~ jitter(size), color=~time, data=tipstrain)</code></pre>
+<p><img src="/post/2019-12-18-die-ersten-schritte-zur-prognose-mitteles-linearer-regression_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>gf_point(total_bill ~ day | time, color = ~ sex, data=tipstrain)</code></pre>
+<p><img src="/post/2019-12-18-die-ersten-schritte-zur-prognose-mitteles-linearer-regression_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="prognosemodel-nullmodell" class="section level2">
+<h2>Prognosemodel: Nullmodell</h2>
+<div id="aufstellen-des-nullmodel-aka-regression-mit-der-achse" class="section level3">
+<h3>Aufstellen des Nullmodel aka Regression mit der Achse</h3>
+<p>Wir erstellen das Nullmodell wie folgt:</p>
+<pre class="r"><code>lm.null &lt;- lm( total_bill ~ 1, data=tipstrain)
+summary(lm.null)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = total_bill ~ 1, data = tipstrain)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -13.159  -6.989  -2.429   4.171  30.401 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  20.4086     0.7311   27.91   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 9.306 on 161 degrees of freedom</code></pre>
+<p>Das Nullmodell sagt in jedem Fall den Rechnungsbetrag vorher als den Mittelwert der Trainingsdaten!</p>
+<pre class="r"><code>mean(~ total_bill, data=tipstrain)</code></pre>
+<pre><code>## [1] 20.40864</code></pre>
+<p>Nun bestimmten wir mit Hilfe des Nullmodells “lm.null” eine Vorhersage für die Testdaten:</p>
+<pre class="r"><code>predict.null &lt;- predict(lm.null, newdata=tipstest)
+head(predict.null)</code></pre>
+<pre><code>##        1        2        3        4        5        6 
+## 20.40864 20.40864 20.40864 20.40864 20.40864 20.40864</code></pre>
+<p>Wie gesagt, das Nullmodell liefert als Prognose immer den Mittelwert der Trainingsdaten zurück,
+das mathematische Nullmodell lautet also:</p>
+<p><span class="math display">\[\widehat{total\_bill_i} = 20.408642  \]</span></p>
+</div>
+<div id="auswertung-des-nullmodells" class="section level3">
+<h3>Auswertung des Nullmodells</h3>
+<p>Zur Auswertung Nutzen wir den <em>mittleren Absolutabstand</em> zwischen der Vorhersage und den Prüfdaten:</p>
+<pre class="r"><code>maa.null &lt;-sum( abs( tipspruef$total_bill - predict.null))
+maa.null</code></pre>
+<pre><code>## [1] 544.772</code></pre>
+</div>
+</div>
+<div id="prognosemodell-lineare-regression-gegen-size-als-metrischer-wert" class="section level2">
+<h2>Prognosemodell: Lineare Regression gegen “size” als metrischer Wert</h2>
+<div id="aufstellen-des-modells" class="section level3">
+<h3>Aufstellen des Modells</h3>
+</div>
+<div id="auswertung-des-regressionsmodell" class="section level3">
+<h3>Auswertung des Regressionsmodell</h3>
+</div>
+</div>

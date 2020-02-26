@@ -550,49 +550,50 @@ Ist die abhängige Variable metrisch, so können wir mittels eine linearer Regre
   <div class="article-container">
 
     <div class="article-style">
-      <p>Bei der Analyse von Zusammenhängen tauchen sowohl <em>Moderation</em> als auch <em>Mediation</em> auf. Es geht um Zusammenhänge zwischen drei Variablen <code>\(X\)</code>, <code>\(Y\)</code> und <code>\(M\)</code>.
-Untersucht wird der Effekt einer unabhägigen Variable <code>\(X\)</code> (<em>Prädiktor</em>, <em>UV</em>) auf ein abhängige Variable <code>\(Y\)</code> (<em>AV</em>).
-Wir untersuchen dies mit einem Regressionsmodell <code>\(Y \sim X\)</code>.
-Dabei wird zusätzlich eine dritte Variable <code>\(M\)</code> berücksichtigt, die man entweder der <em>Moderator</em> oder <em>Mediator</em> nennt.</p>
+      
+<script src="2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Bei der Analyse von Zusammenhängen tauchen sowohl <em>Moderation</em> als auch <em>Mediation</em> auf. Es geht um Zusammenhänge zwischen drei Variablen <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> und <span class="math inline">\(M\)</span>.
+Untersucht wird der Effekt einer unabhägigen Variable <span class="math inline">\(X\)</span> (<em>Prädiktor</em>, <em>UV</em>) auf ein abhängige Variable <span class="math inline">\(Y\)</span> (<em>AV</em>).
+Wir untersuchen dies mit einem Regressionsmodell <span class="math inline">\(Y \sim X\)</span>.
+Dabei wird zusätzlich eine dritte Variable <span class="math inline">\(M\)</span> berücksichtigt, die man entweder der <em>Moderator</em> oder <em>Mediator</em> nennt.</p>
 <p>Ist die abhängige Variable metrisch, so können wir mittels eine linearer Regression vorgehen, ist die AB dagegen dichotom, so nutzen wir eine logistische Regression.</p>
-<h2 id="moderation">Moderation</h2>
-<p>Bei einer <em>Moderation</em> wirkt die dritte Variable <code>\(M\)</code> (<em>Moderator</em>) auf die Beziehung zwischen <code>\(X\)</code> und <code>\(Y\)</code>.</p>
-<p><img src="../../post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Moderation-1.png" width="30%" style="display: block; margin: auto;" /></p>
-<p>Der Einfluss von <code>\(M\)</code> ändert also den Effekt von <code>\(X\)</code> auf <code>\(Y\)</code>. Der Zusammenhang zwischen <code>\(Y\)</code> und <code>\(X\)</code> ist also je nach <code>\(M\)</code> unterschiedlich.</p>
-<p>Statistisch gesehen liegt eine <em>Interaktion</em> zwischen <code>\(M\)</code> und <code>\(X\)</code> vor.</p>
-<h3 id="wie-untersucht-man-einen-zusammenhang-auf-eine-moderation">Wie untersucht man einen Zusammenhang auf eine Moderation?</h3>
-<p>Dazu stellen wir ein Regressionsmodell mit den drei Faktoren <code>\(X\)</code>, <code>\(M\)</code> und der Interaktion zwischen <code>\(X\)</code> und <code>\(M\)</code> auf.</p>
-<pre><code class="language-r">lm(Y ~ X * M, data=daten)
-</code></pre>
+<div id="moderation" class="section level2">
+<h2>Moderation</h2>
+<p>Bei einer <em>Moderation</em> wirkt die dritte Variable <span class="math inline">\(M\)</span> (<em>Moderator</em>) auf die Beziehung zwischen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span>.</p>
+<p><img src="../../post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenha%CC%88ngen_files/figure-html/Moderation-1.png" width="30%" style="display: block; margin: auto;" /></p>
+<p>Der Einfluss von <span class="math inline">\(M\)</span> ändert also den Effekt von <span class="math inline">\(X\)</span> auf <span class="math inline">\(Y\)</span>. Der Zusammenhang zwischen <span class="math inline">\(Y\)</span> und <span class="math inline">\(X\)</span> ist also je nach <span class="math inline">\(M\)</span> unterschiedlich.</p>
+<p>Statistisch gesehen liegt eine <em>Interaktion</em> zwischen <span class="math inline">\(M\)</span> und <span class="math inline">\(X\)</span> vor.</p>
+<div id="wie-untersucht-man-einen-zusammenhang-auf-eine-moderation" class="section level3">
+<h3>Wie untersucht man einen Zusammenhang auf eine Moderation?</h3>
+<p>Dazu stellen wir ein Regressionsmodell mit den drei Faktoren <span class="math inline">\(X\)</span>, <span class="math inline">\(M\)</span> und der Interaktion zwischen <span class="math inline">\(X\)</span> und <span class="math inline">\(M\)</span> auf.</p>
+<pre class="r"><code>lm(Y ~ X * M, data=daten)</code></pre>
 <p>Oder alternativ:</p>
-<pre><code class="language-r">lm(Y ~ X + M + M:X, data=daten)
-</code></pre>
-<p>Diese drei Faktoren wirken auf <code>\(Y\)</code>. Ist in diesem Modell die Interaktion <code>\(M:X\)</code> <em>signifikant</em>, so liegt eine (signifikante) <em>Moderation</em> vor.</p>
-<h2 id="mediation">Mediation</h2>
-<p>Bei der <em>Mediation</em> steht die Variable <code>\(M\)</code> (der <em>Mediator</em>) sowohl zu <code>\(X\)</code> als auch zu <code>\(Y\)</code> in Beziehung.
-Der direkte Effekt zwischen <code>\(X\)</code> und <code>\(Y\)</code> wird durch den indirekten Effekt über <code>\(M\)</code> erklärt, also durch
-<code>\(X \to  M \to Y\)</code>.</p>
-<p><img src="../../post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Mediator-1.png" width="30%" style="display: block; margin: auto;" /></p>
-<h3 id="wie-untersucht-man-auf-eine-mediation">Wie untersucht man auf eine Mediation?</h3>
+<pre class="r"><code>lm(Y ~ X + M + M:X, data=daten)</code></pre>
+<p>Diese drei Faktoren wirken auf <span class="math inline">\(Y\)</span>. Ist in diesem Modell die Interaktion <span class="math inline">\(M:X\)</span> <em>signifikant</em>, so liegt eine (signifikante) <em>Moderation</em> vor.</p>
+</div>
+</div>
+<div id="mediation" class="section level2">
+<h2>Mediation</h2>
+<p>Bei der <em>Mediation</em> steht die Variable <span class="math inline">\(M\)</span> (der <em>Mediator</em>) sowohl zu <span class="math inline">\(X\)</span> als auch zu <span class="math inline">\(Y\)</span> in Beziehung.
+Der direkte Effekt zwischen <span class="math inline">\(X\)</span> und <span class="math inline">\(Y\)</span> wird durch den indirekten Effekt über <span class="math inline">\(M\)</span> erklärt, also durch
+<span class="math inline">\(X \to M \to Y\)</span>.</p>
+<p><img src="../../post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenha%CC%88ngen_files/figure-html/Mediator-1.png" width="30%" style="display: block; margin: auto;" /></p>
+<div id="wie-untersucht-man-auf-eine-mediation" class="section level3">
+<h3>Wie untersucht man auf eine Mediation?</h3>
 <p>In diesem Fall stellen wir mehrere Regressionsmodelle auf. Eine (signifikante) Mediation liegt dann vor, wenn die folgenden Bedinungen erfüllt sind:</p>
-<pre><code class="language-r">erstesModell &lt;- lm(Y ~ X, data=daten)
+<pre class="r"><code>erstesModell &lt;- lm(Y ~ X, data=daten)
 zweitesModell &lt;- lm(M ~ X, data=daten)
-drittesModell &lt;- lm(Y ~ X + M, data=daten)
-</code></pre>
-<ol>
-<li>
-<p>Im ersten Modell ($X \to Y$) ist der Regressionskoeffizient von <code>\(X\)</code> signifikant.</p>
-</li>
-<li>
-<p>Im zweiten Modell ($X \to M$) ist der Regressionskoeffizient von <code>\(X\)</code> signifikant.</p>
-</li>
-<li>
-<p>Im dritten Modell ($X,M \to Y$) ist der Regressionskoeffizient von <code>\(M\)</code> signifikant und</p>
-</li>
-<li>
-<p>der Regressionskoeffizient von <code>\(X\)</code> im dritten Modell kleiner als im ersten Modell.</p>
-</li>
+drittesModell &lt;- lm(Y ~ X + M, data=daten)</code></pre>
+<ol style="list-style-type: decimal">
+<li><p>Im ersten Modell (<span class="math inline">\(X \to Y\)</span>) ist der Regressionskoeffizient von <span class="math inline">\(X\)</span> signifikant.</p></li>
+<li><p>Im zweiten Modell (<span class="math inline">\(X \to M\)</span>) ist der Regressionskoeffizient von <span class="math inline">\(X\)</span> signifikant.</p></li>
+<li><p>Im dritten Modell (<span class="math inline">\(X,M \to Y\)</span>) ist der Regressionskoeffizient von <span class="math inline">\(M\)</span> signifikant und</p></li>
+<li><p>der Regressionskoeffizient von <span class="math inline">\(X\)</span> im dritten Modell kleiner als im ersten Modell.</p></li>
 </ol>
+</div>
+</div>
 
     </div>
 

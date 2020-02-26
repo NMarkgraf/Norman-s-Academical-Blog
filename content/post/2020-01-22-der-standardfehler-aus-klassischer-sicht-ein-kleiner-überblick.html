@@ -1,86 +1,89 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Standardfehler | Norman&#39;s Academic Blog</title>
-    <link>/tags/standardfehler/</link>
-      <atom:link href="/tags/standardfehler/index.xml" rel="self" type="application/rss+xml" />
-    <description>Standardfehler</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>/img/icon-192.png</url>
-      <title>Standardfehler</title>
-      <link>/tags/standardfehler/</link>
-    </image>
-    
-    <item>
-      <title>Der Standardfehler aus klassischer Sicht - Ein kleiner Überblick</title>
-      <link>/post/der-standardfehler-aus-klassischer-sicht-ein-kleiner-%C3%BCberblick/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/post/der-standardfehler-aus-klassischer-sicht-ein-kleiner-%C3%BCberblick/</guid>
-      <description>
-&lt;script src=&#34;2020-01-22-der-standardfehler-aus-klassischer-sicht-ein-kleiner-überblick_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+---
+title: Der Standardfehler aus klassischer Sicht - Ein kleiner Überblick
+author: admin
+date: '2020-01-22'
+slug: der-standardfehler-aus-klassischer-sicht-ein-kleiner-überblick
+categories:
+    - Statitisches
+tags:
+    - Standardfehler
+    - Statistik
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-01-22T16:08:04+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+draft: true
+---
+
+<script src="2020-01-22-der-standardfehler-aus-klassischer-sicht-ein-kleiner-überblick_files/header-attrs/header-attrs.js"></script>
 
 
-&lt;p&gt;Der &lt;strong&gt;Standardfehler&lt;/strong&gt; ist ein &lt;em&gt;Steuungsmaß&lt;/em&gt; für eine Schätzfunktion &lt;span class=&#34;math inline&#34;&gt;\(\hat{\vartheta}\)&lt;/span&gt; für einen unbekannten Parameter &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; der Grundgesamtheit. Er ist definiert als
-&lt;span class=&#34;math display&#34;&gt;\[\sigma(\hat{\vartheta}) = + \sqrt{\operatorname{Var}(\hat{\vartheta})}.\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Bei einem erwartungstreuen Schätzer ist daher der Standardfehler ein Maß für die durchschnittliche Abweichung des geschätzten Parameterwertes vom wahren Parameterwert. Je kleiner der Standardfehler ist, desto genauer kann der unbekannte Parameter mit Hilfe der Schätzfunktion geschätzt werden.&lt;/p&gt;
-&lt;p&gt;Für eine Stichprobe vom Umfang &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; mit Standardabweichung &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; gilt für den Standardfehler:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;des &lt;strong&gt;Stichprobenmittel&lt;/strong&gt;: &lt;span class=&#34;math inline&#34;&gt;\(\sigma(\overline{X}) = \frac{\sigma}{\sqrt{n}}\)&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Unterstellt man eine Stichprobenverteilung, so kann der Standardfehler anhand der Varianz der Stichprobenverteilung berechnet werden:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Binomialverteilung&lt;/strong&gt; mit Parametern &lt;span class=&#34;math inline&#34;&gt;\(N,\, p\)&lt;/span&gt;: &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\bar x,\mathrm{binom}} = \frac{\sqrt{ N \cdot p \cdot (1-p)}}{\sqrt n}\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Exponentialverteilung&lt;/strong&gt; mit Parameter &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt; (Erwartungswert = Standardabweichung = &lt;span class=&#34;math inline&#34;&gt;\(1/\lambda\)&lt;/span&gt;): &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\bar x,\mathrm{exp}} = \frac{1}{\lambda\sqrt n}\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Poisson-Verteilung&lt;/strong&gt; mit Parameter &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt; (Erwartungswert = Varianz = &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;): &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\bar x,\mathrm{poisson}} = \sqrt{\frac{\lambda}{n}}\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id=&#34;beispiel-binomialverteile-stichprobe&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Beispiel: Binomialverteile Stichprobe&lt;/h2&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;printAllSE.binom &amp;lt;- function(n, N, prob, bootstrapN=1000, theta=mean) {
-  stipro &amp;lt;- rbinom(n, N, prob)
-  bootvert &amp;lt;- do(bootstrapN) * theta(resample(stipro))
-  se.boot &amp;lt;- sd(bootvert$theta)
-  se.exakt &amp;lt;- sqrt(N*prop*(1-prop))/sqrt(n)
-  se &amp;lt;- list(se.exakt, se.boot)
-  names(se) &amp;lt;- c(&amp;quot;exakt&amp;quot;, &amp;quot;boot&amp;quot;)
+<p>Der <strong>Standardfehler</strong> ist ein <em>Steuungsmaß</em> für eine Schätzfunktion <span class="math inline">\(\hat{\vartheta}\)</span> für einen unbekannten Parameter <span class="math inline">\(\vartheta\)</span> der Grundgesamtheit. Er ist definiert als
+<span class="math display">\[\sigma(\hat{\vartheta}) = + \sqrt{\operatorname{Var}(\hat{\vartheta})}.\]</span></p>
+<p>Bei einem erwartungstreuen Schätzer ist daher der Standardfehler ein Maß für die durchschnittliche Abweichung des geschätzten Parameterwertes vom wahren Parameterwert. Je kleiner der Standardfehler ist, desto genauer kann der unbekannte Parameter mit Hilfe der Schätzfunktion geschätzt werden.</p>
+<p>Für eine Stichprobe vom Umfang <span class="math inline">\(n\)</span> mit Standardabweichung <span class="math inline">\(\sigma\)</span> gilt für den Standardfehler:</p>
+<ul>
+<li>des <strong>Stichprobenmittel</strong>: <span class="math inline">\(\sigma(\overline{X}) = \frac{\sigma}{\sqrt{n}}\)</span></li>
+</ul>
+<p>Unterstellt man eine Stichprobenverteilung, so kann der Standardfehler anhand der Varianz der Stichprobenverteilung berechnet werden:</p>
+<ul>
+<li><p><strong>Binomialverteilung</strong> mit Parametern <span class="math inline">\(N,\, p\)</span>: <span class="math inline">\(\sigma_{\bar x,\mathrm{binom}} = \frac{\sqrt{ N \cdot p \cdot (1-p)}}{\sqrt n}\)</span></p></li>
+<li><p><strong>Exponentialverteilung</strong> mit Parameter <span class="math inline">\(\lambda\)</span> (Erwartungswert = Standardabweichung = <span class="math inline">\(1/\lambda\)</span>): <span class="math inline">\(\sigma_{\bar x,\mathrm{exp}} = \frac{1}{\lambda\sqrt n}\)</span></p></li>
+<li><p><strong>Poisson-Verteilung</strong> mit Parameter <span class="math inline">\(\lambda\)</span> (Erwartungswert = Varianz = <span class="math inline">\(\lambda\)</span>): <span class="math inline">\(\sigma_{\bar x,\mathrm{poisson}} = \sqrt{\frac{\lambda}{n}}\)</span></p></li>
+</ul>
+<div id="beispiel-binomialverteile-stichprobe" class="section level2">
+<h2>Beispiel: Binomialverteile Stichprobe</h2>
+<pre class="r"><code>printAllSE.binom &lt;- function(n, N, prob, bootstrapN=1000, theta=mean) {
+  stipro &lt;- rbinom(n, N, prob)
+  bootvert &lt;- do(bootstrapN) * theta(resample(stipro))
+  se.boot &lt;- sd(bootvert$theta)
+  se.exakt &lt;- sqrt(N*prop*(1-prop))/sqrt(n)
+  se &lt;- list(se.exakt, se.boot)
+  names(se) &lt;- c(&quot;exakt&quot;, &quot;boot&quot;)
   return(se)
 }
 
-printAllSE.poision &amp;lt;- function(n, lambda, bootstrapN=1000, theta=mean) {
-  stipro &amp;lt;- rpois(n, lambda)
-  bootvert &amp;lt;- do(bootstrapN) * theta(resample(stipro))
-  se.boot &amp;lt;- sd(bootvert$theta)
-  se.exakt &amp;lt;- sqrt(lambda/n)
-  se &amp;lt;- list(se.exakt, se.boot)
-  names(se) &amp;lt;- c(&amp;quot;exakt&amp;quot;, &amp;quot;boot&amp;quot;)
+printAllSE.poision &lt;- function(n, lambda, bootstrapN=1000, theta=mean) {
+  stipro &lt;- rpois(n, lambda)
+  bootvert &lt;- do(bootstrapN) * theta(resample(stipro))
+  se.boot &lt;- sd(bootvert$theta)
+  se.exakt &lt;- sqrt(lambda/n)
+  se &lt;- list(se.exakt, se.boot)
+  names(se) &lt;- c(&quot;exakt&quot;, &quot;boot&quot;)
   return(se)
 }
 
-printAllSE.normal &amp;lt;- function(n, mu=0, sigma=1, bootstrapN=1000, theta=mean) {
-  stipro &amp;lt;- rnorm(n, mu, sigma)
-  bootvert &amp;lt;- do(bootstrapN) * theta(resample(stipro))
-  se.boot &amp;lt;- sd(bootvert$theta)
-  se.exakt &amp;lt;- sqrt(sigma^2/n)
-  se.geschaetzt &amp;lt;- sqrt(var(stipro)/n)
-  se &amp;lt;- list(se.exakt, se.boot, se.geschaetzt)
-  names(se) &amp;lt;- c(&amp;quot;exakt&amp;quot;, &amp;quot;boot&amp;quot;, &amp;quot;geschaetzt&amp;quot;)
+printAllSE.normal &lt;- function(n, mu=0, sigma=1, bootstrapN=1000, theta=mean) {
+  stipro &lt;- rnorm(n, mu, sigma)
+  bootvert &lt;- do(bootstrapN) * theta(resample(stipro))
+  se.boot &lt;- sd(bootvert$theta)
+  se.exakt &lt;- sqrt(sigma^2/n)
+  se.geschaetzt &lt;- sqrt(var(stipro)/n)
+  se &lt;- list(se.exakt, se.boot, se.geschaetzt)
+  names(se) &lt;- c(&quot;exakt&quot;, &quot;boot&quot;, &quot;geschaetzt&quot;)
   return(se)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;n &amp;lt;- 100
-N &amp;lt;- 70
-prop &amp;lt;- 0.9
+}</code></pre>
+<pre class="r"><code>n &lt;- 100
+N &lt;- 70
+prop &lt;- 0.9
 
 # Binomialverteilte:
 for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
-  cat(&amp;quot;\nn=&amp;quot;, n, &amp;quot;\n&amp;quot;)
+  cat(&quot;\nn=&quot;, n, &quot;\n&quot;)
   for(prob in c(1/2, 1/3, 1/4, 1/5, 1/6)) {
-    N &amp;lt;- floor(prob*n)
-    cat(&amp;quot;N=&amp;quot;,N, &amp;quot;\n&amp;quot;)    
-    tmp &amp;lt;- printAllSE.binom(n , N, prob)
-    cat(prob,&amp;quot;: &amp;quot;, tmp$exakt, &amp;quot; (exakt), &amp;quot;, tmp$boot, &amp;quot; (boot), &amp;quot;, abs(tmp$exakt-tmp$boot), &amp;quot; (abs. Fehler) \n&amp;quot;)
+    N &lt;- floor(prob*n)
+    cat(&quot;N=&quot;,N, &quot;\n&quot;)    
+    tmp &lt;- printAllSE.binom(n , N, prob)
+    cat(prob,&quot;: &quot;, tmp$exakt, &quot; (exakt), &quot;, tmp$boot, &quot; (boot), &quot;, abs(tmp$exakt-tmp$boot), &quot; (abs. Fehler) \n&quot;)
   }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
+}</code></pre>
+<pre><code>## 
 ## n= 30 
 ## N= 15 
 ## 0.5 :  0.212132  (exakt),  0.2996921  (boot),  0.08756008  (abs. Fehler) 
@@ -163,17 +166,17 @@ for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
 ## N= 600 
 ## 0.2 :  0.1341641  (exakt),  0.1791849  (boot),  0.04502081  (abs. Fehler) 
 ## N= 500 
-## 0.1666667 :  0.1224745  (exakt),  0.1466177  (boot),  0.02414318  (abs. Fehler)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# 
+## 0.1666667 :  0.1224745  (exakt),  0.1466177  (boot),  0.02414318  (abs. Fehler)</code></pre>
+<pre class="r"><code># 
 # Poisionverteilte:
 for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
-  cat(&amp;quot;\nn=&amp;quot;, n, &amp;quot;\n&amp;quot;)
+  cat(&quot;\nn=&quot;, n, &quot;\n&quot;)
   for(lambda in c(1/2,1/3, 1/4, 1/5, 1/6)) {
-    tmp &amp;lt;- printAllSE.poision(n, lambda)
-    cat(lambda,&amp;quot;: &amp;quot;, tmp$exakt, &amp;quot; (exakt), &amp;quot;, tmp$boot, &amp;quot; (boot), &amp;quot;, abs(tmp$exakt-tmp$boot), &amp;quot; (abs. Fehler) \n&amp;quot;)
+    tmp &lt;- printAllSE.poision(n, lambda)
+    cat(lambda,&quot;: &quot;, tmp$exakt, &quot; (exakt), &quot;, tmp$boot, &quot; (boot), &quot;, abs(tmp$exakt-tmp$boot), &quot; (abs. Fehler) \n&quot;)
   }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
+}</code></pre>
+<pre><code>## 
 ## n= 30 
 ## 0.5 :  0.1290994  (exakt),  0.1243969  (boot),  0.004702575  (abs. Fehler) 
 ## 0.3333333 :  0.1054093  (exakt),  0.1002588  (boot),  0.005150442  (abs. Fehler) 
@@ -221,12 +224,12 @@ for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
 ## 0.3333333 :  0.01054093  (exakt),  0.01085993  (boot),  0.000319002  (abs. Fehler) 
 ## 0.25 :  0.009128709  (exakt),  0.008925436  (boot),  0.0002032728  (abs. Fehler) 
 ## 0.2 :  0.008164966  (exakt),  0.008679877  (boot),  0.0005149115  (abs. Fehler) 
-## 0.1666667 :  0.00745356  (exakt),  0.007160364  (boot),  0.0002931957  (abs. Fehler)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
-  tmp &amp;lt;- printAllSE.normal(n)
-  cat(&amp;quot;\nn=&amp;quot;, n, &amp;quot;: &amp;quot;, tmp$exakt, &amp;quot; (exakt), &amp;quot;, tmp$boot, &amp;quot; (boot), &amp;quot;, tmp$geschaetzt, &amp;quot;(geschätzt), &amp;quot;, abs(tmp$exakt-tmp$boot), &amp;quot; (abs. Fehler (boot))&amp;quot;, abs(tmp$exakt-tmp$geschaetzt),&amp;quot;(abs. Fehler (geschätzt)) \n&amp;quot;)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
+## 0.1666667 :  0.00745356  (exakt),  0.007160364  (boot),  0.0002931957  (abs. Fehler)</code></pre>
+<pre class="r"><code>for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
+  tmp &lt;- printAllSE.normal(n)
+  cat(&quot;\nn=&quot;, n, &quot;: &quot;, tmp$exakt, &quot; (exakt), &quot;, tmp$boot, &quot; (boot), &quot;, tmp$geschaetzt, &quot;(geschätzt), &quot;, abs(tmp$exakt-tmp$boot), &quot; (abs. Fehler (boot))&quot;, abs(tmp$exakt-tmp$geschaetzt),&quot;(abs. Fehler (geschätzt)) \n&quot;)
+}</code></pre>
+<pre><code>## 
 ## n= 30 :  0.1825742  (exakt),  0.1835327  (boot),  0.1860335 (geschätzt),  0.0009585326  (abs. Fehler (boot)) 0.003459307 (abs. Fehler (geschätzt)) 
 ## 
 ## n= 50 :  0.1414214  (exakt),  0.1371073  (boot),  0.1374232 (geschätzt),  0.004314035  (abs. Fehler (boot)) 0.003998187 (abs. Fehler (geschätzt)) 
@@ -239,10 +242,5 @@ for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
 ## 
 ## n= 1000 :  0.03162278  (exakt),  0.03126506  (boot),  0.03133075 (geschätzt),  0.000357721  (abs. Fehler (boot)) 0.0002920245 (abs. Fehler (geschätzt)) 
 ## 
-## n= 3000 :  0.01825742  (exakt),  0.01858404  (boot),  0.01852834 (geschätzt),  0.0003266222  (abs. Fehler (boot)) 0.0002709226 (abs. Fehler (geschätzt))&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-  </channel>
-</rss>
+## n= 3000 :  0.01825742  (exakt),  0.01858404  (boot),  0.01852834 (geschätzt),  0.0003266222  (abs. Fehler (boot)) 0.0002709226 (abs. Fehler (geschätzt))</code></pre>
+</div>

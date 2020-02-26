@@ -17,97 +17,102 @@
       <link>/post/eine-typische-frage-von-studierenden/</link>
       <pubDate>Wed, 12 Feb 2020 00:00:00 +0000</pubDate>
       <guid>/post/eine-typische-frage-von-studierenden/</guid>
-      <description>&lt;p&gt;Vor kurzem fand ich mal wieder eine Anfrage einer Studierenden in meinem Email Postfach. Die Frage lautete in etwa wie folgt:&lt;/p&gt;
+      <description>
+&lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Vor kurzem fand ich mal wieder eine Anfrage einer Studierenden in meinem Email Postfach. Die Frage lautete in etwa wie folgt:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Guten Tag Herr Markgraf,&lt;/p&gt;
 &lt;p&gt;ich würde gerne die Hypothese untersuchen: Die reduzierte Abhängigkeit des Iphones tagsüber liegt am schönen Wetter.
-Dazu habe ich eine Variable &amp;ldquo;iphones.tagsüber.unbeachtet&amp;rdquo; mit 1x, 2x und 3x täglich als Ausprägungen und eine andere Variable &amp;ldquo;wetter.ist.gut&amp;rdquo;, die als Ausprägung &amp;ldquo;Ja&amp;rdquo; und &amp;ldquo;Nein&amp;rdquo; hat.
+Dazu habe ich eine Variable “iphones.tagsüber.unbeachtet” mit 1x, 2x und 3x täglich als Ausprägungen und eine andere Variable “wetter.ist.gut”, die als Ausprägung “Ja” und “Nein” hat.
 Welchen Test kann ich dazu zur Überprüfung einer Abhängigkeit nehmen?&lt;/p&gt;
 &lt;p&gt;Vielen Dank im Voraus.&lt;/p&gt;
 &lt;p&gt;MfG Monika Mustermann&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Natürlich ist diese Frage im Prinzip einfach zu beantworten, sogar von Leuten, die Statistik an einer Hochschule gehört haben. &amp;ndash; Aber da ich ja auch sonst nichts zu tun habe gebe ich gerne statistische Hilfestellung für Studierende. Sicher verdiene ich damit eigentlich Geld, also ist es nur natürlich, dass ich so etwas volllkommen unendgeldlich mache. Und wieso sollten Studierende einfach mal ein Buch in die Hand nehmen und selber nachdenken? Es gibt vermutlich keine Bücher zu diesem Thema, denn es ist gar sicher eine Geheimwissenschaft. Und wieso sollte man dann also seine Betreuungsperson zu diesem Probem fragen? &amp;ndash; Egal.&lt;/p&gt;
-&lt;p&gt;Was haben wir hier vorliegen? &amp;ndash; Im einfachsten Fall sind es zwei kategoriale Variablen und wir wollen sehen ob diese von einenander (un-)Abhängig sind.
+&lt;p&gt;Natürlich ist diese Frage im Prinzip einfach zu beantworten, sogar von Leuten, die Statistik an einer Hochschule gehört haben. – Aber da ich ja auch sonst nichts zu tun habe gebe ich gerne statistische Hilfestellung für Studierende. Sicher verdiene ich damit eigentlich Geld, also ist es nur natürlich, dass ich so etwas volllkommen unendgeldlich mache. Und wieso sollten Studierende einfach mal ein Buch in die Hand nehmen und selber nachdenken? Es gibt vermutlich keine Bücher zu diesem Thema, denn es ist gar sicher eine Geheimwissenschaft. Und wieso sollte man dann also seine Betreuungsperson zu diesem Probem fragen? – Egal.&lt;/p&gt;
+&lt;p&gt;Was haben wir hier vorliegen? – Im einfachsten Fall sind es zwei kategoriale Variablen und wir wollen sehen ob diese von einenander (un-)Abhängig sind.
 Mangels tatsächlicher Daten basten wir uns einfach mal ein Beispiel:&lt;/p&gt;
-&lt;h3 id=&#34;wir-basten-uns-ein-beispiel&#34;&gt;Wir basten uns ein Beispiel&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(mosaic)
+&lt;div id=&#34;wir-basten-uns-ein-beispiel&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Wir basten uns ein Beispiel&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(mosaic)
 set.seed(123)
 n = 176
 daten &amp;lt;- data.frame(
   iphones.tagsüber.unbeachtet = sample(rep(c(&amp;quot;1xtäglich&amp;quot;,&amp;quot;2xtäglich&amp;quot;,&amp;quot;3xtäglich&amp;quot;),n),n),
   wetter.ist.gut = sample(rep(c(&amp;quot;Ja&amp;quot;,&amp;quot;Nein&amp;quot;),n),n)
 )
-head(daten)
-&lt;/code&gt;&lt;/pre&gt;
+head(daten)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   iphones.tagsüber.unbeachtet wetter.ist.gut
 ## 1                   1xtäglich             Ja
 ## 2                   1xtäglich           Nein
 ## 3                   2xtäglich             Ja
 ## 4                   3xtäglich           Nein
 ## 5                   1xtäglich             Ja
-## 6                   2xtäglich             Ja
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;ein-blick-auf-kennzahlen-und-visualisierungsmöglichkeiten&#34;&gt;Ein Blick auf Kennzahlen und Visualisierungsmöglichkeiten&lt;/h3&gt;
+## 6                   2xtäglich             Ja&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ein-blick-auf-kennzahlen-und-visualisierungsmöglichkeiten&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Ein Blick auf Kennzahlen und Visualisierungsmöglichkeiten&lt;/h3&gt;
 &lt;p&gt;Man kann diese Daten als Kreuztabelle zusammenfassen und diese dann mit Hilfe eines Mosaicplots darstellen:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tally(iphones.tagsüber.unbeachtet ~ wetter.ist.gut, data=daten)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tally(iphones.tagsüber.unbeachtet ~ wetter.ist.gut, data=daten)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##                            wetter.ist.gut
 ## iphones.tagsüber.unbeachtet Ja Nein
 ##                   1xtäglich 29   33
 ##                   2xtäglich 34   26
-##                   3xtäglich 27   27
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mosaicplot(wetter.ist.gut ~ iphones.tagsüber.unbeachtet, data=daten)
-&lt;/code&gt;&lt;/pre&gt;
+##                   3xtäglich 27   27&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mosaicplot(wetter.ist.gut ~ iphones.tagsüber.unbeachtet, data=daten)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../../post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;von-der-forschungsthese-zur-hypothese-teil-1&#34;&gt;Von der Forschungsthese zur Hypothese (Teil 1)&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div id=&#34;von-der-forschungsthese-zur-hypothese-teil-1&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Von der Forschungsthese zur Hypothese (Teil 1)&lt;/h3&gt;
 &lt;p&gt;Um nun zwischen abhänig und unabhängig statitisch zu unterscheiden, sollte man sich die Null- und Alternativhypothese genau überlegen und &lt;em&gt;operationalisieren&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Ein Blick auf die (orginal) Forschungsthese: &amp;ldquo;Die reduzierte Abhängigkeit des Iphones tagsüber liegt am schönen Wetter.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;Okay, wir formulieren etwas um: &amp;ldquo;Es besteht ein Zusammenhang zwischen &amp;lsquo;schönem Wetter&amp;rsquo; und dem &amp;lsquo;Iphone tagsüber unbeachtet&amp;rsquo; lassen.&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;Warum diese unterschiedliche Formulierung? &amp;ndash; Nun, in der orginal Forschungsthese wird ein kausal Zusammenhang geprüft. Da es sich vermutlich um eine Beobachtungstudie handelt können wir einen solchen Ursache-Wirkungs-Zusammenhang aber hier nicht so einfach (bis gar nicht) prüfen. Zwar kann man von außen sagen: &amp;ldquo;Wenn es einen Zusammenhang gibt, dann führt das schöne Wetter zur Nichtbeachtung.&amp;rdquo; statitisch können wir hier aber aktuell nur den Zusammenhang (und zwar ungerichtget!) testen. Liegt dieser &lt;strong&gt;nicht&lt;/strong&gt; vor, so spricht erstmal auch nichts für einen kausalen Zusammenhang, aber ein Zusammenhang an sich spricht noch nicht für einen kausalen Zusammenhang!&lt;/p&gt;
+&lt;p&gt;Ein Blick auf die (orginal) Forschungsthese: “Die reduzierte Abhängigkeit des Iphones tagsüber liegt am schönen Wetter.”&lt;/p&gt;
+&lt;p&gt;Okay, wir formulieren etwas um: “Es besteht ein Zusammenhang zwischen ‘schönem Wetter’ und dem ‘Iphone tagsüber unbeachtet’ lassen.”&lt;/p&gt;
+&lt;p&gt;Warum diese unterschiedliche Formulierung? – Nun, in der orginal Forschungsthese wird ein kausal Zusammenhang geprüft. Da es sich vermutlich um eine Beobachtungstudie handelt können wir einen solchen Ursache-Wirkungs-Zusammenhang aber hier nicht so einfach (bis gar nicht) prüfen. Zwar kann man von außen sagen: “Wenn es einen Zusammenhang gibt, dann führt das schöne Wetter zur Nichtbeachtung.” statitisch können wir hier aber aktuell nur den Zusammenhang (und zwar ungerichtget!) testen. Liegt dieser &lt;strong&gt;nicht&lt;/strong&gt; vor, so spricht erstmal auch nichts für einen kausalen Zusammenhang, aber ein Zusammenhang an sich spricht noch nicht für einen kausalen Zusammenhang!&lt;/p&gt;
 &lt;p&gt;Aus der umformulierten Forschungsfrage können wir die Alternativ- und auch die Nullhypothese ableiten:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Alternativhypothese:&lt;/strong&gt; Es besteht ein Zusammenhang zwischen &amp;lsquo;schönem Wetter&amp;rsquo; und dem &amp;lsquo;Iphone tagsüber unbeachtet&amp;rsquo; lassen.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Nullhypothese:&lt;/strong&gt; Es besteht &lt;strong&gt;kein&lt;/strong&gt; Zusammenhang zwischen &amp;lsquo;schönem Wetter&amp;rsquo; und dem &amp;lsquo;Iphone tagsüber unbeachtet&amp;rsquo; lassen.&lt;/p&gt;
-&lt;h2 id=&#34;wie-kann-man-nun-den-zusammenhang-messen-und-wie-sieht-kein-zusammenhang-dabei-aus&#34;&gt;Wie kann man nun den Zusammenhang &lt;em&gt;messen&lt;/em&gt; und wie sieht &lt;em&gt;kein Zusammenhang&lt;/em&gt; dabei aus?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Alternativhypothese:&lt;/strong&gt; Es besteht ein Zusammenhang zwischen ‘schönem Wetter’ und dem ‘Iphone tagsüber unbeachtet’ lassen.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nullhypothese:&lt;/strong&gt; Es besteht &lt;strong&gt;kein&lt;/strong&gt; Zusammenhang zwischen ‘schönem Wetter’ und dem ‘Iphone tagsüber unbeachtet’ lassen.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;wie-kann-man-nun-den-zusammenhang-messen-und-wie-sieht-kein-zusammenhang-dabei-aus&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Wie kann man nun den Zusammenhang &lt;em&gt;messen&lt;/em&gt; und wie sieht &lt;em&gt;kein Zusammenhang&lt;/em&gt; dabei aus?&lt;/h2&gt;
 &lt;p&gt;Um zu sehen ob unsere Werte keinen Zusammenhang haben, also rein zufällig sind, oder es einen inneren Zusammenhang gibt müssen wir die äußeren von den inneren Häufigkeiten trennen.&lt;/p&gt;
 &lt;p&gt;Konkret heißt das, wir schauen uns an wie die Häufigkeiten oder auch Verteilung der einzelnen Variabeln ausssehen:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tally(~ wetter.ist.gut, data=daten)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tally(~ wetter.ist.gut, data=daten)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## wetter.ist.gut
 ##   Ja Nein 
-##   90   86
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tally(~ iphones.tagsüber.unbeachtet, data=daten)
-&lt;/code&gt;&lt;/pre&gt;
+##   90   86&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tally(~ iphones.tagsüber.unbeachtet, data=daten)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## iphones.tagsüber.unbeachtet
 ## 1xtäglich 2xtäglich 3xtäglich 
-##        62        60        54
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;freiheitsgrade&#34;&gt;Freiheitsgrade&lt;/h4&gt;
+##        62        60        54&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;freiheitsgrade&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Freiheitsgrade&lt;/h4&gt;
 &lt;p&gt;Die Werte innerhalb der Kreuztabelle oben werden im wesendlichen durch diese Werte bestimmt. Die außeren Werte sind also unsere Rahmenbedingungen. Dabei ist der Einfluss der sogenannten &lt;em&gt;Randhäufigkeiten&lt;/em&gt; (&lt;em&gt;Marginale Häufigkeit&lt;/em&gt;) nicht zu unterschätzen. Denn wenn wir diese als &lt;em&gt;fix&lt;/em&gt;/&lt;em&gt;gegeben&lt;/em&gt; ansehen, können wir nur mit den sechs Werten in der Mitte unserer Kreuztabelle &lt;em&gt;spielen&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Doch sind nicht alle sechs Werte wirklich frei. Denn um zum Beispiel die Summe 62 in der ersten Zeile zu erhalten haben wir ja die Summe von 29 und 33 gebildet.&lt;/p&gt;
 &lt;p&gt;Ist nun der Rand, also 62, fest, so kann ich die beiden Summanden nicht mehr frei wählen, denn&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$$62 = 29 + 33$$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[62 = 29 + 33\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;impliziert ja, dass ich allgemeiner
-&lt;code&gt;$$62 = x + y$$&lt;/code&gt;
+&lt;span class=&#34;math display&#34;&gt;\[62 = x + y\]&lt;/span&gt;
 habe und somit durch
-&lt;code&gt;$$x = 62 - y \qquad\text{ bzw. }\qquad y = 62 - x$$&lt;/code&gt;
-immer nur eine der Variabeln &lt;code&gt;\(x\)&lt;/code&gt; oder &lt;code&gt;\(y\)&lt;/code&gt; wirklich frei zu wählen ist.&lt;/p&gt;
+&lt;span class=&#34;math display&#34;&gt;\[x = 62 - y \qquad\text{ bzw. }\qquad y = 62 - x\]&lt;/span&gt;
+immer nur eine der Variabeln &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; oder &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; wirklich frei zu wählen ist.&lt;/p&gt;
 &lt;p&gt;Da dies für jede Zeile, aber auch für jede Spalte gilt, denn z.B. ist die Summe der ersten Spalte gegeben durch&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$$90 = 29 + 34 + 27,$$&lt;/code&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[90 = 29 + 34 + 27,\]&lt;/span&gt;
 sind von den sechs Werten in der Kreuztabelle in der Tat nur 2 Werte wirklich frei zu wählen.
-Wir haben also ein Problem mit &lt;em&gt;2 Freiheitsgraden&lt;/em&gt;, man schreibt das kurz mit &lt;code&gt;\(df=2\)&lt;/code&gt; (&lt;em&gt;df&lt;/em&gt; steht dabei für &lt;em&gt;degree of freedom&lt;/em&gt;).&lt;/p&gt;
-&lt;h3 id=&#34;unabhängigkeit-in-der-statistik&#34;&gt;Unabhängigkeit in der Statistik&lt;/h3&gt;
+Wir haben also ein Problem mit &lt;em&gt;2 Freiheitsgraden&lt;/em&gt;, man schreibt das kurz mit &lt;span class=&#34;math inline&#34;&gt;\(df=2\)&lt;/span&gt; (&lt;em&gt;df&lt;/em&gt; steht dabei für &lt;em&gt;degree of freedom&lt;/em&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;unabhängigkeit-in-der-statistik&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Unabhängigkeit in der Statistik&lt;/h3&gt;
 &lt;p&gt;Wir sagen in der Statistik, dass ein gemeinsames Ereignis unabhängig ist wenn sich das Ereignis als Produkt der beiden Einzelereignisse berechnen lässt.
-Seien &lt;code&gt;\(A\)&lt;/code&gt; und &lt;code&gt;\(B\)&lt;/code&gt; also zwei Ereignisse, dann gilt im Falle der Unabhängigkeit:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$$P(A \cap B) = P(A) \cdot P(B)$$&lt;/code&gt;&lt;/p&gt;
+Seien &lt;span class=&#34;math inline&#34;&gt;\(A\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(B\)&lt;/span&gt; also zwei Ereignisse, dann gilt im Falle der Unabhängigkeit:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[P(A \cap B) = P(A) \cdot P(B)\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Wir können diese Definition aus der Wahrscheinlichkeitstheorie an unser Problem adaptieren, in dem wir die Wahrscheinlichkeiten durch die relativen Häufigkeiten ersetzen.&lt;/p&gt;
-&lt;p&gt;Der Wert für das Ereignis &amp;ldquo;iphone.tagsüber.unbeachtet = 1xtäglich&lt;code&gt; und das&lt;/code&gt;wetter.ist.gut=ja` wird im Falle der Unabhägigkeit
+&lt;p&gt;Der Wert für das Ereignis &#34;iphone.tagsüber.unbeachtet = 1xtäglich&lt;code&gt;und das&lt;/code&gt;wetter.ist.gut=ja` wird im Falle der Unabhägigkeit
 durch die beiden Randhäufigkeiten bestimmt:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$$62 \cdot 90 = 31.7045455$$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[62 \cdot 90 = 31.7045455\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Wir können nun also eine Kreuztabelle erstellen, wie sie seien müsste, falls wir tatsächlich &lt;em&gt;statitische Unabhängigkeit&lt;/em&gt; hätten. Wir nutzen dafür eine sehr allgemein gehaltene Funktion &lt;code&gt;expectation.tab()&lt;/code&gt;, der wir eine Tabelle mit den Häufigkeiten der Beobachtungen geben und die uns dann die Tabelle liefert, wie sie aussehen würde, falls tatsächlich &lt;em&gt;statitische Unabhängigkeit&lt;/em&gt; heschen würde.
 Die Tabelle mit den beobchteten Werten speichern wir in &lt;code&gt;obs.tab&lt;/code&gt;, die der erwarteten Werte in &lt;code&gt;exp.tab&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;expectation.tab &amp;lt;- function(tab.obs) {
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;expectation.tab &amp;lt;- function(tab.obs) {
   max.i &amp;lt;- length(tab.obs[1,])
   max.j &amp;lt;- length(tab.obs[,1])
   
@@ -142,36 +147,32 @@ Die Tabelle mit den beobchteten Werten speichern wir in &lt;code&gt;obs.tab&lt;/
 }
 
 obs.tab &amp;lt;- tally(iphones.tagsüber.unbeachtet ~ wetter.ist.gut, data=daten)
-exp.tab &amp;lt;- expectation.tab(obs.tab)
-&lt;/code&gt;&lt;/pre&gt;
+exp.tab &amp;lt;- expectation.tab(obs.tab)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Schauen wir uns die beiden Tabellen kurz an. Zuerst die der beobachteten Werte:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;obs.tab
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;obs.tab&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##                            wetter.ist.gut
 ## iphones.tagsüber.unbeachtet Ja Nein
 ##                   1xtäglich 29   33
 ##                   2xtäglich 34   26
-##                   3xtäglich 27   27
-&lt;/code&gt;&lt;/pre&gt;
+##                   3xtäglich 27   27&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Dann die der erwarteten Werte:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;exp.tab
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;exp.tab&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##                 Ja     Nein
 ## 1xtäglich 31.70455 30.29545
 ## 2xtäglich 30.68182 29.31818
-## 3xtäglich 27.61364 26.38636
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;was-können-wir-nun-messen&#34;&gt;Was können wir nun messen?&lt;/h3&gt;
+## 3xtäglich 27.61364 26.38636&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;was-können-wir-nun-messen&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Was können wir nun messen?&lt;/h3&gt;
 &lt;p&gt;Unsicherheit und Zufall spielen eine große Rolle. Wir können also nicht erwarten, dass die Werte für die Kreuztabelle in der Realität genau getroffen werden. (Vorallem, weil wir hier ja mit Nachkommastellen arbeiten!) Aber wir können versuchen den Abstand zu diesen Werten zu messen. Je weiter weg die Werte in der Kreuztabelle von den theoretischen Werten liegen, um so unwarscheinlicher ist es, dass die Werte zufällig aus einer unabhängigen Population gezogen wurden. D.h. wir könnten uns für eine Abhägigkeit aussprechen.&lt;/p&gt;
-&lt;h4 id=&#34;messen-mit-dem-absolutabstand&#34;&gt;Messen mit dem Absolutabstand?&lt;/h4&gt;
+&lt;div id=&#34;messen-mit-dem-absolutabstand&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Messen mit dem Absolutabstand?&lt;/h4&gt;
 &lt;p&gt;Man könnte nun auf die Idee kommen die Abstände an jeder Stelle zu messen und den absoluten Abstand zu summieren:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sum(abs(obs.tab-exp.tab))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 13.27273
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Nur was sagt dieser Wert aus? &amp;ndash; Ist das ein kleiner Abstand oder ein großer?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sum(abs(obs.tab-exp.tab))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 13.27273&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nur was sagt dieser Wert aus? – Ist das ein kleiner Abstand oder ein großer?&lt;/p&gt;
 &lt;p&gt;Wir brauchen Referenzwerte zur Orientierung. Die Idee: &lt;strong&gt;Permutationstest&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Funktion zur Berechnung der absoluten Differenz zwischen
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Funktion zur Berechnung der absoluten Differenz zwischen
 # beobachteten und erwarteten Werte
 diffabsobsexp &amp;lt;- function(obs, exp) {
   return(sum(abs(obs-exp)))
@@ -183,17 +184,14 @@ obs.abs &amp;lt;- diffabsobsexp(obs.tab, exp.tab)
 # Erzeugen der Nullverteilung
 NullVert  &amp;lt;- do(1000) * diffabsobsexp(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
 gf_histogram(~ diffabsobsexp, data=NullVert) %&amp;gt;%
-  gf_vline(xintercept = ~ obs.abs, color=&amp;quot;red&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
+  gf_vline(xintercept = ~ obs.abs, color=&amp;quot;red&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../../post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Wir können nun den p-Wert abschätzen mit:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;prop( ~ diffabsobsexp &amp;gt;= obs.abs, data=NullVert)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;prop( ~ diffabsobsexp &amp;gt;= obs.abs, data=NullVert)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## prop_TRUE 
-##     0.559
-&lt;/code&gt;&lt;/pre&gt;
+##     0.559&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Doch haben wir alle Werte richtig bewertet? Wenn wir jeden einzelne Differenz noch durch den erwarteten Wert teilen erhalten wir:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Funktion zur Berechnung der korrigierten absoluten 
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Funktion zur Berechnung der korrigierten absoluten 
 # Differenz zwischen beobachteten und erwarteten Werten
 diffabsobsexpkor &amp;lt;- function(obs, exp) {
   return(sum((abs(obs-exp))/exp))
@@ -205,17 +203,14 @@ obs.abs &amp;lt;- diffabsobsexpkor(obs.tab, exp.tab)
 # Erzeugen der Nullverteilung
 NullVert  &amp;lt;- do(1000) * diffabsobsexpkor(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
 gf_histogram(~ diffabsobsexpkor, data=NullVert) %&amp;gt;%
-  gf_vline(xintercept = ~ obs.abs, color=&amp;quot;red&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
+  gf_vline(xintercept = ~ obs.abs, color=&amp;quot;red&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../../post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Wir können nun den p-Wert abschätzen mit:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;prop( ~ diffabsobsexpkor &amp;gt;= obs.abs, data=NullVert)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;prop( ~ diffabsobsexpkor &amp;gt;= obs.abs, data=NullVert)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## prop_TRUE 
-##     0.619
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Ist der absolute Abstand überhaupt gut gewählt? &amp;ndash; Wäre nicht eher der quadratische Abstand angebracht?&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Funktion zur Berechnung der quadratischen 
+##     0.619&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ist der absolute Abstand überhaupt gut gewählt? – Wäre nicht eher der quadratische Abstand angebracht?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Funktion zur Berechnung der quadratischen 
 # Differenz zwischen beobachteten und erwarteten Werten
 diffquad &amp;lt;- function(obs, exp) {
   return(sum((obs-exp)^2))
@@ -227,17 +222,14 @@ obs.abs &amp;lt;- diffquad(obs.tab, exp.tab)
 # Erzeugen der Nullverteilung
 NullVert  &amp;lt;- do(1000) * diffquad(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
 gf_histogram(~ diffquad, data=NullVert) %&amp;gt;%
-  gf_vline(xintercept = ~ obs.abs, color=&amp;quot;red&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
+  gf_vline(xintercept = ~ obs.abs, color=&amp;quot;red&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../../post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;
 Wir können nun den p-Wert abschätzen mit:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;prop( ~ diffquad &amp;gt;= obs.abs, data=NullVert)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;prop( ~ diffquad &amp;gt;= obs.abs, data=NullVert)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## prop_TRUE 
-##      0.52
-&lt;/code&gt;&lt;/pre&gt;
+##      0.52&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Wenn man nun den quadratischen Abstand noch durch die Erwartung teilt:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Funktion zur Berechnung der korrigierten quadratischen 
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Funktion zur Berechnung der korrigierten quadratischen 
 # Differenz zwischen beobachteten und erwarteten Werten
 diffquadkor &amp;lt;- function(obs, exp) {
   return(sum(((obs-exp)^2)/exp))
@@ -249,22 +241,21 @@ obs.abs &amp;lt;- diffquadkor(obs.tab, exp.tab)
 # Erzeugen der Nullverteilung
 NullVert  &amp;lt;- do(1000) * diffquadkor(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
 gf_histogram(~ diffquadkor, data=NullVert) %&amp;gt;%
-  gf_vline(xintercept = ~ obs.abs, color=&amp;quot;red&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
+  gf_vline(xintercept = ~ obs.abs, color=&amp;quot;red&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../../post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;672&#34; /&gt;
 Wir können nun den p-Wert abschätzen mit:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;prop( ~ diffquadkor &amp;gt;= obs.abs, data=NullVert)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;prop( ~ diffquadkor &amp;gt;= obs.abs, data=NullVert)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## prop_TRUE 
-##     0.571
-&lt;/code&gt;&lt;/pre&gt;
+##     0.571&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;An Hand der p-Werte können wir nun über die Nullhypothese entscheiden:&lt;/p&gt;
-&lt;h3 id=&#34;was-sagt-die-klassische-statistik&#34;&gt;Was sagt die klassische Statistik?&lt;/h3&gt;
-&lt;p&gt;In der klassischen Statistik könnte man hier den &lt;code&gt;\(\chi^2\)&lt;/code&gt;-Unabhängigkeitstest anwenden:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;xchisq.test(iphones.tagsüber.unbeachtet ~ wetter.ist.gut, data=daten)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;was-sagt-die-klassische-statistik&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Was sagt die klassische Statistik?&lt;/h3&gt;
+&lt;p&gt;In der klassischen Statistik könnte man hier den &lt;span class=&#34;math inline&#34;&gt;\(\chi^2\)&lt;/span&gt;-Unabhängigkeitstest anwenden:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;xchisq.test(iphones.tagsüber.unbeachtet ~ wetter.ist.gut, data=daten)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
-## 	Pearson&#39;s Chi-squared test
+##  Pearson&amp;#39;s Chi-squared test
 ## 
 ## data:  x
 ## X-squared = 1.2345, df = 2, p-value = 0.5394
@@ -285,29 +276,29 @@ Wir können nun den p-Wert abschätzen mit:&lt;/p&gt;
 ## &amp;lt;-0.12&amp;gt;  &amp;lt; 0.12&amp;gt; 
 ##    
 ## key:
-## 	observed
-## 	(expected)
-## 	[contribution to X-squared]
-## 	&amp;lt;Pearson residual&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+##  observed
+##  (expected)
+##  [contribution to X-squared]
+##  &amp;lt;Pearson residual&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Aber es gibt auch den (exakten) Fisher-Test:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;fisher.test(obs.tab, alternative = &amp;quot;greater&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fisher.test(obs.tab, alternative = &amp;quot;greater&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
-## 	Fisher&#39;s Exact Test for Count Data
+##  Fisher&amp;#39;s Exact Test for Count Data
 ## 
 ## data:  obs.tab
 ## p-value = 0.5609
-## alternative hypothesis: greater
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;fazit&#34;&gt;Fazit&lt;/h3&gt;
+## alternative hypothesis: greater&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;fazit&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Fazit&lt;/h3&gt;
 &lt;p&gt;Wir können die p-Werte der einzelnen Tests nun gegenüber stellen:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;##        abs. Abweichung   kor. abs. Abweichung      quadr. Abweichung 
 ##              0.5590000              0.6190000              0.5200000 
 ## kor. quadr. Abweichung        ChiQuadrat-Test            Fisher-Test 
-##              0.5710000              0.5394367              0.5609340
-&lt;/code&gt;&lt;/pre&gt;
+##              0.5710000              0.5394367              0.5609340&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Was die Entscheidung für oder gegen die Nullhypothese angeht, hat jeder dieser Test (in der Regel) die selbe Entscheidung als Konsequenz.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -399,27 +390,26 @@ d.h. man nimmt diejenigen Werte in das zu bestimmende Intervall auf, bei denen 2
       <link>/post/der-standardfehler-aus-klassischer-sicht-ein-kleiner-%C3%BCberblick/</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/post/der-standardfehler-aus-klassischer-sicht-ein-kleiner-%C3%BCberblick/</guid>
-      <description>&lt;p&gt;Der &lt;strong&gt;Standardfehler&lt;/strong&gt; ist ein &lt;em&gt;Steuungsmaß&lt;/em&gt; für eine Schätzfunktion &lt;code&gt;\(\hat{\vartheta}\)&lt;/code&gt; für einen unbekannten Parameter &lt;code&gt;\(\vartheta\)&lt;/code&gt; der Grundgesamtheit. Er ist definiert als
-&lt;code&gt;$$\sigma(\hat{\vartheta}) = + \sqrt{\operatorname{Var}(\hat{\vartheta})}.$$&lt;/code&gt;&lt;/p&gt;
+      <description>
+&lt;script src=&#34;2020-01-22-der-standardfehler-aus-klassischer-sicht-ein-kleiner-überblick_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Der &lt;strong&gt;Standardfehler&lt;/strong&gt; ist ein &lt;em&gt;Steuungsmaß&lt;/em&gt; für eine Schätzfunktion &lt;span class=&#34;math inline&#34;&gt;\(\hat{\vartheta}\)&lt;/span&gt; für einen unbekannten Parameter &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; der Grundgesamtheit. Er ist definiert als
+&lt;span class=&#34;math display&#34;&gt;\[\sigma(\hat{\vartheta}) = + \sqrt{\operatorname{Var}(\hat{\vartheta})}.\]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Bei einem erwartungstreuen Schätzer ist daher der Standardfehler ein Maß für die durchschnittliche Abweichung des geschätzten Parameterwertes vom wahren Parameterwert. Je kleiner der Standardfehler ist, desto genauer kann der unbekannte Parameter mit Hilfe der Schätzfunktion geschätzt werden.&lt;/p&gt;
-&lt;p&gt;Für eine Stichprobe vom Umfang &lt;code&gt;\(n\)&lt;/code&gt; mit Standardabweichung &lt;code&gt;\(\sigma\)&lt;/code&gt; gilt für den Standardfehler:&lt;/p&gt;
+&lt;p&gt;Für eine Stichprobe vom Umfang &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; mit Standardabweichung &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; gilt für den Standardfehler:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;des &lt;strong&gt;Stichprobenmittel&lt;/strong&gt;: &lt;code&gt;\(\sigma(\overline{X}) = \frac{\sigma}{\sqrt{n}}\)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;des &lt;strong&gt;Stichprobenmittel&lt;/strong&gt;: &lt;span class=&#34;math inline&#34;&gt;\(\sigma(\overline{X}) = \frac{\sigma}{\sqrt{n}}\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Unterstellt man eine Stichprobenverteilung, so kann der Standardfehler anhand der Varianz der Stichprobenverteilung berechnet werden:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Binomialverteilung&lt;/strong&gt; mit Parametern &lt;code&gt;\(N,\, p\)&lt;/code&gt;: &lt;code&gt;\(\sigma_{\bar x,\mathrm{binom}} = \frac{\sqrt{ N \cdot p \cdot (1-p)}}{\sqrt n}\)&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Exponentialverteilung&lt;/strong&gt; mit Parameter &lt;code&gt;\(\lambda\)&lt;/code&gt; (Erwartungswert = Standardabweichung = &lt;code&gt;\(1/\lambda\)&lt;/code&gt;): &lt;code&gt;\(\sigma_{\bar x,\mathrm{exp}} = \frac{1}{\lambda\sqrt n}\)&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Poisson-Verteilung&lt;/strong&gt; mit Parameter &lt;code&gt;\(\lambda\)&lt;/code&gt; (Erwartungswert = Varianz = &lt;code&gt;\(\lambda\)&lt;/code&gt;): &lt;code&gt;\(\sigma_{\bar x,\mathrm{poisson}} = \sqrt{\frac{\lambda}{n}}\)&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Binomialverteilung&lt;/strong&gt; mit Parametern &lt;span class=&#34;math inline&#34;&gt;\(N,\, p\)&lt;/span&gt;: &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\bar x,\mathrm{binom}} = \frac{\sqrt{ N \cdot p \cdot (1-p)}}{\sqrt n}\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Exponentialverteilung&lt;/strong&gt; mit Parameter &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt; (Erwartungswert = Standardabweichung = &lt;span class=&#34;math inline&#34;&gt;\(1/\lambda\)&lt;/span&gt;): &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\bar x,\mathrm{exp}} = \frac{1}{\lambda\sqrt n}\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Poisson-Verteilung&lt;/strong&gt; mit Parameter &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt; (Erwartungswert = Varianz = &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;): &lt;span class=&#34;math inline&#34;&gt;\(\sigma_{\bar x,\mathrm{poisson}} = \sqrt{\frac{\lambda}{n}}\)&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;beispiel-binomialverteile-stichprobe&#34;&gt;Beispiel: Binomialverteile Stichprobe&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;printAllSE.binom &amp;lt;- function(n, N, prob, bootstrapN=1000, theta=mean) {
+&lt;div id=&#34;beispiel-binomialverteile-stichprobe&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Beispiel: Binomialverteile Stichprobe&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;printAllSE.binom &amp;lt;- function(n, N, prob, bootstrapN=1000, theta=mean) {
   stipro &amp;lt;- rbinom(n, N, prob)
   bootvert &amp;lt;- do(bootstrapN) * theta(resample(stipro))
   se.boot &amp;lt;- sd(bootvert$theta)
@@ -448,9 +438,8 @@ printAllSE.normal &amp;lt;- function(n, mu=0, sigma=1, bootstrapN=1000, theta=me
   se &amp;lt;- list(se.exakt, se.boot, se.geschaetzt)
   names(se) &amp;lt;- c(&amp;quot;exakt&amp;quot;, &amp;quot;boot&amp;quot;, &amp;quot;geschaetzt&amp;quot;)
   return(se)
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;n &amp;lt;- 100
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;n &amp;lt;- 100
 N &amp;lt;- 70
 prop &amp;lt;- 0.9
 
@@ -463,8 +452,7 @@ for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
     tmp &amp;lt;- printAllSE.binom(n , N, prob)
     cat(prob,&amp;quot;: &amp;quot;, tmp$exakt, &amp;quot; (exakt), &amp;quot;, tmp$boot, &amp;quot; (boot), &amp;quot;, abs(tmp$exakt-tmp$boot), &amp;quot; (abs. Fehler) \n&amp;quot;)
   }
-}
-&lt;/code&gt;&lt;/pre&gt;
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ## n= 30 
 ## N= 15 
@@ -548,9 +536,8 @@ for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
 ## N= 600 
 ## 0.2 :  0.1341641  (exakt),  0.1791849  (boot),  0.04502081  (abs. Fehler) 
 ## N= 500 
-## 0.1666667 :  0.1224745  (exakt),  0.1466177  (boot),  0.02414318  (abs. Fehler)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# 
+## 0.1666667 :  0.1224745  (exakt),  0.1466177  (boot),  0.02414318  (abs. Fehler)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# 
 # Poisionverteilte:
 for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
   cat(&amp;quot;\nn=&amp;quot;, n, &amp;quot;\n&amp;quot;)
@@ -558,8 +545,7 @@ for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
     tmp &amp;lt;- printAllSE.poision(n, lambda)
     cat(lambda,&amp;quot;: &amp;quot;, tmp$exakt, &amp;quot; (exakt), &amp;quot;, tmp$boot, &amp;quot; (boot), &amp;quot;, abs(tmp$exakt-tmp$boot), &amp;quot; (abs. Fehler) \n&amp;quot;)
   }
-}
-&lt;/code&gt;&lt;/pre&gt;
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ## n= 30 
 ## 0.5 :  0.1290994  (exakt),  0.1243969  (boot),  0.004702575  (abs. Fehler) 
@@ -608,13 +594,11 @@ for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
 ## 0.3333333 :  0.01054093  (exakt),  0.01085993  (boot),  0.000319002  (abs. Fehler) 
 ## 0.25 :  0.009128709  (exakt),  0.008925436  (boot),  0.0002032728  (abs. Fehler) 
 ## 0.2 :  0.008164966  (exakt),  0.008679877  (boot),  0.0005149115  (abs. Fehler) 
-## 0.1666667 :  0.00745356  (exakt),  0.007160364  (boot),  0.0002931957  (abs. Fehler)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
+## 0.1666667 :  0.00745356  (exakt),  0.007160364  (boot),  0.0002931957  (abs. Fehler)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
   tmp &amp;lt;- printAllSE.normal(n)
   cat(&amp;quot;\nn=&amp;quot;, n, &amp;quot;: &amp;quot;, tmp$exakt, &amp;quot; (exakt), &amp;quot;, tmp$boot, &amp;quot; (boot), &amp;quot;, tmp$geschaetzt, &amp;quot;(geschätzt), &amp;quot;, abs(tmp$exakt-tmp$boot), &amp;quot; (abs. Fehler (boot))&amp;quot;, abs(tmp$exakt-tmp$geschaetzt),&amp;quot;(abs. Fehler (geschätzt)) \n&amp;quot;)
-}
-&lt;/code&gt;&lt;/pre&gt;
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ## n= 30 :  0.1825742  (exakt),  0.1835327  (boot),  0.1860335 (geschätzt),  0.0009585326  (abs. Fehler (boot)) 0.003459307 (abs. Fehler (geschätzt)) 
 ## 
@@ -628,8 +612,8 @@ for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
 ## 
 ## n= 1000 :  0.03162278  (exakt),  0.03126506  (boot),  0.03133075 (geschätzt),  0.000357721  (abs. Fehler (boot)) 0.0002920245 (abs. Fehler (geschätzt)) 
 ## 
-## n= 3000 :  0.01825742  (exakt),  0.01858404  (boot),  0.01852834 (geschätzt),  0.0003266222  (abs. Fehler (boot)) 0.0002709226 (abs. Fehler (geschätzt))
-&lt;/code&gt;&lt;/pre&gt;
+## n= 3000 :  0.01825742  (exakt),  0.01858404  (boot),  0.01852834 (geschätzt),  0.0003266222  (abs. Fehler (boot)) 0.0002709226 (abs. Fehler (geschätzt))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -638,49 +622,50 @@ for(n in c(30, 50, 100, 200, 500, 1000, 3000)) {
       <link>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhaengen/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       <guid>/post/moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhaengen/</guid>
-      <description>&lt;p&gt;Bei der Analyse von Zusammenhängen tauchen sowohl &lt;em&gt;Moderation&lt;/em&gt; als auch &lt;em&gt;Mediation&lt;/em&gt; auf. Es geht um Zusammenhänge zwischen drei Variablen &lt;code&gt;\(X\)&lt;/code&gt;, &lt;code&gt;\(Y\)&lt;/code&gt; und &lt;code&gt;\(M\)&lt;/code&gt;.
-Untersucht wird der Effekt einer unabhägigen Variable &lt;code&gt;\(X\)&lt;/code&gt; (&lt;em&gt;Prädiktor&lt;/em&gt;, &lt;em&gt;UV&lt;/em&gt;) auf ein abhängige Variable &lt;code&gt;\(Y\)&lt;/code&gt; (&lt;em&gt;AV&lt;/em&gt;).
-Wir untersuchen dies mit einem Regressionsmodell &lt;code&gt;\(Y \sim X\)&lt;/code&gt;.
-Dabei wird zusätzlich eine dritte Variable &lt;code&gt;\(M\)&lt;/code&gt; berücksichtigt, die man entweder der &lt;em&gt;Moderator&lt;/em&gt; oder &lt;em&gt;Mediator&lt;/em&gt; nennt.&lt;/p&gt;
+      <description>
+&lt;script src=&#34;2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Bei der Analyse von Zusammenhängen tauchen sowohl &lt;em&gt;Moderation&lt;/em&gt; als auch &lt;em&gt;Mediation&lt;/em&gt; auf. Es geht um Zusammenhänge zwischen drei Variablen &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt;.
+Untersucht wird der Effekt einer unabhägigen Variable &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; (&lt;em&gt;Prädiktor&lt;/em&gt;, &lt;em&gt;UV&lt;/em&gt;) auf ein abhängige Variable &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; (&lt;em&gt;AV&lt;/em&gt;).
+Wir untersuchen dies mit einem Regressionsmodell &lt;span class=&#34;math inline&#34;&gt;\(Y \sim X\)&lt;/span&gt;.
+Dabei wird zusätzlich eine dritte Variable &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; berücksichtigt, die man entweder der &lt;em&gt;Moderator&lt;/em&gt; oder &lt;em&gt;Mediator&lt;/em&gt; nennt.&lt;/p&gt;
 &lt;p&gt;Ist die abhängige Variable metrisch, so können wir mittels eine linearer Regression vorgehen, ist die AB dagegen dichotom, so nutzen wir eine logistische Regression.&lt;/p&gt;
-&lt;h2 id=&#34;moderation&#34;&gt;Moderation&lt;/h2&gt;
-&lt;p&gt;Bei einer &lt;em&gt;Moderation&lt;/em&gt; wirkt die dritte Variable &lt;code&gt;\(M\)&lt;/code&gt; (&lt;em&gt;Moderator&lt;/em&gt;) auf die Beziehung zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(Y\)&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Moderation-1.png&#34; width=&#34;30%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Der Einfluss von &lt;code&gt;\(M\)&lt;/code&gt; ändert also den Effekt von &lt;code&gt;\(X\)&lt;/code&gt; auf &lt;code&gt;\(Y\)&lt;/code&gt;. Der Zusammenhang zwischen &lt;code&gt;\(Y\)&lt;/code&gt; und &lt;code&gt;\(X\)&lt;/code&gt; ist also je nach &lt;code&gt;\(M\)&lt;/code&gt; unterschiedlich.&lt;/p&gt;
-&lt;p&gt;Statistisch gesehen liegt eine &lt;em&gt;Interaktion&lt;/em&gt; zwischen &lt;code&gt;\(M\)&lt;/code&gt; und &lt;code&gt;\(X\)&lt;/code&gt; vor.&lt;/p&gt;
-&lt;h3 id=&#34;wie-untersucht-man-einen-zusammenhang-auf-eine-moderation&#34;&gt;Wie untersucht man einen Zusammenhang auf eine Moderation?&lt;/h3&gt;
-&lt;p&gt;Dazu stellen wir ein Regressionsmodell mit den drei Faktoren &lt;code&gt;\(X\)&lt;/code&gt;, &lt;code&gt;\(M\)&lt;/code&gt; und der Interaktion zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(M\)&lt;/code&gt; auf.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lm(Y ~ X * M, data=daten)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;moderation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Moderation&lt;/h2&gt;
+&lt;p&gt;Bei einer &lt;em&gt;Moderation&lt;/em&gt; wirkt die dritte Variable &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; (&lt;em&gt;Moderator&lt;/em&gt;) auf die Beziehung zwischen &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenha%CC%88ngen_files/figure-html/Moderation-1.png&#34; width=&#34;30%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Der Einfluss von &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; ändert also den Effekt von &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; auf &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;. Der Zusammenhang zwischen &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; ist also je nach &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; unterschiedlich.&lt;/p&gt;
+&lt;p&gt;Statistisch gesehen liegt eine &lt;em&gt;Interaktion&lt;/em&gt; zwischen &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; vor.&lt;/p&gt;
+&lt;div id=&#34;wie-untersucht-man-einen-zusammenhang-auf-eine-moderation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Wie untersucht man einen Zusammenhang auf eine Moderation?&lt;/h3&gt;
+&lt;p&gt;Dazu stellen wir ein Regressionsmodell mit den drei Faktoren &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; und der Interaktion zwischen &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; auf.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lm(Y ~ X * M, data=daten)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Oder alternativ:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;lm(Y ~ X + M + M:X, data=daten)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Diese drei Faktoren wirken auf &lt;code&gt;\(Y\)&lt;/code&gt;. Ist in diesem Modell die Interaktion &lt;code&gt;\(M:X\)&lt;/code&gt; &lt;em&gt;signifikant&lt;/em&gt;, so liegt eine (signifikante) &lt;em&gt;Moderation&lt;/em&gt; vor.&lt;/p&gt;
-&lt;h2 id=&#34;mediation&#34;&gt;Mediation&lt;/h2&gt;
-&lt;p&gt;Bei der &lt;em&gt;Mediation&lt;/em&gt; steht die Variable &lt;code&gt;\(M\)&lt;/code&gt; (der &lt;em&gt;Mediator&lt;/em&gt;) sowohl zu &lt;code&gt;\(X\)&lt;/code&gt; als auch zu &lt;code&gt;\(Y\)&lt;/code&gt; in Beziehung.
-Der direkte Effekt zwischen &lt;code&gt;\(X\)&lt;/code&gt; und &lt;code&gt;\(Y\)&lt;/code&gt; wird durch den indirekten Effekt über &lt;code&gt;\(M\)&lt;/code&gt; erklärt, also durch
-&lt;code&gt;\(X \to  M \to Y\)&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Mediator-1.png&#34; width=&#34;30%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
-&lt;h3 id=&#34;wie-untersucht-man-auf-eine-mediation&#34;&gt;Wie untersucht man auf eine Mediation?&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lm(Y ~ X + M + M:X, data=daten)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Diese drei Faktoren wirken auf &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt;. Ist in diesem Modell die Interaktion &lt;span class=&#34;math inline&#34;&gt;\(M:X\)&lt;/span&gt; &lt;em&gt;signifikant&lt;/em&gt;, so liegt eine (signifikante) &lt;em&gt;Moderation&lt;/em&gt; vor.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;mediation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Mediation&lt;/h2&gt;
+&lt;p&gt;Bei der &lt;em&gt;Mediation&lt;/em&gt; steht die Variable &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; (der &lt;em&gt;Mediator&lt;/em&gt;) sowohl zu &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; als auch zu &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; in Beziehung.
+Der direkte Effekt zwischen &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; wird durch den indirekten Effekt über &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; erklärt, also durch
+&lt;span class=&#34;math inline&#34;&gt;\(X \to M \to Y\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenha%CC%88ngen_files/figure-html/Mediator-1.png&#34; width=&#34;30%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;wie-untersucht-man-auf-eine-mediation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Wie untersucht man auf eine Mediation?&lt;/h3&gt;
 &lt;p&gt;In diesem Fall stellen wir mehrere Regressionsmodelle auf. Eine (signifikante) Mediation liegt dann vor, wenn die folgenden Bedinungen erfüllt sind:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;erstesModell &amp;lt;- lm(Y ~ X, data=daten)
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;erstesModell &amp;lt;- lm(Y ~ X, data=daten)
 zweitesModell &amp;lt;- lm(M ~ X, data=daten)
-drittesModell &amp;lt;- lm(Y ~ X + M, data=daten)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Im ersten Modell ($X \to Y$) ist der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; signifikant.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Im zweiten Modell ($X \to M$) ist der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; signifikant.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Im dritten Modell ($X,M \to Y$) ist der Regressionskoeffizient von &lt;code&gt;\(M\)&lt;/code&gt; signifikant und&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;der Regressionskoeffizient von &lt;code&gt;\(X\)&lt;/code&gt; im dritten Modell kleiner als im ersten Modell.&lt;/p&gt;
-&lt;/li&gt;
+drittesModell &amp;lt;- lm(Y ~ X + M, data=daten)&lt;/code&gt;&lt;/pre&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Im ersten Modell (&lt;span class=&#34;math inline&#34;&gt;\(X \to Y\)&lt;/span&gt;) ist der Regressionskoeffizient von &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; signifikant.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Im zweiten Modell (&lt;span class=&#34;math inline&#34;&gt;\(X \to M\)&lt;/span&gt;) ist der Regressionskoeffizient von &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; signifikant.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Im dritten Modell (&lt;span class=&#34;math inline&#34;&gt;\(X,M \to Y\)&lt;/span&gt;) ist der Regressionskoeffizient von &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; signifikant und&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;der Regressionskoeffizient von &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; im dritten Modell kleiner als im ersten Modell.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
