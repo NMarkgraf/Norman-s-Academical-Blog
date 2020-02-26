@@ -34,26 +34,24 @@ Wegen
 
 $$(x-x_1) \cdot (x-x_2) = x^2 -(x_1+x_2)\cdot x + x_1\cdot x_2 = x^2 + px + q$$
 
-muss somit
+muss somit $p = -\left(x_1+x_2\right)$ und gleichzeitig $q = x_1 \cdot x_2$ gelten. 
 
-$$p = -(x_1+x_2) \quad\text{ und gleichzeitig }\quad q = x_1\cdot x_2$$
-
-gelten.
+Sucht man nach (ganzzahligen) $x_1$ und $x_2$, so nimmt man die Teilermenge $T_q$ von $q$ und prüft für jedes $x \in T_q$ ob es ein $y \in T_q$ gibt, so dass $\pm x$ und $\pm y$ sowohl die Gleichungen für $p$ und $q$ erfüllen. Ein für $q$ passendes Paar zu finden ist dabei nicht das Problem. Aber die Gleichung für $p$ muss auch erfüllt sein. 
 
 ### Ein Beispiel
 
 Hat die Gleichung $x^2 - 8 \cdot x + 12 = 0$ also nur ganzzahlige Lösungen, so reicht es die Teiler von $12$ zu untersuchen.
-Nun ist $12 = 2 \cdot 2 \cdot 3$ und somit die Teilermenge von $12$ die Menge $T_{12} = \{1, 2, 4, 6, 12\}$. 
+Nun ist $12 = 2 \cdot 2 \cdot 3$ und somit die Teilermenge von $12$ die Menge $T_{12} = \{1, 2, 3, 4, 6, 12\}$. 
 
 Wegen der $p=-8$ muss $x_1 + x_2$ eine positive Zahl sein und wegen $q=+12$ müssen $x_1$ und $x_2$ somit auch beide positiv sein.
 
 Gesucht ist also die Lösung von $x_1+x_2 = 8$ für $x_1, x_2 \in T_{12}$.
 
-Für $1$ findet sich kein passender Partner in $T_{12}$, für $2$ findet sich $6$ und für $4$ findet sich $4$.
+Für $1$ findet sich $12$, für $2$ findet sich $6$ und für $3$ findet sich $4$. Danach drehen sich die Positionen nur noch um.
 
-Weil $4\cdot 4 = 16 \neq 12$ fällt dieses Paar leider als Lösung aus.
+Weil $1 + 12 = 13 \neq 8$ und $3+4=7 \neq 8$ ist fallen diese Paate leider als Lösungen aus.
 
-Da $2 \cdot 6 = 12$ ist, haben wir mit $x_1=2$ und $x_2=6$ eine Lösung gefunden.
+Da $2+6=8$ und $2 \cdot 6 = 12$ ist, haben wir mit $x_1=2$ und $x_2=6$ eine Lösung gefunden.
 
 
 ### Dr. Loh's Methode
@@ -93,5 +91,5 @@ Dann ist $x_1=5-u$, $x_2=5+u$, $x_1\cdot x_2=25-u^2 = 24$ und somit $u^2=\pm 1$ 
 
 $$x^2 - 7 \cdot x + 12 = 0$$
 
-Nun ist $x_1=3{,}5-u$, $x_2=3{,}5+u$, $x_1 \cdot x_2 = 12{,}25-u^2=12$ und somit $u^2=\pm0{,}25$ und die Lösung $x_1=3$ und $x_2=4$.
+Nun ist $x_1=3{,}5-u$, $x_2=3{,}5+u$, $x_1 \cdot x_2 = 12{,}25-u^2=12$ und somit $u^2=\pm 0{,}25$ und die Lösung $x_1=3$ und $x_2=4$.
 

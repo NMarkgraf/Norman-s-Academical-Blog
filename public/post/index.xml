@@ -27,18 +27,17 @@
 &lt;p&gt;Diese Gleichung hat, wenn überhaupt, zwei Lösungen &lt;span class=&#34;math inline&#34;&gt;\(x_1\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(x_2\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Wegen&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[(x-x_1) \cdot (x-x_2) = x^2 -(x_1+x_2)\cdot x + x_1\cdot x_2 = x^2 + px + q\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;muss somit&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[p = -(x_1+x_2) \quad\text{ und gleichzeitig }\quad q = x_1\cdot x_2\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;gelten.&lt;/p&gt;
+&lt;p&gt;muss somit &lt;span class=&#34;math inline&#34;&gt;\(p = -\left(x_1+x_2\right)\)&lt;/span&gt; und gleichzeitig &lt;span class=&#34;math inline&#34;&gt;\(q = x_1 \cdot x_2\)&lt;/span&gt; gelten.&lt;/p&gt;
+&lt;p&gt;Sucht man nach (ganzzahligen) &lt;span class=&#34;math inline&#34;&gt;\(x_1\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(x_2\)&lt;/span&gt;, so nimmt man die Teilermenge &lt;span class=&#34;math inline&#34;&gt;\(T_q\)&lt;/span&gt; von &lt;span class=&#34;math inline&#34;&gt;\(q\)&lt;/span&gt; und prüft für jedes &lt;span class=&#34;math inline&#34;&gt;\(x \in T_q\)&lt;/span&gt; ob es ein &lt;span class=&#34;math inline&#34;&gt;\(y \in T_q\)&lt;/span&gt; gibt, so dass &lt;span class=&#34;math inline&#34;&gt;\(\pm x\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(\pm y\)&lt;/span&gt; sowohl die Gleichungen für &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(q\)&lt;/span&gt; erfüllen. Ein für &lt;span class=&#34;math inline&#34;&gt;\(q\)&lt;/span&gt; passendes Paar zu finden ist dabei nicht das Problem. Aber die Gleichung für &lt;span class=&#34;math inline&#34;&gt;\(p\)&lt;/span&gt; muss auch erfüllt sein.&lt;/p&gt;
 &lt;div id=&#34;ein-beispiel&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Ein Beispiel&lt;/h3&gt;
 &lt;p&gt;Hat die Gleichung &lt;span class=&#34;math inline&#34;&gt;\(x^2 - 8 \cdot x + 12 = 0\)&lt;/span&gt; also nur ganzzahlige Lösungen, so reicht es die Teiler von &lt;span class=&#34;math inline&#34;&gt;\(12\)&lt;/span&gt; zu untersuchen.
-Nun ist &lt;span class=&#34;math inline&#34;&gt;\(12 = 2 \cdot 2 \cdot 3\)&lt;/span&gt; und somit die Teilermenge von &lt;span class=&#34;math inline&#34;&gt;\(12\)&lt;/span&gt; die Menge &lt;span class=&#34;math inline&#34;&gt;\(T_{12} = \{1, 2, 4, 6, 12\}\)&lt;/span&gt;.&lt;/p&gt;
+Nun ist &lt;span class=&#34;math inline&#34;&gt;\(12 = 2 \cdot 2 \cdot 3\)&lt;/span&gt; und somit die Teilermenge von &lt;span class=&#34;math inline&#34;&gt;\(12\)&lt;/span&gt; die Menge &lt;span class=&#34;math inline&#34;&gt;\(T_{12} = \{1, 2, 3, 4, 6, 12\}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Wegen der &lt;span class=&#34;math inline&#34;&gt;\(p=-8\)&lt;/span&gt; muss &lt;span class=&#34;math inline&#34;&gt;\(x_1 + x_2\)&lt;/span&gt; eine positive Zahl sein und wegen &lt;span class=&#34;math inline&#34;&gt;\(q=+12\)&lt;/span&gt; müssen &lt;span class=&#34;math inline&#34;&gt;\(x_1\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(x_2\)&lt;/span&gt; somit auch beide positiv sein.&lt;/p&gt;
 &lt;p&gt;Gesucht ist also die Lösung von &lt;span class=&#34;math inline&#34;&gt;\(x_1+x_2 = 8\)&lt;/span&gt; für &lt;span class=&#34;math inline&#34;&gt;\(x_1, x_2 \in T_{12}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Für &lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt; findet sich kein passender Partner in &lt;span class=&#34;math inline&#34;&gt;\(T_{12}\)&lt;/span&gt;, für &lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt; findet sich &lt;span class=&#34;math inline&#34;&gt;\(6\)&lt;/span&gt; und für &lt;span class=&#34;math inline&#34;&gt;\(4\)&lt;/span&gt; findet sich &lt;span class=&#34;math inline&#34;&gt;\(4\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Weil &lt;span class=&#34;math inline&#34;&gt;\(4\cdot 4 = 16 \neq 12\)&lt;/span&gt; fällt dieses Paar leider als Lösung aus.&lt;/p&gt;
-&lt;p&gt;Da &lt;span class=&#34;math inline&#34;&gt;\(2 \cdot 6 = 12\)&lt;/span&gt; ist, haben wir mit &lt;span class=&#34;math inline&#34;&gt;\(x_1=2\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(x_2=6\)&lt;/span&gt; eine Lösung gefunden.&lt;/p&gt;
+&lt;p&gt;Für &lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt; findet sich &lt;span class=&#34;math inline&#34;&gt;\(12\)&lt;/span&gt;, für &lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt; findet sich &lt;span class=&#34;math inline&#34;&gt;\(6\)&lt;/span&gt; und für &lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt; findet sich &lt;span class=&#34;math inline&#34;&gt;\(4\)&lt;/span&gt;. Danach drehen sich die Positionen nur noch um.&lt;/p&gt;
+&lt;p&gt;Weil &lt;span class=&#34;math inline&#34;&gt;\(1 + 12 = 13 \neq 8\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(3+4=7 \neq 8\)&lt;/span&gt; ist fallen diese Paate leider als Lösungen aus.&lt;/p&gt;
+&lt;p&gt;Da &lt;span class=&#34;math inline&#34;&gt;\(2+6=8\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(2 \cdot 6 = 12\)&lt;/span&gt; ist, haben wir mit &lt;span class=&#34;math inline&#34;&gt;\(x_1=2\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(x_2=6\)&lt;/span&gt; eine Lösung gefunden.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;dr.-lohs-methode&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Dr. Loh’s Methode&lt;/h3&gt;
@@ -64,7 +63,7 @@ woraus sich&lt;/p&gt;
 &lt;div id=&#34;und-noch-ein-beispiel&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Und noch ein Beispiel&lt;/h3&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[x^2 - 7 \cdot x + 12 = 0\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Nun ist &lt;span class=&#34;math inline&#34;&gt;\(x_1=3{,}5-u\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(x_2=3{,}5+u\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(x_1 \cdot x_2 = 12{,}25-u^2=12\)&lt;/span&gt; und somit &lt;span class=&#34;math inline&#34;&gt;\(u^2=\pm0{,}25\)&lt;/span&gt; und die Lösung &lt;span class=&#34;math inline&#34;&gt;\(x_1=3\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(x_2=4\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Nun ist &lt;span class=&#34;math inline&#34;&gt;\(x_1=3{,}5-u\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(x_2=3{,}5+u\)&lt;/span&gt;, &lt;span class=&#34;math inline&#34;&gt;\(x_1 \cdot x_2 = 12{,}25-u^2=12\)&lt;/span&gt; und somit &lt;span class=&#34;math inline&#34;&gt;\(u^2=\pm 0{,}25\)&lt;/span&gt; und die Lösung &lt;span class=&#34;math inline&#34;&gt;\(x_1=3\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(x_2=4\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
