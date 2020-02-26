@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Statistisches | Norman&#39;s Academic Blog</title>
-    <link>/categories/statistisches/</link>
-      <atom:link href="/categories/statistisches/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sefiroth.net/nap/categories/statistisches/</link>
+      <atom:link href="https://sefiroth.net/nap/categories/statistisches/index.xml" rel="self" type="application/rss+xml" />
     <description>Statistisches</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://sefiroth.net/nap/img/icon-192.png</url>
       <title>Statistisches</title>
-      <link>/categories/statistisches/</link>
+      <link>https://sefiroth.net/nap/categories/statistisches/</link>
     </image>
     
     <item>
       <title>SBI - Simulation Based Inference</title>
-      <link>/post/sbi-simulation-based-inference/</link>
+      <link>https://sefiroth.net/nap/post/sbi-simulation-based-inference/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>/post/sbi-simulation-based-inference/</guid>
+      <guid>https://sefiroth.net/nap/post/sbi-simulation-based-inference/</guid>
       <description>
 &lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
@@ -29,9 +29,9 @@
     
     <item>
       <title>Ein wenig schneller zur simulierten Nullverteilung</title>
-      <link>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</link>
+      <link>https://sefiroth.net/nap/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      <guid>/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
+      <guid>https://sefiroth.net/nap/post/ein-wenig-schneller-zur-simulierten-nullverteilung/</guid>
       <description>
 &lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;../../rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
@@ -174,9 +174,9 @@ gf_qq(NullDistFSNDR_mw&lt;span class=&#34;math inline&#34;&gt;\(diffmean ~ NullD
     
     <item>
       <title>Nur ein wenig lineare Regression</title>
-      <link>/post/nur-ein-wenig-lineare-regression/</link>
+      <link>https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>/post/nur-ein-wenig-lineare-regression/</guid>
+      <guid>https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/</guid>
       <description>
 &lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
@@ -531,9 +531,9 @@ Wenn der &lt;em&gt;Wald-Test&lt;/em&gt; für eine oder mehrere unabhängige Vari
     
     <item>
       <title>Prognose-, Konfidenz- und Fiduzialintervalle</title>
-      <link>/post/prognose-konfidenz-und-fiduzialintervalle/</link>
+      <link>https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/</link>
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
+      <guid>https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
       <description>
 &lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
@@ -612,9 +612,9 @@ und&lt;/p&gt;
     
     <item>
       <title>Konfidenzintervalle</title>
-      <link>/post/konfidenzintervalle/</link>
+      <link>https://sefiroth.net/nap/post/konfidenzintervalle/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>/post/konfidenzintervalle/</guid>
+      <guid>https://sefiroth.net/nap/post/konfidenzintervalle/</guid>
       <description>
 &lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
@@ -625,9 +625,9 @@ und&lt;/p&gt;
     
     <item>
       <title>Zentrales Schwankungsintervall</title>
-      <link>/post/zentrales-schwankungsintervall/</link>
+      <link>https://sefiroth.net/nap/post/zentrales-schwankungsintervall/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>/post/zentrales-schwankungsintervall/</guid>
+      <guid>https://sefiroth.net/nap/post/zentrales-schwankungsintervall/</guid>
       <description>
 &lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
@@ -644,9 +644,9 @@ und&lt;/p&gt;
     
     <item>
       <title>Quartile, Quantile, Perzentile etc.</title>
-      <link>/post/quartile-quantile-perzentile-etc/</link>
+      <link>https://sefiroth.net/nap/post/quartile-quantile-perzentile-etc/</link>
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>/post/quartile-quantile-perzentile-etc/</guid>
+      <guid>https://sefiroth.net/nap/post/quartile-quantile-perzentile-etc/</guid>
       <description>
 &lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GitHub | Norman&#39;s Academic Blog</title>
-    <link>/tags/github/</link>
-      <atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sefiroth.net/nap/tags/github/</link>
+      <atom:link href="https://sefiroth.net/nap/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <description>GitHub</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Mon, 18 Dec 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://sefiroth.net/nap/img/icon-192.png</url>
       <title>GitHub</title>
-      <link>/tags/github/</link>
+      <link>https://sefiroth.net/nap/tags/github/</link>
     </image>
     
     <item>
       <title>GitHub Webhook eingebaut!</title>
-      <link>/post/github-webhook-eingebaut/</link>
+      <link>https://sefiroth.net/nap/post/github-webhook-eingebaut/</link>
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>/post/github-webhook-eingebaut/</guid>
+      <guid>https://sefiroth.net/nap/post/github-webhook-eingebaut/</guid>
       <description>&lt;p&gt;GitHub bietet die Möglichkeit an, bei Interaktion mit dem Server automatisch einen Webhook zu aktivieren. Dahinter versteckt sich ein Aufruf einer URL mit einem sogenannten POST-Request. Wertet man diesen aus, so kann man z.B. nach jedem &lt;em&gt;push&lt;/em&gt; automatisch ein &lt;em&gt;fetch&lt;/em&gt; auf dem Webserver starten.&lt;/p&gt;
 &lt;p&gt;Ich nutze das gerade um meinen Blog immer dann zu aktualisieren, wenn ich auf dem GitHub eine Änderung vorgenommen habe.&lt;/p&gt;
 &lt;p&gt;Damit sollte ich nie wieder vergessen alles auch auf dem Server zu aktualisieren!&lt;/p&gt;

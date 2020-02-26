@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2 | Norman&#39;s Academic Blog</title>
-    <link>/publication_types/2/</link>
-      <atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sefiroth.net/nap/publication_types/2/</link>
+      <atom:link href="https://sefiroth.net/nap/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     <description>2</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Sat, 25 Sep 2004 00:00:00 +0200</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://sefiroth.net/nap/img/icon-192.png</url>
       <title>2</title>
-      <link>/publication_types/2/</link>
+      <link>https://sefiroth.net/nap/publication_types/2/</link>
     </image>
     
     <item>
       <title>LEARN2CONTROL – Projektorientiertes Lernen für ein besseres Gesamtverständnis in der regelungstechnischen Ausbildung</title>
-      <link>/publication/learn2control/</link>
+      <link>https://sefiroth.net/nap/publication/learn2control/</link>
       <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      <guid>/publication/learn2control/</guid>
+      <guid>https://sefiroth.net/nap/publication/learn2control/</guid>
       <description></description>
     </item>
     

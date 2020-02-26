@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Konfidenzintervalle | Norman&#39;s Academic Blog</title>
-    <link>/tags/konfidenzintervalle/</link>
-      <atom:link href="/tags/konfidenzintervalle/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sefiroth.net/nap/tags/konfidenzintervalle/</link>
+      <atom:link href="https://sefiroth.net/nap/tags/konfidenzintervalle/index.xml" rel="self" type="application/rss+xml" />
     <description>Konfidenzintervalle</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Thu, 04 Jan 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://sefiroth.net/nap/img/icon-192.png</url>
       <title>Konfidenzintervalle</title>
-      <link>/tags/konfidenzintervalle/</link>
+      <link>https://sefiroth.net/nap/tags/konfidenzintervalle/</link>
     </image>
     
     <item>
       <title>Prognose-, Konfidenz- und Fiduzialintervalle</title>
-      <link>/post/prognose-konfidenz-und-fiduzialintervalle/</link>
+      <link>https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/</link>
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
+      <guid>https://sefiroth.net/nap/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
       <description>
 &lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 

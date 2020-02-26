@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RStudio | Norman&#39;s Academic Blog</title>
-    <link>/tags/rstudio/</link>
-      <atom:link href="/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sefiroth.net/nap/tags/rstudio/</link>
+      <atom:link href="https://sefiroth.net/nap/tags/rstudio/index.xml" rel="self" type="application/rss+xml" />
     <description>RStudio</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://sefiroth.net/nap/img/icon-192.png</url>
       <title>RStudio</title>
-      <link>/tags/rstudio/</link>
+      <link>https://sefiroth.net/nap/tags/rstudio/</link>
     </image>
     
     <item>
       <title>Etwas R am Abend</title>
-      <link>/project/etwas-r-am-abend/</link>
+      <link>https://sefiroth.net/nap/project/etwas-r-am-abend/</link>
       <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>/project/etwas-r-am-abend/</guid>
+      <guid>https://sefiroth.net/nap/project/etwas-r-am-abend/</guid>
       <description></description>
     </item>
     
