@@ -4,8 +4,10 @@ author: Norman Markgraf
 date: '2017-12-31'
 slug: ein-paar-interessante-links
 categories:
-  - Allgemeines
-tags: []
+    - Allgemeines
+tags:
+    - Weblinks
+    - Statistik
 header:
   caption: ''
   image: ''

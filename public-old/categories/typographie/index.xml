@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typographie | Norman&#39;s Academic Blog</title>
+    <link>/categories/typographie/</link>
+      <atom:link href="/categories/typographie/index.xml" rel="self" type="application/rss+xml" />
+    <description>Typographie</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Typographie</title>
+      <link>/categories/typographie/</link>
+    </image>
+    
+    <item>
+      <title>Pandoc filter: style.py</title>
+      <link>/project/style.py/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/project/style.py/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

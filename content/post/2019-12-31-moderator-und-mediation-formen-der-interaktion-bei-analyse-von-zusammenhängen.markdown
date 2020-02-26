@@ -2,7 +2,7 @@
 title: Moderator und Mediation - Formen der Interaktion bei Analyse von Zusammenhängen
 author: admin
 date: '2019-12-31'
-slug: moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen
+slug: moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhaengen
 categories:
   - Statistik
 tags:
@@ -23,26 +23,27 @@ math: true
 
 
 
-Bei der Analyse von Zusammenhängen tauchen sowohl *Moderation* als auch *Mediation* auf. Es geht um Zusammenhänge zwischen drei Variablen $X$, $Y$ und $M$. 
-Untersucht wird der Effekt einer unabhägigen Variable $X$ (*Prädiktor*, *UV*) auf ein abhängige Variable $Y$ (*AV*). 
-Wir untersuchen dies mit einem Regressionsmodell $Y \sim X$. 
-Dabei wird zusätzlich eine dritte Variable $M$ berücksichtigt, die man entweder der *Moderator* oder *Mediator* nennt.
+Bei der Analyse von Zusammenhängen tauchen sowohl *Moderation* als auch *Mediation* auf. Es geht um Zusammenhänge zwischen drei Variablen `\(X\)`, `\(Y\)` und `\(M\)`. 
+Untersucht wird der Effekt einer unabhägigen Variable `\(X\)` (*Prädiktor*, *UV*) auf ein abhängige Variable `\(Y\)` (*AV*). 
+Wir untersuchen dies mit einem Regressionsmodell `\(Y \sim X\)`. 
+Dabei wird zusätzlich eine dritte Variable `\(M\)` berücksichtigt, die man entweder der *Moderator* oder *Mediator* nennt.
 
 Ist die abhängige Variable metrisch, so können wir mittels eine linearer Regression vorgehen, ist die AB dagegen dichotom, so nutzen wir eine logistische Regression.
 
 ## Moderation
 
-Bei einer *Moderation* wirkt die dritte Variable $M$ (*Moderator*) auf die Beziehung zwischen $X$ und $Y$.
+Bei einer *Moderation* wirkt die dritte Variable `\(M\)` (*Moderator*) auf die Beziehung zwischen `\(X\)` und `\(Y\)`.
 
-<img src="2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Moderation-1.png" width="30%" style="display: block; margin: auto;" />
+<img src="/post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Moderation-1.png" width="30%" style="display: block; margin: auto;" />
 
-Der Einfluss von $M$ ändert also den Effekt von $X$ auf $Y$. Der Zusammenhang zwischen $Y$ und $X$ ist also je nach $M$ unterschiedlich.
+Der Einfluss von `\(M\)` ändert also den Effekt von `\(X\)` auf `\(Y\)`. Der Zusammenhang zwischen `\(Y\)` und `\(X\)` ist also je nach `\(M\)` unterschiedlich.
 
-Statistisch gesehen liegt eine *Interaktion* zwischen $M$ und $X$ vor. 
+Statistisch gesehen liegt eine *Interaktion* zwischen `\(M\)` und `\(X\)` vor. 
+
 
 ### Wie untersucht man einen Zusammenhang auf eine Moderation?
 
-Dazu stellen wir ein Regressionsmodell mit den drei Faktoren $X$, $M$ und der Interaktion zwischen $X$ und $M$ auf.
+Dazu stellen wir ein Regressionsmodell mit den drei Faktoren `\(X\)`, `\(M\)` und der Interaktion zwischen `\(X\)` und `\(M\)` auf.
 
 
 ```r
@@ -57,16 +58,16 @@ lm(Y ~ X + M + M:X, data=daten)
 ```
 
 
-Diese drei Faktoren wirken auf $Y$. Ist in diesem Modell die Interaktion $M:X$ *signifikant*, so liegt eine (signifikante) *Moderation* vor.
+Diese drei Faktoren wirken auf `\(Y\)`. Ist in diesem Modell die Interaktion `\(M:X\)` *signifikant*, so liegt eine (signifikante) *Moderation* vor.
 
 
 ## Mediation
 
-Bei der *Mediation* steht die Variable $M$ (der *Mediator*) sowohl zu $X$ als auch zu $Y$ in Beziehung.
-Der direkte Effekt zwischen $X$ und $Y$ wird durch den indirekten Effekt über $M$ erklärt, also durch 
-$X \to  M \to Y$.
+Bei der *Mediation* steht die Variable `\(M\)` (der *Mediator*) sowohl zu `\(X\)` als auch zu `\(Y\)` in Beziehung.
+Der direkte Effekt zwischen `\(X\)` und `\(Y\)` wird durch den indirekten Effekt über `\(M\)` erklärt, also durch 
+`\(X \to  M \to Y\)`.
 
-<img src="2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Mediator-1.png" width="30%" style="display: block; margin: auto;" />
+<img src="/post/2019-12-31-moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen_files/figure-html/Mediator-1.png" width="30%" style="display: block; margin: auto;" />
 
 
 ### Wie untersucht man auf eine Mediation?
@@ -81,12 +82,12 @@ drittesModell <- lm(Y ~ X + M, data=daten)
 ```
 
 
-1. Im ersten Modell ($X \to Y$) ist der Regressionskoeffizient von $X$ signifikant.
+1. Im ersten Modell ($X \to Y$) ist der Regressionskoeffizient von `\(X\)` signifikant.
 
-2. Im zweiten Modell ($X \to M$) ist der Regressionskoeffizient von $X$ signifikant.
+2. Im zweiten Modell ($X \to M$) ist der Regressionskoeffizient von `\(X\)` signifikant.
 
-3. Im dritten Modell ($X,M \to Y$) ist der Regressionskoeffizient von $M$ signifikant und 
+3. Im dritten Modell ($X,M \to Y$) ist der Regressionskoeffizient von `\(M\)` signifikant und 
 
-4. der Regressionskoeffizient von $X$ im dritten Modell kleiner als im ersten Modell.
+4. der Regressionskoeffizient von `\(X\)` im dritten Modell kleiner als im ersten Modell.
 
 

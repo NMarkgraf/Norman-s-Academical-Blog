@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mac | Norman&#39;s Academic Blog</title>
+    <link>/tags/mac/</link>
+      <atom:link href="/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <description>mac</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>mac</title>
+      <link>/tags/mac/</link>
+    </image>
+    
+    <item>
+      <title>Docker per Homebrew auf dem alten Mac</title>
+      <link>/post/docker-per-homebrew-auf-dem-alten-mac/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/post/docker-per-homebrew-auf-dem-alten-mac/</guid>
+      <description>&lt;p&gt;Mein alter mac, ein iMac (27 Zoll, Mitte 2011) mit macOS Cataline 10.13.6 (17G11023), kann leider nicht mehr alle Programme über das Systemupdate ziehen. Auch einige Software-Produkte laufen nicht mehr direkt von Hersteller.&lt;/p&gt;
+&lt;p&gt;Daher nutze ich seit einiger Zeit &lt;a href=&#34;https://brew.sh/index_de&#34;&gt;homebrew&lt;/a&gt; um fehlende Produkte dennoch auf meinem Rechner zu installieren.&lt;/p&gt;
+&lt;p&gt;Hier nun mein Versuch mit docker:&lt;/p&gt;
+&lt;h3 id=&#34;erster-schritt&#34;&gt;Erster Schritt&lt;/h3&gt;
+&lt;p&gt;Mittels&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; brew update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;habe ich die aktuellen Dateien für brew auf den neusten Stand gebracht.&lt;/p&gt;
+&lt;p&gt;Eine alte Version von Docker habe ich gelöscht, da&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ls -al /Application/Docker
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;eine alter Version angezeigt hat, habe ich diese mit dem Finder aus dem Programme Ordner in den Mülleimer gezogen.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; /Applications/Docker.app/Contents/MacOS/Docker --uninstall
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;zweiter-schritt&#34;&gt;Zweiter Schritt&lt;/h3&gt;
+&lt;p&gt;Nun die docker mit Hilfe von brew auf dem Rechner &amp;lsquo;brauen&amp;rsquo;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; brew cask install docker
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;dritter-schritt&#34;&gt;Dritter Schritt&lt;/h3&gt;
+&lt;p&gt;Dem Rezept hier &lt;a href=&#34;https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3&#34;&gt;https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3&lt;/a&gt; folgend, habe ich eine Docker installation dann doch noch geschafft.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

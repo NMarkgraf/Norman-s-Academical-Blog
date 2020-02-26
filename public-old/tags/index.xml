@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags | Norman&#39;s Academic Blog</title>
+    <link>/tags/</link>
+      <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Tags</title>
+      <link>/tags/</link>
+    </image>
+    
+    <item>
+      <title>Statistik</title>
+      <link>/tags/statistik/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/statistik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>academic</title>
+      <link>/tags/academic/</link>
+      <pubDate>Wed, 18 Dec 2019 11:20:50 +0100</pubDate>
+      <guid>/tags/academic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>/tags/hugo/</link>
+      <pubDate>Wed, 18 Dec 2019 11:20:50 +0100</pubDate>
+      <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webside</title>
+      <link>/tags/webside/</link>
+      <pubDate>Wed, 18 Dec 2019 11:20:50 +0100</pubDate>
+      <guid>/tags/webside/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lehre</title>
+      <link>/tags/lehre/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/lehre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mathematica</title>
+      <link>/tags/mathematica/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/mathematica/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matplotlib</title>
+      <link>/tags/matplotlib/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/matplotlib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>/tags/raspberry-pi/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspbian</title>
+      <link>/tags/raspbian/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/raspbian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R markdown</title>
+      <link>/tags/r-markdown/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>/tags/r-markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technisches</title>
+      <link>/tags/technisches/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>/tags/technisches/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Allgemein</title>
+      <link>/tags/allgemein/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>/tags/allgemein/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wahrscheinlichkeitstheorie</title>
+      <link>/tags/wahrscheinlichkeitstheorie/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>/tags/wahrscheinlichkeitstheorie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science</title>
+      <link>/tags/data-science/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LaTeX</title>
+      <link>/tags/latex/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandoc</title>
+      <link>/tags/pandoc/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/tags/pandoc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>panflute</title>
+      <link>/tags/panflute/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/tags/panflute/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RStudio</title>
+      <link>/tags/rstudio/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/tags/rstudio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SBI</title>
+      <link>/tags/sbi/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/tags/sbi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vortrag</title>
+      <link>/tags/vortrag/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/tags/vortrag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FOM</title>
+      <link>/tags/fom/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      <guid>/tags/fom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projektorientiertes Lernen</title>
+      <link>/tags/projektorientiertes-lernen/</link>
+      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
+      <guid>/tags/projektorientiertes-lernen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regelungstechnik</title>
+      <link>/tags/regelungstechnik/</link>
+      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
+      <guid>/tags/regelungstechnik/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

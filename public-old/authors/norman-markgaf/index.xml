@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Norman Markgaf | Norman&#39;s Academic Blog</title>
+    <link>/authors/norman-markgaf/</link>
+      <atom:link href="/authors/norman-markgaf/index.xml" rel="self" type="application/rss+xml" />
+    <description>Norman Markgaf</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 25 Sep 2009 00:00:00 +0200</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Norman Markgaf</title>
+      <link>/authors/norman-markgaf/</link>
+    </image>
+    
+    <item>
+      <title>Statistik21</title>
+      <link>/publication/statistik21/</link>
+      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
+      <guid>/publication/statistik21/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LEARN2CONTROL – Projektorientiertes Lernen für ein besseres Gesamtverständnis in der regelungstechnischen Ausbildung</title>
+      <link>/publication/learn2control/</link>
+      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
+      <guid>/publication/learn2control/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

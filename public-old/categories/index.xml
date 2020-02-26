@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories | Norman&#39;s Academic Blog</title>
+    <link>/categories/</link>
+      <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Categories</title>
+      <link>/categories/</link>
+    </image>
+    
+    <item>
+      <title>Statistik</title>
+      <link>/categories/statistik/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/categories/statistik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Allgemeines</title>
+      <link>/categories/allgemeines/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/categories/allgemeines/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fundstücke</title>
+      <link>/categories/fundst%C3%BCcke/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>/categories/fundst%C3%BCcke/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Information</title>
+      <link>/categories/information/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      <guid>/categories/information/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kommentar</title>
+      <link>/categories/kommentar/</link>
+      <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
+      <guid>/categories/kommentar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Typographie</title>
+      <link>/categories/typographie/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/categories/typographie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vorlesungen schreiben</title>
+      <link>/categories/vorlesungen-schreiben/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/categories/vorlesungen-schreiben/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

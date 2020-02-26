@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Norman&#39;s Academic Blog</title>
+    <link>/project/</link>
+      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Projects</title>
+      <link>/project/</link>
+    </image>
+    
+    <item>
+      <title>Etwas R am Abend</title>
+      <link>/project/etwas-r-am-abend/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/project/etwas-r-am-abend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FastSimNullDistR</title>
+      <link>/project/fastsimnulldistr/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/project/fastsimnulldistr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandoc filter: style.py</title>
+      <link>/project/style.py/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/project/style.py/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandoc filter: typography.py</title>
+      <link>/project/typography.py/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/project/typography.py/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RmdStyleChecker</title>
+      <link>/project/rmdstylechecker/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/project/rmdstylechecker/</guid>
+      <description>&lt;p&gt;Jede Sprache hat Regeln, auch Programmiersprachen und R markdown ist eine Programmiersprache. Wieso also nicht ein Tool schreiben, welches &lt;em&gt;SStilregeln&lt;/em&gt; (engl. &lt;em&gt;style guides&lt;/em&gt;) für R markdown kontrolliert um auch im kolaborativen Einsatz ein einheitliches &amp;ldquo;Schriftbild&amp;rdquo; des Quelltextes zu erhalten.&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Einen ersten Schritt habe ich mit dem &lt;a href=&#34;auch-rmarkdown-dateien-sollten-sich-regeln-halten&#34;&gt;Blog-Eintrag&lt;/a&gt; gemacht und dazu gleich noch ein Tool in &lt;em&gt;Python&lt;/em&gt; geschrieben um Verstöße dagegen schneller zu finden.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

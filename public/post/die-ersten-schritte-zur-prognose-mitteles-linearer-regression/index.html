@@ -31,7 +31,7 @@
   <meta name="description" content="An hand der **tipping**-Daten werden die ersten Schritte zur Prognose von Daten gezeigt.">
 
   
-  <link rel="alternate" hreflang="de-de" href="../../post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/">
+  <link rel="alternate" hreflang="de-de" href="https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/">
 
   
 
@@ -134,7 +134,7 @@
   <link rel="icon" type="image/png" href="../../img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
 
-  <link rel="canonical" href="../../post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/">
+  <link rel="canonical" href="https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/">
 
   
   
@@ -147,10 +147,10 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Norman&#39;s Academic Blog">
-  <meta property="og:url" content="/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/">
+  <meta property="og:url" content="https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/">
   <meta property="og:title" content="Die ersten Schritte zur Prognose mitteles linearer Regression | Norman&#39;s Academic Blog">
-  <meta property="og:description" content="An hand der **tipping**-Daten werden die ersten Schritte zur Prognose von Daten gezeigt."><meta property="og:image" content="/img/icon-192.png">
-  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="de-de">
+  <meta property="og:description" content="An hand der **tipping**-Daten werden die ersten Schritte zur Prognose von Daten gezeigt."><meta property="og:image" content="https://sefiroth.net/nap/img/icon-192.png">
+  <meta property="twitter:image" content="https://sefiroth.net/nap/img/icon-192.png"><meta property="og:locale" content="de-de">
   
     
       <meta property="article:published_time" content="2019-12-18T00:00:00&#43;00:00">
@@ -181,7 +181,7 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/"
+    "@id": "https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/"
   },
   "headline": "Die ersten Schritte zur Prognose mitteles linearer Regression",
   
@@ -198,7 +198,7 @@
     "name": "Norman's Academic Blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "/img/icon-512.png"
+      "url": "https://sefiroth.net/nap/img/icon-512.png"
     }
   },
   "description": "An hand der **tipping**-Daten werden die ersten Schritte zur Prognose von Daten gezeigt."
@@ -523,13 +523,6 @@
   <a href="../../post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/#disqus_thread"></a>
   
 
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="../../categories/statistik/">Statistik</a></span>
-  
-
 </div>
 
     
@@ -557,7 +550,7 @@
     <div class="article-style">
       <p>Prognosen sind ein wichtiger Bestandteil von Data Science und ist durchaus nicht nur auf moderne Ansätze, wie Neuronale Netze, deep lerning etc. begrenzt. Auch die gute, alte Regression kann ein sehr sinnvolles Mittel sein solche Prognosen zu erstellen.</p>
 <p>Um ein wenig die Ideen hinter Prognosen zu beleuchten wollen wir uns an Prognosen mit dem <strong>tipping</strong>-Daten heranwagen.</p>
-<h2 id="einlesen-der-tippingdaten">Einlesen der tipping-Daten</h2>
+<h2 id="einlesen-der-tipping-daten">Einlesen der tipping-Daten</h2>
 <p>Zuerst laden wir die notwenidgen Pakete:</p>
 <pre><code class="language-r">library(mosaic)
 </code></pre>
@@ -595,7 +588,7 @@
 ## 2       0
 ## 3       0
 </code></pre>
-<h2 id="vorbereiten-der-testtrainings-und-auswertungesdaten">Vorbereiten der Test-/Trainings- und Auswertungesdaten</h2>
+<h2 id="vorbereiten-der-test-trainings--und-auswertungesdaten">Vorbereiten der Test-/Trainings- und Auswertungesdaten</h2>
 <p>Zunächst schränken wir die <strong>tipping</strong>-Daten auf die Variabeln &ldquo;total_bill&rdquo;, &ldquo;sex&rdquo;, &ldquo;smoker&rdquo;, &ldquo;day&rdquo;, &ldquo;time&rdquo;, &ldquo;size&rdquo; ein und speichern das Ergebnis wieder in <code>tips</code>:</p>
 <pre><code class="language-r">tips %&gt;%
     select(c(&quot;total_bill&quot;, &quot;sex&quot;, &quot;smoker&quot;, &quot;day&quot;, &quot;time&quot;, &quot;size&quot;)) -&gt; tips
@@ -707,7 +700,7 @@ maa.null
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/&amp;text=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/&amp;text=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -720,7 +713,7 @@ maa.null
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/&amp;t=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/&amp;t=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -733,7 +726,7 @@ maa.null
       
       
       <li>
-        <a href="mailto:?subject=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression&amp;body=/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression&amp;body=https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -746,7 +739,7 @@ maa.null
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/&amp;title=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/&amp;title=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -759,7 +752,7 @@ maa.null
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression%20/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression%20https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -772,7 +765,7 @@ maa.null
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/&amp;title=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://sefiroth.net/nap/post/die-ersten-schritte-zur-prognose-mitteles-linearer-regression/&amp;title=Die%20ersten%20Schritte%20zur%20Prognose%20mitteles%20linearer%20Regression" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -811,7 +804,7 @@ maa.null
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="../../">Norman Markgraf</a></h5>
+      <h5 class="card-title"><a href="https://sefiroth.net/nap/">Norman Markgraf</a></h5>
       <h6 class="card-subtitle">Diplom-Mathematiker</h6>
       <p class="card-text">Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer.</p>
       <ul class="network-icon" aria-hidden="true">
@@ -1113,9 +1106,6 @@ maa.null
     
       <a href="../../privacy/"></a>
     
-    
-       &middot; 
-      <a href="../../terms/">Terms</a>
     
   </p>
   

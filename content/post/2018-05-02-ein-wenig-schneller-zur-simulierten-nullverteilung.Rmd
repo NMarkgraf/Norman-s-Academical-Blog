@@ -4,7 +4,7 @@ author: Norman Markgraf
 date: '2018-05-02'
 slug: ein-wenig-schneller-zur-simulierten-nullverteilung
 categories:
-  - Statistik
+  - Statistisches
 tags:
   - R
   - Lehre

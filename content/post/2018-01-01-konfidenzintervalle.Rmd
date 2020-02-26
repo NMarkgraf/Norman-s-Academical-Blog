@@ -4,10 +4,11 @@ author: Norman Markgraf
 date: '2018-01-01'
 slug: konfidenzintervalle
 categories:
-  - Statistik
+  - Statistisches
 tags:
   - Lehre
   - Statistik
   - Wahrscheinlichkeitstheorie
 ---
 
+Stub!

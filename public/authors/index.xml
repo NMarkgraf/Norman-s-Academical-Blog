@@ -2,97 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors | Norman&#39;s Academic Blog</title>
-    <link>/authors/</link>
-      <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sefiroth.net/nap/authors/</link>
+      <atom:link href="https://sefiroth.net/nap/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 18 Dec 2019 11:20:50 +0100</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Fri, 10 Feb 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://sefiroth.net/nap/img/icon-192.png</url>
       <title>Authors</title>
-      <link>/authors/</link>
+      <link>https://sefiroth.net/nap/authors/</link>
     </image>
-    
-    <item>
-      <title></title>
-      <link>/authors/admin/</link>
-      <pubDate>Wed, 18 Dec 2019 11:20:50 +0100</pubDate>
-      <guid>/authors/admin/</guid>
-      <description>&lt;h1 id=&#34;biographie&#34;&gt;Biographie&lt;/h1&gt;
-&lt;p&gt;Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer. Als Lehrbeauftragter hat er an der Hochschule Bochum, Hochschule Rhein-Waal (am Campus Kleve) und der FOM Hochschule für Oekonomie und Management an den Standorten Aachen, Bonn, Dortmund, Duisburg, Düsseldorf, Gütersloh (Bertelsmann), Köln, Münster, Neuss und Wuppertal verschiedene Lehrveranstaltungen abgehalten.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Karsten Lübke</title>
-      <link>/authors/karsten-l%C3%BCbke/</link>
-      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
-      <guid>/authors/karsten-l%C3%BCbke/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Matthias Gehrke</title>
-      <link>/authors/matthias-gehrke/</link>
-      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
-      <guid>/authors/matthias-gehrke/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Norman Markgaf</title>
-      <link>/authors/norman-markgaf/</link>
-      <pubDate>Fri, 25 Sep 2009 00:00:00 +0200</pubDate>
-      <guid>/authors/norman-markgaf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title> Manuel Remelhe</title>
-      <link>/authors/manuel-remelhe/</link>
-      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      <guid>/authors/manuel-remelhe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Andreas Liefeld</title>
-      <link>/authors/andreas-liefeld/</link>
-      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      <guid>/authors/andreas-liefeld/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Carsten Fritsch</title>
-      <link>/authors/carsten-fritsch/</link>
-      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      <guid>/authors/carsten-fritsch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kai Dadhe</title>
-      <link>/authors/kai-dadhe/</link>
-      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      <guid>/authors/kai-dadhe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Marten Völker</title>
-      <link>/authors/marten-v%C3%B6lker/</link>
-      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      <guid>/authors/marten-v%C3%B6lker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sebastian Engell</title>
-      <link>/authors/sebastian-engell/</link>
-      <pubDate>Sat, 25 Sep 2004 00:00:00 +0200</pubDate>
-      <guid>/authors/sebastian-engell/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>

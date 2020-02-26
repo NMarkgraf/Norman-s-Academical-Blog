@@ -7,6 +7,9 @@ categories:
   - Information
 tags:
   - R
+  - vroom
+  - readr
+  - tidyverse
 subtitle: ''
 summary: ''
 authors: []

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Konfidenzintervalle | Norman&#39;s Academic Blog</title>
+    <link>/tags/konfidenzintervalle/</link>
+      <atom:link href="/tags/konfidenzintervalle/index.xml" rel="self" type="application/rss+xml" />
+    <description>Konfidenzintervalle</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Thu, 04 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Konfidenzintervalle</title>
+      <link>/tags/konfidenzintervalle/</link>
+    </image>
+    
+    <item>
+      <title>Prognose-, Konfidenz- und Fiduzialintervalle</title>
+      <link>/post/prognose-konfidenz-und-fiduzialintervalle/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>/post/prognose-konfidenz-und-fiduzialintervalle/</guid>
+      <description>
+&lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;*&lt;strong&gt;WORK IN PROGRESS&lt;/strong&gt;
+Dieser Eintrag ist noch nicht fertig und wird in der Zukunft erweitert!&lt;/p&gt;
+&lt;div id=&#34;konfidenzintervalle&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Konfidenzintervalle&lt;/h2&gt;
+&lt;div id=&#34;definition-von-konfidenzintervallen&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Definition von Konfidenzintervallen&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Für unabhängig identisch verteilte Zufallsvariablen &lt;span class=&#34;math inline&#34;&gt;\(X_1,\dotsc, X_n\)&lt;/span&gt; mit unbekanntem reellen Verteilungsparameter &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; kann unter bestimmten Umständen zwei Stichprobenfunktionen &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; angeben, so dass&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[P(U &amp;lt; \vartheta &amp;lt; V) \geq \gamma\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;gilt, mit &lt;span class=&#34;math inline&#34;&gt;\(\gamma \in (0,1)\)&lt;/span&gt;.
+Dann heißt das (stochastische) Intervall &lt;span class=&#34;math inline&#34;&gt;\([U, V]\)&lt;/span&gt; ein &lt;strong&gt;Konfidenzintervall&lt;/strong&gt; für &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; zum Konfidenzniveau &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; (auch: ein &lt;strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt;-Konfidenzintervall&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;Die Realisationen &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; von &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; bzw. &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; bilden das &lt;strong&gt;Schätzintervall&lt;/strong&gt; &lt;span class=&#34;math inline&#34;&gt;\([u, v]\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Da die Realisationen &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; der Grenzen &lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(V\)&lt;/span&gt; keine Zufallsvariablen sind und &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; ein fixer Wert ist, kann man &lt;strong&gt;nicht&lt;/strong&gt; sagen, dass das Schätzintervall &lt;span class=&#34;math inline&#34;&gt;\([u, v]\)&lt;/span&gt; mit einer Wahrscheinlichkeit von &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; den unbekannten Parameter &lt;span class=&#34;math inline&#34;&gt;\(\vartheta\)&lt;/span&gt; enthält. Es bedeutet vielmehr, dass im Mittel ein Anteil von &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; aller so berechneten Schätzintervalle den unbekannten Parameter überdecken. Dem nicht widersprechend, kann –- wie bereits von Ronald Fisher festgestellt – in manchen Modellen die Qualität des Schätzintervalls von den Daten abhängen und sogar zu Antworten führen, die mit Blick auf die Daten unsinnig sind. Probleme mit solcher Post-Data-Inkohärenz führen zur Theorie der bedingten Inferenz. Ein weiteres Problem sind die Stichprobenfunktionen U und V an sich. Um diese zu finden werden oft Vereinfachungen getroffen, dadurch können systematische Fehler entstehen, oft es gibt mehrere Konfidenzintervalle (bei der Binomialverteilung z.B. nach Clopper-Pearson, Agresti-Coull oder Wald), welche oft unterschiedliche Werte liefern.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ein-beispiel&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Ein Beispiel&lt;/h3&gt;
+&lt;p&gt;Wir nehmen zunächst als Population &lt;span class=&#34;math inline&#34;&gt;\(N=1000\)&lt;/span&gt; normalverteilte Zufallszahlen mit dem Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\mu= 0\)&lt;/span&gt; und der Standardabweichung &lt;span class=&#34;math inline&#34;&gt;\(\sigma=2.0088\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Dazu das Histogramm der Population:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;histogram(pop, xlab=&amp;quot;Population&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../../post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Aus dieser Population ziehen wir eine Stichprobe &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; vom Umfang $n=$40 und erhalten die folgenden statistischen Daten:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;favstats(x)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    min      Q1 median    Q3   max   mean    sd  n missing
+##  -3.38 -0.9781 0.2042 1.546 4.002 0.1877 1.901 40       0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Wir wollen nun den wahren Mittelwert &lt;span class=&#34;math inline&#34;&gt;\(\vartheta=\mu\)&lt;/span&gt; mit Hilfe der Stichprobe &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; schätzen. So ist es ja in der Realität auch, denn normalerweise haben wir die Daten über die Population nicht.&lt;/p&gt;
+&lt;p&gt;Die Schätzfunktion für den Mittelwert lautet nun
+&lt;span class=&#34;math display&#34;&gt;\[\bar{X} = \frac1n \sum_{i=1}^n X_i\]&lt;/span&gt;,
+und damit die konkrete Punktschätzung
+&lt;span class=&#34;math display&#34;&gt;\[\hat{\mu}=\bar{x}= \sum_{i=1}^n x_i\]&lt;/span&gt;
+liefert den Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}=\)&lt;/span&gt; 0.1877.&lt;/p&gt;
+&lt;p&gt;In unserem Beispiel unterscheiden sich die beiden Werte um &lt;span class=&#34;math inline&#34;&gt;\(\mu - \hat{\mu}=\)&lt;/span&gt; -0.1877.&lt;/p&gt;
+&lt;p&gt;Ein 95%-Konfidenzintervall nimmt nun den geschätzen Wert &lt;span class=&#34;math inline&#34;&gt;\(\hat{\mu}\)&lt;/span&gt; als Grundlage und gibt liefert ein Intervall mit der Eigentschaft, ausgehend von den konkreten Stichproben in 95% der Fälle den tatsächlichen Wert &lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt; zu umfassen. Es ist also
+&lt;span class=&#34;math display&#34;&gt;\[\gamma = 0.95 = 1 - \alpha = 1 - 0.05, \quad \alpha = 0.05\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Dazu werden die beiden Stichprobenfunktionen&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[U=U(X_1, \dots, X_n)=\bar{X}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;und&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[V=V(X_1, \dots, X_n)=\bar{X}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;mit der &lt;em&gt;bekannten&lt;/em&gt; Standardabweichung &lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt; der &lt;em&gt;Population&lt;/em&gt; und der Stichprobengröße &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt; nun mit der konkreten Realisation &lt;span class=&#34;math inline&#34;&gt;\(x_1, \dots, x_n\)&lt;/span&gt; der Stichprobe gefüttert und wir erhalten damit&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[u = \bar{x}-z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = 0.1877-z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=-0.4348\]&lt;/span&gt;
+und&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[v = \bar{x}+z_{\left(1-\frac{\alpha}{2}\right)}\cdot\frac{\sigma}{\sqrt{n}} = 0.1877+z_{\left(0.975\right)}\cdot\frac{2.0088}{\sqrt{40}}=0.8102.\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Die Realisation unseres 95%-Konfidenzintervall lautet nun also:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[[-0.4348; 0.8102]\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Was hat es nun mit den ominösen 95% auf sich?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Das Konfidenzintervall ist ein stochastisches Intervall, d.h. die hier angegebenen Werte für &lt;span class=&#34;math inline&#34;&gt;\(u\)&lt;/span&gt; und &lt;span class=&#34;math inline&#34;&gt;\(v\)&lt;/span&gt; sind abhängig von der Realisation &lt;span class=&#34;math inline&#34;&gt;\(x_1, \dots, x_n\)&lt;/span&gt;, also der konkreten Stichprobe.&lt;/p&gt;
+&lt;p&gt;Nehmen wir nun also einmal eine neue Stichprobe und berechnen erneut die Realisation unseres 95%-Konfidenzintervalls, so erhalten wir:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[[-0.7033; 0.5418]\]&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## Interval coverage:&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     cover
+## n     Low  Yes High
+##   40 0.00 0.98 0.02&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../../post/2018-01-04-prognose-konfidenz-und-fiduzialintervalle_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;prognoseintervalle&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Prognoseintervalle&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div id=&#34;fuduzialintervalle&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Fuduzialintervalle&lt;/h2&gt;
+&lt;p&gt;Quellen:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Logik in der Statistik; Andrea Wiencierz, 7.10.2007 Link: &lt;a href=&#34;https://static.aminer.org/pdf/PDF/000/230/772/induktive_inferenz_und_mehrwertige_logik.pdf&#34; class=&#34;uri&#34;&gt;https://static.aminer.org/pdf/PDF/000/230/772/induktive_inferenz_und_mehrwertige_logik.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;vgl: &lt;a href=&#34;https://de.wikipedia.org/wiki/Konfidenzintervall&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Konfidenzintervall&lt;/a&gt;&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

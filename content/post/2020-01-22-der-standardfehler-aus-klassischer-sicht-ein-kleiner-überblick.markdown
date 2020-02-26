@@ -3,8 +3,11 @@ title: Der Standardfehler aus klassischer Sicht - Ein kleiner Überblick
 author: admin
 date: '2020-01-22'
 slug: der-standardfehler-aus-klassischer-sicht-ein-kleiner-überblick
-categories: []
-tags: []
+categories:
+    - Statitisches
+tags:
+    - Standardfehler
+    - Statistik
 subtitle: ''
 summary: ''
 authors: []

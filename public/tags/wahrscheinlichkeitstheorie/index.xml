@@ -2,41 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wahrscheinlichkeitstheorie | Norman&#39;s Academic Blog</title>
-    <link>/tags/wahrscheinlichkeitstheorie/</link>
-      <atom:link href="/tags/wahrscheinlichkeitstheorie/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sefiroth.net/nap/tags/wahrscheinlichkeitstheorie/</link>
+      <atom:link href="https://sefiroth.net/nap/tags/wahrscheinlichkeitstheorie/index.xml" rel="self" type="application/rss+xml" />
     <description>Wahrscheinlichkeitstheorie</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://sefiroth.net/nap/img/icon-192.png</url>
       <title>Wahrscheinlichkeitstheorie</title>
-      <link>/tags/wahrscheinlichkeitstheorie/</link>
+      <link>https://sefiroth.net/nap/tags/wahrscheinlichkeitstheorie/</link>
     </image>
     
     <item>
       <title>Konfidenzintervalle</title>
-      <link>/post/konfidenzintervalle/</link>
+      <link>https://sefiroth.net/nap/post/konfidenzintervalle/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>/post/konfidenzintervalle/</guid>
+      <guid>https://sefiroth.net/nap/post/konfidenzintervalle/</guid>
       <description>
+&lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-
+&lt;p&gt;Stub!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Zentrales Schwankungsintervall</title>
-      <link>/post/zentrales-schwankungsintervall/</link>
+      <link>https://sefiroth.net/nap/post/zentrales-schwankungsintervall/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>/post/zentrales-schwankungsintervall/</guid>
+      <guid>https://sefiroth.net/nap/post/zentrales-schwankungsintervall/</guid>
       <description>
+&lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;Das &lt;strong&gt;zentrale Schwankungsintervall&lt;/strong&gt; sagt etwas über die Präzision der Lageschätzung eines Parameters (zum Beispiel eines Mittelwertes) aus. Das Schwankungsintervall schließt einen Bereich um den wahren Wert des Parameters in der Grundgesamtheit ein, der – vereinfacht gesprochen – mit einer zuvor festgelegten Sicherheitswahrscheinlichkeit den aus der Stichprobe geschätzten Parameter enthält.&lt;a href=&#34;#fn1&#34; class=&#34;footnote-ref&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;vgl: &lt;a href=&#34;https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall&lt;/a&gt;&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;vgl: &lt;a href=&#34;https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall&#34; class=&#34;uri&#34;&gt;https://de.wikipedia.org/wiki/Zentrales_Schwankungsintervall&lt;/a&gt;&lt;a href=&#34;#fnref1&#34; class=&#34;footnote-back&#34;&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -44,10 +46,11 @@
     
     <item>
       <title>Quartile, Quantile, Perzentile etc.</title>
-      <link>/post/quartile-quantile-perzentile-etc/</link>
+      <link>https://sefiroth.net/nap/post/quartile-quantile-perzentile-etc/</link>
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
-      <guid>/post/quartile-quantile-perzentile-etc/</guid>
+      <guid>https://sefiroth.net/nap/post/quartile-quantile-perzentile-etc/</guid>
       <description>
+&lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;“Was hat das eigentlich mit den Quartilen, Quantilen und so weiter auf sich?”
@@ -136,10 +139,11 @@ Ebenso liegen 40 % der Stichprobe unterhalb des vierten Dezils und 60 % oberhalb
     
     <item>
       <title>Der Zentrale Grenzwertsatz</title>
-      <link>/post/der-zentrale-grenzwertsatz/</link>
+      <link>https://sefiroth.net/nap/post/der-zentrale-grenzwertsatz/</link>
       <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>/post/der-zentrale-grenzwertsatz/</guid>
+      <guid>https://sefiroth.net/nap/post/der-zentrale-grenzwertsatz/</guid>
       <description>
+&lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;div id=&#34;der-zentrale-grenzwertsatz-der-statistik-bei-identischer-verteilung.&#34; class=&#34;section level2&#34;&gt;

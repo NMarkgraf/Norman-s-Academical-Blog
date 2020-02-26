@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Norman&#39;s Academic Blog</title>
+    <link>/authors/admin/</link>
+      <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    <description>Norman&#39;s Academic Blog</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 18 Dec 2019 11:20:50 +0100</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Norman&#39;s Academic Blog</title>
+      <link>/authors/admin/</link>
+    </image>
+    
+    <item>
+      <title>Umstellung auf die neue Version 4.6.3 des academic theme</title>
+      <link>/post/umstellung-auf-die-neue-version-4.6.3-des-academic-theme/</link>
+      <pubDate>Wed, 18 Dec 2019 11:20:50 +0100</pubDate>
+      <guid>/post/umstellung-auf-die-neue-version-4.6.3-des-academic-theme/</guid>
+      <description>&lt;p&gt;Nach einer relativ langen Seit habe ich mich wieder um meine Webseite gekümmert und musste feststellen, dass die Welt ein mal wieder nicht auf mich gewartet hat. Das Team um Georg Cushen hat natürlich weiter an den Grundfesten von &amp;ldquo;academic&amp;rdquo;, der Theme dieser Webseite, gearbeitet und wer nicht am Ball bleibt, der hat nun einmal, wenn er denn &amp;ldquo;mal eben&amp;rdquo; alles aktualisieren will, ein Problem.&lt;/p&gt;
+&lt;p&gt;Und genau da bin ich nun. Ich stelle diese Seite langsam um, aktualisiere hier und dort. Probiere das eine oder andere neue Feature aus und möchte, natürlich, alle sofort und ohne viel mühen.&lt;/p&gt;
+&lt;p&gt;Bis jetzt sind drei Tage &amp;ldquo;drauf gegangen&amp;rdquo;, aber das Grundgerüst ist nun umgestellt.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pandoc filter: style.py</title>
+      <link>/project/style.py/</link>
+      <pubDate>Fri, 10 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>/project/style.py/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

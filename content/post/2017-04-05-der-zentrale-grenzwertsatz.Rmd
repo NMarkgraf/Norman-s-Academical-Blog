@@ -3,7 +3,7 @@ title: Der Zentrale Grenzwertsatz
 author: Norman Markgraf
 date: '2017-04-05'
 categories:
-  - Statistik
+  - Statitisches
 tags:
   - Statistik
   - Wahrscheinlichkeitstheorie

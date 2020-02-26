@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="de-de">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Norman Markgraf">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
+Zunächst laden wir dazu die tipping Daten mittels
+library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.">
+
+  
+  <link rel="alternate" hreflang="de-de" href="https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#795548">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="../../css/academic.css">
+
+  
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111285016-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           document.location = url;
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target);  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-111285016-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
+
+  <link rel="canonical" href="https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Norman&#39;s Academic Blog">
+  <meta property="og:url" content="https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/">
+  <meta property="og:title" content="Nur ein wenig lineare Regression | Norman&#39;s Academic Blog">
+  <meta property="og:description" content="Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.
+Zunächst laden wir dazu die tipping Daten mittels
+library(mosaic) download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips."><meta property="og:image" content="https://sefiroth.net/nap/img/icon-192.png">
+  <meta property="twitter:image" content="https://sefiroth.net/nap/img/icon-192.png"><meta property="og:locale" content="de-de">
+  
+    
+      <meta property="article:published_time" content="2018-01-08T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2018-01-08T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/"
+  },
+  "headline": "Nur ein wenig lineare Regression",
+  
+  "datePublished": "2018-01-08T00:00:00Z",
+  "dateModified": "2018-01-08T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Norman Markgraf"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Norman's Academic Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sefiroth.net/nap/img/icon-512.png"
+    }
+  },
+  "description": "Der tipping Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (tip) und Rechnungsbetrag (total_bill) steht dabei im Vordergrund einer lineare Regressionsanalyse. So auch hier. Wir wollen die einzelnen Angaben von R dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von R eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.\nZunächst laden wir dazu die tipping Daten mittels\nlibrary(mosaic) download.file(\u0026quot;https://goo.gl/whKjnl\u0026quot;, destfile = \u0026quot;tips."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Nur ein wenig lineare Regression | Norman&#39;s Academic Blog</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Suche</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Suche..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="../../">Norman&#39;s Academic Blog</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Navigation einblenden">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="../../">Norman&#39;s Academic Blog</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Nur ein wenig lineare Regression</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 8, 2018
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 min Lesezeit
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="../../post/nur-ein-wenig-lineare-regression/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="../../categories/statistik/">Statistik</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+
+<p>Der <em>tipping</em> Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (<em>tip</em>) und Rechnungsbetrag (<em>total_bill</em>) steht dabei im Vordergrund einer lineare Regressionsanalyse.
+So auch hier. Wir wollen die einzelnen Angaben von <strong>R</strong> dabei in den Fokus rücken und einmal Hinterfragen, was wir bei der Ausgabe von <strong>R</strong> eigentlich genau sehen, woher es kommt und wie man es interpretieren kann.</p>
+<p>Zunächst laden wir dazu die <strong>tipping</strong> Daten mittels</p>
+<pre class="r"><code>library(mosaic)
+download.file(&quot;https://goo.gl/whKjnl&quot;, destfile = &quot;tips.csv&quot;)
+tips &lt;- read.csv2(&quot;tips.csv&quot;)</code></pre>
+<p>in den Arbeitsspeicher.</p>
+<p>Eine lineares Modell wird schnell mit</p>
+<pre class="r"><code>linMod &lt;- lm(tip ~ total_bill, data = tips)</code></pre>
+<p>erstellt.
+Betrachten wir die Zusammenfassung:</p>
+<pre class="r"><code>summary(linMod)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = tip ~ total_bill, data = tips)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3.1982 -0.5652 -0.0974  0.4863  3.7434 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 0.920270   0.159735   5.761 2.53e-08 ***
+## total_bill  0.105025   0.007365  14.260  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.022 on 242 degrees of freedom
+## Multiple R-squared:  0.4566, Adjusted R-squared:  0.4544 
+## F-statistic: 203.4 on 1 and 242 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Die zentrale Frage bei einer linearen Regression ist, finden wir einen linearen Zusammenhang in unserer Stichprobe, den wir auf die Population (als die Grundgesamtheit) übertragen können.</p>
+<p>Die Spalte <strong>Estimate</strong> im Abschnitt <strong>Coefficients</strong> liefert uns in unser Stichprobe einen möglichen linearen Zusammenhang gemäß</p>
+<p><span class="math display">\[\hat{y}_{\text{tip}} = \hat{\beta}_{\text{0}} + \hat{\beta}_{\text{total_bill}} \cdot x_{\text{total_bill}},\]</span></p>
+<p>mit den <em>Regressionskoeffizienten</em> <span class="math inline">\(\hat{\beta}_0=0.9202696\)</span> und <span class="math inline">\(\hat{\beta}_{\text{total_bill}}=0.1050245\)</span>.</p>
+<p>Graphisch ergibt sich damit das Modell wie folgt:</p>
+<pre class="r"><code># Statt plotModel(linMod) besser:
+mypanel &lt;- function(x, y) {
+    # Scatterplot:
+    panel.xyplot(x, y, col = &quot;darkgreen&quot;) 
+    # Regressionsgerade:
+    panel.abline(linMod, col = &quot;red&quot;, lwd = 1.2, lty = 2)
+}
+xyplot(
+    tip ~ total_bill, data = tips, 
+    panel = mypanel,
+    main  = &quot;Streudiagramm der Trinkgelder&quot;,
+    ylab  = &quot;Trinkgeld&quot;,
+    xlab  = &quot;Rechnungsbetrag&quot;,
+    key = list(
+            space = &quot;bottom&quot;, padding.text = 8,
+            lines = list(col = c(&quot;red&quot;), lty = c(2), lwd = 1.2),
+            text = list(c(&quot;Regressionsgerade&quot;))
+          )
+     )</code></pre>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Was hat es mit dem y-Achsenabschnitt <span class="math inline">\(\hat{\beta}_0\)</span> auf sich?</p>
+<p>Ist es etwa eine Art <em>Grundtrinkgeld</em>, mit dem der Kellern rechnen kann, auch wenn der Kunde gar nichts bestellt?</p>
+<p>Nun ja, es so etwas in der Art, aber eben ein rein fiktiver Wert, der durch die Konstruktion der Parameter entsteht.
+Eine (affin-)lineare Gerade geht nun einmal irgendwann durch die y-Achse (wenn sie nicht parallel dazu ist) und es kann passieren, dass eine sinnvolle Interpretation nicht so ohne weiteres möglich ist.</p>
+<p>Wir können aber dieses <em>Grundtrinkgeld</em> heraus nehmen und den y-Achsenabschnitt auf Null setzen. Dazu ziehen wir <span class="math inline">\(\hat{\beta}_0\)</span> einfach von alle Trinkgeldern ab. Wir erhalten quasi nur noch den <em>Trinkgeldzuwach</em>.</p>
+<pre class="r"><code>beta_0 &lt;- coef(linMod)[&quot;(Intercept)&quot;]  # Grundtrinkgeld
+tips$delta_tip &lt;- tips$tip - beta_0    # wird abgezogen</code></pre>
+<p>Vergleichen wir das alte lineare Modell mit dem neuen Modell (<em>linModDelta</em>):</p>
+<pre class="r"><code>linModDelta &lt;- lm(delta_tip ~ total_bill, data = tips)
+summary(linModDelta)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = delta_tip ~ total_bill, data = tips)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3.1982 -0.5652 -0.0974  0.4863  3.7434 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -4.549e-15  1.597e-01    0.00        1    
+## total_bill   1.050e-01  7.365e-03   14.26   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.022 on 242 degrees of freedom
+## Multiple R-squared:  0.4566, Adjusted R-squared:  0.4544 
+## F-statistic: 203.4 on 1 and 242 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>In diesem Modell ist der Wert für den y-Achsenabschnitt numerisch gleich 0. – Ja, da mag zwar <span class="math inline">\(-4.5487837\times 10^{-15}\)</span> stehen, jedoch sind so kleine Werte der jedem Rechner inne wohnenden Ungenauigkeit in der Gleitkomma-Arithmetik geschuldet und ist faktisch gleich 0.</p>
+<p>Der Wert für die Steigung lautet weiterhin <span class="math inline">\(0.1050245\)</span>.
+Das war auch zu erwarten, denn wir haben unsere Regressionsgerade eigentlich nur um <span class="math inline">\(\hat{\beta}_0\)</span> nach unten verschoben. (Der Fachmann spricht von einer Translation (Parallelverschiebung)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> um <span class="math inline">\(-\hat{\beta}_0\)</span>.</p>
+<pre class="r"><code># Statt plotModel(linModDelta) besser:
+mypanel &lt;- function(x, y) {
+    # Scatterplot:
+    panel.xyplot(x, y, col = &quot;darkgreen&quot;) 
+    # Regressionsgerade:
+    panel.abline(linModDelta, col = &quot;red&quot;, lwd = 1.2, lty = 2)
+}
+xyplot(
+    delta_tip ~ total_bill, data=tips, 
+    panel = mypanel,
+    main  = &quot;Streudiagramm der Delta Trinkgelder&quot;,
+    ylab  = &quot;Delta Trinkgeld&quot;,
+    xlab  = &quot;Rechnungsbetrag&quot;,
+    key = list(
+            space=&quot;bottom&quot;, padding.text=8,
+            lines=list(col=c(&quot;red&quot;), lty=c(2), lwd=1.2),
+            text=list(c(&quot;Regressionsgerade&quot;)))
+     )</code></pre>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Vergleichen wir die beiden Zusammenfassungen, so stellen wir fest das sich mit Ausnahme der <em>[Intercept]</em> Zeile praktisch nichts geändert hat. Das ist kein Wunder, sondern Absicht!</p>
+<p>Die Regressionsgerade stellt für unsere Stichprobe die Gerade mit dem geringsten Fehler an den Datenpunkten dar. Mathematisch heißt das folgendes:</p>
+<p>An den <span class="math inline">\(n=244\)</span> Datenpunkten unserer Stichprobe <span class="math inline">\((x_i, y_i)=(tips\$total\_bill[i], tips\$tip[i])\)</span> [für <span class="math inline">\((i=1, \dots, n)\)</span>] sind die <em>Residuen</em>, also die <em>Fehlerterme</em>,</p>
+<p><span class="math display">\[
+ \hat{e}_i =\hat{y}_i - y_i = \left[\hat{\beta}_{\text{0}} + \hat{\beta}_{\text{total_bill}} \cdot x_i\right] - y_i
+\]</span></p>
+<p>durch die verwendete <em>Methode der kleinsten Quadrate</em><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> <em>quadratisch minimal</em>. Kurz:</p>
+<p><span class="math display">\[
+    \sum_{i=1}^n (\hat{e}_i)^2 \text{ ist minimal!}
+\]</span></p>
+<p>Wir können diese Fehlerterme graphisch ansehen um die Varianz der Residuen zu sehen.
+Dazu ziehen wir von allen Datenpunkten <span class="math inline">\(y_i\)</span> den geschätzten Wert <span class="math inline">\(\hat{y}_i\)</span> ab und erstellen ein neues lineares Modell:</p>
+<pre class="r"><code>beta_total_bill &lt;- coef(linModDelta)[&quot;total_bill&quot;]
+tips$error_tip &lt;- (tips$tip - beta_0 - beta_total_bill * tips$total_bill)
+linModError &lt;- lm(error_tip ~ total_bill, data = tips)
+summary(linModError)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = error_tip ~ total_bill, data = tips)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3.1982 -0.5652 -0.0974  0.4863  3.7434 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept)  1.900e-15  1.597e-01       0        1
+## total_bill  -8.740e-17  7.365e-03       0        1
+## 
+## Residual standard error: 1.022 on 242 degrees of freedom
+## Multiple R-squared:  6.665e-31,  Adjusted R-squared:  -0.004132 
+## F-statistic: 1.613e-28 on 1 and 242 DF,  p-value: 1</code></pre>
+<p>Also Diagramm sieht es dann so aus:</p>
+<pre class="r"><code># Statt plotModel(linModError) besser:
+mypanel &lt;- function(x, y) {
+    # Scatterplot:
+    panel.xyplot(x, y, col = &quot;darkgreen&quot;) 
+    # Regressionsgerade:
+    panel.abline(linModError, col = &quot;red&quot;, lwd = 1.2, lty = 2)
+}
+xyplot(
+    error_tip ~ total_bill, data = tips, 
+    panel = mypanel,
+    main  = &quot;Streudiagramm der Residuen&quot;,
+    ylab  = &quot;Residuen&quot;,
+    xlab  = &quot;Rechnungsbetrag&quot;,
+    key = list(
+            space = &quot;bottom&quot;, rows = 3, padding.text = 8,
+            lines = list(col=c(&quot;red&quot;), lty = c(2), lwd = 1.2),
+            text = list(c(&quot;Regressionsgerade / x-Achse&quot;))
+          )
+)</code></pre>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Wir können die Graphik im wesentlichen auch einfacher über den Befehl</p>
+<pre class="r"><code>xyplot(residuals(linMod) ~ fitted(linMod))</code></pre>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>erhalten.</p>
+<p>Betrachten wir kurz nur die Residuen:</p>
+<pre class="r"><code>favstats(~residuals(linMod))</code></pre>
+<pre><code>##        min         Q1      median        Q3      max          mean       sd   n
+##  -3.198225 -0.5651615 -0.09744499 0.4863111 3.743435 -2.022281e-17 1.019943 244
+##  missing
+##        0</code></pre>
+<p>Wir sehe, dass wir in der Zusammenfassung immer genau diese Werte unter dem Abschnitt <em>Residuals</em> gefunden haben. Minimum, das 1. Quantil, der Median, das 3. Quantil und das Maximum stimmen überein.</p>
+<p>Der erwartungstreue und unverzerrte Schätzer für den Standardfehler der Residuen, lautet</p>
+<p><span class="math display">\[
+\begin{align*}
+    SE_{\text{Residuen}} &amp;= \sqrt{\frac{1}{n-2} \cdot \sum_{i=1}^n (\hat{e_i})^2} = \sqrt{\frac{n-1}{n-2} \cdot \frac{1}{n-1} \cdot \sum_{i=1}^n (\hat{e_i})^2} \\
+                         &amp;= \sqrt{\frac{n-1}{n-2}} \cdot \sqrt{\frac{1}{n-1} \cdot \sum_{i=1}^n (\hat{e_i})^2} \\
+                         &amp;= \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}}
+\end{align*}
+\]</span></p>
+<p>Also finden wir den Wert <em>Residual standard error</em> aus der Zeile</p>
+<pre><code>## Residual standard error: 1.022 on 242 degrees of freedom</code></pre>
+<p>in dem wir den in den <em>favstats</em> gefundenen Wert für die Standardabweichung entsprechen korrigieren:</p>
+<p><span class="math display">\[
+    SE_{\text{Residuen}} = \sqrt{\frac{n-1}{n-2}} \cdot s_{\text{Residuen}} = \sqrt{\frac{243}{242}} \cdot 1.0199426 = 1.0220477
+\]</span></p>
+<p>Der Median der Residuen ist nicht gleich Null, wie der Mittelwert. (Welcher auch hier als numerisch Null interpretiert werden muss!)
+Es könnte also eine linkssteile, rechtsschiefe Verteilung der Residuen vorliegen.
+Betrachten wir dazu das Histogramm:</p>
+<pre class="r"><code>histogram(~residuals(linMod), nint = 19)</code></pre>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Schon beim ersten Blick auf das Histogramm kann an eine Normalverteilung der Residuen nicht mehr so ganz geglaubt werden.</p>
+<p>Ein Shapiro-Wilk-Test<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> hat als Nullhypothese die Annahme, dass die Daten normalverteilt sind!</p>
+<pre class="r"><code>shapiro.test(residuals(linMod))</code></pre>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  residuals(linMod)
+## W = 0.96728, p-value = 2.171e-05</code></pre>
+<p>Davon ist nach dem Ergebnis eben sowenig auszugehen, wie nach einem Blick auf das QQ-Normal-Diagramm:</p>
+<pre class="r"><code>qqnorm(residuals(linMod), col = &quot;darkgreen&quot;)</code></pre>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Ein K.O.-Kriterium für gute Prognosen.</p>
+<p>Wie gut aber beschreibt unsere Regressionsgerade die Daten?</p>
+<p>Als Maß dafür können wir das Bestimmtheitsmaß nehmen.</p>
+<p>Ein kurzer Blick auf die Situation, der Mittelwert der Trinkgelder ist</p>
+<p><span class="math display">\[
+    \bar{y} =  \frac{1}{n} \cdot \sum_{i=1}^n y_i = 2.9982787.
+\]</span></p>
+<p>Wir erhalten so folgendes Diagramm:</p>
+<pre class="r"><code>mypanel &lt;- function(x, y) {
+    panel.xyplot(x, y)
+    panel.abline(h = mean(y), lwd = 1.2, lty = 2, col = &quot;darkgreen&quot;)
+    panel.lmline(x, y, col = &quot;red&quot;, lwd = 1.2, lty = 2)
+}
+xyplot(
+    tip ~ total_bill, data = tips, 
+    panel = mypanel,
+    main  = &quot;Streudiagramm der Trinkgelder&quot;,
+    ylab  = &quot;Trinkgeld&quot;,
+    xlab  = &quot;Rechnungsbetrag&quot;,
+    key = list(
+            space = &quot;bottom&quot;,
+            padding.text = 8,
+            columns = 2,
+            just = c(&quot;center&quot;, &quot;bottom&quot;),
+            lines = list(col = c(&quot;darkgreen&quot;, &quot;red&quot;), lty = c(2, 2), lwd = 1.2),
+            text = list(c(expression(bar(y)), expression(hat(beta)[0]+hat(beta)[total_bill] * x[total_bill]))),
+            text = list(c(&quot;Mittelwert Trinkgeld&quot;, &quot;Regressionsgerade&quot;))
+    )
+)</code></pre>
+<p><img src="../../post/2018-01-08-nur-ein-wenig-lineare-regression_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>Die Varianz <span class="math inline">\(s^2_{y_i}=1.9144546\)</span> beschreibt die mittlere quadratische Abweichung der Datenpunkte <span class="math inline">\(y_i\)</span> vom Mittelwert <span class="math inline">\(\bar{y}\)</span>.
+Diese Varianz lässt sich Zerlegen in einen Anteil, der durch die Regressionsgerade <em>erklärt</em> wird und in einen Anteil, der durch die Regressionsgerade <em>nicht erklärt</em> wird.</p>
+<p><span class="math display">\[
+    s^2_{y_i} = s^2_{\hat{y}_i} + s^2_{\hat{e}_i}
+\]</span>
+Dividiert man beider Seiten durch die Varianz <span class="math inline">\(s^2_{y_i}\)</span>, so normiert man den Ausdruck und kann den Faktor <span class="math inline">\(\frac{1}{n-1}\)</span> (bzw. <span class="math inline">\(\frac{1}{n}\)</span>) herauskürzen. Es bleibt dann:</p>
+<p><span class="math display">\[
+    1 = \frac{\sum_{i=1}^n (\bar{y}- \hat{y_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2} + \frac{\sum_{i=1}^n (\hat{e_i})^2}{\sum_{i=1}^n (\bar{y}-y_i)^2}
+\]</span></p>
+<p>Multipliziert man beide Seiten mit <span class="math inline">\(\sum_{i=1}^n (y_i)^2\)</span>, so erhält man:</p>
+<p><span class="math display">\[
+    \sum_{i=1}^n (\bar{y}- y_i)^2 = \sum_{i=1}^n (\bar{y}- \hat{y_i})^2+ \sum_{i=1}^n (\hat{e_i})^2 
+\]</span></p>
+<p>Zur Vereinfachung nennt man die einzelnen Summen in dem Ausdruck wie folgt:</p>
+<ul>
+<li>Der erste Ausdruck heißt <strong>Gesamtvarianz</strong> oder <strong>total sum of squares</strong> oder kurz <strong><span class="math inline">\(SS_T\)</span></strong>, (oder <strong>TSS</strong>) er ist die Summe der quadrierten Differenzen</li>
+</ul>
+<p><span class="math display">\[
+    SS_T = \sum_{i=1}^n (\bar{y}-y_i)^2
+\]</span></p>
+<ul>
+<li>Der zweite Ausdruck heißt <strong>Modellvarianz</strong> oder <strong>model sum of squares</strong> oder kurz <strong><span class="math inline">\(SS_M\)</span></strong> (oder <strong>RSS</strong>), er ist die Summe der quadrierten Differenzen aus dem Mittelwert <span class="math inline">\(\bar{y}\)</span> und der Punkte auf der Regressionsgeraden <span class="math inline">\(\hat{y}_i\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+    SS_M = \sum_{i=1}^n (\bar{y}-\hat{y}_i)^2
+\]</span></p>
+<ul>
+<li>Der dritte Ausdruck heißt <strong>Gesamt-Verhersage-Fehler</strong>, <strong>Fehlersteuung der Regression</strong> oder <strong>error sum of squares</strong> oder kurz <span class="math inline">\(SS_E\)</span> (oder <strong>ESS</strong>), er ist die Summe der quadratischen Differenz aus den Datenpunkten <span class="math inline">\(y_i\)</span> und den Punkten der Regressionsgeraden <span class="math inline">\(\hat{y}_i\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+    SS_E = \sum_{i=1}^n (\hat{y}_i-y_i)^2 = \sum_{i=1}^n (\hat{e}_i)^2
+\]</span></p>
+<p>Wir können daher auch kurz</p>
+<p><span class="math display">\[
+    SS_T = SS_M + SS_E
+\]</span>
+schreiben und sparen uns die ganzen Summenzeichen.</p>
+<p>Die Güte einer Regression wollen wir durch den Anteil der durch das Model erklärten Varianz (also der <span class="math inline">\(SS_M\)</span>) ausdrücken und stellen daher nach <span class="math inline">\(SS_M\)</span> um:</p>
+<p><span class="math display">\[
+    SS_M = SS_T - SS_E
+\]</span>
+Teilen wir beide Seiten durch <span class="math inline">\(SS_T\)</span> also der maximalen (weil totalen) Quadratsumme, so erhalten wir:
+<span class="math display">\[
+    \frac{SS_M}{SS_T} = \frac{SS_T}{SS_T} - \frac{SS_E}{SS_T} = 1 - \frac{SS_E}{SS_T}
+\]</span></p>
+<p>Den Ausdruck <span class="math inline">\(\frac{SS_M}{SS_T}\)</span> nennen wir <strong>Bestimmtheitsmaß</strong> und schreiben dafür <span class="math inline">\(R^2\)</span>. Es ist ein Wert zwischen 0 und 1, der den Anteil der durch das Modell beschriebenen Varianz in Bezug auf die Gesamtvarianz angibt. Kraft Definition ist <span class="math inline">\(R^2\)</span> im eindimensionalen Fall tatsächlich das Quadrat des (Pearson-)Korrelationskoeffizienten <span class="math inline">\(r\)</span>. (M.a.W.: <span class="math inline">\(R^2= r^2\)</span>.)</p>
+<p>In unserer Zusammenfassung des linearen Models findet sich dieser Wert auch. Und zwar unter dem Begriff:</p>
+<pre><code>## Multiple R-squared:  0.4566, </code></pre>
+<p>Es gilt ja:</p>
+<p><span class="math display">\[
+    R^2 = 1 - \frac{SS_E}{SS_T} = 1 - \frac{s^2_{\hat{e}_i}}{s^2_{y_i}} = 1 - \frac{1.0402829}{1.9144546} = 0.4566166
+\]</span></p>
+<p>Der Wert</p>
+<pre><code>## ..., Adjusted R-squared:  0.4544</code></pre>
+<p>erklärt sich daraus<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, dass das Bestimmheitsmaß um so größer wird je größer die Zahl der unabhängigen Variablen wird.
+Und zwar <em>unabhöngig</em> davon, ob weitere unabhängige Variablen wirklich einen Beitrag zur Erklärungskraft liefern.
+Daher nutzt man besser das <strong>korrigierte Bestimmtheitsmaß</strong> (engl.: <em>adjusted R-squared</em>) <span class="math inline">\(\bar{R}^2\)</span>:</p>
+<p><span class="math display">\[
+    \begin{align*}
+        \bar{R}^2 &amp;= 1- (1-R^2) \cdot \frac{n-1}{n-p-1}\\ 
+                  &amp;= R^2 - (1-R^2)  \cdot \frac{p}{n-p-1}
+    \end{align*}
+\]</span></p>
+<p>Wobei <span class="math inline">\(p\)</span> die Anzahl der unabhängigen Variablen im Modell darstellt.
+In unserem Beispiel gilt daher:</p>
+<p><span class="math display">\[
+    \begin{align*}
+        \bar{R}^2 &amp;= 1 - (1-R^2)  \cdot \frac{n-1}{n-p-1} \\
+                  &amp;= 1 - (1- 0.4566166)  \cdot \frac{244-1}{244- 1- 1} \\
+                  &amp;= 0.4543712
+    \end{align*}
+\]</span></p>
+<p><strong>Vorsicht:</strong> Das <em>korrigierte Bestimmtheitsmaß</em> ist nicht mehr an das Intervall <span class="math inline">\([0; 1]\)</span> gebunden!
+Es kann negative Werte annehmen, ist in der Regel kleiner als das (unkorrigierte) Bestimmtheitsmaß und erreicht die obere Grenze (<span class="math inline">\(\bar{R}^2=1\)</span>) genau dann, wenn <span class="math inline">\(R^2 = 1\)</span> ist.</p>
+<p>Bei der <strong>Gesamtsignifikanz des Modells</strong> (auch <strong>Overall-F-Test</strong> genannt) wird geprüft, ob mindestens eine Variable einen Erklärungsgehalt für das Modell liefert.</p>
+<p>Falls diese Hypothese verworfen wird ist somit das Modell nutzlos.
+Dieser Test lässt sich so interpretieren als würde man die gesamte Güte des Modells, also das <span class="math inline">\(R^2\)</span> des Modells, testen.
+Aus diesem Grund wird der F-Test der Gesamtsignifikanz des Modells auch als Anpassungsgüte-Test bezeichnet.
+Die Nullhypothese des F-Test der Gesamtsignifikanz des Modells sagt aus, dass alle erklärenden Variablen keinen Einfluss auf die abhängige Variable haben.
+Sowohl die abhängige Variable als auch die unabhängigen Variablen können binär (kategoriell) oder metrisch sein.
+Der <em>Wald-Test</em> kann dann die Hypothesen testen (ohne Einbezug des Achsenabschnittes):</p>
+<p><span class="math display">\[
+    H_{0}\colon \beta _{1}=\beta _{2}=\ldots =\beta _{k}\;=\;0\Rightarrow R^{2}=0
+\]</span>
+gegen</p>
+<p><span class="math display">\[
+    H_{1}:\beta _{j}\;\neq \;0\;\mathrm {f{\ddot {u}}r\;mindestens\;ein} \;j\in \{1,\ldots ,k\}\Rightarrow R^{2}\neq 0
+\]</span></p>
+<p>Die Teststatistik dieses Tests lautet</p>
+<p><span class="math display">\[
+\begin{aligned}
+    F\;\;{\stackrel {H_{0}}{=}}{\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}}\;\;{\stackrel {H_{0}}{\sim }}\;\;F(p,n-p)
+\end{aligned}.
+\]</span></p>
+<p>mit <span class="math inline">\(p\)</span> und <span class="math inline">\(\displaystyle (n-p-1)\)</span> Freiheitsgraden.
+Überschreitet der empirische F-Wert einen kritischen F-Wert, der zu einem a priori festgelegten Signifikanzniveau <span class="math inline">\(\alpha\)</span>, so verwirft man die Nullhypothese <span class="math inline">\(H_{0}\)</span>.
+Das <span class="math inline">\(R^{2}\)</span> ist dann ausreichend groß und mindestens ein Regressor trägt also vermutlich genügend viel Information zur Erklärung von <span class="math inline">\(y\)</span> bei.
+Es ist naheliegend bei hohen F-Werten die Nullhypothese zu verwerfen, da ein hohes Bestimmtheitsmaß zu einem hohen F-Wert führt.
+Wenn der <em>Wald-Test</em> für eine oder mehrere unabhängige Variablen die Nullhypothese ablehnt, dann kann man davon ausgehen, dass die zugehörigen Parameter ungleich Null sind, so dass die Variable(n) in das Modell mit einbezogen werden sollten.</p>
+<p>In unserem Beispiel ist</p>
+<p><span class="math display">\[
+    F={\frac {R^{2}}{1-R^{2}}} \cdot {\frac {n-p-1}{p}} = \frac{0.4566166}{1-0.4566166} \cdot \frac{244-1-1}{1} = 203.3577233
+\]</span></p>
+<p>der Wert in der Zeile</p>
+<pre><code>## F-statistic: 203.4 on 1 and 242 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>mit Parametern <span class="math inline">\(p=1\)</span> und <span class="math inline">\(n-p-1=242\)</span> Freiheitsgraden.</p>
+<p>Der p-Wert von (numerisch) 0, liefert also ein hinreichendes Indiz dafür, dass der Rechnungsbetrag einen echten Beitrag liefert.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>vgl.: <a href="https://de.wikipedia.org/wiki/Parallelverschiebung" class="uri">https://de.wikipedia.org/wiki/Parallelverschiebung</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>vgl.: <a href="https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate" class="uri">https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate</a><a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>vgl.: <a href="https://de.wikipedia.org/wiki/Shapiro-Wilk-Test" class="uri">https://de.wikipedia.org/wiki/Shapiro-Wilk-Test</a><a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>vgl.: <a href="https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß" class="uri">https://de.wikipedia.org/wiki/Bestimmtheitsmaß#Das_korrigierte_Bestimmtheitsmaß</a><a href="#fnref4" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+
+    </div>
+
+    
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="../../tags/lehre/">Lehre</a>
+  
+  <a class="badge badge-light" href="../../tags/r/">R</a>
+  
+  <a class="badge badge-light" href="../../tags/statistik/">Statistik</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/&amp;text=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/&amp;t=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Nur%20ein%20wenig%20lineare%20Regression&amp;body=https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/&amp;title=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Nur%20ein%20wenig%20lineare%20Regression%20https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://sefiroth.net/nap/post/nur-ein-wenig-lineare-regression/&amp;title=Nur%20ein%20wenig%20lineare%20Regression" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="../../authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://sefiroth.net/nap/">Norman Markgraf</a></h5>
+      <h6 class="card-subtitle">Diplom-Mathematiker</h6>
+      <p class="card-text">Norman Markgraf ist freiberuflicher Dozent für Mathematik, Statistik und Informatik, sowie freiberuflicher Programmierer.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:nmarkgraf@hotmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="../../twitter.com/NormanMarkgraf" >
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="//scholar.google.de/citations?user=zR76YpQAAAAJ&amp;hl=de" >
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="//github.com/nmarkgraf" >
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="//www.xing.com/profile/Norman_Markgraf" >
+        <i class="fab fa-xing"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="//www.linkedin.com/in/normanmarkgraf/" >
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "normans-akademischer-blog" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Ähnliches</h3>
+    <ul>
+      
+      <li><a href="../../post/quartile-quantile-perzentile-etc/">Quartile, Quantile, Perzentile etc.</a></li>
+      
+      <li><a href="../../project/etwas-r-am-abend/">Etwas R am Abend</a></li>
+      
+      <li><a href="../../post/prognose-konfidenz-und-fiduzialintervalle/">Prognose-, Konfidenz- und Fiduzialintervalle</a></li>
+      
+      <li><a href="../../post/konfidenzintervalle/">Konfidenzintervalle</a></li>
+      
+      <li><a href="../../post/zentrales-schwankungsintervall/">Zentrales Schwankungsintervall</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+    <script src="../../js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.3/mermaid.min.js" integrity="" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/java.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHIzNMfWrSJMBwSMofumWsGuBIaXmNmYE"></script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js" integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"Nichts gefunden","placeholder":"Suche...","results":"Suchergebnisse"};
+      const content_type = {
+        'post': "Blog",
+        'project': "Projekte",
+        'publication' : "Publikationen",
+        'talk' : "Vorträge"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://normans-akademischer-blog.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="../../js/academic.min.600a2e440c16093e23e26e90951c4d4b.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="../../privacy/"></a>
+    
+    
+  </p>
+  
+
+  <p class="powered-by">
+    © in 2017 - 2020 by Norman Markgraf &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Zitieren</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Kopie
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

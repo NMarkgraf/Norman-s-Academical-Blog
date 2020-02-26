@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fundstücke | Norman&#39;s Academic Blog</title>
-    <link>/categories/fundst%C3%BCcke/</link>
-      <atom:link href="/categories/fundst%C3%BCcke/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sefiroth.net/nap/categories/fundst%C3%BCcke/</link>
+      <atom:link href="https://sefiroth.net/nap/categories/fundst%C3%BCcke/index.xml" rel="self" type="application/rss+xml" />
     <description>Fundstücke</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://sefiroth.net/nap/img/icon-192.png</url>
       <title>Fundstücke</title>
-      <link>/categories/fundst%C3%BCcke/</link>
+      <link>https://sefiroth.net/nap/categories/fundst%C3%BCcke/</link>
     </image>
     
     <item>
       <title>Raspbian auf dem Raspberry Pi installieren</title>
-      <link>/post/raspbian-auf-dem-raspberry-pi-installieren/</link>
+      <link>https://sefiroth.net/nap/post/raspbian-auf-dem-raspberry-pi-installieren/</link>
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>/post/raspbian-auf-dem-raspberry-pi-installieren/</guid>
+      <guid>https://sefiroth.net/nap/post/raspbian-auf-dem-raspberry-pi-installieren/</guid>
       <description>&lt;p&gt;Wenn man zu Weihnachten einen kleinen neuen Freund bekommt, so wie ich einen Raspberry Pi Zero WH, dann möchte man ihn auch mit der aktuellen Version eines Betriebssystems austatten. Als macOS Nutzer gibt es dafür viele Möglichkeiten. Hier meine Schritte bei der Installation, damit ich mich daran später erinnere&lt;/p&gt;
 &lt;h2 id=&#34;vorbereiten-der-sd-karte&#34;&gt;Vorbereiten der SD Karte&lt;/h2&gt;
 &lt;p&gt;Die SD(HC) Karte sollte auf FAT32 formatiert werden. Das geht unter macOS sehr schön mit dem Festplattenmanager!&lt;/p&gt;
@@ -64,11 +64,11 @@ network={
     
     <item>
       <title>10 Dinge die kein Talent benötigen!</title>
-      <link>/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
+      <link>https://sefiroth.net/nap/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
       <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
+      <guid>https://sefiroth.net/nap/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
       <description>&lt;p&gt;Gerade im Internet gefunden:&lt;/p&gt;
-&lt;h3 id=&#34;10-dinge-die-kein-talent-bentigen&#34;&gt;10 Dinge die kein Talent benötigen!&lt;/h3&gt;
+&lt;h3 id=&#34;10-dinge-die-kein-talent-benötigen&#34;&gt;10 Dinge die kein Talent benötigen!&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Pünktlichkeit&lt;/li&gt;
 &lt;li&gt;Arbeitsmoral&lt;/li&gt;

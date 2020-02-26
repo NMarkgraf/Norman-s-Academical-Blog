@@ -2,7 +2,7 @@
 title: Moderator und Mediation - Formen der Interaktion bei Analyse von Zusammenhängen
 author: admin
 date: '2019-12-31'
-slug: moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhängen
+slug: moderator-und-mediation-formen-der-interaktion-bei-analyse-von-zusammenhaengen
 categories:
   - Statistik
 tags:
@@ -107,6 +107,7 @@ D:e -> E [ color="#a2b3c4", arrowhead=none ];
 Der Einfluss von $M$ ändert also den Effekt von $X$ auf $Y$. Der Zusammenhang zwischen $Y$ und $X$ ist also je nach $M$ unterschiedlich.
 
 Statistisch gesehen liegt eine *Interaktion* zwischen $M$ und $X$ vor. 
+
 
 ### Wie untersucht man einen Zusammenhang auf eine Moderation?
 

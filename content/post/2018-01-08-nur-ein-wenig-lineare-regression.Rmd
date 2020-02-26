@@ -4,11 +4,13 @@ author: 'Norman Markgraf'
 date: '2018-01-08'
 slug: 'nur-ein-wenig-lineare-regression'
 categories:  
-    - Statistik
+    - Statistisches
 tags:
     - Lehre
     - R
     - Statistik
+    - Lineare Regression
+    - Regressionsanalyse
 ---
 
 Der *tipping* Datensatz wird oft analysiert. Das Verhältnis von Trinkgeld (*tip*) und Rechnungsbetrag (*total_bill*) steht dabei im Vordergrund einer lineare Regressionsanalyse. 

@@ -2,22 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Allgemein | Norman&#39;s Academic Blog</title>
-    <link>/tags/allgemein/</link>
-      <atom:link href="/tags/allgemein/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sefiroth.net/nap/tags/allgemein/</link>
+      <atom:link href="https://sefiroth.net/nap/tags/allgemein/index.xml" rel="self" type="application/rss+xml" />
     <description>Allgemein</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://sefiroth.net/nap/img/icon-192.png</url>
       <title>Allgemein</title>
-      <link>/tags/allgemein/</link>
+      <link>https://sefiroth.net/nap/tags/allgemein/</link>
     </image>
     
     <item>
       <title>SBI - Simulation Based Inference</title>
-      <link>/post/sbi-simulation-based-inference/</link>
+      <link>https://sefiroth.net/nap/post/sbi-simulation-based-inference/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>/post/sbi-simulation-based-inference/</guid>
+      <guid>https://sefiroth.net/nap/post/sbi-simulation-based-inference/</guid>
       <description>
+&lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;Wenn meine Tochter &lt;em&gt;SBI&lt;/em&gt; hört, denkt sie an &lt;em&gt;Sally Bollywood Investigation&lt;/em&gt;. – Und ich oft auch. – Mit &lt;em&gt;SBI&lt;/em&gt; ist hier aber nicht der Trickfilm für Kinder, sondern &lt;em&gt;&lt;strong&gt;S&lt;/strong&gt;imulation &lt;strong&gt;B&lt;/strong&gt;ased &lt;strong&gt;I&lt;/strong&gt;nference&lt;/em&gt;, gemeint.&lt;/p&gt;
@@ -28,10 +29,11 @@
     
     <item>
       <title>Auch R markdown Dateien sollten sich an Regeln halten</title>
-      <link>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
+      <link>https://sefiroth.net/nap/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
-      <guid>/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
+      <guid>https://sefiroth.net/nap/post/auch-r-markdown-dateien-sollten-sich-an-regeln-halten/</guid>
       <description>
+&lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;Jede Programmiersprache hat Regeln.
@@ -112,11 +114,11 @@ Den &lt;em&gt;Python&lt;/em&gt;-Quelltext findet man unter &lt;a href=&#34;https
     
     <item>
       <title>10 Dinge die kein Talent benötigen!</title>
-      <link>/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
+      <link>https://sefiroth.net/nap/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</link>
       <pubDate>Thu, 13 Jul 2017 00:00:00 +0000</pubDate>
-      <guid>/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
+      <guid>https://sefiroth.net/nap/post/10-dinge-die-kein-talent-ben%C3%B6tigen/</guid>
       <description>&lt;p&gt;Gerade im Internet gefunden:&lt;/p&gt;
-&lt;h3 id=&#34;10-dinge-die-kein-talent-bentigen&#34;&gt;10 Dinge die kein Talent benötigen!&lt;/h3&gt;
+&lt;h3 id=&#34;10-dinge-die-kein-talent-benötigen&#34;&gt;10 Dinge die kein Talent benötigen!&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Pünktlichkeit&lt;/li&gt;
 &lt;li&gt;Arbeitsmoral&lt;/li&gt;

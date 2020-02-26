@@ -4,7 +4,7 @@ author: Norman Markgraf
 date: '2018-06-11'
 slug: sbi-simulation-based-inference
 categories:
-  - Statistik
+  - Statistisches
 tags:
   - Lehre
   - Allgemein
