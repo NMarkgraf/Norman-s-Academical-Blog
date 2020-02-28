@@ -42,9 +42,11 @@ Bei 112 - von hatte der Junge einen höheren IQ. Ist die Abweichung vom Mittelwe
 </ol>
 <p>Auf Grundlage dieser drei Lösungen wurde dann enschieden, ob die Abweichung signifikant ist, also 112 im oder eben nicht im berechneten Intervall liegt. <em>Ergebnis:</em> a), b) liefern nicht signifikante und c) ein signifikantes Ergebnis.</p>
 <p>Die Frage bleibt, was in der Aufgabenstellung mit “200 zufällige Junge-Mädchen-Paaren” gemeint ist.</p>
-<p>Es gilt ja bekannter maßen:
-- Eine <em>uneingeschränkte Zufallsstichprobe</em> erhält man z. B. bei einem <em>Ziehen ohne Zurücklegen</em> (<span class="math inline">\(\rightarrow\)</span> Hypergeometische Verteilung).
-- Eine <em>einfache Zufallsstichprobe</em> z. B. bei einem <em>Ziehen mit Zurücklegen</em> (<span class="math inline">\(\rightarrow\)</span> Binomialverteilung).</p>
+<p>Bekannterweise kann man diesen Satz interprätieren:</p>
+<ul>
+<li><p>Eine <em>uneingeschränkte Zufallsstichprobe</em> erhält man z. B. bei einem <em>Ziehen ohne Zurücklegen</em> (<span class="math inline">\(\rightarrow\)</span> Hypergeometische Verteilung).</p></li>
+<li><p>Eine <em>einfache Zufallsstichprobe</em> z. B. bei einem <em>Ziehen mit Zurücklegen</em> (<span class="math inline">\(\rightarrow\)</span> Binomialverteilung).</p></li>
+</ul>
 <p>Rechnet man mit Hilfe von <em>R</em> die axakte Lösung nach, so erhält man:</p>
 <p>Für die Binomialverteilung (die “bessere Näherung”):</p>
 <pre class="r"><code>pl &lt;- 0.025 # 2,5% als untere Grenze

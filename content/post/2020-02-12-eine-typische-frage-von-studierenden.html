@@ -41,13 +41,26 @@ Welchen Test kann ich dazu zur Überprüfung einer Abhängigkeit nehmen?</p>
 Mangels tatsächlicher Daten basten wir uns einfach mal ein Beispiel:</p>
 <div id="wir-basten-uns-ein-beispiel" class="section level3">
 <h3>Wir basten uns ein Beispiel</h3>
-<pre class="r"><code>library(mosaic)
+<pre class="r"><code># Wie immer zuerst das Paket &#39;mosaic&#39; laden
+library(mosaic)
+
+# Einen beliebigen Startwert für den Zufallszahlengenerator
+# für die Reproduzierbarkeit
 set.seed(123)
-n = 176
+
+# Anzahl der Vorfälle insgesamt
+n &lt;- 176
+
+# Anzahl der Wiederholungen für die SBI-Methoden
+loops &lt;- 10000
+
+# Erfinden eines Beispieldatensatzes
 daten &lt;- data.frame(
   iphones.tagsüber.unbeachtet = sample(rep(c(&quot;1xtäglich&quot;,&quot;2xtäglich&quot;,&quot;3xtäglich&quot;),n),n),
   wetter.ist.gut = sample(rep(c(&quot;Ja&quot;,&quot;Nein&quot;),n),n)
 )
+
+# Ausgabe der ersten Zeilen des Datensatzes
 head(daten)</code></pre>
 <pre><code>##   iphones.tagsüber.unbeachtet wetter.ist.gut
 ## 1                   1xtäglich             Ja
@@ -59,7 +72,7 @@ head(daten)</code></pre>
 </div>
 <div id="ein-blick-auf-kennzahlen-und-visualisierungsmöglichkeiten" class="section level3">
 <h3>Ein Blick auf Kennzahlen und Visualisierungsmöglichkeiten</h3>
-<p>Man kann diese Daten als Kreuztabelle zusammenfassen und diese dann mit Hilfe eines Mosaicplots darstellen:</p>
+<p>Man kann diese Daten als Kreuztabelle zusammenfassen und diese dann mit Hilfe eines Mosaikplots darstellen:</p>
 <pre class="r"><code>tally(iphones.tagsüber.unbeachtet ~ wetter.ist.gut, data=daten)</code></pre>
 <pre><code>##                            wetter.ist.gut
 ## iphones.tagsüber.unbeachtet Ja Nein
@@ -68,9 +81,11 @@ head(daten)</code></pre>
 ##                   3xtäglich 27   27</code></pre>
 <pre class="r"><code>mosaicplot(wetter.ist.gut ~ iphones.tagsüber.unbeachtet, data=daten)</code></pre>
 <p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code># Für später speichern wir die Kreuztabelle in obs.tab
+obs.tab &lt;- tally(iphones.tagsüber.unbeachtet ~ wetter.ist.gut, data=daten)</code></pre>
 </div>
-<div id="von-der-forschungsthese-zur-hypothese-teil-1" class="section level3">
-<h3>Von der Forschungsthese zur Hypothese (Teil 1)</h3>
+<div id="von-der-forschungsthese-zur-hypothese" class="section level3">
+<h3>Von der Forschungsthese zur Hypothese</h3>
 <p>Um nun zwischen abhänig und unabhängig statitisch zu unterscheiden, sollte man sich die Null- und Alternativhypothese genau überlegen und <em>operationalisieren</em>.</p>
 <p>Ein Blick auf die (orginal) Forschungsthese: “Die reduzierte Abhängigkeit des Iphones tagsüber liegt am schönen Wetter.”</p>
 <p>Okay, wir formulieren etwas um: “Es besteht ein Zusammenhang zwischen ‘schönem Wetter’ und dem ‘Iphone tagsüber unbeachtet’ lassen.”</p>
@@ -93,15 +108,15 @@ head(daten)</code></pre>
 ##        62        60        54</code></pre>
 <div id="freiheitsgrade" class="section level4">
 <h4>Freiheitsgrade</h4>
-<p>Die Werte innerhalb der Kreuztabelle oben werden im wesendlichen durch diese Werte bestimmt. Die außeren Werte sind also unsere Rahmenbedingungen. Dabei ist der Einfluss der sogenannten <em>Randhäufigkeiten</em> (<em>Marginale Häufigkeit</em>) nicht zu unterschätzen. Denn wenn wir diese als <em>fix</em>/<em>gegeben</em> ansehen, können wir nur mit den sechs Werten in der Mitte unserer Kreuztabelle <em>spielen</em></p>
-<p>Doch sind nicht alle sechs Werte wirklich frei. Denn um zum Beispiel die Summe 62 in der ersten Zeile zu erhalten haben wir ja die Summe von 29 und 33 gebildet.</p>
-<p>Ist nun der Rand, also 62, fest, so kann ich die beiden Summanden nicht mehr frei wählen, denn</p>
+<p>Die Werte innerhalb der Kreuztabelle oben werden im wesendlichen durch diese Werte bestimmt. Die außeren Werte sind also unsere Rahmenbedingungen. Dabei ist der Einfluss der sogenannten <em>Randhäufigkeiten</em> (<em>Marginale Häufigkeit</em>) nicht zu unterschätzen. Denn wenn wir diese als <em>fix</em>/<em>gegeben</em> ansehen, können wir nur mit den sechs Werten in der Mitte unserer Kreuztabelle <em>spielen</em>.</p>
+<p>Doch sind nicht alle sechs Werte wirklich frei wählbar. Denn um zum Beispiel die Summe 62 in der ersten Zeile zu erhalten haben wir ja die Summe von 29 und 33 gebildet.</p>
+<p>Ist nun der Rand, also 62, fest, so kann ich nicht <em>beide</em> Summanden frei wählen, denn</p>
 <p><span class="math display">\[62 = 29 + 33\]</span></p>
-<p>impliziert ja, dass ich allgemeiner
-<span class="math display">\[62 = x + y\]</span>
-habe und somit durch
-<span class="math display">\[x = 62 - y \qquad\text{ bzw. }\qquad y = 62 - x\]</span>
-immer nur eine der Variabeln <span class="math inline">\(x\)</span> oder <span class="math inline">\(y\)</span> wirklich frei zu wählen ist.</p>
+<p>impliziert ja, dass allgemein</p>
+<p><span class="math display">\[62 = x + y\]</span>
+gelten muss und somit durch</p>
+<p><span class="math display">\[x = 62 - y \qquad\text{ bzw. }\qquad y = 62 - x\]</span>
+immer maximal eine der Variabeln – <span class="math inline">\(x\)</span> oder <span class="math inline">\(y\)</span> – wirklich frei wählen kann.</p>
 <p>Da dies für jede Zeile, aber auch für jede Spalte gilt, denn z.B. ist die Summe der ersten Spalte gegeben durch</p>
 <p><span class="math display">\[90 = 29 + 34 + 27,\]</span>
 sind von den sechs Werten in der Kreuztabelle in der Tat nur 2 Werte wirklich frei zu wählen.
@@ -109,50 +124,43 @@ Wir haben also ein Problem mit <em>2 Freiheitsgraden</em>, man schreibt das kurz
 </div>
 <div id="unabhängigkeit-in-der-statistik" class="section level3">
 <h3>Unabhängigkeit in der Statistik</h3>
-<p>Wir sagen in der Statistik, dass ein gemeinsames Ereignis unabhängig ist wenn sich das Ereignis als Produkt der beiden Einzelereignisse berechnen lässt.
+<p>Wir sagen, in der Statistik, dass ein gemeinsames Ereignis unabhängig ist wenn sich das Ereignis als Produkt der beiden Einzelereignisse berechnen lässt.
 Seien <span class="math inline">\(A\)</span> und <span class="math inline">\(B\)</span> also zwei Ereignisse, dann gilt im Falle der Unabhängigkeit:</p>
-<p><span class="math display">\[P(A \cap B) = P(A) \cdot P(B)\]</span></p>
+<p><span class="math display">\[P(A \cap B) = P(A) \cdot P(B)\]</span>
+Oder etwas informeller: <em>Die Wahrscheinlichkeit das beide Ereignisse eintreffen ist das Produkt der Wahrscheinlichkeiten, dass jeweils eines der beiden Ereignisse eintrifft.</em></p>
 <p>Wir können diese Definition aus der Wahrscheinlichkeitstheorie an unser Problem adaptieren, in dem wir die Wahrscheinlichkeiten durch die relativen Häufigkeiten ersetzen.</p>
-<p>Der Wert für das Ereignis "iphone.tagsüber.unbeachtet = 1xtäglich<code>und das</code>wetter.ist.gut=ja` wird im Falle der Unabhägigkeit
-durch die beiden Randhäufigkeiten bestimmt:</p>
+<p>Der Wert für das gemeinsame Ereignis <code>iphone.tagsüber.unbeachtet = 1xtäglich</code> und das <code>wetter.ist.gut=ja</code> wird im Falle der Unabhägigkeit durch die beiden Randhäufigkeiten bestimmt:</p>
 <p><span class="math display">\[62 \cdot 90 = 31.7045455\]</span></p>
-<p>Wir können nun also eine Kreuztabelle erstellen, wie sie seien müsste, falls wir tatsächlich <em>statitische Unabhängigkeit</em> hätten. Wir nutzen dafür eine sehr allgemein gehaltene Funktion <code>expectation.tab()</code>, der wir eine Tabelle mit den Häufigkeiten der Beobachtungen geben und die uns dann die Tabelle liefert, wie sie aussehen würde, falls tatsächlich <em>statitische Unabhängigkeit</em> heschen würde.
-Die Tabelle mit den beobchteten Werten speichern wir in <code>obs.tab</code>, die der erwarteten Werte in <code>exp.tab</code>:</p>
+<p>Wir können nun mit eine Kreuztabelle erstellen, wie sie seien müsste, falls wir tatsächlich <em>statitische Unabhängigkeit</em> hätten. Wir nutzen dafür eine sehr allgemein gehaltene, aber selbst programmierte, Funktion <code>expectation.tab()</code>, der wir eine Tabelle mit den Häufigkeiten der Beobachtungen geben und die uns dann die Tabelle liefert, wie sie aussehen würde, falls tatsächlich <em>statitische Unabhängigkeit</em> herrschen würde.</p>
+<p>Die Tabelle mit den beobchteten Werten speichern wir in <code>obs.tab</code>, die der erwarteten Werte in <code>exp.tab</code>:</p>
 <pre class="r"><code>expectation.tab &lt;- function(tab.obs) {
-  max.i &lt;- length(tab.obs[1,])
-  max.j &lt;- length(tab.obs[,1])
+  ret &lt;- tab.obs
+  max.i &lt;- dim(tab.obs)[1]
+  max.j &lt;- dim(tab.obs)[2]
   
   # Randhäufigkeiten 
   x &lt;- rep(0, max.i)
-  for(i in 0:max.i) x[i] = sum(tab.obs[,i])
+  for(i in 0:max.i) x[i] = sum(tab.obs[i,])
 
   y &lt;- rep(0, max.j)
-  for(j in 0:max.j) y[j] = sum(tab.obs[j,])
+  for(j in 0:max.j) y[j] = sum(tab.obs[,j])
 
-    # Anzahl aller Beobachtungen
+  # Anzahl aller Beobachtungen
   n = sum(tab.obs)
-
-  mtx &lt;- c()
   
   for(i in 0:max.i){
     for(j in 0:max.j) {
-       mtx &lt;- c(mtx, (x[i] * y[j] / n))
+       ret[i,j] &lt;- (x[i] * y[j] / n)
     }
   }
-  ret &lt;- matrix(
-      mtx,#rep(0, length(tab.obs)),
-      nrow = max.j,
-      ncol = max.i
-  )
-  
-  # Spalten und Zeilennamen übernehmen
-  colnames(ret) &lt;- colnames(tab.obs)
-  rownames(ret) &lt;- rownames(tab.obs)
-  
+
   return(ret)
 }
 
+# Kreuztabelle der beobachtete Werte
 obs.tab &lt;- tally(iphones.tagsüber.unbeachtet ~ wetter.ist.gut, data=daten)
+
+# Kreuztabelle der erwarteten Werte auf Grundlage der beobachteten Werte
 exp.tab &lt;- expectation.tab(obs.tab)</code></pre>
 <p>Schauen wir uns die beiden Tabellen kurz an. Zuerst die der beobachteten Werte:</p>
 <pre class="r"><code>obs.tab</code></pre>
@@ -163,10 +171,11 @@ exp.tab &lt;- expectation.tab(obs.tab)</code></pre>
 ##                   3xtäglich 27   27</code></pre>
 <p>Dann die der erwarteten Werte:</p>
 <pre class="r"><code>exp.tab</code></pre>
-<pre><code>##                 Ja     Nein
-## 1xtäglich 31.70455 30.29545
-## 2xtäglich 30.68182 29.31818
-## 3xtäglich 27.61364 26.38636</code></pre>
+<pre><code>##                            wetter.ist.gut
+## iphones.tagsüber.unbeachtet       Ja     Nein
+##                   1xtäglich 31.70455 30.29545
+##                   2xtäglich 30.68182 29.31818
+##                   3xtäglich 27.61364 26.38636</code></pre>
 </div>
 <div id="was-können-wir-nun-messen" class="section level3">
 <h3>Was können wir nun messen?</h3>
@@ -177,7 +186,12 @@ exp.tab &lt;- expectation.tab(obs.tab)</code></pre>
 <pre class="r"><code>sum(abs(obs.tab-exp.tab))</code></pre>
 <pre><code>## [1] 13.27273</code></pre>
 <p>Nur was sagt dieser Wert aus? – Ist das ein kleiner Abstand oder ein großer?</p>
-<p>Wir brauchen Referenzwerte zur Orientierung. Die Idee: <strong>Permutationstest</strong></p>
+<p>Wir brauchen Referenzwerte zur Orientierung. Eine Idee lautet: <strong>Permutationstest</strong></p>
+<p>Sind die Werte unabhängig von einander, dann spielt die konkrete Zuordnung keine Rolle, sondern nur die Anzahl der Ereignisse an sich. Ordnen wir nun zufällig einem <code>iphones.tagsüber.unbeachtet</code>-Wert einen beliebigen <code>wetter.ist.gut</code>-Wert zu, dann besteht kein Zusammenhang mehr zwischen den Werten. Dies machen wir mittels <code>iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut)</code>.</p>
+<p>Wir simulieren so den Zustand, dass es keine Abhängigkeit zwischen den Werten gibt.</p>
+<p>Dabei messen wir den Abstand zwischen den Abstand zwischen den beobachteten Werten und den Werten, die wir erwarten würden, falls Unabhägigkeit vorliegen würde. Dafür nutzen wir die selbsterstellte Funktioen <code>diffabsobsexp</code>, welche die Summe der absoluten Abweichungen berechnet:</p>
+<p><span class="math display">\[\text{diffabsobsexp}(obs, exp) = \sum\limits_i \left|obs_i - exp_i\right|\]</span></p>
+<p>Wir Wiederholen das ganze mit Hilfe von <code>do(loops)</code> genau <code>loops</code><span class="math inline">\(=10^{4}\)</span> mal, geben dann das Histogramm aus und tragen als rote Linie den Wert ein, die wir bei unseren beobachteten Daten tatsächliche gemessen haben:</p>
 <pre class="r"><code># Funktion zur Berechnung der absoluten Differenz zwischen
 # beobachteten und erwarteten Werte
 diffabsobsexp &lt;- function(obs, exp) {
@@ -188,34 +202,45 @@ diffabsobsexp &lt;- function(obs, exp) {
 obs.abs &lt;- diffabsobsexp(obs.tab, exp.tab)
 
 # Erzeugen der Nullverteilung
-NullVert  &lt;- do(1000) * diffabsobsexp(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
+NullVert  &lt;- do(loops) * diffabsobsexp(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
 gf_histogram(~ diffabsobsexp, data=NullVert) %&gt;%
   gf_vline(xintercept = ~ obs.abs, color=&quot;red&quot;)</code></pre>
-<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<p>Wir können nun den p-Wert abschätzen mit:</p>
+<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Wir können nun den p-Wert, also die relative Fläche rechts von der roten Linie in unseren Histogramm, abschätzen mit:</p>
 <pre class="r"><code>prop( ~ diffabsobsexp &gt;= obs.abs, data=NullVert)</code></pre>
 <pre><code>## prop_TRUE 
-##     0.559</code></pre>
-<p>Doch haben wir alle Werte richtig bewertet? Wenn wir jeden einzelne Differenz noch durch den erwarteten Wert teilen erhalten wir:</p>
+##    0.5714</code></pre>
+<p>Absolute Abweichungen (oder auch <em>absolute Fehler</em>) haben die Tendenz bei großen Zahlen auch große Abweichungswerte zu liefern und bei kleinen Werten eher kleine Abweichungswerte.
+Das kann man als Markel ansehen.
+Daher arbeitet man vielleicht lieber mit relativen Abweichungen (oder auch <em>relativen Fehlern</em>).
+Dabei setzt man die absolute Abweichung jedesmal in Bezug auf den erwarteten Wert.
+Die dazu passenden Funktion haben wir unten mit <code>diffabsobsexprel</code> implementiert.
+Dabei ist:</p>
+<p><span class="math display">\[\text{diffabsobsexprel}(obs, exp) = \sum\limits_i \frac{\left|obs_i - exp_i\right|}{exp_i}\]</span></p>
+<p>Wir Wiederholen das ganze mit Hilfe von <code>do(loops)</code> genau <code>loops</code><span class="math inline">\(=10^{4}\)</span> mal, geben dann das Histogramm aus und tragen als rote Linie den Wert ein, den wir bei unseren beobachteten Daten tatsächliche gemessen haben:</p>
 <pre class="r"><code># Funktion zur Berechnung der korrigierten absoluten 
 # Differenz zwischen beobachteten und erwarteten Werten
-diffabsobsexpkor &lt;- function(obs, exp) {
+diffabsobsexprel &lt;- function(obs, exp) {
   return(sum((abs(obs-exp))/exp))
 }
 
 # Absolute Abweichung der gemessenen Werte -- korrigiert
-obs.abs &lt;- diffabsobsexpkor(obs.tab, exp.tab)
+obs.abs &lt;- diffabsobsexprel(obs.tab, exp.tab)
 
 # Erzeugen der Nullverteilung
-NullVert  &lt;- do(1000) * diffabsobsexpkor(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
-gf_histogram(~ diffabsobsexpkor, data=NullVert) %&gt;%
+NullVert  &lt;- do(loops) * diffabsobsexprel(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
+gf_dhistogram(~ diffabsobsexprel, data=NullVert) %&gt;%
   gf_vline(xintercept = ~ obs.abs, color=&quot;red&quot;)</code></pre>
-<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p>Wir können nun den p-Wert abschätzen mit:</p>
-<pre class="r"><code>prop( ~ diffabsobsexpkor &gt;= obs.abs, data=NullVert)</code></pre>
+<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Auch hier können wir den p-Wert abschätzen:</p>
+<pre class="r"><code>prop( ~ diffabsobsexprel &gt;= obs.abs, data=NullVert)</code></pre>
 <pre><code>## prop_TRUE 
-##     0.619</code></pre>
-<p>Ist der absolute Abstand überhaupt gut gewählt? – Wäre nicht eher der quadratische Abstand angebracht?</p>
+##    0.5983</code></pre>
+<p><strong>Ist der absolute Abstand überhaupt gut gewählt? – Wäre nicht eher der quadratische Abstand angebracht?</strong></p>
+<p>Ein Vorteil des quadratischen Abstand ist es, dass er kleine Abstände kleiner und große Abstände größer bewertet, als der absolute Abstand. Außerdem hat er mathematisch einige Vorteile. Wir messen nun den quadratischen Abstande mit der Funktion
+<code>diffquad</code>, die wie folgt arbeitet:</p>
+<p><span class="math display">\[\text{diffquad}(obs, exp) = \sum\limits_i \left(obs_i - exp_i\right)^2\]</span></p>
+<p>Wir Wiederholen dies nun mit Hilfe von <code>do(loops)</code> genau <code>loops</code><span class="math inline">\(=10^{4}\)</span> mal, geben dann das Histogramm aus und tragen als rote Linie den Wert ein, den wir bei unseren beobachteten Daten tatsächliche gemessen haben:</p>
 <pre class="r"><code># Funktion zur Berechnung der quadratischen 
 # Differenz zwischen beobachteten und erwarteten Werten
 diffquad &lt;- function(obs, exp) {
@@ -226,33 +251,36 @@ diffquad &lt;- function(obs, exp) {
 obs.abs &lt;- diffquad(obs.tab, exp.tab)
 
 # Erzeugen der Nullverteilung
-NullVert  &lt;- do(1000) * diffquad(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
-gf_histogram(~ diffquad, data=NullVert) %&gt;%
+NullVert  &lt;- do(loops) * diffquad(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
+gf_dhistogram(~ diffquad, data=NullVert) %&gt;%
   gf_vline(xintercept = ~ obs.abs, color=&quot;red&quot;)</code></pre>
-<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-16-1.png" width="672" />
-Wir können nun den p-Wert abschätzen mit:</p>
+<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>Wir können nun den p-Wert abschätzen mit:</p>
 <pre class="r"><code>prop( ~ diffquad &gt;= obs.abs, data=NullVert)</code></pre>
 <pre><code>## prop_TRUE 
-##      0.52</code></pre>
-<p>Wenn man nun den quadratischen Abstand noch durch die Erwartung teilt:</p>
+##    0.5389</code></pre>
+<p>Wie beim absoluten Abstand werden hier die Größe der Werte ausser acht gelassen und vielleicht fühlen wir uns etwas wohler, wenn wir statt des quadratischen Abstands den relativen quadratischen Abstand benutzen:</p>
+<p><span class="math display">\[\text{diffquadrel}(obs, exp) = \sum\limits_i \frac{\left(obs_i - exp_i\right)^2}{exp_i}\]</span></p>
+<p>Dies wiederholen wir nun mit Hilfe von <code>do(loops)</code> genau <code>loops</code><span class="math inline">\(=10^{4}\)</span> mal, geben dann das Histogramm aus und tragen als rote Linie den Wert ein, den wir bei unseren beobachteten Daten tatsächliche gemessen haben:</p>
 <pre class="r"><code># Funktion zur Berechnung der korrigierten quadratischen 
 # Differenz zwischen beobachteten und erwarteten Werten
-diffquadkor &lt;- function(obs, exp) {
+diffquadrel &lt;- function(obs, exp) {
   return(sum(((obs-exp)^2)/exp))
 }
 
 # Quadratische Abweichung der gemessenen Werte -- korrigiert
-obs.abs &lt;- diffquadkor(obs.tab, exp.tab)
+obs.abs &lt;- diffquadrel(obs.tab, exp.tab)
 
 # Erzeugen der Nullverteilung
-NullVert  &lt;- do(1000) * diffquadkor(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
-gf_histogram(~ diffquadkor, data=NullVert) %&gt;%
+NullVert  &lt;- do(loops) * diffquadrel(tally(iphones.tagsüber.unbeachtet ~ shuffle(wetter.ist.gut), data=daten), exp.tab)
+gf_histogram(~ diffquadrel, binwidth = 0.5, center = 0.25, data=NullVert) %&gt;%
   gf_vline(xintercept = ~ obs.abs, color=&quot;red&quot;)</code></pre>
-<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-19-1.png" width="672" />
-Wir können nun den p-Wert abschätzen mit:</p>
-<pre class="r"><code>prop( ~ diffquadkor &gt;= obs.abs, data=NullVert)</code></pre>
+<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>Den Wert 1.2344597, den wir mit Hilfe der relativen quadratischen Abweichung berechnet haben, nennen wir auch <span class="math inline">\(\chi^2\)</span> Wert.</p>
+<p>Wir können nun den p-Wert abschätzen mit:</p>
+<pre class="r"><code>prop( ~ diffquadrel &gt;= obs.abs, data=NullVert)</code></pre>
 <pre><code>## prop_TRUE 
-##     0.571</code></pre>
+##    0.5599</code></pre>
 <p>An Hand der p-Werte können wir nun über die Nullhypothese entscheiden:</p>
 </div>
 </div>
@@ -286,6 +314,11 @@ Wir können nun den p-Wert abschätzen mit:</p>
 ##  (expected)
 ##  [contribution to X-squared]
 ##  &lt;Pearson residual&gt;</code></pre>
+<p>Vergleichen wir nun die beiden Ansätze, SBI auf der einen und der klassische Ansatz auf der anderern Seite, einmal in einem Diagramm. Das (Dichte-)Histogramm sind die Daten aus der Nullverteilung für die quadratische, korrigierte Differenz. Die rote Linie ist der gemessene Abweichungswert. Die schwarze Linie ist der Graph der <span class="math inline">\(\chi^2\)</span>-Verteilung mit zwei Freiheitsgraden:</p>
+<pre class="r"><code>gf_dhistogram(~ diffquadrel, binwidth = 0.5, center = 0.25, data=NullVert) %&gt;%
+  gf_fun(dchisq(x, df=2) ~ x, xlim=c(0:20), color=&quot;blue&quot;) %&gt;% 
+  gf_vline(xintercept = ~ obs.abs, color=&quot;red&quot;)</code></pre>
+<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <p>Aber es gibt auch den (exakten) Fisher-Test:</p>
 <pre class="r"><code>fisher.test(obs.tab, alternative = &quot;greater&quot;)</code></pre>
 <pre><code>## 
@@ -298,10 +331,9 @@ Wir können nun den p-Wert abschätzen mit:</p>
 <div id="fazit" class="section level3">
 <h3>Fazit</h3>
 <p>Wir können die p-Werte der einzelnen Tests nun gegenüber stellen:</p>
-<pre><code>##        abs. Abweichung   kor. abs. Abweichung      quadr. Abweichung 
-##              0.5590000              0.6190000              0.5200000 
-## kor. quadr. Abweichung        ChiQuadrat-Test            Fisher-Test 
-##              0.5710000              0.5394367              0.5609340</code></pre>
-<p>Was die Entscheidung für oder gegen die Nullhypothese angeht, hat jeder dieser Test (in der Regel) die selbe Entscheidung als Konsequenz.</p>
+<pre><code>## Scale for &#39;y&#39; is already present. Adding another scale for &#39;y&#39;, which will
+## replace the existing scale.</code></pre>
+<p><img src="/post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>Was die Entscheidung für oder gegen die Nullhypothese angeht, hat jeder dieser Test (in der Regel und im Wesendlichen) die selbe Entscheidung als Konsequenz.</p>
 </div>
 </div>

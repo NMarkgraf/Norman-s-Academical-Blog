@@ -1,5 +1,5 @@
 ---
-title: Erste Schritte mit vroom
+title: Erste Schritte mit `vroom`
 author: admin
 date: '2020-02-21'
 slug: erste-schritte-mit-vroom
@@ -22,7 +22,7 @@ image:
 projects: []
 ---
 
-Nach `readr` kommt [`vroom`](https://www.tidyverse.org/blog/2019/05/vroom-1-0-0/). In der Zwischenzeit liegt vroom in der Version 1.2.0 vor und daher habe ich mir ein paar Stunden Zeit gekommen um ein paar erste Experimente damit zu machen. 
+Nach [`readr`](https://readr.tidyverse.org) kommt [`vroom`](https://vroom.r-lib.org). In der Zwischenzeit liegt vroom in der Version 1.2.0 vor und daher habe ich mir ein paar Stunden Zeit gekommen um ein paar erste Experimente damit zu machen. 
 
 # Erste Schritte mit vroom
 

@@ -43,9 +43,12 @@ Auf Grundlage dieser drei Lösungen wurde dann enschieden, ob die Abweichung sig
 
 Die Frage bleibt, was in der Aufgabenstellung mit "200 zufällige Junge-Mädchen-Paaren" gemeint ist.
 
-Es gilt ja bekannter maßen:
+Bekannterweise kann man diesen Satz interprätieren:
+
 -  Eine *uneingeschränkte Zufallsstichprobe* erhält man z. B. bei einem *Ziehen ohne Zurücklegen* ($\rightarrow$ Hypergeometische Verteilung).
+
 -  Eine *einfache Zufallsstichprobe* z. B. bei einem *Ziehen mit Zurücklegen* ($\rightarrow$ Binomialverteilung). 
+
 
 Rechnet man mit Hilfe von *R* die axakte Lösung nach, so erhält man:
 
@@ -72,6 +75,7 @@ iu <- qhyper(pl, m, n, k) # Linke/untere Intervallgrenze
 io <- qhyper(pr, m, n, k) # Rechte/obere Intervallgrenze
 c(iu, io) # Ausgabe des (HSB-)Intervalls
 ```
+
 
 **R** liefert also aus *exakte Lösung* das Intervall $[88; 112]$. Wie kommt es nun über den Unterschied?
 
