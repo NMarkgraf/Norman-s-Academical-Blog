@@ -5,12 +5,134 @@
     <link>/categories/allgemeines/</link>
       <atom:link href="/categories/allgemeines/index.xml" rel="self" type="application/rss+xml" />
     <description>Allgemeines</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>de-de</language><copyright>© in 2017-2020 by Norman Markgraf</copyright><lastBuildDate>Wed, 18 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Allgemeines</title>
       <link>/categories/allgemeines/</link>
     </image>
+    
+    <item>
+      <title>Korrigieren von Arbeiten mit Excel und R</title>
+      <link>/post/korrigieren-von-arbeiten-mit-excel-und-r/</link>
+      <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/post/korrigieren-von-arbeiten-mit-excel-und-r/</guid>
+      <description>
+&lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Das korrigieren von Arbeiten ist nicht gerade des Lehrenden liebste Tätigkeit. Vorallem, wenn man eine Mischung auf Multiple-Choice und Freitest Aufgaben zu korrigieren hat und leider keine gute technische Unterstützung vorfindet.&lt;/p&gt;
+&lt;p&gt;Klar gibt es wunderschöne Lösungen mit R dazu, wie zum Beispiel &lt;a href=&#34;http://www.r-exams.org&#34; class=&#34;uri&#34;&gt;http://www.r-exams.org&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Aber zum Glück kann man den Ablauf auch “mit Bordmitteln” etwas verbessern.&lt;/p&gt;
+&lt;p&gt;Wir bekommen eine Liste der Teilnehmer, in Form eine Excel- oder CSV-Datei, in die wir die Punkte eintragen können, die von der Hochschule digital verarbeitet wird. Diese Liste nehmen wir als Grundlage um den Ablauf etwas zu optimieren.&lt;/p&gt;
+&lt;p&gt;In den Klausuren gibt es vier Sorten von Aufgabentypen:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Multiple Choice mit genau einer Antwortmöglichkeit&lt;/li&gt;
+&lt;li&gt;Multiple Choice mit mehr als einer Antwortmöglichkeit&lt;/li&gt;
+&lt;li&gt;(Ganze) Zahlen als Antwort auf eine Frage&lt;/li&gt;
+&lt;li&gt;Begründungen und/oder freie Textantworten&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Die ersten drei Aufgabentypen können sehr schön mit Hilfe einer Exceltabelle erfasst werden. Der vierte Aufgabentyp muss direkt bewertet werden und wird in so ebenfalls in die Exceltabelle eingegeben.&lt;/p&gt;
+&lt;p&gt;Die erfassten Daten der Klausuren liegen zu Beginn der Auswertung in einer Exceldatei bereit, die in etwa wie folgt aussieht:&lt;/p&gt;
+&lt;p&gt;&amp;lt;&amp;lt;&lt;BILD EXCEL DATEI&gt;&amp;gt;&amp;gt;&lt;/p&gt;
+&lt;p&gt;Diese Datei wird unter dem Namen &lt;code&gt;Klausurteilnehmendenliste.xslx&lt;/code&gt; gespeichert.&lt;/p&gt;
+&lt;p&gt;Die Auswertung geschieht dann mittels eines kleinen R-Skripts:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(mosaic)
+library(readxl)
+
+max.show &amp;lt;- 10
+
+Aufgaben.Index &amp;lt;- 1:40
+Aufgaben.Typ   &amp;lt;- rep(&amp;quot;MC&amp;quot;, 40)
+for (idx in c(1, 9, 14, 36, 37, 38, 39, 40)){
+    Aufgaben.Typ[idx] &amp;lt;- &amp;quot;nonMC&amp;quot;
+}
+
+Aufgaben.Punkte.max &amp;lt;- c( 8, 1, 1, 1, 2, 1, 2, 2, 3, 1, 
+                          2, 1, 1, 3, 2, 1, 4, 2, 2, 2, 
+                          2, 2, 1, 2, 1, 1, 2, 1, 1, 1, 
+                          1, 2, 1, 1, 1, 6, 4, 4, 6, 8)
+Aufgaben.MC.richtig &amp;lt;- c(NA, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;D&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, NA, &amp;quot;B&amp;quot;,
+                         &amp;quot;BD&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;, NA, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;BC&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;,
+                         &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;,  &amp;quot;2&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;,
+                         &amp;quot;B&amp;quot;, &amp;quot;F&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;B&amp;quot;, NA, NA, NA, NA, NA
+                        )
+if (sum(Aufgaben.Punkte.max) != 90) stop(&amp;quot;Gesamtpunktzahl ist nicht 90!&amp;quot;)
+
+for (idx in 1:40) {
+    if (Aufgaben.Typ[idx] == &amp;quot;MC&amp;quot;) {
+        if (is.na(Aufgaben.MC.richtig[idx])) stop(paste(&amp;quot;MC Aufgabe&amp;quot;, idx, &amp;quot;ohne Musterlösung!&amp;quot;))
+    } else {
+        if (!is.na(Aufgaben.MC.richtig[idx])) stop(paste(&amp;quot;Nicht-MC Aufgabe&amp;quot;, idx, &amp;quot;mit Musterlösung!&amp;quot;))
+    }
+}
+
+Aufgaben &amp;lt;- c( 531388,
+                NA, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;,  NA, &amp;quot;B&amp;quot;,
+                &amp;quot;BD&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;,  NA, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;,  &amp;quot;&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;B&amp;quot;,
+                &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;2&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;,
+                &amp;quot;A&amp;quot;, &amp;quot;E&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;C&amp;quot;, NA, NA, NA, NA, NA
+                )
+
+sumMC &amp;lt;- function(test) {
+    summe &amp;lt;- 0
+    for(idx in 1:40) {
+        if (!is.na(test[idx+1]) &amp;amp;&amp;amp; (!(test[idx+1] == &amp;quot;/&amp;quot; ))) {
+            if (Aufgaben.Typ[idx] == &amp;quot;MC&amp;quot;) {
+                tmp &amp;lt;- length(Aufgaben.MC.richtig[idx])
+                if (tmp &amp;gt; 1) {
+                    pp &amp;lt;-  Aufgaben.Punkte.max[idx]/tmp
+                    for(x in unlist(strsplit(Aufgaben.MC.richtig[idx], NULL))) {
+                        if (toupper(x) %in% toupper(test[idx+1])) {
+                            summe &amp;lt;- summe + pp
+                        }
+                    }
+                } else {
+                    if (toupper(test[idx+1]) == toupper(Aufgaben.MC.richtig[idx])) {
+                        summe &amp;lt;- summe + Aufgaben.Punkte.max[idx]
+                    }
+                }
+            } else {
+                if (!is.na(test[idx+1])) {
+                    summe &amp;lt;- summe + as.integer(test[idx+1])
+                }
+            }
+        }
+    }
+    return(summe)
+}
+
+Klausurteilnehmendenliste &amp;lt;- read_excel(&amp;quot;Klausurteilnehmendenliste.xlsx&amp;quot;)
+Klausurteilnehmendenliste &amp;lt;- Klausurteilnehmendenliste %&amp;gt;% select(c(-1,-2)) %&amp;gt;% mutate_all(toupper)
+
+Punkte &amp;lt;- apply(Klausurteilnehmendenliste, 1, sumMC)
+Klausurteilnehmendenliste &amp;lt;- cbind(Klausurteilnehmendenliste, Punkte)
+
+head(select(Klausurteilnehmendenliste, c(1, &amp;quot;Punkte&amp;quot;)), max.show)
+tail(select(Klausurteilnehmendenliste, c(1, &amp;quot;Punkte&amp;quot;)), max.show)
+
+Klausurteilnehmendenliste %&amp;gt;%
+    filter(Punkte &amp;gt; 10) %&amp;gt;%
+    gf_counts(~ Punkte, data=.)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mit den Zeilen&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Aufgaben.Typ   &amp;lt;- rep(&amp;quot;MC&amp;quot;, 40)
+for (idx in c(1, 9, 14, 36, 37, 38, 39, 40)){
+    Aufgaben.Typ[idx] &amp;lt;- &amp;quot;nonMC&amp;quot;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;werden zunächst 40 MC-Aufgaben angelegt und danach die Aufgaben 1, 9, 14, 36, 37, 38, 39 und 40 als nicht MC Aufgaben gekennzeichnet. Hier muss später die Punktzahl direkt eingegeben werden!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Aufgaben.Punkte.max &amp;lt;- c( 8, 1, 1, 1, 2, 1, 2, 2, 3, 1, 
+                          2, 1, 1, 3, 2, 1, 4, 2, 2, 2, 
+                          2, 2, 1, 2, 1, 1, 2, 1, 1, 1, 
+                          1, 2, 1, 1, 1, 6, 4, 4, 6, 8)
+Aufgaben.MC.richtig &amp;lt;- c(NA, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;D&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, NA, &amp;quot;B&amp;quot;,
+                         &amp;quot;BD&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;, NA, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;BC&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;,
+                         &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;,  &amp;quot;2&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;A&amp;quot;, &amp;quot;A&amp;quot;,
+                         &amp;quot;B&amp;quot;, &amp;quot;F&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;B&amp;quot;, NA, NA, NA, NA, NA
+                        )&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In &lt;code&gt;Aufgaben.Punkte.max&lt;/code&gt; werden die maximal erreichbaren Punkte pro Aufgabe gespeichert. In &lt;code&gt;Aufgaben.MC.richtig&lt;/code&gt; sind alle &lt;em&gt;nicht MC&lt;/em&gt;-Aufgaben mit &lt;code&gt;NA&lt;/code&gt; gekennzeichnet. Die Lösungen werden als Zeichenkette (in Großbuchstaben) hinterlegt. Sollte eine MC-Aufgabe mehrere richtige Antworten haben, so schreibt man diese einfach hintereinander. So bedeutet “BD”, dass die Lösungen “B” und “D” richtig sind.&lt;/p&gt;
+&lt;p&gt;Wird in den Lösungen für eine Aufgabe “/” eingetragen, so gilt diese Aufgabe als nicht bearbeitet und wird mit 0 Punkten bewertet.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Docker per Homebrew auf dem alten Mac</title>

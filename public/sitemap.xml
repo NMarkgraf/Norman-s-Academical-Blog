@@ -4,7 +4,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
     </url>
     
   
@@ -12,7 +12,119 @@
     <url>
     
       <loc>/categories/</loc>
-      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/ein-kleines-beispiel-zum-rangkorrelationskoeffizienten/</loc>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/korrelation/</loc>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/korrelationskoeffizient/</loc>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/r/</loc>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/rang/</loc>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/rangkorrelation/</loc>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/rangkorrelationskoeffizient/</loc>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/spearman/</loc>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/statistisches/</loc>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/</loc>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/zusammemhangsanalyse/</loc>
+      <lastmod>2020-05-25T12:15:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/allgemeines/</loc>
+      <lastmod>2020-03-18T10:27:01+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/korrigieren-von-arbeiten-mit-excel-und-r/</loc>
+      <lastmod>2020-03-18T10:27:01+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/lehre/</loc>
+      <lastmod>2020-03-18T10:27:01+01:00</lastmod>
     </url>
     
   
@@ -53,22 +165,6 @@
     
       <loc>/tags/satz-von-vieta/</loc>
       <lastmod>2020-02-26T08:36:09+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/</loc>
-      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/allgemeines/</loc>
-      <lastmod>2020-02-24T19:51:20+01:00</lastmod>
     </url>
     
   
@@ -117,14 +213,6 @@
     
       <loc>/categories/information/</loc>
       <lastmod>2020-02-21T13:17:53+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/r/</loc>
-      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   
@@ -195,14 +283,6 @@
     
     <url>
     
-      <loc>/tags/lehre/</loc>
-      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/nullhypothese/</loc>
       <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
@@ -236,14 +316,6 @@
     <url>
     
       <loc>/tags/statistik/</loc>
-      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/statistisches/</loc>
       <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
@@ -356,14 +428,6 @@
     <url>
     
       <loc>/tags/regressionsanalyse/</loc>
-      <lastmod>2019-12-31T13:33:45+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/zusammemhangsanalyse/</loc>
       <lastmod>2019-12-31T13:33:45+01:00</lastmod>
     </url>
     
@@ -533,6 +597,14 @@
     
       <loc>/tutorial/</loc>
       <lastmod>2018-09-09T00:00:00+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/privacy/</loc>
+      <lastmod>2018-06-28T00:00:00+01:00</lastmod>
     </url>
     
   
@@ -973,14 +1045,6 @@
     
       <loc>/authors/sebastian-engell/</loc>
       <lastmod>2004-09-25T00:00:00+02:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/privacy/</loc>
-      <priority>0</priority>
     </url>
     
   

@@ -1,15 +1,16 @@
-<<<<<<< HEAD
-+++
-title = "Datenschutzerklärung (Privacy Policy)"
+---
+title: Datenschutzerklärung (Privacy Policy)
+date: "2018-06-28T00:00:00+01:00"
+draft: false
+share: false
+commentable: false
+editable: false
 
-date = 2018-06-28T00:00:00
-draft = false
-
-# [header]
-# image = ""
-# caption = ""
-+++
-
+# Optional header image (relative to `static/img/` folder).
+header:
+  caption: ""
+  image: ""
+---
 
 Personenbezogene Daten (nachfolgend zumeist nur „Daten“ genannt) werden von uns nur im Rahmen der Erforderlichkeit sowie zum Zwecke der Bereitstellung eines funktionsfähigen und nutzerfreundlichen Internetauftritts, inklusive seiner Inhalte und der dort angebotenen Leistungen, verarbeitet.
 Gemäß Art. 4 Ziffer 1. der Verordnung (EU) 2016/679, also der Datenschutz-Grundverordnung (nachfolgend nur „DSGVO“ genannt), gilt als „Verarbeitung“ jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführter Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten, wie das Erheben, das Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch Übermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung.
@@ -181,20 +182,3 @@ abrufbaren Datenschutzhinweisen bereit.
 
 
 *Muster-Datenschutzerklärung der Anwaltskanzlei Weiß & Partner*
-=======
----
-title: Privacy Policy
-date: "2018-06-28T00:00:00+01:00"
-draft: true
-share: false
-commentable: false
-editable: false
-
-# Optional header image (relative to `static/img/` folder).
-header:
-  caption: ""
-  image: ""
----
-
-Add your privacy policy here and set `draft: false` to publish it. Otherwise, delete this file if you don't need it.
->>>>>>> 04cba7511628a7de9ef8389da24d87070256c981
