@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>Erste Schritte mit vroom</title>
+      <title>Erste Schritte mit `vroom`</title>
       <link>/post/erste-schritte-mit-vroom/</link>
       <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
       <guid>/post/erste-schritte-mit-vroom/</guid>
@@ -21,7 +21,7 @@
 &lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;Nach &lt;code&gt;readr&lt;/code&gt; kommt &lt;a href=&#34;https://www.tidyverse.org/blog/2019/05/vroom-1-0-0/&#34;&gt;&lt;code&gt;vroom&lt;/code&gt;&lt;/a&gt;. In der Zwischenzeit liegt vroom in der Version 1.2.0 vor und daher habe ich mir ein paar Stunden Zeit gekommen um ein paar erste Experimente damit zu machen.&lt;/p&gt;
+&lt;p&gt;Nach &lt;a href=&#34;https://readr.tidyverse.org&#34;&gt;&lt;code&gt;readr&lt;/code&gt;&lt;/a&gt; kommt &lt;a href=&#34;https://vroom.r-lib.org&#34;&gt;&lt;code&gt;vroom&lt;/code&gt;&lt;/a&gt;. In der Zwischenzeit liegt vroom in der Version 1.2.0 vor und daher habe ich mir ein paar Stunden Zeit gekommen um ein paar erste Experimente damit zu machen.&lt;/p&gt;
 &lt;div id=&#34;erste-schritte-mit-vroom&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Erste Schritte mit vroom&lt;/h1&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(vroom)

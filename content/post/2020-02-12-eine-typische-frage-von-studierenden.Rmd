@@ -10,12 +10,19 @@ tags:
   - R
   - Statistik
   - Nullhypothese
+  - Nullhypothesentest
   - SBI
   - Klassische Inferenz
+  - Chi-Quadrat
+  - Chi-Quadrat-Test
+  - Unabhängigkeit
+  - Unabhängigkeitstest
+  - Fisher-Test
+  - Permutationstest
 subtitle: ''
 summary: ''
 authors: []
-lastmod: '2020-02-12T08:55:23+01:00'
+lastmod: '2020-02-28T09:40:42+01:00'
 featured: no
 image:
   caption: ''
@@ -417,7 +424,7 @@ fisher.test(obs.tab, alternative = "greater")
 
 Wir können die p-Werte der einzelnen Tests nun gegenüber stellen:
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE}
 df <- data.frame(x = names(p), y = p)
 ggplot(df, aes(x,y)) + 
   geom_col() +  
@@ -431,4 +438,10 @@ ggplot(df, aes(x,y)) +
   coord_flip()
 ```
 
-Was die Entscheidung für oder gegen die Nullhypothese angeht, hat jeder dieser Test (in der Regel und im Wesendlichen) die selbe Entscheidung als Konsequenz.
+Gewöhnlich haben wir ein Signifikanznivau von $5\% = 0{,}05$ angenommen. Die rote Linie zeigt diese Grenze. Liegt der Balken links vor dieser Linie, so sprechen wir davon, dass der gemessene Wert selten bei unabhänigen Daten vorliegt und würden uns gegen die Nullhypothese und damit quasi für die Alternativhypothese entscheiden. Liegt der Balken recht der roten Linie, so haben wir übliche Werte für unabhängige Daten und keinen Grund gefunden, der gegen die Nullhypothese spricht. Warum wir sie dann, auf Grundlage unserer Daten, auch nicht ablehnen können.
+
+Bleibt Sie Frage, gibt es Situationen in denen die Entscheidung über die Nullhypothese bei den einzelen betrachteten Verfahren unterschiedlichen ist? Und wenn ja, wann und wieoft?
+
+Diese Fragen sind nicht Thema dieses Beitrags, aber vielleicht habe ich Zeit und betrachte das später einmal.
+
+

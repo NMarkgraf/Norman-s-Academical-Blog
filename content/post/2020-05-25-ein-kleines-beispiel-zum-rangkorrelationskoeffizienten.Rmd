@@ -1,0 +1,148 @@
+---
+title: Ein kleines Beispiel zum Rangkorrelationskoeffizienten
+author: Norman Markgraf
+date: '2020-05-25'
+slug: ein-kleines-beispiel-zum-rangkorrelationskoeffizienten
+categories:
+  - Statistisches
+tags:
+  - Zusammemhangsanalyse
+  - Korrelation
+  - Rang
+  - Rangkorrelation
+  - Spearman
+  - Rangkorrelationskoeffizient
+  - Korrelationskoeffizient
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-05-25T12:15:00+02:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(mosaic)
+library(kableExtra)
+```
+
+
+```{r init_rangkor, echo=FALSE}
+set.seed(2020)
+n <- 10
+x <- 1:n
+eps <- rnorm(n)
+y <- round(x**2 + eps,2)
+eps <- rnorm(n)
+x <- round(x + eps, 2)
+df <- data.frame(
+    x = x, y = y
+)
+```
+
+
+Bei der Rangkorrelation werden statt der Werte die Ränge der Werte zur Berechnung herangezogen. 
+
+### Beispiel:
+
+Es seien die folgenden Datenpunkte gegeben:
+
+```{r, echo=FALSE}
+kable(t(df), booktabs = TRUE) %>%
+  kable_styling(position = "center")
+```
+
+Das Streudiagramm dieser Daten sieht dann so aus:
+
+```{r echo=FALSE, out.width="50%", fig.align="center"}
+gf_point(y ~ x, data=df)
+```
+
+Der Korrelationskoeffizent ist nun 
+$$r = r_{BP} = `r cor(y ~ x, data=df)`$$
+
+Schauen wir uns nun die Werte der Tabelle mit ihrem Rang an:
+
+```{r, echo=FALSE}
+df %>% 
+    mutate(    
+        rx = rank(x), 
+        ry= rank(y) 
+    ) -> df2
+kable(t(df2), booktabs = TRUE) %>%
+  kable_styling(position = "center")
+```
+
+Das Streudiagramm der Ränge sieht nun wie folgt aus:
+
+```{r echo=FALSE, out.width="50%", fig.align="center"}
+gf_point(ry ~ rx, data=df2)
+```
+
+Und der Korrelationskoeffizient der Ränge ist nun:
+
+$$r_{sp} = r_{ry,rx}=`r cor(ry ~ rx, data=df2)`$$
+
+Dieser Korrelatonskoeffizient der Ränge wird *Rangkorrelationkoeffizient* genannt.
+
+**Aber vorsicht:** Die Ränge anstatt der Werte in die Formel für den Korrelationskoeffizeten einzusetzen funktioniert nur, wenn jeder Wert genau **einmal** vorkommt!
+
+Um das zu sehen, modifizieren wir unser Beispiel, so dass an zwei Stellen die Werte doppelt vorkommen. Wir erhalten damit die folgende, neue Tabelle:
+
+```{r echo=FALSE}
+df -> df3
+
+df3$x[3] <- df3$x[4]
+df3$y[4] <- df3$y[5]
+
+df3 %>% 
+    mutate(    
+        rx = rank(x), 
+        ry = rank(y) 
+    ) -> df4
+
+df4$rx[3] <- 3
+df4$rx[4] <- 4
+df4$ry[4] <- 4
+df4$ry[5] <- 5
+
+kable(t(df4), booktabs = TRUE) %>%
+  kable_styling(position = "center")
+```
+
+Bevor wir nun einfach die *Ränge* so in die Formel für den *Korrealtionskoeffizienten* (nach Pearson) einsetzen können, müssen wir noch etwas beachten, was die Definition von *Rängen* angeht.
+Denn dort steht im Kleingedruckten folgendes:
+
+> *Den ranggleichen Beobachtungen wird das arithmetische Mittel der auf sie fallenden Ränge zugeordnen!*
+
+Darum müssen wir die Ränge noch etwas korrigieren und erhalten:
+
+```{r echo=FALSE}
+df -> df3
+
+df3$x[3] <- df3$x[4]
+df3$y[4] <- df3$y[5]
+
+df3 %>% 
+    mutate(    
+        rx = rank(x), 
+        ry = rank(y) 
+    ) -> df4
+
+kable(t(df4), booktabs = TRUE) %>%
+  kable_styling(position = "center")
+```
+
+Nun können wir von den Rängen wieder "ganz normal" den Korrelationskoeffizenten berechnen und erhalten:
+$$r_{sp} = r_{ry,rx} = `r cor(ry ~ rx, data=df4)`$$
+```{r , echo=FALSE}
+# cor(y ~ x, method="spearman", data=df3 ) zur Kontrolle ;-)
+```
+
+

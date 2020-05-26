@@ -1,0 +1,159 @@
+---
+title: Korrigieren von Arbeiten mit Excel und R
+author: admin
+date: '2020-03-18'
+slug: korrigieren-von-arbeiten-mit-excel-und-r
+categories:
+  - Allgemeines
+tags:
+  - Lehre
+  - R
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-03-18T10:27:01+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+Das korrigieren von Arbeiten ist nicht gerade des Lehrenden liebste Tätigkeit. Vorallem, wenn man eine Mischung auf Multiple-Choice und Freitest Aufgaben zu korrigieren hat und leider keine gute technische Unterstützung vorfindet. 
+
+Klar gibt es wunderschöne Lösungen mit R dazu, wie zum Beispiel http://www.r-exams.org.
+
+Aber zum Glück kann man den Ablauf auch "mit Bordmitteln" etwas verbessern.
+
+
+Wir bekommen eine Liste der Teilnehmer, in Form eine Excel- oder CSV-Datei, in die wir die Punkte eintragen können, die von der Hochschule digital verarbeitet wird. Diese Liste nehmen wir als Grundlage um den Ablauf etwas zu optimieren.
+
+In den Klausuren gibt es vier Sorten von Aufgabentypen:
+
+1) Multiple Choice mit genau einer Antwortmöglichkeit
+2) Multiple Choice mit mehr als einer Antwortmöglichkeit
+3) (Ganze) Zahlen als Antwort auf eine Frage
+4) Begründungen und/oder freie Textantworten
+
+Die ersten drei Aufgabentypen können sehr schön mit Hilfe einer Exceltabelle erfasst werden. Der vierte Aufgabentyp muss direkt bewertet werden und wird in so ebenfalls in die Exceltabelle eingegeben.
+
+
+Die erfassten Daten der Klausuren liegen zu Beginn der Auswertung in einer Exceldatei bereit, die in etwa wie folgt aussieht:
+
+<<<BILD EXCEL DATEI>>>
+
+Diese Datei wird unter dem Namen `Klausurteilnehmendenliste.xslx` gespeichert.
+
+Die Auswertung geschieht dann mittels eines kleinen R-Skripts:
+
+```{r, eval=FALSE}
+library(mosaic)
+library(readxl)
+
+max.show <- 10
+
+Aufgaben.Index <- 1:40
+Aufgaben.Typ   <- rep("MC", 40)
+for (idx in c(1, 9, 14, 36, 37, 38, 39, 40)){
+    Aufgaben.Typ[idx] <- "nonMC"
+}
+
+Aufgaben.Punkte.max <- c( 8, 1, 1, 1, 2, 1, 2, 2, 3, 1, 
+                          2, 1, 1, 3, 2, 1, 4, 2, 2, 2, 
+                          2, 2, 1, 2, 1, 1, 2, 1, 1, 1, 
+                          1, 2, 1, 1, 1, 6, 4, 4, 6, 8)
+Aufgaben.MC.richtig <- c(NA, "A", "A", "B", "C", "D", "A", "B", NA, "B",
+                         "BD", "B", "A", NA, "A", "A", "BC", "C", "B", "A",
+                         "B", "A", "B", "A", "A", "B",  "2", "B", "A", "A",
+                         "B", "F", "B", "B", "B", NA, NA, NA, NA, NA
+                        )
+if (sum(Aufgaben.Punkte.max) != 90) stop("Gesamtpunktzahl ist nicht 90!")
+
+for (idx in 1:40) {
+    if (Aufgaben.Typ[idx] == "MC") {
+        if (is.na(Aufgaben.MC.richtig[idx])) stop(paste("MC Aufgabe", idx, "ohne Musterlösung!"))
+    } else {
+        if (!is.na(Aufgaben.MC.richtig[idx])) stop(paste("Nicht-MC Aufgabe", idx, "mit Musterlösung!"))
+    }
+}
+
+Aufgaben <- c( 531388,
+                NA, "A", "B", "B", "B", "A", "A", "B",  NA, "B",
+                "BD", "B", "A",  NA, "B", "A", "A",  "", "B", "B",
+                "A", "A", "A", "A", "B", "B", "2", "B", "A", "A",
+                "A", "E", "A", "A", "C", NA, NA, NA, NA, NA
+                )
+
+sumMC <- function(test) {
+    summe <- 0
+    for(idx in 1:40) {
+        if (!is.na(test[idx+1]) && (!(test[idx+1] == "/" ))) {
+            if (Aufgaben.Typ[idx] == "MC") {
+                tmp <- length(Aufgaben.MC.richtig[idx])
+                if (tmp > 1) {
+                    pp <-  Aufgaben.Punkte.max[idx]/tmp
+                    for(x in unlist(strsplit(Aufgaben.MC.richtig[idx], NULL))) {
+                        if (toupper(x) %in% toupper(test[idx+1])) {
+                            summe <- summe + pp
+                        }
+                    }
+                } else {
+                    if (toupper(test[idx+1]) == toupper(Aufgaben.MC.richtig[idx])) {
+                        summe <- summe + Aufgaben.Punkte.max[idx]
+                    }
+                }
+            } else {
+                if (!is.na(test[idx+1])) {
+                    summe <- summe + as.integer(test[idx+1])
+                }
+            }
+        }
+    }
+    return(summe)
+}
+
+Klausurteilnehmendenliste <- read_excel("Klausurteilnehmendenliste.xlsx")
+Klausurteilnehmendenliste <- Klausurteilnehmendenliste %>% select(c(-1,-2)) %>% mutate_all(toupper)
+
+Punkte <- apply(Klausurteilnehmendenliste, 1, sumMC)
+Klausurteilnehmendenliste <- cbind(Klausurteilnehmendenliste, Punkte)
+
+head(select(Klausurteilnehmendenliste, c(1, "Punkte")), max.show)
+tail(select(Klausurteilnehmendenliste, c(1, "Punkte")), max.show)
+
+Klausurteilnehmendenliste %>%
+    filter(Punkte > 10) %>%
+    gf_counts(~ Punkte, data=.)
+```
+
+Mit den Zeilen
+```{r, eval=FALSE}
+Aufgaben.Typ   <- rep("MC", 40)
+for (idx in c(1, 9, 14, 36, 37, 38, 39, 40)){
+    Aufgaben.Typ[idx] <- "nonMC"
+}
+```
+
+werden zunächst 40 MC-Aufgaben angelegt und danach die Aufgaben 1, 9, 14, 36, 37, 38, 39 und 40 als nicht MC Aufgaben gekennzeichnet. Hier muss später die Punktzahl direkt eingegeben werden!
+
+
+```{r, eval=FALSE}
+Aufgaben.Punkte.max <- c( 8, 1, 1, 1, 2, 1, 2, 2, 3, 1, 
+                          2, 1, 1, 3, 2, 1, 4, 2, 2, 2, 
+                          2, 2, 1, 2, 1, 1, 2, 1, 1, 1, 
+                          1, 2, 1, 1, 1, 6, 4, 4, 6, 8)
+Aufgaben.MC.richtig <- c(NA, "A", "A", "B", "C", "D", "A", "B", NA, "B",
+                         "BD", "B", "A", NA, "A", "A", "BC", "C", "B", "A",
+                         "B", "A", "B", "A", "A", "B",  "2", "B", "A", "A",
+                         "B", "F", "B", "B", "B", NA, NA, NA, NA, NA
+                        )
+```
+
+In `Aufgaben.Punkte.max` werden die maximal erreichbaren Punkte pro Aufgabe gespeichert. In `Aufgaben.MC.richtig` sind alle *nicht MC*-Aufgaben mit `NA` gekennzeichnet. Die Lösungen werden als Zeichenkette (in Großbuchstaben) hinterlegt. Sollte eine MC-Aufgabe mehrere richtige Antworten haben, so schreibt man diese einfach hintereinander. So bedeutet "BD", dass die Lösungen "B" und "D" richtig sind.
+
+Wird in den Lösungen für eine Aufgabe "/" eingetragen, so gilt diese Aufgabe als nicht bearbeitet und wird mit 0 Punkten bewertet.
+
+
+
+

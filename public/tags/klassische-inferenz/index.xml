@@ -328,7 +328,9 @@ gf_histogram(~ diffquadrel, binwidth = 0.5, center = 0.25, data=NullVert) %&amp;
 &lt;pre&gt;&lt;code&gt;## Scale for &amp;#39;y&amp;#39; is already present. Adding another scale for &amp;#39;y&amp;#39;, which will
 ## replace the existing scale.&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../../post/2020-02-12-eine-typische-frage-von-studierenden_files/figure-html/unnamed-chunk-29-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Was die Entscheidung für oder gegen die Nullhypothese angeht, hat jeder dieser Test (in der Regel und im Wesendlichen) die selbe Entscheidung als Konsequenz.&lt;/p&gt;
+&lt;p&gt;Gewöhnlich haben wir ein Signifikanznivau von &lt;span class=&#34;math inline&#34;&gt;\(5\% = 0{,}05\)&lt;/span&gt; angenommen. Die rote Linie zeigt diese Grenze. Liegt der Balken links vor dieser Linie, so sprechen wir davon, dass der gemessene Wert selten bei unabhänigen Daten vorliegt und würden uns gegen die Nullhypothese und damit quasi für die Alternativhypothese entscheiden. Liegt der Balken recht der roten Linie, so haben wir übliche Werte für unabhängige Daten und keinen Grund gefunden, der gegen die Nullhypothese spricht. Warum wir sie dann, auf Grundlage unserer Daten, auch nicht ablehnen können.&lt;/p&gt;
+&lt;p&gt;Bleibt Sie Frage, gibt es Situationen in denen die Entscheidung über die Nullhypothese bei den einzelen betrachteten Verfahren unterschiedlichen ist? Und wenn ja, wann und wieoft?&lt;/p&gt;
+&lt;p&gt;Diese Fragen sind nicht Thema dieses Beitrags, aber vielleicht habe ich Zeit und betrachte das später einmal.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description>

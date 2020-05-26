@@ -4,7 +4,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2020-02-26T08:36:09+01:00</lastmod>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   
@@ -12,7 +12,7 @@
     <url>
     
       <loc>/categories/</loc>
-      <lastmod>2020-02-26T08:36:09+01:00</lastmod>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   
@@ -60,7 +60,7 @@
     <url>
     
       <loc>/tags/</loc>
-      <lastmod>2020-02-26T08:36:09+01:00</lastmod>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   
@@ -124,7 +124,7 @@
     <url>
     
       <loc>/tags/r/</loc>
-      <lastmod>2020-02-21T13:17:53+01:00</lastmod>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   
@@ -155,8 +155,32 @@
     
     <url>
     
+      <loc>/tags/chi-quadrat/</loc>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/chi-quadrat-test/</loc>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>/post/eine-typische-frage-von-studierenden/</loc>
-      <lastmod>2020-02-12T08:55:23+01:00</lastmod>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/fisher-test/</loc>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   
@@ -164,7 +188,7 @@
     <url>
     
       <loc>/tags/klassische-inferenz/</loc>
-      <lastmod>2020-02-12T08:55:23+01:00</lastmod>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   
@@ -172,7 +196,7 @@
     <url>
     
       <loc>/tags/lehre/</loc>
-      <lastmod>2020-02-12T08:55:23+01:00</lastmod>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   
@@ -180,7 +204,23 @@
     <url>
     
       <loc>/tags/nullhypothese/</loc>
-      <lastmod>2020-02-12T08:55:23+01:00</lastmod>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/nullhypothesentest/</loc>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/permutationstest/</loc>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   
@@ -188,7 +228,7 @@
     <url>
     
       <loc>/tags/sbi/</loc>
-      <lastmod>2020-02-12T08:55:23+01:00</lastmod>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   
@@ -196,7 +236,7 @@
     <url>
     
       <loc>/tags/statistik/</loc>
-      <lastmod>2020-02-12T08:55:23+01:00</lastmod>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   
@@ -204,7 +244,23 @@
     <url>
     
       <loc>/categories/statistisches/</loc>
-      <lastmod>2020-02-12T08:55:23+01:00</lastmod>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/unabh%C3%A4ngigkeit/</loc>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/unabh%C3%A4ngigkeitstest/</loc>
+      <lastmod>2020-02-28T09:40:42+01:00</lastmod>
     </url>
     
   

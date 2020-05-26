@@ -27,9 +27,9 @@ authors: []
 <p>Im Internet fand ich vor kurzem einen sehr interessanten <a href="http://www.stefanbartz.de/dateien/Vorsicht-bei-der-sigma-Regel.pdf">Text</a> von <a href="http://www.stefanbartz.de">Stefan Bart</a>. Eine Aufgabe daraus fand meine besondere Aufmerksamkeit.</p>
 <blockquote>
 <p><strong>HSB gesucht (Grundgesamtheit mit <span class="math inline">\(H_0 \rightarrow\)</span> Stichprobe)</strong></p>
-<p>Es soll die Nullhypothese, dass die 500 Mädchen und 500 Jungen der Schule gleichintelligent sind, getestet werden.
+<p>Es soll die Nullhypothese, dass die 500 Mädchen und 500 Jungen der Schule gleich intelligent sind, getestet werden.
 Dazu werden 200 zufällige Junge-Mädchen-Paare gebildet.
-Bei 112 - von hatte der Junge einen höheren IQ. Ist die Abweichung vom Mittelwert signifikant?</p>
+Bei 112 davon hatte der Junge einen höheren IQ. Ist die Abweichung vom Mittelwert signifikant?</p>
 </blockquote>
 <p>Als Lösungen wurden vorgeschlagen:</p>
 <ol style="list-style-type: lower-alpha">
@@ -40,14 +40,14 @@ Bei 112 - von hatte der Junge einen höheren IQ. Ist die Abweichung vom Mittelwe
 <li><em>exakte Lösung</em>:
 <span class="math display">\[x \in [89; 111]\]</span></li>
 </ol>
-<p>Auf Grundlage dieser drei Lösungen wurde dann enschieden, ob die Abweichung signifikant ist, also 112 im oder eben nicht im berechneten Intervall liegt. <em>Ergebnis:</em> a), b) liefern nicht signifikante und c) ein signifikantes Ergebnis.</p>
+<p>Auf Grundlage dieser drei Lösungen wurde dann entschieden, ob die Abweichung signifikant ist, also 112 im oder eben nicht im berechneten Intervall liegt. <em>Ergebnis:</em> a), b) liefern nicht signifikante und c) ein signifikantes Ergebnis.</p>
 <p>Die Frage bleibt, was in der Aufgabenstellung mit “200 zufällige Junge-Mädchen-Paaren” gemeint ist.</p>
-<p>Bekannterweise kann man diesen Satz interprätieren:</p>
+<p>Bekannterweise kann man diesen Satz interpretieren:</p>
 <ul>
-<li><p>Eine <em>uneingeschränkte Zufallsstichprobe</em> erhält man z. B. bei einem <em>Ziehen ohne Zurücklegen</em> (<span class="math inline">\(\rightarrow\)</span> Hypergeometische Verteilung).</p></li>
+<li><p>Eine <em>uneingeschränkte Zufallsstichprobe</em> erhält man z. B. bei einem <em>Ziehen ohne Zurücklegen</em> (<span class="math inline">\(\rightarrow\)</span> Hypergeometrische Verteilung).</p></li>
 <li><p>Eine <em>einfache Zufallsstichprobe</em> z. B. bei einem <em>Ziehen mit Zurücklegen</em> (<span class="math inline">\(\rightarrow\)</span> Binomialverteilung).</p></li>
 </ul>
-<p>Rechnet man mit Hilfe von <em>R</em> die axakte Lösung nach, so erhält man:</p>
+<p>Rechnet man mit Hilfe von <em>R</em> die exakte Lösung nach, so erhält man:</p>
 <p>Für die Binomialverteilung (die “bessere Näherung”):</p>
 <pre class="r"><code>pl &lt;- 0.025 # 2,5% als untere Grenze
 pr &lt;- 0.975 # 97,5% als obere Grenze
@@ -56,9 +56,12 @@ iu &lt;- qbinom(pl, 200, prob=0.5)
 io &lt;- qbinom(pr, 200, prob=0.5)
 c(iu, io) # Ausgabe des (HSB-)Intervalls</code></pre>
 <pre><code>## [1]  86 114</code></pre>
-<p>Für die Hypergeometischeverteilung (hier “exakte Lösung” genannt)</p>
-<pre class="r"><code>m &lt;- 500 # Anzahl der Mädchen
-n &lt;- 500 # Anzahl der Jungen
+<p>Für die Hypergeometischeverteilung (hier “exakte Lösung” genannt) müssen wir die zwei Gruppen (500 Jungen und 500 Mädchen) jeweils als ein mögliches Paar ansehen. Es gibt somit insgesamt 500 solcher Paare, da jeder Junge und jedes Mädchen in nur einem Paar vorkommen können. – Sehr wohl aber 500! solcher Möglichen Paar-Reihen.</p>
+<p>Betrachten wir nun jedes Paar nur einmal, dann ziehen wir aus der Menge der Paare also eine <em>Stichprobe ohne Zurücklegen</em>, also eine <em>uneingeschränkte Zufallsstichprobe</em>.
+Zum bestimmen der Quantiele und damit des HSB benötigen wir dann die <em>hypergeometrische Verteilung</em>.</p>
+<p>Oh ja, diese Annahme ist sehr verwirrend, logisch nicht ganz einzusehen und einfach von Mathematik-Lehrenden gemacht worden, damit man die Hypergeometrischeverteilung hier anwenden kann. Alleine schon die Annahme, dass zwei Personen immer einen unterschiedlichen IQ haben müssen … – Egal!</p>
+<pre class="r"><code>m &lt;- 250 # Anzahl der Paare mit besseren Mädchen
+n &lt;- 250 # Anzahl der Paare mit besseren Jungen
 k &lt;- 200 # Umfang des Stichprobe
 pl &lt;- 0.025 # 2,5% als untere Grenze
 pr &lt;- 0.975 # 97,5% als obere Grenze
@@ -66,34 +69,82 @@ pr &lt;- 0.975 # 97,5% als obere Grenze
 iu &lt;- qhyper(pl, m, n, k) # Linke/untere Intervallgrenze
 io &lt;- qhyper(pr, m, n, k) # Rechte/obere Intervallgrenze
 c(iu, io) # Ausgabe des (HSB-)Intervalls</code></pre>
-<pre><code>## [1]  88 112</code></pre>
-<p><strong>R</strong> liefert also aus <em>exakte Lösung</em> das Intervall <span class="math inline">\([88; 112]\)</span>. Wie kommt es nun über den Unterschied?</p>
-<pre class="r"><code>m &lt;- 500 # Anzahl der Mädchen
-n &lt;- 500 # Anzahl der Jungen
+<pre><code>## [1]  89 111</code></pre>
+<p><strong>R</strong> liefert aus <em>exakte Lösung</em> das Intervall <span class="math inline">\([89; 111]\)</span>. Schauen wir einmal genauer hin:</p>
+<pre class="r"><code>m &lt;- 250 # Anzahl der Paare mit besseren Mädchen
+n &lt;- 250 # Anzahl der Paare mit besseren Jungen
 k &lt;- 200 # Umfang des Stichprobe
 
 p &lt;- dhyper(0:k, m, n, k)</code></pre>
 <p>Werte für die linke/untere Intervallgrenzen:</p>
 <pre class="r"><code># Werte für die linke/untere Intervallgrenzen:
-sum(p[0:88])</code></pre>
-<pre><code>## [1] 0.02396528</code></pre>
-<pre class="r"><code>sum(p[0:89])</code></pre>
-<pre><code>## [1] 0.03442166</code></pre>
+sum(p[0:89])</code></pre>
+<pre><code>## [1] 0.01782071</code></pre>
+<pre class="r"><code>sum(p[0:90])</code></pre>
+<pre><code>## [1] 0.02755396</code></pre>
 <p>Werte für die rechte/untere Intervallgrenzen:</p>
 <pre class="r"><code># Werte für die rechte/untere Intervallgrenzen:
-sum(p[0:110])</code></pre>
-<pre><code>## [1] 0.9335277</code></pre>
-<pre class="r"><code>sum(p[0:111])</code></pre>
-<pre><code>## [1] 0.9516417</code></pre>
+sum(p[0:111])</code></pre>
+<pre><code>## [1] 0.972446</code></pre>
 <pre class="r"><code>sum(p[0:112])</code></pre>
-<pre><code>## [1] 0.9655783</code></pre>
-<pre class="r"><code>sum(p[0:113])</code></pre>
-<pre><code>## [1] 0.9760347</code></pre>
-<p>Ist der Unterschied dann also ein Rundungsproblem?</p>
+<pre><code>## [1] 0.9821793</code></pre>
+<p>Wie wird nun gerundet? – Im Text heißt es:</p>
 <blockquote>
-<p>Werden 2,5% und 97,5% nicht genau getroffen, wird hier nicht wie oben, nach außen / .  , sondern in beiden Fällen nach rechts .<br />
-gerundet;
+<p>Werden 2,5% und 97,5% nicht genau getroffen, wird hier nicht […] nach außen / .  , sondern in beiden Fällen nach rechts . gerundet;
 d.h. man nimmt diejenigen Werte in das zu bestimmende Intervall auf, bei denen 2,5% bzw. 97,5% zum ersten Mal
 übertroffen werden. Somit verbleiben weniger als 2,5% der Histogrammfläche am linken bzw. rechten Rand.</p>
 </blockquote>
-<p>Ich denke nein. – Meine Vermutung ist, dass hier für die rechte Intervallgrenze 95% statt 97,5% genommen wurde.</p>
+<div id="ein-paar-überlegungen-zum-lösen-der-aufgabe-mit-sbi" class="section level3">
+<h3>Ein paar Überlegungen zum Lösen der Aufgabe mit SBI</h3>
+<p>Eigentlich haben wir es mit drei Fällen je Paar zu tun:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(IQ_{Junge} &gt; IQ_{Mädchen}\)</span></li>
+<li><span class="math inline">\(IQ_{Junge} &lt; IQ_{Mädchen}\)</span></li>
+<li><span class="math inline">\(IQ_{Junge} = IQ_{Mädchen}\)</span></li>
+</ol>
+<p>Tatsächlich spielt hier welches Mädchen und welcher Junge im Paar sind eine entscheidende Rolle.</p>
+<p>Simulieren wir nun einmal, dass unsere beiden Gruppe im wesendlichen (und im Mittel) gleich intelligent sind, was wir durch einen gleich mittlenem IQ von 100 und einer Standardabweichung von 15 modellieren wollen:</p>
+<pre class="r"><code># Wir laden zuerst das Paket `mosaic`
+library(mosaic)
+
+# Zur Reproduzierbarkeit
+set.seed(2009)
+
+# IQs für Jungen und Mädchen normalverteilt mit den Parametern mu=100 und sigma=15
+
+# 1. Fassung, aber hier ist F_iq_junger = F_iq_maedchen
+#iq_jungen &lt;- rnorm(500, mean=100, sd=15)
+#iq_maedchen &lt;- rnorm(500, mean=100, sd=15)
+
+# 2. Fassung
+#iq &lt;- rnorm(500, mean=100, sd=15)
+#iq_jungen &lt;- iq
+#iq_maedchen &lt;- iq
+
+# 3. Fassung
+iq_jungen &lt;- rnorm(500, mean=100, sd=15)
+iq_maedchen &lt;- rnorm(499, mean=100, sd=15)
+iq_maedchen &lt;- c(iq_maedchen, mean(iq_jungen)+499*(mean(iq_jungen)-mean(iq_maedchen)))
+
+# Ein Blick auf die beinden Datenreihen
+length(iq_maedchen)</code></pre>
+<pre><code>## [1] 500</code></pre>
+<pre class="r"><code>length(iq_jungen)</code></pre>
+<pre><code>## [1] 500</code></pre>
+<pre class="r"><code>mean(iq_maedchen)</code></pre>
+<pre><code>## [1] 99.22318</code></pre>
+<pre class="r"><code>mean(iq_jungen)</code></pre>
+<pre><code>## [1] 99.22318</code></pre>
+<p>Bilden wir nun die Paare:</p>
+<pre class="r"><code>paare &lt;- data.frame(jungen = iq_jungen, maedchen = iq_maedchen)</code></pre>
+<p>Und schauen uns nun einmal an, wie oft – bei zufälliger Auswahl von 200 Paarungen – es vorkommen kann, dass Jungen in den Paarungen einen höheren IQ haben als Mädchen. Das wäre dann dem Zufall geschuldet und nicht der übermässigen Intelligenz der Jungen. (Da nach Vereinbarung beide Gruppen gleich intelligent waren!)</p>
+<pre class="r"><code>NullVerteilung &lt;- do(5000) * count( ~ sample(jungen, 200) - sample(maedchen, 200) &gt; 0, data=paare)
+gf_bar( ~ n_TRUE, data=NullVerteilung)</code></pre>
+<p><img src="/post/2020-01-27-warum-das-nachrechnen-von-veroeffentlichungen-so-wichtig-ist_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Das HSB für diesen Fall wäre dann:</p>
+<pre class="r"><code>(hsb &lt;- quantile( ~ n_TRUE, prob=c(0.025, 0.975), data=NullVerteilung))</code></pre>
+<pre><code>##  2.5% 97.5% 
+##    83   107</code></pre>
+<p>Anders formuliert, der zu erwartende Hauptstreubereich ist das Intervall <span class="math inline">\([83, 107]\)</span>!</p>
+<p>Die 112 Paare in denen die Jungen einen höheren IQ haben, sind also nicht zu erwarten. (Also <em>signifikant!</em>)</p>
+</div>
