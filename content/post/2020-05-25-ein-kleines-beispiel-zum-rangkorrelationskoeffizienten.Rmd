@@ -65,7 +65,8 @@ Das Streudiagramm dieser Daten sieht dann so aus:
 gf_point(y ~ x, data=df)
 ```
 
-Der Korrelationskoeffizent ist nun 
+Der Korrelationskoeffizent ist nun:
+
 $$r = r_{BP} = `r cor(y ~ x, data=df)`$$
 
 Schauen wir uns nun die Werte der Tabelle mit ihrem Rang an:

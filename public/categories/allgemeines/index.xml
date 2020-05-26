@@ -34,7 +34,7 @@
 &lt;/ol&gt;
 &lt;p&gt;Die ersten drei Aufgabentypen können sehr schön mit Hilfe einer Exceltabelle erfasst werden. Der vierte Aufgabentyp muss direkt bewertet werden und wird in so ebenfalls in die Exceltabelle eingegeben.&lt;/p&gt;
 &lt;p&gt;Die erfassten Daten der Klausuren liegen zu Beginn der Auswertung in einer Exceldatei bereit, die in etwa wie folgt aussieht:&lt;/p&gt;
-&lt;p&gt;&amp;lt;&amp;lt;&lt;BILD EXCEL DATEI&gt;&amp;gt;&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt; &amp;lt; &amp;lt; BILD EXCEL DATEI &amp;gt; &amp;gt; &amp;gt;&lt;/p&gt;
 &lt;p&gt;Diese Datei wird unter dem Namen &lt;code&gt;Klausurteilnehmendenliste.xslx&lt;/code&gt; gespeichert.&lt;/p&gt;
 &lt;p&gt;Die Auswertung geschieht dann mittels eines kleinen R-Skripts:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(mosaic)

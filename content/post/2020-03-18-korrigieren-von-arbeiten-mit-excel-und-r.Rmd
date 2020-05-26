@@ -41,7 +41,7 @@ Die ersten drei Aufgabentypen können sehr schön mit Hilfe einer Exceltabelle e
 
 Die erfassten Daten der Klausuren liegen zu Beginn der Auswertung in einer Exceldatei bereit, die in etwa wie folgt aussieht:
 
-<<<BILD EXCEL DATEI>>>
+< < < BILD EXCEL DATEI > > >
 
 Diese Datei wird unter dem Namen `Klausurteilnehmendenliste.xslx` gespeichert.
 
