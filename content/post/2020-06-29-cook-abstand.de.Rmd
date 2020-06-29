@@ -1,0 +1,229 @@
+---
+title: Cook Abstand
+author: Norman Markgraf
+date: '2020-06-29'
+slug: cook-abstand
+categories:
+  - Statistisches
+tags:
+  - Cook Abstand
+  - Cooks Distance
+  - Ausreißer
+  - Outliers
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-06-29T10:52:38+02:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+```{r setup, include=FALSE}
+library(mosaic)
+set.seed(2009)
+```
+
+Eine Möglichkeit Ausreißer zu finden ist der *Cook Abstand* 
+(eng.: *Cook's distance*). 
+Die Idee ist es zu messen welchen Einfluss ein Wert auf das Modell hat.
+Dazu schaut mich sich das Modell einmal mit und einmal ohne den Wert an und 
+vergleicht diese Ergebnisse.
+
+Schauen wir uns den Cook Abstand einmal für ein (einfaches) lineares 
+Regressionmodell konkret an:
+
+### Vorbereitungen
+
+Wir wollen mit *mosaic* arbeiten, also laden wir das Paket als erstes:
+```{r}
+library(mosaic)
+```
+
+
+Falls die **tipping**-Daten noch nicht im Verzeichnis liegen, 
+laden wir diese aus dem Internet nach:
+```{r tipping_daten_ggf_herunterladen}
+if (!file.exists("tips.csv")) {
+  download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
+}
+```
+
+Nun laden wir die **tipping**-Daten in den Speicher in den Datenrahmen `tips`:
+```{r tipping_daten_in_de_speicher_laden}
+tips <- read.csv2("tips.csv")
+```
+
+Wir brauchen für unser Modell nur den Rechnungsbetrag `total_bill` und den
+Trinkgeldbetrag `tip` für unser Modell:
+
+```{r tippings_daten_kürzen}
+tips %>% select(c("total_bill", "tip")) -> tips
+```
+
+
+
+## Unser Modell:
+
+```{r}
+gf_point(tip ~ total_bill, data = tips)
+```
+
+
+```{r}
+erg_lm <- lm(tip ~ total_bill, data = tips)
+summary(erg_lm)
+```
+
+Betrachten wir nun die Regressionsgerade in unseren Daten:
+
+```{r}
+gf_point(tip ~ total_bill, data = tips) +
+  geom_line(aes(x = total_bill, 
+                y = erg_lm$fitted.values, 
+                color = "Regressionsgerade"))
+```
+
+Für lineare Regressionsmodell können einflussreiche Ausreißer sehr hinderlich 
+sein. 
+Was also ändert sich nun, wenn wir einen Wert, z.B. einen Ausreißer, 
+nicht betrachten?
+
+Als Beispiel wählen wir die folgende Beobachtung aus:
+```{r}
+tips %>% slice(173) -> tips_removed
+tips_removed
+```
+
+
+```{r}
+tips %>% slice(-173) -> tips_red
+erg_lm_red <- lm(tip ~ total_bill, data = tips_red)
+summary(erg_lm_red)
+```
+```{r}
+gf_point(tip ~ total_bill, data = tips_red) +
+  geom_line(aes(x = total_bill, 
+                y = erg_lm_red$fitted.values, 
+                color = "Regressionsgerade")) +
+  geom_point(aes(x = tips_removed$total_bill,
+                 y = tips_removed$tip,
+                 colour = "Removed Data",
+                 show.legend = FALSE))
+```
+
+
+Um zu messen, was diese Änderung bewirkt hat, schaut sich der Cook Abstand
+zunächst die Summe der quadrierten Differenzen der vorhergesagten Werte in 
+beiden Modellen an:
+
+```{r}
+new_data <- data_frame(total_bill = tips$total_bill)
+prognose_lm <- predict(erg_lm, newdata = new_data)
+prognose_lm_red <- predict(erg_lm_red, newdata = new_data)
+```
+
+$$d_j = \sum_{i=1}^n \left(\hat{y}_i - \hat{y}_{i(j)}\right)^2$$
+Dabei ist $\hat{y}_i$ die Prognose des Wertes $y_i$ auf Basis von $x_i$ mit 
+dem Originalmodell und $\hat{y}_{i(j)}$ die Prognose wenn man die $j$-te 
+Beobachtung aus dem Modell gestrichen hat.
+
+```{r d_j_berechnen}
+d_j <- sum((prognose_lm - prognose_lm_red)^2)
+d_j
+```
+
+Der Cook Abstand $D_j$ wird nun noch *normiert* durch
+$$var_{cook} = p \cdot s_{\epsilon_i^2}^2$$
+Dabei ist $s_{\epsilon_i^2}^2$ der erwartungstreue Schätzer der Varianz der 
+Residuen und $p$ die Anzahl aller erklärenden Variablen (hier $1$) $+ 1$.
+
+Es ist also:
+
+$$D_j = \frac{d_j}{var_{cook}} = \frac{\sum\limits_{i=1}^n \left(\hat{y}_i - \hat{y}_{i(j)}\right)^2}{p \cdot s_{\epsilon_i^2}^2}$$
+
+```{r}
+# Summary des Modells
+selm <- summary(erg_lm)
+# Wir finden p als rank im Modell
+p <- erg_lm$rank 
+# Wir finden den erwatungtreuen Schätzer im Summary des Modells
+s_quad_eps_quad <- (selm$sigma)^2 
+
+var_cook = p * s_quad_eps_quad
+
+D_j = d_j / var_cook
+D_j
+```
+
+Wir können den Wert aber auch viel einfacher direkt berechnen lassen und dass
+für alle $j$ mit Hilfe von `cooks.distance(..)`:
+
+```{r}
+cooks.distance(erg_lm)[173]
+```
+
+Wann aber ist nun ein Wert ein *einflussreicher* Ausreißer?
+
+Cook selber gibt dafür die Bedingung $D_j > 1$ an. Andere Autor*innen schreiben $D_j > 4/n$, wobei $n$ die Anzahl der Beobachtung ist.
+
+In unserem Beispiel liefert die Variante $D_j > 1$ 
+
+```{r}
+cooks <- cooks.distance(erg_lm)
+names(cooks) <- NULL
+n <- nrow(tips)
+
+any(cooks > 1)
+```
+
+keinen Ausreißer.
+
+Wenn wir jedoch mit $D_j > 4/n$ suchen
+.
+```{r}
+any(cooks > 4/n)
+```
+
+dann gibt es Ausreißer. 
+Die Indices dieser finden wir mit:
+
+```{r}
+which(cooks > 4/n)
+```
+
+Bereinigen wir nun unsere Daten um genau diese Werte:
+
+```{r}
+remove <- which(cooks > 4/n)
+tips %>% slice(-remove) -> tips_no_outliers
+erg_lm_no_outliers <- lm(tip ~ total_bill, data = tips_no_outliers)
+```
+
+Und schauen uns das Ergebnis an:
+```{r}
+summary(erg_lm_no_outliers)
+```
+
+```{r}
+gf_point(tip ~ total_bill, data = erg_lm_no_outliers) +
+  geom_line(aes(x = total_bill, 
+                y = erg_lm_no_outliers$fitted.values, 
+                color = "Regressionsgerade"))
+```
+
+
+Im direkten Vergleich:
+```{r}
+gf_point(tip ~ total_bill, data = erg_lm) +
+  geom_line(aes(x = total_bill, 
+                y = erg_lm$fitted.values, 
+                colour = "Regressionsgerade (Orginal)")) +
+  geom_abline(aes( colour = "Regressionsgerade (No Outliers)",
+              intercept = erg_lm_no_outliers$coefficients[1], 
+              slope =  erg_lm_no_outliers$coefficients[2])
+              )
+```
+
